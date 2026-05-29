@@ -1,0 +1,289 @@
+.careSection {
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
+}
+
+.careContainer {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.careVisual {
+  --side-card-width: 350px;
+  --center-card-width: 450px;
+  --side-card-height: 474px;
+  --center-card-height: 590px;
+  --card-gap: 34px;
+  position: relative;
+  max-width: var(--container-max);
+  margin: 32px auto 0;
+  padding: 32px 24px 24px;
+  min-height: 760px;
+}
+
+.panelBg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 206px;
+  bottom: 0;
+  border-radius: 30px;
+  background: #c5d5f6;
+  z-index: 0;
+}
+
+.cardsRow {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: var(--side-card-width) var(--center-card-width) var(--side-card-width);
+  gap: var(--card-gap);
+  justify-content: center;
+  align-items: start;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  isolation: isolate;
+}
+
+.sideCard {
+  width: var(--side-card-width);
+  height: var(--side-card-height);
+}
+
+.centerCard {
+  width: var(--center-card-width);
+  height: var(--center-card-height);
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+.cardTitle {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 500;
+  z-index: 4;
+}
+
+.centerTitle {
+  font-size: 24px;
+  left: 24px;
+}
+
+.cardWrap {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.sideWrap {
+  align-self: start;
+  margin-top: 18px;
+}
+
+.centerWrap {
+  align-self: start;
+}
+
+.cardDescription {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding-top: 12px;
+  color: var(--brand-blue);
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 400;
+  z-index: 2;
+}
+
+.ctaButton {
+  position: absolute;
+  right: 48px;
+  bottom: 20px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--brand-blue);
+}
+
+.ctaLabel {
+  height: var(--btn-h);
+  background: #ffffff;
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--border-soft);
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--btn-fs);
+  font-weight: var(--btn-fw);
+}
+
+.ctaArrow {
+  width: var(--btn-icon);
+  height: var(--btn-icon);
+  margin-left: -8px;
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--border-soft);
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaArrowIcon {
+  width: 18px;
+  height: 18px;
+  color: #749abf;
+  stroke-width: 2.2;
+}
+
+.ctaButton:hover .ctaLabel,
+.ctaButton:hover .ctaArrow {
+  background: #f0f4fa;
+}
+
+.ctaButton:active .ctaLabel,
+.ctaButton:active .ctaArrow {
+  background: #e8eef8;
+}
+
+@media (max-width: 1399px) {
+  .careVisual {
+    --side-card-width: 280px;
+    --center-card-width: 350px;
+    --side-card-height: 395px;
+    --center-card-height: 520px;
+    --card-gap: 24px;
+    min-height: 660px;
+    padding: 30px 18px 22px;
+  }
+
+  .panelBg {
+    top: 170px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .careVisual {
+    --side-card-width: 260px;
+    --center-card-width: 330px;
+    --card-gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .careVisual {
+    min-height: auto;
+    padding: 20px 0 16px;
+  }
+
+  .panelBg {
+    top: 132px;
+    border-radius: 24px;
+  }
+
+  .cardsRow {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .sideWrap,
+  .centerWrap {
+    margin-top: 0;
+    width: min(100%, 380px);
+    padding-bottom: 0;
+  }
+
+  .sideCard,
+  .centerCard {
+    width: 100%;
+  }
+
+  .sideCard {
+    height: 420px;
+  }
+
+  .centerCard {
+    height: 500px;
+  }
+
+  .cardDescription {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+
+  .ctaButton {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 18px auto 0;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .careSection {
+    padding: var(--section-pt) 12px var(--section-pb);
+  }
+
+  .sideWrap,
+  .centerWrap {
+    width: 100%;
+  }
+
+  .sideCard {
+    height: 360px;
+  }
+
+  .centerCard {
+    height: 420px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .panelBg {
+    top: 110px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .sideCard {
+    height: 300px;
+  }
+
+  .centerCard {
+    height: 360px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+}

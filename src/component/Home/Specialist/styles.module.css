@@ -1,0 +1,182 @@
+.specialistSection {
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
+    background: transparent;
+}
+
+.frame {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    height: 580px;
+    background: #6ea0b5;
+}
+
+.bgWrap {
+    position: absolute;
+    top: 180px;
+    bottom: 0;
+    left: 1px;
+    width: 250px;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+    height: 500px;
+}
+
+.bgImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 34px 32px 34px 150px;
+    display: block;
+}
+
+.title {
+    margin: 0 0 12px 0;
+    color: #ffffff;
+    font-size: var(--h2-size);
+    line-height: var(--h2-lh);
+    font-weight: 500;
+    position: relative;
+    z-index: 12;
+}
+
+.doctorsWrap {
+    position: relative;
+    height: calc(100% - 100px);
+}
+
+.doctor {
+    position: absolute;
+    bottom: -76px;
+    width: 450px;
+    height: 420px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 10px;
+    z-index: 3;
+}
+
+.doctorImage {
+    flex: 0 0 220px;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+}
+
+.left {
+    left: 120px;
+}
+
+.right {
+    right: 120px;
+}
+
+.doctorName {
+    flex: 1;
+    padding-bottom: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+@media (max-width: 1024px) {
+    .frame {
+        height: 500px;
+    }
+
+    .doctor {
+        width: 260px;
+        height: 320px;
+    }
+
+    .doctorImage {
+        flex: 0 0 180px;
+    }
+
+    .bgWrap {
+        width: 420px;
+    }
+
+    .inner {
+        padding-left: 120px;
+    }
+
+    .left {
+        left: 60px;
+    }
+
+    .right {
+        right: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .frame {
+        height: 380px;
+    }
+
+    .inner {
+        padding: 24px 20px 24px 90px;
+    }
+
+    .doctor {
+        width: 200px;
+        height: 260px;
+    }
+
+    .doctorImage {
+        flex: 0 0 150px;
+    }
+}
+
+@media (max-width: 430px) {
+    .specialistSection {
+        padding: var(--section-pt) 12px var(--section-pb);
+    }
+
+    .frame {
+        height: 320px;
+        border-radius: 12px;
+    }
+
+    .doctor {
+        width: 160px;
+        height: 200px;
+    }
+
+    .doctorImage {
+        flex: 0 0 120px;
+    }
+
+    .bgWrap {
+        width: 220px;
+    }
+
+    .inner {
+        padding: 18px 12px 18px 56px;
+    }
+
+    .left {
+        left: 14px;
+    }
+
+    .right {
+        right: 14px;
+    }
+}

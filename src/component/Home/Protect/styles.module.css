@@ -1,0 +1,177 @@
+.protectSection {
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
+}
+
+.bannerFrame {
+  position: relative;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  height: 450px;
+  isolation: isolate;
+  border: 1px solid rgba(99, 111, 134, 0.45);
+  background: #253548;
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: none;
+}
+
+.imageLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slideImage {
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 30, 50, 0.86) 0%,
+    rgba(19, 31, 49, 0.72) 32%,
+    rgba(23, 33, 48, 0.24) 55%,
+    rgba(23, 33, 48, 0.05) 68%,
+    rgba(23, 33, 48, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sliderHandle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  left: clamp(28px, var(--slider-position), calc(100% - 28px));
+  transform: translateX(-50%);
+  z-index: 6;
+  pointer-events: none;
+}
+
+.sliderHandleImage {
+  object-fit: unset;
+  object-position: center bottom;
+}
+
+.heroContent {
+  position: absolute;
+  left: 6.5%;
+  top: 28%;
+  z-index: 5;
+  max-width: 620px;
+  pointer-events: auto;
+}
+
+.heroTitle {
+  margin: 0;
+  color: #d5e2f6;
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  font-weight: 500;
+  max-width: 610px;
+  text-wrap: balance;
+}
+
+.ctaButton {
+  margin-top: 36px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.ctaLabel {
+  height: var(--btn-h);
+  background: #f7fafc;
+  color: var(--brand-blue);
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--border-soft);
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--btn-fs);
+  line-height: 1;
+  font-weight: var(--btn-fw);
+}
+
+.ctaArrow {
+  width: var(--btn-icon);
+  height: var(--btn-icon);
+  margin-left: -8px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: #f7fafc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaArrowIcon {
+  width: 18px;
+  height: 18px;
+  color: #8eb3ce;
+  stroke-width: 2;
+}
+
+.ctaButton:hover .ctaLabel,
+.ctaButton:hover .ctaArrow {
+  background: #eef3f8;
+}
+
+.ctaButton:active .ctaLabel,
+.ctaButton:active .ctaArrow {
+  background: #e5ecf5;
+}
+
+@media (max-width: 1240px) {
+  .heroContent {
+    top: 24%;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerFrame {
+    height: 400px;
+  }
+
+  .heroContent {
+    left: 20px;
+    right: 20px;
+    top: 22%;
+    max-width: none;
+  }
+
+  .ctaButton {
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 430px) {
+  .bannerFrame {
+    height: 360px;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      110deg,
+      rgba(17, 30, 50, 0.88) 0%,
+      rgba(19, 31, 49, 0.75) 45%,
+      rgba(23, 33, 48, 0.24) 70%,
+      rgba(23, 33, 48, 0.02) 100%
+    );
+  }
+
+  .heroTitle {
+    font-size: 28px;
+  }
+}

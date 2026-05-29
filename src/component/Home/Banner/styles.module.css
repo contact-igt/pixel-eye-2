@@ -1,0 +1,225 @@
+/* ── Page padding — ~20px from browser edges ── */
+.bannerSection {
+ padding: clamp(20px, 3vw, 36px);
+}
+
+/* ── Banner card ── */
+.bannerFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  /* NO min-height — the flow image determines the natural height */
+}
+
+/* ── Hero image — flow element so natural 16:9 aspect sets the height ── */
+/* At 1400px frame width → height = 1400 * (1080/1920) ≈ 788px          */
+.bannerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative; /* flow, not absolute */
+  z-index: 0;
+  /* Slight upward crop to keep the child + sky visible naturally */
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ── Hero copy ── */
+.heroContent {
+  position: absolute;
+  left: 56px;
+  top: 35%;          /* no transform — top of block starts at 35% */
+  z-index: 2;
+  width: min(460px, 42%);
+}
+
+.heroTitle {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: var(--h2-size);   /* 44px desktop, scales via globals */
+  line-height: var(--h2-lh);   /* 1.12 */
+  font-weight: 400;             /* regular weight — matches reference */
+  font-family: var(--font-primary);
+}
+
+.heroText {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--p-size);    /* 17px desktop */
+  line-height: var(--p-lh);
+  font-weight: 400;
+  max-width: 380px;
+  font-family: var(--font-primary);
+}
+
+.ctaWrap {
+  margin-top: 26px;
+}
+
+/* ── Slider dots ── */
+.sliderDots {
+  position: absolute;
+      right: 135px;
+    bottom: 146px;
+    /* sits above the bookArea */
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.sliderDots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(203, 154, 95, 0.45);
+}
+
+.sliderDots span:first-child {
+  width: 10px;
+  height: 10px;
+  background: #cb9a5f; /* active dot — solid gold */
+}
+
+/* ── Bottom-right booking panel ── */
+/* White notched card — border-top-left-radius creates the smooth cutout */
+.bookArea {
+  position: absolute;
+  bottom: -7px;
+  right: 24px;
+  z-index: 2;
+  background: transparent;
+  border-top-left-radius: 20px;
+  padding: 12px 16px 16px;
+  min-width: 260px;
+}
+
+.bookButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 55px;
+  border: 1.5px solid #7fa8be;
+  border-radius: 10px;
+  color: var(--text-heading);
+  background: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 160ms ease;
+}
+
+.bookButton:hover {
+  background: #edf2f8;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .heroContent {
+    left: 40px;
+    top: 32%;
+    width: min(440px, 48%);
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerSection {
+    padding: 12px;
+  }
+
+  .bannerFrame {
+    border-radius: 14px;
+    /* Add min-height only on tablet/mobile since image may be too short */
+    min-height: 440px;
+  }
+
+  /* On small screens the image must be absolutely positioned to fill the min-height */
+  .bannerImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .heroContent {
+    left: 22px;
+    right: 22px;
+    width: auto;
+    top: 25%;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .heroText {
+    font-size: 14px;
+    max-width: unset;
+  }
+
+  .ctaWrap {
+    margin-top: 18px;
+  }
+
+  .sliderDots {
+    right: 14px;
+    bottom: 70px;
+  }
+
+  .bookArea {
+    min-width: 210px;
+    padding: 10px 12px 12px;
+  }
+
+  .bookButton {
+    height: 40px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerSection {
+    padding: 8px;
+  }
+
+  .bannerFrame {
+    min-height: 380px;
+    border-radius: 12px;
+  }
+
+  .heroContent {
+    left: 16px;
+    right: 16px;
+    top: 22%;
+  }
+
+  .heroTitle {
+    font-size: 24px;
+  }
+
+  .heroText {
+    font-size: 13px;
+  }
+
+  .sliderDots {
+    display: none;
+  }
+
+  .bookArea {
+    min-width: 175px;
+    padding: 8px 10px 10px;
+    border-top-left-radius: 14px;
+  }
+
+  .bookButton {
+    height: 36px;
+    font-size: 10px;
+  }
+}

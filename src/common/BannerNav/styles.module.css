@@ -1,0 +1,201 @@
+/*
+  BannerNav is position:absolute so it overlays the banner image.
+  Parent must be position:relative with overflow:hidden.
+*/
+.bannerNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(200px, 22vw, 320px);
+  align-items: start;
+}
+
+.logoCard {
+  display: flex;
+  align-items: flex-start;
+  min-height: clamp(74px, 7.3vw, 108px);
+  border-bottom-right-radius: clamp(18px, 2.2vw, 34px);
+  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
+}
+
+.logo {
+  display: block;
+  width: clamp(130px, 13.6vw, 200px);
+  height: auto;
+}
+
+/* Center: nav links + search */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(22px, 3.1vw, 46px);
+  padding-top: clamp(22px, 2.7vw, 36px);
+}
+
+.navLink {
+  color: var(--text-heading);
+  text-decoration: none;
+  font-size: clamp(11px, 0.82vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: opacity 160ms ease;
+}
+
+.navLink:hover {
+  opacity: 0.65;
+}
+
+/* White text variant */
+.navLight .navLink {
+  color: #ffffff;
+}
+
+.navLight .searchBtn {
+  color: #ffffff;
+}
+
+.searchBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(24px, 1.8vw, 30px);
+  height: clamp(24px, 1.8vw, 30px);
+  border: 0;
+  background: transparent;
+  color: var(--text-heading);
+  cursor: pointer;
+  padding: 0;
+  margin-left: clamp(2px, 0.7vw, 10px);
+  transition: opacity 160ms ease;
+}
+
+.searchBtn:hover {
+  opacity: 0.65;
+}
+
+.searchBtn svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Right: NABH badge or Book Appointment */
+.rightCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: clamp(74px, 7.3vw, 108px);
+  border-bottom-left-radius: clamp(18px, 2.2vw, 34px);
+  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
+}
+
+.nabhBadge {
+  display: block;
+  width: clamp(130px, 13.6vw, 208px);
+  height: auto;
+}
+
+.bookBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 228px);
+  min-height: clamp(38px, 3vw, 46px);
+  border: 1.5px solid #7fa8be;
+  border-radius: 10px;
+  color: var(--text-heading);
+  background: #ffffff;
+  font-family: var(--font-primary);
+  font-size: clamp(10px, 0.78vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  /* padding: 0 clamp(12px, 1.2vw, 18px); */
+    padding: 16px 24px;
+  transition: background 160ms ease;
+}
+
+.bookBtn:hover {
+  background: #edf2f8;
+}
+
+@media (max-width: 768px) {
+  .bannerNav {
+    grid-template-columns: 164px 1fr 164px;
+  }
+
+  .logoCard,
+  .rightCard {
+    min-height: 70px;
+    padding: 10px 10px 12px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .nabhBadge {
+    width: 122px;
+  }
+
+  .nav {
+    gap: 14px;
+    padding-top: 18px;
+  }
+
+  .navLink {
+    font-size: 10px;
+    letter-spacing: 0.35px;
+  }
+
+  .searchBtn {
+    width: 22px;
+    height: 22px;
+  }
+
+  .bookBtn {
+    min-height: 36px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerNav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .logoCard,
+  .rightCard {
+    min-height: 62px;
+    border-bottom-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    padding: 8px 8px 10px;
+  }
+
+  .logo {
+    width: 108px;
+  }
+
+  .nabhBadge {
+    width: 106px;
+  }
+
+  .bookBtn {
+    min-height: 34px;
+    font-size: 9px;
+    padding: 0 8px;
+  }
+}

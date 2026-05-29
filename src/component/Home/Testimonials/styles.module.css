@@ -1,0 +1,302 @@
+.testimonialsSection {
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
+  background: transparent;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.frame {
+  position: relative;
+  border-radius: 30px;
+  padding: 40px 28px 36px;
+  background: linear-gradient(175deg, #f8fbff 0%, #eaf2fc 40%, #cfe2f8 100%);
+  border: 2px solid #c9d6ee;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+/* ── Title ─────────────────────────────────── */
+.title {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 0;
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+  color: var(--text-heading);
+  font-weight: 500;
+}
+
+/* ── Mosaic — absolute, full width ─────────── */
+.mosaicWrap {
+    position: absolute;
+    /* height: 100%; */
+    width: 100%;
+    left: 10px;
+    top: 0;
+    padding: 10px;
+    right: 0;
+    bottom: 300px;
+    color: transparent;
+}
+
+.mosaic {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ── Lower content pushed below mosaic ─────── */
+.lowerContent {
+  position: relative;
+  z-index: 2;
+  margin-top: 300px;
+}
+
+/* ── Subtitle ───────────────────────────────── */
+.subtitle {
+  margin: 0 auto 24px;
+  max-width: 400px;
+  text-align: center;
+  color: var(--text-body);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: var(--p-lh);
+}
+
+/* ── Cards ──────────────────────────────────── */
+.cardsWrap {
+  padding: 28px 0 8px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* ── Individual card ────────────────────────── */
+.card {
+  min-height: 200px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #c4d5f3;
+  padding: 48px 14px 16px;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 220ms ease, background 220ms ease, transform 220ms ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #aac1ea;
+}
+
+.cardTab {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translate(-50%, -56%);
+  white-space: nowrap;
+  background: #eef4fc;
+  border-radius: 12px;
+  border: 1px solid #c4d5f3;
+  padding: 6px 18px;
+}
+
+.cardName {
+  color: #2a4388;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.starPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 14px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid #d2dff5;
+  background: #e8eef9;
+}
+
+.star {
+  color: #e1a440;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.cardBody {
+  margin-top: 0;
+}
+
+.text {
+  margin: 0;
+  color: #3b4f82;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.active {
+  background: #dce8f9;
+  border-color: #b2c7ed;
+}
+
+/* ── Dots ────────────────────────────────────── */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d0d7e6;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.activeDot {
+  background: #d19549;
+}
+
+/* ── CTA ─────────────────────────────────────── */
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--brand-blue);
+}
+
+.ctaLabel {
+  height: var(--btn-h);
+  background: #f3f4f8;
+  color: var(--brand-blue);
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--btn-fs);
+  font-weight: var(--btn-fw);
+}
+
+.ctaArrow {
+  width: var(--btn-icon);
+  height: var(--btn-icon);
+  margin-left: -8px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: #f3f4f8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaButton:hover .ctaLabel,
+.ctaButton:hover .ctaArrow {
+  background: #e9edf5;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .frame {
+    padding: 30px 16px 24px;
+  }
+
+  .mosaicWrap {
+    top: 50px;
+    height: 150px;
+  }
+
+  .lowerContent {
+    margin-top: 165px;
+  }
+
+  .subtitle {
+    max-width: 92%;
+    font-size: 18px;
+  }
+
+  .cards {
+    display: flex;
+    overflow-x: auto;
+    padding: 6px 6px 10px 2px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card {
+    min-width: 220px;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .frame {
+    padding: 26px 14px 22px;
+    border-radius: 22px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .mosaicWrap {
+    top: 46px;
+    height: 120px;
+  }
+
+  .lowerContent {
+    margin-top: 136px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    max-width: 88%;
+    margin-bottom: 16px;
+  }
+
+  .card {
+    min-width: 200px;
+    padding: 44px 12px 14px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 430px) {
+  .frame {
+    padding: 24px 12px 20px;
+    border-radius: 18px;
+  }
+
+  .mosaicWrap {
+    display: none;
+  }
+
+  .lowerContent {
+    margin-top: 0;
+  }
+}

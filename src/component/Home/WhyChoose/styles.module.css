@@ -1,0 +1,304 @@
+.whyChooseSection {
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
+    background: var(--bg-page);
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 90px;
+}
+
+.sectionTitle {
+    margin: 0 0 18px;
+    font-size: var(--h2-size);
+    line-height: var(--h2-lh);
+    font-weight: 500;
+    color: var(--text-heading);
+}
+
+.cardsFrame {
+    position: relative;
+    margin-top: 34px;
+    min-height: 320px;
+}
+
+.card {
+    position: absolute;
+    border-radius: 18px;
+    overflow: hidden;
+    isolation: isolate;
+    cursor: pointer;
+    transition: transform 0.35s ease, width 0.35s ease, height 0.35s ease, top 0.35s ease, left 0.35s ease, right 0.35s ease;
+}
+
+.cardImage {
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.02);
+    transition: transform 0.4s ease;
+}
+
+.activeCard .cardImage {
+    transform: scale(1.05);
+}
+
+.sideCard {
+    width: 380px;
+    height: 280px;
+    top: 60px;
+    z-index: 1;
+    transform: scale(0.96);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leftCard {
+    left: 32px;
+}
+
+.rightCard {
+    right: 32px;
+}
+
+.centerCard {
+    width: 550px;
+    height: 380px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.sideOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(34, 48, 82, 0.44);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* side cards dim on hover to signal they're clickable */
+.sideCard:hover {
+    transform: scale(0.98);
+}
+
+.centerOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(24, 34, 58, 0.16) 0%,
+            rgba(36, 54, 97, 0.78) 100%);
+    z-index: 2;
+}
+
+.sideContent {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    z-index: 3;
+}
+
+.sideTitle {
+    margin: 0;
+    color: #f1f4fb;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.centerContent {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    z-index: 3;
+    color: #f2f5ff;
+}
+
+.centerTitle {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.centerDescription {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #dfe6f5;
+}
+
+.readMoreButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.12);
+    text-decoration: none;
+}
+
+.readMoreIcon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.readMoreIconSvg {
+    width: 12px;
+    height: 12px;
+    color: #ffffff;
+}
+
+.ctaRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.ctaLabel {
+    height: var(--btn-h);
+    background: #f3f4f8;
+    color: var(--brand-blue);
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--border-soft);
+    padding: 0 24px;
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--btn-fs);
+    font-weight: var(--btn-fw);
+}
+
+.ctaArrow {
+    width: var(--btn-icon);
+    height: var(--btn-icon);
+    margin-left: -8px;
+    border-radius: 50%;
+    border: 1px solid var(--border-soft);
+    background: #f3f4f8;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ctaArrowIcon {
+    width: 18px;
+    height: 18px;
+    color: var(--brand-blue);
+}
+
+.ctaButton:hover .ctaLabel,
+.ctaButton:hover .ctaArrow {
+    background: #e9edf5;
+}
+
+.ctaButton:active .ctaLabel,
+.ctaButton:active .ctaArrow {
+    background: #e3e9f3;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        margin: 0 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        margin: 0 24px;
+    }
+
+    .cardsFrame {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        min-height: unset;
+    }
+
+    .card {
+        position: relative;
+    }
+
+    .sideCard,
+    .centerCard {
+        width: 100%;
+        height: 260px;
+        top: auto;
+        margin: 0;
+    }
+
+    .leftCard,
+    .rightCard,
+    .centerCard {
+        left: auto;
+        right: auto;
+        transform: none;
+    }
+
+    .ctaRow {
+        justify-content: center;
+        margin-top: 24px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .sideCard,
+    .centerCard {
+        height: 230px;
+    }
+
+    .centerContent {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .sectionTitle {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 0 12px;
+    }
+
+    .sideCard,
+    .centerCard {
+        height: 210px;
+    }
+
+    .sectionTitle {
+        font-size: 24px;
+    }
+
+    .centerTitle {
+        font-size: 18px;
+    }
+
+    .sideTitle {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 375px) {
+    .sideCard,
+    .centerCard {
+        height: 190px;
+    }
+}

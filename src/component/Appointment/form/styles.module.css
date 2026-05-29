@@ -1,0 +1,329 @@
+.specialist-form-section {
+  --form-heading-size: 24px;
+  --form-field-h: 60px;
+  --form-field-radius: 10px;
+  --form-field-fs: 16px;
+  --form-check-size: 16px;
+  --form-btn-h: 36px;
+  --form-btn-fs: 14px;
+
+  position: relative;
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
+  overflow: hidden;
+  color: var(--text-heading);
+  background: #ffffff;
+  font-family: var(--font-primary);
+}
+
+.form-watermark {
+  position: absolute;
+  left: -78px;
+  bottom: 50px;
+  width: 310px;
+  height: 540px;
+  /* opacity: 0.14; */
+  background: url("/assets/Appoinment/Clip path group.png") left bottom / contain no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.specialist-form {
+  max-width: var(--container2-max);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.specialist-form h1 {
+  margin: 0 0 14px;
+  color: var(--text-heading);
+  font-size: var(--form-heading-size);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 50px 24px;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.appointment-field,
+.country-code {
+  height: var(--form-field-h);
+  border: 1.5px solid #bcc9e4;
+  border-radius: var(--form-field-radius);
+  background: #ffffff;
+  color: var(--text-heading);
+}
+
+.appointment-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: var(--form-field-fs);
+  font-weight: 500;
+}
+
+.appointment-field input,
+.appointment-field select {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 10px 34px 0 16px;
+  border: 0;
+  outline: 0;
+  color: var(--text-heading);
+  background: transparent;
+  font: inherit;
+  appearance: none;
+}
+
+.appointment-field:not(.is-filled) input[type="date"],
+.appointment-field:not(.is-filled) input[type="time"] {
+  color: transparent;
+}
+
+.appointment-field input[type="date"]::-webkit-calendar-picker-indicator,
+.appointment-field input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.appointment-field select {
+  cursor: pointer;
+}
+
+.appointment-field>span {
+  position: relative;
+  z-index: 0;
+  pointer-events: none;
+  color: var(--text-muted);
+  transition: opacity 160ms ease, transform 160ms ease, font-size 160ms ease;
+}
+
+.appointment-field:focus-within>span,
+.appointment-field.is-filled>span {
+  font-size: 10px;
+  opacity: 0.72;
+  transform: translateY(-11px);
+}
+
+.form-icon {
+  position: relative;
+  z-index: 2;
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  fill: none;
+  stroke: var(--text-heading);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+  pointer-events: none;
+}
+
+.phone-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+}
+
+.country-code {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: var(--form-field-fs);
+  font-weight: 500;
+}
+
+.country-code select {
+  width: 36px;
+  border: 0;
+  outline: 0;
+  color: var(--text-heading);
+  background: transparent;
+  font: inherit;
+  appearance: none;
+  cursor: pointer;
+}
+
+.country-code .form-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.india-flag {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: linear-gradient(#ff9933 0 33.333%, #ffffff 33.333% 66.666%, #138808 66.666%);
+}
+
+.india-flag i {
+  width: 4px;
+  height: 4px;
+  border: 1px solid var(--text-heading);
+  border-radius: 50%;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-heading);
+  font-size: var(--form-field-fs);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.checkbox-row input {
+  position: relative;
+  flex: 0 0 auto;
+  width: var(--form-check-size);
+  height: var(--form-check-size);
+  margin: 0;
+  appearance: none;
+  border: 1.5px solid #bcc9e4;
+  border-radius: 5px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.checkbox-row input:checked {
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+
+.checkbox-row input:checked::after {
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  content: "";
+  border: solid #ffffff;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+.terms-row {
+  min-height: var(--form-field-h);
+}
+
+.consent-list {
+  display: grid;
+  gap: 40px;
+  padding-top: 1px;
+}
+
+.consent-long {
+  align-items: flex-start;
+}
+
+.consent-long span {
+  max-width: 360px;
+}
+
+.submit-area {
+  align-self: start;
+  padding-top: 2px;
+}
+
+.submitButton {
+  --btn-h: var(--form-btn-h);
+  --btn-icon: 38px;
+  --btn-fs: var(--form-btn-fs);
+  --btn-fw: 500;
+}
+
+.submit-area p {
+  margin: 12px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+  .form-watermark {
+    left: -68px;
+    bottom: -36px;
+    width: 248px;
+    height: 430px;
+    opacity: 0.12;
+  }
+
+  .specialist-form-section {
+    padding: 34px 16px 40px;
+  }
+
+  .specialist-form h1 {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .phone-row {
+    grid-template-columns: 92px 1fr;
+    gap: 10px;
+  }
+
+  .consent-list {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .form-watermark {
+    left: -54px;
+    bottom: -18px;
+    width: 188px;
+    height: 300px;
+    opacity: 0.1;
+  }
+
+  .specialist-form-section {
+    --form-heading-size: 13px;
+    --form-field-h: 34px;
+    --form-field-radius: 9px;
+    --form-field-fs: 11px;
+    --form-check-size: 15px;
+    --form-btn-h: 34px;
+    --form-btn-fs: 10px;
+  }
+
+  .appointment-field,
+  .country-code {
+    height: var(--form-field-h);
+    border-radius: var(--form-field-radius);
+  }
+
+  .phone-row {
+    grid-template-columns: 1fr;
+  }
+
+  .specialist-form h1 {
+    font-size: var(--form-heading-size);
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}

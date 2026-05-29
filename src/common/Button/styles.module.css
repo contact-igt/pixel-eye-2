@@ -1,0 +1,127 @@
+/* Common pill-button used across all sections
+   variant="light"  → white background  (default, matches Banner)
+   variant="dark"   → brand-blue background
+   variant="muted"  → grey/surface background
+*/
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    position: relative;
+}
+
+/* ── label pill ─────────────────────────── */
+.label {
+    height: var(--btn-h);
+    padding: 0 24px;
+    /* border-radius: var(--btn-radius) 0 0 var(--btn-radius); */
+    border-radius: 50px;
+    font-size: var(--btn-fs);
+    font-weight: var(--btn-fw);
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+    border: 1px solid transparent;
+    border-right: none;
+    transition: background 180ms ease, color 180ms ease;
+}
+
+/* ── icon circle ────────────────────────── */
+.icon {
+    width: var(--btn-icon);
+    height: var(--btn-icon);
+    margin-left: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    border: 1px solid transparent;
+    transition: background 180ms ease;
+    flex-shrink: 0;
+    position: absolute;
+    right: -36px;
+    z-index: 999;
+}
+
+.icon svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.1;
+}
+
+/* ── LIGHT variant (white bg) ───────────── */
+.light .label {
+    background: #ffffff;
+    color: var(--brand-blue);
+    border-color: var(--border-soft);
+}
+
+.light .icon {
+    background: #ffffff;
+    border-color: var(--border-soft);
+    color: #90b2cd;
+}
+
+.light:hover .label,
+.light:hover .icon {
+    background: #eef3fa;
+}
+
+.light:active .label,
+.light:active .icon {
+    background: #e7edf7;
+}
+
+/* ── MUTED variant (surface / grey bg) ──── */
+.muted .label {
+    background: #f3f4f8;
+    color: var(--brand-blue);
+    border-color: var(--border-soft);
+}
+
+.muted .icon {
+    background: #f3f4f8;
+    border-color: var(--border-soft);
+    color: var(--brand-blue);
+}
+
+.muted:hover .label,
+.muted:hover .icon {
+    background: #e9edf5;
+}
+
+.muted:active .label,
+.muted:active .icon {
+    background: #e3e9f3;
+}
+
+/* ── DARK variant (brand-blue bg) ──────── */
+.dark .label {
+    background: var(--brand-blue);
+    color: #ffffff;
+    border-color: var(--brand-blue);
+}
+
+.dark .icon {
+    background: #243f7a;
+    border-color: #243f7a;
+    color: #ffffff;
+}
+
+.dark:hover .label {
+    background: #243f7a;
+}
+
+.dark:hover .icon {
+    background: #1c3366;
+}

@@ -1,0 +1,116 @@
+:root {
+  --bg-page: #ffffff;
+  --bg-surface: #ffffff;
+  --text-heading: #293b77;
+  --text-body: #5f6f96;
+  --text-muted: #7f8eae;
+  --brand-blue: #2f4c89;
+  --brand-blue-soft: #e9f0fb;
+  --brand-gold: #d39a52;
+  --border-soft: #d6deec;
+
+  --container-max: 1400px;
+  --container2-max: 1200px;
+  --section-px: 24px;
+  --section-pt: 60px;
+  --section-pb: 60px;
+
+  --h2-size: 44px;
+  --h2-lh: 1.12;
+  --p-size: 17px;
+  --p-lh: 1.55;
+
+  --btn-h: 48px;
+  --btn-radius: 999px;
+  --btn-fs: 14px;
+  --btn-fw: 500;
+  --btn-icon: 48px;
+
+  --font-primary: "Bricolage Grotesque", sans-serif;
+  --bs-font-sans-serif: var(--font-primary);
+  --bs-body-font-family: var(--font-primary);
+}
+
+html {
+  height: 100%;
+  font-family: var(--font-primary);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-body);
+  background: var(--bg-page);
+  font-family: var(--font-primary);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --section-px: 20px;
+    --section-pt: 48px;
+    --section-pb: 48px;
+    --h2-size: 36px;
+    --p-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-px: 16px;
+    --section-pt: 40px;
+    --section-pb: 40px;
+    --h2-size: 30px;
+    --p-size: 15px;
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --section-px: 12px;
+    --section-pt: 32px;
+    --section-pb: 32px;
+    --h2-size: 26px;
+    --btn-h: 44px;
+    --btn-icon: 44px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --h2-size: 24px;
+    --p-size: 14px;
+  }
+}
