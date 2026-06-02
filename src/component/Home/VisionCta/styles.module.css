@@ -78,77 +78,101 @@
     background: #7dbdb1;
 }
 
+@media (max-width: 1200px) {
+    .image {
+        object-fit: contain !important;
+    }
+    .title{
+        max-width: 420px;
+    }
+}
+
 @media (max-width: 1024px) {
+    .title{
+        top: 60px;
+        max-width: 320px;
+        font-size: 32px;
+
+    }
     .frame {
         min-height: 340px;
     }
 
     .ctaButton {
-        left: 46px;
-        bottom: 42px;
+        left: 30px;
+        bottom: 92px;
     }
 }
 
 @media (max-width: 768px) {
     .title {
-        font-size: 28px;
+        font-size: 22px;
         line-height: 1.1;
-        top: 24px;
+        top: 95px;
         left: 20px;
-        max-width: 340px;
+        max-width: 38%;
     }
 
     .frame {
-        min-height: 300px;
+        min-height: 340px;
         border-radius: 20px;
     }
 
     .ctaButton {
-        left: 24px;
-        bottom: 22px;
+        left: 50%;
+        bottom: 0px;
+        transform: translateX(-50%);
+    }
+    .image{
+        object-fit: contain !important;
     }
 }
-
+@media (max-width: 560px) {
+        .title {
+            font-size: 18px;
+            top: 110px;
+        }
+}
 @media (max-width: 480px) {
     .title {
-        font-size: 22px;
-        top: 18px;
-        left: 16px;
-        max-width: 260px;
+        font-size: 16px;
+        top: 75px;
+        left: 5px;
+        max-width: 160px;
     }
 
     .frame {
         min-height: 250px;
         border-radius: 18px;
     }
-
+/* 
     .ctaButton {
         left: 16px;
         bottom: 16px;
-    }
+    } */
 
     .ctaLabel {
         padding: 0 18px;
         font-size: 13px;
     }
+        .ctaButton{
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 375px) {
     .title {
-        font-size: 20px;
-        max-width: 220px;
+        font-size: 13.5px;
+        max-width: 140px;
     }
 
     .frame {
         min-height: 220px;
         border-radius: 14px;
     }
-
-    .ctaButton {
-        left: 12px;
-        bottom: 12px;
+    .ctaButton{
+        white-space: nowrap;
     }
-
     .ctaLabel {
         padding: 0 14px;
         font-size: 12px;

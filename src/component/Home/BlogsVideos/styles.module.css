@@ -44,7 +44,24 @@
 
 .mediaImage {
   object-fit: contain;
-  object-position: center top;
+  object-position: left top;
+}
+
+.cardOverlayText {
+  position: absolute;
+  left: 40%;
+  right: 20%;
+  top: 10%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  color: #9eb2e5;
+  font-size: 18.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  padding: 0 45px 0 10px;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .itemTitle {
@@ -58,7 +75,7 @@
 .ctaRow {
   display: flex;
   justify-content: center;
-  margin-top: 36px;
+  margin-top: 60px;
 }
 
 .ctaButton {
@@ -107,10 +124,24 @@
 .ctaButton:active .ctaArrow {
   background: #e3e9f3;
 }
-
+@media (max-width: 1200px){
+  .cardOverlayText{
+      position: absolute;
+  left: 45%;
+  right: 20%;
+  }
+}
 @media (max-width: 991px) {
   .title {
     font-size: 30px;
+  }
+
+  .cardOverlayText {
+      left: 50%;
+  right: 10%;
+  top: -10%;
+    font-size: 16px;
+    padding: 0 30px 0 10px;
   }
 }
 
@@ -120,15 +151,27 @@
   }
 
   .grid {
-    gap: 20px 24px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .item {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .mediaWrap {
     height: 190px;
   }
 
+  .mediaImage {
+    object-position: center !important;
+  }
+
   .itemTitle {
     font-size: 16px;
+    text-align: center;
   }
 
   .title {
@@ -137,6 +180,14 @@
 
   .subtitle {
     font-size: 14px;
+  }
+
+  .cardOverlayText {
+       left: 50%;
+  right: 18%;
+  top: 10%;
+    font-size: 16px;
+    padding: 0 25px 0 8px;
   }
 }
 
@@ -171,6 +222,11 @@
   .itemTitle {
     font-size: 15px;
   }
+
+  .cardOverlayText {
+    font-size: 13px;
+    padding: 0 20px 0 5px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -180,5 +236,10 @@
 
   .itemTitle {
     font-size: 14px;
+  }
+
+  .cardOverlayText {
+    font-size: 11px;
+    padding: 0 15px 0 5px;
   }
 }

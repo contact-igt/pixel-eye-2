@@ -18,6 +18,8 @@ const TestimonialCard = ({
         if (e.key === "Enter" || e.key === " ") onClick && onClick();
       }}
     >
+      <div className={styles.activeOverlay} />
+
       <div className={styles.cardTab}>
         <span className={styles.cardName}>{name}</span>
       </div>

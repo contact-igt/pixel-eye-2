@@ -199,8 +199,7 @@
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  /* padding: 0 clamp(12px, 1.2vw, 18px); */
-    padding: 16px 24px;
+  padding: 16px 24px;
   transition: background 160ms ease;
 }
 
@@ -217,9 +216,268 @@
   background: #edf2f8;
 }
 
+/* ── Menu Button & Sidebar Styles ── */
+.menuBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--text-heading);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.menuBtn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.menuBtn:hover {
+  background: rgba(41, 59, 119, 0.08);
+}
+
+.menuBtnLight {
+  color: #ffffff;
+}
+
+.menuBtnLight:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Sidebar Drawer overlay */
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebarOverlayOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sidebar Panel */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: #1e3466; /* Deep blue theme background matching hospital theme */
+  color: #ffffff;
+  z-index: 1000;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.sidebarLight {
+  background: #ffffff;
+  color: var(--text-heading);
+  box-shadow: -10px 0 30px rgba(25, 49, 98, 0.1);
+}
+
+/* Header */
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebarLogo {
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.sidebarLight .sidebarLogo {
+  filter: none;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: currentColor;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebarLight .closeBtn:hover {
+  background: rgba(41, 59, 119, 0.08);
+}
+
+.closeBtn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Navigation Links */
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebarNavLink {
+  color: currentColor;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s;
+  text-align: left;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebarLight .sidebarNavLink {
+  border-bottom-color: var(--border-soft);
+}
+
+.sidebarNavLink:hover {
+  opacity: 0.8;
+}
+
+.sidebarNavLinkTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+
+.arrowExpanded {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Submenu inside Sidebar */
+.sidebarSubmenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 16px;
+}
+
+.sidebarSubmenuExpanded {
+  max-height: 200px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.sidebarSubmenuLink {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s;
+}
+
+.sidebarLight .sidebarSubmenuLink {
+  color: var(--text-body);
+}
+
+.sidebarSubmenuLink:hover {
+  color: #ffffff;
+}
+
+.sidebarLight .sidebarSubmenuLink:hover {
+  color: var(--text-heading);
+}
+
+.sidebarDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 12px 0;
+}
+
+.sidebarLight .sidebarDivider {
+  background: var(--border-soft);
+}
+
+/* Book Appointment Button inside Sidebar */
+.sidebarBookBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  background: var(--brand-gold, #d39a52);
+  color: #ffffff !important;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.sidebarBookBtn:hover {
+  background: #c28842;
+}
+
+@media (max-width: 992px){
+  .logo{
+    width: clamp(115px, 13.6vw, 200px);
+  }
+  .leftCard{
+    min-height: unset;
+    padding: 14px 40px 0 10px;
+  }
+  .rightCard{
+    min-height: unset;
+    padding: 8px 0 0 35px;
+  }
+}
 @media (max-width: 768px) {
   .bannerNav {
-    grid-template-columns: 164px 1fr 164px;
+    grid-template-columns: 1fr auto;
+  }
+  .logoCard{
+    align-items: center;
   }
 
   .aboutMaskedNav {
@@ -228,8 +486,8 @@
 
   .logoCard,
   .rightCard {
-    min-height: 70px;
-    padding: 10px 10px 12px;
+    min-height: 90px;
+    padding: 10px 16px 12px;
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 16px;
   }
@@ -248,8 +506,15 @@
     padding-right: 18px;
   }
 
+  .rightCard {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
   .logo {
-    width: 120px;
+    width: 135px;
   }
 
   .aboutMaskedNav .logo {
@@ -261,13 +526,11 @@
   }
 
   .nav {
-    gap: 14px;
-    padding-top: 18px;
+    display: none;
   }
 
-  .navLink {
-    font-size: 10px;
-    letter-spacing: 0.35px;
+  .menuBtn {
+    display: inline-flex;
   }
 
   .searchBtn {
@@ -298,16 +561,16 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .nav {
-    display: none;
-  }
-
   .logoCard,
   .rightCard {
     min-height: 62px;
     border-bottom-right-radius: 14px;
     border-bottom-left-radius: 14px;
-    padding: 8px 8px 10px;
+    padding: 8px 12px 10px;
+  }
+
+  .rightCard {
+    gap: 10px;
   }
 
   .aboutMaskedNav .logoCard,
@@ -337,9 +600,7 @@
   }
 
   .bookBtn {
-    min-height: 34px;
-    font-size: 9px;
-    padding: 0 8px;
+    display: none; /* Hide main header book button on tiny screens to avoid layout overflow, it's inside the sidebar drawer anyway */
   }
 
   .aboutMaskedNav .bookBtn {

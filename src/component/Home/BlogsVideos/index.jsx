@@ -25,6 +25,11 @@ const BlogsVideos = () => {
                     sizes="(max-width: 991px) 100vw, 560px"
                     className={styles.mediaImage}
                   />
+                  {item.type === "blog" && (
+                    <div className={styles.cardOverlayText}>
+                      {item.title}
+                    </div>
+                  )}
                 </div>
 
                 <h3 className={styles.itemTitle}>{item.title}</h3>
