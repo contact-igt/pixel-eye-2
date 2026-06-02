@@ -22,6 +22,7 @@ const HeroSection = () => {
       height={height}
       showOverlay={showOverlay}
       imagePosition={imagePosition}
+      variant="aboutMasked"
     />
   );
 };

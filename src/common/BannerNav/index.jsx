@@ -19,6 +19,7 @@ export default function BannerNav({
   rightSlot = "nabh",
   navTheme = "dark",
   cardBg = "transparent",
+  variant = "default",
 }) {
   const { logo, nabhBadge, navItems, servicesDropdown = [], bookAppointment } =
     NAV_CONTENT;
@@ -26,7 +27,10 @@ export default function BannerNav({
   const cardBackground = cardBg === "white" ? "#ffffff" : "transparent";
 
   return (
-    <div className={styles.bannerNav} aria-label="Site navigation">
+    <div
+      className={`${styles.bannerNav} ${variant === "aboutMasked" ? styles.aboutMaskedNav : ""}`}
+      aria-label="Site navigation"
+    >
 
       {/* ── Left: logo card ── */}
       <div className={styles.logoCard} style={{ background: cardBackground }}>
@@ -47,6 +51,11 @@ export default function BannerNav({
         className={`${styles.nav} ${isLight ? styles.navLight : ""}`}
         aria-label="Primary navigation"
       >
+        {variant === "aboutMasked" && (
+          <Link href="/" className={styles.navLink}>
+            HOME
+          </Link>
+        )}
         {navItems.map((item) =>
           item.label === "SERVICES" && servicesDropdown.length > 0 ? (
             <div key={item.id} className={styles.navItemWithMenu}>

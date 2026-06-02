@@ -5,7 +5,7 @@ export const ABOUT_CONTENT = {
     subtitle: "Personalised eye care that helps you see life, fully and with confidence.",
     rightSlot: "book",
     navTheme: "light",
-    cardBg: "white",
+    cardBg: "transparent",
     height: "medium",
     showOverlay: true,
     imagePosition: "center center",

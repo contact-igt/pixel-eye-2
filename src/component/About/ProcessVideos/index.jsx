@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
+import RevealOnView from "@/common/RevealOnView";
 import styles from "./styles.module.css";
 
 const ArrowIcon = () => (
@@ -14,7 +15,8 @@ const ProcessVideos = () => {
 
   return (
     <section className={styles.section} aria-labelledby="about-process-title">
-      <div className={styles.panel}>
+      <RevealOnView className={styles.revealShell}>
+        <div className={styles.panel}>
         <header className={styles.header}>
           <h2 id="about-process-title" className={styles.title}>
             {titleLines[0]}
@@ -25,8 +27,8 @@ const ProcessVideos = () => {
         </header>
 
         <div className={styles.grid}>
-          {videos.map((video) => (
-            <article key={video.id} className={styles.card}>
+          {videos.map((video, index) => (
+            <article key={video.id} className={styles.card} style={{ transitionDelay: `${index * 120}ms` }}>
               <img src={video.image} alt={video.title} className={styles.thumb} />
 
               <div className={styles.cardBody}>
@@ -52,7 +54,8 @@ const ProcessVideos = () => {
             </span>
           </Link>
         </div>
-      </div>
+        </div>
+      </RevealOnView>
     </section>
   );
 };

@@ -3,12 +3,24 @@
   padding: var(--about-section-space) 0;
 }
 
+.revealShell {
+  width: 100%;
+}
+
 .panel {
   width: min(1600px, calc(100% - 120px));
   margin: 0 auto;
   padding: 56px 56px 44px;
   border-radius: 24px;
   background: #e4ebf5;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+[data-visible="true"] .panel {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .header {
@@ -43,6 +55,14 @@
   border-radius: 22px;
   background: #2f4587;
   box-shadow: 0 16px 34px rgba(20, 42, 93, 0.16);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 560ms ease, transform 560ms ease;
+}
+
+[data-visible="true"] .card {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .thumb {

@@ -13,6 +13,10 @@
   align-items: start;
 }
 
+.aboutMaskedNav {
+  grid-template-columns: clamp(250px, 18vw, 350px) 1fr clamp(320px, 21vw, 430px);
+}
+
 .logoCard {
   display: flex;
   align-items: flex-start;
@@ -21,10 +25,20 @@
   padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
 }
 
+.aboutMaskedNav .logoCard {
+  align-items: flex-start;
+  min-height: clamp(132px, 8.6vw, 176px);
+  padding: clamp(34px, 2vw, 40px) 0 0 0;
+}
+
 .logo {
   display: block;
   width: clamp(130px, 13.6vw, 200px);
   height: auto;
+}
+
+.aboutMaskedNav .logo {
+  width: clamp(210px, 13.5vw, 264px);
 }
 
 /* Center: nav links + search */
@@ -155,6 +169,13 @@
   padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
 }
 
+.aboutMaskedNav .rightCard {
+  justify-content: flex-end;
+  min-height: clamp(132px, 8.6vw, 176px);
+  padding: clamp(34px, 2vw, 40px) 0 0 0;
+  transform: translateX(10px);
+}
+
 .nabhBadge {
   display: block;
   width: clamp(130px, 13.6vw, 208px);
@@ -183,6 +204,15 @@
   transition: background 160ms ease;
 }
 
+.aboutMaskedNav .bookBtn {
+  width: clamp(286px, 18vw, 356px);
+  min-height: clamp(54px, 3.4vw, 68px);
+  border-radius: 12px;
+  font-size: clamp(12px, 0.82vw, 15px);
+  letter-spacing: 0.75px;
+  padding: 0 clamp(18px, 2vw, 34px);
+}
+
 .bookBtn:hover {
   background: #edf2f8;
 }
@@ -190,6 +220,10 @@
 @media (max-width: 768px) {
   .bannerNav {
     grid-template-columns: 164px 1fr 164px;
+  }
+
+  .aboutMaskedNav {
+    grid-template-columns: 190px 1fr 190px;
   }
 
   .logoCard,
@@ -200,8 +234,26 @@
     border-bottom-left-radius: 16px;
   }
 
+  .aboutMaskedNav .logoCard,
+  .aboutMaskedNav .rightCard {
+    min-height: 82px;
+    padding-top: 24px;
+  }
+
+  .aboutMaskedNav .logoCard {
+    padding-left: 20px;
+  }
+
+  .aboutMaskedNav .rightCard {
+    padding-right: 18px;
+  }
+
   .logo {
     width: 120px;
+  }
+
+  .aboutMaskedNav .logo {
+    width: 142px;
   }
 
   .nabhBadge {
@@ -227,10 +279,22 @@
     min-height: 36px;
     font-size: 10px;
   }
+
+  .aboutMaskedNav .bookBtn {
+    width: 150px;
+    min-height: 36px;
+    font-size: 9px;
+    letter-spacing: 0.35px;
+    padding: 0 8px;
+  }
 }
 
 @media (max-width: 480px) {
   .bannerNav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .aboutMaskedNav {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -246,7 +310,25 @@
     padding: 8px 8px 10px;
   }
 
+  .aboutMaskedNav .logoCard,
+  .aboutMaskedNav .rightCard {
+    min-height: 62px;
+    padding-top: 14px;
+  }
+
+  .aboutMaskedNav .logoCard {
+    padding-left: 10px;
+  }
+
+  .aboutMaskedNav .rightCard {
+    padding-right: 10px;
+  }
+
   .logo {
+    width: 108px;
+  }
+
+  .aboutMaskedNav .logo {
     width: 108px;
   }
 
@@ -258,5 +340,13 @@
     min-height: 34px;
     font-size: 9px;
     padding: 0 8px;
+  }
+
+  .aboutMaskedNav .bookBtn {
+    width: 118px;
+    min-height: 30px;
+    font-size: 8px;
+    letter-spacing: 0.2px;
+    padding: 0 6px;
   }
 }
