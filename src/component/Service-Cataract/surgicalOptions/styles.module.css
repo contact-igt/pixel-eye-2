@@ -1,0 +1,156 @@
+.surgical-options,
+.surgical-options * {
+    box-sizing: border-box;
+}
+
+.surgical-options {
+    width: 100%;
+    padding: 40px 0;
+    background: #eaf3f9;
+    color: var(--text-heading, #16325c);
+    margin-bottom: 92px;
+}
+
+.surgical-options__inner {
+    display: grid;
+    grid-template-columns: minmax(260px, 40%) minmax(320px, 55%);
+    column-gap: 56px;
+    align-items: start;
+    width: calc(100% - 230px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.surgical-options__left h2 {
+    margin: 0;
+    color: var(--text-heading, #16325c);
+    font-size: clamp(34px, 4.3vw, 48px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.surgical-options__left p {
+    margin-top: 24px;
+    color: var(--text-body, #53658a);
+    font-size: var(--p-size, 16px);
+    line-height: 1.4;
+    max-width: 540px;
+}
+
+.surgical-options__right {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: flex-end;
+}
+
+.surgical-options__card {
+    width: min(535px, 100%);
+    display: block;
+    position: relative;
+}
+
+.surgical-options__media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+.surgical-options__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 
+.surgical-options__play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(22, 50, 92, 0.8);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+} */
+
+/* .surgical-options__play-triangle {
+    width: 0;
+    height: 0;
+    border-left: 12px solid #ffffff;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    margin-left: 4px;
+} */
+
+.surgical-options__card-title {
+    margin-top: 12px;
+    padding-left: 18px;
+    color: rgba(42, 60, 125, 0.9);
+    font-size: 18px;
+    background: transparent;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+@media (max-width: 1180px) {
+    .surgical-options__inner {
+        width: calc(100% - 48px);
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .surgical-options__inner {
+        width: min(1600px, calc(100% - 64px));
+    }
+}
+
+@media (max-width: 768px) {
+    .surgical-options__inner {
+        width: min(1600px, calc(100% - 40px));
+    }
+
+    .surgical-options {
+        margin-bottom: 64px;
+    }
+
+    .surgical-options__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .surgical-options__right {
+        align-items: stretch;
+    }
+
+    .surgical-options__img {
+        height: 180px;
+    }
+
+    .surgical-options__card-title {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 430px) {
+    .surgical-options {
+        width: min(1600px, calc(100% - 28px));
+    }
+
+    .surgical-options__img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 375px) {
+    .surgical-options__img {
+        height: 130px;
+    }
+}

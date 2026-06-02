@@ -1,0 +1,275 @@
+.section {
+  width: 100%;
+  padding: var(--about-section-space) 0;
+}
+
+.panel {
+  width: min(1600px, calc(100% - 120px));
+  margin: 0 auto;
+  padding: 56px 56px 44px;
+  border-radius: 24px;
+  background: #e4ebf5;
+}
+
+.header {
+  margin-bottom: 36px;
+}
+
+.title {
+  margin: 0;
+  color: #2e4587;
+  font-size: var(--h2-size);
+  font-weight: 400;
+  line-height: var(--h2-lh);
+}
+
+.description {
+  margin: 20px 0 0;
+  width: min(760px, 100%);
+  color: #5d71a0;
+  font-size: var(--p-size);
+  font-weight: 400;
+  line-height: var(--p-lh);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: #2f4587;
+  box-shadow: 0 16px 34px rgba(20, 42, 93, 0.16);
+}
+
+.thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.cardBody {
+  padding: 20px 20px 18px;
+}
+
+.cardTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(20px, 1.5vw, 24px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.cardText {
+  margin: 12px 0 0;
+  color: rgba(231, 239, 255, 0.95);
+  font-size: clamp(14px, 1.1vw, 17px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.watchBtn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.watchLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(241, 246, 255, 0.85);
+  border-radius: 999px;
+  color: #f6fbff;
+  font-size: var(--btn-fs);
+  font-weight: var(--btn-fw);
+  line-height: 1;
+}
+
+.watchIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: -1px;
+  border: 1px solid rgba(241, 246, 255, 0.85);
+  border-radius: 50%;
+  color: #f6fbff;
+}
+
+.watchIcon svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.exploreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.exploreBtn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.exploreLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 34px;
+  border: 1.5px solid #2f4587;
+  border-radius: 999px;
+  color: #2f4587;
+  background: #eef3fa;
+  font-size: var(--btn-fs);
+  font-weight: var(--btn-fw);
+  line-height: 1;
+}
+
+.exploreIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-left: -1px;
+  border: 1.5px solid #2f4587;
+  border-radius: 50%;
+  color: #2f4587;
+  background: #eef3fa;
+}
+
+.exploreIcon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 1500px) {
+  .panel {
+    padding: 42px 36px 36px;
+  }
+
+  .cardTitle {
+    font-size: clamp(20px, 1.45vw, 22px);
+  }
+
+  .cardText {
+    font-size: clamp(14px, 1.05vw, 16px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .panel {
+    width: min(1600px, calc(100% - 64px));
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .panel {
+    width: min(1600px, calc(100% - 40px));
+    padding: 30px 16px 24px;
+    border-radius: 18px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: clamp(28px, 8.5vw, 34px);
+  }
+
+  .description {
+    margin-top: 14px;
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    border-radius: 16px;
+  }
+
+  .cardBody {
+    padding: 14px 14px 16px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .cardText {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .watchLabel {
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
+  .watchIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .watchIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .exploreWrap {
+    margin-top: 20px;
+  }
+
+  .exploreLabel {
+    min-height: 44px;
+    padding: 0 22px;
+    font-size: 16px;
+  }
+
+  .exploreIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .exploreIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .panel {
+    width: min(1600px, calc(100% - 28px));
+  }
+}

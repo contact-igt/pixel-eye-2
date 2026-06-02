@@ -14,19 +14,22 @@ const SearchIcon = () => (
  * rightSlot — "nabh" | "book"
  * navTheme  — "dark" | "light"
  * cardBg    — "white" | "transparent"
- *             white       → logo card + right card have white background (appointment, service)
- *             transparent → no card background (home page)
  */
-export default function BannerNav({ rightSlot = "nabh", navTheme = "dark", cardBg = "white" }) {
-  const { logo, nabhBadge, navItems, bookAppointment } = NAV_CONTENT;
+export default function BannerNav({
+  rightSlot = "nabh",
+  navTheme = "dark",
+  cardBg = "transparent",
+}) {
+  const { logo, nabhBadge, navItems, servicesDropdown = [], bookAppointment } =
+    NAV_CONTENT;
   const isLight = navTheme === "light";
-  const bg = cardBg === "white" ? "#ffffff" : "transparent";
+  const cardBackground = cardBg === "white" ? "#ffffff" : "transparent";
 
   return (
     <div className={styles.bannerNav} aria-label="Site navigation">
 
       {/* ── Left: logo card ── */}
-      <div className={styles.logoCard} >
+      <div className={styles.logoCard} style={{ background: cardBackground }}>
         <Link href="/" aria-label={logo.alt}>
           <Image
             src={logo.src}
@@ -44,18 +47,33 @@ export default function BannerNav({ rightSlot = "nabh", navTheme = "dark", cardB
         className={`${styles.nav} ${isLight ? styles.navLight : ""}`}
         aria-label="Primary navigation"
       >
-        {navItems.map((item) => (
-          <Link key={item.id} href={item.href} className={styles.navLink}>
-            {item.label}
-          </Link>
-        ))}
+        {navItems.map((item) =>
+          item.label === "SERVICES" && servicesDropdown.length > 0 ? (
+            <div key={item.id} className={styles.navItemWithMenu}>
+              <Link href={item.href} className={`${styles.navLink} ${styles.navLinkTrigger}`}>
+                {item.label}
+              </Link>
+              <div className={styles.dropdownMenu} role="menu" aria-label="Services submenu">
+                {servicesDropdown.map((service) => (
+                  <Link key={service.id} href={service.href} className={styles.dropdownLink}>
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <Link key={item.id} href={item.href} className={styles.navLink}>
+              {item.label}
+            </Link>
+          ),
+        )}
         <button type="button" className={styles.searchBtn} aria-label="Search">
           <SearchIcon />
         </button>
       </nav>
 
       {/* ── Right: NABH badge or Book Appointment ── */}
-      <div className={styles.rightCard} >
+      <div className={styles.rightCard} style={{ background: cardBackground }}>
         {rightSlot === "nabh" ? (
           <Image
             src={nabhBadge.src}

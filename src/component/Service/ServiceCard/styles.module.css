@@ -1,0 +1,130 @@
+.section {
+  padding: 24px 0;
+  background: var(--surface-white);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr) auto;
+  column-gap: clamp(44px, 6vw, 128px);
+  align-items: start;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: clamp(58px, 6vw, 92px) clamp(24px, 4vw, 78px);
+  border-radius: var(--radius-card-lg);
+  background: var(--surface-light-blue);
+  overflow: hidden;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-heading);
+  font-size: var(--h2-size);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.details {
+  color: var(--text-body);
+}
+
+.details p {
+  margin: 0;
+  font-size: var(--p-size);
+  font-weight: 400;
+  line-height: var(--p-lh);
+}
+
+.ctaWrap {
+  margin-top: 32px;
+}
+
+.linkCta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 47px;
+  color: var(--text-heading);
+  text-decoration: none;
+}
+
+.linkCta span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 47px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--text-heading);
+  font-size: var(--btn-fs);
+  font-weight: var(--btn-fw);
+  line-height: 1;
+}
+
+.linkCta i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 47px;
+  margin-left: -1px;
+  border-radius: 50%;
+  border: 1px solid var(--text-heading);
+}
+
+.linkCta svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.imageWrap {
+  width: min(406px, 100%);
+}
+
+.image {
+  display: block;
+  width: 406px;
+  height: 203px;
+  max-width: 100%;
+  border-radius: var(--radius-input);
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    grid-template-columns: minmax(170px, 220px) minmax(0, 1fr) auto;
+    column-gap: clamp(30px, 4vw, 68px);
+  }
+}
+
+@media (max-width: 1080px) {
+  .card {
+    grid-template-columns: 1fr;
+    row-gap: 26px;
+    padding: 56px;
+  }
+
+  .image {
+    width: min(406px, 100%);
+    height: auto;
+    aspect-ratio: 406 / 203;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 12px 0 20px;
+  }
+
+  .card {
+    width: calc(100% - 24px);
+    margin: 0 auto;
+    padding: 34px 24px;
+    border-radius: 28px;
+  }
+}

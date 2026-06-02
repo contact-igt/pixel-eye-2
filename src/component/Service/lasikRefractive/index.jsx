@@ -5,6 +5,7 @@ const Refractive = () => {
   return (
     <section
       className={styles["refractive-service"]}
+      id="lasik-refractive-surgery"
       aria-labelledby="refractive-service-title"
     >
       <div className={styles["refractive-service__card"]}>
@@ -26,7 +27,7 @@ const Refractive = () => {
           <div style={{ marginTop: "32px" }}>
             <Button
               label="Explore More"
-              href="/services/lasik-refractive-surgery"
+              href="/service#lasik-refractive-surgery"
               variant="muted"
             />
           </div>

@@ -1,9 +1,9 @@
 .statsSection {
-  padding: 60px 0px;
+  padding: var(--section-pt) 0 var(--section-pb);
 }
 
 .statsFrame {
-  /* max-width: var(--container-max); */
+  max-width: var(--container-max);
   margin: 0 auto;
   background: #ffffff;
   border-radius: 18px;

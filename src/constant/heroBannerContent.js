@@ -1,6 +1,6 @@
 export const HERO_BANNER_CONTENT = {
   appointment: {
-    image: "/assets/Appoinment/Mask group (15).png",
+    image: "/assets/Appointment/Mask group (15).png",
     title: "Schedule The Care Your Eyes Deserve",
     subtitle: "Tell us your concern or select your preferred specialist",
     rightSlot: "nabh",

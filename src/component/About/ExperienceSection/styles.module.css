@@ -1,0 +1,141 @@
+.section {
+  width: 100%;
+  padding: var(--about-section-space) 0;
+}
+
+.inner {
+  width: min(1600px, calc(100% - 120px));
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.title {
+  margin: 0;
+  color: #2f4b8b;
+  font-size: var(--title-size);
+  font-weight: 400;
+  line-height: var(--title-lh);
+}
+
+.subtitle {
+  margin: 18px 0 0;
+  color: #5f6f96;
+  font-size: var(--paragraph-size);
+  font-weight: 500;
+  line-height: var(--paragraph-lh);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 390px 1fr;
+  gap: 58px;
+  align-items: start;
+}
+
+.imageWrap {
+  position: relative;
+  width: 390px;
+  height: 484px;
+}
+
+/* .backAccent {
+  position: absolute;
+  right: -16px;
+  top: 30px;
+  width: 82px;
+  height: 192px;
+  border-radius: 8px;
+  background: #f0f5ff;
+} */
+
+.image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.frontAccent {
+position: absolute;
+    right: -28px;
+    bottom: 24px;
+    width: 605px;
+    height: 300px;
+    border-radius: 8px;
+    background: #f0f5ff;
+}
+
+.copy {
+  margin-top: 22px;
+  color: #5f6f96;
+  font-size: var(--paragraph-size);
+  font-weight: 400;
+  line-height: var(--paragraph-lh);
+}
+
+.careContainer {
+  max-width: var(--container2-max);
+  margin: 0 auto;
+}
+
+.copy p {
+  margin: 0 0 24px;
+}
+
+.copy p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    grid-template-columns: 340px 1fr;
+    gap: 44px;
+  }
+
+  .imageWrap {
+    width: 340px;
+    height: 422px;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .imageWrap {
+    width: min(390px, 100%);
+    height: auto;
+    aspect-ratio: 390 / 484;
+  }
+
+  .copy {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    width: min(1600px, calc(100% - 64px));
+  }
+}
+
+@media (max-width: 768px) {
+  .inner {
+    width: min(1600px, calc(100% - 40px));
+  }
+}
+
+@media (max-width: 430px) {
+  .inner {
+    width: min(1600px, calc(100% - 28px));
+  }
+}

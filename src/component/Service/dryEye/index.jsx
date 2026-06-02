@@ -1,9 +1,11 @@
+import Link from "next/link";
 import styles from "./styles.module.css";
 
 const DryEye = () => {
   return (
     <section
       className={styles["dry-eye-service"]}
+      id="dry-eye-treatment"
       aria-labelledby="dry-eye-service-title"
     >
       <div className={styles["dry-eye-service__card"]}>
@@ -22,9 +24,9 @@ const DryEye = () => {
             where tear quality is affected, leading to discomfort and irritation
           </p>
 
-          <a
+          <Link
             className={styles["dry-eye-service__link"]}
-            href="/services/dry-eye-treatment"
+            href="/service#dry-eye-treatment"
           >
             <span>Explore More</span>
             <i aria-hidden="true">
@@ -33,7 +35,7 @@ const DryEye = () => {
                 <path d="M9 7h8v8" />
               </svg>
             </i>
-          </a>
+          </Link>
         </div>
 
         <img

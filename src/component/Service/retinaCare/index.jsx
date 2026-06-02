@@ -1,9 +1,11 @@
+import Link from "next/link";
 import styles from "./styles.module.css";
 
 const Retina = () => {
   return (
     <section
       className={styles["retina-service"]}
+      id="retina-care"
       aria-labelledby="retina-service-title"
     >
       <div className={styles["retina-service__card"]}>
@@ -23,7 +25,7 @@ const Retina = () => {
             impact vision.
           </p>
 
-          <a className={styles["retina-service__link"]} href="/services/retina-care">
+          <Link className={styles["retina-service__link"]} href="/service#retina-care">
             <span>Explore More</span>
             <i aria-hidden="true">
               <svg viewBox="0 0 24 24">
@@ -31,7 +33,7 @@ const Retina = () => {
                 <path d="M9 7h8v8" />
               </svg>
             </i>
-          </a>
+          </Link>
         </div>
 
         <img

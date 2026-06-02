@@ -94,7 +94,7 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Appointment form data:", formData);
+    // TODO: wire this form to the backend appointment API.
     setSubmitted(true);
   };
 

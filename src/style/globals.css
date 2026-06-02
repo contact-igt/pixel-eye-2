@@ -1,6 +1,17 @@
 :root {
-  --bg-page: #ffffff;
-  --bg-surface: #ffffff;
+  --surface-white: #ffffff;
+  --surface-light-blue: #edf4ff;
+  --surface-soft-blue: #e4ebf5;
+  --surface-dark-blue: #2f4587;
+
+  --radius-hero: 20px;
+  --radius-card-lg: 36px;
+  --radius-card-md: 18px;
+  --radius-input: 10px;
+  --radius-pill: 999px;
+
+  --bg-page: var(--surface-white);
+  --bg-surface: var(--surface-white);
   --text-heading: #293b77;
   --text-body: #5f6f96;
   --text-muted: #7f8eae;
@@ -19,9 +30,19 @@
   --h2-lh: 1.12;
   --p-size: 17px;
   --p-lh: 1.55;
+  --title-size: var(--h2-size);
+  --title-lh: var(--h2-lh);
+  --paragraph-size: var(--p-size);
+  --paragraph-lh: var(--p-lh);
+
+  --hero-title-size: 54px;
+  --hero-title-lh: 1.25;
+  --hero-paragraph-size: 19px;
+  --hero-paragraph-lh: 1.45;
+  --about-section-space: 40px;
 
   --btn-h: 48px;
-  --btn-radius: 999px;
+  --btn-radius: var(--radius-pill);
   --btn-fs: 14px;
   --btn-fw: 500;
   --btn-icon: 48px;
@@ -84,6 +105,9 @@ textarea {
     --section-pb: 48px;
     --h2-size: 36px;
     --p-size: 16px;
+    --hero-title-size: 44px;
+    --hero-paragraph-size: 17px;
+    --about-section-space: 34px;
   }
 }
 
@@ -94,6 +118,9 @@ textarea {
     --section-pb: 40px;
     --h2-size: 30px;
     --p-size: 15px;
+    --hero-title-size: 34px;
+    --hero-paragraph-size: 15px;
+    --about-section-space: 28px;
   }
 }
 
@@ -103,6 +130,9 @@ textarea {
     --section-pt: 32px;
     --section-pb: 32px;
     --h2-size: 26px;
+    --hero-title-size: 28px;
+    --hero-paragraph-size: 14px;
+    --about-section-space: 22px;
     --btn-h: 44px;
     --btn-icon: 44px;
   }

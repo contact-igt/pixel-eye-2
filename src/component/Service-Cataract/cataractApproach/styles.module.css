@@ -1,0 +1,115 @@
+.cataract-approach,
+.cataract-approach * {
+    box-sizing: border-box;
+}
+
+.cataract-approach {
+    width: 100%;
+    background: #ffffff;
+    padding: 48px 0;
+}
+
+.cataract-approach__inner {
+    display: grid;
+    grid-template-columns: 42% 55%;
+    column-gap: 48px;
+    align-items: start;
+    width: calc(100% - 230px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cataract-approach__media {
+    border-radius: var(--radius-card-lg, 20px);
+    overflow: hidden;
+}
+
+.cataract-approach__img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+}
+
+.cataract-approach__copy h2 {
+    margin: 0 0 18px 0;
+    color: var(--text-heading, #16325c);
+    font-size: var(--h2-size, 48px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.cataract-approach__p {
+    margin: 0 0 18px 0;
+    color: var(--text-body, #53658a);
+    font-size: var(--p-size, 16px);
+    line-height: 1.5;
+}
+
+.cataract-approach__outcomes {
+    list-style: none;
+    margin: 0 0 18px 0;
+    padding: 0;
+}
+
+.cataract-approach__outcome {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.cataract-approach__outcome-label {
+    color: rgba(42, 60, 125, 0.9);
+    font-weight: 500;
+    min-width: 28px;
+}
+
+.cataract-approach__outcome-text {
+    color: var(--text-body, #53658a);
+}
+
+@media (max-width: 1024px) {
+    .cataract-approach__inner {
+        width: min(1600px, calc(100% - 64px));
+        grid-template-columns: 1fr;
+    }
+
+    .cataract-approach__img {
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cataract-approach__inner {
+        width: min(1600px, calc(100% - 40px));
+    }
+
+    .cataract-approach__img {
+        height: 320px;
+    }
+
+    .cataract-approach__copy h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 430px) {
+    .cataract-approach__inner {
+        width: min(1600px, calc(100% - 28px));
+    }
+
+    .cataract-approach__img {
+        height: 240px;
+    }
+
+    .cataract-approach__copy h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 375px) {
+    .cataract-approach__img {
+        height: 220px;
+    }
+}

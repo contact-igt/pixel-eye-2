@@ -1,9 +1,11 @@
+import Link from "next/link";
 import styles from "./styles.module.css";
 
 const Squint = () => {
   return (
     <section
       className={styles["squint-service"]}
+      id="squint-treatment"
       aria-labelledby="squint-service-title"
     >
       <div className={styles["squint-service__card"]}>
@@ -23,9 +25,9 @@ const Squint = () => {
             condition.
           </p>
 
-          <a
+          <Link
             className={styles["squint-service__link"]}
-            href="/services/squint-treatment"
+            href="/service#squint-treatment"
           >
             <span>Explore More</span>
             <i aria-hidden="true">
@@ -34,7 +36,7 @@ const Squint = () => {
                 <path d="M9 7h8v8" />
               </svg>
             </i>
-          </a>
+          </Link>
         </div>
 
         <img

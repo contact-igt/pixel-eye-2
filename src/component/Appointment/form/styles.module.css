@@ -22,7 +22,7 @@
   width: 310px;
   height: 540px;
   /* opacity: 0.14; */
-  background: url("/assets/Appoinment/Clip path group.png") left bottom / contain no-repeat;
+  background: url("/assets/Appointment/Clip path group.png") left bottom / contain no-repeat;
   z-index: 0;
   pointer-events: none;
 }

@@ -1,4 +1,4 @@
-export const FOOTER_CONTENT = {
+﻿export const FOOTER_CONTENT = {
   brand: {
     logo: "/assets/Footer/brandlogo-white.png",
     alt: "Pixel Eye Hospital",
@@ -50,3 +50,5 @@ export const FOOTER_CONTENT = {
   copyright:
     "© 2023 Pixel Eye Hospital (a unit of Blue Eye Care Services Pvt Ltd.). All Rights Reserved.",
 };
+
+

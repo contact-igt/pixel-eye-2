@@ -4,7 +4,7 @@ import Footer from "@/common/Footer";
 import styles from "./styles.module.css";
 
 // These pages have nav integrated inside their hero banner — skip the layout Navbar
-const PAGES_WITH_OWN_NAV = ["/", "/appointment", "/service"];
+const PAGES_WITH_OWN_NAV = ["/", "/about", "/appointment", "/service", "/service/cataract"];
 
 export default function Layout({ children }) {
   const { pathname } = useRouter();
