@@ -56,14 +56,18 @@ export const HOME_CONTENT = {
         id: 1,
         number: "01",
         title: "Cataract Care & Lens Surgery",
-        image: "/assets/Home/caare1.png",
+        image: "/assets/Home/care1.png",
+        imageHover: "/assets/Home/care1_hover.png",
+        description:
+          "Advanced micro-incision cataract surgery (MICS) and premium lens implants (IOL) to restore clear, sharp vision.",
         href: "#",
       },
       {
         id: 2,
         number: "02",
         title: "LASIK & Refractive Surgery",
-        image: "/assets/Home/care2.png",
+        image: "/assets/Home/caree2.png",
+        imageHover: "/assets/Home/care2-hover.png",
         description:
           "Laser vision correction including LASIK, SMILE, and PRK for myopia, hyperopia, and astigmatism with high-precision platforms.",
         href: "#",
@@ -73,6 +77,7 @@ export const HOME_CONTENT = {
         number: "03",
         title: "Retina & Glaucoma Services",
         image: "/assets/Home/care3.png",
+        imageHover: "/assets/Home/care3-hover.png",
         description:
           "Diagnostic imaging, laser procedures, and VEGF therapy, and surgical management for retinal and glaucoma conditions.",
         href: "#",
@@ -145,7 +150,7 @@ export const HOME_CONTENT = {
       "Whether it's a routine exam or a complex surgery, our team ensures you feel comfortable, informed, and supported. Every plan is personalised, every decision is transparent, and every step is designed to help you see life with clarity and confidence.",
     ],
     image: {
-      src: "/assets/Home/care-experience.png",
+      src: "/assets/Home/care-experience1.png",
       alt: "Patient receiving eye exam",
     },
   },
@@ -236,7 +241,7 @@ export const HOME_CONTENT = {
         type: "blog",
         badge: "Blog",
         image: "/assets/Home/blog2.png",
-        title: "Advanced Eye Diagnostics for Better Vision Care",
+        title: "LASIK VS SMILE Choosing the Right Vision Correction",
       },
       {
         id: 3,

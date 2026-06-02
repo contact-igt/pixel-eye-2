@@ -12,9 +12,17 @@ export const NAV_CONTENT = {
     height: 182,
   },
   navItems: [
+    { id: 0, label: "HOME", href: "/" },
     { id: 1, label: "ABOUT US", href: "/about" },
     { id: 2, label: "SERVICES", href: "/service" },
     { id: 3, label: "APPOINTMENT", href: "/appointment" },
+  ],
+  servicesDropdown: [
+    {
+      id: "service-cataract",
+      label: "Cataract Service",
+      href: "/service/cataract",
+    },
   ],
   bookAppointment: {
     label: "BOOK APPOINTMENT",

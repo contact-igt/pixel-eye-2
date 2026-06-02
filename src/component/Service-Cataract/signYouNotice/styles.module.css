@@ -1,0 +1,346 @@
+.cataract-signs,
+.cataract-signs * {
+  box-sizing: border-box;
+}
+
+.cataract-signs {
+  width: min(1640px, calc(100% - 230px));
+  margin: 0 auto 92px;
+  color: #273979;
+  font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
+}
+
+.cataract-signs__header h2 {
+  margin: 0;
+  color: #273979;
+  font-size: clamp(42px, 4.3vw, 58px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.cataract-signs__header p {
+  width: min(39vw, 714px);
+  margin: 44px 0 0;
+  color: rgba(42, 60, 125, 0.82);
+  font-size: clamp(18px, 1.39vw, 20px);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.cataract-signs__body {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(400px, 508px) minmax(560px, 760px);
+  column-gap: 118px;
+  align-items: center;
+  margin-top: 93px;
+}
+
+.cataract-signs__image {
+  display: block;
+  width: 508px;
+  height: 432px;
+  border-radius: 36px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cataract-signs__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 282px;
+  padding: 0 54px 0 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scrollbar-color: #76a7c6 #e5f1f7;
+  scrollbar-width: thin;
+}
+
+.cataract-signs__list:focus {
+  outline: none;
+}
+
+.cataract-signs__list:focus-visible {
+  outline: 2px solid rgba(39, 57, 121, 0.3);
+  outline-offset: 8px;
+}
+
+.cataract-signs__list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cataract-signs__list::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: #e5f1f7;
+}
+
+.cataract-signs__list::-webkit-scrollbar-thumb {
+  min-height: 142px;
+  border-radius: 999px;
+  background: #76a7c6;
+}
+
+.cataract-signs__item {
+  flex: 0 0 132px;
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: 76px 1px 1fr;
+  column-gap: 48px;
+  align-items: center;
+  min-height: 132px;
+  padding: 0 58px 0 58px;
+  border-radius: 0 22px 22px 0;
+  background: #ecf4f9;
+  color: rgba(42, 60, 125, 0.48);
+  transition: background-color 280ms ease, color 280ms ease, border-radius 280ms ease;
+}
+
+.cataract-signs__item:first-child {
+  border-radius: 22px;
+}
+
+.cataract-signs__item.is-active {
+  min-height: 132px;
+  margin-left: -34px;
+  padding-left: 58px;
+  border-radius: 28px;
+  background: #dbeaf2;
+  color: #273979;
+}
+
+.cataract-signs__number {
+  display: block;
+  color: currentColor;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.cataract-signs__item.is-active .cataract-signs__number {
+  font-size: 58px;
+}
+
+.cataract-signs__divider {
+  width: 1px;
+  height: 55px;
+  background: rgba(42, 60, 125, 0.25);
+}
+
+.cataract-signs__item p {
+  margin: 0;
+  color: currentColor;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.cataract-signs__item.is-active p {
+  font-size: 17px;
+}
+
+@media (max-width: 1180px) {
+  .cataract-signs {
+    width: calc(100% - 48px);
+  }
+
+  .cataract-signs__header p {
+    width: min(714px, 100%);
+  }
+
+  .cataract-signs__body {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .cataract-signs__image {
+    width: min(638px, 100%);
+    height: auto;
+    aspect-ratio: 638 / 482;
+  }
+
+  .cataract-signs__item,
+  .cataract-signs__item.is-active {
+    margin-left: 0;
+  }
+
+  .cataract-signs__list {
+    width: min(760px, 100%);
+    height: 282px;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cataract-signs {
+    width: calc(100% - 32px);
+    margin-bottom: 50px;
+  }
+
+  .cataract-signs__header h2 {
+    font-size: 40px;
+  }
+
+  .cataract-signs__header p {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .cataract-signs__body {
+    margin-top: 44px;
+  }
+
+  .cataract-signs__item,
+  .cataract-signs__item.is-active {
+    grid-template-columns: 72px 1px 1fr;
+    column-gap: 18px;
+    min-height: 100px;
+    padding: 0 18px;
+    border-radius: 20px;
+  }
+
+  .cataract-signs__number,
+  .cataract-signs__item.is-active .cataract-signs__number {
+    font-size: 38px;
+  }
+
+  .cataract-signs__item p,
+  .cataract-signs__item.is-active p {
+    font-size: 18px;
+  }
+
+  .cataract-signs__list {
+    max-height: none;
+    height: auto;
+    padding-right: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cataract-signs {
+    width: min(1600px, calc(100% - 64px));
+  }
+
+  .cataract-signs__header p {
+    width: min(100%, 760px);
+  }
+
+  .cataract-signs__body {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    column-gap: 0;
+  }
+
+  .cataract-signs__image {
+    width: min(640px, 100%);
+    height: auto;
+    aspect-ratio: 508 / 432;
+  }
+
+  .cataract-signs__item,
+  .cataract-signs__item.is-active {
+    margin-left: 0;
+  }
+
+  .cataract-signs__list {
+    max-height: none;
+    height: auto;
+    padding-right: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cataract-signs {
+    width: min(1600px, calc(100% - 40px));
+    margin-bottom: 64px;
+  }
+
+  .cataract-signs__body {
+    margin-top: 54px;
+    row-gap: 22px;
+  }
+
+  .cataract-signs__item,
+  .cataract-signs__item.is-active {
+    grid-template-columns: 64px 1px 1fr;
+    column-gap: 16px;
+    min-height: 102px;
+    padding: 0 20px;
+    border-radius: 20px;
+  }
+
+  .cataract-signs__number,
+  .cataract-signs__item.is-active .cataract-signs__number {
+    font-size: 44px;
+  }
+
+  .cataract-signs__item p,
+  .cataract-signs__item.is-active p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 430px) {
+  .cataract-signs {
+    width: min(1600px, calc(100% - 28px));
+    margin-bottom: 50px;
+  }
+
+  .cataract-signs__header p {
+    margin-top: 24px;
+    line-height: 1.2;
+  }
+
+  .cataract-signs__body {
+    margin-top: 40px;
+    row-gap: 16px;
+  }
+
+  .cataract-signs__item,
+  .cataract-signs__item.is-active {
+    grid-template-columns: 58px 1px 1fr;
+    column-gap: 12px;
+    min-height: 88px;
+    padding: 0 14px;
+    border-radius: 16px;
+  }
+
+  .cataract-signs__number,
+  .cataract-signs__item.is-active .cataract-signs__number {
+    font-size: 34px;
+  }
+
+  .cataract-signs__item p,
+  .cataract-signs__item.is-active p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cataract-signs {
+    width: min(1600px, calc(100% - 24px));
+  }
+
+  .cataract-signs__item,
+  .cataract-signs__item.is-active {
+    grid-template-columns: 50px 1px 1fr;
+    column-gap: 10px;
+    padding: 0 12px;
+  }
+
+  .cataract-signs__number,
+  .cataract-signs__item.is-active .cataract-signs__number {
+    font-size: 30px;
+  }
+}

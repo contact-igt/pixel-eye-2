@@ -1,6 +1,6 @@
 export const HERO_BANNER_CONTENT = {
   appointment: {
-    image: "/assets/Appoinment/Mask group (15).png",
+    image: "/assets/Appointment/Mask group (15).png",
     title: "Schedule The Care Your Eyes Deserve",
     subtitle: "Tell us your concern or select your preferred specialist",
     rightSlot: "nabh",
@@ -15,7 +15,7 @@ export const HERO_BANNER_CONTENT = {
     title: "",
     subtitle: "",
     rightSlot: "book",
-    navTheme: "dark", // dark nav text — service image is bright/light
+    navTheme: "light", // dark nav text — service image is bright/light
     cardBg: "transparent", // transparent logo/right card background
     height: "medium", // was "short" — increased to match reference height
     showOverlay: false, // no overlay — service image is clean and bright

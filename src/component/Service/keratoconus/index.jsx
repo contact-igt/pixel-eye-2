@@ -1,9 +1,11 @@
+import Link from "next/link";
 import styles from "./styles.module.css";
 
-const Keratoconous = () => {
+const Keratoconus = () => {
   return (
     <section
       className={styles["keratoconus-service"]}
+      id="keratoconus-treatment"
       aria-labelledby="keratoconus-service-title"
     >
       <div className={styles["keratoconus-service__card"]}>
@@ -22,9 +24,9 @@ const Keratoconous = () => {
             affecting how light is focused, leading to blurred vision.
           </p>
 
-          <a
+          <Link
             className={styles["keratoconus-service__link"]}
-            href="/services/keratoconus-treatment"
+            href="/service#keratoconus-treatment"
           >
             <span>Explore More</span>
             <i aria-hidden="true">
@@ -33,7 +35,7 @@ const Keratoconous = () => {
                 <path d="M9 7h8v8" />
               </svg>
             </i>
-          </a>
+          </Link>
         </div>
 
         <img
@@ -46,4 +48,4 @@ const Keratoconous = () => {
   );
 };
 
-export default Keratoconous;
+export default Keratoconus;

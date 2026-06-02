@@ -12,7 +12,7 @@
   position: relative;
   border-radius: 30px;
   padding: 40px 28px 36px;
-  background: linear-gradient(175deg, #f8fbff 0%, #eaf2fc 40%, #cfe2f8 100%);
+  background: linear-gradient(90deg, #e3effd 0%, #f6faff 50%, #e3effd 100%);
   border: 2px solid #c9d6ee;
   overflow: hidden;
   min-height: 360px;
@@ -31,15 +31,15 @@
 
 /* ── Mosaic — absolute, full width ─────────── */
 .mosaicWrap {
-    position: absolute;
-    /* height: 100%; */
-    width: 100%;
-    left: 10px;
-    top: 0;
-    padding: 10px;
-    right: 0;
-    bottom: 300px;
-    color: transparent;
+  position: absolute;
+  /* height: 100%; */
+  width: 100%;
+  left: 10px;
+  top: 0;
+  padding: 10px;
+  right: 0;
+  bottom: 300px;
+  color: transparent;
 }
 
 .mosaic {
@@ -71,39 +71,65 @@
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 14px;
-  align-items: stretch;
+  display: block;
+}
+
+.cards :global(.slick-list) {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  margin-top: -15px;
+  margin-bottom: -15px;
 }
 
 /* ── Individual card ────────────────────────── */
 .card {
-  min-height: 200px;
-  background: #ffffff;
-  border-radius: 14px;
-  border: 1px solid #c4d5f3;
-  padding: 48px 14px 16px;
+  min-height: 240px;
+  background-image: url('/assets/Home/testimonialcard.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  margin: 0 8px;
+  padding: 56px 20px 20px 20px;
   position: relative;
   cursor: pointer;
-  transition: border-color 220ms ease, background 220ms ease, transform 220ms ease;
+  transition: transform 0.5s ease-in-out;
 }
 
-.card:hover {
-  transform: translateY(-3px);
-  border-color: #aac1ea;
+.card.active {
+  transform: scale(1.03) !important;
+}
+
+.activeOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/Home/testimonialcard_overlay.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card.active .activeOverlay {
+  opacity: 1;
 }
 
 .cardTab {
   position: absolute;
-  top: -1px;
-  left: 50%;
-  transform: translate(-50%, -56%);
-  white-space: nowrap;
-  background: #eef4fc;
-  border-radius: 12px;
-  border: 1px solid #c4d5f3;
-  padding: 6px 18px;
+  top: 10px;
+  right: 28px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transform: none;
+  left: auto;
+  z-index: 2;
 }
 
 .cardName {
@@ -121,6 +147,8 @@
   border-radius: 6px;
   border: 1px solid #d2dff5;
   background: #e8eef9;
+  position: relative;
+  z-index: 2;
 }
 
 .star {
@@ -131,6 +159,8 @@
 
 .cardBody {
   margin-top: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .text {
@@ -140,10 +170,7 @@
   line-height: 1.55;
 }
 
-.active {
-  background: #dce8f9;
-  border-color: #b2c7ed;
-}
+
 
 /* ── Dots ────────────────────────────────────── */
 .dots {
@@ -237,18 +264,6 @@
     font-size: 18px;
   }
 
-  .cards {
-    display: flex;
-    overflow-x: auto;
-    padding: 6px 6px 10px 2px;
-    scroll-snap-type: x mandatory;
-  }
-
-  .card {
-    min-width: 220px;
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-  }
 }
 
 @media (max-width: 480px) {
@@ -277,7 +292,6 @@
   }
 
   .card {
-    min-width: 200px;
     padding: 44px 12px 14px;
   }
 

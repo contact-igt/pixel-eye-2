@@ -3,14 +3,26 @@
   padding: clamp(20px, 3vw, 36px);
 }
 
+.aboutMaskedSection {
+   padding: clamp(20px, 3vw, 36px);
+}
+
 /* â”€â”€ Rounded banner card â”€â”€ */
 .bannerFrame {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
   height: auto;
-  /* min-height: clamp(500px, 60vh, 670px); */
+  /* Provide a consistent default banner height so copy positions stay stable */
+  min-height: clamp(360px, 48vh, 640px);
   /* no background — image fills the frame */
+}
+
+.aboutMaskedFrame {
+  max-width: 1924px;
+  margin: 0 auto;
+  overflow: visible;
+  border-radius: 0;
 }
 
 /* Short variant (compact pages) */
@@ -20,16 +32,33 @@
 
 /* ── Background image — fills entire frame ── */
 .image {
-
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  /* Make images fill the banner consistently and crop to fit */
+  object-fit: cover;
   /* object-position comes from inline style (imagePosition prop) */
 
 }
 
-/* Left-side gradient — only rendered when showOverlay=true */
+.aboutMaskedFrame .image {
+  height: auto;
+  object-fit: cover;
+}
 
+/* Slightly offset hero copy on masked-about variant to match wider horizontal padding */
+.aboutMaskedSection .copy {
+  left: clamp(48px, 6vw, 96px);
+}
+
+/* Left-side gradient — only rendered when showOverlay=true */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: transparent;
+}
 
 /* ── Hero copy ── */
 .copy {
@@ -44,18 +73,18 @@
 .title {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(32px, 3.5vw, 54px);
+  font-size: var(--hero-title-size);
   font-weight: 300;
-  line-height: 1.25;
+  line-height: var(--hero-title-lh);
   font-family: var(--font-primary);
 }
 
 .subtitle {
   margin: clamp(14px, 1.2vw, 20px) 0 0;
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(15px, 1.2vw, 19px);
+  font-size: var(--hero-paragraph-size);
   font-weight: 300;
-  line-height: 1.45;
+  line-height: var(--hero-paragraph-lh);
   font-family: var(--font-primary);
   max-width: min(400px, 100%);
 }
@@ -66,9 +95,18 @@
     padding: 12px;
   }
 
+  .aboutMaskedSection {
+    padding: 10px 18px 48px;
+  }
+
   .bannerFrame {
     min-height: clamp(400px, 50vw, 520px);
     border-radius: clamp(20px, 3vw, 32px);
+  }
+
+  .aboutMaskedFrame {
+    min-height: auto;
+    border-radius: 0;
   }
 
   .frameShort {
@@ -82,12 +120,12 @@
   }
 
   .title {
-    font-size: clamp(24px, 5vw, 34px);
+    font-size: var(--hero-title-size);
   }
 
   .subtitle {
     max-width: 100%;
-    font-size: clamp(13px, 2.5vw, 15px);
+    font-size: var(--hero-paragraph-size);
   }
 }
 
@@ -96,9 +134,18 @@
     padding: 8px;
   }
 
+  .aboutMaskedSection {
+    padding: 8px 10px 38px;
+  }
+
   .bannerFrame {
     min-height: 300px;
     border-radius: 12px;
+  }
+
+  .aboutMaskedFrame {
+    min-height: auto;
+    border-radius: 0;
   }
 
   .frameShort {
@@ -112,10 +159,10 @@
   }
 
   .title {
-    font-size: 21px;
+    font-size: var(--hero-title-size);
   }
 
   .subtitle {
-    font-size: 13px;
+    font-size: var(--hero-paragraph-size);
   }
 }

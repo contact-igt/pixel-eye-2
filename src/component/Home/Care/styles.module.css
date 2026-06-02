@@ -39,6 +39,19 @@
   gap: var(--card-gap);
   justify-content: center;
   align-items: start;
+  transition: grid-template-columns 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activeRow1 {
+  grid-template-columns: var(--center-card-width) var(--side-card-width) var(--side-card-width);
+}
+
+.activeRow2 {
+  grid-template-columns: var(--side-card-width) var(--center-card-width) var(--side-card-width);
+}
+
+.activeRow3 {
+  grid-template-columns: var(--side-card-width) var(--side-card-width) var(--center-card-width);
 }
 
 .card {
@@ -46,6 +59,7 @@
   overflow: hidden;
   border-radius: 18px;
   isolation: isolate;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sideCard {
@@ -60,6 +74,26 @@
 
 .cardImage {
   object-fit: cover;
+  object-position: right top;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.defaultImage {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hoverImage {
+  opacity: 0;
+  z-index: 2;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
 }
 
 .cardTitle {
@@ -73,6 +107,7 @@
   line-height: 1.25;
   font-weight: 500;
   z-index: 4;
+  transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .centerTitle {
@@ -85,13 +120,17 @@
   padding-bottom: 80px;
 }
 
+
 .sideWrap {
   align-self: start;
   margin-top: 18px;
+  transition: margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .centerWrap {
   align-self: start;
+  margin-top: 0;
+  transition: margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cardDescription {
@@ -106,6 +145,14 @@
   line-height: 1.45;
   font-weight: 400;
   z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease, visibility 250ms ease;
+}
+
+.descriptionVisible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .ctaButton {
@@ -159,8 +206,22 @@
 .ctaButton:active .ctaArrow {
   background: #e8eef8;
 }
+  .cardsRow .cardWrap:nth-child(1) .centerTitle{
+    bottom: 30px;
+  }
+    .cardWrap:nth-child(1){
+      padding-bottom: 55px;
+    }
 
 @media (max-width: 1399px) {
+
+  /* .cardTitle{
+    bottom: 50px;
+  } */
+  .cardWrap {
+    padding-bottom: 60px;
+  }
+
   .careVisual {
     --side-card-width: 280px;
     --center-card-width: 350px;
@@ -177,7 +238,25 @@
 
   .cardDescription {
     font-size: 13px;
+    padding-top: 4px
   }
+
+  .centerTitle {
+    bottom: 20px;
+  }
+  .cardsRow .cardWrap:nth-child(1) .centerTitle{
+    bottom: 50px;
+  }
+
+  .cardsRow .cardWrap:nth-child(3) .centerTitle {
+    bottom: 60px;
+  }
+  .cardWrap:nth-child(1){
+    padding-bottom: 35px;
+  }
+.cardWrap:nth-child(3) {
+  padding-bottom: 25px;
+}
 }
 
 @media (max-width: 1024px) {
@@ -188,10 +267,10 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .careVisual {
     min-height: auto;
-    padding: 20px 0 16px;
+    /* padding: 20px 0 16px; */
   }
 
   .panelBg {
@@ -200,7 +279,7 @@
   }
 
   .cardsRow {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 20px;
     justify-items: center;
   }
@@ -232,14 +311,22 @@
     right: auto;
     padding-top: 10px;
     font-size: 14px;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .ctaButton {
     position: relative;
-    right: auto;
+    left: 35%;
     bottom: auto;
     margin: 18px auto 0;
     width: fit-content;
+  }
+}
+
+@media (max-width:768px) {
+  .ctaButton {
+    left: 28%;
   }
 }
 
@@ -258,7 +345,7 @@
   }
 
   .centerCard {
-    height: 420px;
+    height: 550px;
   }
 
   .cardTitle {
@@ -271,6 +358,10 @@
   .panelBg {
     top: 110px;
     border-radius: 16px;
+  }
+
+  .ctaButton {
+    left: 2%;
   }
 }
 

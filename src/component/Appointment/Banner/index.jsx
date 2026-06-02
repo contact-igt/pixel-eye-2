@@ -9,7 +9,7 @@ const AppointmentBanner = () => {
       <div className={styles.bannerPanel} aria-hidden="true">
         <img
           className={styles.bannerImage}
-          src="/assets/Appoinment/Mask group (15).png"
+          src="/assets/Appointment/Mask group (15).png"
           alt=""
         />
       </div>

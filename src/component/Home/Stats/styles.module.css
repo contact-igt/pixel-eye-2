@@ -1,14 +1,15 @@
 .statsSection {
-  padding: 60px 0px;
+  padding: var(--section-pt) 0 var(--section-pb);
 }
 
 .statsFrame {
-  /* max-width: var(--container-max); */
+  max-width: var(--container-max);
   margin: 0 auto;
   background: #ffffff;
   border-radius: 18px;
   padding: 30px 18px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
@@ -62,15 +63,20 @@
     gap: 18px 10px;
     padding: 24px 16px;
   }
-
+  .statLabel{
+    max-width: unset;
+    width: 100%;
+  }
   .statGroup {
     width: calc(50% - 6px);
     flex: unset;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .statItem {
     gap: 14px;
+    flex-direction: column;
+    text-align: center;
   }
 
   .divider {

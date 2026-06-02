@@ -5,6 +5,7 @@ const RefractiveError = () => {
   return (
     <section
       className={styles["refractive-error"]}
+      id="refractive-error-management"
       aria-labelledby="refractive-error-title"
     >
       <div className={styles["refractive-error__card"]}>
@@ -26,7 +27,7 @@ const RefractiveError = () => {
           <div style={{ marginTop: "32px" }}>
             <Button
               label="Explore More"
-              href="/services/refractive-error-management"
+              href="/service#refractive-error-management"
               variant="muted"
             />
           </div>

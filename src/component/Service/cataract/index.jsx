@@ -5,6 +5,7 @@ const Cataract = () => {
   return (
     <section
       className={styles["cataract-service"]}
+      id="cataract"
       aria-labelledby="cataract-service-title"
     >
       <div className={styles["cataract-service__card"]}>
@@ -24,7 +25,7 @@ const Cataract = () => {
           <div style={{ marginTop: "32px" }}>
             <Button
               label="Explore More"
-              href="/services/cataract"
+              href="/service#cataract"
               variant="muted"
             />
           </div>

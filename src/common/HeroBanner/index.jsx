@@ -25,10 +25,17 @@ export default function HeroBanner({
   height = "medium",
   showOverlay = true,
   imagePosition = "center 30%",
+  variant = "default",
 }) {
+  const isAboutMasked = variant === "aboutMasked";
+
   return (
-    <section className={styles.heroSection}>
-      <div className={`${styles.bannerFrame} ${height === "short" ? styles.frameShort : ""}`}>
+    <section className={`${styles.heroSection} ${isAboutMasked ? styles.aboutMaskedSection : ""}`}>
+      <div
+        className={`${styles.bannerFrame} ${height === "short" ? styles.frameShort : ""} ${
+          isAboutMasked ? styles.aboutMaskedFrame : ""
+        }`}
+      >
 
         {/* Background image */}
         <img
@@ -43,7 +50,12 @@ export default function HeroBanner({
         {showOverlay && <div className={styles.overlay} aria-hidden="true" />}
 
         {/* Shared nav header */}
-        <BannerNav rightSlot={rightSlot} navTheme={navTheme} cardBg={cardBg} />
+        <BannerNav
+          rightSlot={rightSlot}
+          navTheme={navTheme}
+          cardBg={cardBg}
+          variant={isAboutMasked ? "aboutMasked" : "default"}
+        />
 
         {/* Hero text (optional) */}
         {(title || subtitle) && (
