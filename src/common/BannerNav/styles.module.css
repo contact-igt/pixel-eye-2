@@ -8,12 +8,26 @@
   left: 0;
   right: 0;
   z-index: 10;
+}
+
+.inner {
+  margin: 0 auto;
+  width: 100%;
   display: grid;
   grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(200px, 22vw, 320px);
   align-items: start;
+  padding: 0px;
 }
 
-.aboutMaskedNav {
+
+/* margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(200px, 22vw, 320px);
+    align-items: start;
+    /* padding: 0 clamp(12px, 2vw, 24px); */
+
+.aboutMaskedNav .inner {
   grid-template-columns: clamp(250px, 18vw, 350px) 1fr clamp(320px, 21vw, 430px);
 }
 
@@ -28,7 +42,7 @@
 .aboutMaskedNav .logoCard {
   align-items: flex-start;
   min-height: clamp(132px, 8.6vw, 176px);
-  padding: clamp(34px, 2vw, 40px) 0 0 0;
+  /* padding: clamp(34px, 2vw, 40px) 0 0 0; */
 }
 
 .logo {
@@ -38,7 +52,7 @@
 }
 
 .aboutMaskedNav .logo {
-  width: clamp(210px, 13.5vw, 264px);
+  width: clamp(130px, 13.6vw, 200px);
 }
 
 /* Center: nav links + search */
@@ -172,7 +186,7 @@
 .aboutMaskedNav .rightCard {
   justify-content: flex-end;
   min-height: clamp(132px, 8.6vw, 176px);
-  padding: clamp(34px, 2vw, 40px) 0 0 0;
+  /* padding: clamp(34px, 2vw, 40px) 0 0 0; */
   transform: translateX(10px);
 }
 
@@ -199,6 +213,7 @@
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
+  /* padding: 0 clamp(12px, 2vw, 18px); */
   padding: 16px 24px;
   transition: background 160ms ease;
 }
@@ -275,7 +290,8 @@
   bottom: 0;
   width: 320px;
   max-width: 85vw;
-  background: #1e3466; /* Deep blue theme background matching hospital theme */
+  background: #1e3466;
+  /* Deep blue theme background matching hospital theme */
   color: #ffffff;
   z-index: 1000;
   padding: 24px;
@@ -459,28 +475,28 @@
   background: #c28842;
 }
 
-@media (max-width: 992px){
-  .logo{
+@media (max-width: 992px) {
+  .logo {
     width: clamp(115px, 13.6vw, 200px);
   }
-  .leftCard{
+
+  .leftCard {
     min-height: unset;
     padding: 14px 40px 0 10px;
   }
-  .rightCard{
+
+  .rightCard {
     min-height: unset;
     padding: 8px 0 0 35px;
   }
 }
+
 @media (max-width: 768px) {
-  .bannerNav {
-    grid-template-columns: 1fr auto;
-  }
-  .logoCard{
-    align-items: center;
+  .inner {
+    grid-template-columns: 164px 1fr 164px;
   }
 
-  .aboutMaskedNav {
+  .aboutMaskedNav .inner {
     grid-template-columns: 190px 1fr 190px;
   }
 
@@ -490,6 +506,7 @@
     padding: 10px 16px 12px;
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 16px;
+    align-items: center;
   }
 
   .aboutMaskedNav .logoCard,
@@ -553,11 +570,11 @@
 }
 
 @media (max-width: 480px) {
-  .bannerNav {
+  .inner {
     grid-template-columns: 1fr 1fr;
   }
 
-  .aboutMaskedNav {
+  .aboutMaskedNav .inner {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -600,7 +617,8 @@
   }
 
   .bookBtn {
-    display: none; /* Hide main header book button on tiny screens to avoid layout overflow, it's inside the sidebar drawer anyway */
+    display: none;
+    /* Hide main header book button on tiny screens to avoid layout overflow, it's inside the sidebar drawer anyway */
   }
 
   .aboutMaskedNav .bookBtn {
@@ -609,5 +627,170 @@
     font-size: 8px;
     letter-spacing: 0.2px;
     padding: 0 6px;
+  }
+}
+
+/* ----------------------------- */
+/* Mobile menu / sidebar styles  */
+/* ----------------------------- */
+.menuBtn {
+  display: none;
+  border: 0;
+  background: transparent;
+  padding: 6px;
+  margin-left: 8px;
+  cursor: pointer;
+  color: var(--text-heading);
+}
+
+.menuBtn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.menuBtnLight {
+  color: #ffffff;
+}
+
+.sidebarOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease, visibility 200ms ease;
+  z-index: 50;
+}
+
+.sidebarOverlayOpen {
+  opacity: 0.48;
+  background: rgba(0, 0, 0, 0.48);
+  visibility: visible;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(92vw, 360px);
+  background: #ffffff;
+  transform: translateX(110%);
+  transition: transform 260ms ease;
+  z-index: 60;
+  box-shadow: -12px 0 30px rgba(8, 20, 40, 0.12);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 18px;
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.sidebarLight {
+  background: #ffffff;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.sidebarLogo {
+  display: block;
+  width: 120px;
+  height: auto;
+}
+
+.closeBtn {
+  border: 0;
+  background: transparent;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.sidebarNavLink,
+.sidebarNavLinkTrigger {
+  display: block;
+  padding: 12px 8px;
+  color: var(--text-heading);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sidebarNavItemWithMenu {
+  display: block;
+}
+
+.sidebarSubmenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 220ms ease;
+  padding-left: 8px;
+}
+
+.sidebarSubmenuExpanded {
+  max-height: 800px;
+}
+
+.sidebarSubmenuLink {
+  display: block;
+  padding: 8px 8px;
+  color: var(--text-heading);
+  text-decoration: none;
+}
+
+.sidebarDivider {
+  height: 1px;
+  background: var(--border-soft);
+  margin: 14px 0;
+}
+
+.sidebarBookBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1.5px solid #7fa8be;
+  border-radius: 10px;
+  color: var(--text-heading);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 180ms ease;
+}
+
+.arrowExpanded {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .menuBtn {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 769px) {
+
+  .sidebar,
+  .sidebarOverlay {
+    display: none;
   }
 }

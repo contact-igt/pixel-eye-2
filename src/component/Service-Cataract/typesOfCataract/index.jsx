@@ -1,8 +1,28 @@
+import { useState } from "react";
+import Image from "next/image";
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import styles from "./styles.module.css";
 
 const TypesOfCataract = () => {
   const { types } = SERVICE_CATARACT_CONTENT;
+  const slides =
+    types.slides ?? [types.items.left, types.items.main, types.items.right];
+  const [activeIndex, setActiveIndex] = useState(1);
+
+  const getSlide = (offset) =>
+    slides[(activeIndex + offset + slides.length) % slides.length];
+
+  const previousSlide = () => {
+    setActiveIndex((current) => (current - 1 + slides.length) % slides.length);
+  };
+
+  const nextSlide = () => {
+    setActiveIndex((current) => (current + 1) % slides.length);
+  };
+
+  const leftSlide = getSlide(-1);
+  const activeSlide = getSlide(0);
+  const rightSlide = getSlide(1);
 
   return (
     <section className={styles["types-cataract"]} aria-labelledby="types-cataract-title">
@@ -16,25 +36,35 @@ const TypesOfCataract = () => {
           className={styles["types-cataract__arrow"]}
           type="button"
           aria-label={types.controls.previousAriaLabel}
+          onClick={previousSlide}
         >
           <span aria-hidden="true">&lsaquo;</span>
         </button>
 
         <article className={`${styles["types-cataract__item"]} ${styles["types-cataract__item--side"]}`}>
-          <img src={types.items.left.image} alt={types.items.left.alt} />
-          <h3>{types.items.left.title}</h3>
+          <Image src={leftSlide.image} alt={leftSlide.alt} width={282} height={225} />
+          <h3>{leftSlide.title}</h3>
         </article>
 
-        <article className={`${styles["types-cataract__item"]} ${styles["types-cataract__item--main"]}`}>
-          <img src={types.items.main.image} alt={types.items.main.alt} />
+        <article
+          className={`${styles["types-cataract__item"]} ${styles["types-cataract__item--main"]}`}
+          aria-live="polite"
+        >
+          <Image src={activeSlide.image} alt={activeSlide.alt} width={474} height={381} priority />
+          <h3>{activeSlide.title}</h3>
         </article>
 
         <article className={`${styles["types-cataract__item"]} ${styles["types-cataract__item--side"]}`}>
-          <img src={types.items.right.image} alt={types.items.right.alt} />
-          <h3>{types.items.right.title}</h3>
+          <Image src={rightSlide.image} alt={rightSlide.alt} width={282} height={225} />
+          <h3>{rightSlide.title}</h3>
         </article>
 
-        <button className={styles["types-cataract__arrow"]} type="button" aria-label={types.controls.nextAriaLabel}>
+        <button
+          className={styles["types-cataract__arrow"]}
+          type="button"
+          aria-label={types.controls.nextAriaLabel}
+          onClick={nextSlide}
+        >
           <span aria-hidden="true">&rsaquo;</span>
         </button>
       </div>

@@ -81,6 +81,28 @@ export const SERVICE_CATARACT_CONTENT = {
       previousAriaLabel: "Previous cataract type",
       nextAriaLabel: "Next cataract type",
     },
+    slides: [
+      {
+        id: "intumescent-cataract",
+        title: "Intumescent cataract",
+        image:
+          "/assets/Service/cataract/Gemini_Generated_Image_1k7a4b1k7a4b1k7a 1.png",
+        alt: "Intumescent cataract eye",
+      },
+      {
+        id: "cortical-cataract",
+        title: "Cortical cataract",
+        image: "/assets/Service/cataract/Frame 282.png",
+        alt: "Cortical cataract eye",
+      },
+      {
+        id: "traumatic-cataract",
+        title: "Traumatic cataract",
+        image:
+          "/assets/Service/cataract/Gemini_Generated_Image_fbhk0efbhk0efbhk 1.png",
+        alt: "Traumatic cataract eye",
+      },
+    ],
     items: {
       left: {
         title: "Intumescent cataract",
@@ -257,6 +279,85 @@ export const SERVICE_CATARACT_CONTENT = {
         question: "How much does a cataract surgery cost in Hyderabad, India?",
         answer:
           "Costs vary depending on the hospital, surgeon, surgical technique, and lens choice (standard vs premium). Contact Pixel Eye Hospital for a personalised quote that includes pre-op tests, the procedure, and follow-ups.",
+      },
+    ],
+  },
+
+  patientsExperience: {
+    title: "Patient experiences",
+    description:
+      "From patients who have already taken their first step toward clearer vision.",
+    testimonials: [
+      {
+        id: "patient-experience-1",
+        text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
+        name: "S. Ramesh",
+        rating: "4.5",
+        profileImage: {
+          src: "/assets/About/cardimg1.png",
+          alt: "Patient profile image 1",
+        },
+      },
+      {
+        id: "patient-experience-2",
+        text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
+        name: "S. Ramesh",
+        rating: "4.5",
+        profileImage: {
+          src: "/assets/About/cardimg2.png",
+          alt: "Patient profile image 2",
+        },
+      },
+      {
+        id: "patient-experience-3",
+        text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
+        name: "S. Ramesh",
+        rating: "4.5",
+        profileImage: {
+          src: "/assets/About/cardimg3.png",
+          alt: "Patient profile image 3",
+        },
+      },
+    ],
+  },
+
+  rememberRecommend: {
+    titleLines: ["patient experiences"],
+    description:
+      "From patients who have already taken their first step forward clearer vision.",
+    testimonials: [
+      {
+        id: "remember-1",
+        text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
+        name: "S. Ramesh",
+        rating: "4.5",
+        profileImage: {
+          src: "/assets/About/cardimg1.png",
+          alt: "Patient profile image 1",
+        },
+        backgroundImage: "/assets/About/remembercard.png",
+      },
+      {
+        id: "remember-2",
+        text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
+        name: "S. Ramesh",
+        rating: "4.5",
+        profileImage: {
+          src: "/assets/About/cardimg2.png",
+          alt: "Patient profile image 2",
+        },
+        backgroundImage: "/assets/About/remembercard.png",
+      },
+      {
+        id: "remember-3",
+        text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
+        name: "S. Ramesh",
+        rating: "4.5",
+        profileImage: {
+          src: "/assets/About/cardimg3.png",
+          alt: "Patient profile image 3",
+        },
+        backgroundImage: "/assets/About/remembercard.png",
       },
     ],
   },

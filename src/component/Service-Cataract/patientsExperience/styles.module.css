@@ -38,20 +38,20 @@
 
 .card {
   position: relative;
-  min-height: 300px;
+  min-height: 372px;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   border-radius: var(--radius-card-lg);
   overflow: hidden;
-  padding: 55px 42px;
+  padding: 38px 42px;
 }
 
 .quoteMark {
   display: block;
   color: rgba(255, 255, 255, 0.82);
-  font-size: clamp(100px, 6.4vw, 96px);
-  line-height:10px;
+  font-size: clamp(72px, 5.4vw, 96px);
+  line-height: 0.75;
   font-weight: 600;
 }
 
@@ -59,24 +59,24 @@
   margin: 30px 0 0;
   max-width: 90%;
   color: #4f6495;
-  font-size: clamp(18px, 0.45vw, 36px);
+  font-size: clamp(20px, 1.45vw, 36px);
   line-height: 1.28;
   font-weight: 400;
 }
 
 .patientBlock {
   position: absolute;
-  left: 65px;
+  left: 42px;
   right: 42px;
-  bottom: 0px;
+  bottom: 16px;
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
 .avatarWrap {
-  width: 60px;
-  height: 60px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -98,7 +98,7 @@
 .name {
   margin: 0;
   color: var(--text-heading);
-  font-size: clamp(19px, 0.9vw, 46px);
+  font-size: clamp(26px, 1.9vw, 46px);
   line-height: 1.1;
   font-weight: 500;
 }
@@ -111,13 +111,13 @@
 
 .star {
   color: var(--brand-gold);
-  font-size: clamp(20px, 0.9vw, 34px);
+  font-size: clamp(24px, 1.6vw, 34px);
   line-height: 1;
 }
 
 .rating {
   color: var(--text-heading);
-  font-size: clamp(19px, 0.45vw, 30px);
+  font-size: clamp(22px, 1.45vw, 30px);
   line-height: 1;
   font-weight: 500;
 }

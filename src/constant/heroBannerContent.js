@@ -15,7 +15,7 @@ export const HERO_BANNER_CONTENT = {
     title: "",
     subtitle: "",
     rightSlot: "book",
-    navTheme: "dark", // dark nav text — service image is bright/light
+    navTheme: "light", // dark nav text — service image is bright/light
     cardBg: "transparent", // transparent logo/right card background
     height: "medium", // was "short" — increased to match reference height
     showOverlay: false, // no overlay — service image is clean and bright

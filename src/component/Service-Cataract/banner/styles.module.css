@@ -105,7 +105,7 @@
   min-height: min(33.5vw, 603px);
   padding: clamp(2px, 1.95vw, 35px);
   border-radius: 36px;
-  background: #ffffff;
+  /* background: #ffffff; */
   position:relative;
 }
 
