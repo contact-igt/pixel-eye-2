@@ -3,6 +3,8 @@
   background: #ffffff;
   color: var(--text-heading);
   font-family: var(--font-primary);
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .clear-way__inner {
@@ -41,8 +43,21 @@
 }
 
 @media (max-width: 980px) {
+  .clear-way{
+    padding-top: 0px;
+  }
   .clear-way__inner {
     grid-template-columns: 1fr;
     row-gap: 28px;
+  }
+
+  .clear-way__title br {
+    display: none;
+  }
+}
+
+@media (max-width: 980px) {
+    .clear-way{
+    padding-top: var(--section-pt);
   }
 }

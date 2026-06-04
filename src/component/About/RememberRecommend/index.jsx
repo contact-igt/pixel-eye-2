@@ -24,11 +24,18 @@ const RememberRecommend = () => {
               className={styles.card}
               style={{ backgroundImage: `url(${item.backgroundImage})` }}
             >
-              <span className={styles.quoteMark} aria-hidden="true">
-                &ldquo;
-              </span>
+              <div className={styles.cardContent}>
+                <Image 
+                  src="/assets/Service/cataract/quote.png"
+                  alt="quote icon"
+                  width={34}
+                  height={24}
+                  className={styles.quoteImg}
+                  aria-hidden="true"
+                />
 
-              <p className={styles.cardText}>{item.text}</p>
+                <p className={styles.cardText}>{item.text}</p>
+              </div>
 
               <div className={styles.patientBlock}>
                 <div className={styles.avatarWrap}>

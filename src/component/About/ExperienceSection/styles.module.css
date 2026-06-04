@@ -91,7 +91,12 @@ position: absolute;
 .copy p:last-child {
   margin-bottom: 0;
 }
-
+@media (max-width: 1300px){
+  .section{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 @media (max-width: 1200px) {
   .content {
     grid-template-columns: 340px 1fr;
@@ -104,7 +109,14 @@ position: absolute;
   }
 
 }
-
+@media (max-width:992px){
+  .copy p{
+    margin: 0 0 15px
+  }
+  .imageWrap{
+    margin-top: 30px;
+  }
+}
 @media (max-width: 900px) {
   .content {
     grid-template-columns: 1fr;
@@ -132,6 +144,7 @@ position: absolute;
   .inner {
     width: min(1600px, calc(100% - 40px));
   }
+
 }
 
 @media (max-width: 430px) {

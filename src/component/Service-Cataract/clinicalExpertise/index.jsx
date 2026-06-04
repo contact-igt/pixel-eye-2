@@ -21,12 +21,14 @@ const ClinicalExpertise = () => {
         </div>
 
         <div className={styles["clinical-expertise__card"]}>
-          <img
-            src={cardBgSrc}
-            alt={cardBgAlt}
-            className={styles["clinical-expertise__card-bg"]}
-            aria-hidden="true"
-          />
+          <div className={styles["clinical-expertise__card-bg-wrapper"]}>
+            <img
+              src={cardBgSrc}
+              alt={cardBgAlt}
+              className={styles["clinical-expertise__card-bg"]}
+              aria-hidden="true"
+            />
+          </div>
 
           <div className={styles["clinical-expertise__card-body"]}>
             <div className={styles["clinical-expertise__text"]}>

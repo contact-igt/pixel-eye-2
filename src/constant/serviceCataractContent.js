@@ -92,7 +92,7 @@ export const SERVICE_CATARACT_CONTENT = {
       {
         id: "cortical-cataract",
         title: "Cortical cataract",
-        image: "/assets/Service/cataract/Frame 282.png",
+        image: "/assets/Service/cataract/cortical.png",
         alt: "Cortical cataract eye",
       },
       {
@@ -111,7 +111,7 @@ export const SERVICE_CATARACT_CONTENT = {
         alt: "Intumescent cataract eye",
       },
       main: {
-        image: "/assets/Service/cataract/Frame 282.png",
+        image: "/assets/Service/cataract/cortical_main.png",
         alt: "Cortical cataract eye",
       },
       right: {
@@ -201,7 +201,7 @@ export const SERVICE_CATARACT_CONTENT = {
       "Cataract care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced",
     cardBg: "/assets/Service/cataract/clinicbg.png",
     cardBgAlt: "Pixel Eye clinic background",
-    doctorImage: "/assets/Home/specialist1.png",
+    doctorImage: "/assets/Home/Dr. Abdul rasheed.png",
     doctorImageAlt: "Dr. Abdul Rasheed",
     doctorName: "Dr. Abdul Rasheed",
     doctorDescription:

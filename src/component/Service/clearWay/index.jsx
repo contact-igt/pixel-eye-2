@@ -5,11 +5,7 @@ const ClearWay = () => {
     <section className={styles["clear-way"]} aria-labelledby="clear-way-title">
       <div className={styles["clear-way__inner"]}>
         <h1 id="clear-way-title" className={styles["clear-way__title"]}>
-          A clearer way
-          <br />
-          to care for
-          <br />
-          your vision
+          A clearer way to care for your vision
         </h1>
 
         <div

@@ -211,7 +211,7 @@
   }
 
   .mediaSection {
-    height: 520px;
+    height: 720px;
   }
 
   .image {
@@ -224,6 +224,15 @@
 
   .contentSection {
     padding: 32px 30px;
+  }
+  .name{
+    font-size: 35px;
+  }
+  .degree{
+    font-size: 25px;
+  }
+  .spec{
+    font-size: 18px;
   }
 }
 
@@ -239,7 +248,7 @@
   }
 
   .mediaSection {
-    height: 420px;
+    height: 480px;
     border-radius: 18px;
   }
 
@@ -249,7 +258,13 @@
     border-radius: 0 18px 18px 18px;
     padding: 14px 14px 16px;
   }
-
+  .infoPanel{
+    right: -4rem;
+    top: -10px;
+  }
+  .infoPanelRight{
+    width: 45%;
+  }
   .rowReverse .image {
     width: min(72%, 360px);
   }
@@ -258,13 +273,14 @@
     border-radius: 18px 0 18px 18px;
   }
 
-  .name {
-    font-size: 17px;
+    .name{
+    font-size: 25px;
   }
-
-  .degree,
-  .spec {
-    font-size: 12px;
+  .degree{
+    font-size: 18px;
+  }
+  .spec{
+    font-size: 16px;
   }
 
   .contentSection {
@@ -281,9 +297,39 @@
     margin: 40px 0;
   }
 }
-
+@media (max-width: 576px) {
+    .infoPanel{
+    right: -3rem;
+    top: 0px;
+  }
+      .name{
+    font-size: 20px;
+  }
+  .degree{
+    font-size: 16px;
+  }
+  .spec{
+    font-size: 14px;
+  }
+}
 @media (max-width: 430px) {
   .inner {
     width: min(1600px, calc(100% - 28px));
+  }
+    .mediaSection {
+    height: 400px;
+}
+    .infoPanel{
+    right: -2.4rem;
+    top: -5px;
+  }
+      .name{
+    font-size: 16px;
+  }
+  .degree{
+    font-size: 14px;
+  }
+  .spec{
+    font-size: 12px;
   }
 }

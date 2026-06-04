@@ -58,6 +58,10 @@
   user-select: none;
 }
 
+/* @media (max-width: 1399px){
+  .cataract-e
+} */
+
 @media (max-width: 900px) {
   .cataract-risks {
     padding-right: 16px;

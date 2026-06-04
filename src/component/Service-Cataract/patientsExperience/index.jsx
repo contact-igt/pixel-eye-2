@@ -5,14 +5,17 @@ import styles from "./styles.module.css";
 const PatientExperience = () => {
   const { titleLines, description, testimonials } = SERVICE_CATARACT_CONTENT.rememberRecommend;
 
+  // Capitalize title line
+  const displayTitle = titleLines && titleLines[0]
+    ? titleLines[0].split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
+    : "Patient Experiences";
+
   return (
     <section className={styles.section} aria-labelledby="remember-recommend-title">
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="remember-recommend-title" className={styles.title}>
-            {titleLines[0]}
-            <br />
-            {titleLines[1]}
+            {displayTitle}
           </h2>
           <p className={styles.description}>{description}</p>
         </header>
@@ -24,19 +27,26 @@ const PatientExperience = () => {
               className={styles.card}
               style={{ backgroundImage: `url(${item.backgroundImage})` }}
             >
-              <span className={styles.quoteMark} aria-hidden="true">
-                &ldquo;
-              </span>
+              <div className={styles.cardContent}>
+                <Image 
+                  src="/assets/Service/cataract/quote.png"
+                  alt="quote icon"
+                  width={34}
+                  height={24}
+                  className={styles.quoteImg}
+                  aria-hidden="true"
+                />
 
-              <p className={styles.cardText}>{item.text}</p>
+                <p className={styles.cardText}>{item.text}</p>
+              </div>
 
               <div className={styles.patientBlock}>
                 <div className={styles.avatarWrap}>
                   <Image
                     src={item.profileImage.src}
                     alt={item.profileImage.alt}
-                    width={72}
-                    height={72}
+                    width={48}
+                    height={48}
                     className={styles.avatar}
                   />
                 </div>
