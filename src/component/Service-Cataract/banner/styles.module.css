@@ -9,7 +9,6 @@
   overflow: hidden;
   background: #ffffff;
   color: #273979;
-  font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
 }
 
 .cataract-detail-hero {
@@ -46,7 +45,7 @@
 .cataract-detail-copy h1 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(44px, 3.1vw, 56px);
+  font-size: var(--hero-title-size);
   font-weight: 400;
   line-height: 1.3;
   letter-spacing: 0;
@@ -56,7 +55,7 @@
   width: min(33vw, 590px);
   margin: clamp(30px, 2.78vw, 50px) 0 0;
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(20px, 1.39vw, 25px);
+  font-size: var(--hero-paragraph-size);
   font-weight: 400;
   line-height: 1.17;
   letter-spacing: 0;
@@ -80,7 +79,7 @@
 .cataract-explainer__copy h2 {
   margin: 0 0 20px;
   color: #273979;
-  font-size: clamp(36px, 3.33vw, 60px);
+  font-size: var(--h2-size);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: 0;
@@ -90,7 +89,7 @@
   width: min(42vw, 756px);
   margin: 0;
   color: rgba(42, 60, 125, 0.82);
-  font-size: clamp(18px, 1.39vw, 25px);
+  font-size: var(--p-size);
   font-weight: 400;
   line-height: 1.12;
   letter-spacing: 0;
@@ -206,11 +205,9 @@ top: clamp(20px, 10vw, 50px);
   }
 
   .cataract-detail-copy h1 {
-    font-size: 36px;
   }
 
   .cataract-detail-copy p {
-    font-size: 18px;
   }
 
   .cataract-explainer {
@@ -220,11 +217,9 @@ top: clamp(20px, 10vw, 50px);
 
   .cataract-explainer__copy h2 {
     margin-bottom: 28px;
-    font-size: 38px;
   }
 
   .cataract-explainer__copy p {
-    font-size: 18px;
     line-height: 1.2;
   }
 
@@ -291,13 +286,11 @@ top: clamp(20px, 10vw, 50px);
   }
 
   .cataract-detail-copy h1 {
-    font-size: clamp(30px, 5.2vw, 40px);
     line-height: 1.2;
   }
 
   .cataract-detail-copy p {
     margin-top: 18px;
-    font-size: clamp(16px, 3vw, 20px);
     line-height: 1.25;
   }
 
@@ -309,11 +302,9 @@ top: clamp(20px, 10vw, 50px);
 
   .cataract-explainer__copy h2 {
     margin-bottom: 24px;
-    font-size: clamp(32px, 6vw, 42px);
   }
 
   .cataract-explainer__copy p {
-    font-size: clamp(15px, 2.8vw, 18px);
     line-height: 1.25;
   }
 }
@@ -331,11 +322,9 @@ top: clamp(20px, 10vw, 50px);
   }
 
   .cataract-detail-copy h1 {
-    font-size: clamp(28px, 8vw, 34px);
   }
 
   .cataract-detail-copy p {
-    font-size: clamp(14px, 4.2vw, 17px);
     margin-top: 14px;
   }
 
@@ -361,6 +350,5 @@ top: clamp(20px, 10vw, 50px);
   }
 
   .cataract-explainer__copy h2 {
-    font-size: 30px;
   }
 }

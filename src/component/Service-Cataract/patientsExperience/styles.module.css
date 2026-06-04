@@ -65,7 +65,7 @@
 .cardText {
   /* margin: 16px 0 0 0; */
   color: #4f6495;
-  font-size: 16px;
+  font-size: var(--p-size);
   line-height: 1.6;
   font-weight: 400;
   margin-top: 25px;
@@ -139,7 +139,6 @@
 
 @media (max-width:1399px) {
   .cardText {
-    font-size: 14px;
     margin-bottom: 0;
     margin-top: 10px;
   }
@@ -176,7 +175,6 @@
   }
 
   .cardText {
-    font-size: 16px;
     margin-top: 15px;
   }
 
@@ -188,7 +186,6 @@
 
 @media (max-width:767px) {
   .cardText {
-    font-size: 14px;
 
   }
 
@@ -204,7 +201,6 @@
   }
 
   .title {
-    font-size: 32px;
   }
 
   .grid {
@@ -246,7 +242,7 @@
   }
 
   .cardText {
-    font-size: 12px;
+    font-size: 12.5px;
   }
 }
 
@@ -264,7 +260,7 @@
   }
 
   .cardText {
-    font-size: 12px;
+    font-size: 11.5px;
   }
 
   .quoteMark {

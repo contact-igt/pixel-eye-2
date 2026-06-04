@@ -10,13 +10,12 @@
   overflow: hidden;
   background: #ffffff;
   color: #273979;
-  font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
 }
 
 .types-cataract__header h2 {
   margin: 0;
   color: #273979;
-  font-size: clamp(50px, 4.25vw, 77px);
+  font-size: var(--h2-size);
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0;
@@ -25,7 +24,7 @@
 .types-cataract__header p {
   margin: 40px 0 0;
   color: rgba(42, 60, 125, 0.82);
-  font-size: clamp(20px, 1.34vw, 24px);
+  font-size: var(--p-size);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: 0;
@@ -253,12 +252,10 @@
   }
 
   .types-cataract__header h2 {
-    font-size: 38px;
   }
 
   .types-cataract__header p {
     margin-top: 22px;
-    font-size: 17px;
   }
 
   .types-cataract__item--main h3 {
@@ -354,13 +351,11 @@
   }
 
   .types-cataract__header h2 {
-    font-size: 34px;
     line-height: 1.1;
   }
 
   .types-cataract__header p {
     margin-top: 18px;
-    font-size: 16px;
     line-height: 1.25;
   }
 
@@ -403,11 +398,9 @@
   }
 
   .types-cataract__header h2 {
-    font-size: 30px;
   }
 
   .types-cataract__header p {
-    font-size: 15px;
     margin-top: 14px;
   }
 

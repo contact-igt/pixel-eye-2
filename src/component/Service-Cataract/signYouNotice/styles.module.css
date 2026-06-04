@@ -7,13 +7,12 @@
   width: min(1640px, calc(100% - 230px));
   margin: 0 auto 92px;
   color: #273979;
-  font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
 }
 
 .cataract-signs__header h2 {
   margin: 0;
   color: #273979;
-  font-size: clamp(42px, 4.3vw, 58px);
+  font-size: var(--h2-size);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: 0;
@@ -23,7 +22,7 @@
   width: min(39vw, 714px);
   margin: 44px 0 0;
   color: rgba(42, 60, 125, 0.82);
-  font-size: clamp(18px, 1.39vw, 20px);
+  font-size: var(--p-size);
   font-weight: 400;
   line-height: 1.14;
   letter-spacing: 0;
@@ -135,14 +134,13 @@
 .cataract-signs__item p {
   margin: 0;
   color: currentColor;
-  font-size: 17px;
+  font-size: var(--p-size);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: 0;
 }
 
 .cataract-signs__item.is-active p {
-  font-size: 17px;
 }
 
 @media (max-width: 1199px) {
@@ -227,7 +225,6 @@
 
   .cataract-signs__item p,
   .cataract-signs__item.is-active p {
-    font-size: 17px;
   }
 }
 
@@ -238,12 +235,10 @@
   }
 
   .cataract-signs__header h2 {
-    font-size: 40px;
   }
 
   .cataract-signs__header p {
     margin-top: 24px;
-    font-size: 18px;
     line-height: 1.2;
   }
 
@@ -267,7 +262,6 @@
 
   .cataract-signs__item p,
   .cataract-signs__item.is-active p {
-    font-size: 18px;
   }
 }
 
@@ -303,7 +297,6 @@
 
   .cataract-signs__item p,
   .cataract-signs__item.is-active p {
-    font-size: 15px;
   }
 }
 
@@ -311,7 +304,8 @@
   .cataract-signs {
     width: min(1600px, calc(100% - 24px));
   }
-
+    .cataract-signs__header h2 {
+  }
   .cataract-signs__item,
   .cataract-signs__item.is-active {
     grid-template-columns: 50px 1px 1fr;
