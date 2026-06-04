@@ -85,6 +85,9 @@
     .title{
         max-width: 420px;
     }
+    .ctaButton{
+        bottom: 75px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -100,10 +103,14 @@
 
     .ctaButton {
         left: 30px;
-        bottom: 92px;
+        bottom: 85px;
     }
 }
-
+@media (max-width:850px){
+     .ctaButton {
+        bottom: 95px;
+    }
+}
 @media (max-width: 768px) {
     .title {
         font-size: 22px;

@@ -21,8 +21,8 @@ const Specialist = () => {
           />
         </div>
 
-        <div className={styles.inner}>
           <h2 className={styles.title}>{title}</h2>
+        <div className={styles.inner}>
 
           <div className={styles.doctorsWrap}>
             {doctors.map((doc, idx) => (

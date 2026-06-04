@@ -206,12 +206,14 @@
 .ctaButton:active .ctaArrow {
   background: #e8eef8;
 }
-  .cardsRow .cardWrap:nth-child(1) .centerTitle{
-    bottom: 30px;
-  }
-    .cardWrap:nth-child(1){
-      padding-bottom: 55px;
-    }
+
+.cardsRow .cardWrap:nth-child(1) .centerTitle {
+  bottom: 30px;
+}
+
+.cardWrap:nth-child(1) {
+  padding-bottom: 55px;
+}
 
 @media (max-width: 1399px) {
 
@@ -244,19 +246,22 @@
   .centerTitle {
     bottom: 20px;
   }
-  .cardsRow .cardWrap:nth-child(1) .centerTitle{
+
+  .cardsRow .cardWrap:nth-child(1) .centerTitle {
     bottom: 50px;
   }
 
   .cardsRow .cardWrap:nth-child(3) .centerTitle {
     bottom: 60px;
   }
-  .cardWrap:nth-child(1){
+
+  .cardWrap:nth-child(1) {
     padding-bottom: 35px;
   }
-.cardWrap:nth-child(3) {
-  padding-bottom: 25px;
-}
+
+  .cardWrap:nth-child(3) {
+    padding-bottom: 25px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -264,6 +269,14 @@
     --side-card-width: 260px;
     --center-card-width: 330px;
     --card-gap: 20px;
+  }
+
+  .cardsRow .cardWrap:nth-child(1) .centerTitle {
+    bottom: 60px;
+  }
+
+  .cardsRow .cardWrap:nth-child(3) .centerTitle {
+    bottom: 70px;
   }
 }
 
@@ -322,6 +335,14 @@
     margin: 18px auto 0;
     width: fit-content;
   }
+
+  .cardsRow .cardWrap:nth-child(1) .centerTitle {
+    bottom: 8px;
+  }
+
+  .cardsRow .cardWrap:nth-child(3) .centerTitle {
+    bottom: 30px;
+  }
 }
 
 @media (max-width:768px) {
@@ -348,6 +369,11 @@
     height: 550px;
   }
 
+  .centerCard:nth-child(1),
+  .centerCard:nth-child(3) {
+    height: 500px;
+  }
+
   .cardTitle {
     font-size: 18px;
     left: 16px;
@@ -363,6 +389,46 @@
   .ctaButton {
     left: 2%;
   }
+
+  .cardsRow .cardWrap:nth-child(1) .centerTitle {
+    bottom: 8px;
+  }
+
+  .cardsRow .cardWrap:nth-child(3) .centerTitle {
+    bottom: 8px;
+  }
+}
+
+@media (max-width: 435px) {
+  .cardsRow .cardWrap:nth-child(1) .centerTitle {
+    bottom: 20px;
+  }
+
+  .cardsRow .cardWrap:nth-child(3) .centerTitle {
+    bottom: 30px;
+  }
+
+  .centerCard:nth-child(1),
+  .centerCard:nth-child(3) {
+    height: 500px;
+  }
+}
+
+@media (max-width: 395px) {
+  .cardsRow .cardWrap:nth-child(1) .centerTitle {
+    bottom: 15px;
+  }
+
+  .cardsRow .cardWrap:nth-child(3) .centerTitle {
+    bottom: 15px;
+  }
+
+  .centerCard:nth-child(1),
+  .centerCard:nth-child(3) {
+    height: 420px;
+  }
+
+
 }
 
 @media (max-width: 375px) {
@@ -376,5 +442,19 @@
 
   .cardTitle {
     font-size: 16px;
+  }
+
+}
+
+@media (max-width: 350px){
+    .cardsRow .cardWrap:nth-child(3) .centerTitle {
+    bottom: 30px;
+  }
+    .centerCard:nth-child(1) {
+    height: 420px;
+  }
+
+  .centerCard:nth-child(3) {
+    height: 400px !important;
   }
 }
