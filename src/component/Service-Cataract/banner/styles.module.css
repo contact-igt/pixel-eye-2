@@ -117,13 +117,12 @@
   position: absolute;
   right: 50px;
 }
-
-@media (max-width: 1399px) {
-  .cataract-explainer__visual img {
-    width: 650px;
-    height: 400px;
-    right: -5%;
-    top: 10%;
+@media (max-width: 1500px){
+  .cataract-explainer__visual img{
+    width: 93%;
+    /* height: 400px; */
+    right: clamp(-25px, -3vw, -10px);
+top: clamp(20px, 10vw, 50px);
   }
 }
 
@@ -140,8 +139,8 @@
   .cataract-explainer__visual img {
     width: 550px;
     height: 350px;
-    right: 4%;
-    top: 12%;
+    right:3%;
+    top: 16%;
   }
 }
 
