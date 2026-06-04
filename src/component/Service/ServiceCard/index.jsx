@@ -10,28 +10,38 @@ const ServiceCard = ({ section }) => {
   const secondLine = titleLines.slice(midpoint).join(" ");
 
   return (
-    <section className={styles.section} id={section.id} aria-labelledby={`${section.id}-title`}>
+    <section
+      className={styles.section}
+      id={section.id}
+      aria-labelledby={`${section.id}-title`}
+    >
       <div className={styles.card}>
         <h2 id={`${section.id}-title`} className={styles.title}>
           {firstLine}
-          {secondLine ? <><br />{secondLine}</> : null}
+          {secondLine ? (
+            <>
+              <br />
+              {secondLine}
+            </>
+          ) : null}
         </h2>
 
         <div className={styles.details}>
           <p>{section.description}</p>
           <div className={styles.ctaWrap}>
             {section.ctaStyle === "outline" ? (
-              <Link className={styles.linkCta} href={section.href}>
-                <span>Explore More</span>
-                <i aria-hidden="true">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M7 17 17 7" />
-                    <path d="M9 7h8v8" />
-                  </svg>
-                </i>
-              </Link>
+              <Button
+                label="Explore More"
+                href={section.href}
+                variant="muted"
+                className={styles.linkCta}
+              />
             ) : (
-              <Button label="Explore More" href={section.href} variant="muted" />
+              <Button
+                label="Explore More"
+                href={section.href}
+                variant="muted"
+              />
             )}
           </div>
         </div>

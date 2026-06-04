@@ -1,6 +1,7 @@
 /* ── Page padding — ~20px from browser edges ── */
 .bannerSection {
   padding: clamp(20px, 3vw, 36px);
+  position: relative;
 }
 
 /* ── Banner card ── */
@@ -211,6 +212,7 @@
     right: 0%;
     bottom: 0.1%;
   }
+
   .bannerFrame {
     min-height: 560px;
   }

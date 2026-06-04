@@ -9,7 +9,8 @@
 
   position: relative;
   padding: var(--section-pt) var(--section-px) var(--section-pb);
-  overflow: hidden;
+  /* allow CTA icon to overflow the form area so button matches site-wide style */
+  overflow: visible;
   color: var(--text-heading);
   background: #ffffff;
   font-family: var(--font-primary);

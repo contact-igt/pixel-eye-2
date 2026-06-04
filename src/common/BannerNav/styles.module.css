@@ -4,10 +4,11 @@
 */
 .bannerNav {
   position: absolute;
-  top: 0;
+  top: 25px;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 1100;
+  /* ensure navbar and dropdown sit above banner content */
 }
 
 .inner {
@@ -28,7 +29,10 @@
     /* padding: 0 clamp(12px, 2vw, 24px); */
 
 .aboutMaskedNav .inner {
-  grid-template-columns: clamp(250px, 18vw, 350px) 1fr clamp(320px, 21vw, 430px);
+  /* Keep the central nav column stable across pages — don't change grid columns here
+     to avoid visual shifts when switching to the About page. Adjust visual spacing
+     via the logo/right card rules instead. */
+  grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(200px, 22vw, 320px);
 }
 
 .logoCard {
@@ -90,7 +94,8 @@
 
 .dropdownMenu {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 6px);
+  /* reduce gap so moving cursor to menu doesn't close it */
   left: 50%;
   transform: translateX(-50%);
   min-width: 170px;
@@ -102,7 +107,9 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 140ms ease, visibility 140ms ease;
+  transition: opacity 140ms ease, visibility 140ms ease, transform 140ms ease;
+  z-index: 1110;
+  /* sit above most page elements */
 }
 
 .navItemWithMenu:hover .dropdownMenu,
@@ -187,7 +194,7 @@
   justify-content: flex-end;
   min-height: clamp(132px, 8.6vw, 176px);
   /* padding: clamp(34px, 2vw, 40px) 0 0 0; */
-  
+
   transform: translateX(10px);
 }
 
@@ -476,17 +483,18 @@
   background: #c28842;
 }
 
-@media (max-width:1400px){
-  .rightCard{
+@media (max-width:1400px) {
+  .rightCard {
     padding-left: 4rem;
   }
 }
 
-@media (max-width:1250px){
-  .rightCard{
+@media (max-width:1250px) {
+  .rightCard {
     padding-left: 3rem;
   }
 }
+
 @media (max-width: 992px) {
   .logo {
     width: clamp(115px, 13.6vw, 200px);

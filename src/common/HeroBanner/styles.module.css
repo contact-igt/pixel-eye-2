@@ -1,6 +1,7 @@
 /* ── Page padding — matches home banner ── */
 .heroSection {
   padding: clamp(20px, 3vw, 36px);
+  position: relative;
 }
 
 .aboutMaskedSection {

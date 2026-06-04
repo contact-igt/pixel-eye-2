@@ -3,7 +3,8 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  /* allow the navbar dropdown to overflow the banner area */
+  overflow: visible;
   background: #ffffff;
   font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
 }
