@@ -128,35 +128,40 @@
 .ctaButton:active .ctaArrow {
   background: #e3e9f3;
 }
-@media (max-width: 1200px){
-  .cardOverlayText{
-      position: absolute;
-  left: 50%;
-  right: 20%;
+
+@media (max-width: 1199px) {
+  .cardOverlayText {
+    position: absolute;
+    left: 50%;
+    right: 20%;
   }
-  .grid{
+
+  .grid {
     max-width: 900px;
   }
 }
+
 @media (max-width: 991px) {
   .title {
     font-size: 30px;
   }
 
   .cardOverlayText {
-      left: 50%;
-  right: 10%;
-  top: 5%;
+    left: 50%;
+    right: 10%;
+    top: 5%;
     font-size: 16px;
     padding: 0 30px 0 10px;
   }
 }
-@media (max-width: 850px){
-  .cardOverlayText{
+
+@media (max-width: 767px) {
+  .cardOverlayText {
     top: -10%;
   }
 }
-@media (max-width: 768px) {
+
+@media (max-width: 767px) {
   .blogsSection {
     padding: var(--section-pt) 16px var(--section-pb);
   }
@@ -199,12 +204,13 @@
     font-size: 16px;
     padding: 0 25px 0 8px;
   }
-  .grid{
+
+  .grid {
     max-width: 395px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 575px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -220,7 +226,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 389px) {
   .blogsSection {
     padding: var(--section-pt) 12px var(--section-pb);
   }
@@ -242,12 +248,13 @@
     font-size: 13px;
     padding: 0 20px 0 5px;
   }
-  .grid{
+
+  .grid {
     max-width: 370px;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
   .mediaWrap {
     height: 160px;
   }

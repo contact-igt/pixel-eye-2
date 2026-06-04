@@ -239,13 +239,13 @@
 }
 
 /* ── Responsive ──────────────────────────────── */
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .frame {
     padding: 30px 16px 24px;
   }
@@ -266,7 +266,7 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 389px) {
   .frame {
     padding: 26px 14px 22px;
     border-radius: 22px;
@@ -300,7 +300,7 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 389px) {
   .frame {
     padding: 24px 12px 20px;
     border-radius: 18px;

@@ -125,20 +125,20 @@
   background: #edf2f8;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1399px) {
   .bookArea {
     right: -1.4%;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .bookArea {
     right: 20%;
   }
 }
 
 /* ── Tablet ── */
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .heroContent {
     left: 40px;
     top: 32%;
@@ -146,7 +146,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .bannerSection {
     padding: 12px;
   }
@@ -207,7 +207,7 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 575px) {
   .bookArea {
     right: 0%;
     bottom: 0.1%;
@@ -218,7 +218,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 389px) {
   .bannerSection {
     padding: 8px;
   }

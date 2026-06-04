@@ -250,7 +250,8 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 575px) {
+
     .sideCard,
     .centerCard {
         height: 230px;
@@ -267,7 +268,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 389px) {
     .container {
         width: min(var(--container-max), calc(100% - 24px));
     }
@@ -290,7 +291,8 @@
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
+
     .sideCard,
     .centerCard {
         height: 190px;

@@ -264,7 +264,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .careVisual {
     --side-card-width: 260px;
     --center-card-width: 330px;
@@ -280,7 +280,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .careVisual {
     min-height: auto;
     /* padding: 20px 0 16px; */
@@ -345,13 +345,13 @@
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 767px) {
   .ctaButton {
     left: 28%;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 389px) {
   .careSection {
     padding: var(--section-pt) 12px var(--section-pb);
   }
@@ -399,7 +399,7 @@
   }
 }
 
-@media (max-width: 435px) {
+@media (max-width: 389px) {
   .cardsRow .cardWrap:nth-child(1) .centerTitle {
     bottom: 20px;
   }
@@ -414,7 +414,7 @@
   }
 }
 
-@media (max-width: 395px) {
+@media (max-width: 389px) {
   .cardsRow .cardWrap:nth-child(1) .centerTitle {
     bottom: 15px;
   }
@@ -431,7 +431,7 @@
 
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
   .sideCard {
     height: 300px;
   }
@@ -446,11 +446,12 @@
 
 }
 
-@media (max-width: 350px){
-    .cardsRow .cardWrap:nth-child(3) .centerTitle {
+@media (max-width: 389px) {
+  .cardsRow .cardWrap:nth-child(3) .centerTitle {
     bottom: 30px;
   }
-    .centerCard:nth-child(1) {
+
+  .centerCard:nth-child(1) {
     height: 420px;
   }
 

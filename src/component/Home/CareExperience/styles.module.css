@@ -59,7 +59,7 @@
   display: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .desktopImage {
     display: none;
   }
@@ -69,7 +69,7 @@
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1399px) {
   .title {
     font-size: 3rem;
   }
@@ -79,7 +79,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .title {
     font-size: 2.2rem;
   }
@@ -88,11 +88,13 @@
     font-size: 1rem;
   }
 }
-@media (max-width:1000px){
-  .card{
+
+@media (max-width: 991px) {
+  .card {
     padding-left: 45px;
   }
 }
+
 @media (max-width: 991px) {
   .grid {
     grid-template-columns: 1fr;
@@ -126,7 +128,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .experienceSection {
     padding: var(--section-pt) 16px var(--section-pb);
   }
@@ -144,7 +146,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 389px) {
   .card {
     padding: 22px 18px;
   }
@@ -164,7 +166,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
   .imageWrap {
     height: 180px;
   }
