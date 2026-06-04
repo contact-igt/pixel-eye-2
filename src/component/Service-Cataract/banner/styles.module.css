@@ -14,7 +14,7 @@
 
 .cataract-detail-hero {
   position: relative;
-  width:97%;
+  width: 97%;
   height: min(49.55vw, 892px);
   min-height: 650px;
   overflow: visible;
@@ -31,7 +31,7 @@
   user-select: none;
   pointer-events: none;
   top: 20px;
-  left:10px;
+  left: 10px;
 }
 
 .cataract-detail-copy {
@@ -74,7 +74,7 @@
 }
 
 .cataract-explainer__copy {
-  padding-top:150px;
+  padding-top: 150px;
 }
 
 .cataract-explainer__copy h2 {
@@ -96,7 +96,7 @@
   letter-spacing: 0;
 }
 
-.cataract-explainer__copy p + p {
+.cataract-explainer__copy p+p {
   margin-top: 20px;
 }
 
@@ -106,42 +106,46 @@
   padding: clamp(2px, 1.95vw, 35px);
   border-radius: 36px;
   /* background: #ffffff; */
-  position:relative;
+  position: relative;
 }
 
 .cataract-explainer__visual img {
-  display: block; 
-  width:710px;
+  display: block;
+  width: 710px;
   /* height:400px; */
   border-radius: 28px;
   position: absolute;
-  right:50px;
+  right: 50px;
 }
-@media (max-width: 1499px){
-  .cataract-explainer__visual img{
+
+@media (max-width: 1399px) {
+  .cataract-explainer__visual img {
     width: 650px;
     height: 400px;
     right: -5%;
     top: 10%;
   }
 }
-@media (max-width: 1399px){
-  .cataract-explainer__visual img{
+
+@media (max-width: 1399px) {
+  .cataract-explainer__visual img {
     width: 620px;
     height: 400px;
     right: -5%;
     top: 9%;
   }
 }
-@media (max-width: 1299px){
-  .cataract-explainer__visual img{
-    width:550px;
+
+@media (max-width: 1399px) {
+  .cataract-explainer__visual img {
+    width: 550px;
     height: 350px;
     right: 4%;
     top: 12%;
   }
 }
-@media (max-width: 1180px) {
+
+@media (max-width: 1199px) {
   .cataract-detail-hero {
     min-height: 620px;
   }
@@ -171,19 +175,21 @@
   .cataract-explainer__visual {
     width: 100%;
   }
-  .cataract-explainer__visual img{
+
+  .cataract-explainer__visual img {
     transform: translateX(-40%);
     top: 0;
   }
 }
 
-@media (max-width:992px){
-    .cataract-explainer__visual img{
+@media (max-width: 991px) {
+  .cataract-explainer__visual img {
     transform: unset;
     top: unset;
   }
 }
-@media (max-width: 560px) {
+
+@media (max-width: 575px) {
   .cataract-detail-hero {
     height: 620px;
     min-height: 620px;
@@ -230,7 +236,7 @@
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .cataract-detail-hero {
     width: 100%;
     min-height: 560px;
@@ -273,7 +279,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .cataract-detail-hero {
     min-height: 500px;
     height: min(76vw, 620px);
@@ -313,7 +319,7 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 389px) {
   .cataract-detail-hero {
     min-height: 460px;
     height: min(110vw, 540px);
@@ -346,7 +352,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
   .cataract-detail-hero {
     min-height: 430px;
   }

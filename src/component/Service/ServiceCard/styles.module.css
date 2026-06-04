@@ -95,14 +95,14 @@
   object-position: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .card {
     grid-template-columns: minmax(170px, 220px) minmax(0, 1fr) auto;
     column-gap: clamp(30px, 4vw, 68px);
   }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 991px) {
   .card {
     grid-template-columns: 1fr;
     row-gap: 26px;
@@ -116,7 +116,7 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 575px) {
   .section {
     padding: 12px 0 20px;
   }

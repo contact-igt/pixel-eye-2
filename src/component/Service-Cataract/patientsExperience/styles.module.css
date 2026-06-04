@@ -129,66 +129,76 @@
   line-height: 1;
   font-weight: 500;
 }
-@media (max-width:1399px){
-  .patientBlock{
+
+@media (max-width:1399px) {
+  .patientBlock {
     top: 10px;
     left: 10px;
   }
 }
-@media (max-width:1300px){
-  .cardText{
+
+@media (max-width:1399px) {
+  .cardText {
     font-size: 14px;
     margin-bottom: 0;
     margin-top: 10px;
   }
-  .cardContent{
-    padding:25px 30px 20px;
+
+  .cardContent {
+    padding: 25px 30px 20px;
     gap: 12px;
   }
-  .patientBlock{
-    left:0;
+
+  .patientBlock {
+    left: 0;
     top: -5px;
   }
 }
-@media (max-width: 1200px) {
+
+@media (max-width: 1199px) {
   .inner {
     width: min(1600px, calc(100% - 64px));
   }
-  
+
   .card {
     padding: 30px;
     min-height: 300px;
   }
-  .patientBlock{
+
+  .patientBlock {
     top: -15px;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .cardText{
+
+  .cardText {
     font-size: 16px;
     margin-top: 15px;
   }
-  .patientBlock{
+
+  .patientBlock {
     top: 10px;
     left: 2rem;
   }
 }
-@media (max-width:850px){
-  .cardText{
+
+@media (max-width:767px) {
+  .cardText {
     font-size: 14px;
-    
+
   }
-  .patientBlock{
+
+  .patientBlock {
     top: 0;
     left: 1rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .inner {
     width: min(1600px, calc(100% - 40px));
   }
@@ -208,34 +218,39 @@
     padding: 20px 30px 30px;
   }
 
-  .cardContent{
+  .cardContent {
     width: 40%;
     margin: 0 auto;
     padding: 0;
   }
 
-  .patientBlock{
+  .patientBlock {
     margin: auto;
-    top:25px;
+    top: 25px;
     left: -3rem;
   }
-  .avatarWrap{
+
+  .avatarWrap {
     width: 40px;
     height: 40px;
   }
-  .meta h3{
+
+  .meta h3 {
     font-size: 16px;
   }
 }
-@media (max-width: 550px){
-  .cardContent{
+
+@media (max-width: 575px) {
+  .cardContent {
     width: 50%;
   }
-  .cardText{
+
+  .cardText {
     font-size: 12px;
   }
 }
-@media (max-width: 430px) {
+
+@media (max-width: 389px) {
   .inner {
     width: min(1600px, calc(100% - 24px));
   }
@@ -243,16 +258,20 @@
   .card {
     padding: 14px 24px 24px;
   }
-   .cardContent{
+
+  .cardContent {
     width: 65%;
   }
-  .cardText{
+
+  .cardText {
     font-size: 12px;
   }
+
   .quoteMark {
     font-size: 48px;
   }
-    .meta h3{
+
+  .meta h3 {
     font-size: 14px;
   }
 }

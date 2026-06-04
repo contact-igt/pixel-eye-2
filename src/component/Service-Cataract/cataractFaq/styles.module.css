@@ -117,12 +117,14 @@
     color: var(--text-body, #53658a);
     line-height: 1.6;
 }
-@media (max-width: 1300px){
-    .cataract-faq__title-bubble{
+
+@media (max-width: 1399px) {
+    .cataract-faq__title-bubble {
         top: 0;
     }
 }
-@media (max-width: 1024px) {
+
+@media (max-width: 991px) {
     .cataract-faq__inner {
         width: min(1600px, calc(100% - 64px));
         gap: 28px;
@@ -137,7 +139,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .cataract-faq__inner {
         width: min(1600px, calc(100% - 40px));
         flex-direction: column;
@@ -151,17 +153,19 @@
     .cataract-faq__note {
         max-width: 100%;
     }
-     .cataract-faq__title-bubble{
+
+    .cataract-faq__title-bubble {
         top: 2%;
         left: 30px;
         /* font-size: 2rem; */
     }
-    .cataract-faq__title-bubble h3{
+
+    .cataract-faq__title-bubble h3 {
         font-size: 2.2rem;
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 389px) {
     .cataract-faq {
         padding: 40px 0;
     }
@@ -183,7 +187,7 @@
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
     .cataract-faq__title-bubble h3 {
         font-size: 24px;
     }

@@ -190,7 +190,7 @@
   transform: scaleX(1);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .row {
     grid-template-columns: 1fr;
     row-gap: 16px;
@@ -225,24 +225,27 @@
   .contentSection {
     padding: 32px 30px;
   }
-  .name{
+
+  .name {
     font-size: 35px;
   }
-  .degree{
+
+  .degree {
     font-size: 25px;
   }
-  .spec{
+
+  .spec {
     font-size: 18px;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .inner {
     width: min(1600px, calc(100% - 64px));
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .inner {
     width: min(1600px, calc(100% - 40px));
   }
@@ -258,13 +261,16 @@
     border-radius: 0 18px 18px 18px;
     padding: 14px 14px 16px;
   }
-  .infoPanel{
+
+  .infoPanel {
     right: -4rem;
     top: -10px;
   }
-  .infoPanelRight{
+
+  .infoPanelRight {
     width: 45%;
   }
+
   .rowReverse .image {
     width: min(72%, 360px);
   }
@@ -273,13 +279,15 @@
     border-radius: 18px 0 18px 18px;
   }
 
-    .name{
+  .name {
     font-size: 25px;
   }
-  .degree{
+
+  .degree {
     font-size: 18px;
   }
-  .spec{
+
+  .spec {
     font-size: 16px;
   }
 
@@ -297,39 +305,49 @@
     margin: 40px 0;
   }
 }
-@media (max-width: 576px) {
-    .infoPanel{
+
+@media (max-width: 575px) {
+  .infoPanel {
     right: -3rem;
     top: 0px;
   }
-      .name{
+
+  .name {
     font-size: 20px;
   }
-  .degree{
+
+  .degree {
     font-size: 16px;
   }
-  .spec{
+
+  .spec {
     font-size: 14px;
   }
 }
-@media (max-width: 430px) {
+
+@media (max-width: 389px) {
   .inner {
     width: min(1600px, calc(100% - 28px));
   }
-    .mediaSection {
+
+  .mediaSection {
     height: 400px;
-}
-    .infoPanel{
+  }
+
+  .infoPanel {
     right: -2.4rem;
     top: -5px;
   }
-      .name{
+
+  .name {
     font-size: 16px;
   }
-  .degree{
+
+  .degree {
     font-size: 14px;
   }
-  .spec{
+
+  .spec {
     font-size: 12px;
   }
 }
