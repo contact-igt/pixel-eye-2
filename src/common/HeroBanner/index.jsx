@@ -30,13 +30,14 @@ export default function HeroBanner({
   const isAboutMasked = variant === "aboutMasked";
 
   return (
-    <section className={`${styles.heroSection} ${isAboutMasked ? styles.aboutMaskedSection : ""}`}>
+    <section
+      className={`${styles.heroSection} ${isAboutMasked ? styles.aboutMaskedSection : ""}`}
+    >
       <div
         className={`${styles.bannerFrame} ${height === "short" ? styles.frameShort : ""} ${
           isAboutMasked ? styles.aboutMaskedFrame : ""
         }`}
       >
-
         {/* Background image */}
         <img
           className={styles.image}
@@ -49,14 +50,6 @@ export default function HeroBanner({
         {/* Subtle gradient overlay — only when showOverlay is true */}
         {showOverlay && <div className={styles.overlay} aria-hidden="true" />}
 
-        {/* Shared nav header */}
-        <BannerNav
-          rightSlot={rightSlot}
-          navTheme={navTheme}
-          cardBg={cardBg}
-          variant={isAboutMasked ? "aboutMasked" : "default"}
-        />
-
         {/* Hero text (optional) */}
         {(title || subtitle) && (
           <div className={styles.copy}>
@@ -64,8 +57,15 @@ export default function HeroBanner({
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
           </div>
         )}
-
       </div>
+
+      {/* Shared nav header — render outside the overflow:hidden frame so dropdowns won't be clipped */}
+      <BannerNav
+        rightSlot={rightSlot}
+        navTheme={navTheme}
+        cardBg={cardBg}
+        variant={isAboutMasked ? "aboutMasked" : "default"}
+      />
     </section>
   );
 }

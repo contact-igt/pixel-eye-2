@@ -10,16 +10,12 @@ export default function Banner() {
   return (
     <section className={styles.bannerSection}>
       <div className={styles.bannerFrame}>
-
         {/* Background image — absolute fill so it covers the entire frame */}
         <img
           src={banner.image.src}
           alt={banner.image.alt}
           className={styles.bannerImage}
         />
-
-        {/* Nav header — overlaid at top; logo card left, NABH badge right */}
-        <BannerNav rightSlot="nabh" navTheme="light" />
 
         {/* Hero copy — left side, vertically centered */}
         <div className={styles.heroContent}>
@@ -30,7 +26,11 @@ export default function Banner() {
           </h1>
           <p className={styles.heroText}>{banner.heroText}</p>
           <div className={styles.ctaWrap}>
-            <Button label={banner.cta.label} href={banner.cta.href} variant="light" />
+            <Button
+              label={banner.cta.label}
+              href={banner.cta.href}
+              variant="light"
+            />
           </div>
         </div>
 
@@ -43,12 +43,17 @@ export default function Banner() {
 
         {/* Booking panel — white notched card at bottom-right */}
         <div className={styles.bookArea}>
-          <Link href={banner.bookAppointment.href} className={styles.bookButton}>
+          <Link
+            href={banner.bookAppointment.href}
+            className={styles.bookButton}
+          >
             {banner.bookAppointment.label}
           </Link>
         </div>
-
       </div>
+
+      {/* Nav header — render outside the overflow:hidden frame so dropdowns aren't clipped */}
+      <BannerNav rightSlot="nabh" navTheme="light" />
     </section>
   );
 }

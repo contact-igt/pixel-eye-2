@@ -54,7 +54,7 @@
 
 .cataract-approach__outcome {
     display: flex;
-    gap: 12px;
+    gap: 0;
     align-items: flex-start;
     margin-bottom: 8px;
 }
@@ -69,7 +69,7 @@
     color: var(--text-body, #53658a);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
     .cataract-approach__inner {
         width: min(1600px, calc(100% - 64px));
         grid-template-columns: 1fr;
@@ -78,9 +78,13 @@
     .cataract-approach__img {
         height: 380px;
     }
+
+    .cataract-approach__copy h2 {
+        margin-top: 22px;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .cataract-approach__inner {
         width: min(1600px, calc(100% - 40px));
     }
@@ -94,7 +98,7 @@
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 389px) {
     .cataract-approach__inner {
         width: min(1600px, calc(100% - 28px));
     }
@@ -108,7 +112,7 @@
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
     .cataract-approach__img {
         height: 220px;
     }

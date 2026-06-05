@@ -38,7 +38,9 @@ const TypesOfCataract = () => {
           aria-label={types.controls.previousAriaLabel}
           onClick={previousSlide}
         >
-          <span aria-hidden="true">&lsaquo;</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
         </button>
 
         <article className={`${styles["types-cataract__item"]} ${styles["types-cataract__item--side"]}`}>
@@ -65,7 +67,9 @@ const TypesOfCataract = () => {
           aria-label={types.controls.nextAriaLabel}
           onClick={nextSlide}
         >
-          <span aria-hidden="true">&rsaquo;</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
         </button>
       </div>
     </section>

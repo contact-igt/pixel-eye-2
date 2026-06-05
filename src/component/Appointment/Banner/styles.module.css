@@ -3,7 +3,8 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  /* allow the navbar dropdown to overflow the banner area */
+  overflow: visible;
   background: #ffffff;
   font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
 }
@@ -56,7 +57,7 @@
   line-height: 1.15;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 767px) {
   .hero {
     min-height: 100svh;
   }

@@ -44,10 +44,49 @@
   line-height: var(--p-lh);
 }
 
+/* SSR fallback grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
+}
+
+/* Slider */
+.sliderWrap {
+  margin-bottom: 0;
+}
+
+.slider :global(.slick-list) {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  margin-top: -16px;
+  margin-bottom: -16px;
+}
+
+.slideOuter {
+  padding: 0 12px;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #b0bdd6;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.activeDot {
+  background: #2f4587;
 }
 
 .card {
@@ -57,12 +96,20 @@
   box-shadow: 0 16px 34px rgba(20, 42, 93, 0.16);
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 560ms ease, transform 560ms ease;
+  transition: opacity 560ms ease, transform 560ms ease, scale 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
 }
 
 [data-visible="true"] .card {
   opacity: 1;
   transform: translateY(0);
+}
+
+.cardActive {
+  scale: 1.04;
 }
 
 .thumb {
@@ -74,6 +121,10 @@
 
 .cardBody {
   padding: 20px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 auto;
 }
 
 .cardTitle {
@@ -95,8 +146,11 @@
 .watchBtn {
   display: inline-flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
   text-decoration: none;
+  z-index: 2;
 }
 
 .watchLabel {
@@ -185,7 +239,7 @@
   stroke-linejoin: round;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1399px) {
   .panel {
     padding: 42px 36px 36px;
   }
@@ -199,7 +253,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .panel {
     width: min(1600px, calc(100% - 64px));
   }
@@ -209,7 +263,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .panel {
     width: min(1600px, calc(100% - 40px));
     padding: 30px 16px 24px;
@@ -232,6 +286,10 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .dots {
+    margin-top: 18px;
   }
 
   .card {
@@ -288,7 +346,7 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 389px) {
   .panel {
     width: min(1600px, calc(100% - 28px));
   }

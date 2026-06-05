@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 
 const CareExperience = () => {
   const { careExperience } = HOME_CONTENT;
-  const { title, paragraphs, image } = careExperience;
+  const { title, paragraphs, image, mobileImage } = careExperience;
 
   return (
     <section className={styles.experienceSection}>
@@ -24,7 +24,16 @@ const CareExperience = () => {
               src={image.src}
               alt={image.alt}
               fill
-              className={styles.image}
+              className={`${styles.image} ${styles.desktopImage}`}
+              sizes="(max-width: 991px) 100vw, 560px"
+              priority
+              draggable={false}
+            />
+            <Image
+              src={mobileImage.src}
+              alt={mobileImage.alt}
+              fill
+              className={`${styles.image} ${styles.mobileImage}`}
               sizes="(max-width: 991px) 100vw, 560px"
               priority
               draggable={false}

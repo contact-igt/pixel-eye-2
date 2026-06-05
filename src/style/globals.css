@@ -98,7 +98,21 @@ textarea {
   font: inherit;
 }
 
-@media (max-width: 1024px) {
+/* ─── Large Laptop ─────────────────────────────────────────── 1399px ── */
+@media (max-width: 1399px) {
+  :root {
+    --section-pt: 56px;
+    --section-pb: 56px;
+    --h2-size: 40px;
+    --hero-title-size: 50px;
+    --hero-paragraph-size: 18px;
+    --about-section-space: 56px;
+    --radius-card-lg: 30px;
+  }
+}
+
+/* ─── Laptop ────────────────────────────────────────────────── 1199px ── */
+@media (max-width: 1199px) {
   :root {
     --section-px: 20px;
     --section-pt: 48px;
@@ -107,40 +121,73 @@ textarea {
     --p-size: 16px;
     --hero-title-size: 44px;
     --hero-paragraph-size: 17px;
-    --about-section-space: 34px;
+    --about-section-space: 48px;
+    --radius-card-lg: 26px;
   }
 }
 
-@media (max-width: 768px) {
+/* ─── Tablet ────────────────────────────────────────────────── 991px ── */
+@media (max-width: 991px) {
   :root {
     --section-px: 16px;
     --section-pt: 40px;
     --section-pb: 40px;
     --h2-size: 30px;
     --p-size: 15px;
-    --hero-title-size: 34px;
+    --hero-title-size: 36px;
     --hero-paragraph-size: 15px;
-    --about-section-space: 28px;
+    --about-section-space: 32px;
+    --radius-hero: 16px;
+    --radius-card-lg: 22px;
+    --radius-card-md: 14px;
   }
 }
 
-@media (max-width: 430px) {
+/* ─── Mobile Layout Start ───────────────────────────────────── 767px ── */
+@media (max-width: 767px) {
   :root {
-    --section-px: 12px;
+    --section-pt: 36px;
+    --section-pb: 36px;
+    --h2-size: 28px;
+    --hero-title-size: 30px;
+    --hero-paragraph-size: 15px;
+    --about-section-space: 28px;
+    --radius-hero: 14px;
+    --radius-card-lg: 20px;
+    --radius-card-md: 12px;
+  }
+}
+
+/* ─── Small Mobile ──────────────────────────────────────────── 575px ── */
+@media (max-width: 575px) {
+  :root {
+    --section-px: 14px;
     --section-pt: 32px;
     --section-pb: 32px;
     --h2-size: 26px;
-    --hero-title-size: 28px;
+    --p-size: 14px;
+    --hero-title-size: 26px;
     --hero-paragraph-size: 14px;
-    --about-section-space: 22px;
+    --about-section-space: 24px;
     --btn-h: 44px;
     --btn-icon: 44px;
+    --radius-hero: 12px;
+    --radius-card-lg: 18px;
+    --radius-card-md: 10px;
   }
 }
 
-@media (max-width: 360px) {
+/* ─── Very Small Mobile ─────────────────────────────────────── 389px ── */
+@media (max-width: 389px) {
   :root {
+    --section-px: 12px;
+    --section-pt: 28px;
+    --section-pb: 28px;
     --h2-size: 24px;
     --p-size: 14px;
+    --hero-title-size: 24px;
+    --hero-paragraph-size: 14px;
+    --about-section-space: 20px;
+    --btn-fs: 13px;
   }
 }

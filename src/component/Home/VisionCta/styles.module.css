@@ -23,12 +23,15 @@
 
 .frame {
     position: relative;
-    min-height: 350px;
+    min-height: 420px;
     border-radius: 30px;
     overflow: hidden;
 }
 
 .image {
+    width: 100%;
+    height: 100%;
+    display: block;
     object-fit: cover;
     object-position: center;
 }
@@ -78,35 +81,41 @@
     background: #7dbdb1;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
     .image {
         object-fit: contain !important;
     }
-    .title{
+
+    .title {
         max-width: 420px;
+    }
+
+    .ctaButton {
+        bottom: 75px;
     }
 }
 
-@media (max-width: 1024px) {
-    .title{
+@media (max-width: 991px) {
+    .title {
         top: 60px;
         max-width: 320px;
         font-size: 32px;
 
     }
+
     .frame {
-        min-height: 340px;
+        min-height: 380px;
     }
 
     .ctaButton {
         left: 30px;
-        bottom: 92px;
+        bottom: 85px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .title {
-        font-size: 22px;
+        font-size: var(--h2-size);
         line-height: 1.1;
         top: 95px;
         left: 20px;
@@ -114,7 +123,7 @@
     }
 
     .frame {
-        min-height: 340px;
+        min-height: 380px;
         border-radius: 20px;
     }
 
@@ -123,58 +132,44 @@
         bottom: 0px;
         transform: translateX(-50%);
     }
-    .image{
+
+    .image {
         object-fit: contain !important;
     }
 }
-@media (max-width: 560px) {
-        .title {
-            font-size: 18px;
-            top: 110px;
-        }
-}
-@media (max-width: 480px) {
+
+@media (max-width: 575px) {
     .title {
-        font-size: 16px;
-        top: 75px;
-        left: 5px;
-        max-width: 160px;
-    }
-
-    .frame {
-        min-height: 250px;
-        border-radius: 18px;
-    }
-/* 
-    .ctaButton {
-        left: 16px;
-        bottom: 16px;
-    } */
-
-    .ctaLabel {
-        padding: 0 18px;
-        font-size: 13px;
-    }
-        .ctaButton{
-        white-space: nowrap;
+        font-size: var(--h2-size);
+        top: 110px;
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
     .title {
-        font-size: 13.5px;
-        max-width: 140px;
+        font-size: var(--h2-size);
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: calc(100% - 32px);
+        text-align: center;
     }
 
     .frame {
-        min-height: 220px;
+        min-height: 350px;
         border-radius: 14px;
     }
-    .ctaButton{
+
+    .ctaButton {
         white-space: nowrap;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 12px;
+
     }
+
     .ctaLabel {
         padding: 0 14px;
-        font-size: 12px;
+        font-size: var(--btn-fs);
     }
 }

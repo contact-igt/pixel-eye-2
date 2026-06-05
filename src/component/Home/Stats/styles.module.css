@@ -5,8 +5,8 @@
 .statsFrame {
   max-width: var(--container-max);
   margin: 0 auto;
-  background: #ffffff;
-  border-radius: 18px;
+  background: var(--surface-white);
+  border-radius: var(--radius-card-md);
   padding: 30px 18px;
   display: flex;
   flex-wrap: wrap;
@@ -53,20 +53,22 @@
   margin: 0 40px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .statsSection {
-    padding: 40px 16px;
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
   }
 
   .statsFrame {
     flex-wrap: wrap;
     gap: 18px 10px;
-    padding: 24px 16px;
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
   }
-  .statLabel{
+
+  .statLabel {
     max-width: unset;
     width: 100%;
   }
+
   .statGroup {
     width: calc(50% - 6px);
     flex: unset;
@@ -84,36 +86,26 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 389px) {
   .statsSection {
-    padding: 32px 12px;
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
   }
 
   .statsFrame {
-    padding: 20px 14px;
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
     gap: 16px 8px;
   }
 
-  .statGroup {
-    width: calc(50% - 4px);
-  }
-
-  .statNumber {
-    font-size: 36px;
-  }
-
-  .statLabel {
-    font-size: 13px;
-    max-width: 90px;
-  }
-}
-
-@media (max-width: 375px) {
   .statGroup {
     width: 100%;
   }
 
   .statNumber {
     font-size: 32px;
+  }
+
+  .statLabel {
+    font-size: 13px;
+    max-width: 90px;
   }
 }

@@ -1,59 +1,151 @@
-import Link from "next/link";
+"use client";
+import { useEffect, useState, useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
 import RevealOnView from "@/common/RevealOnView";
+import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
-const ArrowIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M7 17 17 7" />
-    <path d="M9 7h8v8" />
-  </svg>
-);
-
 const ProcessVideos = () => {
-  const { titleLines, description, videos, exploreMore } = ABOUT_CONTENT.processVideos;
+  const { titleLines, description, videos, exploreMore } =
+    ABOUT_CONTENT.processVideos;
+  const duplicated = [...videos, ...videos, ...videos];
+  const [active, setActive] = useState(1);
+  const [mounted, setMounted] = useState(false);
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    speed: 600,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "0px",
+    focusOnSelect: true,
+    arrows: false,
+    initialSlide: videos.length + 1,
+    beforeChange: (_, next) => {
+      setActive(next % videos.length);
+    },
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: { slidesToShow: 2, centerMode: false },
+      },
+      {
+        breakpoint: 575,
+        settings: { slidesToShow: 1, centerMode: false },
+      },
+    ],
+  };
 
   return (
     <section className={styles.section} aria-labelledby="about-process-title">
       <RevealOnView className={styles.revealShell}>
         <div className={styles.panel}>
-        <header className={styles.header}>
-          <h2 id="about-process-title" className={styles.title}>
-            {titleLines[0]}
-            <br />
-            {titleLines[1]}
-          </h2>
-          <p className={styles.description}>{description}</p>
-        </header>
+          <header className={styles.header}>
+            <h2 id="about-process-title" className={styles.title}>
+              {titleLines[0]}
+              <br />
+              {titleLines[1]}
+            </h2>
+            <p className={styles.description}>{description}</p>
+          </header>
 
-        <div className={styles.grid}>
-          {videos.map((video, index) => (
-            <article key={video.id} className={styles.card} style={{ transitionDelay: `${index * 120}ms` }}>
-              <img src={video.image} alt={video.title} className={styles.thumb} />
-
-              <div className={styles.cardBody}>
-                <h3 className={styles.cardTitle}>{video.title}</h3>
-                <p className={styles.cardText}>{video.description}</p>
-
-                <Link href={video.link} className={styles.watchBtn}>
-                  <span className={styles.watchLabel}>Watch Video</span>
-                  <span className={styles.watchIcon}>
-                    <ArrowIcon />
-                  </span>
-                </Link>
+          <div className={styles.sliderWrap}>
+            {mounted ? (
+              <Slider ref={sliderRef} {...settings} className={styles.slider}>
+                {duplicated.map((video, i) => {
+                  const isActive = i % videos.length === active;
+                  return (
+                    <div key={`${video.id}-${i}`} className={styles.slideOuter}>
+                      <article
+                        className={`${styles.card} ${isActive ? styles.cardActive : ""}`}
+                        onClick={() => {
+                          setActive(i % videos.length);
+                          sliderRef.current?.slickGoTo(i);
+                        }}
+                      >
+                        <img
+                          src={video.image}
+                          alt={video.title}
+                          className={styles.thumb}
+                        />
+                        <div className={styles.cardBody}>
+                          <h3 className={styles.cardTitle}>{video.title}</h3>
+                          <p className={styles.cardText}>{video.description}</p>
+                          <Button
+                            label="Watch Video"
+                            href={video.link}
+                            className={styles.watchBtn}
+                            variant="light"
+                          />
+                        </div>
+                      </article>
+                    </div>
+                  );
+                })}
+              </Slider>
+            ) : (
+              <div className={styles.grid}>
+                {videos.map((video, index) => (
+                  <article
+                    key={video.id}
+                    className={styles.card}
+                    style={{ transitionDelay: `${index * 120}ms` }}
+                  >
+                    <img
+                      src={video.image}
+                      alt={video.title}
+                      className={styles.thumb}
+                    />
+                    <div className={styles.cardBody}>
+                      <h3 className={styles.cardTitle}>{video.title}</h3>
+                      <p className={styles.cardText}>{video.description}</p>
+                      <Button
+                        label="Watch Video"
+                        href={video.link}
+                        className={styles.watchBtn}
+                        variant="light"
+                      />
+                    </div>
+                  </article>
+                ))}
               </div>
-            </article>
-          ))}
-        </div>
+            )}
+          </div>
 
-        <div className={styles.exploreWrap}>
-          <Link href={exploreMore.href} className={styles.exploreBtn}>
-            <span className={styles.exploreLabel}>{exploreMore.label}</span>
-            <span className={styles.exploreIcon}>
-              <ArrowIcon />
-            </span>
-          </Link>
-        </div>
+          <div className={styles.dots}>
+            {videos.map((_, i) => (
+              <button
+                key={i}
+                className={`${styles.dot} ${i === active ? styles.activeDot : ""}`}
+                onClick={() => {
+                  setActive(i);
+                  if (mounted) sliderRef.current?.slickGoTo(i + videos.length);
+                }}
+                aria-label={`Go to video ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          <div className={styles.exploreWrap}>
+            <Button
+              label={exploreMore.label}
+              href={exploreMore.href}
+              variant="muted"
+              className={styles.exploreBtn}
+            />
+          </div>
         </div>
       </RevealOnView>
     </section>

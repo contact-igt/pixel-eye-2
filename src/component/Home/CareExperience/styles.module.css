@@ -17,11 +17,12 @@
 
 .card {
   background: var(--bg-surface);
-  border-radius: 18px 0 0 18px;
+  border-radius: var(--radius-card-md) 0 0 var(--radius-card-md);
   padding: 150px 0 40px 60px;
   box-shadow: none;
 }
 
+/* Large display title — intentionally above --h2-size */
 .title {
   margin: 0 0 18px 0;
   font-size: 65px;
@@ -30,17 +31,18 @@
   font-weight: 500;
 }
 
+/* Uses --hero-paragraph-size (19px) — intentionally larger than body paragraph */
 .paragraph {
   margin: 0 0 18px 0;
   color: var(--text-body);
-  font-size: 19px;
+  font-size: var(--hero-paragraph-size);
   line-height: 1.6;
 }
 
 .imageWrap {
   position: relative;
   height: 420px;
-  border-radius: 0 18px 18px 0;
+  border-radius: 0 var(--radius-card-md) var(--radius-card-md) 0;
   overflow: hidden;
   transform: scale(1.4);
   right: 150px;
@@ -51,43 +53,59 @@
   object-position: center;
 }
 
-@media (max-width: 1400px) {
-  .title {
-    font-size: 3rem;
-  }
+.desktopImage {
+  display: block;
+}
 
-  .paragraph {
-    font-size: 1.1rem;
+.mobileImage {
+  display: none;
+}
+
+/* ─── Large Laptop ──────────────────────────── 1399px ── */
+@media (max-width: 1399px) {
+  .title {
+    font-size: 48px;
   }
 }
 
-@media (max-width: 1200px) {
+/* ─── Laptop ────────────────────────────────── 1199px ── */
+@media (max-width: 1199px) {
   .title {
-    font-size: 2.2rem;
-  }
-
-  .paragraph {
-    font-size: 1rem;
+    font-size: 36px;
   }
 }
 
+/* ─── Tablet ────────────────────────────────── 991px ── */
 @media (max-width: 991px) {
+  .desktopImage {
+    display: none;
+  }
+
+  .mobileImage {
+    display: block;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 0;
   }
 
   .card {
-    border-radius: 14px 14px 0 0;
+    border-radius: var(--radius-hero);
     padding: 28px;
   }
 
   .imageWrap {
     height: 280px;
-    border-radius: 0 0 14px 14px;
+    border-radius: var(--radius-hero);
     margin-top: 40px;
     right: unset;
     transform: scale(1.2);
+  }
+
+  .image {
+    object-fit: cover;
+    border-radius: 14px;
   }
 
   .title {
@@ -99,9 +117,10 @@
   }
 }
 
-@media (max-width: 768px) {
+/* ─── Mobile ────────────────────────────────── 767px ── */
+@media (max-width: 767px) {
   .experienceSection {
-    padding: var(--section-pt) 16px var(--section-pb);
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
   }
 
   .imageWrap {
@@ -117,32 +136,34 @@
   }
 }
 
-@media (max-width: 480px) {
+/* ─── Small Mobile ──────────────────────────── 575px ── */
+@media (max-width: 575px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .imageWrap {
+    height: 220px;
+  }
+}
+
+/* ─── Very Small Mobile ─────────────────────── 389px ── */
+@media (max-width: 389px) {
   .card {
     padding: 22px 18px;
   }
 
-  .imageWrap {
-    height: 210px;
-  }
-
-  .title {
-    font-size: 26px;
-    margin-bottom: 14px;
-  }
-
-  .paragraph {
-    font-size: 15px;
-    margin-bottom: 14px;
-  }
-}
-
-@media (max-width: 375px) {
   .imageWrap {
     height: 180px;
   }
 
   .title {
     font-size: 24px;
+    margin-bottom: 14px;
+  }
+
+  .paragraph {
+    font-size: 15px;
+    margin-bottom: 14px;
   }
 }

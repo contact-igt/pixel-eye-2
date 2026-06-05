@@ -8,6 +8,7 @@ import CataractApproach from "@/component/Service-Cataract/cataractApproach";
 import ClinicalExpertise from "@/component/Service-Cataract/clinicalExpertise";
 import CataractFaq from "@/component/Service-Cataract/cataractFaq";
 import PatientExperience from "@/component/Service-Cataract/patientsExperience";
+import SuggestedReads from "@/component/About/SuggestedReads";
 
 const ServiceCataractPageComponent = () => {
   return (
@@ -21,6 +22,7 @@ const ServiceCataractPageComponent = () => {
       <CataractApproach />
       <ClinicalExpertise />
       <CataractFaq />
+      <SuggestedReads />
       <PatientExperience/>
     </>
   );

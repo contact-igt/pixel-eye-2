@@ -30,14 +30,14 @@
 
 .content {
   display: grid;
-  grid-template-columns: 390px 1fr;
+  grid-template-columns: 450px 1fr;
   gap: 58px;
   align-items: start;
 }
 
 .imageWrap {
   position: relative;
-  width: 390px;
+  width: 100%;
   height: 484px;
 }
 
@@ -62,13 +62,13 @@
 }
 
 .frontAccent {
-position: absolute;
-    right: -28px;
-    bottom: 24px;
-    width: 605px;
-    height: 300px;
-    border-radius: 8px;
-    background: #f0f5ff;
+  position: absolute;
+  right: -28px;
+  bottom: 24px;
+  width: 605px;
+  height: 300px;
+  border-radius: 8px;
+  background: #f0f5ff;
 }
 
 .copy {
@@ -92,7 +92,14 @@ position: absolute;
   margin-bottom: 0;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1399px) {
+  .section {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1199px) {
   .content {
     grid-template-columns: 340px 1fr;
     gap: 44px;
@@ -105,7 +112,17 @@ position: absolute;
 
 }
 
-@media (max-width: 900px) {
+@media (max-width: 991px) {
+  .copy p {
+    margin: 0 0 15px
+  }
+
+  .imageWrap {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 991px) {
   .content {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -122,19 +139,52 @@ position: absolute;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .inner {
     width: min(1600px, calc(100% - 64px));
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .inner {
     width: min(1600px, calc(100% - 40px));
   }
+
+  .section {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .header {
+    margin-bottom: 22px;
+  }
+
+  .title {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+
+  .subtitle {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .frontAccent {
+    display: none;
+  }
+
+  .imageWrap {
+    width: min(340px, 100%);
+    margin: 0 auto;
+  }
+
+  .copy p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 389px) {
   .inner {
     width: min(1600px, calc(100% - 28px));
   }

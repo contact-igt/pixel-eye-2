@@ -89,9 +89,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-    min-height: 45px;
-    padding: 0 28px;
-    border-radius: 24px;
+  min-height: 45px;
+  padding: 0 28px;
+  border-radius: 24px;
   background: #eef3fa;
   color: #556aa0;
   font-size: clamp(16px, 1.05vw, 24px);
@@ -101,9 +101,9 @@
 }
 
 .featuredMediaWrap .datePill {
-position: absolute;
-    right: 51px;
-    bottom: -5px;
+  position: absolute;
+  right: 51px;
+  bottom: -5px;
 }
 
 .featuredBody {
@@ -195,8 +195,8 @@ position: absolute;
 
 .sideMediaCol .datePill {
   position: absolute;
-    right: -13px;
-    bottom: -2px;
+  right: -13px;
+  bottom: -2px;
 }
 
 .sideContent {
@@ -222,16 +222,21 @@ position: absolute;
   max-width: 100%;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1399px) {
   .datePill {
     min-height: 48px;
     padding: 0 24px;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .layout {
     column-gap: 34px;
+  }
+
+  .featuredMediaWrap .datePill {
+    right: 7px;
+    bottom: 1px;
   }
 
   .sideCard {
@@ -250,9 +255,11 @@ position: absolute;
   .featuredDescription {
     font-size: clamp(16px, 1vw, 19px);
   }
+
+
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .inner {
     width: min(1600px, calc(100% - 64px));
   }
@@ -262,25 +269,74 @@ position: absolute;
   }
 
   .layout {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 28px;
+    align-items: start;
+  }
+
+  .featuredMedia {
+    height: clamp(200px, 26vw, 300px);
+  }
+
+  .featuredTitle {
+    font-size: clamp(18px, 2.4vw, 26px);
+  }
+
+  .featuredDescription {
+    font-size: clamp(13px, 1.5vw, 16px);
   }
 
   .sideCard {
-    grid-template-columns: 280px 1fr;
-    gap: 18px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sideMediaWrap {
+    height: clamp(140px, 17vw, 200px);
+  }
+
+  .sideTitle {
+    font-size: clamp(15px, 2vw, 20px);
+  }
+
+  .sideDescription {
+    font-size: clamp(13px, 1.4vw, 15px);
+    margin-top: 8px;
   }
 
   .sideColumn {
-    gap: 24px;
+    gap: 20px;
+  }
+
+  .datePill {
+    min-height: 38px;
+    padding: 0 16px;
+    font-size: clamp(12px, 1.4vw, 15px);
+  }
+
+  .featuredMediaWrap .datePill {
+    right: 16px;
+    bottom: -16px;
   }
 
   .sideMediaCol .datePill {
-    bottom: -20px;
+
+            right: 106px;
+        bottom: -4px;
+    
   }
+
+ 
+
+  .mediaImage {
+    width: 100%;
+    object-fit: contain;
+  }
+
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .inner {
     width: min(1600px, calc(100% - 40px));
   }
@@ -290,71 +346,110 @@ position: absolute;
   }
 
   .title {
-    font-size: clamp(30px, 9vw, 42px);
+    font-size: clamp(26px, 8vw, 34px);
   }
 
   .subtitle {
     margin-top: 10px;
+    font-size: 15px;
   }
 
   .layout {
-    row-gap: 24px;
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+
+  /* featured card — image left, text right */
+  .featuredCard {
+    display: grid;
+    grid-template-columns: min(44vw, 210px) 1fr;
+    column-gap: 16px;
+    align-items: start;
   }
 
   .featuredMedia {
-    border-radius: 24px;
-    height: clamp(230px, 60vw, 330px);
+    border-radius: 16px;
+    height: clamp(150px, 40vw, 220px);
   }
 
   .featuredMediaWrap .datePill {
-    right: 16px;
-    bottom: -20px;
+    left: 10px;
+    right: auto;
+    bottom: -14px;
   }
 
   .featuredBody {
-    margin-top: 30px;
+    margin-top: 0;
+    padding-top: 2px;
   }
 
   .featuredTitle {
-    font-size: clamp(24px, 6.5vw, 34px);
+    font-size: clamp(16px, 4.5vw, 22px);
   }
 
   .featuredDescription {
-    font-size: clamp(15px, 4vw, 20px);
+    font-size: clamp(13px, 3.5vw, 15px);
+    margin-top: 8px;
+  }
+
+  /* side cards — image left, text right */
+  .sideColumn {
+    gap: 20px;
   }
 
   .sideCard {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: min(40vw, 190px) 1fr;
+    column-gap: 14px;
+    align-items: start;
   }
 
   .sideMediaWrap {
-    border-radius: 20px;
+    border-radius: 14px;
+    height: clamp(130px, 36vw, 200px);
   }
 
   .sideMediaCol .datePill {
-    right: 16px;
-    bottom: -18px;
+    left: 10px;
+    right: auto;
+    bottom: -14px;
   }
 
   .sideContent {
-    padding-top: 14px;
+    padding-top: 2px;
   }
 
   .sideTitle {
-    font-size: clamp(21px, 6.2vw, 30px);
+    font-size: clamp(15px, 4vw, 20px);
   }
 
   .sideDescription {
-    font-size: clamp(15px, 4vw, 19px);
+    font-size: clamp(12px, 3.2vw, 14px);
+    margin-top: 6px;
   }
 
-  .sideColumn {
-    gap: 22px;
+  .datePill {
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: clamp(12px, 3.2vw, 14px);
+  }
+
+  .readMore {
+    margin-top: 18px;
+  }
+
+  .readLabel {
+    min-height: 40px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+
+  .readIcon {
+    width: 40px;
+    height: 40px;
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 389px) {
   .inner {
     width: min(1600px, calc(100% - 28px));
   }

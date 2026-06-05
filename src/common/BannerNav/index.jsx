@@ -69,7 +69,6 @@ export default function BannerNav({
     bookAppointment,
   } = NAV_CONTENT;
   const isLight = navTheme === "light";
-  const cardBackground = cardBg === "white" ? "#ffffff" : "transparent";
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isServicesExpanded, setIsServicesExpanded] = useState(false);
@@ -88,10 +87,7 @@ export default function BannerNav({
       >
         <div className={styles.inner}>
           {/* ── Left: logo card ── */}
-          <div
-            className={styles.logoCard}
-            style={{ background: cardBackground }}
-          >
+          <div className={styles.logoCard}>
             <Link href="/" aria-label={logo.alt}>
               <Image
                 src={logo.src}
@@ -150,10 +146,7 @@ export default function BannerNav({
           </nav>
 
           {/* ── Right: NABH badge or Book Appointment ── */}
-          <div
-            className={styles.rightCard}
-            style={{ background: cardBackground }}
-          >
+          <div className={styles.rightCard}>
             {rightSlot === "nabh" ? (
               <Image
                 src={nabhBadge.src}

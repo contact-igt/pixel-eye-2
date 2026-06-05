@@ -29,6 +29,9 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px 32px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .item {
@@ -70,6 +73,7 @@
   font-size: 18px;
   line-height: 1.35;
   font-weight: 500;
+  text-align: left;
 }
 
 .ctaRow {
@@ -124,40 +128,43 @@
 .ctaButton:active .ctaArrow {
   background: #e3e9f3;
 }
-@media (max-width: 1200px){
-  .cardOverlayText{
-      position: absolute;
-  left: 45%;
-  right: 20%;
-  }
-}
-@media (max-width: 991px) {
-  .title {
-    font-size: 30px;
+
+/* ─── Laptop ────────────────────────────────── 1199px ── */
+@media (max-width: 1199px) {
+  .cardOverlayText {
+    left: 50%;
+    right: 20%;
   }
 
+  .grid {
+    max-width: 900px;
+  }
+}
+
+/* ─── Tablet ────────────────────────────────── 991px ── */
+@media (max-width: 991px) {
   .cardOverlayText {
-      left: 50%;
-  right: 10%;
-  top: -10%;
+    left: 50%;
+    right: 10%;
+    top: 5%;
     font-size: 16px;
     padding: 0 30px 0 10px;
   }
 }
 
-@media (max-width: 768px) {
+/* ─── Mobile ────────────────────────────────── 767px ── */
+@media (max-width: 767px) {
   .blogsSection {
-    padding: var(--section-pt) 16px var(--section-pb);
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
   }
 
   .grid {
     grid-template-columns: 1fr;
     gap: 24px;
+    max-width: 395px;
   }
 
   .item {
-    max-width: 500px;
-    margin: 0 auto;
     width: 100%;
   }
 
@@ -166,16 +173,12 @@
   }
 
   .mediaImage {
-    object-position: center !important;
+    object-position: left top !important;
   }
 
   .itemTitle {
     font-size: 16px;
-    text-align: center;
-  }
-
-  .title {
-    font-size: 26px;
+    text-align: left;
   }
 
   .subtitle {
@@ -183,15 +186,16 @@
   }
 
   .cardOverlayText {
-       left: 50%;
-  right: 18%;
-  top: 10%;
+    left: 50%;
+    right: 10%;
+    top: 10%;
     font-size: 16px;
     padding: 0 25px 0 8px;
   }
 }
 
-@media (max-width: 640px) {
+/* ─── Small Mobile ──────────────────────────── 575px ── */
+@media (max-width: 575px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -203,43 +207,31 @@
 
   .itemTitle {
     font-size: 17px;
+    text-align: left;
   }
 }
 
-@media (max-width: 480px) {
+/* ─── Very Small Mobile ─────────────────────── 389px ── */
+@media (max-width: 389px) {
   .blogsSection {
-    padding: var(--section-pt) 12px var(--section-pb);
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
   }
 
-  .mediaWrap {
-    height: 180px;
-  }
-
-  .title {
-    font-size: 24px;
-  }
-
-  .itemTitle {
-    font-size: 15px;
-  }
-
-  .cardOverlayText {
-    font-size: 13px;
-    padding: 0 20px 0 5px;
-  }
-}
-
-@media (max-width: 375px) {
   .mediaWrap {
     height: 160px;
   }
 
   .itemTitle {
     font-size: 14px;
+    text-align: left;
   }
 
   .cardOverlayText {
     font-size: 11px;
     padding: 0 15px 0 5px;
+  }
+
+  .grid {
+    max-width: 370px;
   }
 }

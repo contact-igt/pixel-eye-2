@@ -153,6 +153,10 @@ export const HOME_CONTENT = {
       src: "/assets/Home/care-experience1.png",
       alt: "Patient receiving eye exam",
     },
+    mobileImage: {
+      src: "/assets/Home/care-experience.png",
+      alt: "Patient receiving eye exam",
+    },
   },
 
   specialist: {

@@ -9,7 +9,6 @@
   padding: 6px clamp(28px, 2vw, 36px) 0;
   overflow: hidden;
   color: #273979;
-  font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
 }
 
 .cataract-risks__header {
@@ -20,7 +19,7 @@
 .cataract-risks__header h2 {
   margin: 0;
   color: #273979;
-  font-size: clamp(32px, 4.15vw, 55px);
+  font-size: var(--h2-size);
   font-weight: 400;
   line-height: 1.13;
   letter-spacing: 0;
@@ -29,7 +28,7 @@
 .cataract-risks__header p {
   margin: 31px 0 0;
   color: rgba(42, 60, 125, 0.82);
-  font-size: clamp(18px, 1.39vw, 20px);
+  font-size: var(--p-size);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: 0;
@@ -58,7 +57,11 @@
   user-select: none;
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 1399px){
+  .cataract-e
+} */
+
+@media (max-width: 991px) {
   .cataract-risks {
     padding-right: 16px;
     padding-left: 16px;
@@ -70,7 +73,7 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 575px) {
   .cataract-risks {
     padding-right: 8px;
     padding-left: 8px;
@@ -78,11 +81,9 @@
   }
 
   .cataract-risks__header h2 {
-    font-size: 34px;
   }
 
   .cataract-risks__header p {
-    font-size: 16px;
   }
 
   .cataract-risks__header p br {
@@ -95,7 +96,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
   .cataract-risks {
     padding-right: 24px;
     padding-left: 24px;
@@ -108,7 +109,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .cataract-risks {
     padding-right: 20px;
     padding-left: 20px;
@@ -126,7 +127,7 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 389px) {
   .cataract-risks {
     padding-right: 14px;
     padding-left: 14px;
@@ -137,15 +138,20 @@
     grid-template-columns: 1fr;
     gap: 10px;
     margin-top: 34px;
+    width: 74%;
+  }
+   .cataract-risks__cards img{
+    margin-left: 5px;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 389px) {
   .cataract-risks {
     padding-right: 10px;
     padding-left: 10px;
   }
-
+  .cataract-risks__header h2{
+  }
   .cataract-risks__cards {
     gap: 8px;
   }

@@ -7,8 +7,8 @@ export const SERVICE_CONTENT = {
         "A condition in which the natural lens of the eye becomes cloudy, affecting vision over time. Treatment involves replacing the lens with an artificial intraocular lens to restore clarity.",
       image: "/assets/Service/Cataract.png",
       imageAlt: "Close view of an eye with cataract",
-      href: "/service#cataract",
-      ctaStyle: "muted",
+      href: "/service/cataract",
+      ctaStyle: "outline",
     },
     {
       id: "lasik-refractive-surgery",
@@ -18,7 +18,7 @@ export const SERVICE_CONTENT = {
       image: "/assets/Service/Lasik Surgery.png",
       imageAlt: "Patient undergoing LASIK eye procedure",
       href: "/service#lasik-refractive-surgery",
-      ctaStyle: "muted",
+      ctaStyle: "outline",
     },
     {
       id: "refractive-error-management",
@@ -28,7 +28,7 @@ export const SERVICE_CONTENT = {
       image: "/assets/Service/error management.png",
       imageAlt: "Patient covering one eye during a vision check",
       href: "/service#refractive-error-management",
-      ctaStyle: "muted",
+      ctaStyle: "outline",
     },
     {
       id: "paediatric-ophthalmology",
@@ -38,7 +38,7 @@ export const SERVICE_CONTENT = {
       image: "/assets/Service/Paediatric ophthalmology.png",
       imageAlt: "Child having an eye examination",
       href: "/service#paediatric-ophthalmology",
-      ctaStyle: "muted",
+      ctaStyle: "outline",
     },
     {
       id: "squint-treatment",

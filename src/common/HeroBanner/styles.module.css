@@ -1,10 +1,11 @@
 /* ── Page padding — matches home banner ── */
 .heroSection {
   padding: clamp(20px, 3vw, 36px);
+  position: relative;
 }
 
 .aboutMaskedSection {
-   padding: clamp(20px, 3vw, 36px);
+  padding: clamp(20px, 3vw, 36px);
 }
 
 /* â”€â”€ Rounded banner card â”€â”€ */
@@ -93,6 +94,7 @@
 @media (max-width: 768px) {
   .heroSection {
     padding: 12px;
+    min-height: 350px;
   }
 
   .aboutMaskedSection {
@@ -102,6 +104,15 @@
   .bannerFrame {
     min-height: clamp(400px, 50vw, 520px);
     border-radius: clamp(20px, 3vw, 32px);
+  }
+
+  .image {
+    object-fit: cover;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 
   .aboutMaskedFrame {

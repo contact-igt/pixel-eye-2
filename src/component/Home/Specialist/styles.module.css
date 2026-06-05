@@ -6,10 +6,10 @@
 .frame {
     max-width: var(--container-max);
     margin: 0 auto;
-    border-radius: 18px;
+    border-radius: var(--radius-card-md);
     overflow: hidden;
     position: relative;
-    height: 580px;
+    height: 600px;
     background: #6ea0b5;
 }
 
@@ -44,8 +44,9 @@
 }
 
 .title {
-    margin: 0 0 12px 0;
+    margin: 80px 0 12px 150px;
     color: #ffffff;
+    text-align: start;
     font-size: var(--h2-size);
     line-height: var(--h2-lh);
     font-weight: 500;
@@ -55,7 +56,7 @@
 
 .doctorsWrap {
     position: relative;
-    height: calc(100% - 100px);
+    height: calc(100% - 160px);
 }
 
 .doctor {
@@ -92,7 +93,7 @@
 
 .doctorName {
     flex: 1;
-    padding-bottom: 18px;
+    padding-bottom: 50px;
     color: rgba(255, 255, 255, 0.95);
     font-size: 14px;
     font-weight: 500;
@@ -100,36 +101,41 @@
     word-break: break-word;
 }
 
-@media (max-width: 1399px){
+@media (max-width: 1399px) {
     .doctor {
         flex-direction: column-reverse;
         align-items: center;
         justify-content: flex-end;
     }
+
     .doctorImage {
         flex: 1 1 auto;
         height: calc(100% - 40px);
         width: auto;
     }
+
     .doctorName {
         text-align: center !important;
         padding-bottom: 8px;
         width: 100%;
     }
 }
-@media (max-width: 1024px) {
+
+@media (max-width: 991px) {
     .frame {
         height: 500px;
     }
+
     .doctorImage {
-         flex: 0 0 270px;
+        flex: 0 0 270px;
         height: calc(100% - 40px);
         width: auto;
-         /* flex: 0 0 220px;
+        /* flex: 0 0 220px;
     height: 100%;
     object-fit: contain;
     object-position: bottom center; */
     }
+
     .doctor {
         width: 260px;
         height: 320px;
@@ -152,7 +158,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .frame {
         height: 380px;
     }
@@ -169,33 +175,32 @@
     .doctorImage {
         flex: 0 0 210px;
     }
+
+    .doctorsWrap {
+        height: calc(100% - 130px);
+    }
+
+    .title {
+        margin: 34px 0 12px 0;
+        text-align: center;
+        padding-left: 0;
+    }
 }
-@media (max-width: 580px){
-    .left{
+
+@media (max-width: 575px) {
+    .left {
         left: 2%;
     }
-    .right{
+
+    .right {
         right: 2%;
     }
 }
 
-@media (max-width: 480px){
-    .left{
-        left: -5%;
-    }
-    .right{
-        right: -5%;
-    }
-}
-
-
-@media (max-width: 430px) {
-    .specialistSection {
-        padding: var(--section-pt) 12px var(--section-pb);
-    }
+@media (max-width: 389px) {
     .frame {
         height: 320px;
-        border-radius: 12px;
+        border-radius: var(--radius-card-md);
     }
 
     .doctor {
@@ -206,7 +211,8 @@
     .doctorImage {
         flex: 0 0 220px;
     }
-    .doctorName{
+
+    .doctorName {
         text-align: start;
         font-size: 12px;
     }
@@ -225,8 +231,5 @@
 
     .right {
         right: -1%;
-    }
-    .title{
-        padding-left: 30px;
     }
 }

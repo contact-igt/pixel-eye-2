@@ -37,7 +37,6 @@ const BlogsVideos = () => {
             );
           })}
         </div>
-
         <div className={styles.ctaRow}>
           <Button label={cta.label} href={cta.href} variant="muted" />
         </div>
