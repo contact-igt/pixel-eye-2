@@ -20,6 +20,7 @@ const Button = ({
   as,
   type = "button",
   className = "",
+  disabled = false,
 }) => {
   const variantClass = styles[variant] ?? styles.light;
   const rootClass = `${styles.btn} ${variantClass} ${className}`.trim();
@@ -35,7 +36,13 @@ const Button = ({
 
   if (as === "button" || onClick) {
     return (
-      <button type={type} className={rootClass} onClick={onClick}>
+      <button
+        type={type}
+        className={rootClass}
+        onClick={onClick}
+        disabled={disabled}
+        aria-disabled={disabled}
+      >
         {inner}
       </button>
     );

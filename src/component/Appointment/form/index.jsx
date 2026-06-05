@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
+import submitForm from "@/lib/formService";
 
 const initialForm = {
   fullName: "",
@@ -83,6 +85,9 @@ const SelectField = ({
 const Form = () => {
   const [formData, setFormData] = useState(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const router = useRouter();
 
   const handleChange = (event) => {
     const { checked, name, type, value } = event.target;
@@ -92,10 +97,26 @@ const Form = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // TODO: wire this form to the backend appointment API.
-    setSubmitted(true);
+    setError(null);
+    setLoading(true);
+    try {
+      // formName 'Appointments' matches the sheet name in your Apps Script
+      await submitForm("Appointments", formData);
+      // On success, redirect to a dedicated thank-you page
+      router.push("/thank-you");
+      setFormData(initialForm);
+    } catch (err) {
+      console.error("Appointment submit error", err);
+      // Redirect to a separate error page and include message for display
+      const msg = encodeURIComponent(
+        err?.message || "Failed to submit appointment",
+      );
+      router.push({ pathname: "/error", query: { msg } });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -250,12 +271,15 @@ const Form = () => {
               as="button"
               type="submit"
               className={styles.submitButton}
+              disabled={loading}
             />
             <p>
               {submitted
                 ? "Appointment details captured. Our team will review and confirm"
                 : "Our team will review your selection and confirm"}
             </p>
+            {loading && <p className={styles.loading}>Booking...</p>}
+            {error && <p className={styles.error}>{error}</p>}
           </div>
         </div>
       </form>
