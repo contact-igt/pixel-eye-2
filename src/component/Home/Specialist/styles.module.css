@@ -6,7 +6,7 @@
 .frame {
     max-width: var(--container-max);
     margin: 0 auto;
-    border-radius: 18px;
+    border-radius: var(--radius-card-md);
     overflow: hidden;
     position: relative;
     height: 600px;
@@ -198,24 +198,9 @@
 }
 
 @media (max-width: 389px) {
-    .left {
-        left: -5%;
-    }
-
-    .right {
-        right: -5%;
-    }
-}
-
-
-@media (max-width: 389px) {
-    .specialistSection {
-        padding: var(--section-pt) 12px var(--section-pb);
-    }
-
     .frame {
         height: 320px;
-        border-radius: 12px;
+        border-radius: var(--radius-card-md);
     }
 
     .doctor {

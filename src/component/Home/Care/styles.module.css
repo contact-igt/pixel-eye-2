@@ -57,7 +57,7 @@
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: var(--radius-card-md);
   isolation: isolate;
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -119,7 +119,6 @@
   position: relative;
   padding-bottom: 80px;
 }
-
 
 .sideWrap {
   align-self: start;
@@ -215,11 +214,8 @@
   padding-bottom: 55px;
 }
 
+/* ─── Large Laptop ──────────────────────────── 1399px ── */
 @media (max-width: 1399px) {
-
-  /* .cardTitle{
-    bottom: 50px;
-  } */
   .cardWrap {
     padding-bottom: 60px;
   }
@@ -240,7 +236,7 @@
 
   .cardDescription {
     font-size: 13px;
-    padding-top: 4px
+    padding-top: 4px;
   }
 
   .centerTitle {
@@ -264,26 +260,13 @@
   }
 }
 
+/* ─── Tablet ────────────────────────────────── 991px ── */
 @media (max-width: 991px) {
   .careVisual {
     --side-card-width: 260px;
     --center-card-width: 330px;
     --card-gap: 20px;
-  }
-
-  .cardsRow .cardWrap:nth-child(1) .centerTitle {
-    bottom: 60px;
-  }
-
-  .cardsRow .cardWrap:nth-child(3) .centerTitle {
-    bottom: 70px;
-  }
-}
-
-@media (max-width: 991px) {
-  .careVisual {
     min-height: auto;
-    /* padding: 20px 0 16px; */
   }
 
   .panelBg {
@@ -345,37 +328,49 @@
   }
 }
 
+/* ─── Mobile ────────────────────────────────── 767px ── */
 @media (max-width: 767px) {
   .ctaButton {
     left: 28%;
   }
 }
 
-@media (max-width: 389px) {
-  .careSection {
-    padding: var(--section-pt) 12px var(--section-pb);
+/* ─── Small Mobile ──────────────────────────── 575px ── */
+@media (max-width: 575px) {
+  .sideCard {
+    height: 340px;
   }
 
+  .centerCard {
+    height: 420px;
+  }
+}
+
+/* ─── Very Small Mobile ─────────────────────── 389px ── */
+@media (max-width: 389px) {
   .sideWrap,
   .centerWrap {
     width: 100%;
   }
 
   .sideCard {
-    height: 360px;
+    height: 300px;
   }
 
   .centerCard {
-    height: 550px;
+    height: 360px;
   }
 
-  .centerCard:nth-child(1),
+  .centerCard:nth-child(1) {
+    height: 420px;
+  }
+
   .centerCard:nth-child(3) {
-    height: 500px;
+    height: 400px;
   }
 
   .cardTitle {
-    font-size: 18px;
+    font-size: 16px;
     left: 16px;
     right: 16px;
     bottom: 16px;
@@ -391,71 +386,10 @@
   }
 
   .cardsRow .cardWrap:nth-child(1) .centerTitle {
-    bottom: 8px;
-  }
-
-  .cardsRow .cardWrap:nth-child(3) .centerTitle {
-    bottom: 8px;
-  }
-}
-
-@media (max-width: 389px) {
-  .cardsRow .cardWrap:nth-child(1) .centerTitle {
-    bottom: 20px;
-  }
-
-  .cardsRow .cardWrap:nth-child(3) .centerTitle {
-    bottom: 30px;
-  }
-
-  .centerCard:nth-child(1),
-  .centerCard:nth-child(3) {
-    height: 500px;
-  }
-}
-
-@media (max-width: 389px) {
-  .cardsRow .cardWrap:nth-child(1) .centerTitle {
     bottom: 15px;
   }
 
   .cardsRow .cardWrap:nth-child(3) .centerTitle {
-    bottom: 15px;
-  }
-
-  .centerCard:nth-child(1),
-  .centerCard:nth-child(3) {
-    height: 420px;
-  }
-
-
-}
-
-@media (max-width: 389px) {
-  .sideCard {
-    height: 300px;
-  }
-
-  .centerCard {
-    height: 360px;
-  }
-
-  .cardTitle {
-    font-size: 16px;
-  }
-
-}
-
-@media (max-width: 389px) {
-  .cardsRow .cardWrap:nth-child(3) .centerTitle {
     bottom: 30px;
-  }
-
-  .centerCard:nth-child(1) {
-    height: 420px;
-  }
-
-  .centerCard:nth-child(3) {
-    height: 400px !important;
   }
 }

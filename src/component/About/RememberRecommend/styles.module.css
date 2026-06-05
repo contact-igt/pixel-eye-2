@@ -29,11 +29,50 @@
   font-weight: 400;
 }
 
+/* SSR fallback grid */
 .grid {
   margin-top: 42px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
+}
+
+/* Slider wrapper */
+.sliderWrap {
+  margin-top: 42px;
+}
+
+.slider :global(.slick-list) {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  margin-top: -16px;
+  margin-bottom: -16px;
+}
+
+.slideOuter {
+  padding: 0 12px;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d0d7e6;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.activeDot {
+  background: #d19549;
 }
 
 .card {
@@ -47,6 +86,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.cardActive {
+  transform: scale(1.04);
+  transition: transform 0.4s ease;
 }
 
 .cardContent {
@@ -188,23 +234,17 @@
 }
 
 @media (max-width: 767px) {
-  .cardText {
-    font-size: 14px;
-  }
-
-  .patientBlock {
-    top: 0;
-    left: 1rem;
-  }
-}
-
-@media (max-width: 767px) {
   .inner {
     width: min(1600px, calc(100% - 40px));
   }
 
   .title {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-top: 10px;
   }
 
   .grid {
@@ -213,21 +253,28 @@
     gap: 20px;
   }
 
+  .sliderWrap {
+    margin-top: 24px;
+  }
+
   .card {
     min-height: auto;
-    padding: 20px 30px 30px;
+    padding: 20px 20px 28px;
   }
 
   .cardContent {
-    width: 40%;
-    margin: 0 auto;
-    padding: 0;
+    width: 100%;
+    padding: 14px 16px;
+  }
+
+  .cardText {
+    font-size: 13px;
+    margin-top: 10px;
   }
 
   .patientBlock {
-    margin: auto;
-    top: 25px;
-    left: -3rem;
+    top: 14px;
+    left: 1rem;
   }
 
   .avatarWrap {
@@ -235,18 +282,23 @@
     height: 40px;
   }
 
-  .meta h3 {
-    font-size: 16px;
+  .name {
+    font-size: 15px;
+  }
+
+  .dots {
+    margin-top: 16px;
   }
 }
 
 @media (max-width: 575px) {
   .cardContent {
-    width: 50%;
+    width: 100%;
+    padding: 12px 14px;
   }
 
   .cardText {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 

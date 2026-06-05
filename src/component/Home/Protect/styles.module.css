@@ -6,7 +6,7 @@
   position: relative;
   max-width: var(--container-max);
   margin: 0 auto;
-  border-radius: 18px;
+  border-radius: var(--radius-card-md);
   overflow: hidden;
   height: 450px;
   isolation: isolate;
@@ -159,6 +159,7 @@
     height: 360px;
   }
 
+
   .overlay {
     background: linear-gradient(110deg,
         rgba(17, 30, 50, 0.88) 0%,
@@ -167,7 +168,10 @@
         rgba(23, 33, 48, 0.02) 100%);
   }
 
-  .heroTitle {
-    font-size: 28px;
+  .slideImage{
+    object-fit:fill;
+    
   }
+
+
 }

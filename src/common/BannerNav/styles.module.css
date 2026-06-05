@@ -2,13 +2,14 @@
   BannerNav is position:absolute so it overlays the banner image.
   Parent must be position:relative with overflow:hidden.
 */
+
+/* ── Outer wrapper ───────────────────────────────────── */
 .bannerNav {
   position: absolute;
   top: 25px;
   left: 0;
   right: 0;
   z-index: 1100;
-  /* ensure navbar and dropdown sit above banner content */
 }
 
 .inner {
@@ -20,21 +21,11 @@
   padding: 0px;
 }
 
-
-/* margin: 0 auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(200px, 22vw, 320px);
-    align-items: start;
-    /* padding: 0 clamp(12px, 2vw, 24px); */
-
 .aboutMaskedNav .inner {
-  /* Keep the central nav column stable across pages — don't change grid columns here
-     to avoid visual shifts when switching to the About page. Adjust visual spacing
-     via the logo/right card rules instead. */
   grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(200px, 22vw, 320px);
 }
 
+/* ── Left logo card ──────────────────────────────────── */
 .logoCard {
   display: flex;
   align-items: flex-start;
@@ -46,7 +37,6 @@
 .aboutMaskedNav .logoCard {
   align-items: flex-start;
   min-height: clamp(132px, 8.6vw, 176px);
-  /* padding: clamp(34px, 2vw, 40px) 0 0 0; */
 }
 
 .logo {
@@ -59,7 +49,7 @@
   width: clamp(130px, 13.6vw, 200px);
 }
 
-/* Center: nav links + search */
+/* ── Center nav links ────────────────────────────────── */
 .nav {
   display: flex;
   justify-content: center;
@@ -95,7 +85,6 @@
 .dropdownMenu {
   position: absolute;
   top: calc(100% + 6px);
-  /* reduce gap so moving cursor to menu doesn't close it */
   left: 50%;
   transform: translateX(-50%);
   min-width: 170px;
@@ -109,7 +98,6 @@
   pointer-events: none;
   transition: opacity 140ms ease, visibility 140ms ease, transform 140ms ease;
   z-index: 1110;
-  /* sit above most page elements */
 }
 
 .navItemWithMenu:hover .dropdownMenu,
@@ -134,7 +122,7 @@
   background: #f1f6ff;
 }
 
-/* White text variant */
+/* ── Nav light variant (white text over dark hero) ───── */
 .navLight .navLink {
   color: #ffffff;
 }
@@ -156,6 +144,7 @@
   color: #ffffff;
 }
 
+/* ── Search button ───────────────────────────────────── */
 .searchBtn {
   display: inline-flex;
   align-items: center;
@@ -180,7 +169,7 @@
   height: 100%;
 }
 
-/* Right: NABH badge or Book Appointment */
+/* ── Right card (NABH badge or Book Appointment) ─────── */
 .rightCard {
   display: flex;
   align-items: flex-start;
@@ -193,8 +182,6 @@
 .aboutMaskedNav .rightCard {
   justify-content: flex-end;
   min-height: clamp(132px, 8.6vw, 176px);
-  /* padding: clamp(34px, 2vw, 40px) 0 0 0; */
-
   transform: translateX(10px);
 }
 
@@ -221,7 +208,6 @@
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  /* padding: 0 clamp(12px, 2vw, 18px); */
   padding: 16px 24px;
   transition: background 160ms ease;
 }
@@ -239,7 +225,7 @@
   background: #edf2f8;
 }
 
-/* ── Menu Button & Sidebar Styles ── */
+/* ── Mobile menu button ──────────────────────────────── */
 .menuBtn {
   display: none;
   align-items: center;
@@ -249,6 +235,7 @@
   color: var(--text-heading);
   cursor: pointer;
   padding: 6px;
+  margin-left: 8px;
   border-radius: 50%;
   transition: background 150ms ease, color 150ms ease;
 }
@@ -270,45 +257,38 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Sidebar Drawer overlay */
+/* ── Sidebar overlay ─────────────────────────────────── */
 .sidebarOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(4px);
-  z-index: 999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 200ms ease, visibility 200ms ease;
+  z-index: 50;
 }
 
 .sidebarOverlayOpen {
-  opacity: 1;
+  opacity: 0.48;
+  background: rgba(0, 0, 0, 0.48);
   visibility: visible;
 }
 
-/* Sidebar Panel */
+/* ── Sidebar panel ───────────────────────────────────── */
 .sidebar {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
-  width: 320px;
-  max-width: 85vw;
-  background: #1e3466;
-  /* Deep blue theme background matching hospital theme */
-  color: #ffffff;
-  z-index: 1000;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+  height: 100vh;
+  width: min(92vw, 360px);
+  background: #ffffff;
+  transform: translateX(110%);
+  transition: transform 260ms ease;
+  z-index: 60;
+  box-shadow: -12px 0 30px rgba(8, 20, 40, 0.12);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 18px;
 }
 
 .sidebarOpen {
@@ -317,185 +297,121 @@
 
 .sidebarLight {
   background: #ffffff;
-  color: var(--text-heading);
-  box-shadow: -10px 0 30px rgba(25, 49, 98, 0.1);
 }
 
-/* Header */
 .sidebarHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .sidebarLogo {
+  display: block;
+  width: 120px;
   height: auto;
-  filter: brightness(0) invert(1);
-}
-
-.sidebarLight .sidebarLogo {
-  filter: none;
 }
 
 .closeBtn {
+  border: 0;
   background: transparent;
-  border: none;
-  color: currentColor;
+  padding: 6px;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
 }
 
-.closeBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.sidebarLight .closeBtn:hover {
-  background: rgba(41, 59, 119, 0.08);
-}
-
-.closeBtn svg {
-  width: 24px;
-  height: 24px;
-}
-
-/* Navigation Links */
+/* ── Sidebar navigation ──────────────────────────────── */
 .sidebarNav {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 8px;
+  margin-top: 16px;
 }
 
-.sidebarNavLink {
-  color: currentColor;
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  text-decoration: none;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: opacity 0.2s;
-  text-align: left;
-  background: transparent;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  width: 100%;
-  cursor: pointer;
-}
-
-.sidebarLight .sidebarNavLink {
-  border-bottom-color: var(--border-soft);
-}
-
-.sidebarNavLink:hover {
-  opacity: 0.8;
-}
-
+.sidebarNavLink,
 .sidebarNavLinkTrigger {
-  display: flex;
+  display: block;
+  padding: 12px 8px;
+  color: var(--text-heading);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sidebarNavItemWithMenu {
+  display: block;
+}
+
+.sidebarSubmenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 220ms ease;
+  padding-left: 8px;
+}
+
+.sidebarSubmenuExpanded {
+  max-height: 800px;
+}
+
+.sidebarSubmenuLink {
+  display: block;
+  padding: 8px 8px;
+  color: var(--text-heading);
+  text-decoration: none;
+}
+
+.sidebarDivider {
+  height: 1px;
+  background: var(--border-soft);
+  margin: 14px 0;
+}
+
+.sidebarBookBtn {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 16px;
+  min-height: var(--btn-h);
+  background: #ffffff;
+  border: 1.5px solid #7fa8be;
+  border-radius: 10px;
+  color: var(--text-heading);
+  text-decoration: none;
+  font-size: var(--btn-fs);
+  font-weight: 600;
+  transition: background 160ms ease;
+}
+
+.sidebarBookBtn:hover {
+  background: #edf2f8;
 }
 
 .arrow {
-  font-size: 12px;
-  transition: transform 0.2s;
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 180ms ease;
 }
 
 .arrowExpanded {
   transform: rotate(180deg);
 }
 
-/* Dropdown Submenu inside Sidebar */
-.sidebarSubmenu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding-left: 16px;
-}
-
-.sidebarSubmenuExpanded {
-  max-height: 200px;
-  margin-top: 12px;
-  margin-bottom: 8px;
-}
-
-.sidebarSubmenuLink {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 6px 0;
-  transition: color 0.2s;
-}
-
-.sidebarLight .sidebarSubmenuLink {
-  color: var(--text-body);
-}
-
-.sidebarSubmenuLink:hover {
-  color: #ffffff;
-}
-
-.sidebarLight .sidebarSubmenuLink:hover {
-  color: var(--text-heading);
-}
-
-.sidebarDivider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 12px 0;
-}
-
-.sidebarLight .sidebarDivider {
-  background: var(--border-soft);
-}
-
-/* Book Appointment Button inside Sidebar */
-.sidebarBookBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 48px;
-  background: var(--brand-gold, #d39a52);
-  color: #ffffff !important;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-.sidebarBookBtn:hover {
-  background: #c28842;
-}
-
-@media (max-width:1400px) {
+/* ─── Large Laptop ──────────────────────────── 1399px ── */
+@media (max-width: 1399px) {
   .rightCard {
     padding-left: 4rem;
   }
 }
 
-@media (max-width:1250px) {
+/* ─── Laptop ────────────────────────────────── 1199px ── */
+@media (max-width: 1199px) {
   .rightCard {
     padding-left: 3rem;
   }
 }
 
-@media (max-width: 992px) {
+/* ─── Tablet ────────────────────────────────── 991px ── */
+@media (max-width: 991px) {
   .logo {
     width: clamp(115px, 13.6vw, 200px);
   }
@@ -508,15 +424,13 @@
   .rightCard {
     min-height: unset;
     padding: 3px 0 0 35px;
-    padding-bottom: 10px !important;
+    padding-bottom: 10px;
   }
 }
 
-@media (max-width: 768px) {
-  .inner {
-    grid-template-columns: 1fr 1fr;
-  }
-
+/* ─── Mobile ────────────────────────────────── 767px ── */
+@media (max-width: 767px) {
+  .inner,
   .aboutMaskedNav .inner {
     grid-template-columns: 1fr 1fr;
   }
@@ -590,15 +504,8 @@
   }
 }
 
-@media (max-width: 480px) {
-  .inner {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .aboutMaskedNav .inner {
-    grid-template-columns: 1fr 1fr;
-  }
-
+/* ─── Small Mobile ──────────────────────────── 575px ── */
+@media (max-width: 575px) {
   .logoCard,
   .rightCard {
     min-height: 62px;
@@ -656,165 +563,8 @@
   }
 }
 
-/* ----------------------------- */
-/* Mobile menu / sidebar styles  */
-/* ----------------------------- */
-.menuBtn {
-  display: none;
-  border: 0;
-  background: transparent;
-  padding: 6px;
-  margin-left: 8px;
-  cursor: pointer;
-  color: var(--text-heading);
-}
-
-.menuBtn svg {
-  width: 22px;
-  height: 22px;
-}
-
-.menuBtnLight {
-  color: #ffffff;
-}
-
-.sidebarOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 200ms ease, visibility 200ms ease;
-  z-index: 50;
-}
-
-.sidebarOverlayOpen {
-  opacity: 0.48;
-  background: rgba(0, 0, 0, 0.48);
-  visibility: visible;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: min(92vw, 360px);
-  background: #ffffff;
-  transform: translateX(110%);
-  transition: transform 260ms ease;
-  z-index: 60;
-  box-shadow: -12px 0 30px rgba(8, 20, 40, 0.12);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 18px;
-}
-
-.sidebarOpen {
-  transform: translateX(0);
-}
-
-.sidebarLight {
-  background: #ffffff;
-}
-
-.sidebarHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border-soft);
-}
-
-.sidebarLogo {
-  display: block;
-  width: 120px;
-  height: auto;
-}
-
-.closeBtn {
-  border: 0;
-  background: transparent;
-  padding: 6px;
-  cursor: pointer;
-}
-
-.sidebarNav {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.sidebarNavLink,
-.sidebarNavLinkTrigger {
-  display: block;
-  padding: 12px 8px;
-  color: var(--text-heading);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.sidebarNavItemWithMenu {
-  display: block;
-}
-
-.sidebarSubmenu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 220ms ease;
-  padding-left: 8px;
-}
-
-.sidebarSubmenuExpanded {
-  max-height: 800px;
-}
-
-.sidebarSubmenuLink {
-  display: block;
-  padding: 8px 8px;
-  color: var(--text-heading);
-  text-decoration: none;
-}
-
-.sidebarDivider {
-  height: 1px;
-  background: var(--border-soft);
-  margin: 14px 0;
-}
-
-.sidebarBookBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 12px 16px;
-  background: #ffffff;
-  border: 1.5px solid #7fa8be;
-  border-radius: 10px;
-  color: var(--text-heading);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.arrow {
-  display: inline-block;
-  margin-left: 8px;
-  transition: transform 180ms ease;
-}
-
-.arrowExpanded {
-  transform: rotate(180deg);
-}
-
-@media (max-width: 768px) {
-  .menuBtn {
-    display: inline-flex;
-  }
-}
-
-@media (min-width: 769px) {
-
+/* ── Desktop: sidebar is display:none above mobile ───── */
+@media (min-width: 768px) {
   .sidebar,
   .sidebarOverlay {
     display: none;

@@ -24,7 +24,7 @@
 
 .card {
     position: absolute;
-    border-radius: 18px;
+    border-radius: var(--radius-card-md);
     overflow: hidden;
     isolation: isolate;
     cursor: pointer;
@@ -133,7 +133,7 @@
     align-items: center;
     gap: 8px;
     padding: 4px 12px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     border: 1px solid rgba(255, 255, 255, 0.5);
     color: #ffffff;
     font-size: 13px;
@@ -251,7 +251,6 @@
 }
 
 @media (max-width: 575px) {
-
     .sideCard,
     .centerCard {
         height: 230px;
@@ -262,10 +261,6 @@
         right: 18px;
         bottom: 18px;
     }
-
-    .sectionTitle {
-        font-size: 28px;
-    }
 }
 
 @media (max-width: 389px) {
@@ -275,11 +270,7 @@
 
     .sideCard,
     .centerCard {
-        height: 210px;
-    }
-
-    .sectionTitle {
-        font-size: 24px;
+        height: 190px;
     }
 
     .centerTitle {
@@ -288,13 +279,5 @@
 
     .sideTitle {
         font-size: 17px;
-    }
-}
-
-@media (max-width: 389px) {
-
-    .sideCard,
-    .centerCard {
-        height: 190px;
     }
 }
