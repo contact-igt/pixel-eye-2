@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  padding: var(--about-section-space) 0;
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
 }
 
 .revealShell {
@@ -18,18 +18,18 @@
 
 .title {
   margin: 0;
-  color: #2f4b8b;
-  font-size: var(--title-size);
+  color: var(--surface-dark-blue);
+  font-size: var(--h2-size);
   font-weight: 400;
-  line-height: var(--title-lh);
+  line-height: var(--h2-lh);
 }
 
 .subtitle {
   margin: 12px 0 0;
-  color: #5f6f96;
-  font-size: var(--p-size);
+  color: var(--text-body);
+  font-size: var(--paragraph-size);
   font-weight: 400;
-  line-height: 1.35;
+  line-height: var(--paragraph-lh);
 }
 
 .cards {
@@ -79,7 +79,7 @@
 .mediaSection {
   position: relative;
   min-height: 560px;
-  border-radius: 24px;
+  border-radius: var(--radius-card-lg);
   overflow: hidden;
 }
 
@@ -121,7 +121,7 @@
   border-radius: 0 24px 24px 24px;
   /* background: #ffffff; */
   padding: 22px 26px;
-  color: #27488b;
+  color: var(--surface-dark-blue);
 }
 
 .infoPanelRight {
@@ -133,7 +133,7 @@
 
 .name {
   margin: 0;
-  color: #27488b;
+  color: var(--surface-dark-blue);
   font-size: 20px;
   font-weight: 500;
   line-height: 1.22;
@@ -157,17 +157,17 @@
 
 .contentSection {
   min-height: 560px;
-  border-radius: 24px;
-  background: #dfe9f3;
+  border-radius: var(--radius-card-lg);
+  background: var(--surface-soft-blue);
   padding: 54px 56px;
-  color: #576e9d;
+  color: var(--text-body);
 }
 
 .contentSection p {
   margin: 0 0 26px;
-  font-size: var(--p-size);
+  font-size: var(--paragraph-size);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: var(--paragraph-lh);
 }
 
 .contentSection p:last-child {
@@ -211,7 +211,7 @@
   }
 
   .mediaSection {
-    height: 720px;
+    height: clamp(560px, 58vw, 720px);
   }
 
   .image {
@@ -296,8 +296,6 @@
   }
 
   .contentSection p {
-    font-size: 14px;
-    line-height: 1.6;
     margin-bottom: 14px;
   }
 
@@ -342,8 +340,8 @@
   }
 
   .infoPanel {
-    right: -2.4rem;
-    top: -5px;
+    right: 0;
+    top: 0;
   }
 
   .name {

@@ -88,6 +88,7 @@
   justify-content: space-between;
   transition: transform 0.4s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .cardActive {
@@ -174,13 +175,6 @@
 }
 
 @media (max-width: 1399px) {
-  .patientBlock {
-    top: 10px;
-    left: 10px;
-  }
-}
-
-@media (max-width: 1399px) {
   .cardText {
     font-size: 14px;
     margin-bottom: 0;
@@ -193,8 +187,8 @@
   }
 
   .patientBlock {
-    left: 0;
-    top: -5px;
+    top: 10px;
+    left: 10px;
   }
 }
 
@@ -259,22 +253,28 @@
 
   .card {
     min-height: auto;
-    padding: 20px 20px 28px;
+    padding: 18px 16px 24px;
+  }
+
+  .cardActive {
+    transform: none !important;
   }
 
   .cardContent {
     width: 100%;
-    padding: 14px 16px;
+    padding: 12px 14px;
   }
 
   .cardText {
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.55;
     margin-top: 10px;
   }
 
   .patientBlock {
-    top: 14px;
-    left: 1rem;
+    top: 12px;
+    left: 12px;
+    gap: 12px;
   }
 
   .avatarWrap {
@@ -292,6 +292,10 @@
 }
 
 @media (max-width: 575px) {
+  .card {
+    padding: 16px 14px 22px;
+  }
+
   .cardContent {
     width: 100%;
     padding: 12px 14px;

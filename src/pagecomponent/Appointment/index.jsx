@@ -1,10 +1,22 @@
 import HeroBanner from "@/common/HeroBanner";
-import Form from "@/component/Appointment/form";
+import dynamic from "next/dynamic";
+const Form = dynamic(() => import("@/component/Appointment/form"), {
+  ssr: false,
+});
 import { HERO_BANNER_CONTENT } from "@/constant/heroBannerContent";
 
 const AppointmentPageComponent = () => {
-  const { image, title, subtitle, rightSlot, navTheme, cardBg, height, showOverlay, imagePosition } =
-    HERO_BANNER_CONTENT.appointment;
+  const {
+    image,
+    title,
+    subtitle,
+    rightSlot,
+    navTheme,
+    cardBg,
+    height,
+    showOverlay,
+    imagePosition,
+  } = HERO_BANNER_CONTENT.appointment;
 
   return (
     <>
