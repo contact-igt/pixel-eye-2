@@ -4,7 +4,7 @@
   --form-field-radius: 10px;
   --form-field-fs: 16px;
   --form-check-size: 16px;
-  --form-btn-h: 36px;
+  --form-btn-h: 50px;
   --form-btn-fs: 14px;
 
   position: relative;
@@ -76,7 +76,7 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  padding: 10px 34px 0 16px;
+  padding: 15px 15px 8px 18px;
   border: 0;
   outline: 0;
   color: var(--text-heading);
@@ -85,14 +85,33 @@
   appearance: none;
 }
 
-.appointment-field:not(.is-filled) input[type="date"],
-.appointment-field:not(.is-filled) input[type="time"] {
-  color: transparent;
+.compact-field input,
+.compact-field select {
+  padding-top: 22px;
+  padding-bottom: 15px;
+  color: var(--brand-blue);
+  caret-color: var(--brand-blue);
+}
+
+.appointment-field input[type="date"],
+.appointment-field input[type="time"] {
+  color: var(--brand-blue);
+  caret-color: var(--brand-blue);
 }
 
 .appointment-field input[type="date"]::-webkit-calendar-picker-indicator,
 .appointment-field input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none !important;
   opacity: 0;
+  appearance: none !important;
+}
+
+.appointment-field input[type="date"]::-webkit-inner-spin-button,
+.appointment-field input[type="date"]::-webkit-clear-button,
+.appointment-field input[type="time"]::-webkit-inner-spin-button,
+.appointment-field input[type="time"]::-webkit-clear-button {
+  display: none !important;
+  appearance: none !important;
 }
 
 .appointment-field select {
@@ -114,6 +133,111 @@
   transform: translateY(-11px);
 }
 
+.time-slot-field {
+  align-items: flex-end;
+  padding: 8px 18px 9px;
+  overflow: visible;
+}
+
+.time-slot-field>.time-slot-label,
+.time-slot-field:focus-within>.time-slot-label,
+.time-slot-field.is-filled>.time-slot-label {
+  position: absolute;
+  top: 9px;
+  left: 18px;
+  z-index: 0;
+  color: var(--text-muted);
+  font-size: 10px;
+  opacity: 0.72;
+  transform: none;
+}
+
+.time-slot-field .time-display {
+  position: relative;
+  inset: auto;
+  z-index: 2;
+  width: min(130px, calc(100% - 34px));
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brand-blue);
+  font: inherit;
+  font-weight: 500;
+  line-height: 1;
+  text-align: left;
+  appearance: none;
+}
+
+.time-icon-button {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brand-blue);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.time-icon-button .form-icon {
+  position: static;
+  width: 20px;
+  height: 20px;
+  stroke: var(--brand-blue);
+}
+
+.time-picker-panel {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  z-index: 20;
+  display: flex;
+  width: min(260px, 100%);
+  max-height: 214px;
+  overflow: hidden;
+  border: 1.5px solid #bcc9e4;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(20, 44, 96, 0.16);
+}
+
+.time-picker-column {
+  display: grid;
+  flex: 1 1 0;
+  max-height: 214px;
+  overflow-y: auto;
+  border-right: 1px solid #e5ebf7;
+}
+
+.time-picker-column:last-child {
+  border-right: 0;
+}
+
+.time-picker-column button {
+  min-height: 34px;
+  border: 0;
+  background: #ffffff;
+  color: var(--brand-blue);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.time-picker-column button:focus-visible,
+.time-picker-column .time-option-active {
+  background: var(--brand-blue);
+  color: #ffffff;
+}
+
 .form-icon {
   position: relative;
   z-index: 2;
@@ -126,6 +250,17 @@
   stroke-linejoin: round;
   stroke-width: 2.2;
   pointer-events: none;
+}
+
+.calendar-icon {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  width: 18px;
+  height: 18px;
+  margin-left: 0;
+  stroke: var(--brand-blue);
+  transform: translateY(-50%);
 }
 
 .phone-row {
@@ -209,8 +344,8 @@
 
 .checkbox-row input:checked::after {
   position: absolute;
-  top: 1px;
-  left: 4px;
+  top: 1.5px;
+  left: 5.1px;
   width: 4px;
   height: 8px;
   content: "";
@@ -244,7 +379,8 @@
 
 .submitButton {
   --btn-h: var(--form-btn-h);
-  --btn-icon: 38px;
+  --btn-icon: var(--form-btn-h);
+  --btn-icon-left: 165px;
   --btn-fs: var(--form-btn-fs);
   --btn-fw: 500;
 }
@@ -287,6 +423,11 @@
 
   .consent-list {
     gap: 12px;
+    margin-top: -10px;
+  }
+
+  .terms-row {
+    min-height: auto;
   }
 }
 
@@ -306,7 +447,7 @@
     --form-field-radius: 9px;
     --form-field-fs: 11px;
     --form-check-size: 15px;
-    --form-btn-h: 34px;
+    --form-btn-h: 40px;
     --form-btn-fs: 10px;
   }
 
@@ -314,6 +455,60 @@
   .country-code {
     height: var(--form-field-h);
     border-radius: var(--form-field-radius);
+  }
+
+  .calendar-icon {
+    right: 16px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .compact-field input,
+  .compact-field select {
+    padding-top: 15px;
+    padding-bottom: 3px;
+  }
+
+  .time-slot-field {
+    padding: 6px 16px 5px;
+  }
+
+  .time-slot-field>.time-slot-label,
+  .time-slot-field:focus-within>.time-slot-label,
+  .time-slot-field.is-filled>.time-slot-label {
+    top: 5px;
+    left: 16px;
+    font-size: 9px;
+  }
+
+  .time-slot-field .time-display {
+    width: min(110px, calc(100% - 30px));
+    font-size: var(--form-field-fs);
+  }
+
+  .time-icon-button {
+    right: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .time-icon-button .form-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .time-picker-panel {
+    width: min(230px, 100%);
+    max-height: 178px;
+  }
+
+  .time-picker-column {
+    max-height: 178px;
+  }
+
+  .time-picker-column button {
+    min-height: 30px;
+    font-size: 11px;
   }
 
   .phone-row {
@@ -325,6 +520,6 @@
   }
 
   .submitButton {
-    width: 100%;
+    --btn-icon-left: 125px;
   }
 }

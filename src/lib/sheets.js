@@ -1,11 +1,11 @@
 // Sends form data to a Google Apps Script Web App (or falls back to a dummy).
 // Configure the target URL in your environment as `GAS_WEBHOOK_URL`.
 export async function sendToGoogleSheets(formName, data) {
-  const GAS_URL =
-    process.env.GAS_WEBHOOK_URL || process.env.GOOGLE_APPS_SCRIPT_URL;
+  const GOOGLE_APPS_SCRIPT_URL =
+    process.env.GOOGLE_APPS_SCRIPT_URL;
 
-  if (!GAS_URL) {
-    console.warn("GAS_WEBHOOK_URL is not configured - falling back to dummy.", {
+  if (!GOOGLE_APPS_SCRIPT_URL) {
+    console.warn("GOOGLE_APPS_SCRIPT_URL is not configured - falling back to dummy.", {
       formName,
       data,
     });
@@ -19,7 +19,7 @@ export async function sendToGoogleSheets(formName, data) {
   try {
     // Send a wrapper with form name + data so the Apps Script can handle either shape.
     const payload = { form: formName, data };
-    const resp = await fetch(GAS_URL, {
+    const resp = await fetch(GOOGLE_APPS_SCRIPT_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

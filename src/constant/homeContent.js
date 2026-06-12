@@ -29,11 +29,11 @@ export const HOME_CONTENT = {
       "Modern diagnostics, experienced specialists, and evidence based treatments for every stage of eye health.",
     cta: {
       label: "Meet Our Specialists",
-      href: "#",
+      href: "/about#visionaries",
     },
     bookAppointment: {
       label: "BOOK APPOINTMENT",
-      href: "#",
+      href: "/appointment",
     },
     image: {
       src: "/assets/Home/hero-banner.png",
@@ -49,7 +49,7 @@ export const HOME_CONTENT = {
     titleLine2: "Care Areas",
     cta: {
       label: "View All Services",
-      href: "#",
+      href: "/service",
     },
     featuredCareAreas: [
       {
@@ -88,7 +88,7 @@ export const HOME_CONTENT = {
   protect: {
     cta: {
       label: "Meet Our Specialists",
-      href: "#",
+      href: "/about#visionaries",
     },
     title: "Every eye has a story, we're here to protect yours.",
     beforeImage: {
@@ -109,7 +109,7 @@ export const HOME_CONTENT = {
     title: "Why Choose Us",
     cta: {
       label: "View All Services",
-      href: "#",
+      href: "/service",
     },
     cards: [
       {
@@ -118,7 +118,7 @@ export const HOME_CONTENT = {
         description:
           "Our experienced specialists use the latest diagnostic tools and surgical technology for precise, effective outcomes.",
         image: "/assets/Home/choose1.png",
-        href: "#",
+        href: "/appointment",
         buttonLabel: "Read More",
       },
       {
@@ -127,7 +127,7 @@ export const HOME_CONTENT = {
         description:
           "We treat you, not just your eyes. Every treatment is tailored to your needs.",
         image: "/assets/Home/choose2.png",
-        href: "#",
+        href: "/appointment",
         buttonLabel: "Read More",
       },
       {
@@ -136,7 +136,7 @@ export const HOME_CONTENT = {
         description:
           "We believe in open, honest communication — clear pricing, informed consent, and a relaxed environment at every step.",
         image: "/assets/Home/choose3.png",
-        href: "#",
+        href: "/appointment",
         buttonLabel: "Read More",
       },
     ],
@@ -224,7 +224,7 @@ export const HOME_CONTENT = {
     ],
     cta: {
       label: "Read All Testimonials",
-      href: "#",
+      href: "/appointment",
     },
   },
 
@@ -264,7 +264,7 @@ export const HOME_CONTENT = {
     ],
     cta: {
       label: "Explore More",
-      href: "#",
+      href: "/appointment",
     },
   },
 
@@ -272,7 +272,7 @@ export const HOME_CONTENT = {
     title: "Your journey to better vision starts",
     cta: {
       label: "Book Appointment",
-      href: "#",
+      href: "/appointment",
     },
     image: {
       src: "/assets/Home/vision.png",

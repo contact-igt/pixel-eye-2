@@ -80,6 +80,10 @@
   text-wrap: balance;
 }
 
+.heroCta {
+  --btn-icon-left: 180px;
+}
+
 .ctaButton {
   margin-top: 36px;
   display: inline-flex;
@@ -137,6 +141,12 @@
   }
 }
 
+@media (max-width: 991px) {
+  .heroCta {
+    --btn-icon-left: 165px;
+  }
+}
+
 @media (max-width: 767px) {
   .bannerFrame {
     height: 400px;
@@ -151,6 +161,16 @@
 
   .ctaButton {
     margin-top: 28px;
+  }
+
+  .heroCta {
+    --btn-icon-left: 150px;
+  }
+}
+
+@media (max-width: 575px) {
+  .heroCta {
+    --btn-icon-left: 140px;
   }
 }
 
@@ -171,6 +191,10 @@
   .slideImage{
     object-fit:fill;
     
+  }
+
+  .heroCta {
+    --btn-icon-left: 132px;
   }
 
 

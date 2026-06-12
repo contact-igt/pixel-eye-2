@@ -10,7 +10,7 @@
 }
 
 .inner {
-  width: min(1600px, calc(100% - 120px));
+  width: min(1600px, calc(100% - 160px));
   margin: 0 auto;
 }
 
@@ -21,16 +21,16 @@
 .title {
   margin: 0;
   color: var(--text-heading);
-  font-size: var(--h2-size);
-  line-height: var(--h2-lh);
+  font-size: var(--title-size);
+  line-height: var(--title-lh);
   font-weight: 400;
 }
 
 .subtitle {
   margin: 16px 0 0;
   color: var(--text-body);
-  font-size: var(--p-size);
-  line-height: var(--p-lh);
+  font-size: var(--paragraph-size);
+  line-height: var(--paragraph-lh);
   font-weight: 400;
 }
 
@@ -92,7 +92,6 @@
   min-height: 45px;
   padding: 0 28px;
   border-radius: 24px;
-  background: #eef3fa;
   color: #556aa0;
   font-size: clamp(16px, 1.05vw, 24px);
   font-weight: 500;
@@ -261,7 +260,8 @@
 
 @media (max-width: 991px) {
   .inner {
-    width: min(1600px, calc(100% - 64px));
+    width: min(1600px, calc(100% - 120px));
+    margin-top: 20px;
   }
 
   .header {
@@ -322,7 +322,7 @@
 
   .sideMediaCol .datePill {
 
-            right: 106px;
+            right: 45%;
         bottom: -4px;
     
   }
@@ -332,11 +332,12 @@
   .mediaImage {
     width: 100%;
     object-fit: contain;
+    object-position: left top;
   }
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .inner {
     width: min(1600px, calc(100% - 40px));
   }
@@ -345,13 +346,8 @@
     margin-bottom: 24px;
   }
 
-  .title {
-    font-size: clamp(26px, 8vw, 34px);
-  }
-
   .subtitle {
     margin-top: 10px;
-    font-size: 15px;
   }
 
   .layout {
@@ -359,28 +355,37 @@
     row-gap: 28px;
   }
 
-  /* featured card — image left, text right */
+  /* mobile cards stack image, date, content, and CTA */
   .featuredCard {
-    display: grid;
-    grid-template-columns: min(44vw, 210px) 1fr;
-    column-gap: 16px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .featuredMediaWrap,
+  .sideMediaCol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    justify-self: start;
   }
 
   .featuredMedia {
-    border-radius: 16px;
-    height: clamp(150px, 40vw, 220px);
+    width: 100%;
+    border-radius: 22px;
+    height: clamp(220px, 66vw, 280px);
   }
 
   .featuredMediaWrap .datePill {
-    left: 10px;
-    right: auto;
-    bottom: -14px;
+    position: static;
   }
 
   .featuredBody {
     margin-top: 0;
-    padding-top: 2px;
+    padding-top: 0;
+    width: 100%;
   }
 
   .featuredTitle {
@@ -392,30 +397,29 @@
     margin-top: 8px;
   }
 
-  /* side cards — image left, text right */
   .sideColumn {
-    gap: 20px;
+    gap: 32px;
   }
 
   .sideCard {
-    grid-template-columns: min(40vw, 190px) 1fr;
-    column-gap: 14px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .sideMediaWrap {
-    border-radius: 14px;
-    height: clamp(130px, 36vw, 200px);
+    width: 100%;
+    border-radius: 22px;
+    height: clamp(220px, 66vw, 280px);
   }
 
   .sideMediaCol .datePill {
-    left: 10px;
-    right: auto;
-    bottom: -14px;
+    position: static;
   }
 
   .sideContent {
-    padding-top: 2px;
+    padding-top: 0;
+    width: 100%;
   }
 
   .sideTitle {
@@ -427,10 +431,16 @@
     margin-top: 6px;
   }
 
+  .mediaImage {
+    object-fit: cover;
+    object-position: center;
+  }
+
   .datePill {
     min-height: 36px;
-    padding: 0 14px;
+    padding: 0;
     font-size: clamp(12px, 3.2vw, 14px);
+    justify-content: flex-start;
   }
 
   .readMore {
@@ -454,26 +464,22 @@
     width: min(1600px, calc(100% - 28px));
   }
 
-  .featuredMedia {
-    border-radius: 20px;
-    height: clamp(210px, 62vw, 280px);
-  }
-
+  .featuredMedia,
   .sideMediaWrap {
-    border-radius: 18px;
+    border-radius: 22px;
+    height: clamp(275px, 66vw, 275px);
   }
 
   .datePill {
     min-height: 42px;
-    padding: 0 16px;
+    padding: 0;
     border-radius: 18px;
     font-size: clamp(14px, 4.2vw, 18px);
   }
 
   .featuredMediaWrap .datePill,
   .sideMediaCol .datePill {
-    right: 12px;
-    bottom: -16px;
+    position: static;
   }
 
   .readMore {

@@ -30,6 +30,7 @@ export default function Banner() {
               label={banner.cta.label}
               href={banner.cta.href}
               variant="light"
+              className={styles.heroCta}
             />
           </div>
         </div>

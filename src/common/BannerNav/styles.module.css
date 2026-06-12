@@ -29,6 +29,7 @@
 .logoCard {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   min-height: clamp(74px, 7.3vw, 108px);
   border-bottom-right-radius: clamp(18px, 2.2vw, 34px);
   padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
@@ -265,7 +266,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 200ms ease, visibility 200ms ease;
-  z-index: 50;
+  z-index: 9998;
 }
 
 .sidebarOverlayOpen {
@@ -284,7 +285,7 @@
   background: #ffffff;
   transform: translateX(110%);
   transition: transform 260ms ease;
-  z-index: 60;
+  z-index: 9999;
   box-shadow: -12px 0 30px rgba(8, 20, 40, 0.12);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -451,11 +452,12 @@
   }
 
   .aboutMaskedNav .logoCard {
-    padding-left: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 
   .aboutMaskedNav .rightCard {
-    padding-right: 18px;
+    padding-right: 45px;
   }
 
   .rightCard {
@@ -525,11 +527,12 @@
   }
 
   .aboutMaskedNav .logoCard {
-    padding-left: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .aboutMaskedNav .rightCard {
-    padding-right: 10px;
+    padding-right: 30px;
   }
 
   .logo {

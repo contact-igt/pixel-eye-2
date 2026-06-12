@@ -14,7 +14,11 @@ const VisionariesSection = () => {
     ));
 
   return (
-    <section className={styles.section} aria-labelledby="visionaries-title">
+    <section
+      id="visionaries"
+      className={styles.section}
+      aria-labelledby="visionaries-title"
+    >
       <RevealOnView className={styles.revealShell}>
         <div className={styles.inner}>
         <header className={styles.header}>

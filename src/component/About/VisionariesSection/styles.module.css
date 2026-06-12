@@ -19,9 +19,9 @@
 .title {
   margin: 0;
   color: var(--surface-dark-blue);
-  font-size: var(--h2-size);
+  font-size: var(--title-size);
   font-weight: 400;
-  line-height: var(--h2-lh);
+  line-height: var(--title-lh);
 }
 
 .subtitle {
@@ -241,7 +241,10 @@
 
 @media (max-width: 991px) {
   .inner {
-    width: min(1600px, calc(100% - 64px));
+    width: min(1600px, calc(100% - 120px));
+  }
+  .infoPanel{
+    top: -10px;
   }
 }
 
@@ -263,8 +266,8 @@
   }
 
   .infoPanel {
-    right: 0;
-    top: 0;
+    right: -40px;
+    top: -10px;
   }
 
   .infoPanelRight {
@@ -306,7 +309,7 @@
 
 @media (max-width: 575px) {
   .infoPanel {
-    right: 0;
+    right: -11%;
     top: 0;
     width: 60%;
   }
@@ -340,7 +343,7 @@
   }
 
   .infoPanel {
-    right: 0;
+    right: -10%;
     top: 0;
   }
 
