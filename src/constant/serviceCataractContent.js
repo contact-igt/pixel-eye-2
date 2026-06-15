@@ -8,6 +8,13 @@ export const SERVICE_CATARACT_CONTENT = {
         src: "/assets/Service/cataract/Subtract (6).png",
         alt: "",
       },
+      mobileImage: "/assets/Service/cataract/Subtract(6)-mbv.png",
+      mobileImageMedia: "(max-width: 1024px)",
+      mobileCta: {
+        label: "BOOK APPOINTMENT",
+        href: "/appointment",
+        variant: "light",
+      },
       nav: {
         rightSlot: "book",
         navTheme: "light",
@@ -201,7 +208,7 @@ export const SERVICE_CATARACT_CONTENT = {
       "Cataract care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced",
     cardBg: "/assets/Service/cataract/clinicbg.png",
     cardBgAlt: "Pixel Eye clinic background",
-    doctorImage: "/assets/Home/Dr. Abdul rasheed.png",
+    doctorImage: "/assets/Service/Dr. Abdul Rasheed.png",
     doctorImageAlt: "Dr. Abdul Rasheed",
     doctorName: "Dr. Abdul Rasheed",
     doctorDescription:

@@ -8,6 +8,7 @@ import { HERO_BANNER_CONTENT } from "@/constant/heroBannerContent";
 const AppointmentPageComponent = () => {
   const {
     image,
+    mobileImage,
     title,
     subtitle,
     rightSlot,
@@ -16,6 +17,8 @@ const AppointmentPageComponent = () => {
     height,
     showOverlay,
     imagePosition,
+    mobileOverlay,
+    mobileCta,
   } = HERO_BANNER_CONTENT.appointment;
 
   return (
@@ -24,12 +27,15 @@ const AppointmentPageComponent = () => {
         image={image}
         title={title}
         subtitle={subtitle}
+        mobileImage={mobileImage}
         rightSlot={rightSlot}
         navTheme={navTheme}
         cardBg={cardBg}
         height={height}
         showOverlay={showOverlay}
         imagePosition={imagePosition}
+        mobileOverlay={mobileOverlay}
+        mobileCta={mobileCta}
       />
       <Form />
     </>

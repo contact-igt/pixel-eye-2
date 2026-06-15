@@ -8,7 +8,7 @@
 }
 
 .panel {
-  width: min(1600px, calc(100% - 120px));
+  width: min(1600px, calc(100% - 70px));
   margin: 0 auto;
   padding: 56px 56px 44px;
   border-radius: 24px;
@@ -30,18 +30,18 @@
 .title {
   margin: 0;
   color: #2e4587;
-  font-size: var(--h2-size);
+  font-size: var(--title-size);
   font-weight: 400;
-  line-height: var(--h2-lh);
+  line-height: var(--title-lh);
 }
 
 .description {
   margin: 20px 0 0;
   width: min(760px, 100%);
   color: #5d71a0;
-  font-size: var(--p-size);
+  font-size: var(--paragraph-size);
   font-weight: 400;
-  line-height: var(--p-lh);
+  line-height: var(--paragraph-lh);
 }
 
 /* SSR fallback grid */
@@ -63,8 +63,23 @@
   margin-bottom: -16px;
 }
 
+.slider :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
+}
+
+.slider :global(.slick-slide) {
+  height: auto;
+}
+
+.slider :global(.slick-slide > div) {
+  height: 100%;
+}
+
 .slideOuter {
   padding: 0 12px;
+  height: 100%;
+  display: flex !important;
 }
 
 /* Dots */
@@ -93,13 +108,13 @@
   overflow: hidden;
   border-radius: 22px;
   background: #2f4587;
-  box-shadow: 0 16px 34px rgba(20, 42, 93, 0.16);
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 560ms ease, transform 560ms ease, scale 0.4s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: clamp(410px, 28vw, 490px);
   cursor: pointer;
 }
 
@@ -120,10 +135,9 @@
 }
 
 .cardBody {
-  padding: 20px 20px 18px;
+  padding: 30px 24px 28px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex: 1 1 auto;
 }
 
@@ -133,6 +147,7 @@
   font-size: clamp(20px, 1.5vw, 24px);
   font-weight: 500;
   line-height: 1.25;
+  min-height: 2.5em;
 }
 
 .cardText {
@@ -141,14 +156,15 @@
   font-size: clamp(14px, 1.1vw, 17px);
   font-weight: 400;
   line-height: 1.5;
+  min-height: 4.5em;
 }
 
 .watchBtn {
   display: inline-flex;
   align-items: center;
+  margin: 24px 0 0;
   margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
+
   text-decoration: none;
   z-index: 2;
 }
@@ -241,7 +257,7 @@
 
 @media (max-width: 1399px) {
   .panel {
-    padding: 42px 36px 36px;
+    padding: 42px 45px 36px;
   }
 
   .cardTitle {
@@ -251,11 +267,23 @@
   .cardText {
     font-size: clamp(14px, 1.05vw, 16px);
   }
+
+  .card {
+    min-height: clamp(390px, 32vw, 450px);
+  }
+
+  .cardBody {
+    padding: 26px 22px 24px;
+  }
 }
 
 @media (max-width: 991px) {
   .panel {
     width: min(1600px, calc(100% - 64px));
+  }
+
+  .cardActive {
+    scale: 1;
   }
 
   .grid {
@@ -274,13 +302,8 @@
     margin-bottom: 24px;
   }
 
-  .title {
-    font-size: clamp(28px, 8.5vw, 34px);
-  }
-
   .description {
     margin-top: 14px;
-    font-size: 16px;
   }
 
   .grid {
@@ -294,19 +317,22 @@
 
   .card {
     border-radius: 16px;
+    min-height: 390px;
   }
 
   .cardBody {
-    padding: 14px 14px 16px;
+    padding: 24px 18px 22px;
   }
 
   .cardTitle {
     font-size: 20px;
+    min-height: auto;
   }
 
   .cardText {
     font-size: 14px;
     margin-top: 10px;
+    min-height: 4.5em;
   }
 
   .watchLabel {

@@ -15,7 +15,7 @@
   border-radius: var(--radius-hero);
   height: auto;
   /* Provide a consistent default banner height so copy positions stay stable */
-  min-height: clamp(360px, 48vh, 640px);
+  /* min-height: clamp(360px, 48vh, 640px); */
   /* no background — image fills the frame */
 }
 
@@ -49,7 +49,7 @@
 
 /* Slightly offset hero copy on masked-about variant to match wider horizontal padding */
 .aboutMaskedSection .copy {
-  left: clamp(48px, 6vw, 96px);
+  left: clamp(48px, 6vw, 60px);
 }
 
 /* Left-side gradient — only rendered when showOverlay=true */
@@ -59,6 +59,15 @@
   z-index: 1;
   pointer-events: none;
   background: transparent;
+}
+
+.mobileOverlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--mobile-overlay-bg, rgba(0, 0, 0, 0.18));
 }
 
 /* ── Hero copy ── */
@@ -90,8 +99,12 @@
   max-width: min(400px, 100%);
 }
 
+.mobileCtaWrap {
+  display: none;
+}
+
 /* ── Responsive ── */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .heroSection {
     padding: 12px;
     min-height: 350px;
@@ -102,7 +115,7 @@
   }
 
   .bannerFrame {
-    min-height: clamp(400px, 50vw, 520px);
+    min-height: 450px;
   }
 
   .image {
@@ -115,22 +128,56 @@
   }
 
   .aboutMaskedFrame {
-    min-height: auto;
-    border-radius: 0;
+    min-height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .aboutMaskedFrame .image {
+    min-height: 0;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
   }
 
   .frameShort {
-    min-height: clamp(220px, 32vw, 290px);
+    min-height: 450px;
   }
 
   .copy {
     left: clamp(24px, 5vw, 40px);
-    width: calc(100% - 48px);
-    top: 56%;
+    width: min(440px, calc(100% - 48px));
+    top: 54%;
+  }
+
+  .aboutMaskedSection .copy {
+    left: clamp(28px, 5vw, 40px);
+  }
+
+  .title {
+    font-size: clamp(26px, 4.8vw, var(--hero-title-size));
+    line-height: 1.12;
   }
 
   .subtitle {
-    max-width: 100%;
+    font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
+    line-height: 1.4;
+    max-width: min(420px, 100%);
+    padding : 10px 0px;
+  }
+
+  .mobileCtaWrap {
+    display: flex;
+    margin-top: 22px;
+  }
+
+  .mobileCta {
+    transform: scale(0.95);
+    transform-origin: left center;
+  }
+
+  .mobileOverlay {
+    display: block;
   }
 }
 
@@ -144,12 +191,12 @@
   }
 
   .bannerFrame {
-    min-height: 300px;
+    min-height: 450px;
   }
 
   .aboutMaskedFrame .image,
   .aboutMaskedFrame {
-    min-height: 420px;
+    min-height: 450px;
     object-fit: cover;
     border-radius: 10px;
   }
@@ -161,12 +208,16 @@
 
 
   .frameShort {
-    min-height: 220px;
+    min-height: 450px;
   }
 
   .copy {
     left: 16px;
     width: calc(100% - 32px);
     top: 52%;
+  }
+
+  .mobileCtaWrap {
+    margin-top: 18px;
   }
 }

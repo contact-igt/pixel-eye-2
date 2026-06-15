@@ -9,6 +9,11 @@ export const ABOUT_CONTENT = {
     height: "medium",
     showOverlay: true,
     imagePosition: "center center",
+    mobileCta: {
+      label: "BOOK APPOINTMENT",
+      href: "/appointment",
+      variant: "light",
+    },
   },
   experience: {
     titleLines: ["We experience the world", "through what we see"],
@@ -131,7 +136,7 @@ export const ABOUT_CONTENT = {
     ],
     exploreMore: {
       label: "Explore More",
-      href: "#",
+      href: "/appointment",
     },
   },
   rememberRecommend: {
@@ -186,7 +191,7 @@ export const ABOUT_CONTENT = {
           "Many people are curious about when a person should receive treatment for a squint and at what age.",
         date: "12 Jul 2025",
         image: "/assets/About/read1.png",
-        href: "#", // TODO: replace with real blog URL
+        href: "/appointment", // TODO: replace with real blog URL
       },
       {
         id: "suggested-read-2",
@@ -196,7 +201,7 @@ export const ABOUT_CONTENT = {
           "LASIK eye surgery is a refractive eye surgery that makes use of lasers to fix issues with your vision.",
         date: "12 Jul 2025",
         image: "/assets/About/read2.png",
-        href: "#", // TODO: replace with real blog URL
+        href: "/appointment", // TODO: replace with real blog URL
       },
       {
         id: "suggested-read-3",
@@ -206,7 +211,7 @@ export const ABOUT_CONTENT = {
           "It might not be a term as common as cataract, but people whose parents or someone they know have had this,",
         date: "12 Jul 2025",
         image: "/assets/About/read3.png",
-        href: "#", // TODO: replace with real blog URL
+        href: "/appointment", // TODO: replace with real blog URL
       },
     ],
   },

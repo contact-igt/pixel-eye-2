@@ -9,6 +9,9 @@ const CataractBanner = () => {
     <div className={styles["cataract-detail"]}>
       <HeroBanner
         image={hero.image.src}
+        mobileImage={hero.mobileImage}
+        mobileImageMedia={hero.mobileImageMedia}
+        mobileCta={hero.mobileCta}
         title={
           <>
             {hero.titleLines[0]}

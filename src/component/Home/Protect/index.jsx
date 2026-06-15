@@ -107,7 +107,12 @@ const Protect = () => {
         <div className={styles.heroContent}>
           <h2 className={styles.heroTitle}>{title}</h2>
           <div className="mt-5">
-            <Button label={cta.label} href={cta.href} variant="light" />
+            <Button
+              label={cta.label}
+              href={cta.href}
+              variant="light"
+              className={styles.heroCta}
+            />
           </div>
         </div>
 

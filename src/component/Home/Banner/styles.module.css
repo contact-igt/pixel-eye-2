@@ -62,6 +62,10 @@
   margin-top: 26px;
 }
 
+.heroCta {
+  --btn-icon-left: 180px;
+}
+
 /* ── Slider dots ── */
 .sliderDots {
   position: absolute;
@@ -143,6 +147,10 @@
     top: 32%;
     width: min(440px, 48%);
   }
+
+  .heroCta {
+    --btn-icon-left: 175px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -153,7 +161,7 @@
   .bannerFrame {
     border-radius: var(--radius-hero);
     /* Add min-height only on tablet/mobile since image may be too short */
-    min-height: 650px;
+    min-height: 450px;
   }
 
   /* On small screens the image must be absolutely positioned to fill the min-height */
@@ -187,6 +195,10 @@
     margin-top: 18px;
   }
 
+  .heroCta {
+    --btn-icon-left: 170px;
+  }
+
   .sliderDots {
     right: 14px;
     bottom: 70px;
@@ -206,13 +218,20 @@
 }
 
 @media (max-width: 575px) {
+  .heroCta {
+    --btn-icon-left: 140px;
+  }
+
   .bookArea {
     right: 0%;
     bottom: 0.1%;
   }
 
   .bannerFrame {
-    min-height: 560px;
+    min-height: 450px;
+  }
+    .heroCta {
+    --btn-icon-left: 170px;
   }
 }
 
@@ -222,7 +241,7 @@
   }
 
   .bannerFrame {
-    min-height: 460px;
+    min-height: 450px;
     border-radius: var(--radius-hero);
   }
 
@@ -230,6 +249,10 @@
     left: 16px;
     right: 16px;
     top: 22%;
+  }
+
+  .heroCta {
+    --btn-icon-left: 160px;
   }
 
   /* .heroTitle {

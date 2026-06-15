@@ -94,7 +94,7 @@
     }
 
     .cataract-approach__copy h2 {
-        font-size: 36px;
+        font-size: var(--h2-size, 36px);
     }
 }
 
@@ -108,7 +108,7 @@
     }
 
     .cataract-approach__copy h2 {
-        font-size: 28px;
+        font-size: var(--h2-size, 28px);
     }
 }
 

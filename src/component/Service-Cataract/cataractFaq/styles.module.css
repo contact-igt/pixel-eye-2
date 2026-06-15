@@ -43,7 +43,7 @@
 .cataract-faq__title-bubble h3 {
     margin: 0;
     color: var(--text-heading, #16325c);
-    font-size: clamp(28px, 3.5vw, 40px);
+    font-size: var(--h2-size, 36px);
     font-weight: 500;
 }
 
@@ -161,7 +161,7 @@
     }
 
     .cataract-faq__title-bubble h3 {
-        font-size: 2.2rem;
+        font-size: var(--h2-size, 28px);
     }
 }
 
@@ -189,6 +189,6 @@
 
 @media (max-width: 389px) {
     .cataract-faq__title-bubble h3 {
-        font-size: 24px;
+        font-size: var(--h2-size, 28px);
     }
 }

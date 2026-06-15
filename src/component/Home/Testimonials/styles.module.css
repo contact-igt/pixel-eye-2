@@ -65,6 +65,12 @@
   line-height: var(--p-lh);
 }
 
+.subtitleWrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 /* ── Cards ──────────────────────────────────── */
 .cardsWrap {
   padding: 28px 0 8px;
@@ -266,7 +272,7 @@
 
 }
 
-@media (max-width: 389px) {
+@media (max-width: 390px) {
   .frame {
     padding: 24px 12px 20px;
     border-radius: 18px;
@@ -282,8 +288,15 @@
 
   .subtitle {
     font-size: 15px;
-    max-width: 88%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 16px;
+    text-align: start;
+  }
+
+  .subtitleWrap {
+    justify-content: flex-start;
   }
 
   .card {

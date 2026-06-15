@@ -337,12 +337,35 @@
 
 /* ─── Small Mobile ──────────────────────────── 575px ── */
 @media (max-width: 575px) {
+  .careVisual {
+    padding: 24px 18px 20px;
+  }
+
+  .sideWrap,
+  .centerWrap {
+    width: min(100%, 360px);
+  }
+
   .sideCard {
-    height: 340px;
+    height: 310px;
   }
 
   .centerCard {
-    height: 420px;
+    height: 470px;
+  }
+  .centerTitle {
+    font-size: 20px;
+    bottom: 16px;
+  }
+  .cardDescription {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .ctaButton {
+    left: auto;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -382,7 +405,7 @@
   }
 
   .ctaButton {
-    left: 2%;
+    left: 0;
   }
 
   .cardsRow .cardWrap:nth-child(1) .centerTitle {
