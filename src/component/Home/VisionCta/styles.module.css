@@ -1,6 +1,7 @@
 .visionSection {
     padding: var(--section-pt) var(--section-px) var(--section-pb);
     background: transparent;
+    display: block;
 }
 
 .container {
@@ -151,6 +152,11 @@
         object-fit: contain;
         object-position: center bottom;
     }
+
+    .visionSection{
+        display :none;
+    }
+
 }
 
 @media (max-width: 389px) {

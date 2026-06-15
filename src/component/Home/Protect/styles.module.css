@@ -185,6 +185,9 @@
     width: 300px;
         top: 16%;
   }
+  .imageLayer img{
+    object-fit: fill !important;
+  }
 }
 
 @media (max-width: 389px) {

@@ -8,6 +8,13 @@ export const SERVICE_CATARACT_CONTENT = {
         src: "/assets/Service/cataract/Subtract (6).png",
         alt: "",
       },
+      mobileImage: "/assets/Service/cataract/Subtract(6)-mbv.png",
+      mobileImageMedia: "(max-width: 1024px)",
+      mobileCta: {
+        label: "BOOK APPOINTMENT",
+        href: "/appointment",
+        variant: "light",
+      },
       nav: {
         rightSlot: "book",
         navTheme: "light",

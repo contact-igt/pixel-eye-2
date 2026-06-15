@@ -100,7 +100,7 @@ export const HOME_CONTENT = {
       alt: "Healthy clear eye",
     },
     handleImage: {
-      src: "/assets/Home/protectbanner3 .png",
+      src: "/assets/Home/protectbanner3.png",
       alt: "Swipe handle",
     },
   },

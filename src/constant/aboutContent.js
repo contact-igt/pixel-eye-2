@@ -9,6 +9,11 @@ export const ABOUT_CONTENT = {
     height: "medium",
     showOverlay: true,
     imagePosition: "center center",
+    mobileCta: {
+      label: "BOOK APPOINTMENT",
+      href: "/appointment",
+      variant: "light",
+    },
   },
   experience: {
     titleLines: ["We experience the world", "through what we see"],

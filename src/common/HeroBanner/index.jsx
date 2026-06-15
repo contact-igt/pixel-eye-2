@@ -1,4 +1,5 @@
 import BannerNav from "@/common/BannerNav";
+import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
 /**
@@ -14,9 +15,14 @@ import styles from "./styles.module.css";
  *   height        — "medium" (default) | "short"
  *   showOverlay   — true (default) | false  (remove dark gradient for bright images)
  *   imagePosition — CSS object-position value, default "center 30%"
+ *   mobileImage   — optional image used for narrow screens
+ *   mobileImageMedia — media query for the mobile image source
  */
 export default function HeroBanner({
   image,
+  mobileImage,
+  mobileImageMedia = "(max-width: 767px)",
+  mobileOverlay,
   title,
   subtitle,
   rightSlot = "nabh",
@@ -25,6 +31,7 @@ export default function HeroBanner({
   height = "medium",
   showOverlay = true,
   imagePosition = "center 30%",
+  mobileCta,
   variant = "default",
 }) {
   const isAboutMasked = variant === "aboutMasked";
@@ -39,22 +46,52 @@ export default function HeroBanner({
         }`}
       >
         {/* Background image */}
-        <img
-          className={styles.image}
-          src={image}
-          alt=""
-          aria-hidden="true"
-          style={{ objectPosition: imagePosition }}
-        />
+        {mobileImage ? (
+          <picture>
+            <source media={mobileImageMedia} srcSet={mobileImage} />
+            <img
+              className={styles.image}
+              src={image}
+              alt=""
+              aria-hidden="true"
+              style={{ objectPosition: imagePosition }}
+            />
+          </picture>
+        ) : (
+          <img
+            className={styles.image}
+            src={image}
+            alt=""
+            aria-hidden="true"
+            style={{ objectPosition: imagePosition }}
+          />
+        )}
 
         {/* Subtle gradient overlay — only when showOverlay is true */}
         {showOverlay && <div className={styles.overlay} aria-hidden="true" />}
+        {mobileOverlay && (
+          <div
+            className={styles.mobileOverlay}
+            aria-hidden="true"
+            style={{ ["--mobile-overlay-bg"]: mobileOverlay }}
+          />
+        )}
 
         {/* Hero text (optional) */}
         {(title || subtitle) && (
           <div className={styles.copy}>
             {title && <h1 className={styles.title}>{title}</h1>}
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+            {mobileCta && (
+              <div className={styles.mobileCtaWrap}>
+                <Button
+                  label={mobileCta.label}
+                  href={mobileCta.href}
+                  variant={mobileCta.variant || "light"}
+                  className={styles.mobileCta}
+                />
+              </div>
+            )}
           </div>
         )}
       </div>

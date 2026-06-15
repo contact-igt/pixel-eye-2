@@ -1,5 +1,5 @@
 .specialist-form-section {
-  --form-heading-size: 24px;
+  --form-heading-size: 36px;
   --form-field-h: 60px;
   --form-field-radius: 10px;
   --form-field-fs: 16px;
@@ -407,7 +407,7 @@
   }
 
   .specialist-form h1 {
-    font-size: 14px;
+    font-size: 34px;
     line-height: 1.2;
   }
 
@@ -442,13 +442,12 @@
   }
 
   .specialist-form-section {
-    --form-heading-size: 13px;
-    --form-field-h: 34px;
+    --form-field-h: 45px;
     --form-field-radius: 9px;
-    --form-field-fs: 11px;
-    --form-check-size: 15px;
+    --form-field-fs: 13px;
+    --form-check-size: 18px;
     --form-btn-h: 40px;
-    --form-btn-fs: 10px;
+    --form-btn-fs: 14px;
   }
 
   .appointment-field,
@@ -516,7 +515,7 @@
   }
 
   .specialist-form h1 {
-    font-size: var(--form-heading-size);
+    font-size: 24px;
   }
 
   .submitButton {

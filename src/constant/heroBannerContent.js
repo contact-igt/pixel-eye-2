@@ -1,6 +1,7 @@
 export const HERO_BANNER_CONTENT = {
   appointment: {
     image: "/assets/Appointment/Mask group (15).png",
+    mobileImage: "/assets/Appointment/appoinment-mbv.png",
     title: "Schedule The Care Your Eyes Deserve",
     subtitle: "Tell us your concern or select your preferred specialist",
     rightSlot: "nabh",
@@ -9,6 +10,12 @@ export const HERO_BANNER_CONTENT = {
     height: "medium",
     showOverlay: true,
     imagePosition: "right 40%",
+    mobileOverlay: "rgba(0, 0, 0, 0.18)",
+    mobileCta: {
+      label: "BOOK APPOINTMENT",
+      href: "/appointment",
+      variant: "light",
+    },
   },
   service: {
     image: "/assets/Service/Subtract (5).png",

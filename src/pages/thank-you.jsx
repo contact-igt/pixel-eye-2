@@ -9,6 +9,7 @@ export default function ThankYouPage() {
     <>
       <HeroBanner
         image={hero.image}
+        mobileImage={hero.mobileImage}
         title={"Thank you — we received your request"}
         subtitle={
           "Our team will review your details and contact you to confirm the appointment."

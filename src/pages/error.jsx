@@ -16,6 +16,7 @@ export default function ErrorPage() {
     <>
       <HeroBanner
         image={hero.image}
+        mobileImage={hero.mobileImage}
         title={"Submission failed"}
         subtitle={
           "Something went wrong while sending your appointment request."

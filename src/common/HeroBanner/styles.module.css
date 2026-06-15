@@ -61,6 +61,15 @@
   background: transparent;
 }
 
+.mobileOverlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--mobile-overlay-bg, rgba(0, 0, 0, 0.18));
+}
+
 /* ── Hero copy ── */
 .copy {
   position: absolute;
@@ -90,6 +99,10 @@
   max-width: min(400px, 100%);
 }
 
+.mobileCtaWrap {
+  display: none;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .heroSection {
@@ -102,7 +115,7 @@
   }
 
   .bannerFrame {
-    min-height: clamp(400px, 50vw, 520px);
+    min-height: 450px;
   }
 
   .image {
@@ -115,7 +128,7 @@
   }
 
   .aboutMaskedFrame {
-    min-height: clamp(530px, 48vw, 380px);
+    min-height: 450px;
     overflow: hidden;
     border-radius: 10px;
   }
@@ -128,7 +141,7 @@
   }
 
   .frameShort {
-    min-height: clamp(220px, 32vw, 290px);
+    min-height: 450px;
   }
 
   .copy {
@@ -150,6 +163,21 @@
     font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
     line-height: 1.4;
     max-width: min(420px, 100%);
+    padding : 10px 0px;
+  }
+
+  .mobileCtaWrap {
+    display: flex;
+    margin-top: 22px;
+  }
+
+  .mobileCta {
+    transform: scale(0.95);
+    transform-origin: left center;
+  }
+
+  .mobileOverlay {
+    display: block;
   }
 }
 
@@ -163,12 +191,12 @@
   }
 
   .bannerFrame {
-    min-height: 300px;
+    min-height: 450px;
   }
 
   .aboutMaskedFrame .image,
   .aboutMaskedFrame {
-    min-height: 420px;
+    min-height: 450px;
     object-fit: cover;
     border-radius: 10px;
   }
@@ -180,12 +208,16 @@
 
 
   .frameShort {
-    min-height: 220px;
+    min-height: 450px;
   }
 
   .copy {
     left: 16px;
     width: calc(100% - 32px);
     top: 52%;
+  }
+
+  .mobileCtaWrap {
+    margin-top: 18px;
   }
 }

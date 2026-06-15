@@ -86,6 +86,14 @@
   }
 }
 
+
+@media (max-width: 576px) {
+  .statsFrame {
+    padding: var(--section-pt) var(--section-px) var(--section-pb);
+    gap: 50px 8px;
+  }
+}
+
 @media (max-width: 390px) {
   .statsSection {
     padding: var(--section-pt) var(--section-px) var(--section-pb);
