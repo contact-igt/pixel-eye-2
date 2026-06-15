@@ -108,8 +108,8 @@
     }
 
     .clinical-expertise__text {
-        max-width: 55%;
-        margin-left: clamp(9rem, 8vw, 9rem);
+        max-width: 52%;
+        margin-left: clamp(8.95rem, 8vw, 9rem);
     }
 
     .clinical-expertise__doctor {

@@ -47,7 +47,7 @@
   text-decoration: none;
 }
 
-.linkCta span {
+.linkCta span:first-child {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -55,20 +55,24 @@
   padding: 0 22px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--text-heading);
+  border-right: none;
   font-size: var(--btn-fs);
   font-weight: var(--btn-fw);
   line-height: 1;
 }
 
-.linkCta i {
+.linkCta span:last-child {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 47px;
   height: 47px;
   margin-left: -1px;
+  padding: 0;
   border-radius: 50%;
   border: 1px solid var(--text-heading);
+  color: var(--text-heading);
+  z-index: 2;
 }
 
 .linkCta svg {
@@ -79,6 +83,7 @@
   stroke-width: 1.9;
   stroke-linecap: round;
   stroke-linejoin: round;
+  opacity: 1;
 }
 
 .imageWrap {

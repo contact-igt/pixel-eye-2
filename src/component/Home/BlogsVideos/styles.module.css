@@ -212,13 +212,25 @@
 }
 
 /* ─── Very Small Mobile ─────────────────────── 389px ── */
-@media (max-width: 389px) {
+@media (max-width: 390px) {
   .blogsSection {
     padding: var(--section-pt) var(--section-px) var(--section-pb);
   }
 
+  .grid {
+    justify-items: center;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .item {
+    max-width: 340px;
+    width: 100%;
+  }
+
   .mediaWrap {
-    height: 160px;
+    width: 100%;
+    height: 165px;
   }
 
   .itemTitle {
@@ -229,9 +241,5 @@
   .cardOverlayText {
     font-size: 11px;
     padding: 0 15px 0 5px;
-  }
-
-  .grid {
-    max-width: 370px;
   }
 }

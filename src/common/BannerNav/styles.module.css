@@ -32,7 +32,8 @@
   justify-content: center;
   min-height: clamp(74px, 7.3vw, 108px);
   border-bottom-right-radius: clamp(18px, 2.2vw, 34px);
-  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
+  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px)
+    clamp(14px, 1.8vw, 24px);
 }
 
 .aboutMaskedNav .logoCard {
@@ -97,7 +98,10 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 140ms ease, visibility 140ms ease, transform 140ms ease;
+  transition:
+    opacity 140ms ease,
+    visibility 140ms ease,
+    transform 140ms ease;
   z-index: 1110;
 }
 
@@ -177,7 +181,8 @@
   justify-content: center;
   min-height: clamp(74px, 7.3vw, 108px);
   border-bottom-left-radius: clamp(18px, 2.2vw, 34px);
-  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
+  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px)
+    clamp(14px, 1.8vw, 24px);
 }
 
 .aboutMaskedNav .rightCard {
@@ -238,7 +243,9 @@
   padding: 6px;
   margin-left: 8px;
   border-radius: 50%;
-  transition: background 150ms ease, color 150ms ease;
+  transition:
+    background 150ms ease,
+    color 150ms ease;
 }
 
 .menuBtn svg {
@@ -265,7 +272,9 @@
   background: rgba(0, 0, 0, 0);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 200ms ease, visibility 200ms ease;
+  transition:
+    opacity 200ms ease,
+    visibility 200ms ease;
   z-index: 9998;
 }
 
@@ -504,6 +513,14 @@
     letter-spacing: 0.35px;
     padding: 0 8px;
   }
+  .logoCard {
+    padding: 10px 16px 12px 40px;
+    justify-content: flex-start;
+  }
+  .rightCard {
+    padding: 10px 40px 12px 16px;
+    justify-content: flex-end;
+  }
 }
 
 /* ─── Small Mobile ──────────────────────────── 575px ── */
@@ -515,7 +532,14 @@
     border-bottom-left-radius: 14px;
     padding: 8px 12px 10px;
   }
-
+  .logoCard {
+    padding: 10px 16px 12px 40px;
+    justify-content: flex-start;
+  }
+  .rightCard {
+    padding: 10px 40px 12px 16px;
+    justify-content: flex-end;
+  }
   .rightCard {
     gap: 10px;
   }
@@ -566,6 +590,16 @@
   }
 }
 
+@media (max-width: 390px) {
+  .logoCard {
+    padding: 10px 16px 12px 25px;
+    justify-content: flex-start;
+  }
+  .rightCard {
+    padding: 10px 25px 12px 16px;
+    justify-content: flex-end;
+  }
+}
 /* ── Desktop: sidebar is display:none above mobile ───── */
 @media (min-width: 768px) {
   .sidebar,

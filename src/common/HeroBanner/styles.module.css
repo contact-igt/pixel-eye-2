@@ -15,7 +15,7 @@
   border-radius: var(--radius-hero);
   height: auto;
   /* Provide a consistent default banner height so copy positions stay stable */
-  min-height: clamp(360px, 48vh, 640px);
+  /* min-height: clamp(360px, 48vh, 640px); */
   /* no background — image fills the frame */
 }
 

@@ -86,7 +86,7 @@
   }
 }
 
-@media (max-width: 389px) {
+@media (max-width: 390px) {
   .statsSection {
     padding: var(--section-pt) var(--section-px) var(--section-pb);
   }
@@ -105,7 +105,16 @@
   }
 
   .statLabel {
-    font-size: 13px;
-    max-width: 90px;
+    font-size: 12px;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  .statLabel br {
+    display: none;
+  }
+
+  .statLabel span:not(:last-child)::after {
+    content: " ";
   }
 }

@@ -45,7 +45,9 @@
 .sideCard {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
 }
 
 [data-visible="true"] .featuredCard,
@@ -101,7 +103,7 @@
 
 .featuredMediaWrap .datePill {
   position: absolute;
-  right: 51px;
+  right: 30px;
   bottom: -5px;
 }
 
@@ -234,7 +236,7 @@
   }
 
   .featuredMediaWrap .datePill {
-    right: 7px;
+    right: -5px;
     bottom: 1px;
   }
 
@@ -255,7 +257,9 @@
     font-size: clamp(16px, 1vw, 19px);
   }
 
-
+  .sideMediaCol .datePill {
+    right: -20px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -316,25 +320,20 @@
   }
 
   .featuredMediaWrap .datePill {
-    right: 16px;
-    bottom: -16px;
+    right: 0px;
+    bottom: 15px;
   }
 
   .sideMediaCol .datePill {
-
-            right: 45%;
-        bottom: -4px;
-    
+    right: 45%;
+    bottom: -4px;
   }
-
- 
 
   .mediaImage {
     width: 100%;
     object-fit: contain;
     object-position: left top;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -375,7 +374,7 @@
   .featuredMedia {
     width: 100%;
     border-radius: 22px;
-    height: clamp(220px, 66vw, 280px);
+    height: clamp(220px, 66vw, 395px);
   }
 
   .featuredMediaWrap .datePill {
@@ -410,7 +409,7 @@
   .sideMediaWrap {
     width: 100%;
     border-radius: 22px;
-    height: clamp(220px, 66vw, 280px);
+    height: clamp(220px, 76vw, 595px);
   }
 
   .sideMediaCol .datePill {
@@ -482,6 +481,9 @@
     position: static;
   }
 
+    .sideMediaWrap {
+    height: clamp(220px, 74vw, 595px) !important;
+  }
   .readMore {
     margin-top: 18px;
   }

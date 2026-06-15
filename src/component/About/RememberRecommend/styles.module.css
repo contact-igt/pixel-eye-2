@@ -49,8 +49,24 @@
   margin-bottom: -16px;
 }
 
+.slider :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
+}
+
+.slider :global(.slick-slide) {
+  height: auto;
+}
+
+.slider :global(.slick-slide > div) {
+  height: 100%;
+}
+
 .slideOuter {
   padding: 0 12px;
+  height: 100%;
+  display: flex !important;
+  justify-content: center;
 }
 
 /* Dots */
@@ -77,15 +93,18 @@
 
 .card {
   position: relative;
-  min-height: 320px;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1149 / 809;
+  min-height: 0;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   border-radius: var(--radius-card-lg, 28px);
-  padding: 40px;
+  padding: 10% 12% 8% 12%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   transition: transform 0.4s ease;
   cursor: pointer;
   overflow: hidden;
@@ -98,7 +117,7 @@
 
 .cardContent {
   width: 100%;
-  padding: 20px 30px;
+  padding: 0;
 }
 
 .quoteMark {
@@ -109,21 +128,27 @@
   font-weight: 600;
 }
 
+.quoteImg {
+  width: clamp(22px, 2.3vw, 34px);
+  height: auto;
+}
+
 .cardText {
+  width: 100%;
   color: #4f6495;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
-  margin-top: 25px;
+  margin: 8% 0 0;
 }
 
 .patientBlock {
   display: flex;
   align-items: center;
   gap: 14px;
-  position: relative;
-  top: 20px;
-  left: 40px;
+  position: absolute;
+  left: 20%;
+  bottom: 5%;
 }
 
 .avatarWrap {
@@ -175,61 +200,77 @@
 }
 
 @media (max-width: 1399px) {
+  .card {
+    max-width: 390px;
+  }
+
   .cardText {
     font-size: 14px;
     margin-bottom: 0;
-    margin-top: 10px;
-  }
-
-  .cardContent {
-    padding: 25px 30px 20px;
-    gap: 12px;
   }
 
   .patientBlock {
-    top: 10px;
-    left: 10px;
+    gap: 12px;
+    left: 16%;
+    bottom: 4%;
   }
 }
 
 @media (max-width: 1199px) {
   .inner {
-    width: min(1600px, calc(100% - 150px));
+    width: min(1600px, calc(100% - 80px));
   }
 
   .card {
-    padding: 30px;
-    min-height: 300px;
+    max-width: 360px;
+    padding: 9% 5% 8% 11%;
   }
 
+  .avatarWrap {
+    width: 46px;
+    height: 46px;
+  }
   .patientBlock {
-    top: -5px;
+    left: 11%;
+    bottom: 4%;
   }
-
-  .cardText {
-    margin-top: 20px;
+  .cardText{
+    width: 97%;
   }
 }
 
 @media (max-width: 991px) {
+  .inner {
+    width: min(1600px, calc(100% - 80px));
+  }
+
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .card {
+    max-width: 360px;
+    padding-top: 9.5%;
+  }
+
+  .cardActive {
+    transform: none;
+  }
+
   .cardText {
-    font-size: 16px;
-    margin-top: 15px;
+    font-size: 14px;
+    width: 90%;
   }
 
   .patientBlock {
-    top: 0px;
-    left: 0.1rem;
+    left: 14%;
+    bottom: 5%;
   }
 }
 
 @media (max-width: 767px) {
   .inner {
-    width: min(1600px, calc(100% - 40px));
+    width: min(1600px, calc(100% - 20px));
   }
 
   .description {
@@ -247,28 +288,29 @@
   }
 
   .card {
-    min-height: auto;
-    padding: 18px 16px 24px;
+    max-width: 390px;
+    padding-top: 9.9%;
+    /* padding: 9% 12% 8% 16%; */
   }
 
   .cardActive {
-    transform: none !important;
+    transform: none;
   }
 
   .cardContent {
     width: 100%;
-    padding: 12px 14px;
   }
 
   .cardText {
     font-size: 14px;
     line-height: 1.55;
-    margin-top: 10px;
+    width: 97%;
+        margin-top: 5%;
   }
 
   .patientBlock {
-    top: 12px;
-    left: 12px;
+    left: 12%;
+    bottom: 5%;
     gap: 12px;
   }
 
@@ -297,12 +339,8 @@
 
   .card {
     width: min(390px, 100%);
-    min-height: 0;
-    aspect-ratio: 1149 / 809;
     margin: 0 auto;
-    padding: clamp(22px, 6vw, 30px) clamp(24px, 7vw, 34px);
-    background-size: 100% 100%;
-    justify-content: flex-start;
+    padding-top: 10%;
   }
 
   .cardContent {
@@ -317,18 +355,15 @@
   }
 
   .cardText {
-    width: 82%;
-    max-width: 270px;
+    width: 95%;
+    max-width: 290px;
     font-size: 16px;
     line-height: 1.45;
-    margin-top: 16px;
   }
 
   .patientBlock {
-    position: absolute;
-    left: clamp(26px, 7vw, 36px);
-    bottom: clamp(24px, 7vw, 36px);
-    top: 230px;
+    left: 20%;
+    bottom: 10%;
     gap: 10px;
   }
 
@@ -344,12 +379,15 @@
 
 @media (max-width: 389px) {
   .inner {
-    width: min(1600px, calc(100% - 28px));
+    width: min(1600px, calc(100% - 15px));
   }
 
   .card {
     width: 100%;
-    padding: 20px 22px;
+
+    padding-top: 8%;
+    padding-top: 10%;
+    /* padding: 9% 12% 8% 16%; */
   }
 
   .cardContent {
@@ -357,8 +395,7 @@
   }
 
   .cardText {
-    width: 84%;
-    margin-top: 20px; 
+    width: 93%;
     font-size: 14px;
   }
 
@@ -367,9 +404,8 @@
   }
 
   .patientBlock {
-    left: 24px;
-    bottom: 22px;
-    top: 200px
+    left: 15%;
+    bottom: 5%;
   }
 
   .avatarWrap {

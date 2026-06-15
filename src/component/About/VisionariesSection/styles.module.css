@@ -41,7 +41,9 @@
 .cardBlock {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease;
 }
 
 [data-visible="true"] .cardBlock {
@@ -182,7 +184,9 @@
   opacity: 0;
   transform: scaleX(0.85);
   transform-origin: center;
-  transition: opacity 500ms ease 160ms, transform 500ms ease 160ms;
+  transition:
+    opacity 500ms ease 160ms,
+    transform 500ms ease 160ms;
 }
 
 [data-visible="true"] .divider {
@@ -243,8 +247,19 @@
   .inner {
     width: min(1600px, calc(100% - 120px));
   }
-  .infoPanel{
+  .infoPanel {
     top: -10px;
+  }
+  .name {
+    font-size: 26px;
+  }
+
+  .degree {
+    font-size: 19px;
+  }
+
+  .spec {
+    font-size: 17px;
   }
 }
 
@@ -254,7 +269,7 @@
   }
 
   .mediaSection {
-    height: clamp(360px, 58vw, 480px);
+    height: clamp(360px, 80vw, 480px);
     border-radius: 18px;
   }
 
@@ -320,11 +335,11 @@
   }
 
   .name {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .degree {
-    font-size: 13px;
+    font-size: 12.5px;
     margin-top: 8px;
   }
 
@@ -348,11 +363,11 @@
   }
 
   .name {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .degree {
-    font-size: 14px;
+    font-size: 13.5px;
   }
 
   .spec {

@@ -110,27 +110,19 @@
 
 .cataract-explainer__visual img {
   display: block;
-  width: 710px;
+  width: 93%;
   /* height:400px; */
   border-radius: 28px;
   position: absolute;
-  right: 50px;
+  top:45px;
+  right: 40px;
 }
 @media (max-width: 1500px){
   .cataract-explainer__visual img{
-    width: 93%;
+    width: 92%;
     /* height: 400px; */
-    right: clamp(-25px, -3vw, -10px);
-top: clamp(20px, 10vw, 50px);
-  }
-}
-
-@media (max-width: 1399px) {
-  .cataract-explainer__visual img {
-    width: 620px;
-    height: 400px;
-    right: -5%;
-    top: 9%;
+      top:55px;
+  right: -23px;
   }
 }
 
