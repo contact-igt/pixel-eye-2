@@ -12,7 +12,7 @@ const initialForm = {
   location: "",
   date: "",
   symptoms: "",
-  timeSlot: "",
+  timeSlot: "00:00 AM",
   terms: false,
   whatsapp: false,
   consent: false,
@@ -25,11 +25,39 @@ const ChevronIcon = () => (
 );
 
 const CalendarIcon = () => (
-  <svg className={styles["form-icon"]} viewBox="0 0 24 24" aria-hidden="true">
+  <svg
+    className={`${styles["form-icon"]} ${styles["calendar-icon"]}`}
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
     <path d="M8 2v4M16 2v4M4 9h16M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
     <path d="M8 13h2M12 13h2M16 13h2M8 17h2M12 17h2M16 17h2" />
   </svg>
 );
+
+const ClockIcon = () => (
+  <svg className={styles["form-icon"]} viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="8" />
+    <path d="M12 8v4l3 2" />
+  </svg>
+);
+
+const hourOptions = Array.from({ length: 13 }, (_, index) =>
+  String(index).padStart(2, "0"),
+);
+const minuteOptions = Array.from({ length: 60 }, (_, index) =>
+  String(index).padStart(2, "0"),
+);
+const periodOptions = ["AM", "PM"];
+
+const getTimeParts = (value = "") => {
+  const match = value.trim().match(/^(\d{1,2})(?::(\d{1,2}))?\s*(AM|PM)?$/i);
+  return {
+    hour: match?.[1]?.padStart(2, "0") ?? "00",
+    minute: match?.[2]?.padStart(2, "0") ?? "00",
+    period: match?.[3]?.toUpperCase() ?? "AM",
+  };
+};
 
 const TextField = ({
   label,
@@ -41,7 +69,9 @@ const TextField = ({
   icon,
 }) => (
   <label
-    className={`${styles["appointment-field"]} ${value ? styles["is-filled"] : ""}`}
+    className={`${styles["appointment-field"]} ${value || type === "date" || type === "time" ? styles["is-filled"] : ""
+      } ${type === "date" || type === "time" ? styles["compact-field"] : ""} ${type === "date" && !value ? styles["date-empty"] : ""
+      }`}
   >
     <input
       name={name}
@@ -63,10 +93,12 @@ const SelectField = ({
   value,
   onChange,
   required = false,
+  compact = false,
   children,
 }) => (
   <label
-    className={`${styles["appointment-field"]} ${value ? styles["is-filled"] : ""}`}
+    className={`${styles["appointment-field"]} ${value || compact ? styles["is-filled"] : ""
+      } ${compact ? styles["compact-field"] : ""}`}
   >
     <select
       name={name}
@@ -81,6 +113,99 @@ const SelectField = ({
     <ChevronIcon />
   </label>
 );
+
+const TimeSlotField = ({ value, onChange, required = false }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { hour, minute, period } = getTimeParts(value);
+
+  const updateTime = (nextPart) => {
+    const nextHour = nextPart.hour ?? hour ?? "00";
+    const nextMinute = nextPart.minute ?? minute ?? "00";
+    const nextPeriod = nextPart.period ?? period ?? "AM";
+    const nextValue = `${nextHour}:${nextMinute} ${nextPeriod}`;
+
+    onChange({
+      target: {
+        name: "timeSlot",
+        type: "text",
+        value: nextValue,
+      },
+    });
+  };
+
+  return (
+    <label
+      className={`${styles["appointment-field"]} ${styles["compact-field"]} ${styles["time-slot-field"]} ${isOpen ? styles["time-slot-open"] : ""}`}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setIsOpen(false);
+        }
+      }}
+    >
+      <span className={styles["time-slot-label"]}>Preferred Time slot</span>
+      <input
+        className={styles["time-display"]}
+        name="timeSlot"
+        value={value}
+        onChange={onChange}
+        onFocus={() => setIsOpen(true)}
+        required={required}
+        aria-label="Preferred Time slot"
+      />
+      <button
+        type="button"
+        className={styles["time-icon-button"]}
+        onClick={() => setIsOpen((current) => !current)}
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
+        aria-label="Choose preferred time"
+      >
+        <ClockIcon stroke="#2f4c89" />
+      </button>
+
+      {isOpen ? (
+        <div className={styles["time-picker-panel"]}>
+          <div className={styles["time-picker-column"]} role="listbox" aria-label="Hour">
+            {hourOptions.map((item) => (
+              <button
+                key={item}
+                type="button"
+                className={item === hour ? styles["time-option-active"] : ""}
+                onClick={() => updateTime({ hour: item })}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+          <div className={styles["time-picker-column"]} role="listbox" aria-label="Minute">
+            {minuteOptions.map((item) => (
+              <button
+                key={item}
+                type="button"
+                className={item === minute ? styles["time-option-active"] : ""}
+                onClick={() => updateTime({ minute: item })}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+          <div className={styles["time-picker-column"]} role="listbox" aria-label="AM or PM">
+            {periodOptions.map((item) => (
+              <button
+                key={item}
+                type="button"
+                className={item === period ? styles["time-option-active"] : ""}
+                onClick={() => updateTime({ period: item })}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
+    </label>
+  );
+};
 
 const Form = () => {
   const [formData, setFormData] = useState(initialForm);
@@ -197,7 +322,7 @@ const Form = () => {
             value={formData.date}
             onChange={handleChange}
             required
-            icon={<CalendarIcon />}
+            // icon={<CalendarIcon />}
           />
 
           <SelectField
@@ -214,10 +339,7 @@ const Form = () => {
             <option value="General eye checkup">General eye checkup</option>
           </SelectField>
 
-          <TextField
-            label="Preferred Time slot"
-            name="timeSlot"
-            type="time"
+          <TimeSlotField
             value={formData.timeSlot}
             onChange={handleChange}
             required

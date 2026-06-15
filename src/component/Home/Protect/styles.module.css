@@ -10,7 +10,7 @@
   overflow: hidden;
   height: 450px;
   isolation: isolate;
-  border: 1px solid rgba(99, 111, 134, 0.45);
+  /* border: 1px solid rgba(99, 111, 134, 0.45); */
   background: #253548;
   cursor: ew-resize;
   user-select: none;
@@ -80,6 +80,10 @@
   text-wrap: balance;
 }
 
+.heroCta {
+  --btn-icon-left: 180px;
+}
+
 .ctaButton {
   margin-top: 36px;
   display: inline-flex;
@@ -137,9 +141,15 @@
   }
 }
 
+@media (max-width: 991px) {
+  .heroCta {
+    --btn-icon-left: 165px;
+  }
+}
+
 @media (max-width: 767px) {
   .bannerFrame {
-    height: 400px;
+    height: 300px;
   }
 
   .heroContent {
@@ -152,11 +162,34 @@
   .ctaButton {
     margin-top: 28px;
   }
+
+  .heroCta {
+    --btn-icon-left: 150px;
+  }
+}
+
+@media (max-width: 575px) {
+  .slideImage {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .heroCta {
+    --btn-icon-left: 140px;
+  }
+  .bannerFrame{
+    height: 260px;
+
+  }
+  .heroContent{
+    width: 300px;
+        top: 16%;
+  }
 }
 
 @media (max-width: 389px) {
   .bannerFrame {
-    height: 360px;
+    height: 250px;
   }
 
 
@@ -168,9 +201,13 @@
         rgba(23, 33, 48, 0.02) 100%);
   }
 
-  .slideImage{
-    object-fit:fill;
-    
+  .slideImage {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .heroCta {
+    --btn-icon-left: 132px;
   }
 
 

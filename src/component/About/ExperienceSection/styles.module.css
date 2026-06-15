@@ -12,17 +12,17 @@
 .title {
   margin: 0;
   color: var(--surface-dark-blue);
-  font-size: var(--h2-size);
+  font-size: var(--title-size);
   font-weight: 400;
-  line-height: var(--h2-lh);
+  line-height: var(--title-lh);
 }
 
 .subtitle {
   margin: 18px 0 0;
   color: var(--text-body);
-  font-size: var(--p-size);
+  font-size: var(--paragraph-size);
   font-weight: 500;
-  line-height: var(--p-lh);
+  line-height: var(--paragraph-lh);
 }
 
 .content {
@@ -75,14 +75,15 @@
   width: 100%;
   max-width: 720px;
   color: var(--text-body);
-  font-size: var(--p-size);
+  font-size: var(--paragraph-size);
   font-weight: 400;
-  line-height: var(--p-lh);
+  line-height: var(--paragraph-lh);
 }
 
 .careContainer {
   width: 100%;
-  max-width: var(--container2-max);
+  width:min(1640px, calc(100% - 130px));
+  /* max-width: var(--container2-max); */
   margin: 0 auto;
 }
 
@@ -123,8 +124,6 @@
     height: auto;
     aspect-ratio: 390 / 484;
     margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .copy {
@@ -145,6 +144,9 @@
 
 
 @media (max-width: 767px) {
+  .careContainer{
+      width:min(1640px, calc(100% - 50px));
+  }
   .header {
     margin-bottom: 22px;
   }
@@ -159,7 +161,7 @@
 
   .imageWrap {
     width: min(340px, 100%);
-    margin: 0 auto;
+    /* margin: 0 auto; */
   }
 
   .copy p {

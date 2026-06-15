@@ -11,12 +11,11 @@
     socialTitle: "Social media",
   },
   links: [
-    { label: "Services", href: "#" },
-    { label: "Doctors", href: "#" },
-    { label: "Locations", href: "#" },
-    { label: "Working Hours", href: "#" },
-    { label: "Contact", href: "#" },
-    { label: "Privacy Policy", href: "#" },
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/service" },
+    { label: "Appointment", href: "/appointment" },
+    { label: "Our Specialists", href: "/about#visionaries" },
   ],
   contacts: [
     {

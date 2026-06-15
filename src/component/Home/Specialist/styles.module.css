@@ -188,41 +188,94 @@
 }
 
 @media (max-width: 575px) {
+    .specialistSection {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+
+    .frame {
+        height: 300px;
+    }
+
+    .bgWrap {
+        top: 142px;
+        width: 220px;
+        height: 220px;
+    }
+
+    .inner {
+        padding: 18px 14px 18px 56px;
+    }
+
+    .title {
+        margin: 28px 0 8px 0;
+    }
+
+    .doctorsWrap {
+        height: calc(100% - 55px);
+    }
+
+    .doctor {
+        width: 148px;
+        height: 190px;
+        bottom: -18px;
+        gap: 4px;
+    }
+
+    .doctorImage {
+        flex: 0 0 auto;
+        width: auto;
+        height: 150px;
+        max-height: 150px;
+    }
+
+    .doctorName {
+        padding-bottom: 4px;
+        font-size: 12px;
+        line-height: 1.2;
+    }
+
     .left {
-        left: 2%;
+        left: 0;
     }
 
     .right {
-        right: 2%;
+        right: 0;
     }
 }
 
-@media (max-width: 389px) {
+@media (max-width: 390px) {
     .frame {
-        height: 320px;
+        height: 270px;
         border-radius: var(--radius-card-md);
     }
 
     .doctor {
-        width: 160px;
-        height: 200px;
+        width: 128px;
+        height: 162px;
+        bottom: -10px;
     }
 
     .doctorImage {
-        flex: 0 0 220px;
+        flex: 0 0 auto;
+        width: auto;
+        height: 128px;
+        max-height: 128px;
     }
 
     .doctorName {
         text-align: start;
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .bgWrap {
-        width: 220px;
+        top: 126px;
+        width: 190px;
+        height: 190px;
     }
 
     .inner {
-        padding: 18px 12px 18px 56px;
+        padding: 16px 10px 16px 44px;
     }
 
     .left {

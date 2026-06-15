@@ -81,7 +81,7 @@ const Testimonials = () => {
           </div>
 
           <div className={styles.lowerContent}>
-           <div className="d-flex justify-content-center w-100">
+           <div className={styles.subtitleWrap}>
              <p className={styles.subtitle}>{subtitle}</p>
            </div>
 

@@ -37,18 +37,15 @@
 .icon {
     width: var(--btn-icon);
     height: var(--btn-icon);
-    margin-left: 0;
+    margin-left: -8px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 1;
     border: 1px solid transparent;
     transition: background 180ms ease;
     flex-shrink: 0;
-    position: absolute;
-    right: -36px;
     z-index: 999;
 }
 
@@ -56,7 +53,12 @@
     width: 18px;
     height: 18px;
     stroke-width: 2.1;
+    /* transition: transform 180ms ease; */
 }
+
+/* .btn:hover .icon svg {
+    transform: translate(2px, -2px);
+} */
 
 /* ── LIGHT variant (white bg) ───────────── */
 .light .label {
