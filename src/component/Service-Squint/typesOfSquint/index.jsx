@@ -70,23 +70,44 @@ const TypesOfSquint = () => {
           <article
             className={`${styles["types-squint__card"]} ${styles["types-squint__card--side"]}`}
           >
-            <h3>{leftSlide.title}</h3>
-            <p>{leftSlide.description}</p>
+            {leftSlide.image && (
+              <div className={styles["types-squint__card-image"]}>
+                <Image src={leftSlide.image} alt={leftSlide.title} width={300} height={300} />
+              </div>
+            )}
+            <div className={styles["types-squint__card-content"]}>
+              <h3>{leftSlide.title}</h3>
+              <p>{leftSlide.description}</p>
+            </div>
           </article>
 
           <article
             className={`${styles["types-squint__card"]} ${styles["types-squint__card--main"]}`}
             aria-live="polite"
           >
-            <h3>{activeSlide.title}</h3>
-            <p>{activeSlide.description}</p>
+            {activeSlide.image && (
+              <div className={styles["types-squint__card-image"]}>
+                <Image src={activeSlide.image} alt={activeSlide.title} width={500} height={500} />
+              </div>
+            )}
+            <div className={styles["types-squint__card-content"]}>
+              <h3>{activeSlide.title}</h3>
+              <p>{activeSlide.description}</p>
+            </div>
           </article>
 
           <article
             className={`${styles["types-squint__card"]} ${styles["types-squint__card--side"]}`}
           >
-            <h3>{rightSlide.title}</h3>
-            <p>{rightSlide.description}</p>
+            {rightSlide.image && (
+              <div className={styles["types-squint__card-image"]}>
+                <Image src={rightSlide.image} alt={rightSlide.title} width={300} height={300} />
+              </div>
+            )}
+            <div className={styles["types-squint__card-content"]}>
+              <h3>{rightSlide.title}</h3>
+              <p>{rightSlide.description}</p>
+            </div>
           </article>
 
           <button

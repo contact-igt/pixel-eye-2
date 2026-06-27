@@ -7,7 +7,7 @@
       },
       nav: {
         rightSlot: "book",
-        navTheme: "dark",
+        navTheme: "light",
         cardBg: "white",
       },
     },
@@ -38,7 +38,7 @@
     note:
       "One eye may move away from the normal direction while the other eye looks straight.",
     image: {
-      src: "/assets/Service/Squint Treatment.png",
+      src: "/assets/Service/squint/squint_symptoms.png",
       alt: "Squint eye examination",
     },
     items: [
@@ -58,32 +58,32 @@
       {
         number: "01",
         title: "Uncorrected glass power",
-        image: "/assets/Service/cataract/Frame 241.png",
+        image: "/assets/Service/squint/lead1.png",
       },
       {
         number: "02",
         title: "Weak eye muscle coordination",
-        image: "/assets/Service/cataract/Frame 111.png",
+        image: "/assets/Service/squint/lead2.png",
       },
       {
         number: "03",
         title: "Lazy eye",
-        image: "/assets/Service/cataract/Frame 109.png",
+        image: "/assets/Service/squint/lead3.png",
       },
       {
         number: "04",
         title: "Family history",
-        image: "/assets/Service/cataract/Frame 108.png",
+        image: "/assets/Service/squint/lead4.png",
       },
       {
         number: "05",
         title: "Neurological or nerve-related causes",
-        image: "/assets/Service/cataract/Frame 110.png",
+        image: "/assets/Service/squint/lead5.png",
       },
       {
         number: "06",
         title: "Eye injury or poor vision in one eye",
-        image: "/assets/Service/cataract/Frame 107.png",
+        image: "/assets/Service/squint/lead6.png",
       },
     ],
   },
@@ -105,16 +105,19 @@
         id: "hypertropia",
         title: "Hypertropia",
         description: "One eye turns upward compared to the other eye.",
+        image: "/assets/Service/squint/hypertropia.png",
       },
       {
         id: "esotropia",
         title: "Esotropia",
         description: "The eye turns inward, toward the nose.",
+        image: "/assets/Service/squint/esotropia.png",
       },
       {
         id: "exotropia",
         title: "Exotropia",
         description: "The eye turns outward, away from the nose.",
+        image: "/assets/Service/squint/exotropia.png",
       },
     ],
   },
@@ -128,45 +131,53 @@
     ],
     media: [
       {
-        title: "Femto LASIK / Bladeless LASIK",
+        title: "Cover Test",
         image: "/assets/Service/squint/diagnosed_image1.png",
-        alt: "Eye surgery illustration",
+        alt: "Cover test illustration",
       },
       {
-        title: "Contoura / Topography-Guided LASIK",
+        title: "Corneal Light Reflex Test",
         image: "/assets/Service/squint/diagnosed_image2.png",
-        alt: "Eye surgery illustration",
+        alt: "Corneal light reflex test illustration",
       },
       {
-        title: "Common LASIK",
+        title: "Visual Acuity Test",
         image: "/assets/Service/squint/diagnosed_image4.png",
-        alt: "Eye surgery illustration",
+        alt: "Visual acuity test illustration",
       },
     ],
     treatments: [
       {
         number: "1.",
-        title: "Glasses & Soft Contact Lenses",
+        title: "Cover Test",
         description:
-          "Creates a detailed map of the cornea and helps detect early irregularity.",
+          "The specialist covers one of your eyes with an opaque paddle and watches how the other eye moves to focus on an object, which reveals hidden or visible misalignment.",
+        image: "/assets/Service/squint/cover_test.png",
+        alt: "Cover test for squint diagnosis",
       },
       {
         number: "2.",
-        title: "RGP, Hybrid & Scleral Lenses",
+        title: "Corneal Light Reflex Test",
         description:
-          "Creates a detailed map of the cornea and helps detect early irregularity.",
+          "A bright light is shone directly into the eyes. The specialist observes where the light reflects off your pupils to check if your eyes are pointing at the same spot.",
+        image: "/assets/Service/squint/corneal_test.png",
+        alt: "Corneal light reflex test for squint diagnosis",
       },
       {
         number: "3.",
-        title: "Corneal Collagen Cross-Linking / C3R",
+        title: "Visual Acuity Test",
         description:
-          "Creates a detailed map of the cornea and helps detect early irregularity.",
+          "You read letters on a standard eye chart to measure how clearly each eye can see independently.",
+        image: "/assets/Service/squint/visual_test.png",
+        alt: "Visual acuity test for squint diagnosis",
       },
       {
         number: "4.",
-        title: "Intracorneal Ring Segments",
+        title: "Retinal & Refraction Examination",
         description:
-          "Small ring segments may be placed inside the cornea in selected mild to moderate cases to help flatten the cornea and improve vision.",
+          "Eye drops may be used to dilate your pupils and relax the focusing muscles. This allows the doctor to check for underlying vision issues (like nearsightedness or farsightedness) that might be causing the squint, and to inspect the internal structures of your eye.",
+        image: "/assets/Service/squint/refraction_examination.png",
+        alt: "Retinal and refraction examination for squint diagnosis",
         highlighted: true,
       },
     ],

@@ -1,10 +1,23 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import styles from "./styles.module.css";
 
 const getWrappedIndex = (index, total) => {
   if (!total) return 0;
   return (index + total) % total;
 };
+
+const SlideCard = ({ item, className, titleId }) => (
+  <article className={`${styles.slideCard} ${className || ""}`} aria-labelledby={titleId}>
+    {item.image ? (
+      <img src={item.image} alt={item.imageAlt || item.title} className={styles.slideImage} />
+    ) : null}
+    <div className={styles.slideOverlay} />
+    <div className={styles.slideContent}>
+      <h3 id={titleId}>{item.title}</h3>
+      <p>{item.description}</p>
+    </div>
+  </article>
+);
 
 const DiagnosisSlider = ({ sliderContent, sectionId = "keratoconus-diagnosis-slider" }) => {
   const slides = sliderContent?.items || [];
@@ -29,22 +42,9 @@ const DiagnosisSlider = ({ sliderContent, sectionId = "keratoconus-diagnosis-sli
           <span aria-hidden="true">&lsaquo;</span>
         </button>
 
-        <article className={`${styles.slideCard} ${styles.sideCard} ${styles.sideCardLeft}`}>
-          <h3>{previous.title}</h3>
-          <p>{previous.description}</p>
-        </article>
-
-        <article className={`${styles.slideCard} ${styles.centerCard}`} aria-labelledby={`${sectionId}-title`}>
-          <div className={styles.centerTitleWrap}>
-            <h3 id={`${sectionId}-title`}>{current.title}</h3>
-          </div>
-          <p>{current.description}</p>
-        </article>
-
-        <article className={`${styles.slideCard} ${styles.sideCard} ${styles.sideCardRight}`}>
-          <h3>{next.title}</h3>
-          <p>{next.description}</p>
-        </article>
+        <SlideCard item={previous} className={`${styles.sideCard} ${styles.sideCardLeft}`} />
+        <SlideCard item={current} className={styles.centerCard} titleId={`${sectionId}-title`} />
+        <SlideCard item={next} className={`${styles.sideCard} ${styles.sideCardRight}`} />
 
         <button
           type="button"

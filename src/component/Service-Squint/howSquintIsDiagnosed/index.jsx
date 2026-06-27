@@ -29,11 +29,11 @@ const HowSquintIsDiagnosed = () => {
                 <Image
                   src={item.image}
                   alt={item.alt}
-                  width={760}
-                  height={285}
+                  width={1779}
+                  height={792}
                   className={styles["squint-diagnosis__media-image"]}
                 />
-                <PlayIcon />
+                {/* <PlayIcon /> */}
               </div>
               <figcaption className={styles["squint-diagnosis__media-label"]}>
                 {item.title}
@@ -53,10 +53,19 @@ const HowSquintIsDiagnosed = () => {
             }`}
             key={item.number}
           >
-            <h3>
-              <span>{item.number}</span> {item.title}
-            </h3>
-            <p>{item.description}</p>
+            <Image
+              src={item.image}
+              alt={item.alt}
+              width={item.highlighted ? 3816 : 1755}
+              height={item.highlighted ? 1569 : 1875}
+              className={styles["squint-diagnosis__treatment-image"]}
+            />
+            <div className={styles["squint-diagnosis__treatment-content"]}>
+              <h3>
+                <span>{item.number}</span> {item.title}
+              </h3>
+              <p>{item.description}</p>
+            </div>
           </article>
         ))}
       </div>
