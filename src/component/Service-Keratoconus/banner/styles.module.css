@@ -1,0 +1,10 @@
+.detailPage,
+.detailPage * {
+  box-sizing: border-box;
+}
+
+.detailPage {
+  width: 100%;
+  background: #ffffff;
+  color: var(--text-heading);
+}

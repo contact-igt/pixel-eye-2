@@ -77,7 +77,7 @@ export const SERVICE_CONTENT = {
         "Management of a condition where the cornea thins and changes shape, affecting how light is focused, leading to blurred vision.",
       image: "/assets/Service/Keratoconus treatment.png",
       imageAlt: "Keratoconus eye examination",
-      href: "/service#keratoconus-treatment",
+      href: "/service/keratoconus",
       ctaStyle: "outline",
     },
     {
@@ -92,3 +92,4 @@ export const SERVICE_CONTENT = {
     },
   ],
 };
+

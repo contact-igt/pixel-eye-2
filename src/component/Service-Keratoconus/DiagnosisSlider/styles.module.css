@@ -1,0 +1,237 @@
+.sliderShell {
+  position: relative;
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 0 44px 8px;
+}
+
+.sliderDeck {
+  position: relative;
+  min-height: 332px;
+}
+
+.slideCard {
+  border-radius: 18px;
+  background: #d9d9d9;
+  color: #2f4d9a;
+  box-shadow: none;
+}
+
+.slideCard h3,
+.slideCard p {
+  margin: 0;
+}
+
+.centerCard {
+  position: absolute;
+  left: 435px;
+  z-index: 2;
+  width: 550px;
+  min-height: 450px;
+  margin-left: 20px;
+  margin: 0 auto;
+  padding: 380px 28px 28px;
+}
+
+.centerTitleWrap {
+  position: absolute;
+  top: 15px;
+  left: 48%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 10px), 480px);
+  border-radius: 16px;
+}
+
+.centerTitleWrap h3 {
+  color: #2f4d9a;
+  font-size: clamp(40px, 2.15vw, 34px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.centerCard p {
+  max-width: 340px;
+  color: rgba(47, 77, 154, 0.82);
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.sideCard {
+  position: absolute;
+  top: 100px;
+  width: 350px;
+  min-height: 300px;
+  padding: 24px 20px 20px;
+  z-index: 1;
+}
+
+.sideCard h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.sideCard p {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  color: rgba(47, 77, 154, 0.7);
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.sideCardLeft {
+  left: 70px;
+}
+
+.sideCardRight {
+  right: 50px;
+}
+
+.navButton {
+  position: absolute;
+  top: 250px;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid #b9d4e9;
+  border-radius: 50%;
+  background: #e6f2fb;
+  color: #3b4f69;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.navButton span {
+  font-size: 23px;
+  line-height: 1;
+}
+
+.navButtonLeft {
+  left: 50px;
+}
+
+.navButtonRight {
+  right: 30px;
+}
+
+@media (max-width: 1199px) {
+  .sliderShell {
+    padding: 0 32px 8px;
+  }
+
+  .centerCard {
+    width: min(100%, 420px);
+  }
+
+  .sideCard {
+    width: 176px;
+  }
+}
+
+@media (max-width: 991px) {
+  .sliderShell {
+    padding: 0 24px 8px;
+  }
+
+  .sliderDeck {
+    min-height: 284px;
+  }
+
+  .centerCard {
+    width: min(100%, 388px);
+    min-height: 248px;
+    padding: 116px 20px 18px;
+  }
+
+  .centerTitleWrap {
+    top: -34px;
+    width: min(calc(100% - 8px), 364px);
+  }
+
+  .sideCard {
+    width: 150px;
+    min-height: 154px;
+  }
+
+  .navButton {
+    top: 62px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sliderShell {
+    padding: 0;
+  }
+
+  .sliderDeck {
+    min-height: auto;
+    display: grid;
+    gap: 14px;
+  }
+
+  .centerCard,
+  .sideCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .centerCard {
+    order: 1;
+    padding: 90px 18px 18px;
+  }
+
+  .centerTitleWrap {
+    top: -24px;
+    width: calc(100% - 16px);
+  }
+
+  .sideCardLeft {
+    order: 2;
+  }
+
+  .sideCardRight {
+    order: 3;
+  }
+
+  .sideCard p {
+    position: static;
+    margin-top: 46px;
+    font-size: 12px;
+  }
+
+  .navButton {
+    top: 96px;
+  }
+
+  .navButtonLeft {
+    left: 10px;
+  }
+
+  .navButtonRight {
+    right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .centerTitleWrap h3 {
+    font-size: 24px;
+  }
+
+  .centerCard p,
+  .sideCard p {
+    font-size: 12px;
+  }
+
+  .sideCard h3 {
+    font-size: 16px;
+  }
+}

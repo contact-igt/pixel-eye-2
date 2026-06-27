@@ -2,9 +2,17 @@ import { useState } from "react";
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import styles from "./styles.module.css";
 
-const SignsYouNotice = () => {
-  const { signs } = SERVICE_CATARACT_CONTENT;
-  const [activeIndex, setActiveIndex] = useState(0);
+const SignsYouNotice = ({
+  signsContent = SERVICE_CATARACT_CONTENT.signs,
+  sectionId = "cataract-signs",
+}) => {
+  const signs = signsContent;
+  const [activeIndex, setActiveIndex] = useState(
+    Math.max(
+      0,
+      signs.items.findIndex((item) => item.active),
+    ),
+  );
 
   const updateActiveSign = (event) => {
     const list = event.currentTarget;
@@ -29,9 +37,12 @@ const SignsYouNotice = () => {
   };
 
   return (
-    <section className={styles["cataract-signs"]} aria-labelledby="cataract-signs-title">
+    <section
+      className={styles["cataract-signs"]}
+      aria-labelledby={`${sectionId}-title`}
+    >
       <div className={styles["cataract-signs__header"]}>
-        <h2 id="cataract-signs-title">{signs.title}</h2>
+        <h2 id={`${sectionId}-title`}>{signs.title}</h2>
         <p>{signs.description}</p>
       </div>
 
@@ -42,23 +53,36 @@ const SignsYouNotice = () => {
           alt={signs.image.alt}
         />
 
-        <div
-          className={styles["cataract-signs__list"]}
-          aria-label="Cataract signs"
-          onScroll={updateActiveSign}
-          onWheel={handleWheel}
-          tabIndex={0}
-        >
-          {signs.items.map((sign, index) => (
-            <article
-              className={`${styles["cataract-signs__item"]} ${index === activeIndex ? styles["is-active"] : ""}`.trim()}
-              key={sign.number}
-            >
-              <span className={styles["cataract-signs__number"]}>{sign.number}</span>
-              <span className={styles["cataract-signs__divider"]} aria-hidden="true" />
-              <p>{sign.text}</p>
-            </article>
-          ))}
+        <div className={styles["cataract-signs__listCol"]}>
+          {signs.listIntro ? (
+            <p className={styles["cataract-signs__listIntro"]}>
+              {signs.listIntro}
+            </p>
+          ) : null}
+
+          <div
+            className={styles["cataract-signs__list"]}
+            aria-label={signs.ariaLabel || "Signs list"}
+            onScroll={updateActiveSign}
+            onWheel={handleWheel}
+            tabIndex={0}
+          >
+            {signs.items.map((sign, index) => (
+              <article
+                className={`${styles["cataract-signs__item"]} ${index === activeIndex ? styles["is-active"] : ""}`.trim()}
+                key={sign.number}
+              >
+                <span className={styles["cataract-signs__number"]}>
+                  {sign.number}
+                </span>
+                <span
+                  className={styles["cataract-signs__divider"]}
+                  aria-hidden="true"
+                />
+                <p>{sign.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

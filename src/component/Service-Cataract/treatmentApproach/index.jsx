@@ -1,8 +1,14 @@
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import styles from "./styles.module.css";
 
-const TreatmentApproach = () => {
-  const { treatmentApproach: treatment } = SERVICE_CATARACT_CONTENT;
+const TreatmentApproach = ({
+  treatmentContent = SERVICE_CATARACT_CONTENT.treatmentApproach,
+  sectionId = "treatment-approach",
+  contentLayout = "default",
+  sectionWidth = "default",
+  children,
+}) => {
+  const treatment = treatmentContent;
 
   const imageSrc =
     typeof treatment.image === "string"
@@ -15,8 +21,10 @@ const TreatmentApproach = () => {
 
   return (
     <section
-      className={styles["treatment-approach"]}
-      aria-labelledby="treatment-approach-title"
+      className={`${styles["treatment-approach"]} ${
+        sectionWidth === "full" ? styles["treatment-approach--full"] : ""
+      }`}
+      aria-labelledby={`${sectionId}-title`}
     >
       <div className={styles["treatment-approach__card"]}>
         <img
@@ -25,15 +33,29 @@ const TreatmentApproach = () => {
           alt={imageAlt}
         />
 
-        <div className={styles["treatment-approach__overlay"]}>
-          <div className={styles["treatment-approach__content"]}>
-            <h2 id="treatment-approach-title">{treatment.title}</h2>
+        <div
+          className={`${styles["treatment-approach__overlay"]} ${
+            contentLayout === "wide"
+              ? styles["treatment-approach__overlay--wide"]
+              : ""
+          }`}
+        >
+          <div
+            className={`${styles["treatment-approach__content"]} ${
+              contentLayout === "wide"
+                ? styles["treatment-approach__content--wide"]
+                : ""
+            }`}
+          >
+            <h2 id={`${sectionId}-title`}>{treatment.title}</h2>
             {(treatment.paragraphs || []).map((p, i) => (
-              <p key={`treatment-paragraph-${i}`}>{p}</p>
+              <p key={`${sectionId}-paragraph-${i}`}>{p}</p>
             ))}
           </div>
         </div>
       </div>
+
+      {children ? <div className={styles["treatment-approach__addon"]}>{children}</div> : null}
     </section>
   );
 };

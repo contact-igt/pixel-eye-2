@@ -1,4 +1,4 @@
-export const HOME_CONTENT = {
+﻿export const HOME_CONTENT = {
   stats: [
     { id: 1, number: "99%", label: "Cataract\nSuccess Rate" },
     { id: 2, number: "8,000+", label: "Successful\nEye Surgeries" },
@@ -9,7 +9,7 @@ export const HOME_CONTENT = {
   banner: {
     navItems: [
       { id: 1, label: "ABOUT US", href: "#" },
-      { id: 2, label: "DOCTORS", href: "#" },
+      { id: 2, label: "DOCTORS", href: "/doctors" },
       { id: 3, label: "TREATMENTS", href: "#" },
     ],
     leftLogo: {
@@ -134,7 +134,7 @@ export const HOME_CONTENT = {
         id: 3,
         title: "Transparent & Comfortable",
         description:
-          "We believe in open, honest communication — clear pricing, informed consent, and a relaxed environment at every step.",
+          "We believe in open, honest communication â€” clear pricing, informed consent, and a relaxed environment at every step.",
         image: "/assets/Home/choose3.png",
         href: "/appointment",
         buttonLabel: "Read More",
@@ -280,3 +280,4 @@ export const HOME_CONTENT = {
     },
   },
 };
+
