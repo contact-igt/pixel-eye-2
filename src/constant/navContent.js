@@ -23,6 +23,11 @@ export const NAV_CONTENT = {
       label: "Cataract Service",
       href: "/service/cataract",
     },
+    {
+      id: "service-squint",
+      label: "Squint Service",
+      href: "/service/squint",
+    },
   ],
   bookAppointment: {
     label: "BOOK APPOINTMENT",

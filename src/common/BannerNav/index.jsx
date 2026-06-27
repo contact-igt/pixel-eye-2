@@ -188,7 +188,9 @@ export default function BannerNav({
       >
         <div className={styles.inner}>
           {/* ── Left: logo card ── */}
-          <div className={styles.logoCard}>
+          <div
+            className={`${styles.logoCard} ${cardBg === "white" ? styles.cardWhite : ""}`.trim()}
+          >
             <Link href="/" aria-label={logo.alt}>
               <Image
                 src={logo.src}
@@ -247,7 +249,9 @@ export default function BannerNav({
           </nav>
 
           {/* ── Right: NABH badge or Book Appointment ── */}
-          <div className={styles.rightCard}>
+          <div
+            className={`${styles.rightCard} ${cardBg === "white" ? styles.cardWhite : ""}`.trim()}
+          >
             {rightSlot === "nabh" ? (
               <Image
                 src={nabhBadge.src}

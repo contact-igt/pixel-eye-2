@@ -47,7 +47,7 @@ export const SERVICE_CONTENT = {
         "Management of eye misalignment that can affect coordination and depth perception. Treatment is tailored to the severity and type of condition.",
       image: "/assets/Service/Squint Treatment.png",
       imageAlt: "Child receiving a squint eye examination",
-      href: "/service#squint-treatment",
+      href: "/service/squint",
       ctaStyle: "outline",
     },
     {
