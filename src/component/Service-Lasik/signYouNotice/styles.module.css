@@ -1,0 +1,240 @@
+.lasik-signs,
+.lasik-signs * {
+  box-sizing: border-box;
+}
+
+.lasik-signs {
+  width: min(1640px, calc(100% - 230px));
+  margin: 0 auto 92px;
+  color: #273979;
+}
+
+.lasik-signs__header h2 {
+  margin: 0;
+  color: #273979;
+  font-size: var(--h2-size);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.lasik-signs__header p {
+  width: min(39vw, 714px);
+  margin: 44px 0 0;
+  color: rgba(42, 60, 125, 0.82);
+  font-size: var(--p-size);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.lasik-signs__body {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(400px, 508px) minmax(560px, 760px);
+  column-gap: 118px;
+  align-items: center;
+  margin-top: 93px;
+}
+
+.lasik-signs__image {
+  display: block;
+  width: 508px;
+  height: 432px;
+  border-radius: 36px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lasik-signs__right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.lasik-signs__note {
+  margin: 0;
+  text-align: center;
+  color: rgba(42, 60, 125, 0.7);
+  font-size: var(--p-size);
+  font-weight: 400;
+  line-height: 1.45;
+  max-width: 540px;
+  align-self: center;
+}
+
+.lasik-signs__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 282px;
+  padding: 0 54px 0 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scrollbar-color: #76a7c6 #e5f1f7;
+  scrollbar-width: thin;
+}
+
+.lasik-signs__list:focus {
+  outline: none;
+}
+
+.lasik-signs__list:focus-visible {
+  outline: 2px solid rgba(39, 57, 121, 0.3);
+  outline-offset: 8px;
+}
+
+.lasik-signs__list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lasik-signs__list::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: #e5f1f7;
+}
+
+.lasik-signs__list::-webkit-scrollbar-thumb {
+  min-height: 142px;
+  border-radius: 999px;
+  background: #76a7c6;
+}
+
+.lasik-signs__item {
+  flex: 0 0 132px;
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: 76px 1px 1fr;
+  column-gap: 48px;
+  align-items: center;
+  min-height: 132px;
+  padding: 0 58px 0 58px;
+  border-radius: 0 22px 22px 0;
+  background: #ecf4f9;
+  color: rgba(42, 60, 125, 0.48);
+  transition: background-color 280ms ease, color 280ms ease, border-radius 280ms ease;
+}
+
+.lasik-signs__item:first-child {
+  border-radius: 22px;
+}
+
+.lasik-signs__item.is-active {
+  min-height: 132px;
+  margin-left: -34px;
+  padding-left: 58px;
+  border-radius: 28px;
+  background: #dbeaf2;
+  color: #273979;
+}
+
+.lasik-signs__number {
+  display: block;
+  color: currentColor;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.lasik-signs__item.is-active .lasik-signs__number {
+  font-size: 58px;
+}
+
+.lasik-signs__divider {
+  width: 1px;
+  height: 55px;
+  background: rgba(42, 60, 125, 0.25);
+}
+
+.lasik-signs__item p {
+  margin: 0;
+  color: currentColor;
+  font-size: var(--p-size);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1199px) {
+  .lasik-signs {
+    width: min(1600px, calc(100% - 64px));
+  }
+
+  .lasik-signs__header p {
+    width: min(100%, 760px);
+  }
+
+  .lasik-signs__body {
+    grid-template-columns: minmax(320px, 440px) 1fr;
+    column-gap: clamp(24px, 4vw, 64px);
+    row-gap: 0;
+  }
+
+  .lasik-signs__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 508 / 432;
+  }
+
+  .lasik-signs__item,
+  .lasik-signs__item.is-active {
+    margin-left: 0;
+  }
+
+  .lasik-signs__list {
+    width: 100%;
+    height: 282px;
+    padding-right: 28px;
+  }
+}
+
+@media (max-width: 991px) {
+  .lasik-signs__body {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    column-gap: 0;
+  }
+
+  .lasik-signs__image {
+    width: min(640px, 100%);
+    height: auto;
+    aspect-ratio: 508 / 432;
+  }
+
+  .lasik-signs__list {
+    max-height: none;
+    height: auto;
+    padding-right: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .lasik-signs {
+    width: min(1600px, calc(100% - 40px));
+    margin-bottom: 64px;
+  }
+
+  .lasik-signs__body {
+    margin-top: 54px;
+    row-gap: 22px;
+  }
+
+  .lasik-signs__item,
+  .lasik-signs__item.is-active {
+    grid-template-columns: 64px 1px 1fr;
+    column-gap: 16px;
+    min-height: 102px;
+    padding: 0 20px;
+    border-radius: 20px;
+  }
+
+  .lasik-signs__number,
+  .lasik-signs__item.is-active .lasik-signs__number {
+    font-size: 44px;
+  }
+}
