@@ -3,6 +3,7 @@ import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import { SERVICE_KERATOCONUS_CONTENT } from "@/constant/serviceKeratoconusContent";
 
 export const KerstoconusApproach = () => {
+  const { keratoconusApproach } = SERVICE_KERATOCONUS_CONTENT;
   const { surgicalOptions } = SERVICE_CATARACT_CONTENT;
   const approachCards = SERVICE_KERATOCONUS_CONTENT.keratoconusApproach.options || [];
   const cardOne = approachCards[0];
@@ -15,7 +16,7 @@ export const KerstoconusApproach = () => {
       className={styles.section}
       aria-labelledby="keratoconus-approach-title"
     >
-      <div className="container">
+      <div className="container-fluid">
         <div className={styles.approachbg}>
           <div className="bgimg">
             <img
@@ -29,43 +30,53 @@ export const KerstoconusApproach = () => {
             <div className={styles["surgical-options__inner"]}>
               <div className={styles["surgical-options__left"]}>
                 <h2 id="surgical-options-title">
-                  {surgicalOptions.titleLines[0]}
+                  {keratoconusApproach.titleLines[0]}
                   <br />
-                  {surgicalOptions.titleLines[1]}
+                  {keratoconusApproach.titleLines[1]}
                 </h2>
-                <p>{surgicalOptions.description}</p>
+                {(keratoconusApproach.descriptionLines || []).map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
               </div>
 
               <div
                 className={styles["surgical-options__right"]}
                 aria-label="Surgical options list"
               >
-                {(surgicalOptions.options || []).map((option) => (
-                  <div
-                    className={styles["surgical-options__card"]}
-                    key={option.id}
-                  >
-                    <div className={styles["surgical-options__media"]}>
-                      <img
-                        src={option.image}
-                        alt={option.imageAlt || option.title}
-                        className={styles["surgical-options__img"]}
-                      />
-                      <button
-                        type="button"
-                        className={styles["surgical-options__play"]}
-                        aria-label={`Play ${option.title}`}
-                      >
-                        <span
-                          className={styles["surgical-options__play-triangle"]}
+                {(keratoconusApproach.options || []).map((option, index) => {
+                  const cataractOption = surgicalOptions.options?.[index];
+
+                  return (
+                    <div
+                      className={styles["surgical-options__card"]}
+                      key={option.id}
+                    >
+                      <div className={styles["surgical-options__media"]}>
+                        <img
+                          src={cataractOption?.image || option.image}
+                          alt={
+                            cataractOption?.imageAlt ||
+                            option.imageAlt ||
+                            option.title
+                          }
+                          className={styles["surgical-options__img"]}
                         />
-                      </button>
+                        <button
+                          type="button"
+                          className={styles["surgical-options__play"]}
+                          aria-label={`Play ${option.title}`}
+                        >
+                          <span
+                            className={styles["surgical-options__play-triangle"]}
+                          />
+                        </button>
+                      </div>
+                      <div className={styles["surgical-options__card-title"]}>
+                        {option.title}
+                      </div>
                     </div>
-                    <div className={styles["surgical-options__card-title"]}>
-                      {option.title}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -103,20 +114,21 @@ export const KerstoconusApproach = () => {
             </div>
           ) : null}
 
-          {cardFour ? (
-            <div className={styles.approchcard4}>
-              <img
-                src={cardFour.image}
-                alt={cardFour.imageAlt || cardFour.title}
-                className={styles.approachCardImage}
-              />
-              <div className={styles.approachCardOverlay} />
-              <div className={styles.approachCardContent}>
-                <h3>{cardFour.number} {cardFour.title}</h3>
-                <p>{cardFour.description}</p>
-              </div>
-            </div>
-          ) : null}
+          <div className={styles.approchcard4}>
+            <img
+              src="/assets/Service/keratoconus/k4.png"
+              alt="Intracorneal ring segments treatment"
+              className="img-fluid"
+            />
+
+            <h3>4. Intracorneal Ring Segments</h3>
+
+            <p>
+              Small ring segments may be placed inside the cornea in selected
+              mild to moderate cases to help flatten the cornea and improve
+              vision.
+            </p>
+          </div>
         </div>
       </div>
     </section>

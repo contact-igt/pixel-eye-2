@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import styles from "./styles.module.css";
 
 const getWrappedIndex = (index, total) => {
@@ -39,7 +39,11 @@ const DiagnosisSlider = ({ sliderContent, sectionId = "keratoconus-diagnosis-sli
           aria-label={sliderContent?.previousAriaLabel || "Previous slide"}
           onClick={() => setActiveIndex((index) => getWrappedIndex(index - 1, total))}
         >
-          <span aria-hidden="true">&lsaquo;</span>
+          <span aria-hidden="true" className={styles.arrowIcon}>
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M14.5 5.5L8 12l6.5 6.5" />
+            </svg>
+          </span>
         </button>
 
         <SlideCard item={previous} className={`${styles.sideCard} ${styles.sideCardLeft}`} />
@@ -52,7 +56,11 @@ const DiagnosisSlider = ({ sliderContent, sectionId = "keratoconus-diagnosis-sli
           aria-label={sliderContent?.nextAriaLabel || "Next slide"}
           onClick={() => setActiveIndex((index) => getWrappedIndex(index + 1, total))}
         >
-          <span aria-hidden="true">&rsaquo;</span>
+          <span aria-hidden="true" className={styles.arrowIcon}>
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M9.5 5.5L16 12l-6.5 6.5" />
+            </svg>
+          </span>
         </button>
       </div>
     </div>
@@ -60,3 +68,4 @@ const DiagnosisSlider = ({ sliderContent, sectionId = "keratoconus-diagnosis-sli
 };
 
 export default DiagnosisSlider;
+

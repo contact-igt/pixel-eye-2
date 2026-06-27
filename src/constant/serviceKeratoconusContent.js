@@ -1,4 +1,4 @@
-﻿export const SERVICE_KERATOCONUS_CONTENT = {
+export const SERVICE_KERATOCONUS_CONTENT = {
   banner: {
     hero: {
       titleLines: [
@@ -139,8 +139,11 @@
   },
   keratoconusApproach: {
     titleLines: ["Our Keratoconus", "treatment approach"],
-    description:
-      "At Pixel Eye Hospitals, keratoconus care starts with a detailed evaluation of corneal shape, thickness, and progression before selecting the right treatment option.",
+    descriptionLines: [
+      "At Pixel Eye Hospitals, keratoconus care starts with a detailed corneal evaluation.",
+      "The goal is to understand whether the condition is mild, moderate, advanced, or actively progressing.",
+      "Treatment is planned with two priorities: first, to slow or stop further progression of the disease; second, to improve vision quality using the right glasses, contact lenses, or surgical options where required.",
+    ],
     options: [
       {
         id: "glasses-soft-contact-lenses",
@@ -168,20 +171,12 @@
           "C3R helps strengthen the cornea and is commonly advised when keratoconus shows signs of progression.",
         image: "/assets/Service/keratoconus/corneal_cologen.png",
         imageAlt: "Corneal collagen cross-linking for keratoconus",
-      },
-      {
-        id: "intracorneal-ring-segments",
-        number: "4.",
-        title: "Intracorneal Ring Segments",
-        description:
-          "Small ring segments may be placed inside the cornea in selected mild to moderate cases to help flatten the cornea and improve vision.",
-        image: "/assets/Service/keratoconus/intracorneal.png",
-        imageAlt: "Intracorneal ring segments for keratoconus",
-        featured: true,
-      },
+      }
     ],
   },
 };
+
+
 
 
 
