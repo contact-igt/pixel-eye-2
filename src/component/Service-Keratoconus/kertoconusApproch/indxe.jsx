@@ -1,8 +1,14 @@
-import styles from "./styles.module.css";
+﻿import styles from "./styles.module.css";
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
+import { SERVICE_KERATOCONUS_CONTENT } from "@/constant/serviceKeratoconusContent";
 
 export const KerstoconusApproach = () => {
   const { surgicalOptions } = SERVICE_CATARACT_CONTENT;
+  const approachCards = SERVICE_KERATOCONUS_CONTENT.keratoconusApproach.options || [];
+  const cardOne = approachCards[0];
+  const cardTwo = approachCards[1];
+  const cardThree = approachCards[2];
+  const cardFour = approachCards[3];
 
   return (
     <section
@@ -15,6 +21,7 @@ export const KerstoconusApproach = () => {
             <img
               src="/assets/Service/keratoconus/Subtract (2).png"
               className="img-fluid"
+              alt=""
             />
           </div>
 
@@ -63,44 +70,53 @@ export const KerstoconusApproach = () => {
             </div>
           </div>
 
-          <div className={styles.approchcard1}>
-            <h3>1. Glasses & Soft Contact Lenses</h3>
-            <p>
-              Creates a detailed map of the cornea and helps detect early
-              irregularity.
-            </p>
-          </div>
+          {cardOne ? (
+            <div className={styles.approchcard1}>
+              <img src={cardOne.image} alt={cardOne.imageAlt || cardOne.title} className={styles.approachCardImage} />
+              <div className={styles.approachCardOverlay} />
+              <div className={styles.approachCardContent}>
+                <h3>{cardOne.number} {cardOne.title}</h3>
+                <p>{cardOne.description}</p>
+              </div>
+            </div>
+          ) : null}
 
-          <div className={styles.approchcard2}>
-            <h3>3. Corneal Collagen Cross-Linking / C3R</h3>
-            <p>
-              Creates a detailed map of the cornea and helps detect early
-              irregularity.
-            </p>
-          </div>
+          {cardThree ? (
+            <div className={styles.approchcard2}>
+              <img src={cardThree.image} alt={cardThree.imageAlt || cardThree.title} className={styles.approachCardImage} />
+              <div className={styles.approachCardOverlay} />
+              <div className={styles.approachCardContent}>
+                <h3>{cardThree.number} {cardThree.title}</h3>
+                <p>{cardThree.description}</p>
+              </div>
+            </div>
+          ) : null}
 
-          <div className={styles.approchcard3}>
-            <h3>2. RGP, Hybrid & Scleral Lenses</h3>
-            <p>
-              Creates a detailed map of the cornea and helps detect early
-              irregularity.
-            </p>
-          </div>
+          {cardTwo ? (
+            <div className={styles.approchcard3}>
+              <img src={cardTwo.image} alt={cardTwo.imageAlt || cardTwo.title} className={styles.approachCardImage} />
+              <div className={styles.approachCardOverlay} />
+              <div className={styles.approachCardContent}>
+                <h3>{cardTwo.number} {cardTwo.title}</h3>
+                <p>{cardTwo.description}</p>
+              </div>
+            </div>
+          ) : null}
 
-          <div className={styles.approchcard4}>
-            <img
-              src="/assets/Service/keratoconus/Union (1).png"
-              className="img-fluid"
-            />
-
-            <h3>4. Intracorneal Ring Segments</h3>
-
-            <p>
-              Small ring segments may be placed inside the cornea in selected
-              mild to moderate cases to help flatten the cornea and improve
-              vision.
-            </p>
-          </div>
+          {cardFour ? (
+            <div className={styles.approchcard4}>
+              <img
+                src={cardFour.image}
+                alt={cardFour.imageAlt || cardFour.title}
+                className={styles.approachCardImage}
+              />
+              <div className={styles.approachCardOverlay} />
+              <div className={styles.approachCardContent}>
+                <h3>{cardFour.number} {cardFour.title}</h3>
+                <p>{cardFour.description}</p>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
