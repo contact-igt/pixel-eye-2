@@ -2,8 +2,8 @@ import { useState } from "react";
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import styles from "./styles.module.css";
 
-const CataractFaq = () => {
-  const { faq } = SERVICE_CATARACT_CONTENT;
+const CataractFaq = ({ faqContent = SERVICE_CATARACT_CONTENT.faq, sectionId = "cataract-faq" }) => {
+  const faq = faqContent;
   const [openId, setOpenId] = useState(null);
 
   if (!faq) return null;
@@ -13,13 +13,13 @@ const CataractFaq = () => {
   return (
     <section
       className={styles["cataract-faq"]}
-      aria-labelledby="cataract-faq-title"
+      aria-labelledby={`${sectionId}-title`}
     >
       <div className={styles["cataract-faq__inner"]}>
         <div className={styles["cataract-faq__left"]}>
           <div className={styles["cataract-faq__image-card"]}>
             <div className={styles["cataract-faq__title-bubble"]}>
-              <h3 id="cataract-faq-title">{faq.title}</h3>
+              <h3 id={`${sectionId}-title`}>{faq.title}</h3>
             </div>
             <img
               src={faq.image}
@@ -38,11 +38,11 @@ const CataractFaq = () => {
               return (
                 <li key={it.id} className={styles["cataract-faq__row"]}>
                   <button
-                    id={`question-${it.id}`}
+                    id={`${sectionId}-question-${it.id}`}
                     className={styles["cataract-faq__trigger"]}
                     onClick={() => toggle(it.id)}
                     aria-expanded={isOpen}
-                    aria-controls={`answer-${it.id}`}
+                    aria-controls={`${sectionId}-answer-${it.id}`}
                   >
                     <span className={styles["cataract-faq__question"]}>
                       {idx + 1}. {it.question}
@@ -53,9 +53,9 @@ const CataractFaq = () => {
                   </button>
 
                   <div
-                    id={`answer-${it.id}`}
+                    id={`${sectionId}-answer-${it.id}`}
                     role="region"
-                    aria-labelledby={`question-${it.id}`}
+                    aria-labelledby={`${sectionId}-question-${it.id}`}
                     className={`${styles["cataract-faq__answer"]} ${isOpen ? styles["cataract-faq__answerOpen"] : ""}`}
                   >
                     <p className={styles["cataract-faq__answer-text"]}>

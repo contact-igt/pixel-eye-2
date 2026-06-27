@@ -110,12 +110,25 @@
 @media (max-width: 991px) {
   .card {
     grid-template-columns: 1fr;
-    row-gap: 26px;
-    padding: 56px;
+    row-gap: 24px;
+    padding: 46px;
+  }
+
+  .title {
+    order: 1;
+  }
+
+  .imageWrap {
+    order: 2;
+    width: min(520px, 100%);
+  }
+
+  .details {
+    order: 3;
   }
 
   .image {
-    width: min(406px, 100%);
+    width: 100%;
     height: auto;
     aspect-ratio: 406 / 203;
   }
@@ -123,13 +136,35 @@
 
 @media (max-width: 575px) {
   .section {
-    padding: 12px 0 20px;
+    padding: 10px 0 18px;
   }
 
   .card {
     width: calc(100% - 24px);
     margin: 0 auto;
-    padding: 34px 24px;
-    border-radius: 28px;
+    padding: 28px 20px;
+    border-radius: var(--radius-card-lg);
+    row-gap: 20px;
+  }
+
+  .title {
+    line-height: 1.12;
+  }
+
+  .details p {
+    line-height: 1.45;
+  }
+
+  .ctaWrap {
+    margin-top: 24px;
+  }
+
+  .linkCta {
+    max-width: 100%;
+  }
+
+  .linkCta span:first-child {
+    min-width: 0;
+    padding: 0 18px;
   }
 }

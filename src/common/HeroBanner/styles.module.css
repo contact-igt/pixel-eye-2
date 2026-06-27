@@ -73,7 +73,7 @@
 /* ── Hero copy ── */
 .copy {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: clamp(40px, 6vw, 80px);
   transform: translateY(-50%);
   z-index: 2;
@@ -96,7 +96,7 @@
   font-weight: 300;
   line-height: var(--hero-paragraph-lh);
   font-family: var(--font-primary);
-  max-width: min(400px, 100%);
+  max-width: min(600px, 100%);
 }
 
 .mobileCtaWrap {
@@ -163,7 +163,7 @@
     font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
     line-height: 1.4;
     max-width: min(420px, 100%);
-    padding : 10px 0px;
+    padding: 10px 0px;
   }
 
   .mobileCtaWrap {

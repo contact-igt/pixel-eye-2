@@ -35,9 +35,6 @@
   padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
 }
 
-.cardWhite {
-  background: #ffffff;
-}
 
 .aboutMaskedNav .logoCard {
   align-items: flex-start;

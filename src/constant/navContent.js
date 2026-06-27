@@ -1,4 +1,4 @@
-export const NAV_CONTENT = {
+﻿export const NAV_CONTENT = {
   logo: {
     src: "/assets/Header/brandlogo.png",
     alt: "Pixel Eye Hospital",
@@ -14,8 +14,9 @@ export const NAV_CONTENT = {
   navItems: [
     { id: 0, label: "HOME", href: "/" },
     { id: 1, label: "ABOUT US", href: "/about" },
-    { id: 2, label: "SERVICES", href: "/service" },
-    { id: 3, label: "APPOINTMENT", href: "/appointment" },
+    { id: 2, label: "DOCTORS", href: "/doctors" },
+    { id: 3, label: "SERVICES", href: "/service" },
+    { id: 4, label: "APPOINTMENT", href: "/appointment" },
   ],
   servicesDropdown: [
     {
@@ -23,9 +24,25 @@ export const NAV_CONTENT = {
       label: "Cataract Service",
       href: "/service/cataract",
     },
+    {
+      id: "service-keratoconus",
+      label: "Keratoconus Service",
+      href: "/service/keratoconus",
+    },
+    {
+      id: "service-squint",
+      label: "Squint Service",
+      href: "/service/squint",
+    },
+    {
+      id: "service-lasik",
+      label: "LASIK Service ",
+      href: "/service/lasik",
+    },
   ],
   bookAppointment: {
     label: "BOOK APPOINTMENT",
     href: "/appointment",
   },
 };
+

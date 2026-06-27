@@ -1,0 +1,192 @@
+.lasik-surgical,
+.lasik-surgical * {
+  box-sizing: border-box;
+}
+
+.lasik-surgical {
+  width: 100%;
+  padding: 40px 0;
+  background: #eaf3f9;
+  color: var(--text-heading, #16325c);
+  margin-bottom: 92px;
+}
+
+.lasik-surgical__inner {
+  display: grid;
+  grid-template-columns: minmax(260px, 40%) minmax(320px, 55%);
+  column-gap: 56px;
+  align-items: start;
+  width: calc(100% - 230px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lasik-surgical__left h2 {
+  margin: 0;
+  color: var(--text-heading, #16325c);
+  font-size: var(--h2-size);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.lasik-surgical__left p {
+  margin-top: 24px;
+  color: var(--text-body, #53658a);
+  font-size: var(--p-size, 16px);
+  line-height: 1.4;
+  max-width: 540px;
+}
+
+.lasik-surgical__right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.lasik-surgical__card {
+  width: 100%;
+  max-width: 440px;
+  display: block;
+  position: relative;
+  margin-left: auto;
+}
+
+.lasik-surgical__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  aspect-ratio: 440 / 200;
+}
+
+.lasik-surgical__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lasik-surgical__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.lasik-surgical__play:hover {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.lasik-surgical__play-triangle {
+  width: 0;
+  height: 0;
+  border-left: 12px solid #273979;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-left: 3px;
+}
+
+.lasik-surgical__card-title {
+  margin: -12px 0 0;
+  padding: 0;
+  color: rgba(42, 60, 125, 0.9);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.25;
+  background: transparent;
+  position: static;
+  text-align: left;
+}
+
+.lasik-surgical__card:first-child .lasik-surgical__card-title {
+  padding-left: 78px;
+  margin-top: -25px;
+}
+
+.lasik-surgical__card:nth-child(2) .lasik-surgical__card-title {
+  margin-top: -18px;
+}
+
+.lasik-surgical__card:nth-child(3) .lasik-surgical__card-title {
+  margin-top: -16px;
+  padding-left: 28px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1199px) {
+  .lasik-surgical__inner {
+    width: calc(100% - 48px);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lasik-surgical__card-title {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .lasik-surgical__inner {
+    width: min(1600px, calc(100% - 64px));
+  }
+
+  .lasik-surgical__card-title {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .lasik-surgical {
+    margin-bottom: 64px;
+  }
+
+  .lasik-surgical__inner {
+    width: min(1600px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+  }
+
+  .lasik-surgical__right {
+    align-items: stretch;
+  }
+
+  .lasik-surgical__img {
+    object-fit: contain;
+  }
+
+  .lasik-surgical__card-title {
+    margin-top: -5px;
+  }
+
+  .lasik-surgical__card:first-child .lasik-surgical__card-title {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .lasik-surgical__img {
+    height: 150px;
+  }
+
+  .lasik-surgical__card-title {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 389px) {
+  .lasik-surgical__img {
+    height: 130px;
+  }
+
+  .lasik-surgical__card-title {
+    font-size: 0.8rem;
+  }
+}

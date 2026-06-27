@@ -17,7 +17,7 @@ export const SERVICE_CONTENT = {
         "Procedures that reshape the cornea to correct vision issues such as myopia, hyperopia, and astigmatism, helping reduce dependence on glasses or contact lenses.",
       image: "/assets/Service/Lasik Surgery.png",
       imageAlt: "Patient undergoing LASIK eye procedure",
-      href: "/service#lasik-refractive-surgery",
+      href: "/service/lasik",
       ctaStyle: "outline",
     },
     {
@@ -47,7 +47,7 @@ export const SERVICE_CONTENT = {
         "Management of eye misalignment that can affect coordination and depth perception. Treatment is tailored to the severity and type of condition.",
       image: "/assets/Service/Squint Treatment.png",
       imageAlt: "Child receiving a squint eye examination",
-      href: "/service#squint-treatment",
+      href: "/service/squint",
       ctaStyle: "outline",
     },
     {
@@ -77,7 +77,7 @@ export const SERVICE_CONTENT = {
         "Management of a condition where the cornea thins and changes shape, affecting how light is focused, leading to blurred vision.",
       image: "/assets/Service/Keratoconus treatment.png",
       imageAlt: "Keratoconus eye examination",
-      href: "/service#keratoconus-treatment",
+      href: "/service/keratoconus",
       ctaStyle: "outline",
     },
     {
@@ -92,3 +92,4 @@ export const SERVICE_CONTENT = {
     },
   ],
 };
+

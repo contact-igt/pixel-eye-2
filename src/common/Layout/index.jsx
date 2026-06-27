@@ -1,15 +1,19 @@
-import { useRouter } from "next/router";
+﻿import { useRouter } from "next/router";
 import BannerNav from "@/common/BannerNav";
 import Footer from "@/common/Footer";
 import styles from "./styles.module.css";
 
-// These pages have nav integrated inside their hero banner — skip the layout Navbar
+// These pages have nav integrated inside their hero banner - skip the layout Navbar
 const PAGES_WITH_OWN_NAV = [
   "/",
   "/about",
+  "/doctors",
   "/appointment",
   "/service",
   "/service/cataract",
+  "/service/squint",
+  "/service/keratoconus",
+  "/service/lasik",
   "/thank-you",
   "/error",
 ];
@@ -30,3 +34,4 @@ export default function Layout({ children }) {
     </div>
   );
 }
+

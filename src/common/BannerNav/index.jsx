@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { NAV_CONTENT } from "@/constant/navContent";
@@ -100,6 +100,22 @@ const InfoIcon = () => (
   </svg>
 );
 
+const DoctorIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    width="20"
+    height="20"
+  >
+    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+    <path d="M4 22a8 8 0 0 1 16 0" />
+  </svg>
+);
+
 const BoxIcon = () => (
   <svg
     viewBox="0 0 24 24"
@@ -142,6 +158,8 @@ const getNavIcon = (label) => {
       return <HomeIcon />;
     case "ABOUT US":
       return <InfoIcon />;
+    case "DOCTORS":
+      return <DoctorIcon />;
     case "SERVICES":
       return <BoxIcon />;
     case "APPOINTMENT":
@@ -151,11 +169,6 @@ const getNavIcon = (label) => {
   }
 };
 
-/**
- * rightSlot — "nabh" | "book"
- * navTheme  — "dark" | "light"
- * cardBg    — "white" | "transparent"
- */
 export default function BannerNav({
   rightSlot = "nabh",
   navTheme = "dark",
@@ -187,8 +200,9 @@ export default function BannerNav({
         aria-label="Site navigation"
       >
         <div className={styles.inner}>
-          {/* ── Left: logo card ── */}
-          <div className={styles.logoCard}>
+          <div
+            className={`${styles.logoCard} ${cardBg === "white" ? styles.cardWhite : ""}`.trim()}
+          >
             <Link href="/" aria-label={logo.alt}>
               <Image
                 src={logo.src}
@@ -201,7 +215,6 @@ export default function BannerNav({
             </Link>
           </div>
 
-          {/* ── Center: nav links + search ── */}
           <nav
             className={`${styles.nav} ${isLight ? styles.navLight : ""}`}
             aria-label="Primary navigation"
@@ -246,8 +259,9 @@ export default function BannerNav({
             </button>
           </nav>
 
-          {/* ── Right: NABH badge or Book Appointment ── */}
-          <div className={styles.rightCard}>
+          <div
+            className={`${styles.rightCard} ${cardBg === "white" ? styles.cardWhite : ""}`.trim()}
+          >
             {rightSlot === "nabh" ? (
               <Image
                 src={nabhBadge.src}
@@ -263,7 +277,6 @@ export default function BannerNav({
               </Link>
             )}
 
-            {/* ── Mobile menu trigger button (three bars) ── */}
             <button
               type="button"
               className={`${styles.menuBtn} ${isLight ? styles.menuBtnLight : ""}`}
@@ -276,7 +289,6 @@ export default function BannerNav({
         </div>
       </div>
 
-      {/* ── Mobile Sidebar Drawer overlay and panel ── */}
       <div
         className={`${styles.sidebarOverlay} ${isSidebarOpen ? styles.sidebarOverlayOpen : ""}`}
         onClick={toggleSidebar}
@@ -431,3 +443,4 @@ export default function BannerNav({
     </>
   );
 }
+

@@ -33,24 +33,27 @@ export default function HeroBanner({
   imagePosition = "center 30%",
   mobileCta,
   variant = "default",
+  className = "",
+  frameClassName = "",
+  imageClassName = "",
 }) {
   const isAboutMasked = variant === "aboutMasked";
 
   return (
     <section
-      className={`${styles.heroSection} ${isAboutMasked ? styles.aboutMaskedSection : ""}`}
+      className={`${styles.heroSection} ${isAboutMasked ? styles.aboutMaskedSection : ""} ${className}`.trim()}
     >
       <div
         className={`${styles.bannerFrame} ${height === "short" ? styles.frameShort : ""} ${
           isAboutMasked ? styles.aboutMaskedFrame : ""
-        }`}
+        } ${frameClassName}`.trim()}
       >
         {/* Background image */}
         {mobileImage ? (
           <picture>
             <source media={mobileImageMedia} srcSet={mobileImage} />
             <img
-              className={styles.image}
+              className={`${styles.image} ${imageClassName}`.trim()}
               src={image}
               alt=""
               aria-hidden="true"
@@ -59,7 +62,7 @@ export default function HeroBanner({
           </picture>
         ) : (
           <img
-            className={styles.image}
+            className={`${styles.image} ${imageClassName}`.trim()}
             src={image}
             alt=""
             aria-hidden="true"
