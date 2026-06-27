@@ -17,7 +17,7 @@ export const SERVICE_CONTENT = {
         "Procedures that reshape the cornea to correct vision issues such as myopia, hyperopia, and astigmatism, helping reduce dependence on glasses or contact lenses.",
       image: "/assets/Service/Lasik Surgery.png",
       imageAlt: "Patient undergoing LASIK eye procedure",
-      href: "/service#lasik-refractive-surgery",
+      href: "/service/lasik",
       ctaStyle: "outline",
     },
     {

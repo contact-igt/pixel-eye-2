@@ -81,6 +81,7 @@ const RememberRecommend = () => {
                           alt="quote icon"
                           width={34}
                           height={24}
+                          style={{ height: "auto" }}
                           className={styles.quoteImg}
                           aria-hidden="true"
                         />
@@ -124,6 +125,7 @@ const RememberRecommend = () => {
                       alt="quote icon"
                       width={34}
                       height={24}
+                      style={{ height: "auto" }}
                       className={styles.quoteImg}
                       aria-hidden="true"
                     />

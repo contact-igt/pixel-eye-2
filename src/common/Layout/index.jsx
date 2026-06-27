@@ -13,6 +13,7 @@ const PAGES_WITH_OWN_NAV = [
   "/service/cataract",
   "/service/squint",
   "/service/keratoconus",
+  "/service/lasik",
   "/thank-you",
   "/error",
 ];

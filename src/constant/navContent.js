@@ -34,6 +34,11 @@
       label: "Squint Service",
       href: "/service/squint",
     },
+    {
+      id: "service-lasik",
+      label: "LASIK Service ",
+      href: "/service/lasik",
+    },
   ],
   bookAppointment: {
     label: "BOOK APPOINTMENT",

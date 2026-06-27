@@ -82,6 +82,7 @@ const PatientExperience = () => {
                           alt="quote icon"
                           width={34}
                           height={24}
+                          style={{ height: "auto" }}
                           className={styles.quoteImg}
                           aria-hidden="true"
                         />
@@ -125,6 +126,7 @@ const PatientExperience = () => {
                       alt="quote icon"
                       width={34}
                       height={24}
+                      style={{ height: "auto" }}
                       className={styles.quoteImg}
                       aria-hidden="true"
                     />
