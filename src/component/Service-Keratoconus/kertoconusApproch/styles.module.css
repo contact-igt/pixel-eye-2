@@ -54,12 +54,9 @@
 }
 
 .approchcard4 {
-  margin-top:800px;
+  margin-top: 800px;
   position: relative !important;
   width: 100%;
-  background: url(../../../../public/assets/Service/keratoconus/k4.png);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .approchcard4 h3 {
@@ -85,8 +82,8 @@
   padding-top: 10px;
   width: 700px;
   position: absolute;
-    top: 80%;
-    left: 45px;
+  top: 80%;
+  left: 45px;
 }
 
 
@@ -146,7 +143,7 @@
 .surgical-options__left h2 {
   margin: 0;
   color: var(--text-heading, #16325c);
-  font-size: var(--h1-size , 45px);
+  font-size: var(--h1-size, 45px);
   font-weight: 400;
   line-height: 1.05;
 }
@@ -185,31 +182,6 @@
   display: block;
 }
 
-/* 
-.surgical-options__play {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: rgba(22, 50, 92, 0.8);
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-} */
-
-/* .surgical-options__play-triangle {
-    width: 0;
-    height: 0;
-    border-left: 12px solid #ffffff;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    margin-left: 4px;
-} */
 
 .surgical-options__card-title {
   margin-top: 12px;
@@ -222,82 +194,8 @@
   left: 20px;
 }
 
-@media (max-width: 1199px) {
-  .surgical-options__inner {
-    width: calc(100% - 48px);
-    grid-template-columns: 1fr 1fr;
-  }
 
-  .surgical-options__card-title {
-    padding-left: 0.05rem;
-  }
-}
 
-@media (max-width: 991px) {
-  .surgical-options__inner {
-    width: min(1600px, calc(100% - 64px));
-  }
-
-  .surgical-options__card-title {
-    padding-left: 0rem;
-    bottom: 23px;
-    font-size: 0.9rem;
-    left: 10px;
-  }
-}
-
-@media (max-width: 767px) {
-  .surgical-options__inner {
-    width: min(1600px, calc(100% - 40px));
-  }
-
-  .surgical-options {
-    margin-bottom: 64px;
-  }
-
-  .surgical-options__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .surgical-options__right {
-    align-items: center;
-  }
-
-  .surgical-options__img {
-    object-fit: contain;
-  }
-
-  .surgical-options__card-title {
-    margin-top: 12px;
-    bottom: 28px;
-  }
-
-}
-
-@media (max-width: 430px) {
-  .surgical-options__img {
-    height: 150px;
-  }
-
-  .surgical-options__card-title {
-    font-size: 0.8rem;
-    left: 28px;
-    bottom: 25px;
-  }
-
-}
-
-@media (max-width: 389px) {
-  .surgical-options__img {
-    height: 130px;
-  }
-
-  .surgical-options__card-title {
-    font-size: 0.8rem;
-    left: 6%;
-    bottom: 25px;
-  }
-}
 /* Keratoconus 1/2/3/4 treatment title cards: add image backgrounds without removing other cards */
 .approchcard1,
 .approchcard2,
@@ -372,8 +270,7 @@
   object-position: center right;
 }
 
-.approchcard4 .approachCardOverlay {
-}
+.approchcard4 .approachCardOverlay {}
 
 .approchcard4 .approachCardContent h3 {
   margin-left: 50%;
@@ -383,7 +280,160 @@
   max-width: 980px;
 }
 
+.approchcard4 {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  height: 530px;
+  overflow: hidden;
+  border-radius: 26px;
+}
+
+.approchcard4 .approachCardImage {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  opacity: 1;
+}
+
+.approchcard4 .approachCardOverlay {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(234, 243, 249, 0.14) 100%);
+}
+
+
+@media(max-width : 1399px) {
+
+  .surgical-options__card-title {
+    padding-left: 0.5rem;
+    left: -5px;
+    font-size: 0.9rem;
+  }
+
+  .approchcard1 {
+    top: 465px;
+    width: 510px !important;
+  }
+
+  .approchsec {
+    top: 2%;
+  }
+
+  .approchcard2 {
+    bottom: 550px;
+    right: 10px;
+    width: 570px !important;
+    height: 757px !important;
+  }
+
+  .approchcard3 {
+    top: 55%;
+    height: 590px !important;
+    width: 510px !important;
+  }
+
+  .surgical-options__inner {
+    display: grid;
+    grid-template-columns: minmax(326px, 48%) minmax(324px, 59%);
+    column-gap: 56px;
+    align-items: start;
+    width: calc(100% - 160px);
+  }
+
+
+  .approchcard4 h3 {
+    right: 60px;
+  }
+
+  .approchcard4 p {
+    top: 70%;
+  }
+
+}
+
+@media (max-width : 1199px) {
+
+
+  .surgical-options__inner {
+    width: calc(100% - 48px);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .surgical-options__card-title {
+    padding-left: 0.05rem;
+  }
+
+  .surgical-options__left h2 {
+    font-size: 35px;
+  }
+
+  .approchcard1 {
+    top: 378px;
+    width: 415px !important;
+  }
+
+  .approchcard2 {
+    bottom: 555px;
+    right: 10px;
+    width: 460px !important;
+    height: 750px !important;
+  }
+
+  .approchcard3 {
+    top: 55%;
+    height: 490px !important;
+    width: 415px !important;
+  }
+
+  .approchsec {
+    top: 1%;
+  }
+
+
+  .approachbg .approchcard1 h3,
+  .approachbg .approchcard2 h3,
+  .approachbg .approchcard3 h3,
+  .approchcard4 h3 {
+    font-size: 30px;
+  }
+
+  .approchcard4 h3 {
+    right: -35px;
+  }
+
+  .paragraph {
+    margin-top: 10px;
+  }
+
+
+
+}
+
+
 @media (max-width: 991px) {
+
+
+  .section {
+    margin-top: 200px;
+    padding: 0px;
+  }
+
+
+  .surgical-options__inner {
+    width: min(1600px, calc(100% - 64px));
+  }
+
+  .surgical-options__card-title {
+    padding-left: 0rem;
+    bottom: 23px;
+    font-size: 0.9rem;
+    left: 10px;
+  }
+
   .approachCardContent {
     padding: 28px;
   }
@@ -391,16 +441,220 @@
   .approachbg .approchcard1 .approachCardContent p,
   .approachbg .approchcard2 .approachCardContent p,
   .approachbg .approchcard3 .approachCardContent p,
-  .approchcard4 .approachCardContent p {
+  .approchcard4 p {
     left: 28px;
     right: 28px;
     bottom: 28px;
+    font-size: 14px;
   }
+
+
 
   .approchcard4 .approachCardContent h3 {
     margin-left: 0;
   }
+
+  .approchcard4 {
+    min-height: 340px;
+    height: 340px;
+  }
+
+  .approachbg .approchcard1 .approachCardContent h3,
+  .approachbg .approchcard2 .approachCardContent h3,
+  .approachbg .approchcard3 .approachCardContent h3,
+  .approchcard4 h3 {
+    font-size: 25px;
+  }
+
+  .approchcard4 h3 {
+    right: 35px;
+    width: 300px;
+  }
+
+  .approchcard2 {
+    bottom: 500px;
+    right: 10px;
+    width: 350px !important;
+    height: 600px !important;
+  }
+
+  .kerapbg {
+    height: 900px !important
+  }
+
+  .approchcard1 {
+    top: 495px;
+    width: 330px !important;
+    height: 530px !important;
+  }
+
+  .approchcard2 {
+    bottom: 330px;
+    right: 10px;
+    width: 380px !important;
+    height: 547px !important;
+  }
+
+  .approchcard3 {
+    top: 58%;
+    height: 530px !important;
+    width: 330px !important;
+  }
+
+  .approchcard4 {
+    margin-top: 600px;
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .surgical-options__right {
+    gap: 40px;
+  }
+
+
+  .approchcard4 p {
+    width: 500px;
+    top: 60%;
+  }
+
 }
+
+
+@media (max-width: 767px) {
+
+
+  .approachbg {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .surgical-options__inner {
+    width: min(1600px, calc(100% - 40px));
+  }
+
+  .surgical-options {
+    margin-bottom: 64px;
+  }
+
+  .surgical-options__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .surgical-options__right {
+    align-items: center;
+  }
+
+  .surgical-options__img {
+    object-fit: contain;
+  }
+
+  .surgical-options__card-title {
+    margin-top: 12px;
+    bottom: 28px;
+  }
+
+  .bgimg {
+    display: none;
+  }
+
+  .approchsec {
+    position: relative;
+    background-color: #eaf3f9;
+    padding: 20px 0px;
+  }
+
+  .section {
+    margin-top: 0px;
+    padding: 0px;
+  }
+
+  .approchcard1,
+  .approchcard2,
+  .approchcard3,
+  .approchcard4 {
+    position: relative !important;
+    top: 0px;
+    width: 100% !important;
+    height: 400px !important;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    margin-top: 20px !important;
+  }
+
+  .approchcard1 {
+    order: 1;
+  }
+
+  .approchcard3 {
+    order: 2;
+  }
+
+  .approchcard2 {
+    order: 3;
+  }
+
+  .approchcard4 {
+    order: 4;
+    position: relative;
+    width: 100%;
+    height: 400px !important;
+    min-height: 0;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #f5f8fd;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+  }
+
+  .approchcard4 .approachCardImage {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+  }
+
+  .approchcard4 .approachCardOverlay {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(234, 243, 249, 0.16) 100%);
+  }
+
+  .approchcard4 .approachCardContent {
+    padding: 18px;
+  }
+
+  .approchcard4 .approachCardContent h3 {
+    position: static;
+    width: auto;
+    margin: 0;
+    right: auto;
+    top: auto;
+    font-size: 24px;
+    line-height: 1.15;
+  }
+
+  .approchcard4 .approachCardContent p {
+    position: static;
+    width: auto;
+    margin: 12px 0 0;
+    top: auto;
+    left: auto;
+    right: auto;
+    font-size: 14px;
+  }
+
+  .surgical-options__card-title {
+    font-size: 0.9rem;
+    left: 10px;
+    bottom: 0px;
+  }
+
+
+}
+
 
 @media (max-width: 575px) {
   .approachCardContent {
@@ -423,34 +677,31 @@
     bottom: 22px;
     font-size: 13px;
   }
-}
 
-/* Fix: ensure the 4th keratoconus card has a visible image/card area */
-.approchcard4 {
-  position: relative;
-  display: block;
-  width: 100%;
-  min-height: 100%;
-  height: 530px;
-  overflow: hidden;
-  border-radius: 26px;
-}
-
-.approchcard4 .approachCardImage {
-  display: block;
-  opacity: 1;
-}
-
-@media (max-width: 991px) {
-  .approchcard4 {
-    min-height: 340px;
-    height: 340px;
-  }
-}
-
-@media (max-width: 575px) {
   .approchcard4 {
     min-height: 300px;
     height: 300px;
+  }
+
+  .surgical-options__img {
+    height: 150px;
+  }
+
+  .surgical-options__card-title {
+    font-size: 0.8rem;
+    left: 28px;
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 389px) {
+  .surgical-options__img {
+    height: 130px;
+  }
+
+  .surgical-options__card-title {
+    font-size: 0.8rem;
+    left: 6%;
+    bottom: 25px;
   }
 }

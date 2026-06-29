@@ -147,128 +147,7 @@
   right: -8px;
 }
 
-@media (max-width: 1199px) {
-  .sliderShell {
-    padding: 0 32px 8px;
-  }
 
-  .centerCard {
-    width: min(100%, 420px);
-  }
-
-  .sideCard {
-    width: 176px;
-  }
-}
-
-@media (max-width: 991px) {
-  .sliderShell {
-    padding: 0 24px 8px;
-  }
-
-  .sliderDeck {
-    min-height: 284px;
-  }
-
-  .centerCard {
-    width: min(100%, 388px);
-    min-height: 248px;
-    padding: 116px 20px 18px;
-  }
-
-  .centerTitleWrap {
-    top: -34px;
-    width: min(calc(100% - 8px), 364px);
-  }
-
-  .sideCard {
-    width: 150px;
-    min-height: 154px;
-  }
-
-  .navButton {
-    top: 82px;
-    width: 64px;
-    height: 64px;
-  }
-}
-
-@media (max-width: 767px) {
-  .sliderShell {
-    padding: 0;
-  }
-
-  .sliderDeck {
-    min-height: auto;
-    display: grid;
-    gap: 14px;
-  }
-
-  .centerCard,
-  .sideCard {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    width: 100%;
-    min-height: 0;
-  }
-
-  .centerCard {
-    order: 1;
-    padding: 90px 18px 18px;
-  }
-
-  .centerTitleWrap {
-    top: -24px;
-    width: calc(100% - 16px);
-  }
-
-  .sideCardLeft {
-    order: 2;
-  }
-
-  .sideCardRight {
-    order: 3;
-  }
-
-  .sideCard p {
-    position: static;
-    margin-top: 46px;
-    font-size: 12px;
-  }
-
-  .navButton {
-    top: 96px;
-    width: 54px;
-    height: 54px;
-    border-width: 3px;
-  }
-
-  .navButtonLeft {
-    left: 8px;
-  }
-
-  .navButtonRight {
-    right: 8px;
-  }
-}
-
-@media (max-width: 575px) {
-  .centerTitleWrap h3 {
-    font-size: 24px;
-  }
-
-  .centerCard p,
-  .sideCard p {
-    font-size: 12px;
-  }
-
-  .sideCard h3 {
-    font-size: 16px;
-  }
-}
-/* Image-backed Figma cards */
 .slideCard {
   position: absolute;
   overflow: hidden;
@@ -349,22 +228,211 @@
   font-size: 11px;
 }
 
-@media (max-width: 767px) {
-  .slideCard {
-    position: relative;
+@media (max-width: 1399px) {
+  .sliderShell {
+    padding: 0 40px 8px;
   }
+
+  .centerCard {
+    width: min(100%, 500px);
+    left: 306px;
+  }
+
+  .sideCard {
+    width: 300px;
+    min-height: 300px;
+  }
+
+  .sideCardLeft {
+    left: -6px;
+  }
+
+  .navButton {
+    width: 70px;
+    height: 70px;
+    top: 220px;
+  }
+
+  .navButtonLeft {
+    left: -30px;
+  }
+
+  .sideCardRight {
+    right: -30px;
+  }
+
+  .navButtonRight {
+    right: -60px;
+  }
+}
+
+
+
+@media (max-width: 1199px) {
+  .sliderShell {
+    padding: 0 32px 8px;
+  }
+
+  .centerCard {
+    width: min(100%, 380px);
+    left: 273px;
+  }
+
+  .sideCard {
+    width: 265px;
+    min-height: 320px;
+  }
+
+  .sideCardLeft {
+    left: -6px;
+  }
+
+  .navButton {
+    width: 60px;
+    height: 60px;
+  }
+
+  .navButtonLeft {
+    left: -30px;
+  }
+
+  .sideCardRight {
+    right: -30px;
+  }
+
+  .centerCard .slideContent h3 {
+    font-size: clamp(30px, 3vw, 54px);
+    max-width: 470px;
+  }
+
+}
+
+@media (max-width: 991px) {
+  .sliderShell {
+    padding: 0 24px 8px;
+  }
+
+  .sliderDeck {
+    min-height: 284px;
+  }
+
+  .centerCard {
+    width: min(100%, 388px);
+    padding: 116px 20px 18px;
+    min-height: 450px;
+    left: 167px;
+    top: 20px;
+  }
+
+  .centerTitleWrap {
+    top: -34px;
+    width: min(calc(100% - 8px), 364px);
+  }
+
+  .sideCard {
+    width: 150px;
+    min-height: 300px;
+  }
+
+  .sideCardRight {
+    right: -20px;
+  }
+
+  .navButton {
+    top: 210px;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sliderShell {
+    padding: 0;
+  }
+
+  .sliderDeck {
+    min-height: auto;
+    display: grid;
+    gap: 14px;
+  }
+
 
   .slideContent p,
   .sideCard p {
     position: absolute;
     margin-top: 0;
   }
+
+  .centerCard,
+  .sideCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .centerCard {
+    order: 1;
+    padding: 90px 18px 18px;
+  }
+
+  .centerTitleWrap {
+    top: -24px;
+    width: calc(100% - 16px);
+  }
+
+  .sideCardLeft {
+    order: 2;
+  }
+
+  .sideCardRight {
+    order: 3;
+  }
+
+  .sideCard p {
+    position: static;
+    margin-top: 46px;
+    font-size: 12px;
+  }
+
+  .navButton {
+    top: 150px;
+    width: 54px;
+    height: 54px;
+    border-width: 3px;
+  }
+
+  .navButtonLeft {
+    left: 8px;
+  }
+
+  .navButtonRight {
+    right: 8px;
+  }
+
+  .centerCard {
+    height: 350px;
+  }
 }
 
 @media (max-width: 575px) {
+  .centerTitleWrap h3 {
+    font-size: 24px;
+  }
+
+  .centerCard p,
+  .sideCard p {
+    font-size: 12px;
+  }
+
+  .sideCard h3 {
+    font-size: 16px;
+  }
+
   .arrowIcon {
     width: 22px;
     height: 22px;
   }
 }
-

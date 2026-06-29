@@ -1,11 +1,12 @@
-﻿import styles from "./styles.module.css";
+import styles from "./styles.module.css";
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import { SERVICE_KERATOCONUS_CONTENT } from "@/constant/serviceKeratoconusContent";
 
 export const KerstoconusApproach = () => {
   const { keratoconusApproach } = SERVICE_KERATOCONUS_CONTENT;
   const { surgicalOptions } = SERVICE_CATARACT_CONTENT;
-  const approachCards = SERVICE_KERATOCONUS_CONTENT.keratoconusApproach.options || [];
+  const approachCards =
+    SERVICE_KERATOCONUS_CONTENT.keratoconusApproach.options || [];
   const cardOne = approachCards[0];
   const cardTwo = approachCards[1];
   const cardThree = approachCards[2];
@@ -18,10 +19,10 @@ export const KerstoconusApproach = () => {
     >
       <div className="container-fluid">
         <div className={styles.approachbg}>
-          <div className="bgimg">
+          <div className={styles.bgimg}>
             <img
               src="/assets/Service/keratoconus/Subtract (2).png"
-              className="img-fluid"
+              className={`${styles.kerapbg} img-fluid `}
               alt=""
             />
           </div>
@@ -34,9 +35,11 @@ export const KerstoconusApproach = () => {
                   <br />
                   {keratoconusApproach.titleLines[1]}
                 </h2>
-                {(keratoconusApproach.descriptionLines || []).map((line, index) => (
-                  <p key={index}>{line}</p>
-                ))}
+                {(keratoconusApproach.descriptionLines || []).map(
+                  (line, index) => (
+                    <p key={index}>{line}</p>
+                  ),
+                )}
               </div>
 
               <div
@@ -67,7 +70,9 @@ export const KerstoconusApproach = () => {
                           aria-label={`Play ${option.title}`}
                         >
                           <span
-                            className={styles["surgical-options__play-triangle"]}
+                            className={
+                              styles["surgical-options__play-triangle"]
+                            }
                           />
                         </button>
                       </div>
@@ -83,10 +88,16 @@ export const KerstoconusApproach = () => {
 
           {cardOne ? (
             <div className={styles.approchcard1}>
-              <img src={cardOne.image} alt={cardOne.imageAlt || cardOne.title} className={styles.approachCardImage} />
+              <img
+                src={cardOne.image}
+                alt={cardOne.imageAlt || cardOne.title}
+                className={styles.approachCardImage}
+              />
               <div className={styles.approachCardOverlay} />
               <div className={styles.approachCardContent}>
-                <h3>{cardOne.number} {cardOne.title}</h3>
+                <h3>
+                  {cardOne.number} {cardOne.title}
+                </h3>
                 <p>{cardOne.description}</p>
               </div>
             </div>
@@ -94,10 +105,16 @@ export const KerstoconusApproach = () => {
 
           {cardThree ? (
             <div className={styles.approchcard2}>
-              <img src={cardThree.image} alt={cardThree.imageAlt || cardThree.title} className={styles.approachCardImage} />
+              <img
+                src={cardThree.image}
+                alt={cardThree.imageAlt || cardThree.title}
+                className={styles.approachCardImage}
+              />
               <div className={styles.approachCardOverlay} />
               <div className={styles.approachCardContent}>
-                <h3>{cardThree.number} {cardThree.title}</h3>
+                <h3>
+                  {cardThree.number} {cardThree.title}
+                </h3>
                 <p>{cardThree.description}</p>
               </div>
             </div>
@@ -105,10 +122,16 @@ export const KerstoconusApproach = () => {
 
           {cardTwo ? (
             <div className={styles.approchcard3}>
-              <img src={cardTwo.image} alt={cardTwo.imageAlt || cardTwo.title} className={styles.approachCardImage} />
+              <img
+                src={cardTwo.image}
+                alt={cardTwo.imageAlt || cardTwo.title}
+                className={styles.approachCardImage}
+              />
               <div className={styles.approachCardOverlay} />
               <div className={styles.approachCardContent}>
-                <h3>{cardTwo.number} {cardTwo.title}</h3>
+                <h3>
+                  {cardTwo.number} {cardTwo.title}
+                </h3>
                 <p>{cardTwo.description}</p>
               </div>
             </div>
@@ -118,16 +141,18 @@ export const KerstoconusApproach = () => {
             <img
               src="/assets/Service/keratoconus/k4.png"
               alt="Intracorneal ring segments treatment"
-              className="img-fluid"
+              className={styles.approachCardImage}
             />
+            <div className={styles.approachCardOverlay} />
+            <div className={styles.approachCardContent}>
+              <h3>4. Intracorneal Ring Segments</h3>
 
-            <h3>4. Intracorneal Ring Segments</h3>
-
-            <p>
-              Small ring segments may be placed inside the cornea in selected
-              mild to moderate cases to help flatten the cornea and improve
-              vision.
-            </p>
+              <p>
+                Small ring segments may be placed inside the cornea in selected
+                mild to moderate cases to help flatten the cornea and improve
+                vision.
+              </p>
+            </div>
           </div>
         </div>
       </div>
