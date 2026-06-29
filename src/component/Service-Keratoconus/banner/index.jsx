@@ -9,6 +9,7 @@ const KeratoconusBanner = () => {
     <div className={styles.detailPage}>
       <HeroBanner
         image={hero.image.src}
+        mobileImage={hero.mobileImage?.src}
         title={
           <>
             {hero.titleLines.map((line, index) => (

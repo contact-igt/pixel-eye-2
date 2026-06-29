@@ -154,6 +154,15 @@
   letter-spacing: 0;
 }
 
+
+@media (max-width : 1399px) {
+
+  .cataract-signs__body {
+    margin-top: 50px;
+  }
+
+}
+
 @media (max-width: 1199px) {
   .cataract-signs {
     width: min(1600px, calc(100% - 64px));
@@ -195,7 +204,7 @@
   }
 
   .cataract-signs__image {
-    width: min(640px, 100%);
+    width: 100%;
     height: auto;
     aspect-ratio: 508 / 432;
   }

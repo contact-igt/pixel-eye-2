@@ -13,6 +13,10 @@ export const SERVICE_KERATOCONUS_CONTENT = {
         src: "/assets/Service/keratoconus/Subtract.png",
         alt: "Close view of an eye showing keratoconus banner artwork",
       },
+      mobileImage: {
+        src: "/assets/Service/keratoconus/Subtract-mb.png",
+        alt: "Close view of an eye showing keratoconus banner artwork",
+      },
       nav: {
         rightSlot: "book",
         navTheme: "light",
@@ -130,8 +134,7 @@ export const SERVICE_KERATOCONUS_CONTENT = {
       {
         id: "refraction-test",
         title: "Refraction Test",
-        description:
-          "Checks spectacle power and irregular astigmatism.",
+        description: "Checks spectacle power and irregular astigmatism.",
         image: "/assets/Service/keratoconus/refraction_test.png",
         imageAlt: "Refraction test",
       },
@@ -171,13 +174,7 @@ export const SERVICE_KERATOCONUS_CONTENT = {
           "C3R helps strengthen the cornea and is commonly advised when keratoconus shows signs of progression.",
         image: "/assets/Service/keratoconus/corneal_cologen.png",
         imageAlt: "Corneal collagen cross-linking for keratoconus",
-      }
+      },
     ],
   },
 };
-
-
-
-
-
-

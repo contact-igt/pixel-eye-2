@@ -83,7 +83,7 @@
 .title {
   margin: 0;
   color: #ffffff;
-  font-size: var(--hero-title-size);
+  font-size: 40px;
   font-weight: 300;
   line-height: var(--hero-title-lh);
   font-family: var(--font-primary);
@@ -102,6 +102,32 @@
 .mobileCtaWrap {
   display: none;
 }
+
+@media (max-width : 1199px) {
+
+  .title {
+    font-size: 35px;
+  }
+
+}
+
+
+
+@media (max-width : 991px) {
+
+  .bannerFrame {
+    min-height: 650px !important;
+  }
+
+  .title {
+    top: 592px;
+    left: 29px
+  }
+
+}
+
+
+
 
 /* ── Responsive ── */
 @media (max-width: 768px) {

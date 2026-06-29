@@ -649,8 +649,8 @@
   }
 }
 
-/* ─── Tablet ────────────────────────────────── 1024px ── */
-@media (max-width: 1024px) {
+/* ─── Tablet ────────────────────────────────── 991px ── */
+@media (max-width: 991px) {
 
   .inner,
   .aboutMaskedNav .inner {
@@ -675,9 +675,17 @@
     align-items: center;
   }
 
+  
+
   .rightCard {
     justify-content: flex-end;
     gap: 20px;
+    margin-right: 20px;
+  }
+
+  .logoCard {
+    justify-content: flex-start;
+    margin-left: 20px;
   }
 
   .logo {
@@ -843,11 +851,12 @@
   }
 }
 
-/* ── Desktop: sidebar is display:none above mobile ───── */
-@media (min-width: 768px) {
+/* ── Desktop: sidebar is hidden above tablet/mobile ───── */
+@media (min-width: 992px) {
 
   .sidebar,
   .sidebarOverlay {
     display: none;
   }
 }
+
