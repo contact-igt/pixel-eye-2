@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import { HOME_CONTENT } from "@/constant/homeContent";
 import Button from "@/common/Button";
+import RevealOnView from "@/common/RevealOnView";
 import styles from "./styles.module.css";
 
 const Protect = () => {
@@ -104,9 +105,9 @@ const Protect = () => {
 
         <div className={styles.overlay} />
 
-        <div className={styles.heroContent}>
+        <RevealOnView className={styles.heroContent}>
           <h2 className={styles.heroTitle}>{title}</h2>
-          <div className="mt-5">
+          <div className={styles.ctaWrap}>
             <Button
               label={cta.label}
               href={cta.href}
@@ -114,7 +115,7 @@ const Protect = () => {
               className={styles.heroCta}
             />
           </div>
-        </div>
+        </RevealOnView>
 
         {/* Draggable Handle */}
         <div

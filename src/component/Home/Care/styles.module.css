@@ -1,15 +1,15 @@
 .careSection {
-  padding: var(--section-pt) var(--section-px) var(--section-pb);
+  padding-top: 100px;
 }
 
 .careContainer {
-  max-width: var(--container-max);
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .careVisual {
-  --side-card-width: 350px;
-  --center-card-width: 450px;
+  --side-card-width: 320px;
+  --center-card-width: 430px;
   --side-card-height: 474px;
   --center-card-height: 590px;
   --card-gap: 34px;
@@ -17,7 +17,7 @@
   max-width: var(--container-max);
   margin: 32px auto 0;
   padding: 32px 24px 24px;
-  min-height: 760px;
+  min-height: 820px;
 }
 
 .panelBg {
@@ -103,16 +103,16 @@
   bottom: 24px;
   margin: 0;
   color: #ffffff;
-  font-size: 22px;
+  font-size: 25px;
   line-height: 1.25;
-  font-weight: 500;
+  font-weight: 400;
   z-index: 4;
   transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .centerTitle {
-  font-size: 24px;
-  left: 24px;
+  font-size: 30px;
+  left: 30px;
 }
 
 .cardWrap {
@@ -134,15 +134,15 @@
 
 .cardDescription {
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
   left: 0;
   right: 0;
   margin: 0;
   padding-top: 12px;
   color: var(--brand-blue);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.45;
-  font-weight: 400;
+  font-weight: 500;
   z-index: 2;
   opacity: 0;
   visibility: hidden;
@@ -156,14 +156,16 @@
 
 .ctaButton {
   position: absolute;
-  right: 48px;
-  bottom: 20px;
+    right: 170px;
+    bottom: 45px;
   z-index: 2;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
   color: var(--brand-blue);
 }
+
+
 
 .ctaLabel {
   height: var(--btn-h);
@@ -353,10 +355,12 @@
   .centerCard {
     height: 470px;
   }
+
   .centerTitle {
     font-size: 20px;
     bottom: 16px;
   }
+
   .cardDescription {
     font-size: 13px;
     line-height: 1.4;
@@ -371,6 +375,7 @@
 
 /* ─── Very Small Mobile ─────────────────────── 389px ── */
 @media (max-width: 389px) {
+
   .sideWrap,
   .centerWrap {
     width: 100%;

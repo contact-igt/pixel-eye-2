@@ -27,7 +27,10 @@ const Care = () => {
       <div className={styles.careVisual}>
         <div className={styles.panelBg} />
 
-        <div className={`${styles.cardsRow} ${styles[`activeRow${activeId}`]}`} onMouseLeave={() => setActiveId(2)}>
+        <div
+          className={`${styles.cardsRow} ${styles[`activeRow${activeId}`]}`}
+          onMouseLeave={() => setActiveId(2)}
+        >
           {featuredCareAreas.map((item, index) => {
             const isActive = activeId === item.id;
             const cardClass = isActive ? styles.centerCard : styles.sideCard;
@@ -62,7 +65,9 @@ const Care = () => {
                   <h4 className={titleClass}>{item.title}</h4>
                 </article>
                 {item.description && (
-                  <p className={`${styles.cardDescription} ${isActive ? styles.descriptionVisible : ""}`}>
+                  <p
+                    className={`${styles.cardDescription} ${isActive ? styles.descriptionVisible : ""}`}
+                  >
                     {item.description}
                   </p>
                 )}

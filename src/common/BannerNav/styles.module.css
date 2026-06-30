@@ -6,7 +6,7 @@
 /* ── Outer wrapper ───────────────────────────────────── */
 .bannerNav {
   position: absolute;
-  top: 25px;
+  top: 35px;
   left: 0;
   right: 0;
   z-index: 1100;
@@ -16,20 +16,48 @@
   margin: 0 auto;
   width: 100%;
   display: grid;
-  grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(200px, 22vw, 320px);
+  grid-template-columns: clamp(200px, 22vw, 276px) 1fr clamp(200px, 22vw, 320px);
   align-items: start;
   padding: 0px;
 }
 
+.cardRevealLeft,
+.cardRevealRight {
+  display: block;
+  opacity: 0;
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: transform, opacity;
+}
+
+.cardRevealLeft {
+  transform: translateX(-48px);
+}
+
+.cardRevealRight {
+  transform: translateX(48px);
+}
+
+[data-visible="true"].cardRevealLeft,
+[data-visible="true"].cardRevealRight {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cardRevealRight {
+  transition-delay: 120ms;
+}
+
 .aboutMaskedNav .inner {
-  grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(200px, 22vw, 320px);
+  grid-template-columns: clamp(200px, 22vw, 273px) 1fr clamp(200px, 22vw, 336px);
 }
 
 /* ── Left logo card ──────────────────────────────────── */
 .logoCard {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: end;
   min-height: clamp(74px, 7.3vw, 108px);
   border-bottom-right-radius: clamp(18px, 2.2vw, 34px);
   padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
@@ -62,6 +90,9 @@
 
 .navItemWithMenu {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .navLink {
@@ -84,9 +115,43 @@
   align-items: center;
 }
 
+.dropdownToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  transition: background 160ms ease;
+}
+
+.dropdownToggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navLight .dropdownToggle:hover {
+  background: rgba(13, 18, 31, 0.06);
+}
+
+.dropdownIcon {
+  transition:
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 220ms ease;
+  transform-origin: center;
+}
+
+.dropdownIconOpen {
+  transform: rotate(180deg);
+}
+
 .dropdownMenu {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
   min-width: 170px;
@@ -105,8 +170,7 @@
   z-index: 1110;
 }
 
-.navItemWithMenu:hover .dropdownMenu,
-.navItemWithMenu:focus-within .dropdownMenu {
+.navItemWithMenu[data-open="true"] .dropdownMenu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -135,6 +199,10 @@
 .navLight .dropdownMenu {
   border-color: rgba(233, 240, 251, 0.35);
   background: rgba(30, 52, 102, 0.94);
+}
+
+.navLight .dropdownToggle {
+  color: #ffffff;
 }
 
 .navLight .dropdownLink {
@@ -178,7 +246,7 @@
 .rightCard {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: start;
   min-height: clamp(74px, 7.3vw, 108px);
   border-bottom-left-radius: clamp(18px, 2.2vw, 34px);
   padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
@@ -675,7 +743,7 @@
     align-items: center;
   }
 
-  
+
 
   .rightCard {
     justify-content: flex-end;
@@ -859,4 +927,3 @@
     display: none;
   }
 }
-

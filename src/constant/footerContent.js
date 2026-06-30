@@ -14,7 +14,7 @@
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Doctors", href: "/doctors" },
-    { label: "Services", href: "/service" },
+    { label: "Treatment", href: "/service" },
     { label: "Appointment", href: "/appointment" },
     { label: "Our Specialists", href: "/doctors" },
   ],
@@ -50,4 +50,3 @@
   copyright:
     "© 2023 Pixel Eye Hospital (a unit of Blue Eye Care Services Pvt Ltd.). All Rights Reserved.",
 };
-

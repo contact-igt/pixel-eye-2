@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import RevealOnView from "@/common/RevealOnView";
 import { NAV_CONTENT } from "@/constant/navContent";
 import { FOOTER_CONTENT } from "@/constant/footerContent";
 import styles from "./styles.module.css";
@@ -161,6 +162,7 @@ const getNavIcon = (label) => {
     case "DOCTORS":
       return <DoctorIcon />;
     case "SERVICES":
+    case "TREATMENT":
       return <BoxIcon />;
     case "APPOINTMENT":
       return <CalendarIcon />;
@@ -200,38 +202,56 @@ export default function BannerNav({
         aria-label="Site navigation"
       >
         <div className={styles.inner}>
-          <div
-            className={`${styles.logoCard} ${cardBg === "white" ? styles.cardWhite : ""}`.trim()}
-          >
-            <Link href="/" aria-label={logo.alt}>
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                className={styles.logo}
-                priority
-              />
-            </Link>
-          </div>
+          <RevealOnView className={styles.cardRevealLeft}>
+            <div
+              className={`${styles.logoCard} ${cardBg === "white" ? styles.cardWhite : ""}`.trim()}
+            >
+              <Link href="/" aria-label={logo.alt}>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className={styles.logo}
+                  priority
+                />
+              </Link>
+            </div>
+          </RevealOnView>
 
           <nav
             className={`${styles.nav} ${isLight ? styles.navLight : ""}`}
             aria-label="Primary navigation"
           >
             {navItems.map((item) =>
-              item.label === "SERVICES" && servicesDropdown.length > 0 ? (
-                <div key={item.id} className={styles.navItemWithMenu}>
+              (item.label === "SERVICES" || item.label === "TREATMENT") &&
+              servicesDropdown.length > 0 ? (
+                <div
+                  key={item.id}
+                  className={styles.navItemWithMenu}
+                  data-open={isServicesExpanded ? "true" : "false"}
+                >
                   <Link
                     href={item.href}
                     className={`${styles.navLink} ${styles.navLinkTrigger}`}
                   >
                     {item.label}
                   </Link>
+                  <button
+                    type="button"
+                    className={styles.dropdownToggle}
+                    onClick={toggleServices}
+                    aria-label={`Toggle ${item.label.toLowerCase()} menu`}
+                    aria-expanded={isServicesExpanded}
+                  >
+                    <ChevronIcon
+                      className={`${styles.dropdownIcon} ${isServicesExpanded ? styles.dropdownIconOpen : ""}`}
+                    />
+                  </button>
                   <div
                     className={styles.dropdownMenu}
                     role="menu"
-                    aria-label="Services submenu"
+                    aria-label="Treatment submenu"
                   >
                     {servicesDropdown.map((service) => (
                       <Link
@@ -259,33 +279,35 @@ export default function BannerNav({
             </button>
           </nav>
 
-          <div
-            className={`${styles.rightCard} ${cardBg === "white" ? styles.cardWhite : ""}`.trim()}
-          >
-            {rightSlot === "nabh" ? (
-              <Image
-                src={nabhBadge.src}
-                alt={nabhBadge.alt}
-                width={nabhBadge.width}
-                height={nabhBadge.height}
-                className={styles.nabhBadge}
-                priority
-              />
-            ) : (
-              <Link href={bookAppointment.href} className={styles.bookBtn}>
-                {bookAppointment.label}
-              </Link>
-            )}
-
-            <button
-              type="button"
-              className={`${styles.menuBtn} ${isLight ? styles.menuBtnLight : ""}`}
-              onClick={toggleSidebar}
-              aria-label="Open mobile menu"
+          <RevealOnView className={styles.cardRevealRight}>
+            <div
+              className={`${styles.rightCard} ${cardBg === "white" ? styles.cardWhite : ""}`.trim()}
             >
-              <HamburgerIcon />
-            </button>
-          </div>
+              {rightSlot === "nabh" ? (
+                <Image
+                  src={nabhBadge.src}
+                  alt={nabhBadge.alt}
+                  width={nabhBadge.width}
+                  height={nabhBadge.height}
+                  className={styles.nabhBadge}
+                  priority
+                />
+              ) : (
+                <Link href={bookAppointment.href} className={styles.bookBtn}>
+                  {bookAppointment.label}
+                </Link>
+              )}
+
+              <button
+                type="button"
+                className={`${styles.menuBtn} ${isLight ? styles.menuBtnLight : ""}`}
+                onClick={toggleSidebar}
+                aria-label="Open mobile menu"
+              >
+                <HamburgerIcon />
+              </button>
+            </div>
+          </RevealOnView>
         </div>
       </div>
 
@@ -443,4 +465,3 @@ export default function BannerNav({
     </>
   );
 }
-

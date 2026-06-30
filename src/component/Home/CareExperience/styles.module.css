@@ -1,5 +1,4 @@
 .experienceSection {
-  padding: var(--section-pt) var(--section-px) var(--section-pb);
   background: transparent;
 }
 
@@ -10,32 +9,56 @@
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 560px;
+  grid-template-columns: minmax(0, 1fr) 660px;
   gap: 32px;
   align-items: center;
+}
+
+.revealLeft,
+.revealRight {
+  display: block;
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    opacity 750ms ease,
+    transform 750ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealLeft {
+  transform: translateX(-48px);
+}
+
+.revealRight {
+  transform: translateX(48px);
+  transition-delay: 90ms;
+}
+
+[data-visible="true"].revealLeft,
+[data-visible="true"].revealRight {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .card {
   background: var(--bg-surface);
   border-radius: var(--radius-card-md) 0 0 var(--radius-card-md);
-  padding: 150px 0 40px 60px;
+  padding: 200px 0 40px 60px;
   box-shadow: none;
 }
 
 /* Large display title — intentionally above --h2-size */
 .title {
-  margin: 0 0 18px 0;
-  font-size: 65px;
+  font-size: 50px;
   line-height: 1.25;
   color: var(--text-heading);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Uses --hero-paragraph-size (19px) — intentionally larger than body paragraph */
 .paragraph {
   margin: 0 0 18px 0;
-  color: var(--text-body);
-  font-size: var(--hero-paragraph-size);
+  color: #4F4F4F;
+  font-size: 22px;
   line-height: 1.6;
 }
 
@@ -77,6 +100,12 @@
 
 /* ─── Tablet ────────────────────────────────── 991px ── */
 @media (max-width: 991px) {
+
+  .revealLeft,
+  .revealRight {
+    transform: translateY(22px);
+  }
+
   .desktopImage {
     display: none;
   }

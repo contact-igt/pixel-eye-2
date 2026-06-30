@@ -12,6 +12,22 @@
   /* NO min-height — the flow image determines the natural height */
 }
 
+.bannerImageViewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.bannerImageTrack {
+  display: flex;
+  width: 200%;
+  transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.bannerImageSlide {
+  flex: 0 0 50%;
+}
+
 /* ── Hero image — flow element so natural 16:9 aspect sets the height ── */
 /* At 1400px frame width → height = 1400 * (1080/1920) ≈ 788px          */
 .bannerImage {
@@ -19,11 +35,32 @@
   width: 100%;
   height: auto;
   position: relative;
-  /* flow, not absolute */
   z-index: 0;
-  /* Slight upward crop to keep the child + sky visible naturally */
   object-fit: cover;
   object-position: center top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bannerImageTrack {
+    animation: none;
+    transition: none;
+  }
+}
+
+.heroSlide {
+  animation: heroSlideIn 900ms ease;
+}
+
+@keyframes heroSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── Hero copy ── */
@@ -37,11 +74,11 @@
 }
 
 .heroTitle {
-  margin: 0 0 14px;
+  margin: 0 0 20px;
   color: #ffffff;
-  font-size: var(--h2-size);
+  font-size: 50px;
   /* 44px desktop, scales via globals */
-  line-height: var(--h2-lh);
+  line-height: 60px;
   /* 1.12 */
   font-weight: 400;
   /* regular weight — matches reference */
@@ -51,11 +88,26 @@
 .heroText {
   margin: 0;
   color: rgba(255, 255, 255, 0.88);
-  font-size: var(--p-size);
-  line-height: var(--p-lh);
+  font-size: 20px;
+  line-height: 28px;
   font-weight: 400;
-  max-width: 380px;
+  max-width: 430px;
   font-family: var(--font-primary);
+}
+
+.heroReveal {
+  display: block;
+  opacity: 0;
+  transform: translateY(-26px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+[data-visible="true"].heroReveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .ctaWrap {
@@ -85,7 +137,7 @@
   background: rgba(203, 154, 95, 0.45);
 }
 
-.sliderDots span:first-child {
+.sliderDotActive {
   width: 10px;
   height: 10px;
   background: #cb9a5f;
@@ -97,12 +149,13 @@
 .bookArea {
   position: absolute;
   bottom: -7px;
-  right: 24px;
+  right: 0px;
   z-index: 2;
   background: transparent;
   border-top-left-radius: 20px;
   padding: 12px 16px 16px;
-  min-width: 260px;
+  min-width: 290px;
+
 }
 
 .bookButton {
@@ -111,13 +164,13 @@
   justify-content: center;
   width: 100%;
   height: 55px;
-  border: 1.5px solid #7fa8be;
+  border: 3px solid #7fa8be;
   border-radius: var(--radius-input);
   color: var(--text-heading);
   background: #ffffff;
   font-family: var(--font-primary);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   text-decoration: none;
@@ -230,7 +283,8 @@
   .bannerFrame {
     min-height: 450px;
   }
-    .heroCta {
+
+  .heroCta {
     --btn-icon-left: 170px;
   }
 }
