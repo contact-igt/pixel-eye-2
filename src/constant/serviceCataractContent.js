@@ -146,6 +146,7 @@ export const SERVICE_CATARACT_CONTENT = {
         active: true,
       },
       { number: "03", text: "Faded colours and reduced contrast" },
+      { number: "04", text: "Frequent changes in glasses without improvement" }
     ],
   },
 

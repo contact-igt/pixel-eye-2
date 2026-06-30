@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from "react";
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import styles from "./styles.module.css";
 
@@ -14,9 +15,32 @@ const CataractApproach = () => {
 
   const paragraphs = approach.paragraphs || [];
 
+  const sectionRef = useRef(null);
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
-      className={styles["cataract-approach"]}
+      ref={sectionRef}
+      className={`${styles["cataract-approach"]} ${isRevealed ? styles["is-revealed"] : ""
+        }`.trim()}
       aria-labelledby="cataract-approach-title"
     >
       <div className={styles["cataract-approach__inner"]}>

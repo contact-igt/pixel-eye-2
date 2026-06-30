@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from "react";
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import styles from "./styles.module.css";
 
@@ -9,9 +10,32 @@ const ClinicalExpertise = () => {
   const doctorSrc = data.doctorImage || "";
   const doctorAlt = data.doctorImageAlt || data.doctorName || "";
 
+  const sectionRef = useRef(null);
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
-      className={styles["clinical-expertise"]}
+      ref={sectionRef}
+      className={`${styles["clinical-expertise"]} ${isRevealed ? styles["is-revealed"] : ""
+        }`.trim()}
       aria-labelledby="clinical-expertise-title"
     >
       <div className={styles["clinical-expertise__inner"]}>
