@@ -30,16 +30,19 @@
 
 .squint-symptoms__body {
   display: grid;
-  grid-template-columns: minmax(400px, 508px) minmax(560px, 760px);
-  column-gap: 70px;
+  grid-template-columns: minmax(340px, 508px) minmax(0, 760px);
+  column-gap: clamp(44px, 4.3vw, 70px);
   align-items: center;
+  max-width: 1338px;
   margin-top: 56px;
 }
 
 .squint-symptoms__image {
   display: block;
-  width: 508px;
-  height: 320px;
+  width: 100%;
+  max-width: 508px;
+  height: auto;
+  aspect-ratio: 508 / 320;
   border-radius: 22px;
   object-fit: cover;
   object-position: center;
@@ -47,6 +50,7 @@
 
 .squint-symptoms__content {
   display: grid;
+  min-width: 0;
   row-gap: 28px;
 }
 
@@ -100,23 +104,20 @@
   flex: 0 0 96px;
   scroll-snap-align: start;
   display: grid;
-  grid-template-columns: 76px 1px 1fr;
-  column-gap: 40px;
+  grid-template-columns: 76px 1px minmax(0, 1fr);
+  column-gap: clamp(22px, 2.35vw, 40px);
   align-items: center;
   min-height: 96px;
-  padding: 0 42px;
-  border-radius: 0 18px 18px 0;
+  padding: 0 clamp(26px, 2.6vw, 42px);
+  border-radius: 18px;
   background: #ecf4f9;
   color: rgba(42, 60, 125, 0.48);
   transition: background-color 280ms ease, color 280ms ease, border-radius 280ms ease;
 }
 
-.squint-symptoms__item:first-child {
-  border-radius: 18px;
-}
 
 .squint-symptoms__item.is-active {
-  margin-left: -30px;
+  margin-left: 0;
   border-radius: 24px;
   background: #dbeaf2;
   color: #273979;
@@ -147,20 +148,24 @@
   letter-spacing: 0;
 }
 
+@media (max-width: 1400px) {
+  .squint-symptoms {
+    width: min(1240px, calc(100% - 96px));
+  }
+}
+
 @media (max-width: 1200px) {
   .squint-symptoms {
-    width: min(1600px, calc(100% - 64px));
+    width: min(1100px, calc(100% - 64px));
+  }
+
+  .squint-symptoms__header p {
+    width: min(100%, 640px);
   }
 
   .squint-symptoms__body {
-    grid-template-columns: minmax(320px, 440px) 1fr;
+    grid-template-columns: minmax(300px, 440px) minmax(0, 1fr);
     column-gap: clamp(24px, 4vw, 54px);
-  }
-
-  .squint-symptoms__image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 508 / 320;
   }
 
   .squint-symptoms__item.is-active {
@@ -173,17 +178,30 @@
 }
 
 @media (max-width: 992px) {
+  .squint-symptoms {
+    width: min(760px, calc(100% - 48px));
+  }
+
   .squint-symptoms__header p {
     width: min(100%, 680px);
+    margin-top: 24px;
   }
 
   .squint-symptoms__body {
     grid-template-columns: 1fr;
     row-gap: 30px;
+    max-width: none;
+    margin-top: 46px;
   }
 
   .squint-symptoms__image {
     width: min(640px, 100%);
+    max-width: 100%;
+  }
+
+  .squint-symptoms__note {
+    margin-left: 0;
+    text-align: left;
   }
 
   .squint-symptoms__list {
@@ -192,26 +210,34 @@
     overflow: visible;
     scroll-snap-type: none;
   }
+
+  .squint-symptoms__item {
+    border-radius: 18px;
+  }
 }
 
 @media (max-width: 768px) {
   .squint-symptoms {
-    width: min(1600px, calc(100% - 40px));
+    width: min(100%, calc(100% - 40px));
     margin-bottom: 64px;
   }
 
   .squint-symptoms__body {
-    margin-top: 44px;
+    margin-top: 40px;
     row-gap: 22px;
   }
 
-  .squint-symptoms__note {
-    text-align: left;
+  .squint-symptoms__image {
+    border-radius: 18px;
+  }
+
+  .squint-symptoms__content {
+    row-gap: 22px;
   }
 
   .squint-symptoms__item,
   .squint-symptoms__item.is-active {
-    grid-template-columns: 64px 1px 1fr;
+    grid-template-columns: 64px 1px minmax(0, 1fr);
     column-gap: 16px;
     min-height: 94px;
     padding: 0 20px;
@@ -230,48 +256,53 @@
   }
 
   .squint-symptoms__header p {
-    margin-top: 22px;
+    margin-top: 20px;
     line-height: 1.2;
   }
 
   .squint-symptoms__body {
-    margin-top: 36px;
+    margin-top: 34px;
+  }
+
+  .squint-symptoms__note {
+    font-size: 14px;
+    line-height: 1.28;
   }
 
   .squint-symptoms__item,
   .squint-symptoms__item.is-active {
-    grid-template-columns: 58px 1px 1fr;
-    column-gap: 14px;
+    grid-template-columns: 54px 1px minmax(0, 1fr);
+    column-gap: 12px;
     min-height: 88px;
-    padding: 0 16px;
+    padding: 0 14px;
   }
 
   .squint-symptoms__number {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 
 @media (max-width: 390px) {
   .squint-symptoms {
-    width: min(1600px, calc(100% - 24px));
+    width: min(100%, calc(100% - 24px));
     margin-bottom: 48px;
   }
 
   .squint-symptoms__body {
-    margin-top: 32px;
+    margin-top: 30px;
     row-gap: 16px;
   }
 
   .squint-symptoms__item,
   .squint-symptoms__item.is-active {
-    grid-template-columns: 48px 1px 1fr;
+    grid-template-columns: 44px 1px minmax(0, 1fr);
     column-gap: 10px;
     min-height: 82px;
-    padding: 0 12px;
+    padding: 0 10px;
     border-radius: 14px;
   }
 
   .squint-symptoms__number {
-    font-size: 30px;
+    font-size: 28px;
   }
 }

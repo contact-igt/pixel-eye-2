@@ -8,7 +8,7 @@
   margin: 0 auto;
   border-radius: var(--radius-card-md);
   overflow: hidden;
-  height: 450px;
+  height: 500px;
   isolation: isolate;
   /* border: 1px solid rgba(99, 111, 134, 0.45); */
   background: #253548;
@@ -49,7 +49,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 56px;
+  width: 120px;
   left: clamp(28px, var(--slider-position), calc(100% - 28px));
   transform: translateX(-50%);
   z-index: 6;
@@ -68,15 +68,26 @@
   z-index: 5;
   max-width: 620px;
   pointer-events: auto;
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+[data-visible="true"].heroContent {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .heroTitle {
-  margin: 0;
+  margin-bottom: 50px;
   color: #d5e2f6;
-  font-size: var(--h2-size);
+  font-size: 50px;
   line-height: var(--h2-lh);
-  font-weight: 500;
-  max-width: 610px;
+  font-weight: 400;
+  max-width: 700px;
   text-wrap: balance;
 }
 
@@ -89,6 +100,19 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+}
+
+.ctaWrap {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 700ms ease 120ms,
+    transform 700ms ease 120ms;
+}
+
+[data-visible="true"] .ctaWrap {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .ctaLabel {
@@ -177,15 +201,18 @@
   .heroCta {
     --btn-icon-left: 140px;
   }
-  .bannerFrame{
+
+  .bannerFrame {
     height: 260px;
 
   }
-  .heroContent{
+
+  .heroContent {
     width: 300px;
-        top: 16%;
+    top: 16%;
   }
-  .imageLayer img{
+
+  .imageLayer img {
     object-fit: fill !important;
   }
 }

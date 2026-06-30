@@ -31,12 +31,12 @@
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-columns: minmax(355px, 0.82fr) minmax(620px, 1.36fr);
+  grid-template-columns: minmax(320px, 0.86fr) minmax(0, 1.34fr);
   grid-template-areas:
     ". title"
     "copy visual";
-  column-gap: clamp(54px, 5.15vw, 96px);
-  row-gap: clamp(58px, 4.6vw, 82px);
+  column-gap: clamp(44px, 5vw, 96px);
+  row-gap: clamp(42px, 4.2vw, 76px);
   align-items: start;
   width: min(1510px, calc(100% - 104px));
   margin: clamp(-150px, -7.6vw, -104px) auto 96px;
@@ -47,18 +47,18 @@
   margin: 0;
   color: #293b77;
   font-family: var(--font-primary);
-  padding-left: clamp(36px, 12vw, 150px);
-  font-size: clamp(50px, 3.55vw, 68px);
+  padding-left: clamp(24px, 7vw, 120px);
+  font-size: clamp(48px, 3.35vw, 64px);
   font-weight: 400;
   line-height: 1.04;
   letter-spacing: 0;
-  transform: translateY(clamp(24px, 2.5vw, 48px));
+  transform: translateY(clamp(18px, 2vw, 38px));
 }
 
 .squint-explainer__copy {
   grid-area: copy;
-  padding-left: clamp(8px, 4vw, 50px);
-  padding-top: clamp(8px, 4vw, 50px);
+  padding-left: clamp(0px, 3.2vw, 44px);
+  padding-top: clamp(0px, 3.2vw, 44px);
   max-width: 500px;
 }
 
@@ -87,11 +87,11 @@
 .squint-explainer__visual {
   grid-area: visual;
   width: 100%;
-  max-width: 870px;
-  margin-top: clamp(18px, 3.5vw, 60px);
+  max-width: 820px;
+  margin-top: clamp(10px, 2.8vw, 50px);
   justify-self: end;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: clamp(18px, 1.45vw, 28px);
   background: #f4f6fa;
 }
 
@@ -113,22 +113,22 @@
 
 @media (max-width: 1200px) {
   .squint-hero__frame {
-    min-height: clamp(500px, 48vw, 620px);
+    min-height: clamp(460px, 48vw, 600px);
   }
 
   .squint-explainer {
-    grid-template-columns: minmax(300px, 0.86fr) minmax(500px, 1.25fr);
-    column-gap: 46px;
+    grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+    column-gap: clamp(30px, 4vw, 46px);
     row-gap: 48px;
     width: min(1110px, calc(100% - 64px));
-    margin-top: -92px;
+    margin-top: -76px;
     margin-bottom: 82px;
   }
 
   .squint-explainer__title {
-    padding-left: clamp(18px, 5vw, 58px);
-    font-size: clamp(42px, 4vw, 52px);
-    transform: translateY(18px);
+    padding-left: clamp(8px, 4vw, 42px);
+    font-size: clamp(40px, 4vw, 50px);
+    transform: translateY(12px);
   }
 
   .squint-explainer__copy p {
@@ -137,7 +137,7 @@
   }
 
   .squint-explainer__visual {
-    max-width: 620px;
+    max-width: 610px;
     border-radius: 24px;
   }
 }
@@ -149,7 +149,7 @@
   }
 
   .squint-hero__frame {
-    min-height: 560px;
+    min-height: clamp(420px, 58vw, 540px);
   }
 
   .squint-hero__image {
@@ -162,9 +162,9 @@
       "title"
       "copy"
       "visual";
-    row-gap: 34px;
+    row-gap: 28px;
     width: min(760px, calc(100% - 48px));
-    margin-top: 46px;
+    margin-top: 42px;
     margin-bottom: 72px;
   }
 
@@ -176,6 +176,8 @@
 
   .squint-explainer__copy {
     padding-left: 0;
+    padding-top: 0;
+    max-width: 640px;
   }
 
   .squint-explainer__copy p {
@@ -185,12 +187,13 @@
   }
 
   .squint-explainer__loader {
-    margin-top: 34px;
+    margin-top: 30px;
   }
 
   .squint-explainer__visual {
     justify-self: start;
     max-width: 100%;
+    margin-top: 0;
   }
 }
 
@@ -201,7 +204,7 @@
   }
 
   .squint-hero__frame {
-    min-height: 500px;
+    min-height: clamp(360px, 82vw, 480px);
     border-radius: 14px;
   }
 
@@ -211,12 +214,12 @@
 
   .squint-explainer {
     width: min(100%, calc(100% - 32px));
-    row-gap: 28px;
-    margin: 40px auto 60px;
+    row-gap: 24px;
+    margin: 36px auto 58px;
   }
 
   .squint-explainer__title {
-    font-size: clamp(36px, 9vw, 48px);
+    font-size: clamp(34px, 8.5vw, 46px);
     line-height: 1.08;
   }
 
@@ -231,7 +234,7 @@
 
   .squint-explainer__loader {
     width: min(274px, 78%);
-    margin-top: 30px;
+    margin-top: 26px;
   }
 
   .squint-explainer__visual {
@@ -241,13 +244,13 @@
 
 @media (max-width: 576px) {
   .squint-hero__frame {
-    min-height: 470px;
+    min-height: clamp(330px, 92vw, 440px);
   }
 
   .squint-explainer {
     width: min(100%, calc(100% - 24px));
-    row-gap: 24px;
-    margin-top: 34px;
+    row-gap: 22px;
+    margin-top: 30px;
   }
 
   .squint-explainer__title {
@@ -266,7 +269,7 @@
 
 @media (max-width: 390px) {
   .squint-hero__frame {
-    min-height: 440px;
+    min-height: 330px;
   }
 
   .squint-explainer {

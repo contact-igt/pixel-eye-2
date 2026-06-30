@@ -22,8 +22,15 @@ const SquintSymptoms = () => {
   };
 
   const handleWheel = (event) => {
+    const list = event.currentTarget;
+    const maxScroll = list.scrollHeight - list.clientHeight;
+
+    if (maxScroll <= 0) {
+      return;
+    }
+
     event.preventDefault();
-    event.currentTarget.scrollBy({
+    list.scrollBy({
       top: event.deltaY * 0.45,
       behavior: "smooth",
     });

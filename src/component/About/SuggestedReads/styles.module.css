@@ -149,6 +149,10 @@
   display: inline-flex;
   align-items: center;
   line-height: 1;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
 }
 
 .readIcon {
@@ -162,11 +166,27 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+.readIcon svg {
+  transform: rotate(0deg) translate(0, 0);
+  transform-origin: center;
+  transition: transform 240ms ease;
 }
 
 .readMore:hover .readLabel,
 .readMore:hover .readIcon {
-  background: #edf3fd;
+  background: #2f4587;
+  border-color: #2f4587;
+  color: #ffffff;
+}
+
+.readMore:hover .readIcon svg {
+  transform: rotate(45deg) translate(1px, 0);
 }
 
 .sideColumn {

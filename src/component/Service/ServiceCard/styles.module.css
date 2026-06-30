@@ -5,31 +5,43 @@
 
 .card {
   display: grid;
-  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr) auto;
-  column-gap: clamp(44px, 6vw, 128px);
-  align-items: start;
-  max-width: var(--container-max);
+  grid-template-columns: minmax(220px, 28%) minmax(340px, 1fr) minmax(320px, 406px);
+  column-gap: clamp(44px, 6vw, 118px);
+  align-items: center;
+  width: min(var(--container-max), calc(100% - 48px));
+  min-height: 322px;
   margin: 0 auto;
-  padding: clamp(58px, 6vw, 92px) clamp(24px, 4vw, 78px);
+  padding: clamp(56px, 4vw, 74px) clamp(48px, 5vw, 78px);
   border-radius: var(--radius-card-lg);
   background: var(--surface-light-blue);
+  /* muted button fill inherits the card's bg so the gloo outline is seamless */
+  --btn-surface: var(--surface-light-blue);
   overflow: hidden;
+  will-change: transform, opacity, filter;
 }
 
 .title {
+  max-width: 380px;
   margin: 0;
   color: var(--text-heading);
   font-size: var(--h2-size);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: var(--h2-lh);
+  letter-spacing: 0;
+  text-wrap: balance;
 }
 
 .details {
+  display: grid;
+  align-content: center;
+  max-width: 460px;
   color: var(--text-body);
 }
 
 .details p {
+  min-height: calc(var(--p-size) * var(--p-lh) * 4);
   margin: 0;
+  color: inherit;
   font-size: var(--p-size);
   font-weight: 400;
   line-height: var(--p-lh);
@@ -39,40 +51,11 @@
   margin-top: 32px;
 }
 
+/* .linkCta is kept on the <Button> element for semantic reasons.
+   All shape / outline styling is now handled by the SVG gloo filter.
+   Only set text-decoration to none so the link doesn't underline. */
 .linkCta {
-  display: inline-flex;
-  align-items: center;
-  min-height: 47px;
-  color: var(--text-heading);
   text-decoration: none;
-}
-
-.linkCta span:first-child {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 47px;
-  padding: 0 22px;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--text-heading);
-  border-right: none;
-  font-size: var(--btn-fs);
-  font-weight: var(--btn-fw);
-  line-height: 1;
-}
-
-.linkCta span:last-child {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 47px;
-  height: 47px;
-  margin-left: -1px;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid var(--text-heading);
-  color: var(--text-heading);
-  z-index: 2;
 }
 
 .linkCta svg {
@@ -87,23 +70,50 @@
 }
 
 .imageWrap {
-  width: min(406px, 100%);
+  justify-self: end;
+  width: 100%;
+  max-width: 406px;
+  aspect-ratio: 406 / 203;
+  transform-origin: center;
+  will-change: transform, opacity;
 }
 
 .image {
   display: block;
-  width: 406px;
-  height: 203px;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   border-radius: var(--radius-input);
   object-fit: cover;
   object-position: center;
 }
 
+/* xxl → xl — 1200–1399px: slight tightening */
+@media (max-width: 1399px) {
+  .card {
+    column-gap: clamp(40px, 5.5vw, 100px);
+    padding: clamp(52px, 3.8vw, 70px) clamp(44px, 4.5vw, 72px);
+  }
+}
+
+/* xl → lg — 992–1199px: safe 3-col without squeezing */
 @media (max-width: 1199px) {
   .card {
-    grid-template-columns: minmax(170px, 220px) minmax(0, 1fr) auto;
-    column-gap: clamp(30px, 4vw, 68px);
+    grid-template-columns: minmax(140px, 180px) minmax(0, 1fr) minmax(240px, 320px);
+    column-gap: clamp(20px, 2.8vw, 52px);
+    width: min(var(--container-max), calc(100% - 40px));
+    padding: clamp(40px, 3.5vw, 60px) clamp(28px, 3.5vw, 52px);
+  }
+
+  .title {
+    max-width: 100%;
+  }
+
+  .details {
+    max-width: 100%;
+  }
+
+  .imageWrap {
+    max-width: 320px;
   }
 }
 
@@ -111,26 +121,30 @@
   .card {
     grid-template-columns: 1fr;
     row-gap: 24px;
+    width: min(var(--container-max), calc(100% - 32px));
+    min-height: 0;
     padding: 46px;
   }
 
   .title {
     order: 1;
+    max-width: 100%;
   }
 
   .imageWrap {
     order: 2;
+    justify-self: start;
     width: min(520px, 100%);
+    max-width: 100%;
   }
 
   .details {
     order: 3;
+    max-width: 560px;
   }
 
-  .image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 406 / 203;
+  .details p {
+    min-height: 0;
   }
 }
 

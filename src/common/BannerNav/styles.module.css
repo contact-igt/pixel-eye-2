@@ -6,7 +6,7 @@
 /* ── Outer wrapper ───────────────────────────────────── */
 .bannerNav {
   position: absolute;
-  top: 25px;
+  top: 35px;
   left: 0;
   right: 0;
   z-index: 1100;
@@ -16,23 +16,51 @@
   margin: 0 auto;
   width: 100%;
   display: grid;
-  grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(240px, 25vw, 360px);
+  grid-template-columns: clamp(200px, 22vw, 276px) 1fr clamp(200px, 22vw, 320px);
   align-items: start;
   padding: 0px;
 }
 
+.cardRevealLeft,
+.cardRevealRight {
+  display: block;
+  opacity: 0;
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: transform, opacity;
+}
+
+.cardRevealLeft {
+  transform: translateX(-48px);
+}
+
+.cardRevealRight {
+  transform: translateX(48px);
+}
+
+[data-visible="true"].cardRevealLeft,
+[data-visible="true"].cardRevealRight {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cardRevealRight {
+  transition-delay: 120ms;
+}
+
 .aboutMaskedNav .inner {
-  grid-template-columns: clamp(200px, 22vw, 320px) 1fr clamp(200px, 22vw, 320px);
+  grid-template-columns: clamp(200px, 22vw, 273px) 1fr clamp(200px, 22vw, 336px);
 }
 
 /* ── Left logo card ──────────────────────────────────── */
 .logoCard {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  min-height: clamp(66px, 6.2vw, 90px);
+  justify-content: end;
+  min-height: clamp(74px, 7.3vw, 108px);
   border-bottom-right-radius: clamp(18px, 2.2vw, 34px);
-  padding: clamp(10px, 1.2vw, 16px) clamp(14px, 1.8vw, 28px) clamp(12px, 1.4vw, 20px);
+  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
 }
 
 
@@ -62,6 +90,9 @@
 
 .navItemWithMenu {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .navLink {
@@ -84,9 +115,43 @@
   align-items: center;
 }
 
+.dropdownToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  transition: background 160ms ease;
+}
+
+.dropdownToggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navLight .dropdownToggle:hover {
+  background: rgba(13, 18, 31, 0.06);
+}
+
+.dropdownIcon {
+  transition:
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 220ms ease;
+  transform-origin: center;
+}
+
+.dropdownIconOpen {
+  transform: rotate(180deg);
+}
+
 .dropdownMenu {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
   min-width: 170px;
@@ -105,8 +170,7 @@
   z-index: 1110;
 }
 
-.navItemWithMenu:hover .dropdownMenu,
-.navItemWithMenu:focus-within .dropdownMenu {
+.navItemWithMenu[data-open="true"] .dropdownMenu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -135,6 +199,10 @@
 .navLight .dropdownMenu {
   border-color: rgba(233, 240, 251, 0.35);
   background: rgba(30, 52, 102, 0.94);
+}
+
+.navLight .dropdownToggle {
+  color: #ffffff;
 }
 
 .navLight .dropdownLink {
@@ -178,10 +246,10 @@
 .rightCard {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  min-height: clamp(66px, 6.2vw, 90px);
+  justify-content: start;
+  min-height: clamp(74px, 7.3vw, 108px);
   border-bottom-left-radius: clamp(18px, 2.2vw, 34px);
-  padding: clamp(10px, 1.2vw, 16px) clamp(14px, 1.8vw, 28px) clamp(12px, 1.4vw, 20px);
+  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
 }
 
 .aboutMaskedNav .rightCard {
@@ -201,19 +269,19 @@
   align-items: center;
   justify-content: center;
   width: min(100%, 228px);
-  min-height: clamp(34px, 2.5vw, 42px);
+  min-height: clamp(38px, 3vw, 46px);
   border: 1.5px solid #7fa8be;
-  border-radius: 8px;
+  border-radius: 10px;
   color: var(--text-heading);
   background: #ffffff;
   font-family: var(--font-primary);
-  font-size: clamp(9px, 0.7vw, 11.5px);
+  font-size: clamp(10px, 0.78vw, 12px);
   font-weight: 600;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.45px;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  padding: 10px 20px;
+  padding: 16px 24px;
   transition: background 160ms ease;
 }
 
@@ -675,7 +743,7 @@
     align-items: center;
   }
 
-  
+
 
   .rightCard {
     justify-content: flex-end;
@@ -859,4 +927,3 @@
     display: none;
   }
 }
-

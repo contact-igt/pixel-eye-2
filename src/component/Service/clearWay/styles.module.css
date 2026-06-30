@@ -42,7 +42,7 @@
   margin-top: 24px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .clear-way__inner {
     grid-template-columns: 1fr;
     row-gap: 28px;

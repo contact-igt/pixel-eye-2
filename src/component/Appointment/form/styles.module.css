@@ -29,7 +29,7 @@
 }
 
 .specialist-form {
-  max-width: var(--container2-max);
+  max-width: 880px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -393,6 +393,19 @@
   line-height: 1.3;
 }
 
+/* lg — 992–1199px: still 2-col but tighter */
+@media (max-width: 1199px) {
+  .specialist-form h1 {
+    font-size: clamp(26px, 2.8vw, 36px);
+  }
+
+  .form-grid {
+    gap: 36px 18px;
+    margin-top: 36px;
+  }
+}
+
+/* md — 768–991px: collapse to 1-col */
 @media (max-width: 991px) {
   .form-watermark {
     left: -68px;
@@ -428,6 +441,30 @@
 
   .terms-row {
     min-height: auto;
+  }
+}
+
+/* sm — 576–767px: mid-mobile spacing */
+@media (max-width: 767px) {
+  .specialist-form h1 {
+    font-size: 28px;
+  }
+
+  .form-grid {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .form-watermark {
+    left: -54px;
+    bottom: -20px;
+    width: 200px;
+    height: 340px;
+    opacity: 0.1;
+  }
+
+  .consent-list {
+    gap: 10px;
   }
 }
 
@@ -520,5 +557,29 @@
 
   .submitButton {
     --btn-icon-left: 125px;
+  }
+}
+
+/* xxs — <389px */
+@media (max-width: 388px) {
+  .specialist-form h1 {
+    font-size: 20px;
+  }
+
+  .specialist-form-section {
+    --form-field-h: 42px;
+    --form-field-fs: 12px;
+    --form-btn-h: 38px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .form-grid {
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .form-watermark {
+    display: none;
   }
 }

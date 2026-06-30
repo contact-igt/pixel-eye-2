@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import BannerNav from "@/common/BannerNav";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
@@ -37,7 +38,15 @@ export default function HeroBanner({
   frameClassName = "",
   imageClassName = "",
 }) {
+  const [mounted, setMounted] = useState(false);
   const isAboutMasked = variant === "aboutMasked";
+  const isdoctorMasked = variant === "doctorMasked";
+  const isserviceMasked = variant === "serviceMasked";
+  const iscontactMasked = variant === "contactMasked";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <section
@@ -82,7 +91,9 @@ export default function HeroBanner({
 
         {/* Hero text (optional) */}
         {(title || subtitle) && (
-          <div className={styles.copy}>
+          <div
+            className={`${styles.copy} ${mounted ? styles.copyVisible : ""}`.trim()}
+          >
             {title && <h1 className={styles.title}>{title}</h1>}
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
             {mobileCta && (
@@ -104,7 +115,17 @@ export default function HeroBanner({
         rightSlot={rightSlot}
         navTheme={navTheme}
         cardBg={cardBg}
-        variant={isAboutMasked ? "aboutMasked" : "default"}
+        variant={
+          isAboutMasked
+            ? "aboutMasked"
+            : isdoctorMasked
+              ? "doctorMasked"
+              : isserviceMasked
+                ? "serviceMasked"
+                : iscontactMasked
+                  ? "contactMasked"
+                  : "default"
+        }
       />
     </section>
   );

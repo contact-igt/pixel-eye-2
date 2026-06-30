@@ -24,9 +24,30 @@
       width: 693,
       height: 182,
     },
-    heroTitle: ["Pixel Eye", "See Life, Fully."],
-    heroText:
-      "Modern diagnostics, experienced specialists, and evidence based treatments for every stage of eye health.",
+    slides: [
+      {
+        image: {
+          src: "/assets/Home/hero-banner.png",
+          alt: "Pixel Eye Hospital home banner",
+          width: 1920,
+          height: 1080,
+        },
+        heroTitle: ["Pixel Eye", "See Life, Fully."],
+        heroText:
+          "Modern diagnostics, experienced specialists, and evidence based treatments for every stage of eye health.",
+      },
+      {
+        image: {
+          src: "/assets/Home/home-banner2.png",
+          alt: "Pixel Eye Hospital diabetic retinopathy banner",
+          width: 1920,
+          height: 1080,
+        },
+        heroTitle: ["When diabetes blurs your world"],
+        heroText:
+          "Diabetes can quietly damage the retina, affecting how you read, drive, and recognize faces. Our retina specialists use advanced diagnostics and targeted treatments to protect your sight before it",
+      },
+    ],
     cta: {
       label: "Meet Our Specialists",
       href: "/about#visionaries",
@@ -35,13 +56,7 @@
       label: "BOOK APPOINTMENT",
       href: "/appointment",
     },
-    image: {
-      src: "/assets/Home/hero-banner.png",
-      alt: "Pixel Eye Hospital home banner",
-      width: 1920,
-      height: 1080,
-    },
-    sliderDotCount: 6,
+    sliderDotCount: 2,
   },
 
   care: {
@@ -280,4 +295,3 @@
     },
   },
 };
-
