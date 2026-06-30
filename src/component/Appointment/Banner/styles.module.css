@@ -57,6 +57,42 @@
   line-height: 1.15;
 }
 
+/* lg — 992–1199px */
+@media (max-width: 1199px) {
+  .copy {
+    left: 8vw;
+    width: min(44vw, 520px);
+  }
+
+  .copy h1 {
+    font-size: clamp(28px, 3.5vw, 48px);
+  }
+
+  .copy p {
+    width: min(32vw, 360px);
+    font-size: clamp(12px, 1.35vw, 18px);
+  }
+}
+
+/* md — 768–991px */
+@media (max-width: 991px) {
+  .copy {
+    left: 6vw;
+    width: min(54vw, 480px);
+    top: 44vh;
+  }
+
+  .copy h1 {
+    font-size: clamp(26px, 4vw, 42px);
+  }
+
+  .copy p {
+    width: min(42vw, 320px);
+    font-size: clamp(12px, 1.6vw, 17px);
+  }
+}
+
+/* sm — 576–767px */
 @media (max-width: 767px) {
   .hero {
     min-height: 100svh;
@@ -90,5 +126,35 @@
   .copy p {
     width: min(260px, 100%);
     font-size: 15px;
+  }
+}
+
+/* xs — <576px */
+@media (max-width: 575px) {
+  .copy {
+    top: 44vh;
+    left: 20px;
+    right: 20px;
+  }
+
+  .copy h1 {
+    font-size: 28px;
+  }
+
+  .copy p {
+    width: 100%;
+    font-size: 13px;
+  }
+}
+
+/* xxs — <389px */
+@media (max-width: 388px) {
+  .copy h1 {
+    font-size: 22px;
+  }
+
+  .copy p {
+    font-size: 12px;
+    margin-top: 10px;
   }
 }

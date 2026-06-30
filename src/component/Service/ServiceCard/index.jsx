@@ -1,34 +1,91 @@
 import Image from "next/image";
-import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
-const ServiceCard = ({ section }) => {
-  const titleLines = section.title.split(" ");
-  const midpoint = Math.ceil(titleLines.length / 2);
-  const firstLine = titleLines.slice(0, midpoint).join(" ");
-  const secondLine = titleLines.slice(midpoint).join(" ");
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+    scale: 0.99,
+  },
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: Math.min(index * 0.035, 0.16),
+      duration: 0.68,
+      ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.11,
+      delayChildren: 0.08,
+    },
+  }),
+};
+
+const titleVariants = {
+  hidden: { opacity: 0, x: -18 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.56, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const detailsVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.58, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, x: 22, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { duration: 0.64, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const ServiceCard = ({ section, index = 0 }) => {
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section
+    <motion.section
       className={styles.section}
       id={section.id}
       aria-labelledby={`${section.id}-title`}
+      initial={shouldReduceMotion ? false : "hidden"}
+      whileInView={shouldReduceMotion ? undefined : "visible"}
+      viewport={{ once: true, amount: 0.24, margin: "0px 0px -60px 0px" }}
     >
-      <div className={styles.card}>
-        <h2 id={`${section.id}-title`} className={styles.title}>
-          {firstLine}
-          {secondLine ? (
-            <>
-              <br />
-              {secondLine}
-            </>
-          ) : null}
-        </h2>
+      <motion.div
+        className={styles.card}
+        custom={index}
+        variants={cardVariants}
+        whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+        transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <motion.h2
+          id={`${section.id}-title`}
+          className={styles.title}
+          variants={titleVariants}
+        >
+          {section.title}
+        </motion.h2>
 
-        <div className={styles.details}>
+        <motion.div className={styles.details} variants={detailsVariants}>
           <p>{section.description}</p>
-          <div className={styles.ctaWrap}>
+          <motion.div
+            className={styles.ctaWrap}
+            variants={detailsVariants}
+            whileHover={shouldReduceMotion ? undefined : { x: 3 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
             {section.ctaStyle === "outline" ? (
               <Button
                 label="Explore More"
@@ -43,10 +100,15 @@ const ServiceCard = ({ section }) => {
                 variant="muted"
               />
             )}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className={styles.imageWrap}>
+        <motion.div
+          className={styles.imageWrap}
+          variants={imageVariants}
+          whileHover={shouldReduceMotion ? undefined : { scale: 1.018 }}
+          transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+        >
           <Image
             src={section.image}
             alt={section.imageAlt}
@@ -54,9 +116,9 @@ const ServiceCard = ({ section }) => {
             height={203}
             className={styles.image}
           />
-        </div>
-      </div>
-    </section>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 };
 
