@@ -39,11 +39,11 @@ export const NAV_CONTENT = {
       label: "LASIK",
       href: "/service/lasik",
     },
-    {
-      id: "service-glaucoma",
-      label: "Glaucoma",
-      href: "/service/glaucoma",
-    },
+    // {
+    //   id: "service-glaucoma",
+    //   label: "Glaucoma",
+    //   href: "/service/glaucoma",
+    // },
   ],
   bookAppointment: {
     label: "BOOK APPOINTMENT",

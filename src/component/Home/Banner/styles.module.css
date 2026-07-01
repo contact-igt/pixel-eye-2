@@ -26,6 +26,12 @@
 
 .bannerImageSlide {
   flex: 0 0 50%;
+  position: relative;
+}
+
+.bannerImageSlide picture {
+  display: block;
+  width: 100%;
 }
 
 /* ── Hero image — flow element so natural 16:9 aspect sets the height ── */
@@ -149,7 +155,7 @@
 .bookArea {
   position: absolute;
   bottom: -7px;
-  right: 0px;
+  right: 10px;
   z-index: 2;
   background: transparent;
   border-top-left-radius: 20px;
@@ -247,17 +253,30 @@
 
 }
 
-/* ── Tablet ── */
+
 @media (max-width: 991px) {
   .heroContent {
     left: 40px;
-    top: 32%;
+    top: 25%;
     width: min(440px, 48%);
   }
 
   .heroCta {
     --btn-icon-left: 175px;
   }
+
+  .heroTitle {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .heroText {
+    max-width: 360px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+
 }
 
 @media (max-width: 767px) {
@@ -279,6 +298,10 @@
 
   .bannerImageTrack,
   .bannerImageSlide {
+    height: 100%;
+  }
+
+  .bannerImageSlide picture {
     height: 100%;
   }
 
@@ -334,8 +357,6 @@
     font-size: 11px;
   }
 }
-
-
 
 
 @media (max-width: 575px) {

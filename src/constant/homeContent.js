@@ -28,6 +28,7 @@
       {
         image: {
           src: "/assets/Home/hero-banner.png",
+          mobileSrc: "/assets/Home/home-banner-mb.png",
           alt: "Pixel Eye Hospital home banner",
           width: 1920,
           height: 1080,
@@ -39,6 +40,7 @@
       {
         image: {
           src: "/assets/Home/home-banner2.png",
+          mobileSrc: "/assets/Home/home-banner2-mb.png",
           alt: "Pixel Eye Hospital diabetic retinopathy banner",
           width: 1920,
           height: 1080,
