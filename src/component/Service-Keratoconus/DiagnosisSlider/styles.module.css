@@ -7,7 +7,7 @@
 
 .sliderDeck {
   position: relative;
-  min-height: 332px;
+  min-height: 550px;
 }
 
 .slideCard {
@@ -24,12 +24,11 @@
 
 .centerCard {
   position: absolute;
-  left: 435px;
+  left: calc(50% - 275px);
   z-index: 2;
   width: 550px;
   min-height: 550px;
-  margin-left: 20px;
-  margin: 0 auto;
+  margin: 0;
   padding: 380px 28px 28px;
 }
 
@@ -82,11 +81,11 @@
 }
 
 .sideCardLeft {
-  left: 55px;
+  left: calc(50% - 655px);
 }
 
 .sideCardRight {
-  right: 30px;
+  left: calc(50% + 305px);
 }
 
 .navButton {
@@ -140,11 +139,11 @@
 }
 
 .navButtonLeft {
-  left: 14px;
+  left: -20px;
 }
 
 .navButtonRight {
-  right: -8px;
+  right: -20px;
 }
 
 
@@ -235,7 +234,7 @@
 
   .centerCard {
     width: min(100%, 500px);
-    left: 306px;
+    left: calc(50% - 250px);
   }
 
   .sideCard {
@@ -244,25 +243,19 @@
   }
 
   .sideCardLeft {
-    left: -6px;
-  }
-
-  .navButton {
-    width: 70px;
-    height: 70px;
-    top: 220px;
-  }
-
-  .navButtonLeft {
-    left: -30px;
+    left: calc(50% - 570px);
   }
 
   .sideCardRight {
-    right: -30px;
+    left: calc(50% + 270px);
+  }
+
+  .navButtonLeft {
+    left: -20px;
   }
 
   .navButtonRight {
-    right: -60px;
+    right: -20px;
   }
 }
 
@@ -275,7 +268,7 @@
 
   .centerCard {
     width: min(100%, 380px);
-    left: 273px;
+    left: calc(50% - 190px);
   }
 
   .sideCard {
@@ -284,20 +277,19 @@
   }
 
   .sideCardLeft {
-    left: -6px;
-  }
-
-  .navButton {
-    width: 60px;
-    height: 60px;
-  }
-
-  .navButtonLeft {
-    left: -30px;
+    left: calc(50% - 470px);
   }
 
   .sideCardRight {
-    right: -30px;
+    left: calc(50% + 205px);
+  }
+
+  .navButtonLeft {
+    left: -20px;
+  }
+
+  .navButtonRight {
+    right: -20px;
   }
 
   .centerCard .slideContent h3 {
@@ -313,20 +305,15 @@
   }
 
   .sliderDeck {
-    min-height: 284px;
+    min-height: 470px;
   }
 
   .centerCard {
     width: min(100%, 388px);
     padding: 116px 20px 18px;
     min-height: 450px;
-    left: 167px;
+    left: calc(50% - 194px);
     top: 20px;
-  }
-
-  .centerTitleWrap {
-    top: -34px;
-    width: min(calc(100% - 8px), 364px);
   }
 
   .sideCard {
@@ -334,8 +321,22 @@
     min-height: 300px;
   }
 
+  .sideCardLeft {
+    left: calc(50% - 356px);
+    top: 95px;
+  }
+
   .sideCardRight {
-    right: -20px;
+    left: calc(50% + 206px);
+    top: 95px;
+  }
+
+  .navButtonLeft {
+    left: -15px;
+  }
+
+  .navButtonRight {
+    right: -15px;
   }
 
   .navButton {
@@ -398,18 +399,7 @@
   }
 
   .navButton {
-    top: 150px;
-    width: 54px;
-    height: 54px;
-    border-width: 3px;
-  }
-
-  .navButtonLeft {
-    left: 8px;
-  }
-
-  .navButtonRight {
-    right: 8px;
+    display: none;
   }
 
   .centerCard {

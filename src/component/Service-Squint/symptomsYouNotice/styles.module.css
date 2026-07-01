@@ -68,7 +68,7 @@
   flex-direction: column;
   gap: 6px;
   height: 282px;
-  padding: 0 54px 0 0;
+  padding: 0 54px 0 34px;
   overflow-y: auto;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -117,8 +117,11 @@
 
 
 .squint-symptoms__item.is-active {
-  margin-left: 0;
-  border-radius: 24px;
+  margin-left: -34px;
+  margin-right: -34px;
+  padding-left: calc(clamp(26px, 2.6vw, 42px) + 34px);
+  padding-right: calc(clamp(26px, 2.6vw, 42px) + 34px);
+  border-radius: 18px;
   background: #dbeaf2;
   color: #273979;
 }
@@ -170,10 +173,14 @@
 
   .squint-symptoms__item.is-active {
     margin-left: 0;
+    margin-right: 0;
+    padding-left: clamp(26px, 2.6vw, 42px);
+    padding-right: clamp(26px, 2.6vw, 42px);
   }
 
   .squint-symptoms__list {
     padding-right: 28px;
+    padding-left: 0;
   }
 }
 
@@ -207,6 +214,7 @@
   .squint-symptoms__list {
     height: auto;
     padding-right: 0;
+    padding-left: 0;
     overflow: visible;
     scroll-snap-type: none;
   }

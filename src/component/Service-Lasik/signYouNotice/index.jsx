@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SERVICE_LASIK_CONTENT } from "@/constant/serviceLasikContent";
 import styles from "./styles.module.css";
 
 const LasikSignsYouNotice = () => {
   const { signs } = SERVICE_LASIK_CONTENT;
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isProgrammatic, setIsProgrammatic] = useState(false);
+  const listRef = useRef(null);
 
   const updateActiveSign = (event) => {
+    if (isProgrammatic) return;
     const list = event.currentTarget;
     const maxScroll = list.scrollHeight - list.clientHeight;
 
@@ -28,6 +31,24 @@ const LasikSignsYouNotice = () => {
     });
   };
 
+  const handleItemClick = (index) => {
+    setIsProgrammatic(true);
+    setActiveIndex(index);
+    const listNode = listRef.current;
+    if (listNode) {
+      const itemNode = listNode.children[index];
+      if (itemNode) {
+        listNode.scrollTo({
+          top: itemNode.offsetTop - listNode.offsetTop,
+          behavior: "smooth",
+        });
+      }
+    }
+    setTimeout(() => {
+      setIsProgrammatic(false);
+    }, 800);
+  };
+
   return (
     <section className={styles["lasik-signs"]} aria-labelledby="lasik-signs-title">
       <div className={styles["lasik-signs__header"]}>
@@ -47,6 +68,7 @@ const LasikSignsYouNotice = () => {
             <p className={styles["lasik-signs__note"]}>{signs.note}</p>
           )}
           <div
+            ref={listRef}
             className={styles["lasik-signs__list"]}
             aria-label="LASIK criteria"
             onScroll={updateActiveSign}
@@ -57,6 +79,13 @@ const LasikSignsYouNotice = () => {
             <article
               className={`${styles["lasik-signs__item"]} ${index === activeIndex ? styles["is-active"] : ""}`.trim()}
               key={sign.number}
+              onMouseEnter={() => {
+                if (!isProgrammatic) {
+                  setActiveIndex(index);
+                }
+              }}
+              onClick={() => handleItemClick(index)}
+              style={{ cursor: "pointer" }}
             >
               <span className={styles["lasik-signs__number"]}>{sign.number}</span>
               <span className={styles["lasik-signs__divider"]} aria-hidden="true" />

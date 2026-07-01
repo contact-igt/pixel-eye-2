@@ -68,7 +68,7 @@
   flex-direction: column;
   gap: 6px;
   height: 282px;
-  padding: 0 54px 0 0;
+  padding: 0 54px 0 34px;
   overflow-y: auto;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -109,21 +109,19 @@
   align-items: center;
   min-height: 132px;
   padding: 0 58px 0 58px;
-  border-radius: 0 22px 22px 0;
+  border-radius: 22px;
   background: #ecf4f9;
   color: rgba(42, 60, 125, 0.48);
   transition: background-color 280ms ease, color 280ms ease, border-radius 280ms ease;
 }
 
-.lasik-signs__item:first-child {
-  border-radius: 22px;
-}
-
 .lasik-signs__item.is-active {
   min-height: 132px;
   margin-left: -34px;
-  padding-left: 58px;
-  border-radius: 28px;
+  margin-right: -34px;
+  padding-left: 92px;
+  padding-right: 92px;
+  border-radius: 22px;
   background: #dbeaf2;
   color: #273979;
 }
@@ -182,12 +180,19 @@
   .lasik-signs__item,
   .lasik-signs__item.is-active {
     margin-left: 0;
+    margin-right: 0;
+  }
+
+  .lasik-signs__item.is-active {
+    padding-left: 58px;
+    padding-right: 58px;
   }
 
   .lasik-signs__list {
     width: 100%;
     height: 282px;
     padding-right: 28px;
+    padding-left: 0;
   }
 }
 
@@ -208,6 +213,7 @@
     max-height: none;
     height: auto;
     padding-right: 0;
+    padding-left: 0;
     overflow: visible;
     scroll-snap-type: none;
   }

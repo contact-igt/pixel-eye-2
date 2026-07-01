@@ -1,18 +1,21 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SERVICE_SQUINT_CONTENT } from "@/constant/serviceSquintContent";
 import styles from "./styles.module.css";
 
 const SquintSymptoms = () => {
   const { symptoms } = SERVICE_SQUINT_CONTENT;
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isProgrammatic, setIsProgrammatic] = useState(false);
+  const listRef = useRef(null);
 
   const updateActiveSign = (event) => {
+    if (isProgrammatic) return;
     const list = event.currentTarget;
     const maxScroll = list.scrollHeight - list.clientHeight;
 
     if (maxScroll <= 0) {
-      setActiveIndex(1);
+      setActiveIndex(0);
       return;
     }
 
@@ -36,6 +39,24 @@ const SquintSymptoms = () => {
     });
   };
 
+  const handleItemClick = (index) => {
+    setIsProgrammatic(true);
+    setActiveIndex(index);
+    const listNode = listRef.current;
+    if (listNode) {
+      const itemNode = listNode.children[index];
+      if (itemNode) {
+        listNode.scrollTo({
+          top: itemNode.offsetTop - listNode.offsetTop,
+          behavior: "smooth",
+        });
+      }
+    }
+    setTimeout(() => {
+      setIsProgrammatic(false);
+    }, 800);
+  };
+
   return (
     <section className={styles["squint-symptoms"]} aria-labelledby="squint-symptoms-title">
       <div className={styles["squint-symptoms__header"]}>
@@ -56,6 +77,7 @@ const SquintSymptoms = () => {
           <p className={styles["squint-symptoms__note"]}>{symptoms.note}</p>
 
           <div
+            ref={listRef}
             className={styles["squint-symptoms__list"]}
             aria-label="Squint symptoms"
             onScroll={updateActiveSign}
@@ -66,6 +88,13 @@ const SquintSymptoms = () => {
               <article
                 className={`${styles["squint-symptoms__item"]} ${index === activeIndex ? styles["is-active"] : ""}`.trim()}
                 key={symptom.number}
+                onMouseEnter={() => {
+                  if (!isProgrammatic) {
+                    setActiveIndex(index);
+                  }
+                }}
+                onClick={() => handleItemClick(index)}
+                style={{ cursor: "pointer" }}
               >
                 <span className={styles["squint-symptoms__number"]}>{symptom.number}</span>
                 <span className={styles["squint-symptoms__divider"]} aria-hidden="true" />
