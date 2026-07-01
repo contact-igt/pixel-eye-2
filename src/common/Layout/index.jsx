@@ -1,4 +1,4 @@
-﻿import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import BannerNav from "@/common/BannerNav";
 import Footer from "@/common/Footer";
 import styles from "./styles.module.css";
@@ -14,6 +14,7 @@ const PAGES_WITH_OWN_NAV = [
   "/service/squint",
   "/service/keratoconus",
   "/service/lasik",
+  "/service/glaucoma",
   "/thank-you",
   "/error",
 ];

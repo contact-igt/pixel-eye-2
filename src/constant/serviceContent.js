@@ -87,7 +87,7 @@ export const SERVICE_CONTENT = {
         "Monitoring and treatment of conditions that damage the optic nerve, often linked to increased eye pressure. Early detection is key to preventing vision loss.",
       image: "/assets/Service/Glaucoma care.png",
       imageAlt: "Close view of an eye for glaucoma care",
-      href: "/service#glaucoma-care",
+      href: "/service/glaucoma",
       ctaStyle: "outline",
     },
   ],

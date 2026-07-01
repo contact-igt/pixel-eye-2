@@ -1,4 +1,4 @@
-﻿export const NAV_CONTENT = {
+export const NAV_CONTENT = {
   logo: {
     src: "/assets/Header/brandlogo.png",
     alt: "Pixel Eye Hospital",
@@ -38,6 +38,11 @@
       id: "service-lasik",
       label: "LASIK",
       href: "/service/lasik",
+    },
+    {
+      id: "service-glaucoma",
+      label: "Glaucoma",
+      href: "/service/glaucoma",
     },
   ],
   bookAppointment: {

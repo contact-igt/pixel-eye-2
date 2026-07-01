@@ -82,7 +82,7 @@ const LasikPatientExperience = () => {
                           alt="quote icon"
                           width={34}
                           height={24}
-                          style={{ height: "auto" }}
+                          style={{ width: "auto", height: "auto" }}
                           className={styles.quoteImg}
                           aria-hidden="true"
                         />
@@ -126,7 +126,7 @@ const LasikPatientExperience = () => {
                       alt="quote icon"
                       width={34}
                       height={24}
-                      style={{ height: "auto" }}
+                      style={{ width: "auto", height: "auto" }}
                       className={styles.quoteImg}
                       aria-hidden="true"
                     />
