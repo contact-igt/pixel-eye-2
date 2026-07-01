@@ -10,9 +10,9 @@ import styles from "./styles.module.css";
 const ExperienceSection = () => {
   const { titleLines, subtitleLines, image, paragraphs } = ABOUT_CONTENT.experience;
   const sectionRef = useRef(null);
+  const headerRef = useRef(null);
   const imageRef = useRef(null);
   const copyRef = useRef(null);
-  const accentRef = useRef(null);
 
   useEffect(() => {
     if (!sectionRef.current) return undefined;
@@ -24,18 +24,17 @@ const ExperienceSection = () => {
     const mm = gsap.matchMedia();
 
     const ctx = gsap.context(() => {
-
       mm.add("(min-width: 992px)", () => {
-        gsap.set(accentRef.current, { x: -40, opacity: 0 });
-        gsap.set(imageRef.current, { x: -90, opacity: 0 });
-        gsap.set(copyRef.current, { x: 90, opacity: 0 });
+        gsap.set(headerRef.current, { y: 34, opacity: 0 });
+        gsap.set(imageRef.current, { x: -72, opacity: 0 });
+        gsap.set(copyRef.current, { y: 42, opacity: 0 });
 
         const timeline = gsap
           .timeline({ paused: true })
-          .to(accentRef.current, {
-            x: 0,
+          .to(headerRef.current, {
+            y: 0,
             opacity: 1,
-            duration: 0.9,
+            duration: 0.85,
             ease: "power3.out",
           })
           .to(
@@ -46,29 +45,29 @@ const ExperienceSection = () => {
               duration: 1.05,
               ease: "power3.out",
             },
-            "-=0.72"
+            "-=0.55"
           )
           .to(
             copyRef.current,
             {
-              x: 0,
+              y: 0,
               opacity: 1,
               duration: 1.05,
               ease: "power3.out",
             },
-            "-=0.82"
+            "-=0.86"
           );
 
         ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 72%",
+          start: "top 84%",
           once: true,
           onEnter: () => timeline.play(0),
         });
       });
 
       mm.add("(max-width: 991px)", () => {
-        const items = [copyRef.current, imageRef.current];
+        const items = [headerRef.current, copyRef.current, imageRef.current];
         gsap.set(items, { y: 48, opacity: 0 });
 
         const timeline = gsap.timeline({ paused: true }).to(items, {
@@ -81,7 +80,7 @@ const ExperienceSection = () => {
 
         ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 78%",
+          start: "top 86%",
           once: true,
           onEnter: () => timeline.play(0),
         });
@@ -114,7 +113,7 @@ const ExperienceSection = () => {
       aria-labelledby="about-experience-title"
     >
       <div className={styles.careContainer}>
-        <div className={styles.header}>
+        <div ref={headerRef} className={styles.header}>
           <h2 id="about-experience-title" className={styles.title}>
             {renderTitleLines(titleLines)}
           </h2>
@@ -123,7 +122,7 @@ const ExperienceSection = () => {
 
         <div className={styles.content}>
           <div ref={imageRef} className={styles.imageWrap}>
-            <div ref={accentRef} className={styles.backAccent} aria-hidden="true" />
+            <div className={styles.backAccent} aria-hidden="true" />
             <Image
               src={image.src}
               alt={image.alt}

@@ -1,9 +1,0 @@
-.title h3 {
-  width: auto;
-  max-width: 420px;
-  margin: 0;
-  font-size: 48px;
-  line-height: var(--h2-lh);
-  font-weight: 400;
-  color: var(--text-heading);
-}

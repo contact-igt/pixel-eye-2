@@ -1,4 +1,3 @@
-import Title from "@/common/Title";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -14,15 +13,11 @@ const Care = () => {
   return (
     <section className={styles.careSection}>
       <div className={`container ${styles.careContainer}`}>
-        <Title
-          title_line={
-            <>
-              {titleLine1}
-              <br />
-              {titleLine2}
-            </>
-          }
-        />
+        <h2 className={styles.title}>
+          {titleLine1}
+          <br />
+          {titleLine2}
+        </h2>
       </div>
       <div className={styles.careVisual}>
         <div className={styles.panelBg} />

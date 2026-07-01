@@ -48,7 +48,7 @@
 
 /* Large display title — intentionally above --h2-size */
 .title {
-  font-size: 50px;
+  font-size: 48px;
   line-height: 1.25;
   color: var(--text-heading);
   font-weight: 400;
@@ -87,7 +87,19 @@
 /* ─── Large Laptop ──────────────────────────── 1399px ── */
 @media (max-width: 1399px) {
   .title {
-    font-size: 48px;
+    font-size: 40px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr) 560px;
+  }
+
+  .paragraph {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 180px 0 40px 50px;
   }
 }
 
@@ -96,7 +108,18 @@
   .title {
     font-size: 36px;
   }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr) 520px;
+  }
+
+  .paragraph {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
 }
+
+
 
 /* ─── Tablet ────────────────────────────────── 991px ── */
 @media (max-width: 991px) {

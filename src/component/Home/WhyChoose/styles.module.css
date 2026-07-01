@@ -10,7 +10,9 @@
 
 .sectionTitle {
     margin: 0 0 18px;
-    font-size: var(--h2-size);
+    width: auto;
+    max-width: 420px;
+    font-size: 48px;
     line-height: var(--h2-lh);
     font-weight: 500;
     color: var(--text-heading);
@@ -24,11 +26,21 @@
 
 .card {
     position: absolute;
+    top: 0;
+    left: 0;
     border-radius: var(--radius-card-md);
     overflow: hidden;
     isolation: isolate;
     cursor: pointer;
-    transition: transform 0.35s ease, width 0.35s ease, height 0.35s ease, top 0.35s ease, left 0.35s ease, right 0.35s ease;
+    transform-origin: center center;
+    will-change: transform, width, height, top, left, opacity;
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        width 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        top 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        left 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.45s ease;
 }
 
 .cardImage {
@@ -56,7 +68,7 @@
 }
 
 .rightCard {
-    right: 0px;
+    left: calc(100% - 380px);
 }
 
 .centerCard {
@@ -64,7 +76,7 @@
     height: 380px;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1);
     z-index: 3;
 }
 
@@ -211,6 +223,66 @@
 .ctaButton:active .ctaLabel,
 .ctaButton:active .ctaArrow {
     background: #e3e9f3;
+}
+
+
+
+@media (max-width: 1399px) {
+
+    .container {
+        width: min(var(--container-max), calc(100% - 48px));
+    }
+
+    .sectionTitle {
+        font-size: 40px;
+        width: 100%;
+        margin: 0 50px;
+    }
+
+}
+
+
+@media (max-width: 1199px) {
+    .container {
+        width: min(var(--container-max), calc(100% - 32px));
+    }
+
+    .cardsFrame {
+        min-height: 300px;
+    }
+
+    .sideCard {
+        width: 320px;
+        height: 240px;
+        top: 40px;
+    }
+
+    .rightCard {
+        left: calc(100% - 320px);
+    }
+
+    .centerCard {
+        width: 500px;
+        height: 320px;
+    }
+
+    .centerDescription {
+        width: 300px;
+    }
+
+    .ctaRow {
+        margin-top: 60px;
+        margin-right: 0;
+    }
+
+    .ctaButton {
+        margin: 0 auto;
+    }
+
+    .sectionTitle {
+        font-size: 36px;
+    }
+    
 }
 
 @media (max-width: 991px) {

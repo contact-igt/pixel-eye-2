@@ -2,7 +2,6 @@ import Image from "next/image";
 import { HOME_CONTENT } from "@/constant/homeContent";
 import { DOCTORS_CONTENT } from "@/constant/doctorsContent";
 import styles from "./styles.module.css";
-import Title from "@/common/Title";
 
 const Specialist = () => {
   const { specialist } = HOME_CONTENT;
@@ -27,7 +26,6 @@ const Specialist = () => {
         </div>
 
         <h2 className={styles.title}>{title}</h2>
-        {/* <Title title_line={title} /> */}
         <div className={styles.inner}>
           <div className={styles.doctorsWrap}>
             {doctors.map((doc, idx) => (

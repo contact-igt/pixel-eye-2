@@ -20,6 +20,7 @@
     position: absolute;
     top: 19px;
     left: 8px;
+    z-index: 2;
 }
 
 .frame {
@@ -151,10 +152,6 @@
     .image {
         object-fit: contain;
         object-position: center bottom;
-    }
-
-    .visionSection{
-        display :none;
     }
 
 }
