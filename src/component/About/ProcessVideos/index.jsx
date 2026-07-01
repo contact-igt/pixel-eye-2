@@ -12,7 +12,7 @@ const ProcessVideos = () => {
   const { titleLines, description, videos, exploreMore } =
     ABOUT_CONTENT.processVideos;
   const duplicated = [...videos, ...videos, ...videos];
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const [mounted, setMounted] = useState(false);
   const sliderRef = useRef(null);
 
@@ -32,7 +32,7 @@ const ProcessVideos = () => {
     centerPadding: "0px",
     focusOnSelect: true,
     arrows: false,
-    initialSlide: videos.length + 1,
+    initialSlide: videos.length,
     beforeChange: (_, next) => {
       setActive(next % videos.length);
     },
@@ -40,6 +40,10 @@ const ProcessVideos = () => {
       {
         breakpoint: 991,
         settings: { slidesToShow: 2, centerMode: false },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 1.5, centerMode: false },
       },
       {
         breakpoint: 575,
@@ -75,11 +79,13 @@ const ProcessVideos = () => {
                           sliderRef.current?.slickGoTo(i);
                         }}
                       >
-                        <img
-                          src={video.image}
-                          alt={video.title}
-                          className={styles.thumb}
-                        />
+                        <div className={styles.thumbWrap}>
+                          <img
+                            src={video.image}
+                            alt={video.title}
+                            className={styles.thumb}
+                          />
+                        </div>
                         <div className={styles.cardBody}>
                           <h3 className={styles.cardTitle}>{video.title}</h3>
                           <p className={styles.cardText}>{video.description}</p>
@@ -103,11 +109,13 @@ const ProcessVideos = () => {
                     className={styles.card}
                     style={{ transitionDelay: `${index * 120}ms` }}
                   >
-                    <img
-                      src={video.image}
-                      alt={video.title}
-                      className={styles.thumb}
-                    />
+                    <div className={styles.thumbWrap}>
+                      <img
+                        src={video.image}
+                        alt={video.title}
+                        className={styles.thumb}
+                      />
+                    </div>
                     <div className={styles.cardBody}>
                       <h3 className={styles.cardTitle}>{video.title}</h3>
                       <p className={styles.cardText}>{video.description}</p>

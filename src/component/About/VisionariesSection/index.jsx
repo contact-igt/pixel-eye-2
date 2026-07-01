@@ -165,7 +165,7 @@ const VisionariesSection = () => {
             <h2 id="visionaries-title" className={styles.title}>
               {renderLines(titleLines)}
             </h2>
-            <p className={styles.subtitle}>{renderLines(subtitleLines)}</p>
+            <p className={styles.subtitle}>{subtitleLines.join(" ")}</p>
           </header>
 
           <div className={styles.cards}>

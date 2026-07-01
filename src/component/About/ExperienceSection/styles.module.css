@@ -18,9 +18,9 @@
 .title {
   margin: 0;
   color: var(--surface-dark-blue);
-  font-size: clamp(50px, 3.5vw, 64px);
+  font-size: var(--h2-size);
   font-weight: 400;
-  line-height: 1.08;
+  line-height: var(--h2-lh);
   letter-spacing: 0;
 }
 
@@ -110,9 +110,6 @@
     width: min(1240px, calc(100% - 96px));
   }
 
-  .title {
-    font-size: clamp(46px, 3.6vw, 58px);
-  }
 
   .subtitle {
     font-size: clamp(21px, 1.55vw, 23px);
@@ -139,9 +136,6 @@
     margin-bottom: 44px;
   }
 
-  .title {
-    font-size: clamp(40px, 3.8vw, 48px);
-  }
 
   .subtitle {
     font-size: clamp(19px, 1.9vw, 22px);
@@ -186,10 +180,6 @@
     margin-bottom: 42px;
   }
 
-  .title {
-    font-size: clamp(34px, 5vw, 42px);
-    line-height: 1.12;
-  }
 
   .subtitle {
     width: min(100%, 520px);
@@ -239,16 +229,11 @@
   }
 
   .careContainer {
-    width: min(100%, calc(100% - 32px));
+    width: min(100%, calc(100%-20px));
   }
 
   .header {
     margin-bottom: 38px;
-  }
-
-  .title {
-    font-size: clamp(32px, 8.3vw, 38px);
-    line-height: 1.08;
   }
 
   .subtitle {
@@ -296,16 +281,13 @@
   }
 
   .careContainer {
-    width: min(100%, calc(100% - 28px));
+    width: min(100%, calc(100%));
   }
 
   .header {
     margin-bottom: 34px;
   }
 
-  .title {
-    font-size: clamp(30px, 8.2vw, 34px);
-  }
 
   .subtitle,
   .copy {
@@ -327,12 +309,9 @@
 
 @media (max-width: 389px) {
   .careContainer {
-    width: min(100%, calc(100% - 24px));
+    width: min(100%, calc(100%));
   }
 
-  .title {
-    font-size: 29px;
-  }
 
   .subtitle,
   .copy {
@@ -346,5 +325,3 @@
     width: calc(100% + 345px);
   }
 }
-
-
