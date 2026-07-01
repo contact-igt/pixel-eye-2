@@ -370,7 +370,7 @@
 
   .sideMediaWrap {
     width: 100%;
-    height: clamp(207px, 15.4vw, 237px)
+    height: clamp(207px, 15.4vw, 237px);
   }
 
   .sideTitle {
@@ -394,12 +394,12 @@
 
   .featuredMediaWrap .datePill {
     right: 0px;
-    bottom: -5px;
+    bottom: 1px;
   }
 
   .sideMediaCol .datePill {
-    right: 5%;
-    bottom: -4px;
+    right: 7%;
+    bottom: 2px;
   }
 
   .mediaImage {
@@ -453,7 +453,7 @@
   .featuredMediaWrap .datePill {
     position: absolute;
     right: 80px;
-    bottom: 8px;
+    bottom: 10px;
   }
 
   .featuredBody {
@@ -485,7 +485,7 @@
   }
 
   .mobileSlider {
-    margin-right: -18%;
+    width: 100%;
   }
 
   .mobileSlider :global(.slick-list) {
@@ -515,7 +515,7 @@
     justify-content: center;
     gap: 8px;
     height: auto;
-    margin: 8px 18% 0 0;
+    margin: 8px 0 0;
     padding: 0;
     line-height: 1;
   }
@@ -560,8 +560,8 @@
 
   .sideMediaCol .datePill {
     position: absolute;
-    right: 90px;
-    bottom: 50px;
+    right: 80px;
+    bottom: 14%;
   }
 
   .sideContent {
@@ -606,6 +606,20 @@
     flex-basis: 36px;
   }
 }
+@media (min-width: 577px) and (max-width: 768px) {
+  .sideMediaCol {
+    position: relative;
+  }
+
+  .sideMediaWrap {
+    height: clamp(220px, 54vw, 340px);
+  }
+
+  .sideMediaCol .datePill {
+    right: 55px;
+    bottom: 25px;
+  }
+}
 @media (max-width: 576px) {
   .inner {
     width: min(1600px, calc(100% - 30px));
@@ -615,10 +629,11 @@
   }
   .featuredMediaWrap .datePill {
     right: 30px;
+    bottom: 0px;
   }
   .sideMediaCol .datePill {
-    right: 50px;
-    bottom: 15px;
+    right: 35px;
+    bottom: 28px;
   }
 }
 @media (max-width: 430px) {
@@ -630,8 +645,8 @@
     bottom: 2px;
   }
   .sideMediaCol .datePill {
-    right: 30px;
-    bottom: 8px;
+    right: 15px;
+    bottom: 18px;
   }
 }
 
@@ -672,4 +687,9 @@
     height: 34px;
     flex-basis: 34px;
   }
+    .sideMediaCol .datePill {
+    right: 15px;
+    bottom: 20px;
+  }
 }
+

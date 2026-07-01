@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   width: 100%;
   padding: var(--section-pt) var(--section-px) var(--section-pb);
 }
@@ -60,14 +60,26 @@
 }
 
 .row {
-  display: grid;
-  grid-template-columns: minmax(360px, 480px) minmax(0, 1fr);
-  column-gap: clamp(20px, 2vw, 28px);
-  align-items: stretch;
-}
+  --visionary-media-width: 480px;
+  --visionary-content-width: 716px;
+  --visionary-card-gap: 26px;
 
+  display: grid;
+  width: 100%;
+  max-width: calc(
+    var(--visionary-media-width) + var(--visionary-content-width) + var(--visionary-card-gap)
+  );
+  margin: 0;
+  grid-template-columns: minmax(430px, var(--visionary-media-width)) minmax(0, var(--visionary-content-width));
+  column-gap: var(--visionary-card-gap);
+  align-items: stretch;
+  justify-content: start;
+}
+.cardBlock:first-child .row {
+  --visionary-card-gap: 70px;
+}
 .rowReverse {
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 480px);
+  grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(430px, var(--visionary-media-width));
 }
 
 .rowReverse .mediaSection {
@@ -85,6 +97,7 @@
   border-radius: 20px;
   overflow: visible;
   will-change: transform, opacity;
+  z-index: 1;
 }
 
 .rowReverse .mediaSection {
@@ -116,6 +129,7 @@
   object-fit: contain;
   object-position: left bottom;
   will-change: transform, opacity;
+  z-index: 1;
 }
 
 .rowReverse .image {
@@ -134,6 +148,7 @@
   padding: clamp(14px, 1.7vw, 22px) clamp(14px, 1.8vw, 26px);
   color: var(--surface-dark-blue);
   will-change: transform, opacity;
+  z-index: 2;
 }
 
 .infoPanelRight {
@@ -175,13 +190,15 @@
   color: var(--text-body);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   will-change: transform, opacity;
+  position: relative;
+  z-index: 0;
 }
 
 .contentSection p {
   margin: 0 0 22px;
-  font-size: clamp(16px, 1.25vw, 18.5px);
+  font-size: clamp(15.5px, 1vw, 17.5px);
   font-weight: 400;
   line-height: 1.32;
 }
@@ -212,6 +229,42 @@
   transform: scaleX(1);
 }
 
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .row {
+    --visionary-media-width: 440px;
+    --visionary-content-width: 646px;
+    --visionary-card-gap: 26px;
+
+    grid-template-columns: minmax(400px, var(--visionary-media-width)) minmax(0, var(--visionary-content-width));
+  }
+
+  .cardBlock:first-child .row {
+  --visionary-card-gap: 70px;
+}
+
+  .rowReverse {
+    grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(400px, var(--visionary-media-width));
+  }
+
+  .contentSection {
+    padding: 32px 34px;
+  }
+
+  .contentSection p {
+    margin-bottom: 18px;
+    font-size: 15.5px;
+    line-height: 1.34;
+  }
+
+  .name {
+    font-size: 19px;
+  }
+
+  .degree,
+  .spec {
+    font-size: 15px;
+  }
+}
 @media (max-width: 1199px) {
   .row,
   .rowReverse {
@@ -397,3 +450,12 @@
     font-size: 12px;
   }
 }
+
+
+
+
+
+
+
+
+

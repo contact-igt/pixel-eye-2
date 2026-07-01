@@ -60,6 +60,9 @@ const SuggestedReads = () => {
     speed: 450,
     slidesToShow: 1.5,
     slidesToScroll: 1,
+    centerMode: false,
+    centerPadding: "0px",
+    variableWidth: false,
     swipeToSlide: true,
     accessibility: true,
   };
