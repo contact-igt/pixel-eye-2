@@ -16,8 +16,8 @@
 .title {
   margin: 0;
   color: var(--text-heading);
-  font-size: var(--title-size);
-  line-height: var(--title-lh);
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
   font-weight: 400;
 }
 
@@ -270,7 +270,7 @@
 
 @media (max-width: 767px) {
   .inner {
-    width: min(1600px, calc(100% - 20px));
+    width: min(1600px, calc(100% - 40px));
   }
 
   .description {
@@ -330,7 +330,7 @@
 
 @media (max-width: 575px) {
   .inner {
-    width: min(1600px, calc(100% - 32px));
+    width: min(1600px, calc(100% - 40px));
   }
 
   .slideOuter {
