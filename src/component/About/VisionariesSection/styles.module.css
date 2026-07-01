@@ -93,7 +93,7 @@
 .mediaSection {
   position: relative;
   min-height: 0;
-  aspect-ratio: 48 / 47;
+  aspect-ratio: 39 / 47;
   border-radius: 20px;
   overflow: visible;
   will-change: transform, opacity;
@@ -211,6 +211,7 @@
   color: var(--surface-dark-blue);
   font-weight: 700;
 }
+
 .divider {
   width: 100%;
   height: 1px;
@@ -229,13 +230,14 @@
   transform: scaleX(1);
 }
 
-@media (min-width: 1200px) and (max-width: 1399px) {
+@media (min-width: 1200px) and (max-width: 1400px) {
   .row {
     --visionary-media-width: 440px;
     --visionary-content-width: 646px;
     --visionary-card-gap: 26px;
 
     grid-template-columns: minmax(400px, var(--visionary-media-width)) minmax(0, var(--visionary-content-width));
+    align-items: start;
   }
 
   .cardBlock:first-child .row {
@@ -244,6 +246,13 @@
 
   .rowReverse {
     grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(400px, var(--visionary-media-width));
+  }
+
+  .mediaSection,
+  .rowReverse .mediaSection {
+    width: min(100%, var(--visionary-media-width));
+    max-width: 100%;
+    align-self: start;
   }
 
   .contentSection {
@@ -256,6 +265,10 @@
     line-height: 1.34;
   }
 
+  
+.rowReverse .mediaSection {
+  aspect-ratio: 42 / 49;
+}
   .name {
     font-size: 19px;
   }
@@ -265,6 +278,7 @@
     font-size: 15px;
   }
 }
+
 @media (max-width: 1199px) {
   .row,
   .rowReverse {
@@ -450,6 +464,9 @@
     font-size: 12px;
   }
 }
+
+
+
 
 
 
