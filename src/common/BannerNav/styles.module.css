@@ -703,18 +703,40 @@
   color: #7fa8be;
 }
 
+
+
+
 /* ─── Large Laptop ──────────────────────────── 1399px ── */
 @media (max-width: 1399px) {
   .rightCard {
-    padding-left: 4rem;
+    padding-left: 25px;
   }
+
+  .inner {
+    grid-template-columns: clamp(200px, 19vw, 274px) 1fr clamp(200px, 22vw, 320px);
+  }
+
 }
 
 /* ─── Laptop ────────────────────────────────── 1199px ── */
 @media (max-width: 1199px) {
-  .rightCard {
-    padding-left: 3rem;
+
+  .inner {
+    grid-template-columns: clamp(180px, 19vw, 274px) 1fr clamp(200px, 22vw, 320px);
   }
+
+  .bannerNav {
+    top: 20px;
+  }
+
+  .logoCard {
+    padding-left: 20px;
+  }
+
+  .rightCard {
+    padding-right: 20px;
+  }
+
 }
 
 /* ─── Tablet ────────────────────────────────── 991px ── */

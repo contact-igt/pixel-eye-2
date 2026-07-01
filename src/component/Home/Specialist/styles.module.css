@@ -4,12 +4,11 @@
 }
 
 .frame {
-    max-width: var(--container-max);
     margin: 0 auto;
     border-radius: var(--radius-card-md);
     overflow: hidden;
     position: relative;
-    height: 600px;
+    height: 700px;
     background: #6ea0b5;
 }
 
@@ -18,12 +17,13 @@
     top: 180px;
     bottom: 0;
     left: 1px;
-    width: 250px;
+    width: 290px;
     overflow: hidden;
     z-index: 1;
     pointer-events: none;
-    height: 500px;
+    height: 560px;
 }
+
 
 .bgImage {
     position: absolute;
@@ -44,7 +44,7 @@
 }
 
 .title {
-    margin: 80px 0 12px 150px;
+    margin: 80px 0 12px 190px;
     color: #ffffff;
     text-align: start;
     font-size: 45px;
@@ -175,6 +175,31 @@
 
 }
 
+
+@media (max-width: 1599px) {
+
+    .doctorHoverCard {
+        position: absolute;
+        left: 73%;
+        top: 25px;
+        width: 370px;
+        height: 193px;
+        padding: 50px 70px;
+    }
+
+    .doctorHoverCard2 {
+        position: absolute;
+        left: 20%;
+        top: 25px;
+        width: 370px;
+        height: 193px;
+        padding: 30px 70px;
+    }
+
+}
+
+
+
 @media (max-width: 1399px) {
     .doctor {
         flex-direction: column-reverse;
@@ -198,6 +223,90 @@
         top: 0;
         width: 220px;
     }
+
+    .bgWrap {
+        position: absolute;
+        top: 180px;
+        left: 1px;
+        width: 250px;
+        height: 510px;
+    }
+
+    .left {
+        left: 0;
+    }
+
+    .right {
+        right: -30px;
+    }
+
+    .doctorHoverCard {
+        top: 26px;
+        width: 300px;
+        left: 86%;
+        width: 340px;
+        height: 193px;
+        padding: 35px 50px;
+
+    }
+
+    .doctorHoverCard2 {
+        top: 26px;
+        width: 300px;
+        left: 10%;
+        width: 340px;
+        height: 193px;
+        padding: 40px;
+
+    }
+
+}
+
+
+
+@media (max-width: 1199px) {
+    .frame {
+        height: 600px;
+    }
+
+
+    .bgWrap {
+        top: 180px;
+        left: 1px;
+        width: 210px;
+        height: 460px;
+    }
+
+    .doctor {
+        width: 300px;
+        height: 320px;
+    }
+
+    .doctorHoverCard {
+        top: 59px;
+        width: 300px;
+        left: 99%;
+        width: 289px;
+        height: 170px;
+        padding: 35px 45px;
+    }
+
+    .doctorHoverCard2 {
+        top: 59px;
+        width: 300px;
+        left: 1%;
+        width: 289px;
+        height: 170px;
+        padding: 15px 45px;
+    }
+    .title {
+        margin: 80px 0 12px 150px;
+        font-size: 40px;
+    }
+
+   .doctorHoverName{
+    font-size: 20px;
+   }
 }
 
 @media (max-width: 991px) {

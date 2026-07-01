@@ -181,16 +181,70 @@
   background: #edf2f8;
 }
 
+
+
+
+@media(max-width: 1599px) {
+  .bookArea {
+    right: -0.5%;
+    min-width: 270px;
+  }
+
+
+}
+
+
+
 @media (max-width: 1399px) {
   .bookArea {
-    right: -1.4%;
+    right: -3px;
+    min-width: 230px;
+    bottom: -12px;
   }
+
+  .heroContent {
+    top: 30%;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+    line-height: 52px;
+  }
+
 }
+
+
 
 @media (max-width: 1199px) {
   .bookArea {
-    right: 20%;
+    right: 0%;
+    min-width: 190px;
+    bottom: -15px;
   }
+
+  .bookButton {
+
+    height: 47px;
+    font-size: 12px;
+    font-weight: 500;
+
+  }
+
+
+  .heroText {
+    max-width: 400px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+
+
+
 }
 
 /* ── Tablet ── */
@@ -215,6 +269,17 @@
     border-radius: var(--radius-hero);
     /* Add min-height only on tablet/mobile since image may be too short */
     min-height: 450px;
+  }
+
+  .bannerImageViewport {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+
+  .bannerImageTrack,
+  .bannerImageSlide {
+    height: 100%;
   }
 
   /* On small screens the image must be absolutely positioned to fill the min-height */
@@ -270,6 +335,9 @@
   }
 }
 
+
+
+
 @media (max-width: 575px) {
   .heroCta {
     --btn-icon-left: 140px;
@@ -297,6 +365,17 @@
   .bannerFrame {
     min-height: 450px;
     border-radius: var(--radius-hero);
+  }
+
+  .bannerImageViewport {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+
+  .bannerImageTrack,
+  .bannerImageSlide {
+    height: 100%;
   }
 
   .heroContent {

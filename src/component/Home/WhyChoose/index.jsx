@@ -4,7 +4,6 @@ import { ArrowUpRight } from "lucide-react";
 import { HOME_CONTENT } from "@/constant/homeContent";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
-import Title from "@/common/Title";
 
 const WhyChoose = () => {
   const { whyChoose } = HOME_CONTENT;
@@ -15,7 +14,7 @@ const WhyChoose = () => {
   return (
     <section className={styles.whyChooseSection}>
       <div className={styles.container}>
-        <Title title_line={<>{title}</>} />
+        <h2 className={styles.sectionTitle}>{title}</h2>
 
         <div className={styles.cardsFrame}>
           {cards.map((card, index) => {

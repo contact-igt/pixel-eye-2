@@ -4,7 +4,7 @@
 }
 
 .container {
-  max-width: var(--container-max);
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -23,7 +23,7 @@
   position: relative;
   z-index: 2;
   margin: 0 0 0;
-  font-size: var(--h2-size);
+  font-size: 48px;
   line-height: var(--h2-lh);
   color: var(--text-heading);
   font-weight: 500;
@@ -244,10 +244,24 @@
   background: #e9edf5;
 }
 
+
+
+@media (max-width: 1399px){
+
+  .title {
+    font-size: 40px;
+  }
+
+}
+
 /* ── Responsive ──────────────────────────────── */
 @media (max-width: 1199px) {
   .cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .title {
+    font-size: 36px;
   }
 }
 

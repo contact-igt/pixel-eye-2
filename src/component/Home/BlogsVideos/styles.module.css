@@ -11,24 +11,24 @@
 .title {
   margin: 0;
   color: var(--text-heading);
-  font-size: var(--h2-size);
+  font-size: 48px;
   line-height: var(--h2-lh);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .subtitle {
-  margin: 16px 0 0;
+  margin: 20px 0 0;
   max-width: 760px;
-  color: var(--text-muted);
-  font-size: var(--p-size);
+  color: #515f7d;
+  font-size: 20px;
   line-height: var(--p-lh);
 }
 
 .grid {
-  margin-top: 36px;
+  margin-top: 80px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px 32px;
+  gap: 60px;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -53,7 +53,6 @@
 .cardOverlayText {
   position: absolute;
   left: 40%;
-  right: 20%;
   top: 10%;
   bottom: 0;
   display: flex;
@@ -62,18 +61,19 @@
   font-size: 18.5px;
   font-weight: 500;
   line-height: 1.35;
-  padding: 0 45px 0 10px;
+  padding: 0 45px 0 55px;
   pointer-events: none;
   z-index: 3;
 }
 
 .itemTitle {
-  margin: 15px 0 0;
-  color: #2a3f7e;
-  font-size: 18px;
-  line-height: 1.35;
-  font-weight: 500;
-  text-align: left;
+    margin: 15px 0 0;
+    color: #2a3f7e;
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 500;
+    text-align: left;
+    width: 350px;
 }
 
 .ctaRow {
@@ -129,6 +129,17 @@
   background: #e3e9f3;
 }
 
+
+@media (max-width: 1399px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+}
+
 /* ─── Laptop ────────────────────────────────── 1199px ── */
 @media (max-width: 1199px) {
   .cardOverlayText {
@@ -138,6 +149,22 @@
 
   .grid {
     max-width: 900px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .cardOverlayText {
+    font-size: 16px;
+    padding: 0px;
+    width: 150px;
+    left: 60% ;
+
   }
 }
 

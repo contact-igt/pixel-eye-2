@@ -158,10 +158,37 @@
   background: #e5ecf5;
 }
 
+
+
+@media (max-width: 1399px) {
+  .heroContent {
+    top: 24%;
+    max-width: 520px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .bannerFrame {
+    height: 400px;
+  }
+}
+
+
+
 @media (max-width: 1199px) {
   .heroContent {
     top: 24%;
     max-width: 520px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .bannerFrame {
+    height: 360px;
   }
 }
 
