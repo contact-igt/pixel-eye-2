@@ -555,6 +555,40 @@
     font-size: 24px;
   }
 
+  .terms-row,
+  .checkbox-row,
+  .consent-long {
+    align-items: flex-start;
+  }
+
+  .checkbox-row {
+    gap: 14px;
+    line-height: 1.28;
+  }
+
+  .checkbox-row input {
+    margin-top: 2px;
+  }
+
+  .terms-row {
+    min-height: auto;
+    margin-top: 4px;
+  }
+
+  .consent-list {
+    gap: 18px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .consent-long span {
+    max-width: none;
+  }
+
+  .submit-area {
+    padding-top: 6px;
+  }
+
   .submitButton {
     --btn-icon-left: 125px;
   }
@@ -577,6 +611,14 @@
   .form-grid {
     gap: 14px;
     margin-top: 20px;
+  }
+
+  .checkbox-row {
+    gap: 12px;
+  }
+
+  .consent-list {
+    gap: 16px;
   }
 
   .form-watermark {

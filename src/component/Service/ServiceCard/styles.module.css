@@ -5,9 +5,13 @@
 
 .card {
   display: grid;
-  grid-template-columns: minmax(220px, 28%) minmax(340px, 1fr) minmax(320px, 406px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 406px);
+  grid-template-areas:
+    "title image"
+    "details image";
   column-gap: clamp(44px, 6vw, 118px);
-  align-items: center;
+  row-gap: 28px;
+  align-items: start;
   width: min(var(--container-max), calc(100% - 48px));
   min-height: 322px;
   margin: 0 auto;
@@ -21,6 +25,7 @@
 }
 
 .title {
+  grid-area: title;
   max-width: 380px;
   margin: 0;
   color: var(--text-heading);
@@ -32,8 +37,9 @@
 }
 
 .details {
+  grid-area: details;
   display: grid;
-  align-content: center;
+  align-content: start;
   max-width: 460px;
   color: var(--text-body);
 }
@@ -70,6 +76,8 @@
 }
 
 .imageWrap {
+  grid-area: image;
+  align-self: center;
   justify-self: end;
   width: 100%;
   max-width: 406px;
@@ -87,18 +95,16 @@
   object-position: center;
 }
 
-/* xxl → xl — 1200–1399px: slight tightening */
-@media (max-width: 1399px) {
+@media (max-width: 1400px) {
   .card {
     column-gap: clamp(40px, 5.5vw, 100px);
     padding: clamp(52px, 3.8vw, 70px) clamp(44px, 4.5vw, 72px);
   }
 }
 
-/* xl → lg — 992–1199px: safe 3-col without squeezing */
 @media (max-width: 1199px) {
   .card {
-    grid-template-columns: minmax(140px, 180px) minmax(0, 1fr) minmax(240px, 320px);
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
     column-gap: clamp(20px, 2.8vw, 52px);
     width: min(var(--container-max), calc(100% - 40px));
     padding: clamp(40px, 3.5vw, 60px) clamp(28px, 3.5vw, 52px);
@@ -120,31 +126,36 @@
 @media (max-width: 991px) {
   .card {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "details"
+      "image";
+    justify-items: start;
     row-gap: 24px;
-    width: min(var(--container-max), calc(100% - 32px));
+    width: min(840px, calc(100% - 40px));
     min-height: 0;
-    padding: 46px;
+    padding: 40px;
   }
 
   .title {
-    order: 1;
-    max-width: 100%;
-  }
-
-  .imageWrap {
-    order: 2;
-    justify-self: start;
-    width: min(520px, 100%);
+    width: 100%;
     max-width: 100%;
   }
 
   .details {
-    order: 3;
-    max-width: 560px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .details p {
     min-height: 0;
+  }
+
+  .imageWrap {
+    justify-self: center;
+    align-self: start;
+    width: min(720px, 100%);
+    max-width: 720px;
   }
 }
 
@@ -180,5 +191,12 @@
   .linkCta span:first-child {
     min-width: 0;
     padding: 0 18px;
+  }
+}
+
+@media (max-width: 390px) {
+  .card {
+    width: calc(100% - 16px);
+    padding: 24px 16px;
   }
 }
