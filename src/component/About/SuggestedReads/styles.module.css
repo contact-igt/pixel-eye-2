@@ -83,7 +83,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 34px;
-  height: clamp(300px, 30vw, 430px);
+  height: clamp(300px, 27vw, 430px);
 }
 
 .mediaImage {
@@ -284,7 +284,7 @@
   }
 
   .featuredMedia {
-    height: clamp(280px, 30vw, 360px);
+    height: clamp(280px, 26vw, 360px);
   }
 
   .featuredTitle {
