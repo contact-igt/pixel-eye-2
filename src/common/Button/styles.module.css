@@ -37,7 +37,7 @@
 .icon {
     width: var(--btn-icon);
     height: var(--btn-icon);
-    margin-left: -8px;
+    margin-left: -9px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
@@ -126,3 +126,5 @@
 .dark:hover .icon {
     background: #1c3366;
 }
+
+

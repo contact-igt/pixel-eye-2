@@ -21,6 +21,7 @@ const Button = ({
   type = "button",
   className = "",
   disabled = false,
+  ariaLabel,
 }) => {
   const variantClass = styles[variant] ?? styles.light;
   const rootClass = `${styles.btn} ${variantClass} ${className}`.trim();
@@ -42,6 +43,7 @@ const Button = ({
         onClick={onClick}
         disabled={disabled}
         aria-disabled={disabled}
+        aria-label={ariaLabel}
       >
         {inner}
       </button>
@@ -49,7 +51,7 @@ const Button = ({
   }
 
   return (
-    <Link href={href} className={rootClass}>
+    <Link href={href} className={rootClass} aria-label={ariaLabel}>
       {inner}
     </Link>
   );

@@ -38,11 +38,17 @@ export default function Banner() {
                 key={`${slide.image.src}-${index}`}
                 className={styles.bannerImageSlide}
               >
-                <img
-                  src={slide.image.src}
-                  alt={slide.image.alt}
-                  className={styles.bannerImage}
-                />
+                <picture>
+                  <source
+                    media="(max-width: 767px)"
+                    srcSet={slide.image.mobileSrc || slide.image.src}
+                  />
+                  <img
+                    src={slide.image.src}
+                    alt={slide.image.alt}
+                    className={styles.bannerImage}
+                  />
+                </picture>
               </div>
             ))}
           </div>
