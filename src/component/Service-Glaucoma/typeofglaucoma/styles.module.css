@@ -14,7 +14,7 @@
   position: relative;
   min-height: clamp(310px, 20.5vw, 386px);
   overflow: hidden;
-  border-radius: 18px 18px 0 0;
+  border-radius: 18px;
 }
 
 .types-glaucoma__image {
@@ -56,7 +56,7 @@
   position: relative;
   z-index: 3;
   width: 100%;
-  margin-top: -180px;
+  margin-top: -105px;
   padding: 0 clamp(28px, 4.8vw, 74px);
 }
 
@@ -200,7 +200,7 @@
       height: 460px;
     }
     .types-glaucoma__stage{
-      margin-top: -160px;
+      margin-top: -95px;
     }
 }
 
@@ -215,7 +215,7 @@
   }
 
   .types-glaucoma__stage {
-    margin-top: -140px;
+    margin-top: -96px;
     padding: 0 54px;
   }
 
@@ -252,7 +252,7 @@
   }
 
   .types-glaucoma__stage {
-    margin-top: -110px;
+    margin-top: -72px;
     padding: 0 48px;
   }
 
@@ -296,7 +296,7 @@
 
   .types-glaucoma__hero {
     min-height: 260px;
-    border-radius: 16px 16px 0 0;
+    border-radius: 16px;
   }
 
   .types-glaucoma__image {
@@ -314,7 +314,7 @@
   }
 
   .types-glaucoma__stage {
-    margin-top: -80px;
+    margin-top: -42px;
     padding: 0 48px;
   }
 
@@ -350,7 +350,7 @@
 
   .types-glaucoma__hero {
     min-height: 230px;
-    border-radius: 14px 14px 0 0;
+    border-radius: 14px;
   }
 
   .types-glaucoma__copy {

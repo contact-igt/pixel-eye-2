@@ -86,7 +86,7 @@ export const SERVICE_GLAUCOMA_CONTENT = {
         description:
             "Different types of glaucoma affect the eye in different ways. Identifying the type helps plan the right treatment.",
         image: {
-            src: "/assets/Service/glaucoma/typesofglaucoma.png",
+            src: "/assets/Service/glaucoma/types.png",
             alt: "Types of Glaucoma",
         },
         controls: {
@@ -98,19 +98,19 @@ export const SERVICE_GLAUCOMA_CONTENT = {
                 id: "Open-Angle Glaucoma",
                 title: "Open-Angle Glaucoma",
                 description: "The most common type of glaucoma. It usually develops slowly and may not cause noticeable symptoms in the early stage.",
-                image: "/assets/Service/glaucoma/openangle.png",
+                image: "/assets/Service/glaucoma/open-angle.png",
             },
             {
                 id: "Normal-Tension Glaucoma",
                 title: "Normal-Tension Glaucoma",
                 description: "In this type, optic nerve damage happens even when eye pressure is not very high.",
-                image: "/assets/Service/glaucoma/normaltension.png",
+                image: "/assets/Service/glaucoma/normal-tension.png",
             },
             {
                 id: "Angle-Closure Glaucoma",
                 title: "Angle-Closure Glaucoma",
                 description: "This type can happen when the drainage angle of the eye becomes blocked.",
-                image: "/assets/Service/glaucoma/angleclosure.png",
+                image: "/assets/Service/glaucoma/angle-closure.png",
             },
         ],
     },
@@ -121,6 +121,11 @@ export const SERVICE_GLAUCOMA_CONTENT = {
             "A glaucoma evaluation includes more than just checking eye pressure. The doctor examines the optic nerve, drainage angle, vision field, and structural health of the eye.",
         ],
         media: [
+            {
+                title: "Cover Test",
+                image: "/assets/Service/squint/diagnosed_image1.png",
+                alt: "Cover test illustration",
+            },
             {
                 title: "Corneal Light Reflex Test",
                 image: "/assets/Service/squint/diagnosed_image2.png",

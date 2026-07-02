@@ -1,4 +1,4 @@
-.squint-diagnosis,
+﻿.squint-diagnosis,
 .squint-diagnosis * {
   box-sizing: border-box;
 }
@@ -15,7 +15,8 @@
   gap: clamp(10px, 2vw, 10px);
   align-items: start;
   min-height: 980px;
-  padding: clamp(60px, 6vw, 60px) clamp(30px, 0.1vw, 30px) clamp(60px, 5vw, 80px) clamp(50px, 5vw, 80px);
+  padding: clamp(60px, 6vw, 60px) clamp(30px, 0.1vw, 30px)
+    clamp(60px, 5vw, 80px) clamp(50px, 5vw, 80px);
   overflow: hidden;
   border-radius: clamp(30px, 3.2vw, 52px);
   background-image: url("/assets/Service/squint/squint_diagnosed_bgimage.png");
@@ -62,8 +63,7 @@
 
 .squint-diagnosis__media-card {
   position: relative;
-  width: 80%;
-  max-width: 360px;
+  width: 90%;
   margin: 0;
 }
 
@@ -132,7 +132,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
   align-items: start;
-  margin-top: -280px;
+  margin-top: -500px;
   width: 100%;
   padding: 0 0 2px;
 }
@@ -142,7 +142,8 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
-  padding: clamp(34px, 3.2vw, 48px) clamp(30px, 2.8vw, 44px) clamp(34px, 2.8vw, 44px);
+  padding: clamp(34px, 3.2vw, 48px) clamp(30px, 2.8vw, 44px)
+    clamp(34px, 2.8vw, 44px);
   overflow: hidden;
   border-radius: 28px;
   background: rgba(217, 217, 217, 1);
@@ -152,24 +153,24 @@
 .squint-diagnosis__treatment-card:nth-child(1) {
   grid-column: 1;
   grid-row: 1;
-  min-height: 480px;
+  min-height: 650px;
   width: 99%;
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .squint-diagnosis__treatment-card:nth-child(2) {
   grid-column: 1;
   grid-row: 2;
-  min-height: 400px;
-  margin-top: 30px;
-  width: 99%;
+  min-height: 625px;
+  margin-top: -10px;
+    width: 99%;
 }
 
 .squint-diagnosis__treatment-card:nth-child(3) {
   grid-column: 2;
   grid-row: 2;
-  min-height: 400px;
-  margin-top: 30px;
+  min-height: 480px;
+  margin-top: -240px;
   width: 100%;
 }
 
@@ -182,8 +183,8 @@
   aspect-ratio: 750/320;
 }
 
-.squint-diagnosis__treatment-card--highlight {
-  background-image: url("/assets/Service/glaucoma/segmentation_bgimage.png");
+.squint-diagnosis__treatment-card--highlight { 
+  background-image: url("/assets/Service/squint/segmentation_bgimage.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -199,12 +200,10 @@
   position: relative;
   display: block;
 }
-
 .squint-diagnosis__treatment-card:nth-child(4) h3 {
   margin: 0 clamp(20px, 15vw, 200px) clamp(20px, 1.8vw, 30px) 0;
   align-self: flex-end;
 }
-
 .squint-diagnosis__treatment-card h3 span {
   display: inline-block;
   margin-right: 5px;
@@ -489,10 +488,12 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(180deg,
-      rgba(245, 248, 252, 0.84) 0%,
-      rgba(245, 248, 252, 0.12) 42%,
-      rgba(245, 248, 252, 0.9) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 248, 252, 0.84) 0%,
+    rgba(245, 248, 252, 0.12) 42%,
+    rgba(245, 248, 252, 0.9) 100%
+  );
 }
 
 .squint-diagnosis__treatment-image {
@@ -514,21 +515,20 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: clamp(34px, 3.2vw, 48px) clamp(30px, 2.8vw, 44px) clamp(34px, 2.8vw, 44px);
+  padding: clamp(34px, 3.2vw, 48px) clamp(30px, 2.8vw, 44px)
+    clamp(34px, 2.8vw, 44px);
 }
 
 .squint-diagnosis__treatment-card:nth-child(1) {
-  min-height: 480px;
+  min-height: 650px;
 }
-
-.squint-diagnosis__treatment-card:nth-child(2) {
-  min-height: 400px;
-  margin-top: 30px;
+.squint-diagnosis__treatment-card:nth-child(2){
+  min-height: 540px;
+  margin-top: -25px;
 }
-
 .squint-diagnosis__treatment-card:nth-child(3) {
-  min-height: 400px;
-  margin-top: 30px;
+  min-height: 560px;
+  margin-top: -255px;
 }
 
 .squint-diagnosis__treatment-card:nth-child(4) {
@@ -569,66 +569,56 @@
   max-width: 1180px;
 }
 
-@media (max-width: 1400px) {
-  .squint-diagnosis__treatment-card:nth-child(1) {
-    margin-top: 30px;
-  }
-
-  .squint-diagnosis__treatment-card:nth-child(2) {
-    margin-top: 30px;
-  }
-
-  .squint-diagnosis__panel {
-    min-height: 850px;
-    width: 100%;
-  }
-
-  .squint-diagnosis__media-card {
-    width: 80%;
-  }
-
-  .squint-diagnosis__media-frame {
-    max-height: 220px;
-  }
-
-  .squint-diagnosis__media-label {
-    bottom: -11px;
-  }
-
-  .squint-diagnosis__treatment-card:nth-child(3) {
-    min-height: 400px;
-    margin-top: 30px;
-  }
-
-  .squint-diagnosis__treatment-card:nth-child(4) {
-    margin-top: 30px !important;
-  }
+@media (max-width: 1400px){
+    .squint-diagnosis__treatment-card:nth-child(1){
+      margin-top: 60px;
+    }
+    .squint-diagnosis__treatment-card:nth-child(2){
+      margin-top: -30px;
+    }
+    .squint-diagnosis__panel{
+      min-height: 850px;
+      width: 100%;
+    }
+    .squint-diagnosis__media-card{
+      width: 85%;
+    }
+    .squint-diagnosis__media-frame {
+      max-height: 220px;
+    }
+    .squint-diagnosis__media-label{
+      bottom: -11px;
+    }
+      .squint-diagnosis__treatment-card:nth-child(3){
+        min-height: 655px;
+      margin-top: -230px;
+    }
+    
+     .squint-diagnosis__treatment-card:nth-child(4){
+      margin-top: -230px !important;
+    }
 }
-
 @media (max-width: 1200px) {
-
   .squint-diagnosis__treatment-card:nth-child(1),
   .squint-diagnosis__treatment-card:nth-child(2) {
-    min-height: 380px;
+    min-height: 525px;
   }
 
   .squint-diagnosis__treatment-card:nth-child(3) {
-    min-height: 380px;
-    margin-top: 24px;
+    min-height: 500px;
+    margin-top: -180px;
   }
 
   .squint-diagnosis__treatment-card:nth-child(4) {
-    min-height: 250px;
-    margin-top: 30px;
+    min-height: 310px;
+    margin-top: -96px;
   }
-
   .squint-diagnosis__media-frame {
-    max-height: 200px;
-  }
+      max-height: 200px;
+    }
 }
 
 @media (max-width: 992px) {
-
   .squint-diagnosis__treatment-content,
   .squint-diagnosis__treatment-card:nth-child(4) .squint-diagnosis__treatment-content {
     padding: 28px;
@@ -646,7 +636,6 @@
 }
 
 @media (max-width: 576px) {
-
   .squint-diagnosis__treatment-content,
   .squint-diagnosis__treatment-card:nth-child(4) .squint-diagnosis__treatment-content {
     padding: 22px;
@@ -677,10 +666,12 @@
 }
 
 .squint-diagnosis__treatment-card::after {
-  background: linear-gradient(180deg,
-      rgba(245, 248, 252, 0.08) 0%,
-      rgba(245, 248, 252, 0.24) 42%,
-      rgba(245, 248, 252, 0.96) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 248, 252, 0.08) 0%,
+    rgba(245, 248, 252, 0.24) 42%,
+    rgba(245, 248, 252, 0.96) 100%
+  );
 }
 
 /* .squint-diagnosis__treatment-card:nth-child(4)::after {
@@ -693,7 +684,6 @@
 } */
 
 @media (max-width: 576px) {
-
   .squint-diagnosis__treatment-content,
   .squint-diagnosis__treatment-card:nth-child(4) .squint-diagnosis__treatment-content {
     gap: 8px;
@@ -738,16 +728,11 @@
   max-width: 640px;
 }
 
-.squint-diagnosis__treatment-card:nth-child(4) {
-  min-height: 260px;
-}
-
 .squint-diagnosis__treatment-card:nth-child(4) p {
   right: clamp(120px, 12vw, 220px);
 }
 
 @media (max-width: 992px) {
-
   .squint-diagnosis__treatment-card h3,
   .squint-diagnosis__treatment-card:nth-child(4) h3 {
     top: 28px;
@@ -764,7 +749,6 @@
 }
 
 @media (max-width: 576px) {
-
   .squint-diagnosis__treatment-card h3,
   .squint-diagnosis__treatment-card:nth-child(4) h3 {
     top: 22px;
@@ -881,7 +865,7 @@
   /* object-fit: cover; */
   object-position: right center;
   object-fit: contain;
-  /* transform: translateX(25px); */
+/* transform: translateX(25px); */
 }
 
 .squint-diagnosis__treatment-card:nth-child(4) h3 {
@@ -941,7 +925,6 @@
     margin-top: 0;
   }
 }
-
 /* 4th card: keep description near the title as in Figma */
 .squint-diagnosis__treatment-card:nth-child(4) p {
   top: clamp(132px, 9.4vw, 152px);
