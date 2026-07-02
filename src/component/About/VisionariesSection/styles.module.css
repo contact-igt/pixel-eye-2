@@ -62,24 +62,28 @@
 .row {
   --visionary-media-width: 480px;
   --visionary-content-width: 716px;
-  --visionary-card-gap: 26px;
+  --visionary-card-gap: 40px;
 
   display: grid;
   width: 100%;
   max-width: calc(
-    var(--visionary-media-width) + var(--visionary-content-width) + var(--visionary-card-gap)
+    var(--visionary-media-width) + var(--visionary-content-width) +
+      var(--visionary-card-gap)
   );
-  margin: 0;
-  grid-template-columns: minmax(430px, var(--visionary-media-width)) minmax(0, var(--visionary-content-width));
+  margin: 0 auto;
+  grid-template-columns: minmax(430px, var(--visionary-media-width)) minmax(
+      0,
+      var(--visionary-content-width)
+    );
   column-gap: var(--visionary-card-gap);
   align-items: stretch;
-  justify-content: start;
-}
-.cardBlock:first-child .row {
-  --visionary-card-gap: 70px;
+  justify-content: center;
 }
 .rowReverse {
-  grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(430px, var(--visionary-media-width));
+  grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(
+      430px,
+      var(--visionary-media-width)
+    );
 }
 
 .rowReverse .mediaSection {
@@ -101,7 +105,7 @@
 }
 
 .rowReverse .mediaSection {
-  aspect-ratio: 48 / 49;
+  aspect-ratio: 45 / 49;
 }
 
 .imageBlock {
@@ -141,7 +145,7 @@
 
 .infoPanel {
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 0;
   width: clamp(210px, 48%, 270px);
   border-radius: 0 24px 24px 24px;
@@ -152,6 +156,7 @@
 }
 
 .infoPanelRight {
+  top: 0;
   left: 0;
   right: auto;
   width: clamp(220px, 52%, 300px);
@@ -190,7 +195,7 @@
   color: var(--text-body);
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   will-change: transform, opacity;
   position: relative;
   z-index: 0;
@@ -230,22 +235,25 @@
   transform: scaleX(1);
 }
 
-@media (min-width: 1200px) and (max-width: 1400px) {
+@media (min-width: 1200px) and (max-width: 1399px) {
   .row {
     --visionary-media-width: 440px;
     --visionary-content-width: 646px;
-    --visionary-card-gap: 26px;
+    --visionary-card-gap: 40px;
 
-    grid-template-columns: minmax(400px, var(--visionary-media-width)) minmax(0, var(--visionary-content-width));
+    grid-template-columns: minmax(400px, var(--visionary-media-width)) minmax(
+        0,
+        var(--visionary-content-width)
+      );
     align-items: start;
   }
-
-  .cardBlock:first-child .row {
-  --visionary-card-gap: 70px;
-}
-
   .rowReverse {
-    grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(400px, var(--visionary-media-width));
+    --visionary-media-width: 440px;
+
+    grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(
+        380px,
+        var(--visionary-media-width)
+      );
   }
 
   .mediaSection,
@@ -265,10 +273,21 @@
     line-height: 1.34;
   }
 
-  
-.rowReverse .mediaSection {
-  aspect-ratio: 42 / 49;
-}
+  .infoPanel {
+    position: absolute;
+    top: 5px;
+    right: -5px;
+    width: clamp(210px, 49%, 270px);
+  }
+  .infoPanelRight {
+    left: -9px;
+    top: 15px;
+    width: clamp(220px, 52%, 350px);
+  }
+  .rowReverse .mediaSection {
+    aspect-ratio: 38 / 49;
+  }
+
   .name {
     font-size: 19px;
   }
@@ -298,6 +317,18 @@
     aspect-ratio: 5.5 / 5;
   }
 
+  .infoPanel {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    width: clamp(210px, 49%, 270px);
+  }
+  .infoPanelRight {
+    left: -9px;
+    top: 20px;
+    width: clamp(220px, 52%, 350px);
+  }
+
   .contentSection {
     min-height: 0;
     padding: 28px 24px;
@@ -308,36 +339,41 @@
     font-size: 16px;
     line-height: 1.36;
   }
-  .infoPanel{
-    right: 18px;
-  }
 }
 
 @media (max-width: 991px) {
   .inner {
     width: min(1448px, calc(100% - 96px));
   }
-    .mediaSection,
+  .mediaSection,
   .rowReverse .mediaSection {
     width: min(100%, 610px);
     margin: 0 auto;
     aspect-ratio: 6 / 5;
   }
-  
-.name {
-  font-size: clamp(18px, 2.5vw, 20px);
+
+  .name {
+    font-size: clamp(18px, 2.5vw, 20px);
+  }
+
+  .degree {
+    font-size: clamp(13px, 1.7vw, 16.8px);
+  }
+
+  .spec {
+    font-size: clamp(13px, 1.7vw, 16.8px);
+  }
+  .infoPanel {
+    right: 8px;
+    top: 5px;
+  }
+  .infoPanelRight {
+    left: 8px;
+    top: 22px;
+  }
 }
 
-.degree {
-  font-size: clamp(13px, 1.7vw, 16.8px);
-}
-
-.spec {
-  font-size: clamp(13px, 1.7vw, 16.8px);
-}
-}
-
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .inner {
     width: min(1600px, calc(100% - 40px));
   }
@@ -358,11 +394,12 @@
   }
 
   .infoPanel {
-    right: -5px;
+    right: -2px;
   }
 
   .infoPanelRight {
     left: 0;
+    top: 22px;
     right: auto;
     width: min(56%, 270px);
     border-radius: 18px 0 18px 18px;
@@ -405,7 +442,7 @@
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
   .inner {
     width: min(1600px, calc(100%));
   }
@@ -418,12 +455,13 @@
 
   .infoPanel {
     width: min(58%, 230px);
-    right: -40px;
+    right: -47px;
   }
 
   .infoPanelRight {
     width: min(50%, 240px);
     left: -10px;
+    top: 9px;
   }
 
   .name {
@@ -450,7 +488,8 @@
     aspect-ratio: 1 / 1.21;
   }
   .infoPanel {
-    right: -30px;
+    right: -45px;
+    top: 6px;
   }
   .infoPanelRight {
     left: -7px;
@@ -465,14 +504,9 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 390px) {
+  .infoPanel {
+    right: -35px;
+    top: 6px;
+  }
+}

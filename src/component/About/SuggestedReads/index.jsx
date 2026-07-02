@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ArrowUpRight } from "lucide-react";
+import Button from "@/common/Button";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
 import RevealOnView from "@/common/RevealOnView";
 import styles from "./styles.module.css";
@@ -29,16 +28,13 @@ const ReadCard = ({ item, mobile = false }) => (
     <div className={styles.sideContent}>
       <h3 className={styles.sideTitle}>{item.title}</h3>
       <p className={styles.sideDescription}>{item.description}</p>
-      <Link
+      <Button
+        label="Read More"
         href={item.href}
+        variant="light"
         className={styles.readMore}
-        aria-label={`Read more: ${item.title}`}
-      >
-        <span className={styles.readLabel}>Read More</span>
-        <span className={styles.readIcon}>
-          <ArrowUpRight size={20} strokeWidth={2.1} />
-        </span>
-      </Link>
+        ariaLabel={`Read more: ${item.title}`}
+      />
     </div>
   </article>
 );
@@ -97,16 +93,13 @@ const SuggestedReads = () => {
                 <div className={styles.featuredBody}>
                   <h3 className={styles.featuredTitle}>{featuredRead.title}</h3>
                   <p className={styles.featuredDescription}>{featuredRead.description}</p>
-                  <Link
+                  <Button
+                    label="Read More"
                     href={featuredRead.href}
+                    variant="light"
                     className={styles.readMore}
-                    aria-label={`Read more: ${featuredRead.title}`}
-                  >
-                    <span className={styles.readLabel}>Read More</span>
-                    <span className={styles.readIcon}>
-                      <ArrowUpRight size={20} strokeWidth={2.1} />
-                    </span>
-                  </Link>
+                    ariaLabel={`Read more: ${featuredRead.title}`}
+                  />
                 </div>
               </article>
             ) : null}
