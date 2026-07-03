@@ -1,25 +1,8 @@
-import GlaucomaBanner from "@/component/Service-Glaucoma/banner";
-import GlaucomaSymptoms from "@/component/Service-Glaucoma/symptomsyounotice";
-import GlaucomaCauses from "@/component/Service-Glaucoma/whatCanLead";
-import TypesOfGlaucoma from "@/component/Service-Glaucoma/typeofglaucoma";
-import HowGlaucomaIsDiagnosed from "@/component/Service-Glaucoma/howglaucomaisDiagnosed";
-import GlaucomaFaq from "@/component/Service-Cataract/cataractFaq";
-import SuggestedReads from "@/component/About/SuggestedReads";
-import PatientExperience from "@/component/Service-Cataract/patientsExperience";
+import TreatmentPage from "@/pagecomponent/TreatmentPage";
+import { GLAUCOMA_TREATMENT } from "@/constant/treatments/glaucoma";
 
-const ServiceGlaucomaPageComponent = () => {
-    return (
-        <>
-            <GlaucomaBanner />
-            <GlaucomaSymptoms />
-            <GlaucomaCauses />
-            <TypesOfGlaucoma />
-            <HowGlaucomaIsDiagnosed />
-            <GlaucomaFaq />
-            <SuggestedReads />
-            <PatientExperience />
-        </>
-    );
-};
+const ServiceGlaucomaPageComponent = () => (
+  <TreatmentPage treatment={GLAUCOMA_TREATMENT} />
+);
 
 export default ServiceGlaucomaPageComponent;

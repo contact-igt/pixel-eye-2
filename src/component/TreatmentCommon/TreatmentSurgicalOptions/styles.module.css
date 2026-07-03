@@ -1,0 +1,130 @@
+.surgical-options,
+.surgical-options * {
+  box-sizing: border-box;
+}
+
+.surgical-options {
+  width: 100%;
+  padding: 40px 0;
+  background: #eaf3f9;
+  color: var(--text-heading, #16325c);
+  margin-bottom: 92px;
+}
+
+.surgical-options__inner {
+  display: grid;
+  grid-template-columns: minmax(260px, 40%) minmax(320px, 55%);
+  column-gap: 56px;
+  align-items: start;
+  width: calc(100% - 230px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.surgical-options__left h2 {
+  margin: 0;
+  color: var(--text-heading, #16325c);
+  font-size: var(--h2-size);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.surgical-options__left p {
+  margin-top: 24px;
+  color: var(--text-body, #53658a);
+  font-size: var(--p-size, 16px);
+  line-height: 1.4;
+  max-width: 540px;
+}
+
+.surgical-options__right {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: flex-end;
+}
+
+.surgical-options__card {
+  width: min(535px, 100%);
+  display: block;
+  position: relative;
+}
+
+.surgical-options__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.surgical-options__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.surgical-options__card-title {
+  margin-top: 12px;
+  padding-left: 18px;
+  color: rgba(42, 60, 125, 0.9);
+  font-size: 18px;
+  background: transparent;
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+}
+
+@media (max-width: 1199px) {
+  .surgical-options__inner {
+    width: calc(100% - 48px);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .surgical-options__card-title {
+    padding-left: 0.05rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .surgical-options__inner {
+    width: min(1600px, calc(100% - 64px));
+  }
+
+  .surgical-options__card-title {
+    padding-left: 0;
+    bottom: 23px;
+    font-size: 0.9rem;
+    left: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .surgical-options {
+    margin-bottom: 64px;
+  }
+
+  .surgical-options__inner {
+    width: min(1600px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+  }
+
+  .surgical-options__right {
+    align-items: center;
+  }
+
+  .surgical-options__img {
+    object-fit: contain;
+  }
+
+  .surgical-options__card-title {
+    margin-top: 12px;
+    bottom: 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 389px) {
+  .surgical-options__inner {
+    width: min(1600px, calc(100% - 28px));
+  }
+}
