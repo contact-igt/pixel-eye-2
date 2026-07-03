@@ -12,6 +12,7 @@ const PAGES_WITH_OWN_NAV = [
   "/service",
   "/service/cataract",
   "/service/squint",
+  "/service/pediatric",
   "/service/keratoconus",
   "/service/lasik",
   "/service/glaucoma",

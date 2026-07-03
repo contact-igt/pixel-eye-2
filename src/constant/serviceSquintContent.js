@@ -1,4 +1,4 @@
-﻿export const SERVICE_SQUINT_CONTENT = {
+export const SERVICE_SQUINT_CONTENT = {
   banner: {
     hero: {
       image: {
@@ -181,5 +181,17 @@
         highlighted: true,
       },
     ],
+  },
+  clinicalExpertise: {
+    title: "Clinical expertise",
+    intro:
+      "Squint care at Pixel Eye Hospital is led by experienced ophthalmologists trained in eye alignment, child vision development, and advanced treatment planning.",
+    cardBg: "/assets/Service/cataract/clinicbg.png",
+    cardBgAlt: "Pixel Eye clinic background",
+    doctorImage: "/assets/Service/Dr. Abdul Rasheed.png",
+    doctorImageAlt: "Dr. Abdul Rasheed",
+    doctorName: "Dr. Abdul Rasheed",
+    doctorDescription:
+      "An ophthalmic surgeon trained at AIIMS New Delhi, with experience in squint diagnosis and management across age groups. He also works closely with patients for cataract and LASIK care, with a clear, patient-focused approach.",
   },
 };
