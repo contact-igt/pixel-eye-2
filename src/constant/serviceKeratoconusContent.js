@@ -103,6 +103,7 @@
     ],
     image: {
       src: "/assets/Service/keratoconus/Subtract (1).png",
+      mobileSrc: "/assets/Service/keratoconus/diagnosed_mobile.png",
       alt: "Keratoconus diagnosis evaluation",
     },
   },

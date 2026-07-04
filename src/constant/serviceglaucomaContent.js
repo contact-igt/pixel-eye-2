@@ -53,32 +53,32 @@ export const SERVICE_GLAUCOMA_CONTENT = {
       {
         number: "01",
         title: "High eye pressure (IOP)",
-        image: "/assets/Service/squint/lead1.png",
+        image: "/assets/Service/glaucoma/lead1.png",
       },
       {
         number: "02",
         title: "Family History",
-        image: "/assets/Service/squint/lead2.png",
+        image: "/assets/Service/glaucoma/lead2.png",
       },
       {
         number: "03",
         title: "Age above 40",
-        image: "/assets/Service/squint/lead3.png",
+        image: "/assets/Service/glaucoma/lead3.png",
       },
       {
         number: "04",
         title: "Diabetes or High BP",
-        image: "/assets/Service/squint/lead4.png",
+        image: "/assets/Service/glaucoma/lead4.png",
       },
       {
         number: "05",
         title: "Long-term Steroid use",
-        image: "/assets/Service/squint/lead5.png",
+        image: "/assets/Service/glaucoma/lead5.png",
       },
       {
         number: "06",
         title: "Previous Eye Injury",
-        image: "/assets/Service/squint/lead6.png",
+        image: "/assets/Service/glaucoma/lead6.png",
       },
     ],
   },
