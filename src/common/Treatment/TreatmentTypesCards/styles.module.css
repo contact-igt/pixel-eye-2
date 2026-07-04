@@ -119,6 +119,10 @@
         column-gap: 24px;
     }
 
+    .types-cards__header h2{
+        font-size: 40px;
+    }
+
     .types-cards__arrow {
         margin-top: 140px;
     }
@@ -167,6 +171,10 @@
     .types-cards__item--main img {
         aspect-ratio: 380 / 356;
     }
+
+    .types-cards__header h2{
+        font-size: 36px;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -189,6 +197,10 @@
     .types-cards__arrow svg {
         width: 22px;
         height: 22px;
+    }
+
+    .types-cards__header h2{
+        font-size: 32px;
     }
 }
 
@@ -223,6 +235,15 @@
         align-self: start;
         margin-top: clamp(108px, calc(40vw - 122px), 182px);
         margin-bottom: 0;
+    }
+
+    .types-cards__header h2{
+        font-size: 28px;
+    }
+
+    .types-cards__header p {
+        margin-top: 22px;
+        font-size: 16px;
     }
 
     .types-cards__arrow svg {

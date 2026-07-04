@@ -10,11 +10,11 @@ import TreatmentFaq from "@/common/Treatment/TreatmentFaq";
 import TreatmentPatientExperience from "@/common/Treatment/TreatmentPatientExperience";
 import TreatmentSurgicalOptions from "@/common/Treatment/TreatmentSurgicalOptions";
 import SuggestedReads from "@/component/About/SuggestedReads";
-import CataractFaqFallback from "@/component/ServiceCataract/cataractFaq";
-import CataractPatientExperienceFallback from "@/component/ServiceCataract/patientsExperience";
-import TreatmentApproach from "@/component/ServiceCataract/treatmentApproach";
-import CataractApproach from "@/component/ServiceCataract/cataractApproach";
-import { KeratoconusApproach } from "@/component/ServiceKeratoconus/keratoconusApproach/index";
+import CataractFaqFallback from "@/common/Treatment/serviceSpecific/CataractFaq";
+import CataractPatientExperienceFallback from "@/common/Treatment/serviceSpecific/CataractPatientExperience";
+import TreatmentApproach from "@/common/Treatment/serviceSpecific/CataractTreatmentApproach";
+import CataractApproach from "@/common/Treatment/serviceSpecific/CataractApproach";
+import { KeratoconusApproach } from "@/common/Treatment/serviceSpecific/KeratoconusApproach/index";
 
 /**
  * Maps section keys to render functions.

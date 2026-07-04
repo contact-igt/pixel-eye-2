@@ -28,7 +28,10 @@ const TreatmentCauses = ({ data, slug = "treatment" }) => {
     if (!node) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) { setIsRevealed(true); observer.disconnect(); }
+        if (entry.isIntersecting) {
+          setIsRevealed(true);
+          observer.disconnect();
+        }
       },
       { threshold: 0.15 },
     );
@@ -61,6 +64,7 @@ const TreatmentCauses = ({ data, slug = "treatment" }) => {
         className={`${styles["treatment-causes__cards"]} ${
           isRevealed ? styles["is-revealed"] : ""
         }`.trim()}
+        style={{ "--count": data.items.length }}
       >
         {data.items.map(renderCauseCard)}
       </div>
