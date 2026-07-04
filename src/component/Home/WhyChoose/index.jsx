@@ -10,6 +10,9 @@ const WhyChoose = () => {
   const { title, cards, cta } = whyChoose;
   // start with the middle card active
   const [activeIndex, setActiveIndex] = useState(1);
+  const sideIndices = cards
+    .map((_, index) => index)
+    .filter((index) => index !== activeIndex);
 
   return (
     <section className={styles.whyChooseSection}>
@@ -22,12 +25,9 @@ const WhyChoose = () => {
 
             // Dynamically assign left/right slots to the two non-active cards
             // so whichever card is active, the others always have a valid position
-            const others = cards
-              .map((_, i) => i)
-              .filter((i) => i !== activeIndex);
             const positionClass = isActive
               ? ""
-              : others[0] === index
+              : sideIndices[0] === index
                 ? styles.leftCard
                 : styles.rightCard;
 
@@ -40,6 +40,7 @@ const WhyChoose = () => {
                 onClick={() => setActiveIndex(index)}
                 role="button"
                 tabIndex={0}
+                aria-pressed={isActive}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") setActiveIndex(index);
                 }}

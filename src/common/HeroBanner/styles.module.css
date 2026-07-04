@@ -1,30 +1,15 @@
-/* ── Page padding — matches home banner ── */
 .heroSection {
-  padding: clamp(20px, 3vw, 36px);
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
   position: relative;
 }
 
-.aboutMaskedSection {
-  padding: clamp(20px, 3vw, 36px);
-}
-
-/* â”€â”€ Rounded banner card â”€â”€ */
 .bannerFrame {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-hero);
   height: auto;
-  /* Provide a consistent default banner height so copy positions stay stable */
-  /* min-height: clamp(360px, 48vh, 640px); */
-  /* no background — image fills the frame */
 }
 
-.aboutMaskedFrame {
-  max-width: 1924px;
-  margin: 0 auto;
-  overflow: visible;
-  border-radius: 0;
-}
 
 /* Short variant (compact pages) */
 .frameShort {
@@ -42,15 +27,9 @@
 
 }
 
-.aboutMaskedFrame .image {
-  height: auto;
-  object-fit: cover;
-}
+
 
 /* Slightly offset hero copy on masked-about variant to match wider horizontal padding */
-.aboutMaskedSection .copy {
-  left: clamp(48px, 6vw, 60px);
-}
 
 /* Left-side gradient — only rendered when showOverlay=true */
 .overlay {
@@ -129,6 +108,7 @@
   }
 }
 
+
 @media (max-width : 1199px) {
 
   .title {
@@ -139,15 +119,49 @@
 
 
 
+
+
+
 @media (max-width : 991px) {
 
   .bannerFrame {
-    min-height: 650px !important;
+    min-height: 380px;
   }
 
   .title {
     top: 592px;
     left: 29px
+  }
+
+
+  .mobileCtaWrap {
+    display: flex;
+    margin-top: 22px;
+  }
+
+  .mobileCta {
+    transform: scale(0.95);
+    transform-origin: left center;
+  }
+
+  .mobileOverlay {
+    display: block;
+
+  }
+
+  .image {
+    object-fit: fill;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .copy {
+    left: clamp(24px, 5vw, 40px);
+    width: min(440px, calc(100% - 48px));
+    top: 58%;
   }
 
 }
@@ -156,55 +170,19 @@
 
 
 /* ── Responsive ── */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .heroSection {
     padding: 12px;
     min-height: 350px;
   }
 
-  .aboutMaskedSection {
-    padding: 10px 18px 48px;
-  }
-
-  .bannerFrame {
-    min-height: 450px;
-  }
-
-  .image {
-    object-fit: cover;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .aboutMaskedFrame {
-    min-height: 450px;
-    overflow: hidden;
-    border-radius: 10px;
-  }
-
-  .aboutMaskedFrame .image {
-    min-height: 0;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
-  }
 
   .frameShort {
     min-height: 450px;
   }
 
-  .copy {
-    left: clamp(24px, 5vw, 40px);
-    width: min(440px, calc(100% - 48px));
-    top: 54%;
-  }
 
-  .aboutMaskedSection .copy {
-    left: clamp(28px, 5vw, 40px);
-  }
+
 
   .title {
     font-size: clamp(26px, 4.8vw, var(--hero-title-size));
@@ -235,23 +213,9 @@
 
 @media (max-width: 575px) {
   .heroSection {
-    padding: 8px;
+    padding: 15px;
   }
 
-  .aboutMaskedSection {
-    padding: 8px 10px 38px;
-  }
-
-  .bannerFrame {
-    min-height: 450px;
-  }
-
-  .aboutMaskedFrame .image,
-  .aboutMaskedFrame {
-    min-height: 450px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
 
 
   .infoPannel {
@@ -272,4 +236,9 @@
   .mobileCtaWrap {
     margin-top: 18px;
   }
+
+  .bannerFrame {
+    min-height: 460px;
+  }
+
 }

@@ -8,7 +8,8 @@ import { ABOUT_CONTENT } from "@/constant/aboutContent";
 import styles from "./styles.module.css";
 
 const RememberRecommend = () => {
-  const { titleLines, description, testimonials } = ABOUT_CONTENT.rememberRecommend;
+  const { titleLines, description, testimonials } =
+    ABOUT_CONTENT.rememberRecommend;
   const duplicated = [...testimonials, ...testimonials, ...testimonials];
   const [active, setActive] = useState(1);
   const [mounted, setMounted] = useState(false);
@@ -49,7 +50,10 @@ const RememberRecommend = () => {
   const cardList = mounted ? duplicated : testimonials;
 
   return (
-    <section className={styles.section} aria-labelledby="remember-recommend-title">
+    <section
+      className={styles.section}
+      aria-labelledby="remember-recommend-title"
+    >
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="remember-recommend-title" className={styles.title}>
@@ -69,7 +73,9 @@ const RememberRecommend = () => {
                   <div key={`${item.id}-${i}`} className={styles.slideOuter}>
                     <article
                       className={`${styles.card} ${isActive ? styles.cardActive : ""}`}
-                      style={{ backgroundImage: `url(${item.backgroundImage})` }}
+                      style={{
+                        backgroundImage: `url('${item.backgroundImage}')`,
+                      }}
                       onClick={() => {
                         setActive(i % testimonials.length);
                         sliderRef.current?.slickGoTo(i);
@@ -101,7 +107,9 @@ const RememberRecommend = () => {
                         <div className={styles.meta}>
                           <h3 className={styles.name}>{item.name}</h3>
                           <div className={styles.ratingRow}>
-                            <span className={styles.star} aria-hidden="true">&#9733;</span>
+                            <span className={styles.star} aria-hidden="true">
+                              &#9733;
+                            </span>
                             <span className={styles.rating}>{item.rating}</span>
                           </div>
                         </div>
@@ -117,7 +125,7 @@ const RememberRecommend = () => {
                 <article
                   key={item.id}
                   className={styles.card}
-                  style={{ backgroundImage: `url(${item.backgroundImage})` }}
+                  style={{ backgroundImage: `url('${item.backgroundImage}')` }}
                 >
                   <div className={styles.cardContent}>
                     <Image
@@ -144,7 +152,9 @@ const RememberRecommend = () => {
                     <div className={styles.meta}>
                       <h3 className={styles.name}>{item.name}</h3>
                       <div className={styles.ratingRow}>
-                        <span className={styles.star} aria-hidden="true">&#9733;</span>
+                        <span className={styles.star} aria-hidden="true">
+                          &#9733;
+                        </span>
                         <span className={styles.rating}>{item.rating}</span>
                       </div>
                     </div>
@@ -162,7 +172,8 @@ const RememberRecommend = () => {
               className={`${styles.dot} ${i === active ? styles.activeDot : ""}`}
               onClick={() => {
                 setActive(i);
-                if (mounted) sliderRef.current?.slickGoTo(i + testimonials.length);
+                if (mounted)
+                  sliderRef.current?.slickGoTo(i + testimonials.length);
               }}
               aria-label={`Go to testimonial ${i + 1}`}
             />

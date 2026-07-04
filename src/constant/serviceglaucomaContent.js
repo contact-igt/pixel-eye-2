@@ -20,7 +20,7 @@ export const SERVICE_GLAUCOMA_CONTENT = {
             ],
 
             image: {
-                src: "/assets/Service/glaucoma/herobanner.png",
+                src: "/assets/Service/glaucoma/herobanner1.png",
                 alt: "Normal eye alignment and squint eye comparison",
             },
         },
@@ -87,7 +87,7 @@ export const SERVICE_GLAUCOMA_CONTENT = {
             "Different types of glaucoma affect the eye in different ways. Identifying the type helps plan the right treatment.",
         image: {
             src: "/assets/Service/glaucoma/types.png",
-            mobileSrc: "/assets/Service/glaucoma/types.png",
+            mobileSrc: "/assets/Service/glaucoma/types_mobile.png",
             alt: "Types of Glaucoma",
         },
         controls: {
@@ -168,9 +168,35 @@ export const SERVICE_GLAUCOMA_CONTENT = {
                 title: "OCT Scan",
                 description:
                     "OCT helps assess the thickness of the optic nerve fiber layer and detect early glaucoma-related changes.",
-                image: "/assets/Service/glaucoma/octscan.png",
+                image: "/assets/Service/glaucoma/oct_scan1.png",
+                 sliderImage: "/assets/Service/glaucoma/oct_scan1_slider.png",
                 alt: "OCT scan for glaucoma diagnosis",
                 highlighted: true,
+            },
+        ],
+    },
+
+    clinicalExpertise: {
+        title: "Clinical expertise",
+        intro:
+            "Glaucoma care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced glaucoma diagnosis and management.",
+        cardBg: "/assets/Service/cataract/clinicbg.png",
+        cardBgAlt: "Pixel Eye clinic background",
+        doctors: [
+            {
+                name: "Dr. Abdul Rasheed",
+                description: "MD (AIIMS)\nCataract, Refractive &\nSquint Surgeon",
+                image: "/pediatric/dr-abdul-rasheed.png",
+                imageAlt: "Dr. Abdul Rasheed",
+                href: "/doctors",
+            },
+            {
+                name: "Dr. Krishna Poojita",
+                description:
+                    "MBBS, DNB (Ophthalmology),\nMRCS (Edinburgh), FICO (UK),\nFPRS (Narayana Nethralaya)\nCataract & Refractive\nSurgeon",
+                image: "/pediatric/dr-krishna-poojita.png",
+                imageAlt: "Dr. Krishna Poojita",
+                href: "/doctors",
             },
         ],
     },

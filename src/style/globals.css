@@ -23,8 +23,8 @@
   --container-max: 1400px;
   --container2-max: 1200px;
   --section-px: 24px;
-  --section-pt: 60px;
-  --section-pb: 60px;
+  --section-pt: 30px;
+  --section-pb: 30px;
 
   --h2-size: 44px;
   --h2-lh: 1.12;
@@ -101,8 +101,7 @@ textarea {
 /* ─── Large Laptop ─────────────────────────────────────────── 1399px ── */
 @media (max-width: 1399px) {
   :root {
-    --section-pt: 56px;
-    --section-pb: 56px;
+
     --h2-size: 40px;
     --hero-title-size: 50px;
     --hero-paragraph-size: 18px;
@@ -115,23 +114,20 @@ textarea {
 @media (max-width: 1199px) {
   :root {
     --section-px: 20px;
-    --section-pt: 48px;
-    --section-pb: 48px;
     --h2-size: 36px;
     --p-size: 16px;
     --hero-title-size: 44px;
     --hero-paragraph-size: 17px;
     --about-section-space: 48px;
     --radius-card-lg: 26px;
+      --container2-max: 900px;
   }
 }
 
 /* ─── Tablet ────────────────────────────────────────────────── 991px ── */
 @media (max-width: 991px) {
   :root {
-    --section-px: 16px;
-    --section-pt: 40px;
-    --section-pb: 40px;
+    --section-px: 20px;
     --h2-size: 30px;
     --p-size: 15px;
     --hero-title-size: 36px;
@@ -169,8 +165,8 @@ textarea {
     --hero-title-size: 26px;
     --hero-paragraph-size: 14px;
     --about-section-space: 24px;
-    --btn-h: 44px;
-    --btn-icon: 44px;
+    --btn-h: 40px;
+    --btn-icon: 40px;
     --radius-hero: 12px;
     --radius-card-lg: 18px;
     --radius-card-md: 10px;

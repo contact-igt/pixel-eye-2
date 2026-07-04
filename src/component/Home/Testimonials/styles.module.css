@@ -1,6 +1,8 @@
 .testimonialsSection {
-  padding: var(--section-pt) var(--section-px) var(--section-pb);
+    margin-top: 100px;
   background: transparent;
+    padding: var(--section-px);
+
 }
 
 .container {
@@ -252,6 +254,10 @@
     font-size: 40px;
   }
 
+  .testimonialsSection {
+    margin-top: 80px;
+  }
+
 }
 
 /* ── Responsive ──────────────────────────────── */
@@ -286,38 +292,16 @@
 
 }
 
-@media (max-width: 390px) {
-  .frame {
-    padding: 24px 12px 20px;
-    border-radius: 18px;
+@media (max-width: 576px) {
+
+  .testimonialsSection {
+    margin-top: 40px;
   }
 
-  .mosaicWrap {
-    display: none;
+  .title {
+    font-size: 28px;
   }
+ 
 
-  .lowerContent {
-    margin-top: 0;
-  }
 
-  .subtitle {
-    font-size: 15px;
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 16px;
-    text-align: start;
-  }
-
-  .subtitleWrap {
-    justify-content: flex-start;
-  }
-
-  .card {
-    padding: 44px 12px 14px;
-  }
-
-  .text {
-    font-size: 13px;
-  }
 }

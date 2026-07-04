@@ -3,8 +3,10 @@
 export const ABOUT_CONTENT = {
   hero: {
     image: "/assets/About/about-banner.png",
+    mobileImage: "/assets/About/about-banner-mb.png",
     titleLines: ["Precision in care.", "Clarity in vision."],
-    subtitle: "Personalised eye care that helps you see life, fully and with confidence.",
+    subtitle:
+      "Personalised eye care that helps you see life, fully and with confidence.",
     rightSlot: "book",
     navTheme: "light",
     cardBg: "transparent",
@@ -28,7 +30,10 @@ export const ABOUT_CONTENT = {
       alt: "Doctor checking a patient's eye",
     },
     paragraphs: [
-      ["At Pixel Eye Hospital,", "we understand what better vision truly means to you."],
+      [
+        "At Pixel Eye Hospital,",
+        "we understand what better vision truly means to you.",
+      ],
       [
         "We are a modern eye care centre, where advanced Ophthalmology meets a",
         "more personal, considered approach to treatment. From routine check-ups to",
@@ -167,4 +172,3 @@ export const ABOUT_CONTENT = {
     ],
   },
 };
-

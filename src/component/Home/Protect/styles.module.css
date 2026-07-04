@@ -1,5 +1,7 @@
 .protectSection {
-  padding: var(--section-pt) var(--section-px) var(--section-pb);
+  margin-top: 100px;
+  padding: var(--section-px);
+
 }
 
 .bannerFrame {
@@ -50,7 +52,7 @@
   top: 0;
   bottom: 0;
   width: 120px;
-  left: clamp(28px, var(--slider-position), calc(100% - 28px));
+  left: clamp(60px, var(--slider-position), calc(100% - 60px));
   transform: translateX(-50%);
   z-index: 6;
   pointer-events: none;
@@ -166,6 +168,10 @@
     max-width: 520px;
   }
 
+  .protectSection {
+    margin-top: 80px;
+  }
+
   .heroTitle {
     font-size: 40px;
   }
@@ -190,6 +196,8 @@
   .bannerFrame {
     height: 360px;
   }
+
+
 }
 
 @media (max-width: 991px) {
@@ -220,6 +228,13 @@
 }
 
 @media (max-width: 575px) {
+
+
+  .protectSection {
+    margin-top: 60px;
+  }
+
+
   .slideImage {
     object-fit: cover;
     object-position: center;
@@ -230,7 +245,7 @@
   }
 
   .bannerFrame {
-    height: 260px;
+    height: 450px;
 
   }
 
@@ -239,33 +254,11 @@
     top: 16%;
   }
 
+  .heroTitle {
+    font-size: 28px;
+  }
+
   .imageLayer img {
     object-fit: fill !important;
   }
-}
-
-@media (max-width: 389px) {
-  .bannerFrame {
-    height: 250px;
-  }
-
-
-  .overlay {
-    background: linear-gradient(110deg,
-        rgba(17, 30, 50, 0.88) 0%,
-        rgba(19, 31, 49, 0.75) 45%,
-        rgba(23, 33, 48, 0.24) 70%,
-        rgba(23, 33, 48, 0.02) 100%);
-  }
-
-  .slideImage {
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .heroCta {
-    --btn-icon-left: 132px;
-  }
-
-
 }

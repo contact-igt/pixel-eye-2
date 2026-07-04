@@ -1,6 +1,6 @@
 /* ── Page padding — ~20px from browser edges ── */
 .bannerSection {
-  padding: clamp(20px, 3vw, 36px);
+  padding: var(--section-pt) var(--section-px);
   position: relative;
 }
 
@@ -276,6 +276,17 @@
     line-height: 22px;
   }
 
+  .bookArea {
+    right: -2%;
+    min-width: 173px;
+    bottom: -15px;
+  }
+
+  .bookButton {
+    height: 37px;
+    font-size: 10px;
+    font-weight: 500;
+  }
 
 }
 
@@ -365,66 +376,35 @@
   }
 
   .bookArea {
-    right: 0%;
-    bottom: 0.1%;
+    right: -11px;
+    bottom: -10px;
+    min-width: 159px;
   }
 
   .bannerFrame {
-    min-height: 450px;
+    min-height: 500px;
   }
 
   .heroCta {
     --btn-icon-left: 170px;
   }
-}
 
-@media (max-width: 389px) {
-  .bannerSection {
-    padding: var(--section-px);
-  }
-
-  .bannerFrame {
-    min-height: 450px;
-    border-radius: var(--radius-hero);
-  }
-
-  .bannerImageViewport {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-  }
-
-  .bannerImageTrack,
-  .bannerImageSlide {
-    height: 100%;
+  .bannerImage {
+    object-fit: fill;
   }
 
   .heroContent {
-    left: 16px;
-    right: 16px;
-    top: 22%;
+    top: 32%;
   }
 
-  .heroCta {
-    --btn-icon-left: 160px;
+  .heroTitle {
+    font-size: 28px;
+    line-height: 36px;
   }
 
-  /* .heroTitle {
-    font-size: 24px;
-  } */
-
-  .sliderDots {
-    display: none;
+  .heroText {
+    font-size: 14px;
+    line-height: 20px;
   }
 
-  .bookArea {
-    min-width: 175px;
-    padding: 8px 10px 10px;
-    border-top-left-radius: 14px;
-  }
-
-  .bookButton {
-    height: 36px;
-    font-size: 10px;
-  }
 }

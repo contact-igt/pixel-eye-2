@@ -13,19 +13,12 @@
         src: "/assets/Service/keratoconus/Subtract.png",
         alt: "Close view of an eye showing keratoconus banner artwork",
       },
-      mobileImage: {
-        src: "/assets/Service/keratoconus/Subtract-mb.png",
-        alt: "Close view of an eye showing keratoconus banner artwork",
-      },
+      mobileImage: "/assets/Service/keratoconus/herobannermb.png",
+      mobileImageMedia: "(max-width: 767px)",
       nav: {
         rightSlot: "book",
         navTheme: "light",
         cardBg: "transparent",
-      },
-      mobileCta: {
-        label: "BOOK APPOINTMENT",
-        href: "/appointment",
-        variant: "light",
       },
       imagePosition: "center center",
       showOverlay: true,

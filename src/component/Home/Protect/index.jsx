@@ -7,12 +7,41 @@ import styles from "./styles.module.css";
 
 const Protect = () => {
   const { protect } = HOME_CONTENT;
-  const { title, beforeImage, afterImage, handleImage, cta } = protect;
-  const minPosition = 10;
-  const maxPosition = 83;
-  const [sliderPosition, setSliderPosition] = useState(68);
+  const {
+    title,
+    beforeImage,
+    afterImage,
+    beforembImage,
+    aftermbImage,
+    handleImage,
+    cta,
+  } = protect;
+  const minPosition = 0;
+  const maxPosition = 100;
+  const [sliderPosition, setSliderPosition] = useState(85);
   const [isDragging, setIsDragging] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const updateIsMobile = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    updateIsMobile();
+    mediaQuery.addEventListener("change", updateIsMobile);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateIsMobile);
+    };
+  }, []);
+
+  const activeBeforeImage = isMobile
+    ? beforembImage || beforeImage
+    : beforeImage;
+  const activeAfterImage = isMobile ? aftermbImage || afterImage : afterImage;
 
   const handleMove = useCallback(
     (clientX) => {
@@ -77,8 +106,8 @@ const Protect = () => {
         {/* Background / After Image */}
         <div className={styles.imageLayer}>
           <Image
-            src={afterImage.src}
-            alt={afterImage.alt}
+            src={activeAfterImage.src}
+            alt={activeAfterImage.alt}
             fill
             sizes="100vw"
             className={styles.slideImage}
@@ -93,8 +122,8 @@ const Protect = () => {
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
           <Image
-            src={beforeImage.src}
-            alt={beforeImage.alt}
+            src={activeBeforeImage.src}
+            alt={activeBeforeImage.alt}
             fill
             sizes="100vw"
             className={styles.slideImage}

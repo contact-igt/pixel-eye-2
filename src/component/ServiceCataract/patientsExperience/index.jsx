@@ -8,11 +8,16 @@ import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import styles from "./styles.module.css";
 
 const PatientExperience = () => {
-  const { titleLines, description, testimonials } = SERVICE_CATARACT_CONTENT.rememberRecommend;
+  const { titleLines, description, testimonials } =
+    SERVICE_CATARACT_CONTENT.rememberRecommend;
 
-  const displayTitle = titleLines && titleLines[0]
-    ? titleLines[0].split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")
-    : "Patient Experiences";
+  const displayTitle =
+    titleLines && titleLines[0]
+      ? titleLines[0]
+          .split(" ")
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(" ")
+      : "Patient Experiences";
 
   const duplicated = [...testimonials, ...testimonials, ...testimonials];
   const [active, setActive] = useState(1);
@@ -52,7 +57,10 @@ const PatientExperience = () => {
   };
 
   return (
-    <section className={styles.section} aria-labelledby="remember-recommend-title">
+    <section
+      className={styles.section}
+      aria-labelledby="remember-recommend-title"
+    >
       <div className={styles.inner}>
         <header className={styles.header}>
           <h2 id="remember-recommend-title" className={styles.title}>
@@ -70,7 +78,9 @@ const PatientExperience = () => {
                   <div key={`${item.id}-${i}`} className={styles.slideOuter}>
                     <article
                       className={`${styles.card} ${isActive ? styles.cardActive : ""}`}
-                      style={{ backgroundImage: `url(${item.backgroundImage})` }}
+                      style={{
+                        backgroundImage: `url('${item.backgroundImage}')`,
+                      }}
                       onClick={() => {
                         setActive(i % testimonials.length);
                         sliderRef.current?.slickGoTo(i);
@@ -102,7 +112,9 @@ const PatientExperience = () => {
                         <div className={styles.meta}>
                           <h3 className={styles.name}>{item.name}</h3>
                           <div className={styles.ratingRow}>
-                            <span className={styles.star} aria-hidden="true">&#9733;</span>
+                            <span className={styles.star} aria-hidden="true">
+                              &#9733;
+                            </span>
                             <span className={styles.rating}>{item.rating}</span>
                           </div>
                         </div>
@@ -118,7 +130,7 @@ const PatientExperience = () => {
                 <article
                   key={item.id}
                   className={styles.card}
-                  style={{ backgroundImage: `url(${item.backgroundImage})` }}
+                  style={{ backgroundImage: `url('${item.backgroundImage}')` }}
                 >
                   <div className={styles.cardContent}>
                     <Image
@@ -145,7 +157,9 @@ const PatientExperience = () => {
                     <div className={styles.meta}>
                       <h3 className={styles.name}>{item.name}</h3>
                       <div className={styles.ratingRow}>
-                        <span className={styles.star} aria-hidden="true">&#9733;</span>
+                        <span className={styles.star} aria-hidden="true">
+                          &#9733;
+                        </span>
                         <span className={styles.rating}>{item.rating}</span>
                       </div>
                     </div>
@@ -163,7 +177,8 @@ const PatientExperience = () => {
               className={`${styles.dot} ${i === active ? styles.activeDot : ""}`}
               onClick={() => {
                 setActive(i);
-                if (mounted) sliderRef.current?.slickGoTo(i + testimonials.length);
+                if (mounted)
+                  sliderRef.current?.slickGoTo(i + testimonials.length);
               }}
               aria-label={`Go to testimonial ${i + 1}`}
             />
@@ -175,4 +190,3 @@ const PatientExperience = () => {
 };
 
 export default PatientExperience;
-

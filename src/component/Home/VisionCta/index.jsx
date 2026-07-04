@@ -26,8 +26,8 @@ const VisionCta = () => {
 
           <Link href={cta.href} className={styles.ctaButton}>
             <span className={styles.ctaLabel}>{cta.label}</span>
-            <span className={styles.ctaIcon}>
-              <ArrowUpRight width={18} height={18} strokeWidth={2.1} />
+            <span className={styles.ctaArrow}>
+              <ArrowUpRight className={styles.ctaArrowIcon} />
             </span>
           </Link>
         </div>

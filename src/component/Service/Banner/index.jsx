@@ -4,6 +4,7 @@ import { HERO_BANNER_CONTENT } from "@/constant/heroBannerContent";
 const ServiceBanner = () => {
   const {
     image,
+    mobileImage,
     title,
     subtitle,
     rightSlot,
@@ -12,6 +13,7 @@ const ServiceBanner = () => {
     height,
     showOverlay,
     imagePosition,
+    showMobileNabhBadge,
   } = HERO_BANNER_CONTENT.service;
 
   return (
@@ -25,6 +27,8 @@ const ServiceBanner = () => {
       height={height}
       showOverlay={showOverlay}
       imagePosition={imagePosition}
+      mobileImage={mobileImage}
+      showMobileNabhBadge={showMobileNabhBadge}
     />
   );
 };

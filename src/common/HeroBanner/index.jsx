@@ -18,6 +18,7 @@ import styles from "./styles.module.css";
  *   imagePosition — CSS object-position value, default "center 30%"
  *   mobileImage   — optional image used for narrow screens
  *   mobileImageMedia — media query for the mobile image source
+ *   showMobileNabhBadge — show the NABH badge in the right card only on mobile
  */
 export default function HeroBanner({
   image,
@@ -33,6 +34,7 @@ export default function HeroBanner({
   showOverlay = true,
   imagePosition = "center 30%",
   mobileCta,
+  showMobileNabhBadge = false,
   variant = "default",
   className = "",
   frameClassName = "",
@@ -115,6 +117,7 @@ export default function HeroBanner({
         rightSlot={rightSlot}
         navTheme={navTheme}
         cardBg={cardBg}
+        showMobileNabhBadge={showMobileNabhBadge}
         variant={
           isAboutMasked
             ? "aboutMasked"

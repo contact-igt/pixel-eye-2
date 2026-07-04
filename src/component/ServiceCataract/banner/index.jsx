@@ -23,6 +23,7 @@ const CataractBanner = () => {
         rightSlot={hero.nav.rightSlot}
         navTheme={hero.nav.navTheme}
         cardBg={hero.nav.cardBg}
+        showMobileNabhBadge
       />
 
       <section

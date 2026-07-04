@@ -7,7 +7,10 @@ export const GLAUCOMA_TREATMENT = {
   causes: SERVICE_GLAUCOMA_CONTENT.causes,
   types: SERVICE_GLAUCOMA_CONTENT.types,
   diagnosis: SERVICE_GLAUCOMA_CONTENT.diagnosis,
-  clinicalExpertise: null, // not in glaucoma content
+  clinicalExpertise: {
+    ...SERVICE_GLAUCOMA_CONTENT.clinicalExpertise,
+    variant: "multi",
+  },
   faq: SERVICE_GLAUCOMA_CONTENT.faq, // undefined → falls back to CataractFaq
   patientExperience: SERVICE_GLAUCOMA_CONTENT.rememberRecommend, // undefined → falls back
 
@@ -17,6 +20,7 @@ export const GLAUCOMA_TREATMENT = {
     "causes",
     "types",
     "diagnosis",
+    "clinicalExpertise",
     "faq",
     "suggestedReads",
     "patientExperience",
