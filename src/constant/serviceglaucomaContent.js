@@ -1,6 +1,9 @@
 export const SERVICE_GLAUCOMA_CONTENT = {
   banner: {
     hero: {
+      titleLines: ["Glaucoma"],
+      description:
+        "Glaucoma is a silent eye condition that can gradually damage vision if not detected and treated early.",
       image: {
         src: "/assets/Service/glaucoma/banner.png",
         alt: "",
@@ -11,8 +14,10 @@ export const SERVICE_GLAUCOMA_CONTENT = {
       nav: {
         rightSlot: "book",
         navTheme: "light",
-        cardBg: "white",
+        cardBg: "transparent",
       },
+      imagePosition: "center center",
+      showOverlay: true,
     },
     explainer: {
       title: "What is Glaucoma?",

@@ -159,7 +159,7 @@
     }
 }
 
-@media (max-width: 389px) {
+/* @media (max-width: 389px) {
     .cataract-approach__inner {
         width: min(1600px, calc(100% - 28px));
     }
@@ -177,4 +177,4 @@
     .cataract-approach__img {
         height: 220px;
     }
-}
+} */

@@ -1,6 +1,14 @@
 export const SERVICE_SQUINT_CONTENT = {
   banner: {
     hero: {
+      titleLines: [
+        "Squint: When eyes",
+        "don’t align,",
+        "vision needs",
+        "attention",
+      ],
+      description:
+        "Squint can appear in childhood or adulthood and may cause eye strain, double vision, or lazy eye if left untreated.",
       image: {
         src: "/assets/Service/squint/squint_banner.png",
         alt: "",
