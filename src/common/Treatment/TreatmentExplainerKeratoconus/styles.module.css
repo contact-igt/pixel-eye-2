@@ -132,6 +132,7 @@
     .explainer {
         width: min(100%, calc(100% - 24px));
         margin: 50px auto;
+        padding-bottom: 30px;
     }
 
     .copyColumn {

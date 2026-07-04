@@ -66,32 +66,32 @@
       {
         number: "01",
         title: "Eye rubbing",
-        image: "/assets/Service/keratoconus/Frame 241.png",
+        image: "/assets/Service/keratoconus/Frame1.png",
       },
       {
         number: "02",
         title: "Eye allergies",
-        image: "/assets/Service/keratoconus/Frame 111.png",
+        image: "/assets/Service/keratoconus/Frame2.png",
       },
       {
         number: "03",
         title: "Family history",
-        image: "/assets/Service/keratoconus/Frame 109.png",
+        image: "/assets/Service/keratoconus/Frame3.png",
       },
       {
         number: "04",
         title: "Rapid power changes",
-        image: "/assets/Service/keratoconus/Frame 108.png",
+        image: "/assets/Service/keratoconus/Frame4.png",
       },
       {
         number: "05",
         title: "Poor contact lens tolerance",
-        image: "/assets/Service/keratoconus/Frame 110.png",
+        image: "/assets/Service/keratoconus/Frame5.png",
       },
       {
         number: "06",
         title: "Delayed diagnosis",
-        image: "/assets/Service/keratoconus/Frame 107.png",
+        image: "/assets/Service/keratoconus/Frame6.png",
       },
     ],
   },
