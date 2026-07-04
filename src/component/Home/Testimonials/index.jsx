@@ -43,29 +43,28 @@ const Testimonials = () => {
         breakpoint: 1199,
         settings: {
           slidesToShow: 3,
-        }
+        },
       },
       {
         breakpoint: 767,
         settings: {
           slidesToShow: 2,
-        }
+        },
       },
       {
         breakpoint: 575,
         settings: {
           slidesToShow: 1,
           centerMode: false,
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
 
   return (
     <section className={styles.testimonialsSection}>
       <div className={styles.container}>
         <div className={styles.frame}>
-
           <h2 className={styles.title}>{title}</h2>
 
           <div className={styles.mosaicWrap} aria-hidden>
@@ -81,9 +80,9 @@ const Testimonials = () => {
           </div>
 
           <div className={styles.lowerContent}>
-           <div className={styles.subtitleWrap}>
-             <p className={styles.subtitle}>{subtitle}</p>
-           </div>
+            <div className={styles.subtitleWrap}>
+              <p className={styles.subtitle}>{subtitle}</p>
+            </div>
 
             <div className={styles.cardsWrap}>
               {mounted ? (
@@ -104,17 +103,25 @@ const Testimonials = () => {
                   ))}
                 </Slider>
               ) : (
-                <div className={styles.cards} style={{ display: "flex", gap: "28px", overflow: "hidden" }}>
-                  {items.map((t, i) =>{ console.log("i",i); return(
-                    <div key={t.id} style={{ flex: "0 0 20%", padding: "10px 14px" }}>
-                      <TestimonialCard
-                        name={t.name}
-                        rating={t.rating}
-                        text={t.text}
-                        active={i === active}
-                      />
-                    </div>
-                  )})}
+                <div
+                  className={styles.cards}
+                  style={{ display: "flex", gap: "28px", overflow: "hidden" }}
+                >
+                  {items.map((t, i) => {
+                    return (
+                      <div
+                        key={t.id}
+                        style={{ flex: "0 0 20%", padding: "10px 14px" }}
+                      >
+                        <TestimonialCard
+                          name={t.name}
+                          rating={t.rating}
+                          text={t.text}
+                          active={i === active}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -144,7 +151,6 @@ const Testimonials = () => {
               </Link>
             </div>
           </div>
-
         </div>
       </div>
     </section>

@@ -340,7 +340,8 @@ export default function BannerNav({
           <nav className={styles.sidebarNav} aria-label="Mobile navigation">
             <div className={styles.navGrid}>
               {navItems.map((item) =>
-                item.label === "SERVICES" && servicesDropdown.length > 0 ? (
+                (item.label === "SERVICES" || item.label === "TREATMENT") &&
+                servicesDropdown.length > 0 ? (
                   <div key={item.id} className={styles.sidebarNavItemWithMenu}>
                     <div
                       className={`${styles.sidebarNavLink} ${styles.sidebarNavLinkTrigger} ${isServicesExpanded ? styles.activeItem : ""}`}

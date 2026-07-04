@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import { SERVICE_KERATOCONUS_CONTENT } from "@/constant/serviceKeratoconusContent";
 
-export const KerstoconusApproach = () => {
+export const KeratoconusApproach = () => {
   const { keratoconusApproach } = SERVICE_KERATOCONUS_CONTENT;
   const { surgicalOptions } = SERVICE_CATARACT_CONTENT;
   const approachCards =
