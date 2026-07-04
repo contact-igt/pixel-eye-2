@@ -5,13 +5,13 @@ import TreatmentTypes from "@/common/Treatment/TreatmentTypes";
 import TreatmentTypesCards from "@/common/Treatment/TreatmentTypesCards";
 import TreatmentDiagnosis from "@/common/Treatment/TreatmentDiagnosis";
 import TreatmentClinicalExpertise from "@/common/Treatment/TreatmentClinicalExpertise";
+import TreatmentClinicalExpertiseSingle from "@/common/Treatment/TreatmentClinicalExpertiseSingle";
 import TreatmentFaq from "@/common/Treatment/TreatmentFaq";
 import TreatmentPatientExperience from "@/common/Treatment/TreatmentPatientExperience";
 import TreatmentSurgicalOptions from "@/common/Treatment/TreatmentSurgicalOptions";
 import SuggestedReads from "@/component/About/SuggestedReads";
 import CataractFaqFallback from "@/component/ServiceCataract/cataractFaq";
 import CataractPatientExperienceFallback from "@/component/ServiceCataract/patientsExperience";
-import CataractRiskFactors from "@/component/ServiceCataract/Cataract";
 import TreatmentApproach from "@/component/ServiceCataract/treatmentApproach";
 import CataractApproach from "@/component/ServiceCataract/cataractApproach";
 import LasikLaserVisionOptions from "@/component/ServiceLasik/laserVisionOptions";
@@ -42,14 +42,22 @@ const SECTION_MAP = {
     t.diagnosis ? (
       <TreatmentDiagnosis key="diagnosis" data={t.diagnosis} slug={t.slug} />
     ) : null,
-  clinicalExpertise: (t) =>
-    t.clinicalExpertise ? (
-      <TreatmentClinicalExpertise
+  clinicalExpertise: (t) => {
+    if (!t.clinicalExpertise) return null;
+    // Single-doctor card (cataract, lasik, squint) vs multi-doctor panel
+    // (glaucoma, keratoconus, pediatric, retina).
+    const Component =
+      t.clinicalExpertise.variant === "single"
+        ? TreatmentClinicalExpertiseSingle
+        : TreatmentClinicalExpertise;
+    return (
+      <Component
         key="clinicalExpertise"
         data={t.clinicalExpertise}
         slug={t.slug}
       />
-    ) : null,
+    );
+  },
   faq: (t) =>
     t.faq ? (
       <TreatmentFaq key="faq" data={t.faq} slug={t.slug} />
@@ -69,10 +77,6 @@ const SECTION_MAP = {
     ),
 
   // Cataract-specific sections
-  riskFactors: (t) =>
-    t.risks ? (
-      <CataractRiskFactors key="riskFactors" riskContent={t.risks} />
-    ) : null,
   treatmentApproach: (t) =>
     t.treatmentApproach ? (
       <TreatmentApproach

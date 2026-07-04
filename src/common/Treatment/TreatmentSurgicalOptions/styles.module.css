@@ -5,7 +5,7 @@
 
 .surgical-options {
   width: 100%;
-  padding: 40px 0;
+  padding: 100px 0;
   background: #eaf3f9;
   color: var(--text-heading, #16325c);
   margin-bottom: 92px;
@@ -24,7 +24,7 @@
 .surgical-options__left h2 {
   margin: 0;
   color: var(--text-heading, #16325c);
-  font-size: var(--h2-size);
+  font-size: 48px;
   font-weight: 400;
   line-height: 1.05;
 }
@@ -32,7 +32,7 @@
 .surgical-options__left p {
   margin-top: 24px;
   color: var(--text-body, #53658a);
-  font-size: var(--p-size, 16px);
+  font-size: 20px;
   line-height: 1.4;
   max-width: 540px;
 }
@@ -67,7 +67,7 @@
   margin-top: 12px;
   padding-left: 18px;
   color: rgba(42, 60, 125, 0.9);
-  font-size: 18px;
+  font-size: 22px;
   background: transparent;
   position: absolute;
   bottom: -4px;

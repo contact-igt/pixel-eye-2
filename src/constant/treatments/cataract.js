@@ -1,9 +1,16 @@
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 
+const { risks } = SERVICE_CATARACT_CONTENT;
+
 export const CATARACT_TREATMENT = {
   slug: "cataract",
   banner: SERVICE_CATARACT_CONTENT.banner,
-  risks: SERVICE_CATARACT_CONTENT.risks,
+  // Map risks → common TreatmentCauses format
+  causes: {
+    title: risks.titleLines.join(" "),
+    description: risks.descriptionLines.join(" "),
+    items: risks.items,
+  },
   types: SERVICE_CATARACT_CONTENT.types,
   symptoms: SERVICE_CATARACT_CONTENT.signs,
   treatmentApproach: SERVICE_CATARACT_CONTENT.treatmentApproach,
@@ -20,7 +27,7 @@ export const CATARACT_TREATMENT = {
   sections: [
     "banner",
     "symptoms",
-    "riskFactors",
+    "causes",
     "types",
     "treatmentApproach",
     "surgicalOptions",

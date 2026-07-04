@@ -7,16 +7,12 @@
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   MULTI-DOCTOR PANEL  (variant="multi" — exact Pediatric style)
-══════════════════════════════════════════════════════════════════ */
-
-/* ══════════════════════════════════════════════════════════════════
    MULTI-DOCTOR PANEL (default — Pediatric style)
 ══════════════════════════════════════════════════════════════════ */
 .clinical-expertise {
   width: 100%;
   background: #ffffff;
-  padding: clamp(56px, 5.8vw, 96px) 0 clamp(52px, 5vw, 84px);
+  padding: 0px 0 130px 0px;
   color: #273979;
 }
 
@@ -26,14 +22,14 @@
 }
 
 .clinical-expertise__header {
-  max-width: 440px;
+  max-width: 600px;
   margin: 0 0 30px clamp(42px, 4vw, 60px);
 }
 
 .clinical-expertise__header h2 {
   margin: 0;
   color: #273979;
-  font-size: clamp(38px, 3.1vw, 52px);
+  font-size: 48px;
   font-weight: 400;
   line-height: 1.12;
   letter-spacing: 0;
@@ -42,7 +38,7 @@
 .clinical-expertise__header p {
   margin: 16px 0 0;
   color: rgba(42, 60, 125, 0.82);
-  font-size: clamp(14px, 0.95vw, 17px);
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.18;
   letter-spacing: 0;
@@ -85,7 +81,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: end;
   gap: clamp(42px, 5vw, 82px);
-  min-height: 226px;
+  min-height: 320px;
   padding: 0 clamp(54px, 5vw, 78px) 0 clamp(238px, 20vw, 292px);
 }
 
@@ -107,7 +103,7 @@
   z-index: 3;
   align-self: end;
   width: auto;
-  height: 252px;
+  height: 245px;
   max-width: 100%;
   margin-top: -26px;
   object-fit: contain;
@@ -216,112 +212,6 @@
 }
 
 /* ══════════════════════════════════════════════════════════════════
-   SINGLE-DOCTOR CARD (Squint style — variant="single")
-══════════════════════════════════════════════════════════════════ */
-.clinical-expertise--single {
-  padding: 48px 0;
-}
-
-.clinical-expertise--single .clinical-expertise__inner {
-  width: calc(100% - 230px);
-  max-width: 1200px;
-}
-
-.clinical-expertise--single .clinical-expertise__header h2 {
-  margin: 0 0 12px 0;
-  color: var(--text-heading, #16325c);
-  font-size: var(--h2-size, 36px);
-}
-
-.clinical-expertise--single .clinical-expertise__header p {
-  margin: 12px 0 24px 0;
-  color: var(--text-body, #53658a);
-  font-size: var(--p-size, 16px);
-  max-width: 540px;
-}
-
-.clinical-expertise__card {
-  position: relative;
-  background: transparent;
-  border-radius: var(--radius-card-lg, 28px);
-  padding: 40px 60px;
-  overflow: visible;
-  height: 320px;
-  display: flex;
-  align-items: center;
-}
-
-.clinical-expertise__card-bg-wrapper {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: var(--radius-card-lg, 28px);
-  background: #e9f2f7;
-  z-index: 1;
-}
-
-.clinical-expertise__card-bg {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 20%;
-  object-fit: contain;
-  opacity: 0.85;
-  pointer-events: none;
-}
-
-.clinical-expertise__card-body {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-
-.clinical-expertise__text {
-  max-width: 50%;
-  margin-left: clamp(40px, 14vw, 200px);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 550ms ease 200ms, transform 550ms cubic-bezier(0.16, 1, 0.3, 1) 200ms;
-}
-
-.clinical-expertise--single.is-revealed .clinical-expertise__text {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.clinical-expertise__doctor-name {
-  margin: 0 0 12px 0;
-  color: var(--text-heading, #16325c);
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.clinical-expertise__doctor-desc {
-  margin: 0;
-  color: var(--text-body, #53658a);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.clinical-expertise__doctor {
-  position: absolute;
-  right: clamp(20px, 6vw, 45px);
-  bottom: 0;
-  height: clamp(340px, 33vw, 460px);
-  object-fit: contain;
-  pointer-events: none;
-  z-index: 3;
-  opacity: 0;
-  transform: translateY(60px) scale(0.85);
-  transition: opacity 500ms ease, transform 650ms cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.clinical-expertise--single.is-revealed .clinical-expertise__doctor {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* ══════════════════════════════════════════════════════════════════
    MULTI-DOCTOR RESPONSIVE  (exact Pediatric breakpoints)
 ══════════════════════════════════════════════════════════════════ */
 
@@ -359,8 +249,7 @@
     padding: 19px 18px 20px 112px;
   }
 
-  .clinical-expertise__doctor-card:nth-child(2)
-    .clinical-expertise__doctor-info {
+  .clinical-expertise__doctor-card:nth-child(2) .clinical-expertise__doctor-info {
     width: 250px;
     min-height: 138px;
     padding: 19px 48px 15px 17px;
@@ -429,8 +318,7 @@
     z-index: 0;
     width: 180px;
     height: 180px;
-    background: url("/assets/Service/cataract/clinicbg.png") left bottom /
-      contain no-repeat;
+    background: url("/assets/Service/cataract/clinicbg.png") left bottom / contain no-repeat;
     opacity: 0.38;
     pointer-events: none;
   }
@@ -494,9 +382,7 @@
   }
 
   .clinical-expertise.is-revealed .clinical-expertise__doctor-info,
-  .clinical-expertise.is-revealed
-    .clinical-expertise__doctor-card:nth-child(2)
-    .clinical-expertise__doctor-info {
+  .clinical-expertise.is-revealed .clinical-expertise__doctor-card:nth-child(2) .clinical-expertise__doctor-info {
     transform: translateY(-50%);
   }
 
@@ -525,26 +411,6 @@
     width: 28px;
     height: 28px;
     margin-left: -7px;
-  }
-
-  /* single at 992px */
-  .clinical-expertise--single .clinical-expertise__inner {
-    width: min(1600px, calc(100% - 64px));
-  }
-
-  .clinical-expertise--single .clinical-expertise__card {
-    height: 300px;
-    padding: 40px;
-  }
-
-  .clinical-expertise--single .clinical-expertise__text {
-    max-width: 52%;
-    margin-left: clamp(8.95rem, 8vw, 9rem);
-  }
-
-  .clinical-expertise--single .clinical-expertise__doctor {
-    height: clamp(320px, 36vw, 380px);
-    right: 10px;
   }
 }
 
@@ -603,44 +469,6 @@
 
   .clinical-expertise__doctor-info p {
     font-size: clamp(9px, 1.55vw, 11px);
-  }
-
-  /* single at 768px */
-  .clinical-expertise--single .clinical-expertise__inner {
-    width: min(1600px, calc(100% - 40px));
-  }
-
-  .clinical-expertise--single .clinical-expertise__card {
-    height: auto;
-    padding: 32px 32px 0 32px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-  }
-
-  .clinical-expertise--single .clinical-expertise__card-bg {
-    width: 100%;
-    height: auto;
-    opacity: 0.5;
-  }
-
-  .clinical-expertise--single .clinical-expertise__text {
-    margin-left: 1rem;
-    max-width: 100%;
-  }
-
-  .clinical-expertise--single .clinical-expertise__doctor {
-    position: relative;
-    display: block;
-    height: 300px;
-    width: 100%;
-    margin: 0 auto;
-    right: auto;
-    bottom: 0;
-  }
-
-  .clinical-expertise--single .clinical-expertise__header h2 {
-    font-size: var(--h2-size, 36px);
   }
 }
 
@@ -744,23 +572,4 @@
   .clinical-expertise__doctor-info p {
     font-size: 9px;
   }
-
-  /* single at 390px */
-  .clinical-expertise--single .clinical-expertise__inner {
-    width: min(1600px, calc(100% - 24px));
-  }
-
-  .clinical-expertise--single .clinical-expertise__header h2 {
-    font-size: var(--h2-size, 28px);
-  }
-
-  .clinical-expertise--single .clinical-expertise__card {
-    padding: 24px 24px 0 24px;
-  }
-}
-
-/* Pediatric heading scale */
-.clinical-expertise__header h2 {
-  font-size: var(--h2-size);
-  line-height: var(--h2-lh);
 }

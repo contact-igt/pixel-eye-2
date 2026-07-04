@@ -48,7 +48,9 @@ const MultiDoctorPanel = ({ data, sectionRef, isRevealed, slug }) => (
                     aria-label={`View profile for ${doctor.name}`}
                   >
                     <span>View Doctor Profiles</span>
-                    <span className={styles["clinical-expertise__doctor-link-icon"]}>
+                    <span
+                      className={styles["clinical-expertise__doctor-link-icon"]}
+                    >
                       <ArrowUpRight size={14} strokeWidth={2.2} />
                     </span>
                   </a>
@@ -62,59 +64,6 @@ const MultiDoctorPanel = ({ data, sectionRef, isRevealed, slug }) => (
   </section>
 );
 
-/* ── Single-doctor card (Squint style) ─────────────────────────── */
-const SingleDoctorCard = ({ data, sectionRef, isRevealed, slug }) => {
-  const doctorSrc = data.doctorImage || "";
-  const doctorAlt = data.doctorImageAlt || data.doctorName || "";
-
-  return (
-    <section
-      ref={sectionRef}
-      className={`${styles["clinical-expertise"]} ${styles["clinical-expertise--single"]} ${
-        isRevealed ? styles["is-revealed"] : ""
-      }`.trim()}
-      aria-labelledby={`${slug}-clinical-expertise-title`}
-    >
-      <div className={styles["clinical-expertise__inner"]}>
-        <div className={styles["clinical-expertise__header"]}>
-          <h2 id={`${slug}-clinical-expertise-title`}>{data.title}</h2>
-          <p>{data.intro}</p>
-        </div>
-
-        <div className={styles["clinical-expertise__card"]}>
-          <div className={styles["clinical-expertise__card-bg-wrapper"]}>
-            {data.cardBg && (
-              <img
-                src={data.cardBg}
-                alt={data.cardBgAlt || ""}
-                className={styles["clinical-expertise__card-bg"]}
-                aria-hidden="true"
-              />
-            )}
-          </div>
-
-          <div className={styles["clinical-expertise__card-body"]}>
-            <div className={styles["clinical-expertise__text"]}>
-              <h3 className={styles["clinical-expertise__doctor-name"]}>
-                {data.doctorName}
-              </h3>
-              <p className={styles["clinical-expertise__doctor-desc"]}>
-                {data.doctorDescription}
-              </p>
-            </div>
-          </div>
-
-          <img
-            src={doctorSrc}
-            alt={doctorAlt}
-            className={styles["clinical-expertise__doctor"]}
-          />
-        </div>
-      </div>
-    </section>
-  );
-};
-
 /* ── Main export ───────────────────────────────────────────────── */
 const TreatmentClinicalExpertise = ({ data, slug = "treatment" }) => {
   const sectionRef = useRef(null);
@@ -125,7 +74,10 @@ const TreatmentClinicalExpertise = ({ data, slug = "treatment" }) => {
     if (!node) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) { setIsRevealed(true); observer.disconnect(); }
+        if (entry.isIntersecting) {
+          setIsRevealed(true);
+          observer.disconnect();
+        }
       },
       { threshold: 0.25 },
     );
@@ -133,12 +85,14 @@ const TreatmentClinicalExpertise = ({ data, slug = "treatment" }) => {
     return () => observer.disconnect();
   }, []);
 
-  const variant = data.variant ?? "multi";
-  const sharedProps = { data, sectionRef, isRevealed, slug };
-
-  return variant === "single"
-    ? <SingleDoctorCard {...sharedProps} />
-    : <MultiDoctorPanel {...sharedProps} />;
+  return (
+    <MultiDoctorPanel
+      data={data}
+      sectionRef={sectionRef}
+      isRevealed={isRevealed}
+      slug={slug}
+    />
+  );
 };
 
 export default TreatmentClinicalExpertise;

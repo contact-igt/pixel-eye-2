@@ -905,16 +905,18 @@
 }
 
 .treatment-explainer--keratoconus .treatment-explainer__title {
-  margin: 8px 0 20px;
   color: #30488d;
-  font-size: clamp(42px, 5vw, 88px);
   font-weight: 400;
-  line-height: 1.02;
+  position: absolute;
+  top: -120px;
+  font-size: 60px;
+  left: 72px;
 }
 
 .treatment-explainer--keratoconus .treatment-explainer__paragraphs p {
   width: 580px;
   max-width: 100%;
+  margin: 0;
   padding-bottom: 10px;
   color: #6176ad;
   font-size: clamp(20px, 1.2vw, 20px);
@@ -943,6 +945,9 @@
 }
 
 .treatment-explainer--keratoconus .treatment-explainer__visual {
+  grid-area: auto;
+  align-self: start;
+  justify-self: stretch;
   width: 100%;
   max-width: none;
 }

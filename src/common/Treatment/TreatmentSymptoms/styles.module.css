@@ -70,8 +70,8 @@
   height: 300px;
   padding: 0 54px 0 34px;
   overflow-y: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  overscroll-behavior: contain;
+  scroll-snap-type: y proximity;
   scrollbar-color: #76a7c6 #e5f1f7;
   scrollbar-width: thin;
 }
