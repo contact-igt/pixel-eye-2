@@ -12,7 +12,8 @@ export const LASIK_TREATMENT = {
     variant: "multi",
   },
   faq: SERVICE_LASIK_CONTENT.faq,
-  patientExperience: SERVICE_LASIK_CONTENT.patientsExperience,
+  // patientExperience: SERVICE_LASIK_CONTENT.patientsExperience,
+  patientExperience: undefined,
 
   sections: [
     "banner",

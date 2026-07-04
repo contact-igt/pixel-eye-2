@@ -22,7 +22,8 @@ export const CATARACT_TREATMENT = {
   },
   faq: SERVICE_CATARACT_CONTENT.faq,
   suggestedReads: SERVICE_CATARACT_CONTENT.suggestedReads,
-  patientExperience: SERVICE_CATARACT_CONTENT.patientsExperience,
+  // patientExperience: SERVICE_CATARACT_CONTENT.patientsExperience,
+  patientExperience: undefined,
 
   sections: [
     "banner",
