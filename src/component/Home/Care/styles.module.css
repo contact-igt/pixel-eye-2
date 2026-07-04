@@ -1,5 +1,6 @@
 .careSection {
-  padding-top: 100px;
+  margin-top: 100px;
+  padding: var(--section-px);
 }
 
 .careContainer {
@@ -233,6 +234,10 @@
 /* ─── Large Laptop ──────────────────────────── 1399px ── */
 @media (max-width: 1399px) {
 
+  .careSection {
+    margin-top: 80px;
+  }
+
 
   .cardWrap {
     padding-bottom: 60px;
@@ -291,14 +296,8 @@
 }
 
 
-
 @media (max-width: 1199px) {
 
-
-  .careSection {
-    padding-top: 80px;
-    margin-bottom: 0;
-  }
 
   .careVisual {
     --card-gap: 20px;
@@ -404,8 +403,23 @@
 
 /* ─── Small Mobile ──────────────────────────── 575px ── */
 @media (max-width: 575px) {
+
+  .title {
+    font-size: 28px;
+    line-height: var(--h2-lh);
+  }
+
+  .careSection {
+    margin-top: 60px;
+  }
+
   .careVisual {
-    padding: 24px 18px 20px;
+    padding: 40px 20px;
+  }
+
+  .panelBg {
+    top: 0px;
+    border-radius: 24px;
   }
 
   .sideWrap,
@@ -414,75 +428,55 @@
   }
 
   .sideCard {
-    height: 310px;
+    height: 170px;
   }
 
   .centerCard {
-    height: 470px;
+    height: 280px;
   }
 
   .centerTitle {
     font-size: 20px;
-    bottom: 16px;
+    width: 100%;
+    left: 0px;
+    text-align: center;
+  }
+
+  .cardTitle {
+    font-size: 20px;
   }
 
   .cardDescription {
     font-size: 13px;
     line-height: 1.4;
+    padding-top: 15px;
   }
 
   .ctaButton {
-    left: auto;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-/* ─── Very Small Mobile ─────────────────────── 389px ── */
-@media (max-width: 389px) {
-
-  .sideWrap,
-  .centerWrap {
-    width: 100%;
-  }
-
-  .sideCard {
-    height: 300px;
-  }
-
-  .centerCard {
-    height: 360px;
-  }
-
-  .centerCard:nth-child(1) {
-    height: 420px;
-  }
-
-  .centerCard:nth-child(3) {
-    height: 400px;
-  }
-
-  .cardTitle {
-    font-size: 16px;
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .panelBg {
-    top: 110px;
-    border-radius: 16px;
-  }
-
-  .ctaButton {
+    display: block;
     left: 0;
+    right: 0;
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+    position: relative;
   }
 
-  .cardsRow .cardWrap:nth-child(1) .centerTitle {
-    bottom: 15px;
+  .ctaArrow {
+    position: absolute;
+    right: auto;
   }
 
-  .cardsRow .cardWrap:nth-child(3) .centerTitle {
-    bottom: 30px;
+  .cardWrap {
+    padding-bottom: 20px !important;
+  
   }
+
+  .cardWrap:nth-child(1) , .cardRow , .centerTitle{
+    bottom: 20px !important;
+    
+  }  
+
+
+
 }

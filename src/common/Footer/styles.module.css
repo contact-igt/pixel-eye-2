@@ -1,5 +1,5 @@
 .footerWrap {
-  padding: 8px;
+  margin-top: 100px;
 }
 
 .footer {
@@ -235,6 +235,7 @@
 @media (max-width: 575px) {
   .footerWrap {
     padding: 4px;
+    margin-top: 50px;
   }
 
   .footer {
@@ -242,6 +243,7 @@
     grid-template-columns: 1fr;
     gap: 18px;
     border-radius: 12px;
+    
   }
 
   .socialRow {

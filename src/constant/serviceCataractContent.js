@@ -8,8 +8,8 @@ export const SERVICE_CATARACT_CONTENT = {
         src: "/assets/Service/cataract/Subtract (6).png",
         alt: "",
       },
-      mobileImage: "/assets/Service/cataract/Subtract(6)-mbv.png",
-      mobileImageMedia: "(max-width: 1024px)",
+      mobileImage: "/assets/Service/cataract/herobannermb.png",
+      mobileImageMedia: "(max-width: 767px)",
       mobileCta: {
         label: "BOOK APPOINTMENT",
         href: "/appointment",
@@ -146,7 +146,7 @@ export const SERVICE_CATARACT_CONTENT = {
         active: true,
       },
       { number: "03", text: "Faded colours and reduced contrast" },
-      { number: "04", text: "Frequent changes in glasses without improvement" }
+      { number: "04", text: "Frequent changes in glasses without improvement" },
     ],
   },
 

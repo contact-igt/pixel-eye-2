@@ -9,7 +9,8 @@ const KeratoconusBanner = () => {
     <div className={styles.detailPage}>
       <HeroBanner
         image={hero.image.src}
-        mobileImage={hero.mobileImage?.src}
+        mobileImage={hero.mobileImage}
+        mobileImageMedia={hero.mobileImageMedia}
         title={
           <>
             {hero.titleLines.map((line, index) => (
@@ -24,7 +25,7 @@ const KeratoconusBanner = () => {
         rightSlot={hero.nav.rightSlot}
         navTheme={hero.nav.navTheme}
         cardBg={hero.nav.cardBg}
-        mobileCta={hero.mobileCta}
+        showMobileNabhBadge
         showOverlay={hero.showOverlay}
         imagePosition={hero.imagePosition}
       />

@@ -2,9 +2,19 @@ import HeroBanner from "@/common/HeroBanner";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
 
 const HeroSection = () => {
-  const { image, titleLines, subtitle, rightSlot, navTheme, cardBg, height, showOverlay, imagePosition } =
-    ABOUT_CONTENT.hero;
-  const { mobileCta } = ABOUT_CONTENT.hero;
+  const {
+    image,
+    mobileImage,
+    titleLines,
+    subtitle,
+    rightSlot,
+    navTheme,
+    cardBg,
+    height,
+    showOverlay,
+    imagePosition,
+    mobileCta,
+  } = ABOUT_CONTENT.hero;
 
   return (
     <HeroBanner
@@ -23,7 +33,9 @@ const HeroSection = () => {
       height={height}
       showOverlay={showOverlay}
       imagePosition={imagePosition}
+      mobileImage={mobileImage}
       mobileCta={mobileCta}
+      showMobileNabhBadge
       variant="aboutMasked"
     />
   );

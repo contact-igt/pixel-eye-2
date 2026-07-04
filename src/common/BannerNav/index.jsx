@@ -176,6 +176,7 @@ export default function BannerNav({
   navTheme = "dark",
   cardBg = "transparent",
   variant = "default",
+  showMobileNabhBadge = false,
 }) {
   const {
     logo,
@@ -185,6 +186,7 @@ export default function BannerNav({
     bookAppointment,
   } = NAV_CONTENT;
   const isLight = navTheme === "light";
+  const isAboutMasked = variant === "aboutMasked";
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isServicesExpanded, setIsServicesExpanded] = useState(false);
@@ -194,6 +196,8 @@ export default function BannerNav({
     e?.preventDefault();
     setIsServicesExpanded((s) => !s);
   };
+  const isServiceMenuItem = (label) =>
+    label === "SERVICES" || label === "TREATMENT";
 
   return (
     <>
@@ -283,6 +287,18 @@ export default function BannerNav({
             <div
               className={`${styles.rightCard} ${cardBg === "white" ? styles.cardWhite : ""}`.trim()}
             >
+              {showMobileNabhBadge && (
+                <div className={styles.aboutMobileBadge} aria-hidden="true">
+                  <Image
+                    src={nabhBadge.src}
+                    alt={nabhBadge.alt}
+                    width={nabhBadge.width}
+                    height={nabhBadge.height}
+                    className={styles.nabhBadge}
+                    priority
+                  />
+                </div>
+              )}
               {rightSlot === "nabh" ? (
                 <Image
                   src={nabhBadge.src}
@@ -297,18 +313,18 @@ export default function BannerNav({
                   {bookAppointment.label}
                 </Link>
               )}
-
-              <button
-                type="button"
-                className={`${styles.menuBtn} ${isLight ? styles.menuBtnLight : ""}`}
-                onClick={toggleSidebar}
-                aria-label="Open mobile menu"
-              >
-                <HamburgerIcon />
-              </button>
             </div>
           </RevealOnView>
         </div>
+
+        <button
+          type="button"
+          className={`${styles.menuBtn} ${isLight ? styles.menuBtnLight : ""}`}
+          onClick={toggleSidebar}
+          aria-label="Open mobile menu"
+        >
+          <HamburgerIcon />
+        </button>
       </div>
 
       <div
@@ -340,7 +356,7 @@ export default function BannerNav({
           <nav className={styles.sidebarNav} aria-label="Mobile navigation">
             <div className={styles.navGrid}>
               {navItems.map((item) =>
-                item.label === "SERVICES" && servicesDropdown.length > 0 ? (
+                isServiceMenuItem(item.label) && servicesDropdown.length > 0 ? (
                   <div key={item.id} className={styles.sidebarNavItemWithMenu}>
                     <div
                       className={`${styles.sidebarNavLink} ${styles.sidebarNavLinkTrigger} ${isServicesExpanded ? styles.activeItem : ""}`}

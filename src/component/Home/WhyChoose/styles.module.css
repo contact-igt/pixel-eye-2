@@ -1,5 +1,5 @@
 .whyChooseSection {
-    padding: var(--section-pt) var(--section-px) var(--section-pb);
+    margin-top: 100px;
     background: var(--bg-page);
 }
 
@@ -14,7 +14,7 @@
     max-width: 420px;
     font-size: 48px;
     line-height: var(--h2-lh);
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-heading);
 }
 
@@ -271,8 +271,9 @@
     }
 
     .ctaRow {
-        margin-top: 60px;
+        margin-top: 75px;
         margin-right: 0;
+        justify-content: center;
     }
 
     .ctaButton {
@@ -282,7 +283,7 @@
     .sectionTitle {
         font-size: 36px;
     }
-    
+
 }
 
 @media (max-width: 991px) {
@@ -326,9 +327,40 @@
 
 @media (max-width: 575px) {
 
-    .sideCard,
+
+    .sectionTitle {
+        font-size: 28px;
+        line-height: var(--h2-lh);
+        margin: 0 auto;
+    }
+
     .centerCard {
-        height: 230px;
+        height: 300px;
+    }
+
+    .cardsFrame {
+        gap: 0px;
+    }
+
+    .sideCard {
+        height: 170px;
+        width: 288px;
+        margin: 0 auto;
+        border-radius: 16px 16px 0px 0px;
+    }
+
+    .rightCard {
+        border-radius: 0px 0px 16px 16px;
+    }
+
+    .sideContent {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .ctaRow {
+        margin-top: 45px;
     }
 
     .centerContent {
@@ -336,23 +368,21 @@
         right: 18px;
         bottom: 18px;
     }
-}
 
-@media (max-width: 389px) {
-    .container {
-        width: min(var(--container-max), calc(100% - 24px));
-    }
-
-    .sideCard,
-    .centerCard {
-        height: 190px;
-    }
-
-    .centerTitle {
-        font-size: 18px;
+    .whyChooseSection {
+        margin-top: 60px;
     }
 
     .sideTitle {
-        font-size: 17px;
+        font-size: 20px;
+    }
+
+    .centerTitle {
+        font-size: 24px;
+    }
+
+    .centerDescription {
+        font-size: 16px;
+        width: 100%;
     }
 }

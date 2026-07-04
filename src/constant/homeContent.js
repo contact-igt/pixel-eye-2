@@ -75,6 +75,9 @@
         title: "Cataract Care & Lens Surgery",
         image: "/assets/Home/care1.png",
         imageHover: "/assets/Home/care1_hover.png",
+        image_mb: "/assets/Home/care1-mb.png",
+        imageHover_mb: "/assets/Home/care1-hover-mb.png",
+
         description:
           "Advanced micro-incision cataract surgery (MICS) and premium lens implants (IOL) to restore clear, sharp vision.",
         href: "#",
@@ -85,6 +88,8 @@
         title: "LASIK & Refractive Surgery",
         image: "/assets/Home/caree2.png",
         imageHover: "/assets/Home/care2-hover.png",
+        image_mb: "/assets/Home/care2-mb.png",
+        imageHover_mb: "/assets/Home/care2-hover-mb.png",
         description:
           "Laser vision correction including LASIK, SMILE, and PRK for myopia, hyperopia, and astigmatism with high-precision platforms.",
         href: "#",
@@ -95,6 +100,8 @@
         title: "Retina & Glaucoma Services",
         image: "/assets/Home/care3.png",
         imageHover: "/assets/Home/care3-hover.png",
+        image_mb: "/assets/Home/caree3-mb.png",
+        imageHover_mb: "/assets/Home/care3-hover-mb.png",
         description:
           "Diagnostic imaging, laser procedures, and VEGF therapy, and surgical management for retinal and glaucoma conditions.",
         href: "#",
@@ -109,11 +116,20 @@
     },
     title: "Every eye has a story, we're here to protect yours.",
     beforeImage: {
-      src: "/assets/Home/protextbanner1.png",
+      src: "/assets/Home/protextbanner11.png",
       alt: "Red inflamed eye",
     },
     afterImage: {
       src: "/assets/Home/protectbanner2.png",
+      alt: "Healthy clear eye",
+    },
+
+    beforembImage: {
+      src: "/assets/Home/protextbanner11mb.png",
+      alt: "Red inflamed eye",
+    },
+    aftermbImage: {
+      src: "/assets/Home/protectbanner2mb.png",
       alt: "Healthy clear eye",
     },
     handleImage: {
@@ -171,7 +187,7 @@
       alt: "Patient receiving eye exam",
     },
     mobileImage: {
-      src: "/assets/Home/care-experience.png",
+      src: "/assets/Home/care-experience1-mb.png",
       alt: "Patient receiving eye exam",
     },
   },

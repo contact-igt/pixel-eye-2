@@ -119,32 +119,20 @@
   .statsFrame {
     padding: 14px 8px 16px;
   }
-}
-
-@media (max-width: 390px) {
-  .statsSection {
-    padding: var(--section-pt) var(--section-px) var(--section-pb);
-  }
-
-  .statsFrame {
-    padding: 12px 6px 14px;
-  }
 
   .statNumber {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .statLabel {
-    font-size: 12px;
-    max-width: none;
-    white-space: nowrap;
+    font-size: 14px;
   }
 
-  .statLabel br {
-    display: none;
+  .statItem {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
   }
 
-  .statLabel span:not(:last-child)::after {
-    content: " ";
-  }
 }
+

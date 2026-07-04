@@ -4,6 +4,7 @@ import { DOCTORS_CONTENT } from "@/constant/doctorsContent";
 const HeroSection = () => {
   const {
     image,
+    mobileImage,
     titleLines,
     subtitle,
     rightSlot,
@@ -32,11 +33,12 @@ const HeroSection = () => {
       height={height}
       showOverlay={showOverlay}
       imagePosition={imagePosition}
+      mobileImage={mobileImage}
       mobileCta={mobileCta}
+      showMobileNabhBadge
       variant="aboutMasked"
     />
   );
 };
 
 export default HeroSection;
-

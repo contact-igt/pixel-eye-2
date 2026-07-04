@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { HOME_CONTENT } from "@/constant/homeContent";
 import styles from "./styles.module.css";
@@ -9,6 +9,22 @@ const Care = () => {
   const { care } = HOME_CONTENT;
   const { titleLine1, titleLine2, featuredCareAreas, cta } = care;
   const [activeId, setActiveId] = useState(2); // Card 2 (center) active by default
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const updateIsMobile = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    updateIsMobile();
+    mediaQuery.addEventListener("change", updateIsMobile);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateIsMobile);
+    };
+  }, []);
 
   return (
     <section className={styles.careSection}>
@@ -33,6 +49,12 @@ const Care = () => {
             const titleClass = isActive
               ? `${styles.cardTitle} ${styles.centerTitle}`
               : styles.cardTitle;
+            const cardImage = isMobile
+              ? item.image_mb || item.image
+              : item.image;
+            const cardHoverImage = isMobile
+              ? item.imageHover_mb || item.imageHover
+              : item.imageHover;
 
             return (
               <div
@@ -42,7 +64,7 @@ const Care = () => {
               >
                 <article className={`${styles.card} ${cardClass}`}>
                   <Image
-                    src={item.image}
+                    src={cardImage}
                     alt={item.title}
                     fill
                     sizes="(max-width: 992px) 100vw, 33vw"
@@ -50,7 +72,7 @@ const Care = () => {
                     className={`${styles.cardImage} ${styles.defaultImage} ${isActive ? styles.fadeOut : ""}`}
                   />
                   <Image
-                    src={item.imageHover}
+                    src={cardHoverImage}
                     alt={item.title}
                     fill
                     sizes="(max-width: 992px) 100vw, 33vw"

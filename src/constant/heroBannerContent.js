@@ -8,9 +8,8 @@ export const HERO_BANNER_CONTENT = {
     navTheme: "light",
     cardBg: "transparent",
     height: "medium",
-    showOverlay: true,
+    showOverlay: false,
     imagePosition: "right 40%",
-    mobileOverlay: "rgba(0, 0, 0, 0.18)",
     mobileCta: {
       label: "BOOK APPOINTMENT",
       href: "/appointment",
@@ -19,6 +18,7 @@ export const HERO_BANNER_CONTENT = {
   },
   service: {
     image: "/assets/Service/Subtract (5).png",
+    mobileImage: "/assets/Service/herobaner-mb.png",
     title: "",
     subtitle: "",
     rightSlot: "book",
@@ -27,5 +27,6 @@ export const HERO_BANNER_CONTENT = {
     height: "medium", // was "short" — increased to match reference height
     showOverlay: false, // no overlay — service image is clean and bright
     imagePosition: "center center", // show the eye-frame equipment centered
+    showMobileNabhBadge: true,
   },
 };

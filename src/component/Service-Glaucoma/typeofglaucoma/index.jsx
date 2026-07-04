@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import { SERVICE_GLAUCOMA_CONTENT } from "@/constant/serviceglaucomaContent";
+import { SERVICE_GLAUCOMA_CONTENT } from "@/constant/serviceGlaucomaContent";
 import styles from "./styles.module.css";
 
 const ArrowIcon = ({ direction }) => (
@@ -26,10 +26,14 @@ const TypesOfGlaucoma = () => {
   const [activeIndex, setActiveIndex] = useState(1);
 
   const getSlide = (offset) =>
-    types.slides[(activeIndex + offset + types.slides.length) % types.slides.length];
+    types.slides[
+      (activeIndex + offset + types.slides.length) % types.slides.length
+    ];
 
   const previousSlide = () => {
-    setActiveIndex((current) => (current - 1 + types.slides.length) % types.slides.length);
+    setActiveIndex(
+      (current) => (current - 1 + types.slides.length) % types.slides.length,
+    );
   };
 
   const nextSlide = () => {
@@ -41,7 +45,10 @@ const TypesOfGlaucoma = () => {
   const rightSlide = getSlide(1);
 
   return (
-    <section className={styles["types-glaucoma"]} aria-labelledby="types-glaucoma-title">
+    <section
+      className={styles["types-glaucoma"]}
+      aria-labelledby="types-glaucoma-title"
+    >
       <div className={styles["types-glaucoma__hero"]}>
         <Image
           src={types.image.src}
@@ -56,7 +63,10 @@ const TypesOfGlaucoma = () => {
         </div>
       </div>
 
-      <div className={styles["types-glaucoma__stage"]} aria-label="Types of glaucoma carousel">
+      <div
+        className={styles["types-glaucoma__stage"]}
+        aria-label="Types of glaucoma carousel"
+      >
         <div className={styles["types-glaucoma__cards-wrapper"]}>
           <button
             className={`${styles["types-glaucoma__arrow"]} ${styles["types-glaucoma__arrow--left"]}`}
@@ -72,7 +82,12 @@ const TypesOfGlaucoma = () => {
           >
             {leftSlide.image && (
               <div className={styles["types-glaucoma__card-image"]}>
-                <Image src={leftSlide.image} alt={leftSlide.title} width={300} height={300} />
+                <Image
+                  src={leftSlide.image}
+                  alt={leftSlide.title}
+                  width={300}
+                  height={300}
+                />
               </div>
             )}
             <div className={styles["types-glaucoma__card-content"]}>
@@ -87,7 +102,13 @@ const TypesOfGlaucoma = () => {
           >
             {activeSlide.image && (
               <div className={styles["types-glaucoma__card-image"]}>
-                <Image src={activeSlide.image} alt={activeSlide.title} width={500} height={500} priority />
+                <Image
+                  src={activeSlide.image}
+                  alt={activeSlide.title}
+                  width={500}
+                  height={500}
+                  priority
+                />
               </div>
             )}
             <div className={styles["types-glaucoma__card-content"]}>
@@ -101,7 +122,12 @@ const TypesOfGlaucoma = () => {
           >
             {rightSlide.image && (
               <div className={styles["types-glaucoma__card-image"]}>
-                <Image src={rightSlide.image} alt={rightSlide.title} width={300} height={300} />
+                <Image
+                  src={rightSlide.image}
+                  alt={rightSlide.title}
+                  width={300}
+                  height={300}
+                />
               </div>
             )}
             <div className={styles["types-glaucoma__card-content"]}>

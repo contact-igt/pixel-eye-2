@@ -54,7 +54,7 @@ const TreatmentPatientExperience = ({ data, slug = "treatment" }) => {
     <article
       key={`${item.id}-${i}`}
       className={`${styles.card} ${isActive ? styles.cardActive : ""}`}
-      style={{ backgroundImage: `url(${item.backgroundImage})` }}
+      style={{ backgroundImage: `url('${item.backgroundImage}')` }}
       onClick={() => {
         setActive(i % testimonials.length);
         sliderRef.current?.slickGoTo(i);
@@ -86,7 +86,9 @@ const TreatmentPatientExperience = ({ data, slug = "treatment" }) => {
         <div className={styles.meta}>
           <h3 className={styles.name}>{item.name}</h3>
           <div className={styles.ratingRow}>
-            <span className={styles.star} aria-hidden="true">&#9733;</span>
+            <span className={styles.star} aria-hidden="true">
+              &#9733;
+            </span>
             <span className={styles.rating}>{item.rating}</span>
           </div>
         </div>
@@ -133,7 +135,8 @@ const TreatmentPatientExperience = ({ data, slug = "treatment" }) => {
               className={`${styles.dot} ${i === active ? styles.activeDot : ""}`}
               onClick={() => {
                 setActive(i);
-                if (mounted) sliderRef.current?.slickGoTo(i + testimonials.length);
+                if (mounted)
+                  sliderRef.current?.slickGoTo(i + testimonials.length);
               }}
               aria-label={`Go to testimonial ${i + 1}`}
             />

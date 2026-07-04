@@ -47,7 +47,7 @@ const CareExperience = () => {
                 fill
                 className={`${styles.image} ${styles.mobileImage}`}
                 sizes="(max-width: 991px) 100vw, 560px"
-                priority
+                priority={false}
                 draggable={false}
               />
             </div>

@@ -1,4 +1,4 @@
-import { SERVICE_GLAUCOMA_CONTENT } from "@/constant/serviceglaucomaContent";
+import { SERVICE_GLAUCOMA_CONTENT } from "@/constant/serviceGlaucomaContent";
 
 export const GLAUCOMA_TREATMENT = {
   slug: "glaucoma",
@@ -8,7 +8,7 @@ export const GLAUCOMA_TREATMENT = {
   types: SERVICE_GLAUCOMA_CONTENT.types,
   diagnosis: SERVICE_GLAUCOMA_CONTENT.diagnosis,
   clinicalExpertise: null, // not in glaucoma content
-  faq: SERVICE_GLAUCOMA_CONTENT.faq,         // undefined → falls back to CataractFaq
+  faq: SERVICE_GLAUCOMA_CONTENT.faq, // undefined → falls back to CataractFaq
   patientExperience: SERVICE_GLAUCOMA_CONTENT.rememberRecommend, // undefined → falls back
 
   sections: [

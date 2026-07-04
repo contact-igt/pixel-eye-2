@@ -2,7 +2,7 @@ import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 
 export const CATARACT_TREATMENT = {
   slug: "cataract",
-  // banner stays as CataractBanner (unique design) — not in sections
+  banner: SERVICE_CATARACT_CONTENT.banner,
   risks: SERVICE_CATARACT_CONTENT.risks,
   types: SERVICE_CATARACT_CONTENT.types,
   symptoms: SERVICE_CATARACT_CONTENT.signs,
@@ -18,6 +18,7 @@ export const CATARACT_TREATMENT = {
   patientExperience: SERVICE_CATARACT_CONTENT.patientsExperience,
 
   sections: [
+    "banner",
     "riskFactors",
     "types",
     "symptoms",

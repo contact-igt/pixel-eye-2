@@ -1,5 +1,5 @@
 .visionSection {
-    padding: var(--section-pt) var(--section-px) var(--section-pb);
+    margin-top: 150px;
     background: transparent;
     display: block;
 }
@@ -12,14 +12,14 @@
 
 .title {
     margin: 0 0 10px 6px;
-    font-size: var(--h2-size);
+    font-size: 48px;
     line-height: 1.06;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-heading);
     max-width: 450px;
     position: absolute;
-    top: 19px;
-    left: 8px;
+    top: 20px;
+    left: 55px;
     z-index: 2;
 }
 
@@ -39,59 +39,104 @@
     object-position: center bottom;
 }
 
+
+
+
 .ctaButton {
     position: absolute;
-    left: 72px;
-    bottom: 62px;
+    bottom: 65px;
+    z-index: 2;
     display: inline-flex;
     align-items: center;
-    gap: 0;
     text-decoration: none;
-    z-index: 2;
+    color: #ffff;
+    left: 110px;
 }
+
+
 
 .ctaLabel {
     height: var(--btn-h);
     background: #94d4c9;
-    color: #2a3f82;
-    font-size: var(--btn-fs);
-    font-weight: var(--btn-fw);
-    padding: 0 26px;
-    border-radius: 999px 0 0 999px;
-    line-height: 1;
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--border-soft);
+    padding: 0 24px;
     display: inline-flex;
     align-items: center;
+    font-size: var(--btn-fs);
+    font-weight: var(--btn-fw);
 }
 
-.ctaIcon {
+.ctaArrow {
     width: var(--btn-icon);
     height: var(--btn-icon);
+    margin-left: -8px;
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--border-soft);
     background: #94d4c9;
-    border-radius: 0 999px 999px 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #2a3f82;
+}
+
+.ctaArrowIcon {
+    width: 18px;
+    height: 18px;
+    color: #ffff;
+    stroke-width: 2.2;
 }
 
 .ctaButton:hover .ctaLabel,
-.ctaButton:hover .ctaIcon {
-    background: #88cabe;
+.ctaButton:hover .ctaArrow {
+    background: #94d4c9;
 }
 
 .ctaButton:active .ctaLabel,
-.ctaButton:active .ctaIcon {
-    background: #7dbdb1;
+.ctaButton:active .ctaArrow {
+    background: #94d4c9;
 }
+
+.cardsRow .cardWrap:nth-child(1) .centerTitle {
+    bottom: 30px;
+
+}
+
+.cardWrap:nth-child(1) {
+    padding-bottom: 80px;
+}
+
+
+
+@media (max-width: 1399px) {
+    .title {
+        font-size: 40px;
+    }
+
+}
+
 
 @media (max-width: 1199px) {
     .title {
         max-width: 420px;
+        font-size: 36px;
+        top: 85px;
+        left: 8px;
+    }
+
+    .section {
+        margin-top: 80px;
+    }
+
+    .visionSection {
+        margin-top: 80px;
     }
 
     .ctaButton {
         bottom: 16%;
+        left: 20px;
     }
+
+
 }
 
 @media (max-width: 991px) {
@@ -140,47 +185,26 @@
 
 @media (max-width: 575px) {
     .frame {
-        min-height: 340px;
+        min-height: 230px;
     }
 
     .title {
         font-size: var(--h2-size);
-        top: 72px;
-        max-width: 46%;
+        line-height: 1.1;
+        top: 18px;
+        left: 9px;
+        max-width: 40%;
     }
 
     .image {
-        object-fit: contain;
-        object-position: center bottom;
+        object-fit: fill;
     }
 
-}
-
-@media (max-width: 389px) {
-    .title {
-        font-size: var(--h2-size);
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: calc(100% - 32px);
-        text-align: center;
-    }
-
-    .frame {
-        min-height: 350px;
-        border-radius: 14px;
-    }
 
     .ctaButton {
-        white-space: nowrap;
-        left: 50%;
+        left: 30%;
+        bottom: 45px;
         transform: translateX(-50%);
-        bottom: 12px;
-
     }
 
-    .ctaLabel {
-        padding: 0 14px;
-        font-size: var(--btn-fs);
-    }
 }

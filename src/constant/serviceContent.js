@@ -27,7 +27,7 @@ export const SERVICE_CONTENT = {
         "Care for vision problems caused by improper focusing of light on the retina. Managed through glasses, contact lenses, or corrective procedures depending on the need.",
       image: "/assets/Service/error management.png",
       imageAlt: "Patient covering one eye during a vision check",
-      href: "/service#refractive-error-management",
+      href: "/service/lasik",
       ctaStyle: "outline",
     },
     {
@@ -57,7 +57,7 @@ export const SERVICE_CONTENT = {
         "Care for conditions in which the eyes do not produce enough tears or where tear quality is affected, leading to discomfort and irritation.",
       image: "/assets/Service/Dry eye Treatment.png",
       imageAlt: "Close view of an eye receiving drops",
-      href: "/service#dry-eye-treatment",
+      href: "/service/glaucoma",
       ctaStyle: "outline",
     },
     {
@@ -67,7 +67,7 @@ export const SERVICE_CONTENT = {
         "Diagnosis and treatment of retinal conditions such as diabetic retinopathy, macular degeneration, and retinal detachment that can impact vision.",
       image: "/assets/Service/Retina Care.png",
       imageAlt: "Close view of an eye for retina care",
-      href: "/service#retina-care",
+      href: "/service/retina",
       ctaStyle: "outline",
     },
     {
@@ -92,4 +92,3 @@ export const SERVICE_CONTENT = {
     },
   ],
 };
-
