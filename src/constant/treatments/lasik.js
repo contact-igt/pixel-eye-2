@@ -3,12 +3,13 @@ import { SERVICE_LASIK_CONTENT } from "@/constant/serviceLasikContent";
 export const LASIK_TREATMENT = {
   slug: "lasik",
   banner: SERVICE_LASIK_CONTENT.banner,
-  symptoms: SERVICE_LASIK_CONTENT.signs,
+  symptoms: SERVICE_LASIK_CONTENT.symptoms,
   types: SERVICE_LASIK_CONTENT.types,
+  laserVisionOptions: SERVICE_LASIK_CONTENT.laserVisionOptions,
   surgicalOptions: SERVICE_LASIK_CONTENT.surgicalOptions,
   clinicalExpertise: {
     ...SERVICE_LASIK_CONTENT.clinicalExpertise,
-    variant: "single",
+    variant: "multi",
   },
   faq: SERVICE_LASIK_CONTENT.faq,
   patientExperience: SERVICE_LASIK_CONTENT.patientsExperience,

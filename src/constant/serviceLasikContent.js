@@ -1,3 +1,21 @@
+import { SERVICE_PEDIATRIC_CONTENT } from "@/constant/servicePediatricContent";
+
+const LASIK_SYMPTOMS = {
+  title: "Is LASIK right for you?",
+  description:
+    "LASIK may be considered if you have been using glasses or contact lenses and want to reduce your dependency on them.",
+  note: "Your spectacle or contact lens power should usually be stable before considering LASIK.",
+  image: {
+    src: "/assets/Service/Lasik/1.png",
+    alt: "LASIK laser vision correction procedure",
+  },
+  items: [
+    { number: "01", text: "Stable glass power" },
+    { number: "02", text: "Healthy cornea" },
+    { number: "03", text: "No major dry eye or eye disease" },
+  ],
+};
+
 export const SERVICE_LASIK_CONTENT = {
   banner: {
     hero: {
@@ -25,47 +43,34 @@ export const SERVICE_LASIK_CONTENT = {
     },
   },
 
-  signs: {
-    title: "Is LASIK right for you?",
-    description:
-      "LASIK may be considered if you have been using glasses or contact lenses and want to reduce your dependency on them.",
-    note: "Your spectacle or contact lens power should usually be stable before considering LASIK.",
-    image: {
-      src: "/assets/Service/cataract/Rectangle 10.png",
-      alt: "Eye examination with a handheld lens",
-    },
-    items: [
-      { number: "01", text: "Stable glass power" },
-      { number: "02", text: "Healthy cornea" },
-      { number: "03", text: "No major dry eye or eye disease" },
-    ],
-  },
+  symptoms: LASIK_SYMPTOMS,
+  signs: LASIK_SYMPTOMS,
 
   types: {
-    title: "Types of refractive errors",
+    title: "What LASIK can correct",
     description:
-      "Each type affects how clearly you see and determines which LASIK technique is most suitable for you.",
+      "LASIK is designed to correct refractive errors that cause blurred vision.",
     controls: {
       previousAriaLabel: "Previous refractive error type",
       nextAriaLabel: "Next refractive error type",
     },
     slides: [
       {
-        id: "myopia",
-        title: "Myopia",
-        image: "/assets/Service/cataract/Gemini_Generated_Image_1k7a4b1k7a4b1k7a 1.png",
-        alt: "Myopia eye illustration",
-      },
-      {
         id: "hyperopia",
-        title: "Hyperopia",
-        image: "/assets/Service/cataract/cortical.png",
+        title: "Hyperopia ( Farsightedness )",
+        image: "/assets/Service/lasik/hyperopia.png",
         alt: "Hyperopia eye illustration",
+      },
+       {
+        id: "myopia",
+        title: "Myopia ( Nearsightedness )",
+        image: "/assets/Service/lasik/myopia.png",
+        alt: "Myopia eye illustration",
       },
       {
         id: "astigmatism",
         title: "Astigmatism",
-        image: "/assets/Service/cataract/Gemini_Generated_Image_fbhk0efbhk0efbhk 1.png",
+        image: "/assets/Service/lasik/astigmatism.png",
         alt: "Astigmatism eye illustration",
       },
     ],
@@ -75,37 +80,41 @@ export const SERVICE_LASIK_CONTENT = {
     title: "Laser vision correction options",
     description:
       "Your doctor will suggest the right procedure based on your cornea, power, lifestyle, and eye health.",
-    backgroundImage: {
+    image: {
       src: "/assets/Service/Lasik/Subtract.png",
+      mobileSrc: "/assets/Service/Lasik/vision_correction_mobile.png",
       alt: "Eye drop being applied before laser vision correction",
     },
     controls: {
       previousAriaLabel: "Previous laser vision correction option",
       nextAriaLabel: "Next laser vision correction option",
     },
-    options: {
-      main: {
-        title: "LASIK",
-        description:
-          "A commonly performed laser vision correction procedure where the cornea is reshaped to improve focusing power.",
-        image: "/assets/Service/Lasik/1.png",
-        imageAlt: "LASIK laser vision correction procedure",
-      },
-      left: {
+    slides: [
+      {
+        id: "femto-lasik",
         title: "Femto LASIK / Bladeless LASIK",
         description:
           "A laser-assisted flap creation method designed for greater precision and comfort.",
         image: "/assets/Service/Lasik/3.png",
-        imageAlt: "Femto LASIK bladeless laser equipment",
+        alt: "Femto LASIK bladeless laser equipment",
       },
-      right: {
+      {
+        id: "lasik",
+        title: "LASIK",
+        description:
+          "A commonly performed laser vision correction procedure where the cornea is reshaped to improve focusing power.",
+        image: "/assets/Service/Lasik/1.png",
+        alt: "LASIK laser vision correction procedure",
+      },
+      {
+        id: "contoura-lasik",
         title: "Contoura LASIK",
         description:
           "A customized laser correction option planned according to the unique shape of the cornea.",
         image: "/assets/Service/Lasik/2.png",
-        imageAlt: "Contoura LASIK laser equipment",
+        alt: "Contoura LASIK laser equipment",
       },
-    },
+    ],
   },
 
   surgicalOptions: {
@@ -195,18 +204,7 @@ export const SERVICE_LASIK_CONTENT = {
     ],
   },
 
-  clinicalExpertise: {
-    title: "Clinical expertise",
-    intro:
-      "LASIK care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced refractive surgery.",
-    cardBg: "/assets/Service/cataract/clinicbg.png",
-    cardBgAlt: "Pixel Eye clinic background",
-    doctorImage: "/assets/Service/Dr. Abdul Rasheed.png",
-    doctorImageAlt: "Dr. Abdul Rasheed",
-    doctorName: "Dr. Abdul Rasheed",
-    doctorDescription:
-      "An ophthalmic surgeon trained at AIIMS New Delhi, with experience in cataract and LASIK, including complex cases. He also works closely with patients across age groups for squint diagnosis and management, with a clear, patient-focused approach.",
-  },
+  clinicalExpertise: SERVICE_PEDIATRIC_CONTENT.clinicalExpertise,
 
   patientsExperience: {
     titleLines: ["patient experiences"],

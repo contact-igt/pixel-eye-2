@@ -99,7 +99,7 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
                 <div className={styles["treatment-types__card-image"]}>
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={slide.alt ?? slide.imageAlt ?? slide.title}
                     width={variant === "main" ? 500 : 300}
                     height={variant === "main" ? 500 : 300}
                   />
@@ -130,7 +130,12 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
             >
               {slide.image && (
                 <div className={styles["treatment-types__card-image"]}>
-                  <Image src={slide.image} alt={slide.title} width={500} height={500} />
+                  <Image
+                    src={slide.image}
+                    alt={slide.alt ?? slide.imageAlt ?? slide.title}
+                    width={500}
+                    height={500}
+                  />
                 </div>
               )}
               <div className={styles["treatment-types__card-content"]}>

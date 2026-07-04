@@ -14,7 +14,6 @@ import CataractFaqFallback from "@/component/ServiceCataract/cataractFaq";
 import CataractPatientExperienceFallback from "@/component/ServiceCataract/patientsExperience";
 import TreatmentApproach from "@/component/ServiceCataract/treatmentApproach";
 import CataractApproach from "@/component/ServiceCataract/cataractApproach";
-import LasikLaserVisionOptions from "@/component/ServiceLasik/laserVisionOptions";
 import { KeratoconusApproach } from "@/component/ServiceKeratoconus/keratoconusApproach/index";
 
 /**
@@ -96,9 +95,14 @@ const SECTION_MAP = {
     t.cataractApproach ? <CataractApproach key="cataractApproach" /> : null,
 
   // Lasik-specific sections
-  laserVisionOptions: (_t) => (
-    <LasikLaserVisionOptions key="laserVisionOptions" />
-  ),
+  laserVisionOptions: (t) =>
+    t.laserVisionOptions ? (
+      <TreatmentTypes
+        key="laserVisionOptions"
+        data={t.laserVisionOptions}
+        slug={`${t.slug}-laser-options`}
+      />
+    ) : null,
 
   // Keratoconus-specific sections
   keratoconusApproach: (_t) => (
