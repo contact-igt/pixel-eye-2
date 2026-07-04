@@ -2,6 +2,7 @@ import TreatmentBanner from "@/common/Treatment/TreatmentBanner";
 import TreatmentSymptoms from "@/common/Treatment/TreatmentSymptoms";
 import TreatmentCauses from "@/common/Treatment/TreatmentCauses";
 import TreatmentTypes from "@/common/Treatment/TreatmentTypes";
+import TreatmentTypesCards from "@/common/Treatment/TreatmentTypesCards";
 import TreatmentDiagnosis from "@/common/Treatment/TreatmentDiagnosis";
 import TreatmentClinicalExpertise from "@/common/Treatment/TreatmentClinicalExpertise";
 import TreatmentFaq from "@/common/Treatment/TreatmentFaq";
@@ -27,8 +28,16 @@ const SECTION_MAP = {
   ),
   causes: (t) =>
     t.causes ? <TreatmentCauses key="causes" data={t.causes} /> : null,
-  types: (t) =>
-    t.types ? <TreatmentTypes key="types" data={t.types} slug={t.slug} /> : null,
+  types: (t) => {
+    if (!t.types) return null;
+    // Cataract & Lasik use the simple image-card carousel (no hero banner,
+    // no per-slide description). All other pages use the hero-banner variant.
+    const useCardsVariant = t.slug === "cataract" || t.slug === "lasik";
+    const TypesComponent = useCardsVariant
+      ? TreatmentTypesCards
+      : TreatmentTypes;
+    return <TypesComponent key="types" data={t.types} slug={t.slug} />;
+  },
   diagnosis: (t) =>
     t.diagnosis ? (
       <TreatmentDiagnosis key="diagnosis" data={t.diagnosis} slug={t.slug} />

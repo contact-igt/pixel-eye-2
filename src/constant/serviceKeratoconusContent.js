@@ -32,7 +32,7 @@
       "It often starts with frequent changes in glass power, increasing astigmatism, glare, halos, or difficulty seeing clearly even with spectacles.",
       "A detailed corneal evaluation is needed to diagnose the condition and understand whether it is stable or progressing.",
     ],
-   
+
     image: {
       src: "/assets/Service/keratoconus/Rectangle 99.png",
       alt: "Comparison of normal eye and keratoconus corneal shape",
@@ -178,7 +178,7 @@
       "The goal is to understand whether the condition is mild, moderate, advanced, or actively progressing.",
       "Treatment is planned with two priorities: first, to slow or stop further progression of the disease; second, to improve vision quality using the right glasses, contact lenses, or surgical options where required.",
     ],
-     media: [
+    media: [
       {
         title: "Femto LASIK / Bladeless LASIK",
         image: "/assets/Service/squint/diagnosed_image1.png",
@@ -231,7 +231,7 @@
       },
     ],
   },
-   clinicalExpertise: {
+  clinicalExpertise: {
     title: "Clinical expertise",
     intro:
       "Cataract care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced",
@@ -241,7 +241,7 @@
       {
         name: "Dr. Abdul Rasheed",
         description: "MD (AIIMS)\nCataract, Refractive &\nSquint Surgeon",
-        image: "/pediatric/dr-abdul-rasheed.png",
+        image: "/assets/Service/pediatric/dr-abdul-rasheed.png",
         imageAlt: "Dr. Abdul Rasheed",
         href: "/doctors",
       },
@@ -249,7 +249,7 @@
         name: "Dr. Krishna Poojita",
         description:
           "MBBS, DNB (Ophthalmology),\nMRCS (Edinburgh), FICO (UK),\nFPRS (Narayana Nethralaya)\nCataract & Refractive\nSurgeon",
-        image: "/pediatric/dr-krishna-poojita.png",
+        image: "/assets/Service/pediatric/dr-krishna-poojita.png",
         imageAlt: "Dr. Krishna Poojita",
         href: "/doctors",
       },

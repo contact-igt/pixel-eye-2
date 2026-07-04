@@ -183,7 +183,10 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           rightSlot={hero.nav?.rightSlot ?? "book"}
           navTheme={hero.nav?.navTheme ?? "light"}
           cardBg={hero.nav?.cardBg ?? "white"}
-          showOverlay={hero.showOverlay !== undefined ? hero.showOverlay : false}
+          showMobileNabhBadge={hero.showMobileNabhBadge ?? false}
+          showOverlay={
+            hero.showOverlay !== undefined ? hero.showOverlay : false
+          }
           imagePosition={hero.imagePosition || "center center"}
           className={styles["treatment-hero"]}
           frameClassName={styles["treatment-hero__frame"]}

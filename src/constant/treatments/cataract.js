@@ -19,9 +19,9 @@ export const CATARACT_TREATMENT = {
 
   sections: [
     "banner",
+    "symptoms",
     "riskFactors",
     "types",
-    "symptoms",
     "treatmentApproach",
     "surgicalOptions",
     "cataractApproach",

@@ -10,11 +10,7 @@ export const SERVICE_CATARACT_CONTENT = {
       },
       mobileImage: "/assets/Service/cataract/herobannermb.png",
       mobileImageMedia: "(max-width: 767px)",
-      mobileCta: {
-        label: "BOOK APPOINTMENT",
-        href: "/appointment",
-        variant: "light",
-      },
+      showMobileNabhBadge: true,
       nav: {
         rightSlot: "book",
         navTheme: "light",
@@ -302,6 +298,7 @@ export const SERVICE_CATARACT_CONTENT = {
         text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
         name: "S. Ramesh",
         rating: "4.5",
+        backgroundImage: "/assets/About/remembercard.png",
         profileImage: {
           src: "/assets/About/cardimg1.png",
           alt: "Patient profile image 1",
@@ -312,6 +309,7 @@ export const SERVICE_CATARACT_CONTENT = {
         text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
         name: "S. Ramesh",
         rating: "4.5",
+        backgroundImage: "/assets/About/remembercard.png",
         profileImage: {
           src: "/assets/About/cardimg2.png",
           alt: "Patient profile image 2",
@@ -322,6 +320,7 @@ export const SERVICE_CATARACT_CONTENT = {
         text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
         name: "S. Ramesh",
         rating: "4.5",
+        backgroundImage: "/assets/About/remembercard.png",
         profileImage: {
           src: "/assets/About/cardimg3.png",
           alt: "Patient profile image 3",
