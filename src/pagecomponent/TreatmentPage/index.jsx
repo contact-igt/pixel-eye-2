@@ -1,12 +1,12 @@
-import TreatmentBanner from "@/component/TreatmentCommon/TreatmentBanner";
-import TreatmentSymptoms from "@/component/TreatmentCommon/TreatmentSymptoms";
-import TreatmentCauses from "@/component/TreatmentCommon/TreatmentCauses";
-import TreatmentTypes from "@/component/TreatmentCommon/TreatmentTypes";
-import TreatmentDiagnosis from "@/component/TreatmentCommon/TreatmentDiagnosis";
-import TreatmentClinicalExpertise from "@/component/TreatmentCommon/TreatmentClinicalExpertise";
-import TreatmentFaq from "@/component/TreatmentCommon/TreatmentFaq";
-import TreatmentPatientExperience from "@/component/TreatmentCommon/TreatmentPatientExperience";
-import TreatmentSurgicalOptions from "@/component/TreatmentCommon/TreatmentSurgicalOptions";
+import TreatmentBanner from "@/common/Treatment/TreatmentBanner";
+import TreatmentSymptoms from "@/common/Treatment/TreatmentSymptoms";
+import TreatmentCauses from "@/common/Treatment/TreatmentCauses";
+import TreatmentTypes from "@/common/Treatment/TreatmentTypes";
+import TreatmentDiagnosis from "@/common/Treatment/TreatmentDiagnosis";
+import TreatmentClinicalExpertise from "@/common/Treatment/TreatmentClinicalExpertise";
+import TreatmentFaq from "@/common/Treatment/TreatmentFaq";
+import TreatmentPatientExperience from "@/common/Treatment/TreatmentPatientExperience";
+import TreatmentSurgicalOptions from "@/common/Treatment/TreatmentSurgicalOptions";
 import SuggestedReads from "@/component/About/SuggestedReads";
 
 // Fallback components for pages that don't have their own faq / patient-experience content

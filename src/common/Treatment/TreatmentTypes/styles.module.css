@@ -494,3 +494,201 @@
     font-size: 30px;
   }
 }
+
+/* ─── Mobile: switch to mobile banner image + static copy + card rail ─── */
+@media (max-width: 768px) {
+  .treatment-types__hero {
+    position: relative;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    background: transparent;
+    border-radius: 10px;
+  }
+
+  .treatment-types__image--desktop {
+    display: none;
+  }
+
+  .treatment-types__image--mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+  }
+
+  .treatment-types__copy {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin-top: 24px;
+    top: unset;
+    left: unset;
+  }
+
+  .treatment-types__copy h2 {
+    position: absolute;
+    top: clamp(24px, 7.2vw, 54px);
+    left: clamp(18px, 4.4vw, 34px);
+    z-index: 5;
+    display: block;
+    width: min(50%, 230px);
+    margin: 0;
+    color: #273979;
+    font-size: clamp(37px, 6.1vw, 37px);
+    font-weight: 400;
+    line-height: 1.08;
+    pointer-events: none;
+  }
+
+  .treatment-types__copy p {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    color: rgba(42, 60, 125, 0.78);
+    font-size: clamp(20px, 2.6vw, 36px);
+    line-height: 1.17;
+  }
+
+  .treatment-types__stage {
+    margin-top: 24px;
+    padding: 0;
+  }
+
+  .treatment-types__cards-wrapper {
+    display: none;
+  }
+
+  .treatment-types__mobile-list {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .treatment-types__mobile-card {
+    width: 100%;
+    height: 360px;
+    padding: 18px 16px 22px;
+    border-radius: 14px;
+  }
+
+  .treatment-types__mobile-card h3 {
+    max-width: 100%;
+    font-size: clamp(24px, 7vw, 30px);
+    line-height: 1.08;
+    text-align: center;
+  }
+
+  .treatment-types__mobile-card p {
+    max-width: 92%;
+    font-size: 16px;
+    line-height: 1.18;
+  }
+}
+
+@media (max-width: 576px) {
+  .treatment-types__copy {
+    margin-top: 18px;
+  }
+
+  .treatment-types__copy h2 {
+    top: clamp(16px, 5.5vw, 30px);
+    left: clamp(14px, 4vw, 22px);
+    width: min(58%, 220px);
+    font-size: clamp(20px, 7.2vw, 28px);
+  }
+
+  .treatment-types__copy p {
+    font-size: clamp(18px, 4.1vw, 28px);
+    line-height: 1.18;
+  }
+
+  .treatment-types__stage {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .treatment-types__copy h2 {
+    top: clamp(16px, 4.5vw, 20px);
+    left: clamp(14px, 4vw, 22px);
+    width: min(50%, 220px);
+    font-size: clamp(20px, 6.2vw, 25px);
+  }
+
+  .treatment-types__copy p {
+    font-size: clamp(14px, 3.5vw, 20px);
+    line-height: 1.18;
+  }
+}
+
+@media (max-width: 390px) {
+  .treatment-types__copy h2 {
+    top: clamp(16px, 7.5vw, 20px);
+    left: clamp(14px, 4vw, 22px);
+    width: min(50%, 160px);
+    font-size: clamp(20px, 5.2vw, 23px);
+  }
+
+  .treatment-types__copy p {
+    font-size: clamp(14px, 3.5vw, 20px);
+    line-height: 1.18;
+  }
+
+  .treatment-types__mobile-card {
+    height: 342px;
+  }
+
+  .treatment-types__mobile-card p {
+    font-size: 15px;
+  }
+}
+
+/* Tablet range: horizontal scroll card rail */
+@media (min-width: 577px) and (max-width: 768px) {
+  .treatment-types {
+    overflow: hidden;
+  }
+
+  .treatment-types__stage {
+    width: 100%;
+    margin-top: 24px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .treatment-types__mobile-list {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+    margin: 0;
+    padding: 0 16px 4px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .treatment-types__mobile-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .treatment-types__mobile-card {
+    flex: 0 0 calc((100% - 14px) / 1.5);
+    width: calc((100% - 14px) / 1.5);
+    min-width: 0;
+    height: 390px;
+    scroll-snap-align: start;
+  }
+
+  .treatment-types__mobile-card h3,
+  .treatment-types__mobile-card p {
+    overflow-wrap: anywhere;
+  }
+}

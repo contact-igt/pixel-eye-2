@@ -1308,19 +1308,24 @@
     width: 8px;
     height: 8px;
     padding: 0;
+    background: transparent;
+    border: none;
   }
 
   .squint-diagnosis__treatment-slider :global(.slick-dots li button::before) {
+    content: '';
+    display: block;
     width: 8px;
     height: 8px;
-    color: #9fb0d2;
-    font-size: 8px;
-    line-height: 8px;
+    border-radius: 50%;
+    background-color: #9fb0d2;
+    font-size: 0;
+    line-height: 0;
     opacity: 1;
   }
 
   .squint-diagnosis__treatment-slider :global(.slick-dots li.slick-active button::before) {
-    color: #273979;
+    background-color: #273979;
   }
 
   .squint-diagnosis__treatment-slider .squint-diagnosis__treatment-card,

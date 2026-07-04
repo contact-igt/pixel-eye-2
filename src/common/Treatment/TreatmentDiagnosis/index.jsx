@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Slider from "react-slick";
 import styles from "./styles.module.css";
 
@@ -37,9 +37,9 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
  
    const renderTreatmentCard = (item, isSlider = false) => (
      <article
-       className={`${styles["squint-diagnosis__treatment-card"]} ${
+       className={`${styles["treatment-diagnosis__treatment-card"]} ${
          item.highlighted
-           ? styles["squint-diagnosis__treatment-card--highlight"]
+           ? styles["treatment-diagnosis__treatment-card--highlight"]
            : ""
        }`}
        key={item.number}
@@ -49,9 +49,9 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
          alt={item.alt}
          width={item.highlighted ? 3816 : 1755}
          height={item.highlighted ? 1569 : 1875}
-         className={styles["squint-diagnosis__treatment-image"]}
+         className={styles["treatment-diagnosis__treatment-image"]}
        />
-       <div className={styles["squint-diagnosis__treatment-content"]}>
+       <div className={styles["treatment-diagnosis__treatment-content"]}>
          <h3>
            <span>{item.number}</span> {item.title}
          </h3>
@@ -62,37 +62,37 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
  
    return (
      <section
-       className={styles["squint-diagnosis"]}
+       className={styles["treatment-diagnosis"]}
        aria-labelledby={`${slug}-diagnosis-title`}
      >
        <div
-         className={styles["squint-diagnosis__panel"]}
+         className={styles["treatment-diagnosis__panel"]}
          style={data.bgImage ? { backgroundImage: `url('${data.bgImage}')` } : undefined}
        >
-         <div className={styles["squint-diagnosis__copy"]}>
+         <div className={styles["treatment-diagnosis__copy"]}>
            <h2 id={`${slug}-diagnosis-title`}>{data.title}</h2>
            {data.paragraphs.map((paragraph, i) => (
              <p key={i}>{paragraph}</p>
            ))}
          </div>
  
-         <div className={styles["squint-diagnosis__media-list"]}>
+         <div className={styles["treatment-diagnosis__media-list"]}>
            {(data.media || []).map((item) => (
              <figure
-               className={styles["squint-diagnosis__media-card"]}
+               className={styles["treatment-diagnosis__media-card"]}
                key={item.title}
              >
-               <div className={styles["squint-diagnosis__media-frame"]}>
+               <div className={styles["treatment-diagnosis__media-frame"]}>
                  <Image
                    src={item.image}
                    alt={item.alt}
                    width={1779}
                    height={792}
-                   className={styles["squint-diagnosis__media-image"]}
+                   className={styles["treatment-diagnosis__media-image"]}
                  />
                  {/* <PlayIcon /> */}
                </div>
-               <figcaption className={styles["squint-diagnosis__media-label"]}>
+               <figcaption className={styles["treatment-diagnosis__media-label"]}>
                  {item.title}
                </figcaption>
              </figure>
@@ -100,11 +100,11 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
          </div>
        </div>
  
-       <div className={styles["squint-diagnosis__treatments"]}>
+       <div className={styles["treatment-diagnosis__treatments"]}>
          {(data.treatments || []).map((item) => renderTreatmentCard(item, false))}
        </div>
  
-       <div className={styles["squint-diagnosis__treatment-slider"]}>
+       <div className={styles["treatment-diagnosis__treatment-slider"]}>
          <Slider {...treatmentSliderSettings}>
            {(data.treatments || []).map((item) => renderTreatmentCard(item, true))}
          </Slider>

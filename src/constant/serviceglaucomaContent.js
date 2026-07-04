@@ -87,6 +87,7 @@ export const SERVICE_GLAUCOMA_CONTENT = {
             "Different types of glaucoma affect the eye in different ways. Identifying the type helps plan the right treatment.",
         image: {
             src: "/assets/Service/glaucoma/types.png",
+            mobileSrc: "/assets/Service/glaucoma/types.png",
             alt: "Types of Glaucoma",
         },
         controls: {

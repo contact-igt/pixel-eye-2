@@ -88,6 +88,7 @@ export const SERVICE_RETINA_CONTENT = {
             "Retinal conditions can affect different parts of the retina. Identifying the exact problem helps plan the right treatment.",
         image: {
             src: "/assets/Service/Retina/typesofretina.png",
+            mobileSrc: "/assets/Service/Retina/typesofretina.png",
             alt: "Eye drops being applied during retina care",
         },
         controls: {

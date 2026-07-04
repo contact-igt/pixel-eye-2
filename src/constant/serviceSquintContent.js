@@ -94,6 +94,7 @@ export const SERVICE_SQUINT_CONTENT = {
       "The type of squint depends on the direction in which the eye turns.",
     image: {
       src: "/assets/Service/squint/typeofsquint.png",
+      mobileSrc: "/assets/Service/squint/typeofsquint_mobile.png",
       alt: "Eye drops being applied during squint care",
     },
     controls: {
@@ -177,6 +178,7 @@ export const SERVICE_SQUINT_CONTENT = {
         description:
           "Eye drops may be used to dilate your pupils and relax the focusing muscles. This allows the doctor to check for underlying vision issues (like nearsightedness or farsightedness) that might be causing the squint, and to inspect the internal structures of your eye.",
         image: "/assets/Service/squint/refraction_examination.png",
+        sliderImage: "/assets/Service/squint/refraction_examination_mobile.png",
         alt: "Retinal and refraction examination for squint diagnosis",
         highlighted: true,
       },
