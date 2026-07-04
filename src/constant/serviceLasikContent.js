@@ -10,6 +10,7 @@ export const SERVICE_LASIK_CONTENT = {
       },
     },
     explainer: {
+      variant: "lasik",
       title: "What is LASIK?",
       paragraphs: [
         "LASIK is a laser vision correction procedure used to treat common refractive errors such as nearsightedness, farsightedness, and astigmatism.",

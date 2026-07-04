@@ -12,6 +12,7 @@ export const SERVICE_SQUINT_CONTENT = {
       },
     },
     explainer: {
+      variant: "squint",
       title: "What is Squint?",
       paragraphs: [
         "Squint, medically called strabismus, is an eye condition where the eyes are not aligned properly.",

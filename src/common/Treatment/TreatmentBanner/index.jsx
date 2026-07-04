@@ -2,8 +2,12 @@ import Image from "next/image";
 import HeroBanner from "@/common/HeroBanner";
 import styles from "./styles.module.css";
 
-const TreatmentBanner = ({ data }) => {
-  const { hero, explainer } = data;
+const TreatmentBanner = ({ data, slug = "treatment" }) => {
+  const { hero, explainer, comparison } = data;
+  const variant = explainer?.variant;
+  const isCataract = variant === "cataract";
+  const isLasik = variant === "lasik";
+  const isKeratoconus = variant === "keratoconus";
 
   const hasTitleLines =
     Array.isArray(hero.titleLines) && hero.titleLines.length > 0;
@@ -22,8 +26,152 @@ const TreatmentBanner = ({ data }) => {
       ? hero.mobileImage
       : hero.mobileImage?.src;
 
+  const rootClassName = `${styles["treatment-detail"]}${
+    styles[`treatment-detail--${slug}`] ? ` ${styles[`treatment-detail--${slug}`]}` : ""
+  }`;
+
+  const explainerClassName = `${styles["treatment-explainer"]}${
+    variant && styles[`treatment-explainer--${variant}`]
+      ? ` ${styles[`treatment-explainer--${variant}`]}`
+      : ""
+  }`;
+
+  const explainerTitleId = `${slug}-explainer-title`;
+
+  const renderExplainerImage = (image) => {
+    if (!image) return null;
+
+    return image.mobileSrc ? (
+      <>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={2484}
+          height={1398}
+          className={`${styles["treatment-explainer__image"]} ${styles["treatment-explainer__image--desktop"]}`}
+        />
+        <Image
+          src={image.mobileSrc}
+          alt={image.alt}
+          width={686}
+          height={340}
+          className={`${styles["treatment-explainer__image"]} ${styles["treatment-explainer__image--mobile"]}`}
+        />
+      </>
+    ) : (
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={2484}
+        height={1398}
+        className={styles["treatment-explainer__image"]}
+      />
+    );
+  };
+
+  const renderExplainerParagraphs = () =>
+    explainer.paragraphs.map((paragraph, index) => (
+      <p key={`explainer-paragraph-${index}`}>{paragraph}</p>
+    ));
+
+  const renderCataractExplainer = () => (
+    <section className={explainerClassName} aria-labelledby={explainerTitleId}>
+      <div className={styles["treatment-explainer__copy"]}>
+        <h1
+          id={explainerTitleId}
+          className={styles["treatment-explainer__title"]}
+        >
+          {explainer.title}
+        </h1>
+        {renderExplainerParagraphs()}
+      </div>
+
+      {explainer.image && (
+        <div
+          className={styles["treatment-explainer__visual"]}
+          aria-label="Normal eye and cataract comparison"
+        >
+          {renderExplainerImage(explainer.image)}
+        </div>
+      )}
+    </section>
+  );
+
+  const renderKeratoconusExplainer = () => (
+    <section className={explainerClassName} aria-labelledby={explainerTitleId}>
+      <div className={styles["treatment-explainer__inner"]}>
+        <div className={styles["treatment-explainer__copy-column"]}>
+          <h1
+            id={explainerTitleId}
+            className={styles["treatment-explainer__title"]}
+          >
+            {explainer.title}
+          </h1>
+
+          <div className={styles["treatment-explainer__paragraphs"]}>
+            {renderExplainerParagraphs()}
+          </div>
+
+          <div
+            className={styles["treatment-explainer__progress"]}
+            aria-hidden="true"
+          >
+            <span />
+          </div>
+        </div>
+
+        {explainer.image && (
+          <div className={styles["treatment-explainer__visual"]}>
+            {renderExplainerImage(explainer.image)}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+
+  const renderGenericExplainer = () => (
+    <section className={explainerClassName} aria-labelledby={explainerTitleId}>
+      {!isLasik && (
+        <h1
+          id={explainerTitleId}
+          className={styles["treatment-explainer__title"]}
+        >
+          {explainer.title}
+        </h1>
+      )}
+
+      <div className={styles["treatment-explainer__copy"]}>
+        {renderExplainerParagraphs()}
+
+        {explainer.loader && (
+          <Image
+            src={explainer.loader.src}
+            alt={explainer.loader.alt}
+            width={1029}
+            height={21}
+            className={styles["treatment-explainer__loader"]}
+            aria-hidden="true"
+          />
+        )}
+      </div>
+
+      {explainer.image && (
+        <div className={styles["treatment-explainer__visual"]}>
+          {renderExplainerImage(explainer.image)}
+        </div>
+      )}
+    </section>
+  );
+
+  const renderExplainer = () => {
+    if (!explainer) return null;
+    if (isCataract) return renderCataractExplainer();
+    if (isKeratoconus) return renderKeratoconusExplainer();
+    return renderGenericExplainer();
+  };
+
   return (
-    <div className={styles["treatment-detail"]}>
+    <div className={rootClassName}>
       <div className={styles["treatment-hero-wrap"]}>
         <HeroBanner
           image={hero.image.src}
@@ -48,67 +196,28 @@ const TreatmentBanner = ({ data }) => {
             {hero.description && <p>{hero.description}</p>}
           </div>
         )}
-      </div>
 
-      {explainer && (
-        <section
-          className={styles["treatment-explainer"]}
-          aria-labelledby="treatment-explainer-title"
-        >
-          <h1
-            id="treatment-explainer-title"
-            className={styles["treatment-explainer__title"]}
+        {isLasik && explainer?.title && (
+          <h2
+            id={explainerTitleId}
+            className={styles["treatment-explainer__cutout-title"]}
           >
             {explainer.title}
-          </h1>
+          </h2>
+        )}
+      </div>
 
-          <div className={styles["treatment-explainer__copy"]}>
-            {explainer.paragraphs.map((paragraph, index) => (
-              <p key={`explainer-paragraph-${index}`}>{paragraph}</p>
-            ))}
+      {renderExplainer()}
 
-            {explainer.loader && (
-              <Image
-                src={explainer.loader.src}
-                alt={explainer.loader.alt}
-                width={1029}
-                height={21}
-                className={styles["treatment-explainer__loader"]}
-                aria-hidden="true"
-              />
-            )}
-          </div>
-
-          {explainer.image && (
-            <div className={styles["treatment-explainer__visual"]}>
-              {explainer.image.mobileSrc ? (
-                <>
-                  <Image
-                    src={explainer.image.src}
-                    alt={explainer.image.alt}
-                    width={2484}
-                    height={1398}
-                    className={`${styles["treatment-explainer__image"]} ${styles["treatment-explainer__image--desktop"]}`}
-                  />
-                  <Image
-                    src={explainer.image.mobileSrc}
-                    alt={explainer.image.alt}
-                    width={686}
-                    height={340}
-                    className={`${styles["treatment-explainer__image"]} ${styles["treatment-explainer__image--mobile"]}`}
-                  />
-                </>
-              ) : (
-                <Image
-                  src={explainer.image.src}
-                  alt={explainer.image.alt}
-                  width={2484}
-                  height={1398}
-                  className={styles["treatment-explainer__image"]}
-                />
-              )}
-            </div>
-          )}
+      {comparison?.image && (
+        <section className={styles["treatment-comparison"]}>
+          <Image
+            src={comparison.image.src}
+            alt={comparison.image.alt}
+            width={2484}
+            height={600}
+            className={styles["treatment-comparison__image"]}
+          />
         </section>
       )}
     </div>

@@ -22,6 +22,7 @@ export const SERVICE_CATARACT_CONTENT = {
       },
     },
     explainer: {
+      variant: "cataract",
       title: "What is cataract?",
       paragraphs: [
         "A cataract occurs when the eye's natural lens turns cloudy.",

@@ -7,7 +7,13 @@ export const KERATOCONUS_TREATMENT = {
   slug: "keratoconus",
 
   // Common TreatmentBanner data
-  banner: SERVICE_KERATOCONUS_CONTENT.banner,
+  banner: {
+    ...SERVICE_KERATOCONUS_CONTENT.banner,
+    explainer: {
+      ...SERVICE_KERATOCONUS_CONTENT.whatIsKeratoconus,
+      variant: "keratoconus",
+    },
+  },
 
   // TreatmentSymptoms
   symptoms: SERVICE_KERATOCONUS_CONTENT.signs,
@@ -51,7 +57,6 @@ export const KERATOCONUS_TREATMENT = {
   // diagnosis (Our Keratoconus treatment approach panel) comes SECOND per Figma
   sections: [
     "banner",
-    "whatIsKeratoconus",
     "symptoms",
     "causes",
     "types",

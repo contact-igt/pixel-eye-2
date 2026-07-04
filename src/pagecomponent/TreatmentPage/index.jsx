@@ -15,21 +15,20 @@ import TreatmentApproach from "@/component/ServiceCataract/treatmentApproach";
 import CataractApproach from "@/component/ServiceCataract/cataractApproach";
 import LasikLaserVisionOptions from "@/component/ServiceLasik/laserVisionOptions";
 import { KeratoconusApproach } from "@/component/ServiceKeratoconus/keratoconusApproach/index";
-import WhatIsKeratoconus from "@/component/ServiceKeratoconus/whatIsKeratoconus";
 
 /**
  * Maps section keys to render functions.
  * Each function receives the full `treatment` config and returns JSX (or null).
  */
 const SECTION_MAP = {
-  banner: (t) => <TreatmentBanner key="banner" data={t.banner} />,
+  banner: (t) => <TreatmentBanner key="banner" data={t.banner} slug={t.slug} />,
   symptoms: (t) => (
     <TreatmentSymptoms key="symptoms" data={t.symptoms} slug={t.slug} />
   ),
   causes: (t) =>
     t.causes ? <TreatmentCauses key="causes" data={t.causes} /> : null,
   types: (t) =>
-    t.types ? <TreatmentTypes key="types" data={t.types} /> : null,
+    t.types ? <TreatmentTypes key="types" data={t.types} slug={t.slug} /> : null,
   diagnosis: (t) =>
     t.diagnosis ? (
       <TreatmentDiagnosis key="diagnosis" data={t.diagnosis} slug={t.slug} />
@@ -92,7 +91,6 @@ const SECTION_MAP = {
   keratoconusApproach: (_t) => (
     <KeratoconusApproach key="keratoconusApproach" />
   ),
-  whatIsKeratoconus: (_t) => <WhatIsKeratoconus key="whatIsKeratoconus" />,
 };
 
 /**

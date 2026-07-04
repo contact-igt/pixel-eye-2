@@ -36,10 +36,13 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
   const activeSlide = getSlide(0);
   const rightSlide = getSlide(1);
   const mobileSlides = [activeSlide, rightSlide, leftSlide];
+  const sectionClassName = `${styles["treatment-types"]}${
+    styles[`treatment-types--${slug}`] ? ` ${styles[`treatment-types--${slug}`]}` : ""
+  }`;
 
   return (
     <section
-      className={styles["treatment-types"]}
+      className={sectionClassName}
       aria-labelledby={`${slug}-types-title`}
     >
       <div className={styles["treatment-types__hero"]}>
