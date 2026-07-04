@@ -546,6 +546,12 @@
     pointer-events: none;
   }
 
+  .treatment-types[data-treatment-slug="retina"] .treatment-types__copy h2 {
+     top: clamp(24px, 8.2vw, 65px);
+    width: min(68%, 300px);
+    font-size: clamp(32px, 6.1vw, 32px)
+  }
+
   .treatment-types__copy p {
     position: static;
     width: 100%;
@@ -604,6 +610,12 @@
     font-size: clamp(20px, 7.2vw, 28px);
   }
 
+  .treatment-types[data-treatment-slug="retina"] .treatment-types__copy h2 {
+    top: clamp(17px, 3.1vw, 40px);
+    width: min(40%, 285px);
+     font-size: clamp(30px, 6.1vw, 24px);
+  }
+
   .treatment-types__copy p {
     font-size: clamp(18px, 4.1vw, 28px);
     line-height: 1.18;
@@ -622,6 +634,12 @@
     font-size: clamp(20px, 6.2vw, 25px);
   }
 
+  .treatment-types[data-treatment-slug="retina"] .treatment-types__copy h2 {
+    width: min(45%, 270px);
+    font-size: clamp(24px, 6.1vw, 24px);
+    top: clamp(16.5px, 2.5vw, 50px);
+  }
+
   .treatment-types__copy p {
     font-size: clamp(14px, 3.5vw, 20px);
     line-height: 1.18;
@@ -634,6 +652,11 @@
     left: clamp(14px, 4vw, 22px);
     width: min(50%, 160px);
     font-size: clamp(20px, 5.2vw, 23px);
+  }
+
+  .treatment-types[data-treatment-slug="retina"] .treatment-types__copy h2 {
+    width: min(45%, 240px);
+    top: clamp(13.5px, 2.5vw, 50px);
   }
 
   .treatment-types__copy p {

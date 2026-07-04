@@ -40,6 +40,7 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
   return (
     <section
       className={styles["treatment-types"]}
+      data-treatment-slug={slug}
       aria-labelledby={`${slug}-types-title`}
     >
       <div className={styles["treatment-types__hero"]}>

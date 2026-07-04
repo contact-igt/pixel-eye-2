@@ -12,7 +12,7 @@
 .treatment-symptoms__header h2 {
   margin: 0;
   color: #273979;
-  font-size: 48px;
+  font-size: var(--h2-size);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: 0;
@@ -22,7 +22,7 @@
   width: min(39vw, 714px);
   margin: 30px 0 0;
   color: rgba(42, 60, 125, 0.82);
-  font-size: 20px;
+  font-size: var(--p-size);
   font-weight: 400;
   line-height: 1.14;
   letter-spacing: 0;
@@ -321,46 +321,62 @@
   }
 
   .treatment-symptoms__body {
-    margin-top: 40px;
-    row-gap: 22px;
+    margin-top: 32px;
+    row-gap: 18px;
   }
 
   .treatment-symptoms__image {
+    width: min(100%, 520px);
+    justify-self: center;
     border-radius: 18px;
   }
 
   .treatment-symptoms__content {
-    row-gap: 22px;
+    row-gap: 0;
+  }
+
+  .treatment-symptoms__note {
+    display: none;
   }
 
   .treatment-symptoms__list {
-    gap: 10px;
-    padding-inline: 24px;
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    width: min(100%, 520px);
+    margin-inline: auto;
+    padding-inline: 0;
   }
 
   .treatment-symptoms__item,
   .treatment-symptoms__item.is-active {
+    width: calc(100% - 24px);
     grid-template-columns: 64px 1px minmax(0, 1fr);
     column-gap: 16px;
-    min-height: 94px;
-    padding: 0 20px;
-    border-radius: 18px;
+    min-height: 76px;
+    padding: 0 22px;
+    border-radius: 16px;
   }
 
   .treatment-symptoms__item.is-active {
-    margin-left: -12px;
-    margin-right: -12px;
-    padding-left: 32px;
-    padding-right: 32px;
-    min-height: 102px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    min-height: 100px;
   }
 
   .treatment-symptoms__item.is-active .treatment-symptoms__number {
-    font-size: 44px;
+    font-size: 40px;
   }
 
   .treatment-symptoms__number {
-    font-size: 38px;
+    font-size: 32px;
+  }
+
+  .treatment-symptoms__divider {
+    height: 38px;
   }
 }
 
@@ -381,33 +397,29 @@
   }
 
   .treatment-symptoms__body {
-    margin-top: 34px;
+    margin-top: 28px;
   }
 
-  .treatment-symptoms__note {
-    font-size: 14px;
-    line-height: 1.28;
+  .treatment-symptoms__image {
+    width: 100%;
   }
 
   .treatment-symptoms__list {
-    gap: 9px;
-    padding-inline: 14px;
+    width: 100%;
   }
 
   .treatment-symptoms__item,
   .treatment-symptoms__item.is-active {
     grid-template-columns: 54px 1px minmax(0, 1fr);
-    column-gap: 12px;
-    min-height: 88px;
-    padding: 0 14px;
+    column-gap: 14px;
+    min-height: 74px;
+    padding: 0 20px;
   }
 
   .treatment-symptoms__item.is-active {
-    margin-left: -8px;
-    margin-right: -8px;
-    padding-left: 22px;
-    padding-right: 22px;
-    min-height: 92px;
+    padding-left: 26px;
+    padding-right: 26px;
+    min-height: 100px;
   }
 
   .treatment-symptoms__item.is-active .treatment-symptoms__number {
@@ -415,7 +427,7 @@
   }
 
   .treatment-symptoms__number {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .treatment-symptoms__divider {
@@ -434,29 +446,27 @@
   }
 
   .treatment-symptoms__body {
-    margin-top: 30px;
-    row-gap: 16px;
+    margin-top: 26px;
+    row-gap: 14px;
   }
 
   .treatment-symptoms__list {
-    padding-inline: 10px;
+    width: 100%;
   }
 
   .treatment-symptoms__item,
   .treatment-symptoms__item.is-active {
     grid-template-columns: 44px 1px minmax(0, 1fr);
     column-gap: 10px;
-    min-height: 82px;
-    padding: 0 10px;
+    min-height: 72px;
+    padding: 0 14px;
     border-radius: 14px;
   }
 
   .treatment-symptoms__item.is-active {
-    margin-left: -6px;
-    margin-right: -6px;
-    padding-left: 16px;
-    padding-right: 16px;
-    min-height: 88px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: clamp(88px, 25.6vw, 100px);
   }
 
   .treatment-symptoms__item.is-active .treatment-symptoms__number {

@@ -53,32 +53,32 @@ export const SERVICE_RETINA_CONTENT = {
       {
         number: "01",
         title: "Diabetes (Diabetic Retinopathy)",
-        image: "/assets/Service/Retina/lead1.png",
+        image: "/assets/Service/Retina/lead11.png",
       },
       {
         number: "02",
         title: "High Blood Pressure",
-        image: "/assets/Service/Retina/lead2.png",
+        image: "/assets/Service/Retina/lead22.png",
       },
       {
         number: "03",
         title: "Aging",
-        image: "/assets/Service/Retina/lead3.png",
+        image: "/assets/Service/Retina/lead33.png",
       },
       {
         number: "04",
         title: "High Myopia",
-        image: "/assets/Service/Retina/lead4.png",
+        image: "/assets/Service/Retina/lead44.png",
       },
       {
         number: "05",
         title: "Eye Injury",
-        image: "/assets/Service/Retina/lead5.png",
+        image: "/assets/Service/Retina/lead55.png",
       },
       {
         number: "06",
         title: "Family History",
-        image: "/assets/Service/Retina/lead6.png",
+        image: "/assets/Service/Retina/lead66.png",
       },
     ],
   },
@@ -89,7 +89,7 @@ export const SERVICE_RETINA_CONTENT = {
       "Retinal conditions can affect different parts of the retina. Identifying the exact problem helps plan the right treatment.",
     image: {
       src: "/assets/Service/Retina/typesofretina.png",
-      mobileSrc: "/assets/Service/Retina/typesofretina.png",
+      mobileSrc: "/assets/Service/Retina/typesofretina_mobile.png",
       alt: "Eye drops being applied during retina care",
     },
     controls: {
@@ -174,6 +174,7 @@ export const SERVICE_RETINA_CONTENT = {
         description:
           "OCT helps assess the thickness of the optic nerve fiber layer and detect early glaucoma-related changes.",
         image: "/assets/Service/retina/union.png",
+        sliderImage: "/assets/Service/glaucoma/oct_scan1_slider.png",
         alt: "OCT Scan test for retina diagnosis",
         highlighted: true,
       },
@@ -189,7 +190,7 @@ export const SERVICE_RETINA_CONTENT = {
       {
         name: "Dr. Abdul Rasheed",
         description: "MD (AIIMS)\nCataract, Refractive & Squint Surgeon",
-        image: "/assets/Service/Dr. Abdul Rasheed.png",
+        image: "/assets/Service/pediatric/dr-abdul-rasheed.png",
         imageAlt: "Dr. Abdul Rasheed",
         buttonText: "View Doctor Profiles",
         buttonLink: "/doctors",

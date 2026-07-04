@@ -11,7 +11,7 @@ export const RETINA_TREATMENT = {
     ? { ...SERVICE_RETINA_CONTENT.clinicalExpertise, variant: "multi" }
     : null,
   faq: SERVICE_RETINA_CONTENT.faq,
-  patientExperience: SERVICE_RETINA_CONTENT.rememberRecommend,
+  patientExperience: undefined,
 
   sections: [
     "banner",
