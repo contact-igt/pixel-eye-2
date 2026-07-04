@@ -178,47 +178,6 @@
 
 
 
-.ctaLabel {
-  height: var(--btn-h);
-  background: #ffffff;
-  border-radius: var(--btn-radius);
-  border: 1px solid var(--border-soft);
-  padding: 0 24px;
-  display: inline-flex;
-  align-items: center;
-  font-size: var(--btn-fs);
-  font-weight: var(--btn-fw);
-}
-
-.ctaArrow {
-  width: var(--btn-icon);
-  height: var(--btn-icon);
-  margin-left: -8px;
-  border-radius: var(--btn-radius);
-  border: 1px solid var(--border-soft);
-  background: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ctaArrowIcon {
-  width: 18px;
-  height: 18px;
-  color: #749abf;
-  stroke-width: 2.2;
-}
-
-.ctaButton:hover .ctaLabel,
-.ctaButton:hover .ctaArrow {
-  background: #f0f4fa;
-}
-
-.ctaButton:active .ctaLabel,
-.ctaButton:active .ctaArrow {
-  background: #e8eef8;
-}
-
 .cardsRow .cardWrap:nth-child(1) .centerTitle {
   bottom: 30px;
 
@@ -453,29 +412,26 @@
   }
 
   .ctaButton {
-    display: block;
+    display: flex;
+    justify-content: center;
     left: 0;
     right: 0;
     margin: 0px;
     width: 100%;
-    text-align: center;
     position: relative;
-  }
-
-  .ctaArrow {
-    position: absolute;
-    right: auto;
   }
 
   .cardWrap {
     padding-bottom: 20px !important;
-  
+
   }
 
-  .cardWrap:nth-child(1) , .cardRow , .centerTitle{
+  .cardWrap:nth-child(1),
+  .cardRow,
+  .centerTitle {
     bottom: 20px !important;
-    
-  }  
+
+  }
 
 
 

@@ -86,7 +86,7 @@
 
 .types-cards__item--main img {
     width: 450px;
-    height: 381px;
+    height: auto;
     border-radius: 0;
     object-fit: contain;
     object-position: center;
@@ -317,10 +317,12 @@
         grid-column: 2;
         grid-row: 1;
     }
-.types-cards__item h3 {
+
+    .types-cards__item h3 {
         font-size: 20px;
         line-height: 1.12;
     }
+
     .types-cards__arrow {
         width: 70px;
         height: 70px;
@@ -363,14 +365,16 @@
         line-height: 1.12;
     }
 }
+
 @media (max-width: 450px) {
-     .types-cards__arrow {
+    .types-cards__arrow {
         width: 65px;
         height: 65px;
         align-self: start;
         margin-top: clamp(50px, calc(30vw - 55px), 120px);
     }
 }
+
 @media (max-width: 389px) {
     .types-cards {
         min-height: auto;

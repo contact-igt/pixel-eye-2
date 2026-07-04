@@ -39,6 +39,7 @@ export default function HeroBanner({
   className = "",
   frameClassName = "",
   imageClassName = "",
+  copyClassName = "",
 }) {
   const [mounted, setMounted] = useState(false);
   const isAboutMasked = variant === "aboutMasked";
@@ -94,7 +95,7 @@ export default function HeroBanner({
         {/* Hero text (optional) */}
         {(title || subtitle) && (
           <div
-            className={`${styles.copy} ${mounted ? styles.copyVisible : ""}`.trim()}
+            className={`${styles.copy} ${mounted ? styles.copyVisible : ""} ${copyClassName}`.trim()}
           >
             {title && <h1 className={styles.title}>{title}</h1>}
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}

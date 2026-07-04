@@ -5,6 +5,9 @@ export const SERVICE_GLAUCOMA_CONTENT = {
         src: "/assets/Service/glaucoma/banner.png",
         alt: "",
       },
+      mobileImage: "/assets/Service/glaucoma/herobannermb.png",
+      mobileImageMedia: "(max-width: 767px)",
+      showMobileNabhBadge: true,
       nav: {
         rightSlot: "book",
         navTheme: "light",

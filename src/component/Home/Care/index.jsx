@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import Button from "@/common/Button";
 import { HOME_CONTENT } from "@/constant/homeContent";
 import styles from "./styles.module.css";
 
@@ -93,12 +92,12 @@ const Care = () => {
           })}
         </div>
 
-        <Link href={cta.href} className={styles.ctaButton}>
-          <span className={styles.ctaLabel}>{cta.label}</span>
-          <span className={styles.ctaArrow}>
-            <ArrowUpRight className={styles.ctaArrowIcon} />
-          </span>
-        </Link>
+        <Button
+          label={cta.label}
+          href={cta.href}
+          variant="light"
+          className={styles.ctaButton}
+        />
       </div>
     </section>
   );

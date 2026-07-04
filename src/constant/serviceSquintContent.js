@@ -5,6 +5,9 @@ export const SERVICE_SQUINT_CONTENT = {
         src: "/assets/Service/squint/squint_banner.png",
         alt: "",
       },
+      mobileImage: "/assets/Service/squint/herobannermb.png",
+      mobileImageMedia: "(max-width: 767px)",
+      showMobileNabhBadge: true,
       nav: {
         rightSlot: "book",
         navTheme: "light",
@@ -36,8 +39,7 @@ export const SERVICE_SQUINT_CONTENT = {
     title: "Symptoms you may notice",
     description:
       "Squint may be visible all the time or may appear only during certain activities.",
-    note:
-      "One eye may move away from the normal direction while the other eye looks straight.",
+    note: "One eye may move away from the normal direction while the other eye looks straight.",
     image: {
       src: "/assets/Service/squint/squint_symptoms.png",
       alt: "Squint eye examination",

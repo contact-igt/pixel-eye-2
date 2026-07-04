@@ -1,7 +1,7 @@
 .testimonialsSection {
-    margin-top: 100px;
+  margin-top: 100px;
   background: transparent;
-    padding: var(--section-px);
+  padding: var(--section-px);
 
 }
 
@@ -209,46 +209,9 @@
   margin-top: 22px;
 }
 
-.ctaButton {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--brand-blue);
-}
-
-.ctaLabel {
-  height: var(--btn-h);
-  background: #f3f4f8;
-  color: var(--brand-blue);
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--border-soft);
-  padding: 0 24px;
-  display: inline-flex;
-  align-items: center;
-  font-size: var(--btn-fs);
-  font-weight: var(--btn-fw);
-}
-
-.ctaArrow {
-  width: var(--btn-icon);
-  height: var(--btn-icon);
-  margin-left: -8px;
-  border-radius: 50%;
-  border: 1px solid var(--border-soft);
-  background: #f3f4f8;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ctaButton:hover .ctaLabel,
-.ctaButton:hover .ctaArrow {
-  background: #e9edf5;
-}
 
 
-
-@media (max-width: 1399px){
+@media (max-width: 1399px) {
 
   .title {
     font-size: 40px;
@@ -301,7 +264,7 @@
   .title {
     font-size: 28px;
   }
- 
+
 
 
 }

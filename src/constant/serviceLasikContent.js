@@ -26,6 +26,8 @@ export const SERVICE_LASIK_CONTENT = {
         src: "/assets/Service/Lasik/Lasik_header.png",
         alt: "LASIK laser eye surgery procedure",
       },
+      mobileImage: "/assets/Service/Lasik/herobannermb.png",
+      showMobileNabhBadge: true,
     },
     explainer: {
       variant: "lasik",
@@ -61,7 +63,7 @@ export const SERVICE_LASIK_CONTENT = {
         image: "/assets/Service/lasik/hyperopia.png",
         alt: "Hyperopia eye illustration",
       },
-       {
+      {
         id: "myopia",
         title: "Myopia ( Nearsightedness )",
         image: "/assets/Service/lasik/myopia.png",

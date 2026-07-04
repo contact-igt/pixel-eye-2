@@ -53,12 +53,14 @@
     width: 18px;
     height: 18px;
     stroke-width: 2.1;
-    /* transition: transform 180ms ease; */
+    transform: rotate(0deg) translate(0, 0);
+    transform-origin: center;
+    transition: transform 240ms ease;
 }
 
-/* .btn:hover .icon svg {
-    transform: translate(2px, -2px);
-} */
+.btn:hover .icon svg {
+    transform: rotate(45deg) translate(1px, 0);
+}
 
 /* ── LIGHT variant (white bg) ───────────── */
 .light .label {
@@ -75,12 +77,16 @@
 
 .light:hover .label,
 .light:hover .icon {
-    background: #eef3fa;
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
+    color: #ffffff;
 }
 
 .light:active .label,
 .light:active .icon {
-    background: #e7edf7;
+    background: #243f7a;
+    border-color: #243f7a;
+    color: #ffffff;
 }
 
 /* ── MUTED variant (surface / grey bg) ──── */
@@ -98,12 +104,16 @@
 
 .muted:hover .label,
 .muted:hover .icon {
-    background: #e9edf5;
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
+    color: #ffffff;
 }
 
 .muted:active .label,
 .muted:active .icon {
-    background: #e3e9f3;
+    background: #243f7a;
+    border-color: #243f7a;
+    color: #ffffff;
 }
 
 /* ── DARK variant (brand-blue bg) ──────── */
@@ -126,5 +136,3 @@
 .dark:hover .icon {
     background: #1c3366;
 }
-
-

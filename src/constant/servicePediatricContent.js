@@ -5,6 +5,9 @@
         src: "/assets/Service/pediatric/home_banner.png",
         alt: "Child receiving a pediatric eye examination",
       },
+      mobileImage: "/assets/Service/pediatric/herobannermb.png",
+      mobileImageMedia: "(max-width: 767px)",
+      showMobileNabhBadge: true,
       title: "Pediatric Eye Care",
       description:
         "Healthy eyes are important for every child's learning, growth, confidence, and daily activities.",

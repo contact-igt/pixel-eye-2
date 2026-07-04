@@ -15,6 +15,7 @@
       },
       mobileImage: "/assets/Service/keratoconus/herobannermb.png",
       mobileImageMedia: "(max-width: 767px)",
+      showMobileNabhBadge: true,
       nav: {
         rightSlot: "book",
         navTheme: "light",

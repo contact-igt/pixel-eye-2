@@ -1,5 +1,9 @@
 import Image from "next/image";
 import HeroBanner from "@/common/HeroBanner";
+import TreatmentExplainerCataract from "@/common/Treatment/TreatmentExplainerCataract";
+import TreatmentExplainerSquint from "@/common/Treatment/TreatmentExplainerSquint";
+import TreatmentExplainerKeratoconus from "@/common/Treatment/TreatmentExplainerKeratoconus";
+import TreatmentExplainerLasik from "@/common/Treatment/TreatmentExplainerLasik";
 import styles from "./styles.module.css";
 
 const TreatmentBanner = ({ data, slug = "treatment" }) => {
@@ -8,6 +12,12 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
   const isCataract = variant === "cataract";
   const isLasik = variant === "lasik";
   const isKeratoconus = variant === "keratoconus";
+  const isSquint = variant === "squint";
+
+  const isBlueHeroCopy = slug === "pediatric" || slug === "retina";
+  const heroCopyThemeClass = isBlueHeroCopy
+    ? styles["treatment-hero__copy--blue"]
+    : styles["treatment-hero__copy--white"];
 
   const hasTitleLines =
     Array.isArray(hero.titleLines) && hero.titleLines.length > 0;
@@ -27,7 +37,9 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
       : hero.mobileImage?.src;
 
   const rootClassName = `${styles["treatment-detail"]}${
-    styles[`treatment-detail--${slug}`] ? ` ${styles[`treatment-detail--${slug}`]}` : ""
+    styles[`treatment-detail--${slug}`]
+      ? ` ${styles[`treatment-detail--${slug}`]}`
+      : ""
   }`;
 
   const explainerClassName = `${styles["treatment-explainer"]}${
@@ -74,71 +86,14 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
       <p key={`explainer-paragraph-${index}`}>{paragraph}</p>
     ));
 
-  const renderCataractExplainer = () => (
-    <section className={explainerClassName} aria-labelledby={explainerTitleId}>
-      <div className={styles["treatment-explainer__copy"]}>
-        <h1
-          id={explainerTitleId}
-          className={styles["treatment-explainer__title"]}
-        >
-          {explainer.title}
-        </h1>
-        {renderExplainerParagraphs()}
-      </div>
-
-      {explainer.image && (
-        <div
-          className={styles["treatment-explainer__visual"]}
-          aria-label="Normal eye and cataract comparison"
-        >
-          {renderExplainerImage(explainer.image)}
-        </div>
-      )}
-    </section>
-  );
-
-  const renderKeratoconusExplainer = () => (
-    <section className={explainerClassName} aria-labelledby={explainerTitleId}>
-      <div className={styles["treatment-explainer__inner"]}>
-        <div className={styles["treatment-explainer__copy-column"]}>
-          <h1
-            id={explainerTitleId}
-            className={styles["treatment-explainer__title"]}
-          >
-            {explainer.title}
-          </h1>
-
-          <div className={styles["treatment-explainer__paragraphs"]}>
-            {renderExplainerParagraphs()}
-          </div>
-
-          <div
-            className={styles["treatment-explainer__progress"]}
-            aria-hidden="true"
-          >
-            <span />
-          </div>
-        </div>
-
-        {explainer.image && (
-          <div className={styles["treatment-explainer__visual"]}>
-            {renderExplainerImage(explainer.image)}
-          </div>
-        )}
-      </div>
-    </section>
-  );
-
   const renderGenericExplainer = () => (
     <section className={explainerClassName} aria-labelledby={explainerTitleId}>
-      {!isLasik && (
-        <h1
-          id={explainerTitleId}
-          className={styles["treatment-explainer__title"]}
-        >
-          {explainer.title}
-        </h1>
-      )}
+      <h1
+        id={explainerTitleId}
+        className={styles["treatment-explainer__title"]}
+      >
+        {explainer.title}
+      </h1>
 
       <div className={styles["treatment-explainer__copy"]}>
         {renderExplainerParagraphs()}
@@ -165,8 +120,15 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
 
   const renderExplainer = () => {
     if (!explainer) return null;
-    if (isCataract) return renderCataractExplainer();
-    if (isKeratoconus) return renderKeratoconusExplainer();
+    if (isCataract)
+      return <TreatmentExplainerCataract explainer={explainer} slug={slug} />;
+    if (isSquint)
+      return <TreatmentExplainerSquint explainer={explainer} slug={slug} />;
+    if (isKeratoconus)
+      return (
+        <TreatmentExplainerKeratoconus explainer={explainer} slug={slug} />
+      );
+    if (isLasik) return <TreatmentExplainerLasik explainer={explainer} />;
     return renderGenericExplainer();
   };
 
@@ -191,10 +153,13 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           className={styles["treatment-hero"]}
           frameClassName={styles["treatment-hero__frame"]}
           imageClassName={styles["treatment-hero__image"]}
+          copyClassName={heroCopyThemeClass}
         />
 
         {hero.title && (
-          <div className={styles["treatment-hero__copy"]}>
+          <div
+            className={`${styles["treatment-hero__copy"]} ${heroCopyThemeClass}`}
+          >
             <h1>{hero.title}</h1>
             {hero.description && <p>{hero.description}</p>}
           </div>

@@ -1,13 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { HOME_CONTENT } from "@/constant/homeContent";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./styles.module.css";
 import TestimonialCard from "@/component/Home/TestimonialCard";
+import Button from "@/common/Button";
 
 const Testimonials = () => {
   const { testimonials } = HOME_CONTENT;
@@ -143,12 +142,7 @@ const Testimonials = () => {
             </div>
 
             <div className={styles.ctaRow}>
-              <Link href={cta.href} className={styles.ctaButton}>
-                <span className={styles.ctaLabel}>{cta.label}</span>
-                <span className={styles.ctaArrow}>
-                  <ArrowUpRight width={18} height={18} strokeWidth={2.1} />
-                </span>
-              </Link>
+              <Button label={cta.label} href={cta.href} variant="muted" />
             </div>
           </div>
         </div>
