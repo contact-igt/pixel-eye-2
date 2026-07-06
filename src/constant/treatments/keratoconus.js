@@ -45,12 +45,12 @@ export const KERATOCONUS_TREATMENT = {
   // TreatmentDiagnosis panel → "Our Keratoconus treatment approach"
   diagnosis: SERVICE_KERATOCONUS_CONTENT.diagnosis,
 
-  // keratoconus has no clinicalExpertise, faq or patientExperience → fall back
+  // keratoconus has no patientExperience → fall back
   clinicalExpertise: {
       ...SERVICE_KERATOCONUS_CONTENT.clinicalExpertise,
       variant: "multi",
     },
-  faq: undefined,
+  faq: SERVICE_KERATOCONUS_CONTENT.faq,
   patientExperience: undefined,
 
   // types (How Keratoconus is diagnosed carousel) comes FIRST per Figma

@@ -85,13 +85,12 @@ export const SERVICE_CATARACT_CONTENT = {
       previousAriaLabel: "Previous cataract type",
       nextAriaLabel: "Next cataract type",
     },
-    slides: [
+    items: [
       {
-        id: "intumescent-cataract",
-        title: "Intumescent cataract",
-        image:
-          "/assets/Service/cataract/Gemini_Generated_Image_1k7a4b1k7a4b1k7a 1.png",
-        alt: "Intumescent cataract eye",
+        id: "nuclear-sclerotic-cataract",
+        title: "Nuclear sclerotic cataract",
+        image: "/assets/Service/cataract/nuclear_sclerotic.png",
+        alt: "Nuclear sclerotic cataract eye",
       },
       {
         id: "cortical-cataract",
@@ -100,31 +99,49 @@ export const SERVICE_CATARACT_CONTENT = {
         alt: "Cortical cataract eye",
       },
       {
+        id: "posterior-subcapsular-cataract",
+        title: "Posterior subcapsular cataract",
+        image: "/assets/Service/cataract/posterior_subcapsular.png",
+        alt: "Posterior subcapsular cataract eye",
+      },
+      {
+        id: "age-related-cataract",
+        title: "Age-related cataract",
+        image: "/assets/Service/cataract/age_related.png",
+        alt: "Age-related cataract eye",
+      },
+      {
+        id: "congenital-pediatric-cataract",
+        title: "Congenital / pediatric cataract",
+        image: "/assets/Service/cataract/congential_pediatric.png",
+        alt: "Congenital pediatric cataract eye",
+      },
+      {
         id: "traumatic-cataract",
         title: "Traumatic cataract",
         image:
           "/assets/Service/cataract/Gemini_Generated_Image_fbhk0efbhk0efbhk 1.png",
         alt: "Traumatic cataract eye",
       },
+      {
+        id: "secondary-complicated-cataract",
+        title: "Secondary / complicated cataract",
+        image: "/assets/Service/cataract/secondary_complicated.png",
+        alt: "Secondary complicated cataract eye",
+      },
+      {
+        id: "radiation-induced-cataract",
+        title: "Radiation-induced cataract",
+        image: "/assets/Service/cataract/radiation_induced.png",
+        alt: "Radiation-induced cataract eye",
+      },
+      {
+        id: "metabolic-cataract",
+        title: "Metabolic cataract",
+        image: "/assets/Service/cataract/metabolic.png",
+        alt: "Metabolic cataract eye",
+      },
     ],
-    items: {
-      left: {
-        title: "Intumescent cataract",
-        image:
-          "/assets/Service/cataract/Gemini_Generated_Image_1k7a4b1k7a4b1k7a 1.png",
-        alt: "Intumescent cataract eye",
-      },
-      main: {
-        image: "/assets/Service/cataract/cortical_main.png",
-        alt: "Cortical cataract eye",
-      },
-      right: {
-        title: "Traumatic cataract",
-        image:
-          "/assets/Service/cataract/Gemini_Generated_Image_fbhk0efbhk0efbhk 1.png",
-        alt: "Traumatic cataract eye",
-      },
-    },
   },
 
   signs: {
@@ -136,14 +153,17 @@ export const SERVICE_CATARACT_CONTENT = {
       alt: "Eye examination with a handheld lens",
     },
     items: [
-      { number: "01", text: "Blurred or cloudy vision" },
+      { number: "01", text: "Blurry or foggy vision" },
       {
         number: "02",
-        text: "Difficulty seeing at night or in low light",
+        text: "Difficulty seeing in low light or at night",
         active: true,
       },
-      { number: "03", text: "Faded colours and reduced contrast" },
-      { number: "04", text: "Frequent changes in glasses without improvement" },
+      { number: "03", text: "Sensitivity to light and glare" },
+      { number: "04", text: "Visualizing halos around lights" },
+      { number: "05", text: "Fading or yellowish vision of colors" },
+      { number: "06", text: "Double vision in one eye" },
+      { number: "07", text: "Frequent changes in vision prescription" },
     ],
   },
 
@@ -154,6 +174,7 @@ export const SERVICE_CATARACT_CONTENT = {
       "The procedure involves removing the cloudy lens and replacing it with an artificial Intraocular Lens (IOL). This lens stays in place permanently and restores clarity of vision.",
     ],
     image: "/assets/Service/cataract/treatment.png",
+    mobileImage: "/assets/Service/cataract/treatment_mobile.png",
     imageAlt: "Cataract treatment approach",
   },
 

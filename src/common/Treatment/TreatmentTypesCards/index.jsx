@@ -29,11 +29,15 @@ const ArrowIcon = ({ direction }) => (
  * where each card shows its image with the title below it.
  */
 const TreatmentTypesCards = ({ data, slug = "treatment" }) => {
+  const itemSlides = Array.isArray(data.items)
+    ? data.items
+    : [data.items?.left, data.items?.main, data.items?.right].filter(Boolean);
   const slides =
-    data.slides ??
-    [data.items?.left, data.items?.main, data.items?.right].filter(Boolean);
+    itemSlides.length > 0 ? itemSlides : data.slides?.filter(Boolean) ?? [];
 
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(slides.length > 1 ? 1 : 0);
+
+  if (slides.length === 0) return null;
 
   const getSlide = (offset) =>
     slides[(activeIndex + offset + slides.length) % slides.length];
@@ -44,9 +48,27 @@ const TreatmentTypesCards = ({ data, slug = "treatment" }) => {
   const nextSlide = () =>
     setActiveIndex((current) => (current + 1) % slides.length);
 
-  const leftSlide = getSlide(-1);
-  const activeSlide = getSlide(0);
-  const rightSlide = getSlide(1);
+  const visibleSlides = [
+    {
+      slide: getSlide(-1),
+      modifier: "types-cards__item--side",
+      width: 282,
+      height: 225,
+    },
+    {
+      slide: getSlide(0),
+      modifier: "types-cards__item--main",
+      width: 474,
+      height: 381,
+      priority: true,
+    },
+    {
+      slide: getSlide(1),
+      modifier: "types-cards__item--side",
+      width: 282,
+      height: 225,
+    },
+  ];
 
   return (
     <section
@@ -71,43 +93,22 @@ const TreatmentTypesCards = ({ data, slug = "treatment" }) => {
           <ArrowIcon direction="left" />
         </button>
 
-        <article
-          className={`${styles["types-cards__item"]} ${styles["types-cards__item--side"]}`}
-        >
-          <Image
-            src={leftSlide.image}
-            alt={leftSlide.alt ?? leftSlide.title}
-            width={282}
-            height={225}
-          />
-          <h3>{leftSlide.title}</h3>
-        </article>
-
-        <article
-          className={`${styles["types-cards__item"]} ${styles["types-cards__item--main"]}`}
-          aria-live="polite"
-        >
-          <Image
-            src={activeSlide.image}
-            alt={activeSlide.alt ?? activeSlide.title}
-            width={474}
-            height={381}
-            priority
-          />
-          <h3>{activeSlide.title}</h3>
-        </article>
-
-        <article
-          className={`${styles["types-cards__item"]} ${styles["types-cards__item--side"]}`}
-        >
-          <Image
-            src={rightSlide.image}
-            alt={rightSlide.alt ?? rightSlide.title}
-            width={282}
-            height={225}
-          />
-          <h3>{rightSlide.title}</h3>
-        </article>
+        {visibleSlides.map(({ slide, modifier, width, height, priority }, index) => (
+          <article
+            className={`${styles["types-cards__item"]} ${styles[modifier]}`}
+            aria-live={modifier === "types-cards__item--main" ? "polite" : undefined}
+            key={`${modifier}-${slide.id ?? slide.title ?? index}`}
+          >
+            <Image
+              src={slide.image}
+              alt={slide.alt ?? slide.title}
+              width={width}
+              height={height}
+              priority={priority}
+            />
+            <h3>{slide.title}</h3>
+          </article>
+        ))}
 
         <button
           className={styles["types-cards__arrow"]}

@@ -11,7 +11,7 @@ export const SQUINT_TREATMENT = {
     ...SERVICE_SQUINT_CONTENT.clinicalExpertise,
     variant: "single",
   },
-  faq: SERVICE_SQUINT_CONTENT.faq,             // undefined → falls back to CataractFaq
+  faq: SERVICE_SQUINT_CONTENT.faq,
   patientExperience: SERVICE_SQUINT_CONTENT.rememberRecommend, // undefined → falls back
 
   sections: [

@@ -10,9 +10,12 @@ const LASIK_SYMPTOMS = {
     alt: "LASIK laser vision correction procedure",
   },
   items: [
-    { number: "01", text: "Stable glass power" },
-    { number: "02", text: "Healthy cornea" },
-    { number: "03", text: "No major dry eye or eye disease" },
+    { number: "01", text: "Age (usually 18+)" },
+    { number: "02", text: "Stable spectacle power" },
+    { number: "03", text: "Adequate Corneal Thickness" },
+    { number: "04", text: "No dry eyes" },
+    { number: "05", text: "No major eye conditions" },
+    { number: "06", text: "No autoimmune disease" },
   ],
 };
 
@@ -116,6 +119,30 @@ export const SERVICE_LASIK_CONTENT = {
         image: "/assets/Service/Lasik/2.png",
         alt: "Contoura LASIK laser equipment",
       },
+{
+  id: "smile",
+  title: "SMILE",
+  description:
+    "A minimally invasive laser vision correction procedure that removes a small corneal lenticule through a tiny incision for faster recovery and reduced dry eye symptoms.",
+  image: "/assets/Service/Lasik/smile.png",
+  alt: "SMILE laser vision correction procedure",
+},
+{
+  id: "prk",
+  title: "PRK",
+  description:
+    "A flap-free laser vision correction procedure that reshapes the cornea after removing the outer epithelial layer, making it suitable for patients with thin corneas.",
+  image: "/assets/Service/Lasik/prk.png",
+  alt: "PRK laser vision correction procedure",
+},
+{
+  id: "trans-prk",
+  title: "Trans-PRK",
+  description:
+    "An advanced no-touch laser vision correction procedure where the laser removes the corneal epithelium and reshapes the cornea in a single, precise step.",
+  image: "/assets/Service/Lasik/trans-prk.png",
+  alt: "Trans-PRK laser vision correction procedure",
+},
     ],
   },
 
@@ -130,21 +157,21 @@ export const SERVICE_LASIK_CONTENT = {
     options: [
       {
         id: "femto-lasik",
-        title: "Common LASIK",
+        title: "Femto / Bladeless LASIK",
         image: "/assets/Service/cataract/option1.png",
         imageAlt: "Femto LASIK bladeless procedure",
       },
       {
-        id: "common-lasik",
-        title: "Contoura / Topography-Guided LASIK",
-        image: "/assets/Service/cataract/option3.png",
-        imageAlt: "Common LASIK procedure",
-      },
-      {
         id: "contoura-lasik",
-        title: "Femto / Bladeless LASIK",
+        title: "Contoura / Topography-Guided LASIK",
         image: "/assets/Service/cataract/option2.png",
         imageAlt: "Contoura topography-guided LASIK",
+      },
+      {
+        id: "common-lasik",
+        title: "Common LASIK ",
+        image: "/assets/Service/cataract/option3.png",
+        imageAlt: "Common LASIK procedure",
       },
     ],
   },
@@ -153,7 +180,7 @@ export const SERVICE_LASIK_CONTENT = {
     title: "FAQs",
     image: "/assets/Service/cataract/faq.png",
     imageAlt: "LASIK FAQ consultation",
-    note: "For more detailed and personalised information on LASIK suitability and cost, contact us via email or phone to book your evaluation appointment.",
+    note: "For personalised advice about LASIK and laser vision correction, schedule a consultation with our refractive surgery specialists. A detailed evaluation will help determine the safest and most suitable option for your eyes.",
     items: [
       {
         id: "am-i-a-candidate-for-lasik",
@@ -206,7 +233,30 @@ export const SERVICE_LASIK_CONTENT = {
     ],
   },
 
-  clinicalExpertise: SERVICE_PEDIATRIC_CONTENT.clinicalExpertise,
+  clinicalExpertise: {
+    title: "Clinical expertise",
+    intro:
+      "LASIK care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced",
+    cardBg: "/assets/Service/cataract/clinicbg.png",
+    cardBgAlt: "Pixel Eye clinic background",
+    doctors: [
+      {
+        name: "Dr. Abdul Rasheed",
+        description: "MD (AIIMS)\nCataract, Refractive &\nSquint Surgeon",
+        image: "/assets/Service/pediatric/dr-abdul-rasheed.png",
+        imageAlt: "Dr. Abdul Rasheed",
+        href: "/doctors",
+      },
+      {
+        name: "Dr. Krishna Poojita",
+        description:
+          "MBBS, DNB (Ophthalmology),\nMRCS (Edinburgh), FICO (UK),\nFPRS (Narayana Nethralaya)\nCataract & Refractive\nSurgeon",
+        image: "/assets/Service/pediatric/dr-krishna-poojita.png",
+        imageAlt: "Dr. Krishna Poojita",
+        href: "/doctors",
+      },
+    ],
+  },
 
   patientsExperience: {
     titleLines: ["patient experiences"],

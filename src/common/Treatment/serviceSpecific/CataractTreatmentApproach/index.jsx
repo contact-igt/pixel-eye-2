@@ -14,6 +14,10 @@ const TreatmentApproach = ({
     typeof treatment.image === "string"
       ? treatment.image
       : treatment.image?.src || "";
+  const mobileImageSrc =
+    typeof treatment.mobileImage === "string"
+      ? treatment.mobileImage
+      : treatment.mobileImage?.src || "";
   const imageAlt =
     typeof treatment.image === "string"
       ? treatment.imageAlt || ""
@@ -27,11 +31,16 @@ const TreatmentApproach = ({
       aria-labelledby={`${sectionId}-title`}
     >
       <div className={styles["treatment-approach__card"]}>
-        <img
-          className={styles["treatment-approach__image"]}
-          src={imageSrc}
-          alt={imageAlt}
-        />
+        <picture className={styles["treatment-approach__media"]}>
+          {mobileImageSrc ? (
+            <source media="(max-width: 768px)" srcSet={mobileImageSrc} />
+          ) : null}
+          <img
+            className={styles["treatment-approach__image"]}
+            src={imageSrc}
+            alt={imageAlt}
+          />
+        </picture>
 
         <div
           className={`${styles["treatment-approach__overlay"]} ${

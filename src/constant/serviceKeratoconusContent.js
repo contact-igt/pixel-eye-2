@@ -51,9 +51,13 @@
       alt: "Eye examination for keratoconus symptoms",
     },
     items: [
-      { number: "01", text: "Frequent change in glasses" },
-      { number: "02", text: "Blurred or distorted vision", active: true },
-      { number: "03", text: "Glare and halos at night" },
+      { number: "01", text: "Frequent glass prescription changes" },
+      { number: "02", text: "Blurred and distorted vision", active: true },
+      { number: "03", text: "Increased light sensitivity" },
+      { number: "04", text: "Night vision issues" },
+      { number: "05", text: "Eye rubbing" },
+      { number: "06", text: "Corneal thinning" },
+      { number: "07", text: "Dry, itchy eyes" },
     ],
   },
   risks: {
@@ -98,8 +102,7 @@
   treatmentApproach: {
     title: "How Keratoconus is diagnosed",
     paragraphs: [
-      "A normal eye power check may not be enough to detect keratoconus.",
-      "Diagnosis usually requires a detailed corneal evaluation to study the shape, thickness, and curvature of the cornea.",
+      "A normal eye power check may not be enough to detect keratoconus. Diagnosis usually requires a detailed corneal evaluation to study the shape, thickness, and curvature of the cornea."
     ],
     image: {
       src: "/assets/Service/keratoconus/Subtract (1).png",
@@ -233,10 +236,66 @@
       },
     ],
   },
+  faq: {
+    title: "FAQs",
+    image: "/assets/Service/cataract/faq.png",
+    imageAlt: "Keratoconus FAQ consultation",
+    note: "For detailed and personalised guidance on keratoconus diagnosis, corneal cross-linking, specialty contact lenses, or advanced treatment options, schedule a consultation with our cornea specialists. Early diagnosis and timely treatment can help preserve your vision and reduce the progression of keratoconus.",
+    items: [
+      {
+        id: "what-is-keratoconus",
+        question: "What is keratoconus?",
+        answer:
+          "Keratoconus is an eye condition in which the normally round cornea gradually becomes thinner and bulges into a cone-like shape. This irregular shape causes blurred and distorted vision that usually worsens over time if left untreated.",
+      },
+      {
+        id: "early-signs-of-keratoconus",
+        question: "What are the early signs of keratoconus?",
+        answer:
+          "Early symptoms may include blurred vision, frequent changes in spectacle power, increased sensitivity to light, glare while driving at night, ghost images, and difficulty seeing clearly even with glasses.",
+      },
+      {
+        id: "can-keratoconus-be-cured",
+        question: "Can keratoconus be cured?",
+        answer:
+          "Keratoconus cannot be completely cured, but its progression can often be slowed or stopped with treatments such as Corneal Collagen Cross-Linking (C3R/CXL). Vision can also be improved using specialised contact lenses or surgical options when required.",
+      },
+      {
+        id: "keratoconus-age-of-development",
+        question: "At what age does keratoconus usually develop?",
+        answer:
+          "Keratoconus commonly develops during the teenage years or early twenties and may continue progressing until the thirties if not treated.",
+      },
+      {
+        id: "does-eye-rubbing-worsen-keratoconus",
+        question: "Does rubbing the eyes make keratoconus worse?",
+        answer:
+          "Yes. Frequent or vigorous eye rubbing is considered a significant risk factor and may contribute to faster progression of keratoconus. Avoid rubbing your eyes, especially if you have allergies or itchy eyes.",
+      },
+      {
+        id: "how-is-keratoconus-diagnosed",
+        question: "How is keratoconus diagnosed?",
+        answer:
+          "Keratoconus is diagnosed using advanced eye examinations such as corneal topography, corneal tomography, pachymetry (corneal thickness measurement), and a comprehensive eye examination performed by an ophthalmologist.",
+      },
+      {
+        id: "lasik-with-keratoconus",
+        question: "Can I undergo LASIK if I have keratoconus?",
+        answer:
+          "In most cases, LASIK is not recommended for patients with keratoconus because it may weaken the cornea further. Your ophthalmologist will recommend safer alternatives based on your eye condition.",
+      },
+      {
+        id: "when-is-cxl-recommended",
+        question: "When is Corneal Cross-Linking (CXL) recommended?",
+        answer:
+          "Corneal Cross-Linking is generally recommended when keratoconus shows signs of progression. It helps strengthen the cornea and reduces the likelihood of further deterioration.",
+      },
+    ],
+  },
   clinicalExpertise: {
     title: "Clinical expertise",
     intro:
-      "Cataract care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced",
+      "Keratoconus care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced",
     cardBg: "/assets/Service/cataract/clinicbg.png",
     cardBgAlt: "Pixel Eye clinic background",
     doctors: [

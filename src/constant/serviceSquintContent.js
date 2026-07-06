@@ -8,7 +8,7 @@ export const SERVICE_SQUINT_CONTENT = {
         "attention",
       ],
       description:
-        "Squint can appear in childhood or adulthood and may cause eye strain, double vision, or lazy eye if left untreated.",
+        "Squint can appear in childhood or adulthood and may cause eye strain, double vision, or lazy eye if left untreated. A detailed eye check-up can help identify the cause and guide proper correction.",
       image: {
         src: "/assets/Service/squint/squint_banner.png",
         alt: "",
@@ -53,11 +53,14 @@ export const SERVICE_SQUINT_CONTENT = {
       alt: "Squint eye examination",
     },
     items: [
-      { number: "01", text: "Eye turning inward or outward" },
-      { number: "02", text: "Closing one eye often" },
-      { number: "03", text: "Poor depth judgement" },
-      { number: "04", text: "Tilting the head to focus clearly" },
-      { number: "05", text: "Double vision or eye strain" },
+      { number: "01", text: "Closing or Covering One Eye" },
+      { number: "02", text: "Eye turning inward and outward" },
+      { number: "03", text: "Sitting Too Close to Screens" },
+      { number: "04", text: "Frequent Blinking or Eye Rubbing" },
+      { number: "05", text: "Double Vision" },
+      { number: "06", text: "Eye Strain and Fatigue" },
+      { number: "07", text: "Frequent Headaches" },
+      { number: "08", text: "Poor depth judgment" },
     ],
   },
 
@@ -206,5 +209,73 @@ export const SERVICE_SQUINT_CONTENT = {
     doctorName: "Dr. Abdul Rasheed",
     doctorDescription:
       "An ophthalmic surgeon trained at AIIMS New Delhi, with experience in squint diagnosis and management across age groups. He also works closely with patients for cataract and LASIK care, with a clear, patient-focused approach.",
+  },
+  faq: {
+    title: "FAQs",
+    image: "/assets/Service/cataract/faq.png",
+    imageAlt: "Squint FAQ consultation",
+    note: "For personalised guidance on squint diagnosis, treatment options, and vision development, schedule a consultation with our squint specialists. Early diagnosis and timely treatment can improve eye alignment, support healthy vision, and help prevent long-term complications such as lazy eye or loss of binocular vision.",
+    items: [
+      {
+        id: "what-is-squint-strabismus",
+        question: "What is squint (strabismus)?",
+        answer:
+          "Squint, also known as strabismus, is a condition in which the eyes do not align properly. One eye may look straight while the other turns inward, outward, upward, or downward. It can affect both children and adults.",
+      },
+      {
+        id: "what-causes-squint",
+        question: "What causes squint?",
+        answer:
+          "Squint can result from uncorrected refractive errors, poor coordination of the eye muscles, neurological conditions, reduced vision in one eye, family history, or congenital eye alignment problems. A comprehensive eye examination helps identify the underlying cause.",
+      },
+      {
+        id: "is-squint-common-in-children",
+        question: "Is squint common in children?",
+        answer:
+          "Yes. Squint commonly develops during infancy or early childhood. Early diagnosis is important because untreated squint may affect normal visual development and increase the risk of lazy eye (amblyopia).",
+      },
+      {
+        id: "can-adults-develop-squint",
+        question: "Can adults develop squint?",
+        answer:
+          "Yes. Adults can develop squint due to nerve disorders, eye muscle problems, trauma, thyroid eye disease, stroke, or other medical conditions. Sudden onset of squint should always be evaluated promptly by an ophthalmologist.",
+      },
+      {
+        id: "does-squint-affect-vision",
+        question: "Does squint affect vision?",
+        answer:
+          "It can. Some people experience double vision, poor depth perception, or eye strain. In children, untreated squint may lead to lazy eye if the brain begins to ignore the image from one eye.",
+      },
+      {
+        id: "when-is-squint-surgery-recommended",
+        question: "When is squint surgery recommended?",
+        answer:
+          "Squint surgery may be recommended when glasses or other treatments cannot adequately align the eyes. The procedure aims to improve eye alignment, binocular vision, and appearance, depending on the individual's condition.",
+      },
+      {
+        id: "is-squint-surgery-safe",
+        question: "Is squint surgery safe?",
+        answer:
+          "Squint surgery is a commonly performed and generally safe procedure when carried out by experienced ophthalmic surgeons. Your doctor will discuss the expected benefits, possible risks, and whether surgery is appropriate for your condition.",
+      },
+      {
+        id: "will-squint-return-after-treatment",
+        question: "Will squint return after treatment?",
+        answer:
+          "Some patients maintain good eye alignment after treatment, while others may require ongoing monitoring or additional treatment over time. Regular follow-up visits help ensure the best long-term outcome.",
+      },
+      {
+        id: "age-to-treat-squint",
+        question: "At what age should squint be treated?",
+        answer:
+          "There is no single ideal age. Children with suspected squint should be evaluated as early as possible because timely treatment supports healthy vision development. Adults with new or longstanding squint can also benefit from appropriate treatment.",
+      },
+      {
+        id: "when-to-consult-squint-specialist",
+        question: "When should I consult a squint specialist?",
+        answer:
+          "Consult an ophthalmologist if you notice one eye turning in a different direction, persistent double vision, frequent head tilting, poor depth perception, or any concern about your child's eye alignment. Early evaluation allows for timely diagnosis and appropriate treatment.",
+      },
+    ],
   },
 };

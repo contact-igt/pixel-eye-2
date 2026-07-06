@@ -37,6 +37,10 @@
     display: block;
 }
 
+.treatment-approach__media {
+    display: block;
+}
+
 .treatment-approach__overlay {
     position: absolute;
     left: 0;
@@ -200,15 +204,17 @@
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .treatment-approach {
         width: min(1600px, calc(100% - 40px));
         margin-bottom: 64px;
+        padding: 24px 0;
     }
 
     .treatment-approach__content {
-        top: 10%;
-        left: 6%;
+        position: static;
+        max-width: 100%;
+        margin: 0;
     }
 
     .treatment-approach--full {
@@ -220,20 +226,34 @@
 
     .treatment-approach__card {
         border-radius: var(--radius-card-lg, 16px);
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .treatment-approach__media {
+        order: 2;
+        overflow: hidden;
+        border-radius: var(--radius-card-lg, 16px);
     }
 
     .treatment-approach__image {
-        height: 400px;
+        position: static;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 344 / 190;
+        object-fit: cover;
     }
 
     .treatment-approach__overlay {
-        padding: 28px 24px;
-        position: absolute;
-        top: 15px;
-        width: 700px;
-        background: none !important;
+        order: 1;
+        position: static;
         width: 100%;
-
+        padding: 0 0 26px;
+        background: none !important;
+        display: block;
     }
 
     .treatment-approach__content--wide {
@@ -242,10 +262,18 @@
 
     .treatment-approach__content h2 {
         font-size: 28px;
+        line-height: 1.12;
+        margin: 0 0 24px;
     }
 
     .treatment-approach__content p {
-        font-size: 14px;
+        font-size: 20px;
+        line-height: 1.15;
+        margin: 0 0 26px;
+    }
+
+    .treatment-approach__content p:last-child {
+        margin-bottom: 0;
     }
 
     .treatment-approach__addon {
@@ -269,7 +297,7 @@
     }
 
     .treatment-approach__image {
-        height: 180px;
+        aspect-ratio: 344 / 190;
     }
 
     .treatment-approach__content h2 {
