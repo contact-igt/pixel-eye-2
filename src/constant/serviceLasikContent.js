@@ -60,19 +60,19 @@ export const SERVICE_LASIK_CONTENT = {
       {
         id: "hyperopia",
         title: "Hyperopia ( Farsightedness )",
-        image: "/assets/Service/lasik/hyperopia.png",
+        image: "/assets/Service/Lasik/hyperopia.png",
         alt: "Hyperopia eye illustration",
       },
       {
         id: "myopia",
         title: "Myopia ( Nearsightedness )",
-        image: "/assets/Service/lasik/myopia.png",
+        image: "/assets/Service/Lasik/myopia.png",
         alt: "Myopia eye illustration",
       },
       {
         id: "astigmatism",
         title: "Astigmatism",
-        image: "/assets/Service/lasik/astigmatism.png",
+        image: "/assets/Service/Lasik/astigmatism.png",
         alt: "Astigmatism eye illustration",
       },
     ],

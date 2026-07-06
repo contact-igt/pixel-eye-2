@@ -52,7 +52,7 @@
     ],
     cta: {
       label: "Meet Our Specialists",
-      href: "/about#visionaries",
+      href: "/doctors",
     },
     bookAppointment: {
       label: "BOOK APPOINTMENT",
@@ -112,7 +112,7 @@
   protect: {
     cta: {
       label: "Meet Our Specialists",
-      href: "/about#visionaries",
+      href: "/doctors",
     },
     title: "Every eye has a story, we're here to protect yours.",
     beforeImage: {

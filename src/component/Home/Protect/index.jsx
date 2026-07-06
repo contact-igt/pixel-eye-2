@@ -71,9 +71,7 @@ const Protect = () => {
 
   const onDragEnd = useCallback(() => {
     setIsDragging(false);
-    const midPoint = (minPosition + maxPosition) / 2;
-    setSliderPosition((prev) => (prev >= midPoint ? maxPosition : minPosition));
-  }, [maxPosition, minPosition]);
+  }, []);
 
   useEffect(() => {
     if (isDragging) {

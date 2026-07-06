@@ -14,22 +14,25 @@ const VisionariesSection = () => {
   useEffect(() => {
     if (!sectionRef.current) return undefined;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (reduceMotion) return undefined;
 
     gsap.registerPlugin(ScrollTrigger);
     const mm = gsap.matchMedia();
 
     const ctx = gsap.context(() => {
-
       const animateRows = ({ isMobile = false } = {}) => {
-        const header = sectionRef.current.querySelector("[data-visionaries-header]");
+        const header = sectionRef.current.querySelector(
+          "[data-visionaries-header]",
+        );
         gsap.set(header, { y: 42, opacity: 0 });
 
         const headerTimeline = gsap.timeline({ paused: true }).to(header, {
           y: 0,
           opacity: 1,
-          duration: 0.85,
+          duration: 0.5,
           ease: "power3.out",
         });
 
@@ -63,7 +66,7 @@ const VisionariesSection = () => {
             .to(media, {
               y: 0,
               opacity: 1,
-              duration: isMobile ? 0.85 : 1,
+              duration: isMobile ? 0.5 : 0.55,
               ease: "power3.out",
             })
             .to(
@@ -71,20 +74,20 @@ const VisionariesSection = () => {
               {
                 y: 0,
                 opacity: 1,
-                duration: isMobile ? 0.9 : 1.1,
+                duration: isMobile ? 0.55 : 0.6,
                 ease: "power3.out",
               },
-              "-=0.8"
+              "-=0.45",
             )
             .to(
               info,
               {
                 y: 0,
                 opacity: 1,
-                duration: 0.75,
+                duration: 0.4,
                 ease: "power3.out",
               },
-              "-=0.65"
+              "-=0.4",
             )
             .to(
               content,
@@ -92,21 +95,21 @@ const VisionariesSection = () => {
                 x: 0,
                 y: 0,
                 opacity: 1,
-                duration: isMobile ? 0.8 : 0.95,
+                duration: isMobile ? 0.45 : 0.5,
                 ease: "power3.out",
               },
-              "-=0.75"
+              "-=0.45",
             )
             .to(
               paragraphs,
               {
                 y: 0,
                 opacity: 1,
-                duration: 0.55,
-                stagger: 0.06,
+                duration: 0.35,
+                stagger: 0.04,
                 ease: "power2.out",
               },
-              "-=0.42"
+              "-=0.3",
             );
 
           ScrollTrigger.create({
@@ -205,14 +208,20 @@ const VisionariesSection = () => {
                         <h3 className={styles.name}>{doctor.name}</h3>
                         <p className={styles.degree}>{doctor.degree}</p>
                         {doctor.specialties.map((speciality) => (
-                          <p key={`${doctor.id}-${speciality}`} className={styles.spec}>
+                          <p
+                            key={`${doctor.id}-${speciality}`}
+                            className={styles.spec}
+                          >
                             {speciality}
                           </p>
                         ))}
                       </div>
                     </div>
 
-                    <div className={styles.contentSection} data-visionary-content>
+                    <div
+                      className={styles.contentSection}
+                      data-visionary-content
+                    >
                       {doctor.paragraphs.map((paragraph, paragraphIndex) => (
                         <p key={`${doctor.id}-p-${paragraphIndex}`}>
                           {renderParagraph(doctor, paragraph)}

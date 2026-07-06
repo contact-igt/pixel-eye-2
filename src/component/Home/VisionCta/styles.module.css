@@ -69,6 +69,7 @@
     align-items: center;
     font-size: var(--btn-fs);
     font-weight: var(--btn-fw);
+    transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
 .ctaArrow {
@@ -81,6 +82,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: background 180ms ease, border-color 180ms ease;
 }
 
 .ctaArrowIcon {
@@ -88,16 +90,31 @@
     height: 18px;
     color: #ffff;
     stroke-width: 2.2;
+    transform: rotate(0deg) translate(0, 0);
+    transform-origin: center;
+    transition: transform 240ms ease;
+}
+
+.ctaButton:hover .ctaArrowIcon {
+    transform: rotate(45deg) translate(1px, 0);
 }
 
 .ctaButton:hover .ctaLabel,
 .ctaButton:hover .ctaArrow {
-    background: #94d4c9;
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
+    color: #ffffff;
+}
+
+.ctaButton:hover .ctaArrowIcon {
+    color: #ffffff;
 }
 
 .ctaButton:active .ctaLabel,
 .ctaButton:active .ctaArrow {
-    background: #94d4c9;
+    background: #243f7a;
+    border-color: #243f7a;
+    color: #ffffff;
 }
 
 .cardsRow .cardWrap:nth-child(1) .centerTitle {
@@ -216,7 +233,7 @@
 
 
     .ctaButton {
-        left: 30%;
+        left: 50%;
         bottom: 45px;
         transform: translateX(-50%);
     }

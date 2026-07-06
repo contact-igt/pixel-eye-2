@@ -52,7 +52,7 @@
   top: 0;
   bottom: 0;
   width: 120px;
-  left: clamp(60px, var(--slider-position), calc(100% - 60px));
+  left: var(--slider-position);
   transform: translateX(-50%);
   z-index: 6;
   pointer-events: none;

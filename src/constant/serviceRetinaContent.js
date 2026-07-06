@@ -152,7 +152,7 @@ export const SERVICE_RETINA_CONTENT = {
         title: "Dilated Retina Examination",
         description:
           "This test measures the pressure inside the eye. High eye pressure is an important risk factor for glaucoma.",
-        image: "/assets/Service/retina/dilated.png",
+        image: "/assets/Service/Retina/dilated.png",
         alt: "Dilated retina examination for retina diagnosis",
       },
       {
@@ -160,7 +160,7 @@ export const SERVICE_RETINA_CONTENT = {
         title: "Visual Acuity Test",
         description:
           "A bright light is shone directly into the eyes. The specialist observes where the light reflects off your pupils to check if your eyes are pointing at the same spot.",
-        image: "/assets/Service/retina/visual.png",
+        image: "/assets/Service/Retina/visual.png",
         alt: "Visual acuity test for retina diagnosis",
       },
       {
@@ -168,7 +168,7 @@ export const SERVICE_RETINA_CONTENT = {
         title: "Fundus Photography",
         description:
           "The optic nerve is checked for signs of damage, thinning, or structural changes.",
-        image: "/assets/Service/retina/fundus.png",
+        image: "/assets/Service/Retina/fundus.png",
         alt: "Fundus Photography test for retina diagnosis",
       },
       {
@@ -176,7 +176,7 @@ export const SERVICE_RETINA_CONTENT = {
         title: "OCT Scan",
         description:
           "OCT helps assess the thickness of the optic nerve fiber layer and detect early glaucoma-related changes.",
-        image: "/assets/Service/retina/union.png",
+        image: "/assets/Service/Retina/Union.png",
         sliderImage: "/assets/Service/glaucoma/oct_scan1_slider.png",
         alt: "OCT Scan test for retina diagnosis",
         highlighted: true,
