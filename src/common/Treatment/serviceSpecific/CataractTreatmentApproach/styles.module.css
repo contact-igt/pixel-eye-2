@@ -40,6 +40,11 @@
 .treatment-approach__media {
     display: block;
 }
+/* Picture wrapper is transparent to layout on desktop so the image keeps
+   its absolute positioning inside the card. */
+.treatment-approach__picture {
+    display: contents;
+}
 
 .treatment-approach__overlay {
     position: absolute;
@@ -81,7 +86,7 @@
 
 .treatment-approach__content p {
     margin: 0 0 20px;
-    color: #2A3A77;
+    color: #2E3D70CC;
     font-size: 20px;
     line-height: 1.35;
 }
@@ -209,10 +214,26 @@
         width: min(1600px, calc(100% - 40px));
         margin-bottom: 64px;
         padding: 24px 0;
+        width: 100%;
+        margin: 0px;
+    }
+
+    /* Stack: text content first, image second (no overlay). */
+    .treatment-approach__card {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+    }
+
+    .treatment-approach__picture {
+        display: block;
+        width: 100%;
     }
 
     .treatment-approach__content {
         position: static;
+        top: auto;
+        left: auto;
         max-width: 100%;
         margin: 0;
     }
@@ -254,6 +275,11 @@
         padding: 0 0 26px;
         background: none !important;
         display: block;
+        position: static;
+        top: auto;
+        width: 100%;
+        padding: 20px 16px 18px;
+        background: none !important;
     }
 
     .treatment-approach__content--wide {
@@ -274,6 +300,7 @@
 
     .treatment-approach__content p:last-child {
         margin-bottom: 0;
+        font-size: 16px;
     }
 
     .treatment-approach__addon {
@@ -286,11 +313,6 @@
 @media (max-width: 389px) {
 
 
-    .treatment-approach {
-        width: min(1600px, calc(100% - 24px));
-        margin-bottom: 50px;
-    }
-
     .treatment-approach--full {
         width: calc(100% - 12px);
         margin-bottom: 50px;
@@ -298,6 +320,7 @@
 
     .treatment-approach__image {
         aspect-ratio: 344 / 190;
+        height: auto;
     }
 
     .treatment-approach__content h2 {

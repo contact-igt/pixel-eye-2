@@ -203,16 +203,24 @@
     }
 
     .title {
-        font-size: clamp(28px, 8vw, 40px);
+        font-size: 28px;
     }
 
     .copy p {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.38;
     }
 
     .visual {
         border-radius: 16px;
+    }
+
+    .loader {
+        display: none;
+    }
+
+    .visual {
+        margin-top: 30px;
     }
 }
 

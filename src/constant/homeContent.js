@@ -167,7 +167,7 @@
         id: 3,
         title: "Transparent & Comfortable",
         description:
-          "We believe in open, honest communication â€” clear pricing, informed consent, and a relaxed environment at every step.",
+          "We believe in open, honest communication  clear pricing, informed consent, and a relaxed environment at every step.",
         image: "/assets/Home/choose3.png",
         href: "/appointment",
         buttonLabel: "Read More",
@@ -215,14 +215,24 @@
   testimonials: {
     title: "Patient Stories",
     subtitle: "Stories of clearer vision, directly from our clients",
-    mosaic: {
-      src: "/assets/Home/test.png",
-      alt: "Patient mosaic",
-      width: 1120,
-      height: 220,
-      offsetTop: 0,
-      offsetLeft: 0,
-    },
+    clients: [
+      { src: "/assets/Home/frame1.png", alt: "Patient photo 1" },
+      { src: "/assets/Home/frame2.png", alt: "Patient photo 2" },
+      { src: "/assets/Home/frame3.png", alt: "Patient photo 3" },
+      { src: "/assets/Home/frame4.png", alt: "Patient photo 4" },
+      { src: "/assets/Home/frame5.png", alt: "Patient photo 5" },
+      { src: "/assets/Home/frame6.png", alt: "Patient photo 6" },
+      { src: "/assets/Home/frame7.png", alt: "Patient photo 7" },
+      { src: "/assets/Home/frame8.png", alt: "Patient photo 8" },
+      { src: "/assets/Home/frame9.png", alt: "Patient photo 9" },
+      { src: "/assets/Home/frame10.png", alt: "Patient photo 10" },
+      { src: "/assets/Home/frame11.png", alt: "Patient photo 11" },
+      { src: "/assets/Home/frame12.png", alt: "Patient photo 12" },
+      { src: "/assets/Home/frame13.png", alt: "Patient photo 13" },
+      { src: "/assets/Home/frame14.png", alt: "Patient photo 13" },
+
+
+    ],
     items: [
       {
         id: 1,

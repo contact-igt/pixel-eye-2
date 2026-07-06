@@ -1,12 +1,14 @@
 export const NAV_CONTENT = {
   logo: {
     src: "/assets/Header/brandlogo.png",
+    mobileSrc: "/assets/Header/brandlogomb.png",
     alt: "Pixel Eye Hospital",
     width: 606,
     height: 141,
   },
   nabhBadge: {
     src: "/assets/Header/brandlogo2.png",
+    mobileSrc: "/assets/Header/branlogo2mb.png",
     alt: "NABH-Certified Eye Care Facility",
     width: 693,
     height: 182,

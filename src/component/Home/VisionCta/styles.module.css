@@ -212,6 +212,7 @@
         object-fit: cover;
         object-position: 100% 50%;
     }
+
 }
 
 @media (max-width: 575px) {
@@ -219,12 +220,16 @@
         min-height: 230px;
     }
 
+        .visionSection{
+        padding: 0px 10px;
+    }
+
     .title {
         font-size: var(--h2-size);
         line-height: 1.1;
-        top: 18px;
-        left: 9px;
-        max-width: 40%;
+        top: 0px;
+        left: 20px;
+        max-width: 60%;
     }
 
     .image {
@@ -233,8 +238,8 @@
 
 
     .ctaButton {
-        left: 50%;
-        bottom: 45px;
+               left: 30%;
+        bottom: 30px;
         transform: translateX(-50%);
     }
 

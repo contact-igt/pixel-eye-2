@@ -13,7 +13,6 @@
     background: transparent;
     border: none;
     padding: 0;
-    position: relative;
 }
 
 /* ── label pill ─────────────────────────── */
@@ -135,4 +134,12 @@
 
 .dark:hover .icon {
     background: #1c3366;
+}
+
+
+@media (max-width:567px) {
+  .label{
+    font-size: 12px;
+  }
+    
 }

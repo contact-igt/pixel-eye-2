@@ -1,0 +1,19 @@
+/* Show the single-doctor clinical expertise on desktop/tablet,
+   and the multi-doctor variant on mobile. */
+.desktopOnly {
+    display: block;
+}
+
+.mobileOnly {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .desktopOnly {
+        display: none;
+    }
+
+    .mobileOnly {
+        display: block;
+    }
+}

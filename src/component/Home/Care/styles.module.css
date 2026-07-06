@@ -364,7 +364,7 @@
 @media (max-width: 575px) {
 
   .title {
-    font-size: 28px;
+    font-size: 32px;
     line-height: var(--h2-lh);
   }
 
@@ -406,7 +406,7 @@
   }
 
   .cardDescription {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.4;
     padding-top: 15px;
   }

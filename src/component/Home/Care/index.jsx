@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "@/common/Button";
 import { HOME_CONTENT } from "@/constant/homeContent";
 import styles from "./styles.module.css";
@@ -9,6 +9,7 @@ const Care = () => {
   const { titleLine1, titleLine2, featuredCareAreas, cta } = care;
   const [activeId, setActiveId] = useState(2); // Card 2 (center) active by default
   const [isMobile, setIsMobile] = useState(false);
+  const cardRefs = useRef([]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 767px)");
@@ -24,6 +25,30 @@ const Care = () => {
       mediaQuery.removeEventListener("change", updateIsMobile);
     };
   }, []);
+
+  // On mobile, auto-activate (hover) each card as it scrolls through the
+  // vertical center of the viewport.
+  useEffect(() => {
+    if (!isMobile) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = Number(entry.target.dataset.cardId);
+            if (id) setActiveId(id);
+          }
+        });
+      },
+      { root: null, rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+    );
+
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [isMobile, featuredCareAreas.length]);
 
   return (
     <section className={styles.careSection}>
@@ -58,6 +83,10 @@ const Care = () => {
             return (
               <div
                 key={item.id}
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
+                data-card-id={item.id}
                 className={`${styles.cardWrap} ${wrapClass}`}
                 onMouseEnter={() => setActiveId(item.id)}
               >

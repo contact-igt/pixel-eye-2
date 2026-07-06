@@ -19,6 +19,11 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
     ? styles["treatment-hero__copy--blue"]
     : styles["treatment-hero__copy--white"];
 
+  // Render hero copy through the bottom-left treatment-hero__copy block
+  // (same position as pediatric) for these slugs instead of HeroBanner's
+  // vertically-centered copy.
+  const useTreatmentCopy = slug === "retina" || slug === "glaucoma";
+
   const hasTitleLines =
     Array.isArray(hero.titleLines) && hero.titleLines.length > 0;
 
@@ -140,8 +145,14 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           mobileImage={mobileImageSrc}
           mobileImageMedia={hero.mobileImageMedia}
           mobileCta={hero.mobileCta}
-          title={heroBannerTitle}
-          subtitle={hasTitleLines ? hero.description : undefined}
+          title={useTreatmentCopy ? undefined : heroBannerTitle}
+          subtitle={
+            useTreatmentCopy
+              ? undefined
+              : hasTitleLines
+                ? hero.description
+                : undefined
+          }
           rightSlot={hero.nav?.rightSlot ?? "book"}
           navTheme={hero.nav?.navTheme ?? "light"}
           cardBg={hero.nav?.cardBg ?? "white"}
@@ -156,11 +167,11 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           copyClassName={heroCopyThemeClass}
         />
 
-        {hero.title && (
+        {(hero.title || (useTreatmentCopy && hasTitleLines)) && (
           <div
             className={`${styles["treatment-hero__copy"]} ${heroCopyThemeClass}`}
           >
-            <h1>{hero.title}</h1>
+            <h1>{hero.title ? hero.title : heroBannerTitle}</h1>
             {hero.description && <p>{hero.description}</p>}
           </div>
         )}

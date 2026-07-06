@@ -23,6 +23,7 @@ const TreatmentApproach = ({
       ? treatment.imageAlt || ""
       : treatment.image?.alt || treatment.imageAlt || "";
 
+
   return (
     <section
       className={`${styles["treatment-approach"]} ${
@@ -31,9 +32,9 @@ const TreatmentApproach = ({
       aria-labelledby={`${sectionId}-title`}
     >
       <div className={styles["treatment-approach__card"]}>
-        <picture className={styles["treatment-approach__media"]}>
+        <picture className={styles["treatment-approach__picture"]}>
           {mobileImageSrc ? (
-            <source media="(max-width: 768px)" srcSet={mobileImageSrc} />
+            <source media="(max-width: 767px)" srcSet={mobileImageSrc} />
           ) : null}
           <img
             className={styles["treatment-approach__image"]}
@@ -64,7 +65,9 @@ const TreatmentApproach = ({
         </div>
       </div>
 
-      {children ? <div className={styles["treatment-approach__addon"]}>{children}</div> : null}
+      {children ? (
+        <div className={styles["treatment-approach__addon"]}>{children}</div>
+      ) : null}
     </section>
   );
 };

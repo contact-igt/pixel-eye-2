@@ -216,7 +216,15 @@ export default function BannerNav({
                   alt={logo.alt}
                   width={logo.width}
                   height={logo.height}
-                  className={styles.logo}
+                  className={`${styles.logo} ${styles.logoDesktop}`}
+                  priority
+                />
+                <Image
+                  src={logo.mobileSrc}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className={`${styles.logo} ${styles.logoMobile}`}
                   priority
                 />
               </Link>
@@ -290,7 +298,7 @@ export default function BannerNav({
               {showMobileNabhBadge && (
                 <div className={styles.aboutMobileBadge} aria-hidden="true">
                   <Image
-                    src={nabhBadge.src}
+                    src={nabhBadge.mobileSrc}
                     alt={nabhBadge.alt}
                     width={nabhBadge.width}
                     height={nabhBadge.height}
@@ -300,14 +308,24 @@ export default function BannerNav({
                 </div>
               )}
               {rightSlot === "nabh" ? (
-                <Image
-                  src={nabhBadge.src}
-                  alt={nabhBadge.alt}
-                  width={nabhBadge.width}
-                  height={nabhBadge.height}
-                  className={styles.nabhBadge}
-                  priority
-                />
+                <>
+                  <Image
+                    src={nabhBadge.src}
+                    alt={nabhBadge.alt}
+                    width={nabhBadge.width}
+                    height={nabhBadge.height}
+                    className={`${styles.nabhBadge} ${styles.nabhBadgeDesktop}`}
+                    priority
+                  />
+                  <Image
+                    src={nabhBadge.mobileSrc}
+                    alt={nabhBadge.alt}
+                    width={nabhBadge.width}
+                    height={nabhBadge.height}
+                    className={`${styles.nabhBadge} ${styles.nabhBadgeMobile}`}
+                    priority
+                  />
+                </>
               ) : (
                 <Link href={bookAppointment.href} className={styles.bookBtn}>
                   {bookAppointment.label}

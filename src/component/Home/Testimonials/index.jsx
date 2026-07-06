@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import Image from "next/image";
 import { HOME_CONTENT } from "@/constant/homeContent";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -10,7 +9,7 @@ import Button from "@/common/Button";
 
 const Testimonials = () => {
   const { testimonials } = HOME_CONTENT;
-  const { title, subtitle, mosaic, items, cta } = testimonials;
+  const { title, subtitle, clients, items, cta } = testimonials;
   const duplicatedItems = [...items, ...items, ...items];
   const [active, setActive] = useState(2);
   const [mounted, setMounted] = useState(false);
@@ -67,15 +66,15 @@ const Testimonials = () => {
           <h2 className={styles.title}>{title}</h2>
 
           <div className={styles.mosaicWrap} aria-hidden>
-            <Image
-              src={mosaic.src}
-              alt={mosaic.alt}
-              fill
-              className={styles.mosaic}
-              sizes="100vw"
-              priority
-              draggable={false}
-            />
+            {clients.map((client, i) => (
+              <img
+                key={i}
+                src={client.src}
+                alt={client.alt}
+                className={styles.clientImg}
+                draggable={false}
+              />
+            ))}
           </div>
 
           <div className={styles.lowerContent}>

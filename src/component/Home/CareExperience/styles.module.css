@@ -224,13 +224,13 @@
 @media (max-width: 575px) {
   .title {
     font-size: 28px;
-    top: -170%;
+    top: -150%;
     width: 260px;
     left: 17px;
   }
 
   .imageWrap {
-    height: 500px;
+    height: 400px;
   }
 
   .revealLeft {

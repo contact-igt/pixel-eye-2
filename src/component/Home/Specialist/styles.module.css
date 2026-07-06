@@ -388,6 +388,14 @@
         text-align: center;
         padding-left: 0;
     }
+
+    /* Show doctor details by default on mobile (no hover needed) */
+    .doctorHoverCard,
+    .doctorHoverCard2 {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+        z-index: -99999;
+    }
 }
 
 @media (max-width: 575px) {
@@ -437,23 +445,21 @@
     }
 
     .doctorHoverCard2 {
-        top: 10px;
+        top: 47px;
         width: 300px;
-        left: -45%;
-        width: 254px;
-        height: 200px;
-        padding: 30px 42px 30px 20px;
+        left: -46%;
+        width: 338px;
+        height: 178px;
+        padding: 30px 79px 30px 22px;
 
     }
 
     .doctorHoverCard {
-        top: 4px;
+        top: 32px;
         left: 140%;
-        width: 263px;
-        height: 155px;
-        padding: 22px 45px;
-
-
+        width: 302px;
+        height: 162px;
+        padding: 31px 10px 30px 70px;
     }
 
 }

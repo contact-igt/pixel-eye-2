@@ -19,7 +19,7 @@ const VisionCta = () => {
             alt={image.alt}
             fill
             className={`${styles.image} ${styles.imageDesktop}`}
-            sizes="100vw"
+            sizes="(max-width: 767px) 1px, (max-width: 1200px) 100vw, 1200px"
             priority
             draggable={false}
           />
@@ -28,7 +28,7 @@ const VisionCta = () => {
             alt={image.alt}
             fill
             className={`${styles.image} ${styles.imageMobile}`}
-            sizes="100vw"
+            sizes="(max-width: 767px) 100vw, 1px"
             priority
             draggable={false}
           />

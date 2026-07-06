@@ -477,6 +477,10 @@
     width: min(100%, calc(100% - 28px));
   }
 
+  .clinical-expertise__doctors {
+    margin-top: 50px;
+  }
+
   .clinical-expertise__panel {
     border-radius: 16px;
   }
@@ -505,7 +509,7 @@
   }
 
   .clinical-expertise__doctor-info {
-    left: clamp(80px, 20%, 114px);
+    left: clamp(90px, 20%, 114px);
     padding: 24px 14px 16px 88px;
   }
 

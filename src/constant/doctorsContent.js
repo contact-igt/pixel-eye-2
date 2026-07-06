@@ -11,11 +11,6 @@ export const DOCTORS_CONTENT = {
     height: "medium",
     showOverlay: true,
     imagePosition: "center center",
-    mobileCta: {
-      label: "BOOK APPOINTMENT",
-      href: "/appointment",
-      variant: "light",
-    },
   },
   list: {
     titleLines: ["Our doctors", "and specialists"],

@@ -15,6 +15,7 @@ import CataractPatientExperienceFallback from "@/common/Treatment/serviceSpecifi
 import TreatmentApproach from "@/common/Treatment/serviceSpecific/CataractTreatmentApproach";
 import CataractApproach from "@/common/Treatment/serviceSpecific/CataractApproach";
 import { KeratoconusApproach } from "@/common/Treatment/serviceSpecific/KeratoconusApproach/index";
+import styles from "./styles.module.css";
 
 /**
  * Maps section keys to render functions.
@@ -43,14 +44,29 @@ const SECTION_MAP = {
     ) : null,
   clinicalExpertise: (t) => {
     if (!t.clinicalExpertise) return null;
-    // Single-doctor card (cataract, lasik, squint) vs multi-doctor panel
-    // (glaucoma, keratoconus, pediatric, retina).
-    const Component =
-      t.clinicalExpertise.variant === "single"
-        ? TreatmentClinicalExpertiseSingle
-        : TreatmentClinicalExpertise;
+    // Cataract & Squint show the single-doctor card on desktop/tablet and the
+    // multi-doctor variant on mobile. Other pages always use the multi variant.
+    const useSingleOnDesktop = t.slug === "cataract" || t.slug === "squint";
+    if (useSingleOnDesktop) {
+      return (
+        <div key="clinicalExpertise">
+          <div className={styles.desktopOnly}>
+            <TreatmentClinicalExpertiseSingle
+              data={t.clinicalExpertise}
+              slug={t.slug}
+            />
+          </div>
+          <div className={styles.mobileOnly}>
+            <TreatmentClinicalExpertise
+              data={t.clinicalExpertise}
+              slug={t.slug}
+            />
+          </div>
+        </div>
+      );
+    }
     return (
-      <Component
+      <TreatmentClinicalExpertise
         key="clinicalExpertise"
         data={t.clinicalExpertise}
         slug={t.slug}

@@ -157,7 +157,7 @@ textarea {
 /* ─── Small Mobile ──────────────────────────────────────────── 575px ── */
 @media (max-width: 575px) {
   :root {
-    --section-px: 14px;
+    --section-px: 10px;
     --section-pt: 32px;
     --section-pb: 32px;
     --h2-size: 26px;

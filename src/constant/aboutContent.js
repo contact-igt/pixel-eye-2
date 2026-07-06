@@ -13,11 +13,6 @@ export const ABOUT_CONTENT = {
     height: "medium",
     showOverlay: true,
     imagePosition: "center center",
-    mobileCta: {
-      label: "BOOK APPOINTMENT",
-      href: "/appointment",
-      variant: "light",
-    },
   },
   experience: {
     titleLines: ["We experience the world", "through what we see"],
@@ -77,7 +72,7 @@ export const ABOUT_CONTENT = {
         id: "cataract-types",
         title: "Types of Cataract Surgery Explained",
         description:
-          "The Brutal Truth About Pain, Healing Time, and What to Expect Day-by-Day!",
+          "A Simple Guide to the Different Cataract Procedures and How to Choose the Right One for You.",
         image: "/assets/About/thumbnai2.png",
         link: "#",
       },
@@ -85,7 +80,7 @@ export const ABOUT_CONTENT = {
         id: "clear-vision",
         title: "Clear Vision without Glasses",
         description:
-          "The Brutal Truth About Pain, Healing Time, and What to Expect Day-by-Day!",
+          "Discover the Vision Correction Options That Can Free You from Glasses and Contact Lenses.",
         image: "/assets/About/thumbnail3.png",
         link: "#",
       },
@@ -113,22 +108,22 @@ export const ABOUT_CONTENT = {
       },
       {
         id: "remember-2",
-        text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
-        name: "S. Ramesh",
-        rating: "4.5",
+        text: "My mother's cataract surgery went smoothly and her vision is crystal clear now. The team was caring throughout.",
+        name: "Priya Nair",
+        rating: "5.0",
         profileImage: {
-          src: "/assets/About/cardimg2.png",
+          src: "/assets/About/cardimg3.png",
           alt: "Patient profile image 2",
         },
         backgroundImage: "/assets/About/remembercard.png",
       },
       {
         id: "remember-3",
-        text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
-        name: "S. Ramesh",
-        rating: "4.5",
+        text: "They diagnosed my child's squint early and guided us with patience at every step. We felt truly understood.",
+        name: "Arun Kumar",
+        rating: "4.8",
         profileImage: {
-          src: "/assets/About/cardimg3.png",
+          src: "/assets/About/cardimg2.png",
           alt: "Patient profile image 3",
         },
         backgroundImage: "/assets/About/remembercard.png",

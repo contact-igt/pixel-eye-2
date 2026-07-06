@@ -63,6 +63,12 @@
   height: auto;
 }
 
+/* Desktop/mobile logo swap */
+.logo.logoMobile,
+.nabhBadge.nabhBadgeMobile {
+  display: none;
+}
+
 
 
 /* ── Center nav links ────────────────────────────────── */
@@ -817,6 +823,16 @@
     border-bottom-left-radius: 16px;
   }
 
+  .logo.logoDesktop,
+  .nabhBadge.nabhBadgeDesktop {
+    display: none;
+  }
+
+  .logo.logoMobile,
+  .nabhBadge.nabhBadgeMobile {
+    display: block;
+  }
+
   .logo {
     width: 110px;
   }
@@ -878,11 +894,11 @@
 
 
   .logo {
-    width: 97px;
+    width: 110px;
   }
 
   .nabhBadge {
-    width: 97px;
+    width: 105px;
   }
 
 }

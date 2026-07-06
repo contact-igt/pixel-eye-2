@@ -10,11 +10,6 @@ export const HERO_BANNER_CONTENT = {
     height: "medium",
     showOverlay: false,
     imagePosition: "right 40%",
-    mobileCta: {
-      label: "BOOK APPOINTMENT",
-      href: "/appointment",
-      variant: "light",
-    },
   },
   service: {
     image: "/assets/Service/Subtract (5).png",

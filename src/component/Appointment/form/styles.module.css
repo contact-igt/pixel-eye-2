@@ -54,7 +54,7 @@
 .appointment-field,
 .country-code {
   height: var(--form-field-h);
-  border: 1.5px solid #bcc9e4;
+  border: 2.2px solid #aec1e9;
   border-radius: var(--form-field-radius);
   background: #ffffff;
   color: var(--text-heading);
@@ -331,7 +331,7 @@
   height: var(--form-check-size);
   margin: 0;
   appearance: none;
-  border: 1.5px solid #bcc9e4;
+  border: 2.2px solid #bcc9e4;
   border-radius: 5px;
   background: #ffffff;
   cursor: pointer;
@@ -479,9 +479,9 @@
   }
 
   .specialist-form-section {
-    --form-field-h: 45px;
+    --form-field-h: 50px;
     --form-field-radius: 9px;
-    --form-field-fs: 13px;
+    --form-field-fs: 14px;
     --form-check-size: 18px;
     --form-btn-h: 40px;
     --form-btn-fs: 14px;
@@ -586,7 +586,15 @@
   }
 
   .submit-area {
-    padding-top: 6px;
+    padding: 20px 0px;
+    text-align: center;
+  }
+
+  .submit-area p{
+    font-size: 14px;
+    font-weight: 500;
+    color: #6E9EB8;
+    margin-top: 30px ;
   }
 
   .submitButton {

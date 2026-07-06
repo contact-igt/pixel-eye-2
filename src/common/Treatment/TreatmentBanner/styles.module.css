@@ -346,16 +346,23 @@
     font-size: 14px;
   }
 
+  /* All treatment hero banners use white copy on mobile */
+
 
 }
 
 @media (max-width: 576px) {
 
 
-  .treatment-detail--pediatric .treatment-hero__copy {
-    top: 30%;
-    bottom: auto;
+  .treatment-hero__copy,
+  .treatment-hero__copy h1 {
+    color: #ffffff;
   }
+
+  .treatment-hero__copy p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
 
   .treatment-detail--pediatric .treatment-hero__copy,
   .treatment-detail--pediatric .treatment-hero__copy h1 {
@@ -364,6 +371,7 @@
 
   .treatment-detail--pediatric .treatment-hero__copy p {
     color: rgba(255, 255, 255, 0.9);
+
   }
 
   .treatment-hero__frame {
@@ -390,21 +398,47 @@
     margin-top: 22px;
   }
 
+  /* All treatment hero banners: title pinned to top, content pinned to bottom */
   .treatment-hero__copy {
     left: 24px;
-    bottom: 42px;
+    top: 0;
+    bottom: 0;
     width: calc(100% - 48px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: clamp(96px, 24vw, 140px);
+    padding-bottom: clamp(44px, 11vw, 72px);
+  }
+
+  /* Treatments that render copy through the shared HeroBanner (cataract,
+     keratoconus, lasik, squint) — same title-top / content-bottom layout.
+     Scoped under .treatment-detail so it overrides HeroBanner's centered copy. */
+  .treatment-detail .treatment-hero__copy--white,
+  .treatment-detail .treatment-hero__copy--blue {
+    top: 0;
+    bottom: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: clamp(96px, 24vw, 140px);
+    padding-bottom: clamp(44px, 11vw, 72px);
   }
 
   .treatment-hero__copy h1 {
-    font-size: clamp(29px, 8.2vw, 36px);
+    font-size: clamp(26px, 4.8vw, var(--hero-title-size));
+    line-height: 1.12;
   }
 
   .treatment-hero__copy p {
     max-width: 300px;
-    font-size: 13.5px;
-    line-height: 1.26;
+    font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0;
   }
+
 }
 
 @media (max-width: 390px) {
@@ -438,17 +472,22 @@
 
   .treatment-hero__copy {
     left: 20px;
-    bottom: 36px;
+    top: 0;
+    bottom: 0;
     width: calc(100% - 40px);
+    padding-top: clamp(84px, 24vw, 120px);
+    padding-bottom: clamp(36px, 10vw, 60px);
   }
 
   .treatment-hero__copy h1 {
-    font-size: 28px;
+    font-size: clamp(26px, 4.8vw, var(--hero-title-size));
+    line-height: 1.12;
   }
 
   .treatment-hero__copy p {
     max-width: 270px;
-    font-size: 13px;
+    font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
+    line-height: 1.4;
   }
 }
 
@@ -541,9 +580,9 @@
 @media (max-width: 575px) {
   .treatment-detail--lasik .treatment-explainer__cutout-title {
     width: calc(100% - 28px);
-    max-width: 360px;
+    max-width: 100%;
     margin-top: 22px;
-    font-size: var(--h2-size);
+    font-size: 28px;
   }
 
   .treatment-detail--lasik .treatment-comparison {

@@ -174,7 +174,7 @@ export const SERVICE_CATARACT_CONTENT = {
       "The procedure involves removing the cloudy lens and replacing it with an artificial Intraocular Lens (IOL). This lens stays in place permanently and restores clarity of vision.",
     ],
     image: "/assets/Service/cataract/treatment.png",
-    mobileImage: "/assets/Service/cataract/treatment_mobile.png",
+    mobileImage: "/assets/Service/cataract/treatementmb.png",
     imageAlt: "Cataract treatment approach",
   },
 
@@ -226,12 +226,21 @@ export const SERVICE_CATARACT_CONTENT = {
     intro:
       "Cataract care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced",
     cardBg: "/assets/Service/cataract/clinicbg.png",
-    cardBgAlt: "Pixel Eye clinic background",
+    doctorName: "Dr. Abdul Rasheed",
     doctorImage: "/assets/Service/Dr. Abdul Rasheed.png",
     doctorImageAlt: "Dr. Abdul Rasheed",
-    doctorName: "Dr. Abdul Rasheed",
     doctorDescription:
       "An ophthalmic surgeon trained at AIIMS New Delhi, with experience in cataract and LASIK, including complex cases. He also works closely with patients across age groups for squint diagnosis and management, with a clear, patient-focused approach.",
+    doctors: [
+      {
+        name: "Dr. Abdul Rasheed",
+        image: "/assets/Service/Dr. Abdul Rasheed.png",
+        imageAlt: "Dr. Abdul Rasheed",
+        description:
+          "An ophthalmic surgeon trained at AIIMS New Delhi, with experience in cataract and LASIK, including complex cases. He also works closely with patients across age groups for squint diagnosis and management, with a clear, patient-focused approach.",
+        href: "/doctors",
+      },
+    ],
   },
 
   faq: {
