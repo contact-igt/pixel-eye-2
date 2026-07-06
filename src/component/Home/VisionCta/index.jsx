@@ -18,7 +18,16 @@ const VisionCta = () => {
             src={image.src}
             alt={image.alt}
             fill
-            className={styles.image}
+            className={`${styles.image} ${styles.imageDesktop}`}
+            sizes="100vw"
+            priority
+            draggable={false}
+          />
+          <Image
+            src="/assets/Home/substract-mb.png"
+            alt={image.alt}
+            fill
+            className={`${styles.image} ${styles.imageMobile}`}
             sizes="100vw"
             priority
             draggable={false}

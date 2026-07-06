@@ -39,6 +39,10 @@
     object-position: center bottom;
 }
 
+.imageMobile {
+    display: none;
+}
+
 
 
 
@@ -175,6 +179,16 @@
         left: 50%;
         bottom: 0px;
         transform: translateX(-50%);
+    }
+
+    .imageDesktop {
+        display: none;
+    }
+
+    .imageMobile {
+        display: block;
+        object-fit: cover;
+        object-position: center;
     }
 
     .image {

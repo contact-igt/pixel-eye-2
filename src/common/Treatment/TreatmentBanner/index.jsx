@@ -14,7 +14,7 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
   const isKeratoconus = variant === "keratoconus";
   const isSquint = variant === "squint";
 
-  const isBlueHeroCopy = slug === "pediatric" || slug === "retina";
+  const isBlueHeroCopy = slug === "pediatric";
   const heroCopyThemeClass = isBlueHeroCopy
     ? styles["treatment-hero__copy--blue"]
     : styles["treatment-hero__copy--white"];

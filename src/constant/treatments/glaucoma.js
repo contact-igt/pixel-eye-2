@@ -1,4 +1,4 @@
-import { SERVICE_GLAUCOMA_CONTENT } from "@/constant/serviceGlaucomaContent";
+import { SERVICE_GLAUCOMA_CONTENT } from "@/constant/serviceglaucomaContent";
 
 export const GLAUCOMA_TREATMENT = {
   slug: "glaucoma",

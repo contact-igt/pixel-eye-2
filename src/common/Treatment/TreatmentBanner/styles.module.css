@@ -345,10 +345,26 @@
     margin-top: 16px;
     font-size: 14px;
   }
+
+
 }
 
 @media (max-width: 576px) {
 
+
+  .treatment-detail--pediatric .treatment-hero__copy {
+    top: 30%;
+    bottom: auto;
+  }
+
+  .treatment-detail--pediatric .treatment-hero__copy,
+  .treatment-detail--pediatric .treatment-hero__copy h1 {
+    color: #ffffff;
+  }
+
+  .treatment-detail--pediatric .treatment-hero__copy p {
+    color: rgba(255, 255, 255, 0.9);
+  }
 
   .treatment-hero__frame {
     min-height: clamp(480px, 82vw, 400px);

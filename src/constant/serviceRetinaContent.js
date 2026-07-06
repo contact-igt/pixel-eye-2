@@ -1,6 +1,9 @@
 export const SERVICE_RETINA_CONTENT = {
   banner: {
     hero: {
+      titleLines: ["Retina Care"],
+      description:
+        "The retina plays a vital role in clear vision. Early diagnosis and timely treatment can help protect your sight.",
       image: {
         src: "/assets/Service/Retina/retina-banner.png",
         alt: "",
