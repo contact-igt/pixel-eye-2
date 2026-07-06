@@ -11,7 +11,7 @@ export const GLAUCOMA_TREATMENT = {
     ...SERVICE_GLAUCOMA_CONTENT.clinicalExpertise,
     variant: "multi",
   },
-  faq: SERVICE_GLAUCOMA_CONTENT.faq, // undefined → falls back to CataractFaq
+  faq: SERVICE_GLAUCOMA_CONTENT.faq,
   patientExperience: SERVICE_GLAUCOMA_CONTENT.rememberRecommend, // undefined → falls back
 
   sections: [

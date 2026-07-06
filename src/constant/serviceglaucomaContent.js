@@ -44,9 +44,12 @@ export const SERVICE_GLAUCOMA_CONTENT = {
       alt: "Glaucoma symptoms",
     },
     items: [
-      { number: "01", text: "Gradual loss of side vision" },
-      { number: "02", text: "Frequent change in glasses power" },
-      { number: "03", text: "Blurred or hazy visiont" },
+      { number: "01", text: "Frequent changing in glass power" },
+      { number: "02", text: "Tunnel vision" },
+      { number: "03", text: "Vague eye pain" },
+      { number: "04", text: "Tripping or bumping into things" },
+      { number: "05", text: "Needing much brighter light to see" },
+      { number: "06", text: "Blurred or hazy vision" },
     ],
   },
 
@@ -103,25 +106,60 @@ export const SERVICE_GLAUCOMA_CONTENT = {
     },
     slides: [
       {
-        id: "Open-Angle Glaucoma",
-        title: "Open-Angle Glaucoma",
+        id: "primary-open-angle-glaucoma",
+        title: "Primary Open Angle glaucoma (POAG)",
         description:
           "The most common type of glaucoma. It usually develops slowly and may not cause noticeable symptoms in the early stage.",
         image: "/assets/Service/glaucoma/open-angle.png",
       },
       {
-        id: "Normal-Tension Glaucoma",
+        id: "normal-tension-glaucoma",
         title: "Normal-Tension Glaucoma",
         description:
           "In this type, optic nerve damage happens even when eye pressure is not very high.",
         image: "/assets/Service/glaucoma/normal-tension.png",
       },
       {
-        id: "Angle-Closure Glaucoma",
-        title: "Angle-Closure Glaucoma",
+        id: "acute-angle-closure-glaucoma",
+        title: "Acute Angle-Closure Glaucoma",
         description:
-          "This type can happen when the drainage angle of the eye becomes blocked.",
+          "A sudden, total blockage that causes internal pressure to spike rapidly in a matter of hours. It presents with severe eye pain, blurred vision, rainbow halos, and vomiting.",
         image: "/assets/Service/glaucoma/angle-closure.png",
+      },
+      {
+        id: "chronic-angle-closure-glaucoma",
+        title: "Chronic Angle-Closure Glaucoma",
+        description:
+          "The drainage angle closes over a long period rather than all at once. Because the fluid exit is obstructed slowly, the pressure rises gradually, meaning it is often completely painless and produces no warning signs until late-stage damage occurs.",
+        image: "/assets/Service/glaucoma/angleclosure.png",
+      },
+      {
+        id: "neovascular-glaucoma",
+        title: "Neovascular Glaucoma",
+        description:
+          "Triggered by severe conditions like advanced diabetic retinopathy, where abnormal new blood vessels grow over the eye's natural drain.",
+        image: "/assets/Service/glaucoma/openangle.png",
+      },
+      {
+        id: "pigmentary-glaucoma",
+        title: "Pigmentary Glaucoma",
+        description:
+          "Tiny flakes of pigment rub off the back of the iris and physically clog the drainage meshwork.",
+        image: "/assets/Service/glaucoma/normaltension.png",
+      },
+      {
+        id: "traumatic-glaucoma",
+        title: "Traumatic Glaucoma",
+        description:
+          "Occurs after a severe, blunt force blow or penetrating injury to the eye, which can permanently damage the internal drainage structure immediately or years down the line.",
+        image: "/assets/Service/glaucoma/angle-closure.png",
+      },
+      {
+        id: "steroid-induced-glaucoma",
+        title: "Steroid-Induced Glaucoma",
+        description:
+          "A complication caused by prolonged use of corticosteroid medications, such as eye drops, pills, or inhalers, which alters fluid mechanics.",
+        image: "/assets/Service/glaucoma/open-angle.png",
       },
     ],
   },
@@ -186,10 +224,73 @@ export const SERVICE_GLAUCOMA_CONTENT = {
     ],
   },
 
+  faq: {
+    title: "FAQs",
+    image: "/assets/Service/cataract/faq.png",
+    imageAlt: "Glaucoma FAQ consultation",
+    note: "If you have concerns about glaucoma, increased eye pressure, or gradual vision loss, our glaucoma specialists are here to help. Early diagnosis, regular monitoring, and timely treatment can help protect your optic nerve and preserve your vision for the future. Schedule a comprehensive glaucoma evaluation with our team.",
+    items: [
+      {
+        id: "what-is-glaucoma",
+        question: "What is glaucoma?",
+        answer:
+          "Glaucoma is a group of eye conditions that damage the optic nerve, often due to increased eye pressure. It usually develops gradually and may not cause noticeable symptoms in its early stages, making regular eye examinations essential for early detection.",
+      },
+      {
+        id: "why-silent-thief-of-sight",
+        question: "Why is glaucoma called the \"silent thief of sight\"?",
+        answer:
+          "Glaucoma is often called the \"silent thief of sight\" because it can slowly damage peripheral vision without causing pain or obvious symptoms. Many people are unaware they have glaucoma until significant vision loss has already occurred.",
+      },
+      {
+        id: "early-symptoms-of-glaucoma",
+        question: "What are the early symptoms of glaucoma?",
+        answer:
+          "Most people with open-angle glaucoma experience no symptoms in the early stages. As the condition progresses, peripheral vision gradually decreases. Some forms of glaucoma, such as angle-closure glaucoma, may cause sudden eye pain, blurred vision, headache, halos around lights, nausea, and vomiting, requiring immediate medical attention.",
+      },
+      {
+        id: "higher-risk-of-glaucoma",
+        question: "Who is at higher risk of developing glaucoma?",
+        answer:
+          "People over 40 years of age, those with a family history of glaucoma, diabetes, high eye pressure, high myopia, prolonged steroid use, or previous eye injuries have a higher risk of developing glaucoma and should undergo regular eye examinations.",
+      },
+      {
+        id: "normal-eye-pressure-glaucoma",
+        question: "Can glaucoma occur even if my eye pressure is normal?",
+        answer:
+          "Yes. Some people develop normal-tension glaucoma, where optic nerve damage occurs despite eye pressure being within the normal range. A comprehensive glaucoma evaluation involves more than just measuring eye pressure.",
+      },
+      {
+        id: "how-is-glaucoma-diagnosed",
+        question: "How is glaucoma diagnosed?",
+        answer:
+          "Glaucoma is diagnosed through a comprehensive eye examination that may include eye pressure measurement (tonometry), optic nerve evaluation, visual field testing, gonioscopy, corneal thickness measurement, and OCT imaging to assess optic nerve health.",
+      },
+      {
+        id: "glaucoma-treatments",
+        question: "What treatments are available for glaucoma?",
+        answer:
+          "Treatment depends on the type and severity of glaucoma and may include prescription eye drops, laser procedures, minimally invasive glaucoma surgery (MIGS), or conventional glaucoma surgery. Your ophthalmologist will recommend the most appropriate treatment based on your condition.",
+      },
+      {
+        id: "glaucoma-follow-up-frequency",
+        question: "How often should glaucoma patients have follow-up eye examinations?",
+        answer:
+          "The frequency of follow-up depends on the type and severity of glaucoma and how well it is controlled. Your ophthalmologist will recommend a personalised follow-up schedule to monitor eye pressure, optic nerve health, and visual field changes.",
+      },
+      {
+        id: "when-consult-glaucoma-specialist",
+        question: "When should I consult a glaucoma specialist?",
+        answer:
+          "You should consult a glaucoma specialist if you have elevated eye pressure, a family history of glaucoma, gradual peripheral vision loss, or have been advised that you are at risk. Immediate medical attention is required if you experience sudden severe eye pain, blurred vision, halos around lights, or nausea associated with eye symptoms.",
+      },
+    ],
+  },
+
   clinicalExpertise: {
     title: "Clinical expertise",
     intro:
-      "Glaucoma care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced glaucoma diagnosis and management.",
+      "Glaucoma care at Pixel Eye Hospital is provided by experienced ophthalmologists using advanced diagnostic technology and evidence-based treatment plans to help preserve vision and prevent further damage.",
     cardBg: "/assets/Service/cataract/clinicbg.png",
     cardBgAlt: "Pixel Eye clinic background",
     doctors: [

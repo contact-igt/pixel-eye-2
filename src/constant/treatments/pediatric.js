@@ -11,7 +11,7 @@ export const PEDIATRIC_TREATMENT = {
     ...SERVICE_PEDIATRIC_CONTENT.clinicalExpertise,
     variant: "multi",
   },
-  faq: SERVICE_PEDIATRIC_CONTENT.faq,          // undefined → falls back to CataractFaq
+  faq: SERVICE_PEDIATRIC_CONTENT.faq,
   patientExperience: SERVICE_PEDIATRIC_CONTENT.rememberRecommend, // undefined → falls back to CataractPatientExperience
 
   sections: [

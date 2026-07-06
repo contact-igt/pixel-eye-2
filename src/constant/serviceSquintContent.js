@@ -134,6 +134,12 @@ export const SERVICE_SQUINT_CONTENT = {
         description: "The eye turns outward, away from the nose.",
         image: "/assets/Service/squint/exotropia.png",
       },
+      {
+        id: "hypotropia",
+        title: "Hypotropia",
+        description: "One eye turns downward compared to the other eye.",
+        image: "/assets/Service/squint/hypertropia.png",
+      },
     ],
   },
 
@@ -201,7 +207,7 @@ export const SERVICE_SQUINT_CONTENT = {
   clinicalExpertise: {
     title: "Clinical expertise",
     intro:
-      "Squint care at Pixel Eye Hospital is led by experienced ophthalmologists trained in eye alignment, child vision development, and advanced treatment planning.",
+      "Squint care at Pixel Eye Hospital is provided by experienced ophthalmologists with expertise in pediatric eye care and eye muscle disorders.",
     cardBg: "/assets/Service/cataract/clinicbg.png",
     cardBgAlt: "Pixel Eye clinic background",
     doctorImage: "/assets/Service/Dr. Abdul Rasheed.png",

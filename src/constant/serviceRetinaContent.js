@@ -101,25 +101,46 @@ export const SERVICE_RETINA_CONTENT = {
     },
     slides: [
       {
-        id: "Diabetic Retinopathy",
+        id: "age-related-macular-degeneration",
+        title: "Age-Related Macular Degeneration (AMD)",
+        description:
+          "This condition breaks down the macula, which is the center of the retina responsible for sharp, straight-ahead vision.",
+        image: "/assets/Service/Retina/Rectangle 102.png",
+      },
+      {
+        id: "diabetic-retinopathy",
         title: "Diabetic Retinopathy",
         description:
-          "Diabetic retinopathy occurs when diabetes damages the blood vessels in the retina.",
+          "A complication of diabetes where chronically high blood sugar damages the delicate blood vessels inside the retina. They can swell, leak fluid, or bleed into the eye.",
         image: "/assets/Service/Retina/diabetic.png",
       },
       {
-        id: "Retina Tear or Hole",
-        title: "Retina Tear or Hole",
+        id: "retinal-tear",
+        title: "Retinal Tear",
         description:
-          "Retinal detachment happens when the retina separates from its normal position.",
+          "Occurs when the gel-like fluid inside the eye pulls away too harshly from the back wall, ripping a small hole in the retinal tissue. It causes sudden flashes of light and floaters.",
         image: "/assets/Service/Retina/tear.png",
       },
       {
-        id: "Retinal Detachment",
+        id: "retinal-detachment",
         title: "Retinal Detachment",
         description:
-          "A retinal tear or hole can develop due to pulling on the retina, high myopia, or aging changes.",
+          "A critical medical emergency where fluid seeps through a tear, lifting or separating the retina entirely from its underlying layer of blood vessels. This causes a dark shadow or curtain to fall over your vision field.",
         image: "/assets/Service/Retina/retinal.png",
+      },
+      {
+        id: "retinal-vein-or-artery-occlusion",
+        title: "Retinal Vein or Artery Occlusion",
+        description:
+          "Often called an \"eye stroke,\" this happens when a blood clot blocks a major blood vessel supplying the retina, causing sudden, painless vision loss.",
+        image: "/assets/Service/Retina/Rectangle 103.png",
+      },
+      {
+        id: "macular-hole-or-pucker",
+        title: "Macular Hole or Pucker",
+        description:
+          "These are structural flaws in the central retina. A pucker involves scar tissue wrinkling the macula, while a hole is an actual tear or gap in it. Both distort your central vision, making straight lines look wavy.",
+        image: "/assets/Service/Retina/Rectangle 103 (1).png",
       },
     ],
   },
@@ -159,7 +180,7 @@ export const SERVICE_RETINA_CONTENT = {
         number: "2.",
         title: "Visual Acuity Test",
         description:
-          "A bright light is shone directly into the eyes. The specialist observes where the light reflects off your pupils to check if your eyes are pointing at the same spot.",
+          "This test checks side vision and helps detect vision loss that may not be noticed during daily activities.",
         image: "/assets/Service/Retina/visual.png",
         alt: "Visual acuity test for retina diagnosis",
       },
@@ -215,73 +236,67 @@ export const SERVICE_RETINA_CONTENT = {
     title: "FAQs",
     image: "/assets/Service/cataract/faq.png",
     imageAlt: "Retina FAQ consultation",
-    note: "For personalised information about retina treatment, retinal scans, diabetic retinopathy, retinal detachment, or other retinal conditions, book an appointment with our retina specialists. Early diagnosis plays a key role in protecting your vision.",
+    note: "Retina care at Pixel Eye Hospital is provided by experienced retina specialists using advanced retinal imaging, laser treatments, and microsurgical expertise to preserve vision.",
     items: [
       {
-        id: "warning-signs-of-retina-disease",
-        question: "What are the warning signs of retina disease?",
+        id: "early-signs-of-retina-problems",
+        question: "What are the early signs of retina problems?",
         answer:
-          "Warning signs include floaters (specks, threads, or cobweb-like shapes in your vision), flashes of light, blurred or distorted central vision, dark or empty areas in your field of vision, and a shadow or curtain-like block over your peripheral vision.",
+          "Early retina problems may cause blurred vision, floaters, flashes of light, distorted vision, dark spots, or a curtain-like shadow over your vision. Some retinal diseases develop without noticeable symptoms, making regular eye examinations important for early detection.",
       },
       {
-        id: "when-to-see-retina-specialist-immediately",
-        question: "When should I see a retina specialist immediately?",
+        id: "when-see-retina-specialist",
+        question: "When should I see a retina specialist?",
         answer:
-          "You should seek immediate medical attention if you experience a sudden increase in floaters or flashes of light, a shadow or dark curtain covering a portion of your vision, or sudden, painless vision loss in one or both eyes.",
-      },
-      {
-        id: "what-are-floaters-in-vision",
-        question: "What are floaters in vision?",
-        answer:
-          "Floaters are tiny specks, threads, or cobwebs that drift across your field of vision. They are caused by small clumps of gel or cells casting shadows on the retina from inside the gel-like fluid (vitreous) that fills your eye.",
-      },
-      {
-        id: "what-do-flashes-of-light-mean",
-        question: "What do flashes of light in vision mean?",
-        answer:
-          "Flashes of light occur when the gel inside your eye pulls or rubs against the retina. This mechanical stimulation causes you to perceive flashes or streaks of light. It is a key warning sign of a potential retinal tear or detachment.",
+          "You should consult a retina specialist immediately if you notice sudden vision loss, flashes of light, a sudden increase in floaters, distorted vision, or a shadow covering part of your vision. Early diagnosis can prevent permanent vision loss in many retinal conditions.",
       },
       {
         id: "can-diabetes-affect-retina",
         question: "Can diabetes affect the retina?",
         answer:
-          "Yes, diabetes can damage the fragile blood vessels of the retina, a condition known as diabetic retinopathy. It can lead to fluid leaking, swelling in the macula (macular edema), or abnormal blood vessel growth, causing significant vision loss if left untreated.",
+          "Yes. Diabetes can damage the tiny blood vessels in the retina, leading to diabetic retinopathy. If left untreated, it may cause bleeding, swelling of the retina, and permanent vision loss. Regular diabetic retina screening is strongly recommended.",
       },
       {
-        id: "is-retinal-detachment-emergency",
-        question: "Is retinal detachment an emergency?",
+        id: "what-causes-retinal-detachment",
+        question: "What causes retinal detachment?",
         answer:
-          "Yes, retinal detachment is a critical medical emergency. Without prompt surgical treatment to reattach the retina, it can lead to permanent, irreversible vision loss.",
+          "Retinal detachment can occur due to retinal tears, ageing-related changes, high myopia, eye injuries, previous eye surgery, or certain retinal diseases. It is a medical emergency and requires prompt treatment to preserve vision.",
       },
       {
-        id: "what-is-oct-scan-for-retina",
-        question: "What is an OCT scan for retina?",
+        id: "floaters-and-flashes-in-vision",
+        question: "What are floaters and flashes in vision?",
         answer:
-          "Optical Coherence Tomography (OCT) is a non-invasive, advanced imaging test. It uses light waves to take high-resolution cross-section pictures of your retina, allowing specialists to measure each layer's thickness and detect fluid or damage.",
+          "Floaters appear as tiny dark spots or cobweb-like shadows, while flashes look like brief streaks of light. Although they can occur naturally with ageing, a sudden increase may indicate a retinal tear or retinal detachment and should be evaluated immediately.",
       },
       {
-        id: "how-often-should-retina-patients-come-follow-up",
-        question: "How often should retina patients come for follow-up?",
+        id: "how-retina-diseases-diagnosed",
+        question: "How are retina diseases diagnosed?",
         answer:
-          "Follow-up frequency varies widely depending on your specific condition and treatment. Some chronic cases may require visits every few weeks or months, while stable patients may only need an evaluation once or twice a year.",
+          "Retina diseases are diagnosed through a comprehensive retinal examination that may include dilated fundus examination, OCT (Optical Coherence Tomography), retinal photography, fluorescein angiography, and retinal scans to evaluate the health of the retina and optic nerve.",
       },
       {
-        id: "can-vision-loss-be-reversed",
-        question: "Can vision loss from retina disease be reversed?",
+        id: "can-retina-diseases-be-treated",
+        question: "Can retina diseases be treated?",
         answer:
-          "In some cases, prompt treatment of conditions like retinal tears, detachment, or macular edema can restore or improve vision. However, chronic or advanced damage may only be stabilized to prevent further loss rather than fully reversed.",
+          "Yes. Many retinal diseases can be effectively managed with early diagnosis. Treatment options may include retinal laser treatment, intravitreal injections, vitrectomy surgery, or medical management depending on the specific retinal condition.",
       },
       {
-        id: "how-often-should-diabetic-patients-get-retina-check-up",
-        question: "How often should diabetic patients get a retina check-up?",
+        id: "higher-risk-of-retinal-diseases",
+        question: "Who is at higher risk of retinal diseases?",
         answer:
-          "Diabetic patients should undergo a comprehensive dilated retina examination at least once a year, or more frequently if signs of diabetic retinopathy are already present.",
+          "People with diabetes, high blood pressure, high myopia, increasing age, previous eye injuries, family history of retinal disease, or previous eye surgery have a higher risk of developing retinal problems and should undergo regular retina examinations.",
       },
       {
-        id: "can-retina-problems-happen-without-pain",
-        question: "Can retina problems happen without pain?",
+        id: "can-retinal-damage-be-reversed",
+        question: "Can retinal damage be reversed?",
         answer:
-          "Yes, the vast majority of retinal problems are completely painless because the retina itself does not contain pain-sensing nerve fibers. This is why paying attention to visual changes like floaters, flashes, or blurriness is critical.",
+          "Some retinal conditions can be stabilised or improved if treated early, while others may cause permanent vision loss if diagnosis is delayed. Regular eye check-ups and timely treatment offer the best chance of preserving vision.",
+      },
+      {
+        id: "retina-examination-frequency",
+        question: "How often should I get a retina examination?",
+        answer:
+          "Individuals with diabetes, high myopia, hypertension, or a family history of retinal disease should have regular retina examinations as advised by their ophthalmologist. Healthy adults should also undergo routine comprehensive eye examinations to detect retinal diseases before symptoms develop.",
       },
     ],
   },
