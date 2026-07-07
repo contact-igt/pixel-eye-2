@@ -1,11 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Slider from "react-slick";
 import styles from "./styles.module.css";
 
 const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
   const sectionRef = useRef(null);
   const [isRevealed, setIsRevealed] = useState(false);
+  const [activeTreatmentIndex, setActiveTreatmentIndex] = useState(0);
+  const treatments = data.treatments || [];
+  const visibleMobileTreatments = treatments.length
+    ? [
+        treatments[activeTreatmentIndex],
+        treatments[(activeTreatmentIndex + 1) % treatments.length],
+      ].filter(Boolean)
+    : [];
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -25,37 +32,15 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
     return () => observer.disconnect();
   }, []);
 
-  const treatmentSliderSettings = {
-    dots: true,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    speed: 600,
-    slidesToShow: 2.5,
-    slidesToScroll: 1,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1.5,
-        },
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+  useEffect(() => {
+    if (treatments.length < 2) return undefined;
+
+    const timer = window.setInterval(() => {
+      setActiveTreatmentIndex((current) => (current + 1) % treatments.length);
+    }, 2500);
+
+    return () => window.clearInterval(timer);
+  }, [treatments.length]);
 
   const renderTreatmentCard = (item, index, isSlider = false) => (
     <article
@@ -134,17 +119,39 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
       </div>
 
       <div className={styles["treatment-diagnosis__treatments"]}>
-        {(data.treatments || []).map((item, index) =>
+        {treatments.map((item, index) =>
           renderTreatmentCard(item, index, false),
         )}
       </div>
 
       <div className={styles["treatment-diagnosis__treatment-slider"]}>
-        <Slider {...treatmentSliderSettings}>
-          {(data.treatments || []).map((item, index) =>
-            renderTreatmentCard(item, index, true),
+        <div
+          className={styles["treatment-diagnosis__treatment-track"]}
+          aria-live="polite"
+        >
+          {visibleMobileTreatments.map((item, index) =>
+            renderTreatmentCard(item, activeTreatmentIndex + index, true),
           )}
-        </Slider>
+        </div>
+        <div
+          className={styles["treatment-diagnosis__treatment-dots"]}
+          aria-label="Treatment options slides"
+        >
+          {treatments.map((item, index) => (
+            <button
+              key={`treatment-dot-${item.number ?? index}`}
+              type="button"
+              className={`${styles["treatment-diagnosis__treatment-dot"]} ${
+                activeTreatmentIndex === index
+                  ? styles["treatment-diagnosis__treatment-dot--active"]
+                  : ""
+              }`}
+              aria-label={`Show treatment option ${index + 1}`}
+              aria-current={activeTreatmentIndex === index ? "true" : undefined}
+              onClick={() => setActiveTreatmentIndex(index)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

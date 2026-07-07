@@ -65,18 +65,20 @@
 
 .surgical-options__card-title {
   margin-top: 12px;
-  padding-left: 18px;
+  padding-left: 6px;
   color: rgba(42, 60, 125, 0.9);
-  font-size: 22px;
+  font-size: 16px;
   background: transparent;
   position: absolute;
   bottom: 2px;
   left: 10px;
+  width: 260px;
+  height: 70px;
 }
 
 @media (max-width: 1399px) {
   .surgical-options__card-title {
-    bottom: 2.5px;
+    bottom: -40px;
     left: 5px;
   }
 
@@ -98,6 +100,11 @@
     bottom: 0;
     font-size: 18px;
   }
+  .surgical-options__card-title {
+    font-size: 14px;
+     bottom: -44px;
+     width: 220px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -107,9 +114,10 @@
 
   .surgical-options__card-title {
     padding-left: 0;
-    bottom: -10px;
-    font-size: 16px;
-    left: -10px;
+    bottom: -48px;
+    font-size: 12px;
+    left: 4px;
+    width: 200px;
   }
 
   .surgical-options__left h2 {
@@ -142,7 +150,7 @@
 
   .surgical-options__card-title {
     margin-top: 12px;
-    bottom: 1px;
+    bottom: -44px;
     font-size: clamp(14px, 1.5vw, 18px);
     left: 10px;
   }
@@ -158,8 +166,8 @@
 
 @media (max-width: 576px) {
   .surgical-options__card-title {
-    bottom: -5px;
-    font-size: clamp(14px, 1.4vw, 16px);
+    bottom: -48px;
+    font-size: clamp(10.5px, 1.2vw, 12.5px);
   }
 
   .surgical-options__right {
@@ -173,6 +181,8 @@
   }
 
   .surgical-options__card-title {
-    bottom: 1px;
+    bottom: -52px;
+    width: 150px;
+     font-size: clamp(10px, 1.2vw, 12.5px);
   }
 }

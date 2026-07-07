@@ -16,7 +16,10 @@ export const CATARACT_TREATMENT = {
   treatmentApproach: SERVICE_CATARACT_CONTENT.treatmentApproach,
   surgicalOptions: SERVICE_CATARACT_CONTENT.surgicalOptions,
   cataractApproach: SERVICE_CATARACT_CONTENT.cataractApproach,
-  clinicalExpertise: SERVICE_CATARACT_CONTENT.clinicalExpertise,
+  clinicalExpertise: {
+    ...SERVICE_CATARACT_CONTENT.clinicalExpertise,
+    variant: "multi",
+  },
   faq: SERVICE_CATARACT_CONTENT.faq,
   suggestedReads: SERVICE_CATARACT_CONTENT.suggestedReads,
   // patientExperience: SERVICE_CATARACT_CONTENT.patientsExperience,

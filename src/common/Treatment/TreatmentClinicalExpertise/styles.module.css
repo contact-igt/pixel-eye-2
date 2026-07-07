@@ -13,7 +13,7 @@
   width: 100%;
   background: #ffffff;
   color: #273979;
-  padding: clamp(50px, 5.8vw, 50px)
+  /* padding: clamp(50px, 5.8vw, 50px) */
 }
 
 .clinical-expertise__inner {
@@ -449,9 +449,13 @@
   .clinical-expertise__inner {
     width: min(100%, calc(100% - 40px));
   }
-
+    .clinical-expertise__header{
+      margin-bottom: 0;
+    }
   .clinical-expertise__header h2 {
     font-size: clamp(32px, 7vw, 42px);
+    text-align: center;
+    margin-bottom: 0px;
   }
 
   .clinical-expertise__doctors {
@@ -497,6 +501,10 @@
   .clinical-expertise__doctor-info p {
     font-size: clamp(9px, 1.55vw, 11px);
   }
+  .clinical-expertise__panel {
+  position: relative;
+  margin-top: 40px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -505,13 +513,16 @@
   }
 
   .clinical-expertise__doctors {
-    margin-top: 50px;
+    margin-top: 10px;
   }
 
   .clinical-expertise__panel {
     border-radius: 16px;
   }
-
+    .clinical-expertise__panel {
+  position: relative;
+  margin-top: 30px;
+  }
   .clinical-expertise__doctor-card,
   .clinical-expertise__doctor-card:nth-child(2) {
     min-height: 250px;

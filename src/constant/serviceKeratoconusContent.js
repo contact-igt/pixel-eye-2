@@ -232,6 +232,7 @@
         description:
           "Small ring segments may be placed inside the cornea in selected mild to moderate cases to help flatten the cornea and improve vision.",
         image: "/assets/Service/keratoconus/k4.png",
+        sliderImage: "/assets/Service/keratoconus/k4_mobile.png",
         alt: "Intracorneal ring segments treatment for keratoconus",
       },
     ],

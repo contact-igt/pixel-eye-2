@@ -44,9 +44,8 @@ const SECTION_MAP = {
     ) : null,
   clinicalExpertise: (t) => {
     if (!t.clinicalExpertise) return null;
-    // Cataract & Squint show the single-doctor card on desktop/tablet and the
-    // multi-doctor variant on mobile. Other pages always use the multi variant.
-    const useSingleOnDesktop = t.slug === "cataract" || t.slug === "squint";
+    // Single variant keeps the legacy desktop/tablet card and multi-doctor mobile view.
+    const useSingleOnDesktop = t.clinicalExpertise.variant === "single";
     if (useSingleOnDesktop) {
       return (
         <div key="clinicalExpertise">

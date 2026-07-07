@@ -220,7 +220,7 @@
       { src: "/assets/Home/person13.png", alt: "Patient photo 2" },
       { src: "/assets/Home/person6_6.png", alt: "Patient photo 3" },
       { src: "/assets/Home/person5_5.png", alt: "Patient photo 4" },
-      { src: "/assets/Home/person1.png", alt: "Patient photo 5" },
+      { src: "/assets/Home/person1_1.png", alt: "Patient photo 5" },
       { src: "/assets/Home/person3_3.png", alt: "Patient photo 6" },
       { src: "/assets/Home/person14_14.png", alt: "Patient photo 7" },
       { src: "/assets/Home/person12.png", alt: "Patient photo 8" },

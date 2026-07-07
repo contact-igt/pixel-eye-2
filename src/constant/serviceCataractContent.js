@@ -224,8 +224,9 @@ export const SERVICE_CATARACT_CONTENT = {
   clinicalExpertise: {
     title: "Clinical expertise",
     intro:
-      "Cataract care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced",
+      "Cataract care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced cataract surgery, lens planning, and patient-focused recovery.",
     cardBg: "/assets/Service/cataract/clinicbg.png",
+    cardBgAlt: "Pixel Eye clinic background",
     doctorName: "Dr. Abdul Rasheed",
     doctorImage: "/assets/Service/Dr. Abdul Rasheed.png",
     doctorImageAlt: "Dr. Abdul Rasheed",
@@ -234,10 +235,17 @@ export const SERVICE_CATARACT_CONTENT = {
     doctors: [
       {
         name: "Dr. Abdul Rasheed",
-        image: "/assets/Service/Dr. Abdul Rasheed.png",
+        description: "MD (AIIMS)\nCataract, Refractive &\nSquint Surgeon",
+        image: "/assets/Service/pediatric/dr-abdul-rasheed.png",
         imageAlt: "Dr. Abdul Rasheed",
+        href: "/doctors",
+      },
+      {
+        name: "Dr. Krishna Poojita",
         description:
-          "An ophthalmic surgeon trained at AIIMS New Delhi, with experience in cataract and LASIK, including complex cases. He also works closely with patients across age groups for squint diagnosis and management, with a clear, patient-focused approach.",
+          "MBBS, DNB (Ophthalmology),\nMRCS (Edinburgh), FICO (UK),\nFPRS (Narayana Nethralaya)\nCataract & Refractive\nSurgeon",
+        image: "/assets/Service/pediatric/dr-krishna-poojita.png",
+        imageAlt: "Dr. Krishna Poojita",
         href: "/doctors",
       },
     ],

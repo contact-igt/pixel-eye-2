@@ -2,9 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Button from "@/common/Button";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
 import RevealOnView from "@/common/RevealOnView";
@@ -43,29 +40,23 @@ const SuggestedReads = () => {
   const { heading, subtitle, reads } = ABOUT_CONTENT.suggestedReads;
   const featuredRead = reads.find((item) => item.featured);
   const sideReads = reads.filter((item) => !item.featured);
-  const [mounted, setMounted] = useState(false);
+  const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
+  const mobileVisibleReads = sideReads.length
+    ? [
+        sideReads[mobileActiveIndex],
+        sideReads[(mobileActiveIndex + 1) % sideReads.length],
+      ].filter(Boolean)
+    : [];
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (sideReads.length < 2) return undefined;
 
-  const mobileSliderSettings = {
-    dots: true,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2600,
-    speed: 450,
-    slidesToShow: 1.5,
-    slidesToScroll: 1,
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    centerMode: false,
-    centerPadding: "0px",
-    variableWidth: false,
-    swipeToSlide: true,
-    accessibility: true,
-  };
+    const timer = window.setInterval(() => {
+      setMobileActiveIndex((current) => (current + 1) % sideReads.length);
+    }, 2600);
+
+    return () => window.clearInterval(timer);
+  }, [sideReads.length]);
 
   return (
     <section className={styles.section} aria-labelledby="suggested-reads-title">
@@ -117,21 +108,30 @@ const SuggestedReads = () => {
             </div>
 
             <div className={styles.mobileSliderWrap}>
-              {mounted ? (
-                <Slider
-                  {...mobileSliderSettings}
-                  className={styles.mobileSlider}
-                >
-                  {sideReads.map((item) => (
-                    <div
-                      key={`mobile-${item.id}`}
-                      className={styles.mobileSlide}
-                    >
-                      <ReadCard item={item} mobile />
-                    </div>
-                  ))}
-                </Slider>
-              ) : null}
+              <div className={styles.mobileSlider} aria-live="polite">
+                {mobileVisibleReads.map((item, index) => (
+                  <div
+                    key={`mobile-${item.id}-${mobileActiveIndex}-${index}`}
+                    className={styles.mobileSlide}
+                  >
+                    <ReadCard item={item} mobile />
+                  </div>
+                ))}
+              </div>
+              <div className={styles.mobileDots} aria-label="Suggested reads slides">
+                {sideReads.map((item, index) => (
+                  <button
+                    key={`mobile-dot-${item.id}`}
+                    type="button"
+                    className={`${styles.mobileDot} ${
+                      mobileActiveIndex === index ? styles.mobileDotActive : ""
+                    }`}
+                    aria-label={`Show slide ${index + 1}`}
+                    aria-current={mobileActiveIndex === index ? "true" : undefined}
+                    onClick={() => setMobileActiveIndex(index)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

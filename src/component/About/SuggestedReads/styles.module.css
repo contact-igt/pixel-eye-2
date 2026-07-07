@@ -495,65 +495,38 @@
   }
 
   .mobileSlider {
+    display: grid;
+    grid-template-columns: repeat(2, calc((100% - 16px) / 1.5));
+    column-gap: 16px;
     width: 100%;
-  }
-
-  .mobileSlider :global(.slick-list) {
     overflow: hidden;
-    margin: 0 -8px;
-    padding-bottom: 22px;
   }
 
-  .mobileSlider :global(.slick-track) {
+  .mobileDots {
     display: flex;
-  }
-
-  .mobileSlider :global(.slick-slide) {
-    height: auto;
-    padding: 0 8px;
-  }
-
-  .mobileSlider :global(.slick-slide > div),
-  .mobileSlide {
-    height: 100%;
-  }
-
-  .mobileSlider :global(.slick-dots) {
-    position: static;
-    display: flex !important;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    height: auto;
     margin: 8px 0 0;
-    padding: 0;
-    line-height: 1;
   }
 
-  .mobileSlider :global(.slick-dots li) {
-    width: 10px;
-    height: 10px;
-    margin: 0;
-  }
-
-  .mobileSlider :global(.slick-dots li button) {
+  .mobileDot {
     width: 10px;
     height: 10px;
     padding: 0;
-  }
-
-  .mobileSlider :global(.slick-dots li button::before) {
-    width: 10px;
-    height: 10px;
-    color: transparent;
+    border: 0;
     border-radius: 50%;
     background: rgba(47, 69, 135, 0.32);
-    opacity: 1;
-    content: "";
+    cursor: pointer;
   }
 
-  .mobileSlider :global(.slick-dots li.slick-active button::before) {
+  .mobileDotActive {
     background: #2f4587;
+  }
+
+  .mobileSlide {
+    min-width: 0;
+    height: 100%;
   }
 
   .sideCard {
@@ -729,4 +702,3 @@
     bottom: 20px;
   }
 }
-

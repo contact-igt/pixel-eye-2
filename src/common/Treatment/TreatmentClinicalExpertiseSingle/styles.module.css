@@ -178,6 +178,7 @@
 @media (max-width: 768px) {
     .clinical-expertise {
         padding-top: 46px;
+        padding-bottom: clamp(10px, 2vw, 54px);
     }
 
     .clinical-expertise__inner {
