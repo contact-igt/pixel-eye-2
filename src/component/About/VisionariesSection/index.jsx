@@ -254,7 +254,9 @@ const VisionariesSection = () => {
     );
   };
 
-  const visionSectionClass = styles.visionSection || styles.section || "";
+  const visionSectionClass = [styles.visionSection, styles.section]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <section
@@ -343,3 +345,4 @@ const VisionariesSection = () => {
 };
 
 export default VisionariesSection;
+

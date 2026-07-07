@@ -1,4 +1,9 @@
-﻿.visionSection,
+.visionSection {
+  width: 100%;
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
+  margin-top: 70px;
+}
+
 .section {
   width: 100%;
   padding: var(--section-pt) var(--section-px) var(--section-pb);
@@ -366,7 +371,12 @@
 
   }
 
-  .visionSection,
+  .visionSection {
+    padding-top: 42px;
+    padding-bottom: 44px;
+    margin-top: 50px;
+  }
+
   .section {
     padding-top: 42px;
     padding-bottom: 44px;
@@ -448,7 +458,11 @@
     width: min(1600px, calc(100%));
   }
 
-  .visionSection,
+  .visionSection {
+    padding: 30px 15px;
+    margin-top: 40px;
+  }
+
   .section {
     padding: 30px 15px;
     margin-top: 40px;
@@ -533,3 +547,4 @@
     top: 6px;
   }
 }
+
