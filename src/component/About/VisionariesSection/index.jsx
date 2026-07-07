@@ -255,96 +255,96 @@ const VisionariesSection = () => {
     );
   };
 
+  const visionSectionClass = styles.visionSection || styles.section || "";
+
   return (
-    <section className={styles.visionSection}>
-      <section
-        ref={sectionRef}
-        id="visionaries"
-        className={`${styles.section}  ${forceVisible ? styles.forceVisible : ""}`.trim()}
-        aria-labelledby="visionaries-title"
+    <section
+      ref={sectionRef}
+      id="visionaries"
+      className={`${visionSectionClass} ${forceVisible ? styles.forceVisible : ""}`.trim()}
+      aria-labelledby="visionaries-title"
+    >
+      <RevealOnView
+        className={styles.revealShell}
+        threshold={0.08}
+        rootMargin="0px 0px -4% 0px"
       >
-        <RevealOnView
-          className={styles.revealShell}
-          threshold={0.08}
-          rootMargin="0px 0px -4% 0px"
-        >
-          <div className={styles.inner}>
-            <header className={styles.header} data-visionaries-header>
-              <h2 id="visionaries-title" className={styles.title}>
-                {renderLines(titleLines)}
-              </h2>
-              <p className={styles.subtitle}>{subtitleLines.join(" ")}</p>
-            </header>
+        <div className={styles.inner}>
+          <header className={styles.header} data-visionaries-header>
+            <h2 id="visionaries-title" className={styles.title}>
+              {renderLines(titleLines)}
+            </h2>
+            <p className={styles.subtitle}>{subtitleLines.join(" ")}</p>
+          </header>
 
-            <div className={styles.cards}>
-              {doctors.map((doctor, index) => {
-                const isRightImage = doctor.imagePosition === "right";
-                const rowClass = isRightImage
-                  ? `${styles.row} ${styles.rowReverse}`
-                  : styles.row;
-                const infoClass = isRightImage
-                  ? `${styles.infoPanel} ${styles.infoPanelRight}`
-                  : styles.infoPanel;
+          <div className={styles.cards}>
+            {doctors.map((doctor, index) => {
+              const isRightImage = doctor.imagePosition === "right";
+              const rowClass = isRightImage
+                ? `${styles.row} ${styles.rowReverse}`
+                : styles.row;
+              const infoClass = isRightImage
+                ? `${styles.infoPanel} ${styles.infoPanelRight}`
+                : styles.infoPanel;
 
-                return (
-                  <div key={doctor.id} className={styles.cardBlock}>
-                    <article
-                      className={rowClass}
-                      data-visionary-row
-                      data-visionary-reverse={isRightImage ? "true" : "false"}
-                    >
-                      <div className={styles.mediaSection} data-visionary-media>
-                        <div className={styles.imageBlock}>
-                          <img
-                            src={doctor.backgroundShape.src}
-                            alt={doctor.backgroundShape.alt}
-                            className={styles.bgShape}
-                            aria-hidden="true"
-                          />
-                          <img
-                            src={doctor.image.src}
-                            alt={doctor.image.alt}
-                            className={styles.image}
-                            data-visionary-image
-                          />
-                        </div>
-
-                        <div className={infoClass} data-visionary-info>
-                          <h3 className={styles.name}>{doctor.name}</h3>
-                          <p className={styles.degree}>{doctor.degree}</p>
-                          {doctor.specialties.map((speciality) => (
-                            <p
-                              key={`${doctor.id}-${speciality}`}
-                              className={styles.spec}
-                            >
-                              {speciality}
-                            </p>
-                          ))}
-                        </div>
+              return (
+                <div key={doctor.id} className={styles.cardBlock}>
+                  <article
+                    className={rowClass}
+                    data-visionary-row
+                    data-visionary-reverse={isRightImage ? "true" : "false"}
+                  >
+                    <div className={styles.mediaSection} data-visionary-media>
+                      <div className={styles.imageBlock}>
+                        <img
+                          src={doctor.backgroundShape.src}
+                          alt={doctor.backgroundShape.alt}
+                          className={styles.bgShape}
+                          aria-hidden="true"
+                        />
+                        <img
+                          src={doctor.image.src}
+                          alt={doctor.image.alt}
+                          className={styles.image}
+                          data-visionary-image
+                        />
                       </div>
 
-                      <div
-                        className={styles.contentSection}
-                        data-visionary-content
-                      >
-                        {doctor.paragraphs.map((paragraph, paragraphIndex) => (
-                          <p key={`${doctor.id}-p-${paragraphIndex}`}>
-                            {renderParagraph(doctor, paragraph)}
+                      <div className={infoClass} data-visionary-info>
+                        <h3 className={styles.name}>{doctor.name}</h3>
+                        <p className={styles.degree}>{doctor.degree}</p>
+                        {doctor.specialties.map((speciality) => (
+                          <p
+                            key={`${doctor.id}-${speciality}`}
+                            className={styles.spec}
+                          >
+                            {speciality}
                           </p>
                         ))}
                       </div>
-                    </article>
+                    </div>
 
-                    {index < doctors.length - 1 && (
-                      <div className={styles.divider} aria-hidden="true" />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+                    <div
+                      className={styles.contentSection}
+                      data-visionary-content
+                    >
+                      {doctor.paragraphs.map((paragraph, paragraphIndex) => (
+                        <p key={`${doctor.id}-p-${paragraphIndex}`}>
+                          {renderParagraph(doctor, paragraph)}
+                        </p>
+                      ))}
+                    </div>
+                  </article>
+
+                  {index < doctors.length - 1 && (
+                    <div className={styles.divider} aria-hidden="true" />
+                  )}
+                </div>
+              );
+            })}
           </div>
-        </RevealOnView>
-      </section>
+        </div>
+      </RevealOnView>
     </section>
   );
 };

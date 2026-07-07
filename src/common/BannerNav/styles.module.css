@@ -1,6 +1,6 @@
 .bannerNav {
   position: absolute;
-  top: 25px;
+  top: 30px;
   left: 0;
   right: 0;
   z-index: 1100;
@@ -10,7 +10,7 @@
   margin: 0 auto;
   width: 100%;
   display: grid;
-  grid-template-columns: clamp(200px, 22vw, 276px) 1fr clamp(200px, 22vw, 320px);
+  grid-template-columns: clamp(200px, 22vw, 264px) 1fr clamp(200px, 22vw, 320px);
   align-items: start;
   padding: 0px;
 }
@@ -51,7 +51,9 @@
   justify-content: end;
   min-height: clamp(74px, 7.3vw, 108px);
   border-bottom-right-radius: clamp(18px, 2.2vw, 34px);
-  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
+  margin-top: 27px;
+  padding: 0px 20px
+    /* padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px); */
 }
 
 
@@ -667,11 +669,11 @@
 
 
 
-@media (max-width: 1599px) {
+@media (max-width: 1499px) {
 
 
   .inner {
-    grid-template-columns: clamp(200px, 22vw, 264px) 1fr clamp(200px, 22vw, 320px);
+    grid-template-columns: clamp(200px, 22vw, 247px) 1fr clamp(200px, 21vw, 320px);
   }
 
 
@@ -702,6 +704,16 @@
     width: 200px;
   }
 
+  .nabhBadge {
+    width: clamp(120px, 12vw, 200px);
+    margin-top: 10px;
+  }
+
+  .logo {
+    width: clamp(120px, 12vw, 200px);
+    margin-top: 7px;
+  }
+
 
 }
 
@@ -725,14 +737,21 @@
   }
 
   .nav {
-    padding-top: 30px;
+    padding-top: 40px;
   }
 
   .rightCard .bookBtn {
-    width: 180px;
+    width: 160px;
     padding: 10px;
     min-height: clamp(44px, 3.4vw, 68px);
   }
+
+  .logo {
+    width: clamp(135px, 12vw, 250px);
+    margin-top: 0px;
+
+  }
+
 
 }
 
@@ -784,7 +803,8 @@
   .logoCard {
 
     justify-content: flex-start;
-    margin-left: -3px;
+    margin: 0px;
+    margin-top: 3px
   }
 
   .logo {
@@ -793,6 +813,7 @@
 
   .nabhBadge {
     width: clamp(135px, 14vw, 140px);
+    margin-top: 0px;
   }
 
   .rightCard .bookBtn {
