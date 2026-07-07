@@ -29,7 +29,11 @@
 .title {
     position: absolute;
     top: -120px;
+<<<<<<< HEAD
     left: 72px;
+=======
+    left: 53px;
+>>>>>>> 6fa4da74377ca153c0eb1aabff8aeeba738924d2
     margin: 0;
     color: #30488d;
     font-family: var(--font-primary);

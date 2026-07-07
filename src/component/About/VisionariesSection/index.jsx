@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
+<<<<<<< HEAD
 import RevealOnView from "@/common/RevealOnView";
+=======
+>>>>>>> 6fa4da74377ca153c0eb1aabff8aeeba738924d2
 import styles from "./styles.module.css";
 
 const VisionariesSection = () => {
@@ -264,6 +267,7 @@ const VisionariesSection = () => {
       className={`${visionSectionClass} ${forceVisible ? styles.forceVisible : ""}`.trim()}
       aria-labelledby="visionaries-title"
     >
+<<<<<<< HEAD
       <RevealOnView
         className={styles.revealShell}
         threshold={0.08}
@@ -345,6 +349,83 @@ const VisionariesSection = () => {
           </div>
         </div>
       </RevealOnView>
+=======
+      <div className={styles.inner}>
+        <header className={styles.header} data-visionaries-header>
+          <h2 id="visionaries-title" className={styles.title}>
+            {renderLines(titleLines)}
+          </h2>
+          <p className={styles.subtitle}>{subtitleLines.join(" ")}</p>
+        </header>
+
+        <div className={styles.cards}>
+          {doctors.map((doctor, index) => {
+            const isRightImage = doctor.imagePosition === "right";
+            const rowClass = isRightImage
+              ? `${styles.row} ${styles.rowReverse}`
+              : styles.row;
+            const infoClass = isRightImage
+              ? `${styles.infoPanel} ${styles.infoPanelRight}`
+              : styles.infoPanel;
+
+            return (
+              <div key={doctor.id} className={styles.cardBlock}>
+                <article
+                  className={rowClass}
+                  data-visionary-row
+                  data-visionary-reverse={isRightImage ? "true" : "false"}
+                >
+                  <div className={styles.mediaSection} data-visionary-media>
+                    <div className={styles.imageBlock}>
+                      <img
+                        src={doctor.backgroundShape.src}
+                        alt={doctor.backgroundShape.alt}
+                        className={styles.bgShape}
+                        aria-hidden="true"
+                      />
+                      <img
+                        src={doctor.image.src}
+                        alt={doctor.image.alt}
+                        className={styles.image}
+                        data-visionary-image
+                      />
+                    </div>
+
+                    <div className={infoClass} data-visionary-info>
+                      <h3 className={styles.name}>{doctor.name}</h3>
+                      <p className={styles.degree}>{doctor.degree}</p>
+                      {doctor.specialties.map((speciality) => (
+                        <p
+                          key={`${doctor.id}-${speciality}`}
+                          className={styles.spec}
+                        >
+                          {speciality}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div
+                    className={styles.contentSection}
+                    data-visionary-content
+                  >
+                    {doctor.paragraphs.map((paragraph, paragraphIndex) => (
+                      <p key={`${doctor.id}-p-${paragraphIndex}`}>
+                        {renderParagraph(doctor, paragraph)}
+                      </p>
+                    ))}
+                  </div>
+                </article>
+
+                {index < doctors.length - 1 && (
+                  <div className={styles.divider} aria-hidden="true" />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+>>>>>>> 6fa4da74377ca153c0eb1aabff8aeeba738924d2
     </section>
   );
 };
