@@ -4,7 +4,7 @@
 }
 
 .treatment-symptoms {
-  width: min(1640px, calc(100% - 230px));
+  width: min(1640px, calc(100% - 180px));
   margin: 70px auto 0px;
   color: #273979;
 
