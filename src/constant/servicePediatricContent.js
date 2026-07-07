@@ -2,10 +2,10 @@
   banner: {
     hero: {
       image: {
-        src: "/assets/Service/pediatric/home_banner.png",
+        src: "/assets/Service/pediatric/pediatric_banner_new.jpeg",
         alt: "Child receiving a pediatric eye examination",
       },
-      mobileImage: "/assets/Service/pediatric/herobannermb.png",
+      mobileImage: "/assets/Service/pediatric/herobannermb_new.jpeg",
       mobileImageMedia: "(max-width: 767px)",
       showMobileNabhBadge: true,
       title: "Pediatric Eye Care",

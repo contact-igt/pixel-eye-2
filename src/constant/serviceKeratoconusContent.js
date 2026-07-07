@@ -10,10 +10,10 @@
       description:
         "Keratoconus can slowly change the shape of your cornea and cause distorted or blurred vision. Early diagnosis and timely treatment can help control progression and improve visual quality.",
       image: {
-        src: "/assets/Service/keratoconus/Subtract.png",
+        src: "/assets/Service/keratoconus/keratoconus-banner.jpeg",
         alt: "Close view of an eye showing keratoconus banner artwork",
       },
-      mobileImage: "/assets/Service/keratoconus/herobannermb.png",
+      mobileImage: "/assets/Service/keratoconus/keratoconus-banner-mb.jpeg",
       mobileImageMedia: "(max-width: 767px)",
       showMobileNabhBadge: true,
       nav: {

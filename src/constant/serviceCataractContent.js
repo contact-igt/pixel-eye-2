@@ -5,10 +5,10 @@ export const SERVICE_CATARACT_CONTENT = {
       description:
         "At Pixel Eye Hospital, we look at cataracts as more than a condition, something to understand clearly and treat with precision.",
       image: {
-        src: "/assets/Service/cataract/Subtract (6).png",
+        src: "/assets/Service/cataract/cataract-banner.jpeg",
         alt: "",
       },
-      mobileImage: "/assets/Service/cataract/herobannermb.png",
+      mobileImage: "/assets/Service/cataract/cataract-banner-mb.jpeg",
       mobileImageMedia: "(max-width: 767px)",
       showMobileNabhBadge: true,
       nav: {

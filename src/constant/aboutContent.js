@@ -2,8 +2,8 @@
 
 export const ABOUT_CONTENT = {
   hero: {
-    image: "/assets/About/about-banner.png",
-    mobileImage: "/assets/About/about-banner-mb.png",
+    image: "/assets/About/about-banner-new.jpeg",
+    mobileImage: "/assets/About/about-banner-mb-new.jpeg",
     titleLines: ["Precision in care.", "Clarity in vision."],
     subtitle:
       "Personalised eye care that helps you see life, fully and with confidence.",

@@ -1,7 +1,7 @@
 export const HERO_BANNER_CONTENT = {
   appointment: {
-    image: "/assets/Appointment/Mask group (15).png",
-    mobileImage: "/assets/Appointment/appoinment-mbv.png",
+    image: "/assets/Appointment/appointment-banner.jpeg",
+    mobileImage: "/assets/Appointment/appoinment-banner-mb.jpeg",
     title: "Schedule The Care Your Eyes Deserve",
     subtitle: "Tell us your concern or select your preferred specialist",
     rightSlot: "nabh",
@@ -12,8 +12,8 @@ export const HERO_BANNER_CONTENT = {
     imagePosition: "right 40%",
   },
   service: {
-    image: "/assets/Service/Subtract (5).png",
-    mobileImage: "/assets/Service/herobaner-mb.png",
+    image: "/assets/Service/service-banner.jpeg",
+    mobileImage: "/assets/Service/herobaner-mb-new.jpeg",
     title: "",
     subtitle: "",
     rightSlot: "book",

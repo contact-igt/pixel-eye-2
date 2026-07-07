@@ -27,8 +27,8 @@
     slides: [
       {
         image: {
-          src: "/assets/Home/hero-banner.png",
-          mobileSrc: "/assets/Home/home-banner-mb.png",
+          src: "/assets/Home/hero-banner-new.jpeg",
+          mobileSrc: "/assets/Home/home-banner-mb-new.jpeg",
           alt: "Pixel Eye Hospital home banner",
           width: 1920,
           height: 1080,
@@ -39,8 +39,8 @@
       },
       {
         image: {
-          src: "/assets/Home/home-banner2.png",
-          mobileSrc: "/assets/Home/home-banner2-mb.png",
+          src: "/assets/Home/home-banner2-new.jpeg",
+          mobileSrc: "/assets/Home/home-banner2-mb-new.jpeg",
           alt: "Pixel Eye Hospital diabetic retinopathy banner",
           width: 1920,
           height: 1080,
@@ -216,22 +216,20 @@
     title: "Patient Stories",
     subtitle: "Stories of clearer vision, directly from our clients",
     clients: [
-      { src: "/assets/Home/frame1.png", alt: "Patient photo 1" },
-      { src: "/assets/Home/frame2.png", alt: "Patient photo 2" },
-      { src: "/assets/Home/frame3.png", alt: "Patient photo 3" },
-      { src: "/assets/Home/frame4.png", alt: "Patient photo 4" },
-      { src: "/assets/Home/frame5.png", alt: "Patient photo 5" },
-      { src: "/assets/Home/frame6.png", alt: "Patient photo 6" },
-      { src: "/assets/Home/frame7.png", alt: "Patient photo 7" },
-      { src: "/assets/Home/frame8.png", alt: "Patient photo 8" },
-      { src: "/assets/Home/frame9.png", alt: "Patient photo 9" },
-      { src: "/assets/Home/frame10.png", alt: "Patient photo 10" },
-      { src: "/assets/Home/frame11.png", alt: "Patient photo 11" },
-      { src: "/assets/Home/frame12.png", alt: "Patient photo 12" },
-      { src: "/assets/Home/frame13.png", alt: "Patient photo 13" },
-      { src: "/assets/Home/frame14.png", alt: "Patient photo 13" },
-
-
+      { src: "/assets/Home/person2_2.png", alt: "Patient photo 1" },
+      { src: "/assets/Home/person13.png", alt: "Patient photo 2" },
+      { src: "/assets/Home/person6_6.png", alt: "Patient photo 3" },
+      { src: "/assets/Home/person5_5.png", alt: "Patient photo 4" },
+      { src: "/assets/Home/person1.png", alt: "Patient photo 5" },
+      { src: "/assets/Home/person3_3.png", alt: "Patient photo 6" },
+      { src: "/assets/Home/person14_14.png", alt: "Patient photo 7" },
+      { src: "/assets/Home/person12.png", alt: "Patient photo 8" },
+      { src: "/assets/Home/person9.png", alt: "Patient photo 9" },
+      { src: "/assets/Home/person10_10.png", alt: "Patient photo 10" },
+      { src: "/assets/Home/person11.png", alt: "Patient photo 11" },
+      { src: "/assets/Home/person8.png", alt: "Patient photo 12" },
+      { src: "/assets/Home/person4_4.png", alt: "Patient photo 13" },
+      { src: "/assets/Home/person7_7.png", alt: "Patient photo 14" },
     ],
     items: [
       {

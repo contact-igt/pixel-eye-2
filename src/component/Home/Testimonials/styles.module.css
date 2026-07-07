@@ -2,7 +2,6 @@
   margin-top: 100px;
   background: transparent;
   padding: var(--section-px);
-
 }
 
 .container {
@@ -72,27 +71,43 @@
 
 /* left cluster (two columns of two) */
 .clientImg:nth-child(1) {
-  left: 1%;
+  left: 1.5%;
   top: 40px;
-  width: 195px;
+  width: 180px;
+  object-fit: cover;
+  object-position: top;
+  height: 150px;
+  border-radius: 30px;
 }
 
 .clientImg:nth-child(2) {
-  left: 1%;
-  top: 205px;
-  width: 195px;
+  left: 1.5%;
+  top: 225px;
+  width: 180px;
+    object-fit: cover;
+  object-position: 100% 20%;
+    height: 150px;
+  border-radius: 30px;
 }
 
 .clientImg:nth-child(3) {
-  left: 215px;
+  left: 220px;
   top: 33px;
-  width: 200px;
+  width: 195px;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: top;
+  height: 110px;
 }
 
 .clientImg:nth-child(4) {
-  left: 215px;
-  top: 148px;
-  width: 200px;
+  left: 220px;
+  top: 165px;
+  width: 195px;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: top;
+  height: 110px;
 }
 
 /* center row (larger) */
@@ -103,58 +118,90 @@
 }
 
 .clientImg:nth-child(6) {
-  left: 29%;
+  left: 27.7%;
   top: 55px;
-  width: 150px;
+  width: 160px;
+  object-fit: cover;
+  height: 190px;
+  border-radius: 30px;
 }
 
 .clientImg:nth-child(7) {
-  left: 40%;
+  left: 38.9%;
   top: 20px;
-  width: 150px;
+  width: 160px;
+  object-fit: cover;
+  height: 190px;
+  border-radius: 30px;
 }
 
 .clientImg:nth-child(8) {
-  left: 51%;
+  left: 50.3%;
   top: 20px;
-  width: 150px;
+  width: 160px;
+object-fit: cover;
+height: 190px;
+border-radius: 30px;
 }
 
 /* right cluster (two columns of two) */
 .clientImg:nth-child(9) {
   right: 28%;
   top: 55px;
-  width: 150px;
+    width: 160px;
+object-fit: cover;
+height: 190px;
+border-radius: 30px;
 }
 
 .clientImg:nth-child(10) {
-  right: 14%;
+  right: 14.5%;
   top: 33px;
-  width: 200px;
+  width: 195px;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: top;
+  height: 115px;
 }
 
 .clientImg:nth-child(11) {
-  right: 14%;
-  top: 148px;
-  width: 200px;
+  right: 14.5%;
+  top: 163px;
+  width: 195px;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: 90% 15%;
+  height: 115px;
 }
 
 .clientImg:nth-child(12) {
-  right: 14%;
-  top: 265px;
-  width: 200px;
+  right: 14.5%;
+  top: 290px;
+  width: 195px;
+  border-radius: 30px;
+  object-fit: cover;
+  object-position: 90% 20%;
+  height: 115px;
 }
 
 .clientImg:nth-child(13) {
-  right: 1%;
+  right: 1.5%;
   top: 40px;
-  width: 190px;
+    width: 180px;
+    object-fit: cover;
+  object-position: 100% 20%;
+    height: 150px;
+  border-radius: 30px;
 }
 
 .clientImg:nth-child(14) {
-  right: 1%;
-  top: 205px;
-  width: 190px;
+  right: 1.5%;
+  top: 215px;
+    width: 180px;
+    object-fit: cover;
+  object-position: 100% 20%;
+    height: 150px;
+  border-radius: 30px;
 }
 
 /* ── Desktop: scatter the frames using absolute top / left / right ── */
@@ -201,7 +248,7 @@
 /* ── Individual card ────────────────────────── */
 .card {
   min-height: 240px;
-  background-image: url('/assets/Home/testimonialcard.png');
+  background-image: url("/assets/Home/testimonialcard.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: transparent;
@@ -223,7 +270,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/assets/Home/testimonialcard_overlay.png');
+  background-image: url("/assets/Home/testimonialcard_overlay.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: transparent;
@@ -287,8 +334,6 @@
   line-height: 1.55;
 }
 
-
-
 /* ── Dots ────────────────────────────────────── */
 .dots {
   display: flex;
@@ -318,8 +363,7 @@
   margin-top: 22px;
 }
 
-
-@media (max-width : 1499px) {
+@media (max-width: 1499px) {
   .clientImg:nth-child(1) {
     left: 1%;
     top: 40px;
@@ -333,88 +377,94 @@
   }
 
   .clientImg:nth-child(3) {
-    left: 190px;
+    left: 200px;
     top: 33px;
     width: 170px;
+    height: 105px;
   }
 
   .clientImg:nth-child(4) {
-    left: 190px;
+    left: 200px;
     top: 148px;
     width: 170px;
+    height: 105px;
   }
 
   /* center row (larger) */
   .clientImg:nth-child(5) {
-    left: 190px;
+    left: 200px;
     top: 265px;
     width: 170px;
+    height: 105px;
   }
 
   .clientImg:nth-child(6) {
-    left: 27%;
+    left: 27.65%;
     top: 55px;
     width: 140px;
+    height: 180px;
   }
 
   .clientImg:nth-child(7) {
-    left: 38%;
+    left: 38.5%;
     top: 20px;
     width: 140px;
+    height: 180px;
   }
 
   .clientImg:nth-child(8) {
-    left: 49%;
+    left: 49.8%;
     top: 20px;
     width: 140px;
+    height: 180px;
   }
 
   /* right cluster (two columns of two) */
   .clientImg:nth-child(9) {
-    right: 400px;
+    right: 29.2%;
     top: 55px;
     width: 140px;
+    height: 180px;
   }
 
   .clientImg:nth-child(10) {
     right: 16%;
     top: 33px;
     width: 170px;
+    height: 105px;
   }
 
   .clientImg:nth-child(11) {
     right: 16%;
     top: 148px;
     width: 170px;
+     height: 105px;
   }
 
   .clientImg:nth-child(12) {
     right: 16%;
     top: 265px;
     width: 170px;
+     height: 105px;
   }
 
   .clientImg:nth-child(13) {
-    right: 2%;
+    right: 2.2%;
     top: 40px;
     width: 170px;
   }
 
   .clientImg:nth-child(14) {
-    right: 2%;
+    right: 2.2%;
     top: 205px;
     width: 170px;
   }
-
 }
 
-
 @media (max-width: 1399px) {
-
   .title {
     font-size: 40px;
   }
-
 
   .clientImg:nth-child(1) {
     left: 1%;
@@ -502,11 +552,9 @@
     width: 150px;
   }
 
-
   .testimonialsSection {
     margin-top: 80px;
   }
-
 }
 
 /* ── Responsive ──────────────────────────────── */
@@ -518,7 +566,6 @@
   .title {
     font-size: 36px;
   }
-
 
   .clientImg:nth-child(1) {
     left: 1%;
@@ -607,10 +654,7 @@
   }
 }
 
-
-@media (max-width : 991px) {
-
-
+@media (max-width: 991px) {
   .clientImg:nth-child(1) {
     left: 1%;
     top: 130px;
@@ -696,7 +740,6 @@
     top: 205px;
     width: 90px;
   }
-
 }
 
 @media (max-width: 767px) {
@@ -704,7 +747,7 @@
     padding: 30px 16px 24px;
   }
 
-    .testimonialsSection {
+  .testimonialsSection {
     margin-top: 40px;
   }
 
@@ -712,8 +755,6 @@
     font-size: 28px;
     margin-bottom: 12px;
   }
-
-
 
   .clientImg:nth-child(1),
   .clientImg:nth-child(2),
@@ -727,7 +768,6 @@
   .clientImg:nth-child(14) {
     display: none;
   }
-
 
   .clientImg:nth-child(6) {
     left: 3%;
@@ -754,8 +794,6 @@
     width: 80px;
   }
 
-
-
   .mosaicWrap {
     top: 50px;
     height: 150px;
@@ -769,13 +807,9 @@
     max-width: 92%;
     font-size: 18px;
   }
-
 }
 
-
-
-@media (max-width : 400px) {
-
+@media (max-width: 400px) {
   .clientImg:nth-child(6) {
     left: 2%;
     top: 65px;
@@ -800,5 +834,4 @@
     top: 65px;
     width: 80px;
   }
-  
 }

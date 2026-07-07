@@ -1,7 +1,7 @@
 export const DOCTORS_CONTENT = {
   hero: {
-    image: "/assets/Doctor/Subtract (3).png",
-    mobileImage: "/assets/Doctor/Substract-mb.png",
+    image: "/assets/Doctor/doctor-banner-new.jpeg",
+    mobileImage: "/assets/Doctor/doctor-banner-mb-new.jpeg",
     titleLines: ["Experts Behind Your", "Vision"],
     subtitle:
       "Our team of specialists brings precision, experience, and care to every eye condition so you can see clearly, every day.",

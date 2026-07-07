@@ -26,10 +26,10 @@ export const SERVICE_LASIK_CONTENT = {
       description:
         "At Pixel Eye Hospital, we use Advanced laser vision correction to reduce dependence on spectacles and contact lenses, with a detailed eye evaluation to check your suitability.",
       image: {
-        src: "/assets/Service/Lasik/Lasik_header.png",
+        src: "/assets/Service/Lasik/lasik-banner.jpeg",
         alt: "LASIK laser eye surgery procedure",
       },
-      mobileImage: "/assets/Service/Lasik/herobannermb.png",
+      mobileImage: "/assets/Service/Lasik/lasik-banner-mb.jpeg",
       showMobileNabhBadge: true,
     },
     explainer: {

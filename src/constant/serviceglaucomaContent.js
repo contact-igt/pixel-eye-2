@@ -5,10 +5,10 @@ export const SERVICE_GLAUCOMA_CONTENT = {
       description:
         "Glaucoma is a silent eye condition that can gradually damage vision if not detected and treated early.",
       image: {
-        src: "/assets/Service/glaucoma/banner.png",
+        src: "/assets/Service/glaucoma/glaucoma_banner.jpeg",
         alt: "",
       },
-      mobileImage: "/assets/Service/glaucoma/herobannermb.png",
+      mobileImage: "/assets/Service/glaucoma/glaucoma_banner_mb.jpeg",
       mobileImageMedia: "(max-width: 767px)",
       showMobileNabhBadge: true,
       nav: {

@@ -5,10 +5,10 @@ export const SERVICE_RETINA_CONTENT = {
       description:
         "The retina plays a vital role in clear vision. Early diagnosis and timely treatment can help protect your sight.",
       image: {
-        src: "/assets/Service/Retina/retina-banner.png",
+        src: "/assets/Service/Retina/retina-banner-new.jpeg",
         alt: "",
       },
-      mobileImage: "/assets/Service/Retina/herobannermb.png",
+      mobileImage: "/assets/Service/Retina/herobannermb-new.jpeg",
       mobileImageMedia: "(max-width: 767px)",
       showMobileNabhBadge: true,
       nav: {

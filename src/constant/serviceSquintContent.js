@@ -10,10 +10,10 @@ export const SERVICE_SQUINT_CONTENT = {
       description:
         "Squint can appear in childhood or adulthood and may cause eye strain, double vision, or lazy eye if left untreated. A detailed eye check-up can help identify the cause and guide proper correction.",
       image: {
-        src: "/assets/Service/squint/squint_banner.png",
+        src: "/assets/Service/squint/squint_banner-new.jpeg",
         alt: "",
       },
-      mobileImage: "/assets/Service/squint/herobannermb.png",
+      mobileImage: "/assets/Service/squint/herobannermb-new.jpeg",
       mobileImageMedia: "(max-width: 767px)",
       showMobileNabhBadge: true,
       nav: {
