@@ -7,6 +7,7 @@
     width: 100%;
     background: #ffffff;
     padding: 48px 0;
+    margin-bottom: 64px;
 }
 
 .cataract-approach__inner {
@@ -142,6 +143,9 @@
 }
 
 @media (max-width: 767px) {
+    .cataract-approach {
+          margin-bottom: 10px;
+    }
     .cataract-approach__inner {
         width: min(1600px, calc(100% - 40px));
     }
