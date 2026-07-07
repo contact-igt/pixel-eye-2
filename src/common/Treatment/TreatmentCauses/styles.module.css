@@ -261,8 +261,7 @@
     opacity: 1;
   }
 
-  .treatment-causes__slider
-    :global(.slick-dots li.slick-active button::before) {
+  .treatment-causes__slider :global(.slick-dots li.slick-active button::before) {
     background: #273979;
   }
 }
@@ -282,6 +281,10 @@
   .treatment-causes__slider {
     width: min(100%, 430px);
     padding-inline: 0;
+  }
+
+  .treatment-causes__header h2 {
+    font-size: 26px;
   }
 
   .treatment-causes__slider :global(.slick-list) {
