@@ -168,19 +168,21 @@
     width: clamp(200px, 10vw, 220px);
   }
 
+
   .surgical-options__right {
     margin-top: 30px;
+    gap:40px;
   }
 }
 
-@media (max-width: 389px) {
+@media (max-width: 400px) {
   .surgical-options__inner {
     width: min(1600px, calc(100% - 28px));
   }
 
   .surgical-options__card-title {
     bottom: -55px;
-    width: 150px;
-    font-size: clamp(11.5px, 1.2vw, 12.5px);
+    width: 158px;
+    font-size: clamp(14px, 1.2vw, 12.5px);
   }
 }
