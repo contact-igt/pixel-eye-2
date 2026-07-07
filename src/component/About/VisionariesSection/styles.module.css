@@ -1,7 +1,7 @@
 ﻿.section {
   width: 100%;
   padding: var(--section-pt) var(--section-px) var(--section-pb);
-  margin-top: 70px;
+  margin-top: 70px !important;
 }
 
 .revealShell {
@@ -395,7 +395,7 @@
   .section {
     padding-top: 42px;
     padding-bottom: 44px;
-    margin-top: 50px;
+    margin-top: 50px !important;
   }
 }
 
@@ -474,11 +474,9 @@
   }
 
 
-
-
   .section {
     padding: 30px 15px;
-    margin-top: 40px;
+    margin-top: 40px !important;
   }
 
   .mediaSection,
@@ -510,9 +508,11 @@
   .spec {
     font-size: clamp(12px, 1.5vw, 11.5px);
   }
+
   .subtitle {
     font-size: clamp(15px, 4.2vw, 16px);
   }
+
   .header {
     margin-bottom: 34px;
   }
