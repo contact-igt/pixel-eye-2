@@ -658,6 +658,14 @@
   .section{
     padding: 30px 15px;
   }
+
+  .title {
+    font-size: clamp(26px, 4.2vw, 30px);
+  }
+  
+  .subtitle {
+    font-size: clamp(15px, 4.2vw, 16px);
+  }
 }
 @media (max-width: 490px) {
   .sideMediaCol .datePill {

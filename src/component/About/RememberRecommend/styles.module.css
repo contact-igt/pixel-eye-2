@@ -234,18 +234,23 @@
   }
 
   .patientBlock {
-    left: 11%;
-    bottom: 4%;
+    left: 2%;
+    bottom: 0%;
   }
 
   .cardText {
-    width: 97%;
+    width: 100%;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 991px) {
   .inner {
     width: min(1600px, calc(100% - 80px));
+  }
+
+  .section {
+    margin-top: 50px;
   }
 
   .grid {
@@ -265,6 +270,12 @@
     font-size: 14px;
     width: 90%;
   }
+
+  .description {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
 
   .patientBlock {
     left: 14%;
@@ -342,6 +353,12 @@
     padding: 0 4px;
   }
 
+  .title {
+    font-size: 26px;
+    line-height: 1.25;
+    width: 100%;
+  }
+
   .card {
     width: min(390px, 100%);
     margin: 0 auto;
@@ -362,14 +379,14 @@
   .cardText {
     width: 95%;
     max-width: 290px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.45;
   }
 
   .patientBlock {
-    left: 20%;
-    bottom: 10%;
-    gap: 10px;
+        left: 12%;
+        bottom: 4%;
+        gap: 10px;
   }
 
   .avatarWrap {
@@ -380,9 +397,14 @@
   .name {
     font-size: 14px;
   }
+
+  .description {
+    margin-top: 10px;
+    font-size: 16px;
+  }
 }
 
-@media (max-width: 389px) {
+@media (max-width: 400px) {
   .inner {
     width: min(1600px, calc(100% - 15px));
   }

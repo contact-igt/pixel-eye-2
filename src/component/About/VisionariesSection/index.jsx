@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
@@ -10,6 +10,7 @@ import styles from "./styles.module.css";
 const VisionariesSection = () => {
   const { titleLines, subtitleLines, doctors } = ABOUT_CONTENT.visionaries;
   const sectionRef = useRef(null);
+  const [forceVisible, setForceVisible] = useState(false);
 
   useEffect(() => {
     if (!sectionRef.current) return undefined;
@@ -24,42 +25,78 @@ const VisionariesSection = () => {
 
     const ctx = gsap.context(() => {
       const animateRows = ({ isMobile = false } = {}) => {
+        const hasPassedStart = (node, startRatio) => {
+          if (!node) return false;
+          return (
+            node.getBoundingClientRect().top <= window.innerHeight * startRatio
+          );
+        };
+
         const header = sectionRef.current.querySelector(
           "[data-visionaries-header]",
         );
-        gsap.set(header, { y: 42, opacity: 0 });
+        if (header) {
+          if (hasPassedStart(header, 0.76)) {
+            gsap.set(header, { y: 0, opacity: 1 });
+          } else {
+            gsap.set(header, { y: 42, opacity: 0 });
 
-        const headerTimeline = gsap.timeline({ paused: true }).to(header, {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          ease: "power3.out",
-        });
+            const headerTimeline = gsap.timeline({ paused: true }).to(header, {
+              y: 0,
+              opacity: 1,
+              duration: 0.5,
+              ease: "power3.out",
+            });
 
-        ScrollTrigger.create({
-          trigger: sectionRef.current,
-          start: "top 76%",
-          once: true,
-          onEnter: () => headerTimeline.play(0),
-        });
+            ScrollTrigger.create({
+              trigger: sectionRef.current,
+              start: "top 76%",
+              once: true,
+              onEnter: () => headerTimeline.play(0),
+              onRefresh: (self) => {
+                if (self.progress > 0) {
+                  headerTimeline.progress(1);
+                }
+              },
+            });
+          }
+        }
 
         gsap.utils.toArray("[data-visionary-row]").forEach((row) => {
           const media = row.querySelector("[data-visionary-media]");
           const image = row.querySelector("[data-visionary-image]");
           const info = row.querySelector("[data-visionary-info]");
           const content = row.querySelector("[data-visionary-content]");
-          const paragraphs = row.querySelectorAll("[data-visionary-content] p");
+          const paragraphs = Array.from(
+            row.querySelectorAll("[data-visionary-content] p"),
+          );
           const isReverse = row.dataset.visionaryReverse === "true";
 
-          gsap.set(media, { y: isMobile ? 56 : 95, opacity: 0 });
-          gsap.set(image, { y: isMobile ? 72 : 120, opacity: 0 });
-          gsap.set(info, { y: 36, opacity: 0 });
-          gsap.set(content, {
-            x: isMobile ? 0 : isReverse ? -70 : 70,
-            y: isMobile ? 38 : 0,
-            opacity: 0,
-          });
-          gsap.set(paragraphs, { y: 18, opacity: 0 });
+          const revealTargets = [
+            media,
+            image,
+            info,
+            content,
+            ...paragraphs,
+          ].filter(Boolean);
+          if (!revealTargets.length) return;
+
+          if (hasPassedStart(row, 0.72)) {
+            gsap.set(revealTargets, { x: 0, y: 0, opacity: 1 });
+            return;
+          }
+
+          if (media) gsap.set(media, { y: isMobile ? 56 : 95, opacity: 0 });
+          if (image) gsap.set(image, { y: isMobile ? 72 : 120, opacity: 0 });
+          if (info) gsap.set(info, { y: 36, opacity: 0 });
+          if (content) {
+            gsap.set(content, {
+              x: isMobile ? 0 : isReverse ? -70 : 70,
+              y: isMobile ? 38 : 0,
+              opacity: 0,
+            });
+          }
+          if (paragraphs.length) gsap.set(paragraphs, { y: 18, opacity: 0 });
 
           const timeline = gsap
             .timeline({ paused: true })
@@ -117,6 +154,11 @@ const VisionariesSection = () => {
             start: "top 72%",
             once: true,
             onEnter: () => timeline.play(0),
+            onRefresh: (self) => {
+              if (self.progress > 0) {
+                timeline.progress(1);
+              }
+            },
           });
         });
       };
@@ -126,13 +168,71 @@ const VisionariesSection = () => {
     }, sectionRef);
 
     const refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
+    const handleLoad = () => ScrollTrigger.refresh();
+    window.addEventListener("load", handleLoad);
 
     return () => {
       cancelAnimationFrame(refreshFrame);
+      window.removeEventListener("load", handleLoad);
       ctx.revert();
       mm.revert();
     };
   }, []);
+
+  useEffect(() => {
+    if (forceVisible || !sectionRef.current || typeof window === "undefined") {
+      return undefined;
+    }
+
+    const node = sectionRef.current;
+    let rafId = 0;
+
+    const checkHiddenSafety = () => {
+      const rect = node.getBoundingClientRect();
+      const sectionWellInView =
+        rect.top <= window.innerHeight * 0.45 &&
+        rect.bottom >= window.innerHeight * 0.2;
+
+      if (!sectionWellInView) return;
+
+      const selectors = [
+        "[data-visionaries-header]",
+        "[data-visionary-media]",
+        "[data-visionary-image]",
+        "[data-visionary-info]",
+        "[data-visionary-content]",
+      ];
+
+      const hasHiddenElement = selectors.some((selector) =>
+        Array.from(node.querySelectorAll(selector)).some((element) => {
+          const opacity = Number.parseFloat(
+            window.getComputedStyle(element).opacity || "1",
+          );
+          return opacity < 0.1;
+        }),
+      );
+
+      if (hasHiddenElement) {
+        setForceVisible(true);
+      }
+    };
+
+    const scheduleSafetyCheck = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(checkHiddenSafety);
+    };
+
+    const timerId = window.setTimeout(scheduleSafetyCheck, 1800);
+    window.addEventListener("scroll", scheduleSafetyCheck, { passive: true });
+    window.addEventListener("resize", scheduleSafetyCheck);
+
+    return () => {
+      window.clearTimeout(timerId);
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", scheduleSafetyCheck);
+      window.removeEventListener("resize", scheduleSafetyCheck);
+    };
+  }, [forceVisible]);
 
   const renderLines = (lines) =>
     lines.map((line, index) => (
@@ -159,10 +259,14 @@ const VisionariesSection = () => {
     <section
       ref={sectionRef}
       id="visionaries"
-      className={styles.section}
+      className={`${styles.section} ${forceVisible ? styles.forceVisible : ""}`.trim()}
       aria-labelledby="visionaries-title"
     >
-      <RevealOnView className={styles.revealShell}>
+      <RevealOnView
+        className={styles.revealShell}
+        threshold={0.08}
+        rootMargin="0px 0px -4% 0px"
+      >
         <div className={styles.inner}>
           <header className={styles.header} data-visionaries-header>
             <h2 id="visionaries-title" className={styles.title}>

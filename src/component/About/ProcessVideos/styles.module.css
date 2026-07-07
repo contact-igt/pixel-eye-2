@@ -9,9 +9,11 @@
 }
 
 .panel {
-  width: min(1400px, calc(100% - 70px));
+
+  width: min(1470px, calc(100% - 70px));
   margin: 0 auto;
   padding: clamp(44px, 4vw, 56px) clamp(48px, 4vw, 60px) 44px;
+
   border-radius: 24px;
   background: #e4ebf5;
   opacity: 0;
@@ -228,6 +230,7 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+
 }
 
 .exploreLabel {
@@ -282,12 +285,16 @@
     background 220ms ease,
     color 220ms ease,
     border-color 220ms ease;
+  border: 2px solid #2f4587;
+
 }
 
 .watchBtn>span:first-child,
 .watchBtn>span:last-child {
   border-color: rgba(246, 251, 255, 0.92);
   color: #f6fbff;
+  border: 2px solid #ffff;
+
 }
 
 .exploreBtn>span:first-child,
@@ -351,6 +358,15 @@
 
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section {
+    margin-top: 50px;
+  }
+
+  .description {
+    margin-top: 10px;
+    font-size: 18px;
   }
 }
 
@@ -464,11 +480,38 @@
 @media (max-width: 576px) {
   .panel {
     width: min(1600px, calc(100% - 30px));
+    padding: 28px 14px 20px;
+
+
   }
+
+  .section {
+    margin-top: 40px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  .sliderWrap {
+    margin-top: 50px;
+  }
+
+
+
 }
 
-@media (max-width: 389px) {
+@media (max-width: 400px) {
   .panel {
     width: min(1600px, calc(100% - 28px));
+  }
+
+  .title {
+    font-size: 26px;
   }
 }

@@ -223,9 +223,9 @@
 
 @media (max-width: 1199px) {
   .bookArea {
-    right: 0%;
-    min-width: 190px;
-    bottom: -15px;
+    right: -1%;
+    min-width: 208px;
+    bottom: -14px;
   }
 
   .bookButton {
@@ -257,7 +257,7 @@
 @media (max-width: 991px) {
   .heroContent {
     left: 40px;
-    top: 25%;
+    top: 20%;
     width: min(440px, 48%);
   }
 
@@ -419,7 +419,7 @@
 @media (max-width:400px) {
 
   .bookArea {
-    right: -9px;
+    right: -12px;
     bottom: -8px;
     min-width: 155px;
   }

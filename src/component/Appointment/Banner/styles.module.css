@@ -43,7 +43,7 @@
   color: #273979;
   font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
   font-size: clamp(30px, 3.25vw, 52px);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.18;
 }
 
@@ -139,7 +139,10 @@
 
   .copy h1 {
     font-size: 28px;
+    font-weight: 600;
   }
+
+
 
   .copy p {
     width: 100%;
@@ -148,7 +151,7 @@
 }
 
 /* xxs — <389px */
-@media (max-width: 388px) {
+@media (max-width: 400px) {
   .copy h1 {
     font-size: 22px;
   }

@@ -485,6 +485,8 @@
     --form-check-size: 18px;
     --form-btn-h: 40px;
     --form-btn-fs: 14px;
+    padding: 30px 12px 36px;
+    margin:0px 10px;
   }
 
   .appointment-field,
@@ -572,12 +574,12 @@
 
   .terms-row {
     min-height: auto;
-    margin-top: 4px;
+    margin-top: 20px;
   }
 
   .consent-list {
     gap: 18px;
-    margin-top: 0;
+    margin-top: 10px;
     padding-top: 0;
   }
 
@@ -603,7 +605,7 @@
 }
 
 /* xxs — <389px */
-@media (max-width: 388px) {
+@media (max-width: 400px) {
   .specialist-form h1 {
     font-size: 20px;
   }

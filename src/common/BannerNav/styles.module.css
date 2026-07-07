@@ -912,6 +912,11 @@
   }
 
   .nabhBadge {
-    width: 95px;
+    width: 80px;
+    margin-right: 9px;
+  }
+
+  .logo {
+    width: 100px;
   }
 }

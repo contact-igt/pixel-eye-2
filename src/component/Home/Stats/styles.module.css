@@ -79,6 +79,17 @@
 }
 
 
+@media (max-width: 1399px) {
+  .statNumber {
+    font-size: 50px;
+  }
+
+  .statLabel {
+    font-size: 20px;
+  }
+
+}
+
 @media (max-width: 1199px) {
   .statNumber {
     font-size: 48px;
@@ -89,6 +100,18 @@
   }
 }
 
+@media (max-width: 991px) {
+  .statNumber {
+    font-size: 45px;
+  }
+
+  .statLabel {
+    font-size: 15px;
+  }
+  .statsSection{
+    margin-top: 50px;
+  }
+}
 
 @media (max-width: 767px) {
   .statsFrame {
@@ -135,4 +158,3 @@
   }
 
 }
-

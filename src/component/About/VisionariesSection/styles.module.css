@@ -53,6 +53,19 @@
   transform: translateY(0);
 }
 
+.forceVisible [data-visionaries-header],
+.forceVisible [data-visionary-media],
+.forceVisible [data-visionary-image],
+.forceVisible [data-visionary-info],
+.forceVisible [data-visionary-content],
+.forceVisible [data-visionary-content] p,
+.forceVisible .cardBlock,
+.forceVisible .divider {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 .cardBlock:nth-child(1) {
   transition-delay: 80ms;
 }
@@ -294,6 +307,13 @@
 
 @media (max-width: 1199px) {
 
+  .inner {
+    width: min(1448px, calc(100% - 90px));
+  }
+
+
+
+
   .row,
   .rowReverse {
     grid-template-columns: 1fr;
@@ -342,6 +362,7 @@
     width: min(1448px, calc(100% - 96px));
   }
 
+
   .mediaSection,
   .rowReverse .mediaSection {
     width: min(100%, 610px);
@@ -369,6 +390,12 @@
   .infoPanelRight {
     left: 8px;
     top: 22px;
+  }
+
+  .section {
+    padding-top: 42px;
+    padding-bottom: 44px;
+    margin-top: 50px;
   }
 }
 
@@ -446,8 +473,12 @@
     width: min(1600px, calc(100%));
   }
 
+
+
+
   .section {
     padding: 30px 15px;
+    margin-top: 40px;
   }
 
   .mediaSection,
@@ -478,6 +509,17 @@
 
   .spec {
     font-size: clamp(12px, 1.5vw, 11.5px);
+  }
+  .subtitle {
+    font-size: clamp(15px, 4.2vw, 16px);
+  }
+  .header {
+    margin-bottom: 34px;
+  }
+
+  .title {
+    font-size: 26px;
+    line-height: 1.25;
   }
 }
 

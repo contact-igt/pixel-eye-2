@@ -220,6 +220,7 @@
         flex-direction: column-reverse;
         align-items: center;
         justify-content: flex-end;
+        height: 350px;
     }
 
     .doctorImage {
@@ -248,7 +249,7 @@
     }
 
     .left {
-        left: 0;
+        left: -100px;
     }
 
     .right {
@@ -355,7 +356,7 @@
     }
 
     .left {
-        left: -12%;
+        left: -21%;
     }
 
     .right {
@@ -363,7 +364,11 @@
     }
 
     .doctorHoverCard2 {
-        left: -5%;
+        left: -10%;
+    }
+
+    .doctorHoverCard {
+        left: 110%;
     }
 }
 

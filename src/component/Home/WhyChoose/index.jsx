@@ -8,6 +8,7 @@ import styles from "./styles.module.css";
 const WhyChoose = () => {
   const HOVER_LOCK_MS = 700;
   const GHOST_CLICK_GUARD_MS = 500;
+  const CLICK_ANIMATION_GUARD_MS = 420;
   const { whyChoose } = HOME_CONTENT;
   const { title, cards, cta } = whyChoose;
   // start with the middle card active
@@ -16,6 +17,7 @@ const WhyChoose = () => {
   const [isMobileLayout, setIsMobileLayout] = useState(false);
   const hoverLockTimeoutRef = useRef(null);
   const lastTouchTimeRef = useRef(0);
+  const lastActivationTimeRef = useRef(0);
 
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
@@ -36,10 +38,11 @@ const WhyChoose = () => {
 
   const activateCard = useCallback(
     (index, { lockHover = false } = {}) => {
-      if (index === activeIndex) return;
-      if (lockHover && isHoverLocked) return;
+      if (index === activeIndex) return false;
+      if (lockHover && isHoverLocked) return false;
 
       setActiveIndex(index);
+      lastActivationTimeRef.current = Date.now();
 
       if (lockHover) {
         setIsHoverLocked(true);
@@ -50,6 +53,8 @@ const WhyChoose = () => {
           setIsHoverLocked(false);
         }, HOVER_LOCK_MS);
       }
+
+      return true;
     },
     [activeIndex, isHoverLocked],
   );
@@ -100,6 +105,18 @@ const WhyChoose = () => {
                   activateCard(index);
                 }}
                 onClick={() => {
+                  if (!isMobileLayout && isHoverLocked) {
+                    return;
+                  }
+
+                  if (
+                    !isMobileLayout &&
+                    Date.now() - lastActivationTimeRef.current <
+                      CLICK_ANIMATION_GUARD_MS
+                  ) {
+                    return;
+                  }
+
                   if (
                     Date.now() - lastTouchTimeRef.current <
                     GHOST_CLICK_GUARD_MS

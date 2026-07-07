@@ -1,6 +1,6 @@
 .experienceSection {
   background: transparent;
-  padding:  var(--section-px);
+  padding: var(--section-px);
 }
 
 .container {
@@ -107,7 +107,7 @@
 /* ─── Laptop ────────────────────────────────── 1199px ── */
 @media (max-width: 1199px) {
   .title {
-    font-size: 36px;
+    font-size: 33px;
   }
 
   .grid {
@@ -116,59 +116,24 @@
 
   .paragraph {
     font-size: 18px;
-    margin-bottom: 16px;
-  }
-}
-
-
-
-/* ─── Tablet ────────────────────────────────── 991px ── */
-@media (max-width: 991px) {
-
-  .revealLeft,
-  .revealRight {
-    transform: translateY(22px);
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .card {
-    border-radius: var(--radius-hero);
-    padding: 28px;
+    margin-bottom: 10px;
+    line-height: 1.5;
   }
 
   .imageWrap {
-    height: 280px;
-    border-radius: var(--radius-hero);
-    margin-top: 40px;
-    right: unset;
-    transform: scale(1.2);
+    right: 120px;
   }
 
-  .image {
-    object-fit: cover;
-    border-radius: 14px;
-  }
 
-  .title {
-    font-size: 36px;
-  }
-
-  .paragraph {
-    font-size: 17px;
-  }
 }
 
-/* ─── Mobile ────────────────────────────────── 991px ── */
+
 @media (max-width: 991px) {
-
-
   .grid {
+    grid-template-columns: 1fr;
     gap: 35px;
   }
+
 
   .revealRight {
     order: -1;
@@ -194,47 +159,65 @@
   }
 
   .imageWrap {
+    margin-top: 40px;
     height: 570px;
     transform: none;
     right: auto;
     border-radius: 18px;
   }
 
+  .image {
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
   .imageWrap img {
     object-fit: fill;
-
   }
-
 
   .paragraph {
-    font-size: 16px;
+    font-size: 20px;
   }
-
 
   .title {
     position: absolute;
-    top: -286%;
-    width: 400px;
-    left: 17px;
-    font-size: 32px;
+    top: -240%;
+    width: 415px;
+    left: 13px;
+    font-size: 36px;
+  }
+
+  .experienceSection{
+    margin-top: 50px;
+    padding: 0px 30px;
   }
 }
 
 /* ─── Small Mobile ──────────────────────────── 575px ── */
 @media (max-width: 575px) {
   .title {
-    font-size: 28px;
-    top: -150%;
-    width: 260px;
-    left: 17px;
+          font-size: 24px;
+        top: -140%;
+        width: 240px;
+        left: 20px;
+  }
+
+  .grid {
+    gap: 20px;
   }
 
   .imageWrap {
-    height: 400px;
+    height: 350px;
   }
 
   .revealLeft {
     margin-top: 20px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 10px;
   }
 
 
@@ -242,7 +225,7 @@
 
 @media (max-width: 400px) {
   .title {
-    top: -133%;
+    top: -140%;
     font-size: 24px;
     width: 220px;
   }
@@ -250,7 +233,7 @@
   .experienceSection {
     padding: 15px;
   }
-  
+
 
   .imgeWrap {
     height: 350px;
