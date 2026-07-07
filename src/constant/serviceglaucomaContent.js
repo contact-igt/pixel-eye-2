@@ -110,56 +110,56 @@ export const SERVICE_GLAUCOMA_CONTENT = {
         title: "Primary Open Angle glaucoma (POAG)",
         description:
           "The most common type of glaucoma. It usually develops slowly and may not cause noticeable symptoms in the early stage.",
-        image: "/assets/Service/glaucoma/open-angle.png",
+        image: "/assets/Service/glaucoma/openangle_glaucoma.png",
       },
       {
         id: "normal-tension-glaucoma",
         title: "Normal-Tension Glaucoma",
         description:
           "In this type, optic nerve damage happens even when eye pressure is not very high.",
-        image: "/assets/Service/glaucoma/normal-tension.png",
+        image: "/assets/Service/glaucoma/normaltension_glaucoma.png",
       },
       {
         id: "acute-angle-closure-glaucoma",
         title: "Acute Angle-Closure Glaucoma",
         description:
           "A sudden, total blockage that causes internal pressure to spike rapidly in a matter of hours. It presents with severe eye pain, blurred vision, rainbow halos, and vomiting.",
-        image: "/assets/Service/glaucoma/angle-closure.png",
+        image: "/assets/Service/glaucoma/angleclosure_glaucoma.png",
       },
       {
         id: "chronic-angle-closure-glaucoma",
         title: "Chronic Angle-Closure Glaucoma",
         description:
           "The drainage angle closes over a long period rather than all at once. Because the fluid exit is obstructed slowly, the pressure rises gradually, meaning it is often completely painless and produces no warning signs until late-stage damage occurs.",
-        image: "/assets/Service/glaucoma/angleclosure.png",
+        image: "/assets/Service/glaucoma/angleclosure_glaucoma.png",
       },
       {
         id: "neovascular-glaucoma",
         title: "Neovascular Glaucoma",
         description:
           "Triggered by severe conditions like advanced diabetic retinopathy, where abnormal new blood vessels grow over the eye's natural drain.",
-        image: "/assets/Service/glaucoma/openangle.png",
+        image: "/assets/Service/glaucoma/openangle_glaucoma.png",
       },
       {
         id: "pigmentary-glaucoma",
         title: "Pigmentary Glaucoma",
         description:
           "Tiny flakes of pigment rub off the back of the iris and physically clog the drainage meshwork.",
-        image: "/assets/Service/glaucoma/normaltension.png",
+        image: "/assets/Service/glaucoma/normaltension_glaucoma.png",
       },
       {
         id: "traumatic-glaucoma",
         title: "Traumatic Glaucoma",
         description:
           "Occurs after a severe, blunt force blow or penetrating injury to the eye, which can permanently damage the internal drainage structure immediately or years down the line.",
-        image: "/assets/Service/glaucoma/angle-closure.png",
+        image: "/assets/Service/glaucoma/angleclosure_glaucoma.png",
       },
       {
         id: "steroid-induced-glaucoma",
         title: "Steroid-Induced Glaucoma",
         description:
           "A complication caused by prolonged use of corticosteroid medications, such as eye drops, pills, or inhalers, which alters fluid mechanics.",
-        image: "/assets/Service/glaucoma/open-angle.png",
+        image: "/assets/Service/glaucoma/openangle_glaucoma.png",
       },
     ],
   },

@@ -123,9 +123,6 @@
 
 
 @media (max-width : 991px) {
-
-
-
   .bannerFrame {
     min-height: 380px;
   }
@@ -231,7 +228,6 @@
 
   .copy {
     left: 16px;
-    width: 300px;
     top: 52%;
   }
 
@@ -244,3 +240,4 @@
   }
 
 }
+

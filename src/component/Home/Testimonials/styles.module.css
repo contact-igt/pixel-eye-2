@@ -11,7 +11,7 @@
 
 .frame {
   position: relative;
-  border-radius: 30px;
+  border-radius: 18px;
   padding: 40px 28px 36px;
   background: linear-gradient(90deg, #e3effd 0%, #f6faff 50%, #e3effd 100%);
   border: 2px solid #c9d6ee;
@@ -77,7 +77,7 @@
   object-fit: cover;
   object-position: top;
   height: 150px;
-  border-radius: 30px;
+  border-radius: 18px;
 }
 
 .clientImg:nth-child(2) {
@@ -87,14 +87,14 @@
   object-fit: cover;
   object-position: 100% 20%;
   height: 150px;
-  border-radius: 30px;
+  border-radius: 18px;
 }
 
 .clientImg:nth-child(3) {
   left: 220px;
   top: 33px;
-  width: 195px;
-  border-radius: 30px;
+  width: 190px;
+  border-radius: 18px;
   object-fit: cover;
   object-position: top;
   height: 110px;
@@ -103,8 +103,8 @@
 .clientImg:nth-child(4) {
   left: 220px;
   top: 165px;
-  width: 195px;
-  border-radius: 30px;
+  width: 190px;
+  border-radius: 18px;
   object-fit: cover;
   object-position: top;
   height: 110px;
@@ -114,55 +114,55 @@
 .clientImg:nth-child(5) {
   left: 215px;
   top: 295px;
-  width: 195px;
-  border-radius: 30px;
+  width: 190px;
+  border-radius: 18px;
   object-fit: cover;
   object-position: top;
   height: 110px;
 }
 
 .clientImg:nth-child(6) {
-  left: 27.7%;
+  left: 28.4%;
   top: 55px;
-  width: 160px;
+  width: 150px;
   object-fit: cover;
-  height: 190px;
-  border-radius: 30px;
+  height: 185px;
+  border-radius: 18px;
 }
 
 .clientImg:nth-child(7) {
-  left: 38.9%;
+  left: 39.4%;
   top: 20px;
-  width: 160px;
+  width: 150px;
   object-fit: cover;
-  height: 190px;
-  border-radius: 30px;
+  height: 185px;
+  border-radius: 18px;
 }
 
 .clientImg:nth-child(8) {
-  left: 50.3%;
+  left: 50.6%;
   top: 20px;
-  width: 160px;
+  width: 150px;
   object-fit: cover;
-  height: 190px;
-  border-radius: 30px;
+  height: 185px;
+  border-radius: 18px;
 }
 
 /* right cluster (two columns of two) */
 .clientImg:nth-child(9) {
-  right: 28%;
+  right: 28.2%;
   top: 55px;
-  width: 160px;
+  width: 150px;
   object-fit: cover;
-  height: 190px;
-  border-radius: 30px;
+  height: 185px;
+  border-radius: 18px;
 }
 
 .clientImg:nth-child(10) {
   right: 14.5%;
   top: 33px;
-  width: 195px;
-  border-radius: 30px;
+  width: 190px;
+  border-radius: 18px;
   object-fit: cover;
   object-position: top;
   height: 115px;
@@ -171,8 +171,8 @@
 .clientImg:nth-child(11) {
   right: 14.5%;
   top: 163px;
-  width: 195px;
-  border-radius: 30px;
+  width: 190px;
+  border-radius: 18px;
   object-fit: cover;
   object-position: 90% 15%;
   height: 115px;
@@ -181,8 +181,8 @@
 .clientImg:nth-child(12) {
   right: 14.5%;
   top: 290px;
-  width: 195px;
-  border-radius: 30px;
+  width: 190px;
+  border-radius: 18px;
   object-fit: cover;
   object-position: 90% 20%;
   height: 115px;
@@ -195,7 +195,7 @@
   object-fit: cover;
   object-position: 100% 20%;
   height: 150px;
-  border-radius: 30px;
+  border-radius: 18px;
 }
 
 .clientImg:nth-child(14) {
@@ -205,7 +205,7 @@
   object-fit: cover;
   object-position: 100% 20%;
   height: 150px;
-  border-radius: 30px;
+  border-radius: 18px;
 }
 
 /* ── Desktop: scatter the frames using absolute top / left / right ── */
@@ -790,6 +790,7 @@
     top: 75px;
     width: 125px;
     height: 110px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(2) {
@@ -797,6 +798,7 @@
     top: 220px;
     width: 125px;
     height: 110px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(3) {
@@ -804,6 +806,7 @@
     top: 65px;
     width: 110px;
     height: 90px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(4) {
@@ -811,6 +814,7 @@
     top: 170px;
     width: 110px;
     height: 90px;
+    border-radius: 16px;
   }
 
   /* center row (larger) */
@@ -819,6 +823,7 @@
     top: 270px;
     width: 110px;
     height: 90px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(6) {
@@ -826,6 +831,7 @@
     top: 55px;
     width: 95px;
     height: 140px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(7) {
@@ -833,6 +839,7 @@
     top: 20px;
     width: 95px;
     height: 140px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(8) {
@@ -840,6 +847,7 @@
     top: 20px;
     width: 95px;
     height: 140px;
+    border-radius: 16px;
   }
 
   /* right cluster (two columns of two) */
@@ -848,6 +856,7 @@
     top: 55px;
     width: 95px;
     height: 140px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(10) {
@@ -855,6 +864,7 @@
     top: 45px;
     width: 110px;
     height: 90px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(11) {
@@ -862,6 +872,7 @@
     top: 155px;
     width: 110px;
     height: 90px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(12) {
@@ -869,6 +880,7 @@
     top: 265px;
     width: 110px;
     height: 90px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(13) {
@@ -876,6 +888,7 @@
     top: 50px;
     width: 125px;
     height: 110px;
+    border-radius: 16px;
   }
 
   .clientImg:nth-child(14) {
@@ -883,6 +896,7 @@
     top: 205px;
     width: 125px;
     height: 110px;
+    border-radius: 16px;
   }
 }
 
@@ -1120,18 +1134,21 @@
     left: 3%;
     top: 55px;
     width: 90px;
+    border-radius: 12px;
   }
 
   .clientImg:nth-child(7) {
     left: 25%;
     top: 20px;
     width: 90px;
+    border-radius: 12px;
   }
 
   .clientImg:nth-child(8) {
     left: 55%;
     top: 20px;
     width: 90px;
+    border-radius: 12px;
   }
 
   /* right cluster (two columns of two) */
@@ -1139,6 +1156,7 @@
     right: 20px;
     top: 55px;
     width: 90px;
+    border-radius: 12px;
   }
 
   .mosaicWrap {

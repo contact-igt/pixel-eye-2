@@ -712,8 +712,8 @@
   }
 
   .treatment-diagnosis__media-label {
-    bottom: -30px;
-    left: -5%;
+    bottom: -35px;
+    left: -3%;
     width: 258px;
     font-size: clamp(16px, 1.05vw, 16px);
   }
@@ -765,7 +765,7 @@
   }
 
   .treatment-diagnosis__media-label {
-     bottom: -35px;
+    bottom: -40px;
     left: -2%;
     width: 258px;
     font-size: clamp(16px, 1.05vw, 16px);
@@ -1289,7 +1289,7 @@
     border-radius: 0;
     font-size: clamp(12px, 1.4vw, 15px);
     line-height: 1.15;
-     bottom: -10px;
+    bottom: -10px;
     left: 0%;
     width: 200px;
     font-size: clamp(14px, 1.05vw, 14px);
@@ -1345,6 +1345,7 @@
   .treatment-diagnosis__treatment-dot--active {
     background-color: #273979;
   }
+
   .treatment-diagnosis__treatment-slider :global(.slick-list) {
     overflow: hidden;
     margin: 0 -10px;
@@ -1503,7 +1504,7 @@
     bottom: 0px;
     left: 0%;
     min-height: 45px;
-     bottom: -45px;
+    bottom: -45px;
     left: 0%;
     width: 180px;
     font-size: clamp(12.5px, 1vw, 12.5px);
@@ -1521,7 +1522,7 @@
 @media (max-width: 768px) {
   .treatment-diagnosis {
     width: min(100%, calc(100% - 36px));
-        margin: 80px auto 0;
+    margin: 80px auto 0;
   }
 
   .treatment-diagnosis__panel {
@@ -1585,7 +1586,7 @@
 
   .treatment-diagnosis__media-label {
     font-size: clamp(10px, 1.4vw, 10px);
-     bottom: -48px;
+    bottom: -50px;
     left: 0%;
     width: 132px;
   }
@@ -1661,7 +1662,7 @@
     bottom: -9px;
     left: 2%;
     font-size: clamp(12px, 1.4vw, 12px);
-     bottom: -40px;
+    bottom: -45px;
     left: 0%;
     width: min(100%, 170px);
   }
@@ -1675,6 +1676,11 @@
 @media (max-width: 390px) {
   .treatment-diagnosis {
     width: min(100%, calc(100% - 22px));
+  }
+
+  .treatment-diagnosis__media-list {
+    gap: clamp(25px, 12vw, 45px);
+
   }
 
   .treatment-diagnosis__panel {
@@ -1704,10 +1710,10 @@
   }
 
   .treatment-diagnosis__media-label {
-     bottom: -48px;
+    bottom: -50px;
     left: 0%;
-    font-size: clamp(10px, 1vw, 10px);
-    width: min(100%, 150px);
+    font-size: clamp(13px, 1vw, 10px);
+    width: min(100%, 157px);
 
   }
 }
@@ -1824,5 +1830,25 @@
     transition: none;
     transform: none;
     opacity: 1;
+  }
+}
+
+/* Diagnosis treatment slider: show one item below 450px only. */
+@media (max-width: 480px) {
+  .treatment-diagnosis__treatment-track {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+  }
+
+  .treatment-diagnosis__treatment-track .treatment-diagnosis__treatment-card:nth-child(n + 2) {
+    display: none;
+  }
+
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card,
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card:nth-child(1),
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card:nth-child(2),
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card:nth-child(3),
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card:nth-child(4) {
+    width: 100%;
   }
 }

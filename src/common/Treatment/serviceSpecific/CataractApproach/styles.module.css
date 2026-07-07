@@ -133,6 +133,7 @@
         margin-top: 22px;
         font-size: 32px;
     }
+
     .cataract-approach__copy {
         transform: translateY(40px);
     }
@@ -144,10 +145,22 @@
 
 @media (max-width: 767px) {
     .cataract-approach {
-          margin-bottom: 10px;
+        margin-bottom: 10px;
     }
+
     .cataract-approach__inner {
+        display: flex;
+        flex-direction: column;
         width: min(1600px, calc(100% - 40px));
+    }
+
+    .cataract-approach__copy {
+        order: 1;
+        margin-top: 0;
+    }
+
+    .cataract-approach__media {
+        order: 2;
     }
 
     .cataract-approach__img {
@@ -155,6 +168,7 @@
     }
 
     .cataract-approach__copy h2 {
+        margin-top: 0;
         font-size: var(--h2-size, 36px);
     }
 
@@ -162,7 +176,6 @@
         font-size: var(--body-size, 18px);
     }
 }
-
 /* @media (max-width: 389px) {
     .cataract-approach__inner {
         width: min(1600px, calc(100% - 28px));
@@ -182,3 +195,5 @@
         height: 220px;
     }
 } */
+
+
