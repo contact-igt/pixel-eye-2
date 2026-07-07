@@ -1,12 +1,8 @@
-﻿.visionSection,
+.visionSection,
 .section {
   width: 100%;
   padding: var(--section-pt) var(--section-px) var(--section-pb);
   margin-top: 70px;
-}
-
-.revealShell {
-  width: 100%;
 }
 
 .inner {
@@ -42,16 +38,7 @@
 }
 
 .cardBlock {
-  opacity: 0;
-  transform: translateY(18px);
-  transition:
-    opacity 600ms ease,
-    transform 600ms ease;
-}
-
-[data-visible="true"] .cardBlock {
-  opacity: 1;
-  transform: translateY(0);
+  width: 100%;
 }
 
 .forceVisible [data-visionaries-header],
@@ -231,17 +218,6 @@
   height: 1px;
   margin: clamp(64px, 5vw, 92px) 0 clamp(64px, 5vw, 92px);
   background: rgba(120, 168, 223, 0.9);
-  opacity: 0;
-  transform: scaleX(0.85);
-  transform-origin: center;
-  transition:
-    opacity 500ms ease 160ms,
-    transform 500ms ease 160ms;
-}
-
-[data-visible="true"] .divider {
-  opacity: 1;
-  transform: scaleX(1);
 }
 
 @media (min-width: 1200px) and (max-width: 1399px) {
@@ -312,9 +288,6 @@
     width: min(1448px, calc(100% - 90px));
   }
 
-
-
-
   .row,
   .rowReverse {
     grid-template-columns: 1fr;
@@ -363,7 +336,6 @@
     width: min(1448px, calc(100% - 96px));
   }
 
-
   .mediaSection,
   .rowReverse .mediaSection {
     width: min(100%, 610px);
@@ -401,8 +373,6 @@
     margin-top: 50px;
   }
 }
-
-
 
 @media (max-width: 768px) {
   .inner {

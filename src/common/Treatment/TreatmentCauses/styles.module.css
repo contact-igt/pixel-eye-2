@@ -4,7 +4,7 @@
 }
 
 .treatment-causes {
-  width: min(1640px, calc(100% - 230px));
+  width: min(1640px, calc(100% - 180px));
   margin: 150px auto 0px;
   padding: 6px 0 0;
   overflow: hidden;
