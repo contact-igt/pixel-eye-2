@@ -94,7 +94,7 @@
 
     .copy p {
         width: 100%;
-        font-size: clamp(17px, 1.08vw, 20px);
+        font-size: clamp(20px, 1.08vw, 20px);
     }
 
     .visual {
