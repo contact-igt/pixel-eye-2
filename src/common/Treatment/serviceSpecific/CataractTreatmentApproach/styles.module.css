@@ -227,7 +227,11 @@
 
     .treatment-approach__picture {
         display: block;
-        width: 100%;
+        order: 2;
+        width: calc(100% - 40px);
+        margin-inline: auto;
+        overflow: hidden;
+        border-radius: var(--radius-card-lg, 16px);
     }
 
     .treatment-approach__content {
@@ -254,11 +258,6 @@
         background: #fff;
     }
 
-    .treatment-approach__media {
-        order: 2;
-        overflow: hidden;
-        border-radius: var(--radius-card-lg, 16px);
-    }
 
     .treatment-approach__image {
         position: static;
@@ -266,6 +265,7 @@
         height: auto;
         aspect-ratio: 344 / 190;
         object-fit: cover;
+        border-radius: inherit;
     }
 
     .treatment-approach__overlay {
@@ -293,14 +293,13 @@
     }
 
     .treatment-approach__content p {
-        font-size: 20px;
-        line-height: 1.15;
-        margin: 0 0 26px;
+        font-size: 16px;
+        line-height: 1.35;
+        margin: 0 0 20px;
     }
 
     .treatment-approach__content p:last-child {
         margin-bottom: 0;
-        font-size: 16px;
     }
 
     .treatment-approach__addon {
@@ -310,6 +309,11 @@
 
 }
 
+@media (max-width: 480px) {
+    .treatment-approach__picture {
+        width: calc(100% - 28px);
+    }
+}
 @media (max-width: 389px) {
 
 
@@ -331,3 +335,4 @@
         font-size: 13px;
     }
 }
+

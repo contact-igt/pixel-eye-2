@@ -73,6 +73,7 @@ const TreatmentTypesCards = ({ data, slug = "treatment" }) => {
   return (
     <section
       className={styles["types-cards"]}
+      data-treatment-slug={slug}
       aria-labelledby={`${slug}-types-title`}
     >
       <div className={styles["types-cards__header"]}>

@@ -1,12 +1,4 @@
 .appointmentHeroCopy h1 {
-<<<<<<< HEAD
-    color: #273979;
-}
-
-.appointmentHeroCopy p {
-    color: rgba(42, 60, 125, 0.88);
-}
-=======
     color: #293B77;
     font-weight: 400;
 }
@@ -24,4 +16,3 @@
         margin-top: 10px;
     }
 }
->>>>>>> 6fa4da74377ca153c0eb1aabff8aeeba738924d2

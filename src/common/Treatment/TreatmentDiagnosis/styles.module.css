@@ -712,8 +712,8 @@
   }
 
   .treatment-diagnosis__media-label {
-    bottom: -30px;
-    left: -5%;
+    bottom: -35px;
+    left: -3%;
     width: 258px;
     font-size: clamp(16px, 1.05vw, 16px);
   }
@@ -765,7 +765,7 @@
   }
 
   .treatment-diagnosis__media-label {
-     bottom: -35px;
+     bottom: -40px;
     left: -2%;
     width: 258px;
     font-size: clamp(16px, 1.05vw, 16px);
@@ -1585,7 +1585,7 @@
 
   .treatment-diagnosis__media-label {
     font-size: clamp(10px, 1.4vw, 10px);
-     bottom: -48px;
+     bottom: -50px;
     left: 0%;
     width: 132px;
   }
@@ -1661,7 +1661,7 @@
     bottom: -9px;
     left: 2%;
     font-size: clamp(12px, 1.4vw, 12px);
-     bottom: -40px;
+     bottom: -45px;
     left: 0%;
     width: min(100%, 170px);
   }
@@ -1704,7 +1704,7 @@
   }
 
   .treatment-diagnosis__media-label {
-     bottom: -48px;
+     bottom: -50px;
     left: 0%;
     font-size: clamp(10px, 1vw, 10px);
     width: min(100%, 150px);

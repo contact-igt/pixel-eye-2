@@ -159,6 +159,11 @@
 }
 
 @media (max-width: 991px) {
+  .treatment-faq {
+    margin-top: 0;
+    padding-top: clamp(40px, 4vw, 50px);
+  }
+
   .treatment-faq__inner {
     width: min(1600px, calc(100% - 64px));
     gap: 28px;
@@ -229,3 +234,4 @@
     transform: none;
   }
 }
+

@@ -157,6 +157,10 @@
 }
 
 @media (max-width: 991px) {
+    .cataract-faq {
+        padding-top: clamp(28px, 4vw, 40px);
+    }
+
     .cataract-faq__inner {
         width: min(1600px, calc(100% - 64px));
         gap: 28px;
@@ -234,3 +238,4 @@
         transform: none;
     }
 }
+
