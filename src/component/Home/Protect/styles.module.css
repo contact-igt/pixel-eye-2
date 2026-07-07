@@ -55,7 +55,13 @@
   left: var(--slider-position);
   transform: translateX(-50%);
   z-index: 6;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+
+.sliderHandle:active {
+  cursor: grabbing;
 }
 
 .sliderHandleImage {

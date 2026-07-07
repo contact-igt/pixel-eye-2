@@ -95,12 +95,7 @@ const Protect = () => {
 
   return (
     <section className={styles.protectSection}>
-      <div
-        className={styles.bannerFrame}
-        ref={containerRef}
-        onMouseDown={() => setIsDragging(true)}
-        onTouchStart={() => setIsDragging(true)}
-      >
+      <div className={styles.bannerFrame} ref={containerRef}>
         {/* Background / After Image */}
         <div className={styles.imageLayer}>
           <Image
@@ -148,6 +143,8 @@ const Protect = () => {
         <div
           className={styles.sliderHandle}
           style={{ "--slider-position": `${sliderPosition}%` }}
+          onMouseDown={() => setIsDragging(true)}
+          onTouchStart={() => setIsDragging(true)}
         >
           <Image
             src={handleImage.src}
