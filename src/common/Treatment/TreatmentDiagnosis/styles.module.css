@@ -1832,3 +1832,23 @@
     opacity: 1;
   }
 }
+
+/* Diagnosis treatment slider: show one item below 450px only. */
+@media (max-width: 480px) {
+  .treatment-diagnosis__treatment-track {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+  }
+
+  .treatment-diagnosis__treatment-track .treatment-diagnosis__treatment-card:nth-child(n + 2) {
+    display: none;
+  }
+
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card,
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card:nth-child(1),
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card:nth-child(2),
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card:nth-child(3),
+  .treatment-diagnosis__treatment-slider .treatment-diagnosis__treatment-card:nth-child(4) {
+    width: 100%;
+  }
+}
