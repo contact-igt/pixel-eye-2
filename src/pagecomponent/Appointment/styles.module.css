@@ -1,7 +1,18 @@
 .appointmentHeroCopy h1 {
-    color: #273979;
+    color: #293B77;
+    font-weight: 400;
 }
 
 .appointmentHeroCopy p {
-    color: rgba(42, 60, 125, 0.88);
+    color: #293B77;
+    font-weight: 400;
+}
+
+@media (max-width: 767px) {
+    .appointmentHeroCopy h1,
+    .appointmentHeroCopy p {
+        color: #232A46;
+        width: 220px;
+        margin-top: 10px;
+    }
 }
