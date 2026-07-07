@@ -902,3 +902,16 @@
   }
 
 }
+
+
+
+@media (max-width: 400px) {
+  .menuBtn {
+    right: 100px;
+    top: 18px;
+  }
+
+  .nabhBadge {
+    width: 95px;
+  }
+}

@@ -772,3 +772,33 @@
 
 }
 
+
+
+@media (max-width : 400px) {
+
+  .clientImg:nth-child(6) {
+    left: 2%;
+    top: 65px;
+    width: 80px;
+  }
+
+  .clientImg:nth-child(7) {
+    left: 26%;
+    top: 30px;
+    width: 80px;
+  }
+
+  .clientImg:nth-child(8) {
+    left: 50%;
+    top: 30px;
+    width: 80px;
+  }
+
+  /* right cluster (two columns of two) */
+  .clientImg:nth-child(9) {
+    right: 8px;
+    top: 65px;
+    width: 80px;
+  }
+  
+}

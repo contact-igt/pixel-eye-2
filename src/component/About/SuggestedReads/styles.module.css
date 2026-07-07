@@ -655,6 +655,9 @@
     right: 40px;
     bottom: 30px;
   }
+  .section{
+    padding: 30px 15px;
+  }
 }
 @media (max-width: 490px) {
   .sideMediaCol .datePill {

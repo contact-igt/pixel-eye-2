@@ -463,3 +463,33 @@
     }
 
 }
+
+
+@media (max-width : 400px) {
+
+    .doctorHoverCard2 {
+        top: 47px;
+        width: 300px;
+        left: -35%;
+        width: 260px;
+        height: 178px;
+        padding: 20px 70px 0px 20px;
+
+    }
+
+.doctorHoverCard {
+        top: 32px;
+        left: 130%;
+        width: 250px;
+        height: 162px;
+        padding: 20px 10px 0px 60px;
+    }
+
+    .doctorHoverName {
+        font-size: 18px;
+    }
+    .doctorHoverContent {
+        font-size: 12px;
+    }
+    
+}

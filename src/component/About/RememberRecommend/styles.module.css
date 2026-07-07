@@ -334,6 +334,7 @@
 @media (max-width: 575px) {
   .inner {
     width: min(1600px, calc(100% - 40px));
+    padding: 0 15px;
   }
 
   .slideOuter {

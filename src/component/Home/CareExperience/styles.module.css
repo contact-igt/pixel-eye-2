@@ -240,8 +240,19 @@
 
 }
 
-@media (max-width: 425px) {
+@media (max-width: 400px) {
   .title {
-    top: -160%;
+    top: -133%;
+    font-size: 24px;
+    width: 220px;
+  }
+
+  .experienceSection {
+    padding: 15px;
+  }
+  
+
+  .imgeWrap {
+    height: 350px;
   }
 }

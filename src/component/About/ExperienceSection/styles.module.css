@@ -312,6 +312,9 @@
     width: min(100%, calc(100%));
   }
 
+  .section {
+   padding:30px 15px;
+  }
 
   .subtitle,
   .copy {

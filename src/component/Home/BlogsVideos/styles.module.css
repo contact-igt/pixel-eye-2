@@ -245,6 +245,10 @@
     font-size: 17px;
     text-align: left;
   }
+  .blogsSection {
+    margin-top: 60px;
+    padding: 0 15px;
+  }
 }
 
 /* ─── Very Small Mobile ─────────────────────── 389px ── */

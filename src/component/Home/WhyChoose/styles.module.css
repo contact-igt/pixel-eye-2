@@ -409,3 +409,12 @@
         width: 100%;
     }
 }
+
+
+@media (max-width:400px) {
+    .centerCard {
+        width: 100%;
+        height: 280px;
+    }
+    
+}

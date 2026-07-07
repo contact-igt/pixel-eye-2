@@ -414,3 +414,14 @@
 
 
 }
+
+
+@media (max-width:400px) {
+
+  .bookArea {
+    right: -10px;
+    bottom: -8px;
+    min-width: 155px;
+  }
+  
+}
