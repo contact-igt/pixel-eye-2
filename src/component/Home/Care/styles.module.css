@@ -1,0 +1,438 @@
+.careSection {
+  margin-top: 100px;
+  padding: var(--section-px);
+}
+
+.careContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  width: auto;
+  max-width: 420px;
+  margin: 0;
+  font-size: 48px;
+  line-height: var(--h2-lh);
+  font-weight: 400;
+  color: var(--text-heading);
+}
+
+.careVisual {
+  --side-card-width: 320px;
+  --center-card-width: 430px;
+  --side-card-height: 474px;
+  --center-card-height: 590px;
+  --card-gap: 34px;
+  position: relative;
+  max-width: var(--container-max);
+  margin: 32px auto 0;
+  padding: 32px 24px 24px;
+  min-height: 820px;
+}
+
+.panelBg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 206px;
+  bottom: 0;
+  border-radius: 30px;
+  background: #c5d5f6;
+  z-index: 0;
+}
+
+.cardsRow {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: var(--side-card-width) var(--center-card-width) var(--side-card-width);
+  gap: var(--card-gap);
+  justify-content: center;
+  align-items: start;
+  transition: grid-template-columns 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activeRow1 {
+  grid-template-columns: var(--center-card-width) var(--side-card-width) var(--side-card-width);
+}
+
+.activeRow2 {
+  grid-template-columns: var(--side-card-width) var(--center-card-width) var(--side-card-width);
+}
+
+.activeRow3 {
+  grid-template-columns: var(--side-card-width) var(--side-card-width) var(--center-card-width);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card-md);
+  isolation: isolate;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sideCard {
+  width: var(--side-card-width);
+  height: var(--side-card-height);
+}
+
+.centerCard {
+  width: var(--center-card-width);
+  height: var(--center-card-height);
+}
+
+.cardImage {
+  object-fit: cover;
+  object-position: right top;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.defaultImage {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hoverImage {
+  opacity: 0;
+  z-index: 2;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.cardTitle {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 400;
+  z-index: 4;
+  transition: font-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.centerTitle {
+  font-size: 30px;
+  left: 30px;
+}
+
+.cardWrap {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.sideWrap {
+  align-self: start;
+  margin-top: 18px;
+  transition: margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.centerWrap {
+  align-self: start;
+  margin-top: 0;
+  transition: margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardDescription {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding-top: 12px;
+  color: var(--brand-blue);
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 500;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease, visibility 250ms ease;
+}
+
+.descriptionVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ctaButton {
+  position: absolute;
+  right: 170px;
+  bottom: 45px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--brand-blue);
+}
+
+
+
+.cardsRow .cardWrap:nth-child(1) .centerTitle {
+  bottom: 30px;
+
+}
+
+.cardWrap:nth-child(1) {
+  padding-bottom: 80px;
+}
+
+
+
+
+/* ─── Large Laptop ──────────────────────────── 1399px ── */
+@media (max-width: 1399px) {
+
+  .careSection {
+    margin-top: 80px;
+  }
+
+
+  .cardWrap {
+    padding-bottom: 60px;
+  }
+
+  .careVisual {
+    --side-card-width: 280px;
+    --center-card-width: 380px;
+    --side-card-height: 395px;
+    --center-card-height: 520px;
+    --card-gap: 24px;
+    min-height: 730px;
+    padding: 30px 18px 22px;
+  }
+
+  .panelBg {
+    top: 170px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+    padding-top: 4px;
+  }
+
+  .centerTitle {
+    bottom: 20px;
+    font-size: 25px;
+  }
+
+  .cardsRow .cardWrap:nth-child(1) .centerTitle {
+    bottom: 30px;
+  }
+
+  .cardsRow .cardWrap:nth-child(3) .centerTitle {
+    bottom: 30px;
+  }
+
+  .cardWrap:nth-child(1) {
+    padding-bottom: 35px;
+  }
+
+  .cardWrap:nth-child(3) {
+    padding-bottom: 25px;
+  }
+
+  .careContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: var(--h2-lh);
+  }
+
+}
+
+
+@media (max-width: 1199px) {
+
+
+  .careVisual {
+    --card-gap: 20px;
+    --side-card-width: 260px;
+    --center-card-width: 370px;
+  }
+
+  .cardWrap {
+    padding-bottom: 50px !important;
+  }
+
+  .careContainer {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: var(--h2-lh);
+  }
+
+  .ctaButton {
+    right: 50px;
+    bottom: 40px;
+  }
+
+}
+
+/* ─── Tablet ────────────────────────────────── 991px ── */
+@media (max-width: 991px) {
+  .careVisual {
+    --side-card-width: 260px;
+    --center-card-width: 330px;
+    --card-gap: 20px;
+    min-height: auto;
+  }
+
+  .panelBg {
+    top: 132px;
+    border-radius: 24px;
+  }
+
+  .cardsRow {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .sideWrap,
+  .centerWrap {
+    margin-top: 0;
+    width: min(100%, 380px);
+    padding-bottom: 0;
+  }
+
+  .sideCard,
+  .centerCard {
+    width: 100%;
+  }
+
+  .sideCard {
+    height: 420px;
+  }
+
+  .centerCard {
+    height: 500px;
+  }
+
+  .cardDescription {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    padding-top: 10px;
+    font-size: 14px;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .ctaButton {
+    position: relative;
+    left: 35%;
+    bottom: auto;
+    margin: 18px auto 0;
+    width: fit-content;
+  }
+
+  .cardsRow .cardWrap:nth-child(1) .centerTitle {
+    bottom: 8px;
+  }
+
+  .cardsRow .cardWrap:nth-child(3) .centerTitle {
+    bottom: 30px;
+  }
+}
+
+/* ─── Mobile ────────────────────────────────── 767px ── */
+@media (max-width: 767px) {
+  .ctaButton {
+    left: 28%;
+  }
+}
+
+/* ─── Small Mobile ──────────────────────────── 575px ── */
+@media (max-width: 575px) {
+
+  .title {
+    font-size: 32px;
+    line-height: var(--h2-lh);
+  }
+
+  .careSection {
+    margin-top: 60px;
+  }
+
+  .careVisual {
+    padding: 40px 20px;
+  }
+
+  .panelBg {
+    top: 0px;
+    border-radius: 24px;
+  }
+
+  .sideWrap,
+  .centerWrap {
+    width: min(100%, 360px);
+  }
+
+  .sideCard {
+    height: 170px;
+  }
+
+  .centerCard {
+    height: 280px;
+  }
+
+  .centerTitle {
+    font-size: 20px;
+    width: 100%;
+    left: 0px;
+    text-align: center;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .cardDescription {
+    font-size: 16px;
+    line-height: 1.4;
+    padding-top: 15px;
+  }
+
+  .ctaButton {
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    margin: 0px;
+    width: 100%;
+    position: relative;
+  }
+
+  .cardWrap {
+    padding-bottom: 20px !important;
+
+  }
+
+  .cardWrap:nth-child(1),
+  .cardRow,
+  .centerTitle {
+    bottom: 20px !important;
+
+  }
+
+
+
+}

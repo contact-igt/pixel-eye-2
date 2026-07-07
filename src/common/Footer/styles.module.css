@@ -1,0 +1,282 @@
+.footerWrap {
+  margin-top: 100px;
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 20px 0px 0px;
+  /* NOTE: #293B77 is the footer brand dark — visually distinct from --surface-dark-blue (#2f4587).
+     A dedicated --bg-footer token is recommended in globals.css for a future phase. */
+  background: #293B77;
+  color: #dbe6ff;
+  padding: 150px 100px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1.2fr 0.85fr;
+  gap: 34px;
+}
+
+.col {
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  max-width: 220px;
+}
+
+.about {
+  margin-top: 30px;
+  max-width: 245px;
+  color: #ffff;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.title {
+  margin: 0 0 15px;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #9eb2e5;
+}
+
+.linkList,
+.contactList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linkItem {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #dbe6ff;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.linkItem:hover {
+  color: #ffffff;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 15px;
+}
+
+.contactText {
+  color: #dbe6ff;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.iconCircle {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #b9c8f4;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9d7ff;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.iconImage {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #dbe6ff;
+  text-decoration: none;
+}
+
+.socialIcon:hover {
+  color: #ffffff;
+}
+
+.socialImage {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.plainLogoBg {
+  position: absolute;
+  right: 30px;
+  bottom: 14px;
+  width: 400px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.copyBar {
+  position: absolute;
+  left: 44px;
+  right: 44px;
+  bottom: 16px;
+  border-radius: 10px;
+  background: #232A46;
+  text-align: center;
+  z-index: 2;
+}
+
+.copyBar p {
+  margin: 0;
+  padding: 11px 18px;
+  color: #bfcaed;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+/* ─── Laptop ────────────────────────────────── 1199px ── */
+@media (max-width: 1199px) {
+  .footer {
+    padding: 110px 56px 86px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 28px;
+  }
+
+  .plainLogoBg {
+    right: -92px;
+    bottom: -206px;
+    width: 460px;
+  }
+}
+
+/* ─── Tablet ────────────────────────────────── 991px ── */
+@media (max-width: 991px) {
+  .footer {
+    padding: 96px 44px 78px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 24px;
+  }
+
+  .copyBar {
+    left: 24px;
+    right: 24px;
+  }
+}
+
+/* ─── Mobile ────────────────────────────────── 767px ── */
+@media (max-width: 767px) {
+  .footerWrap {
+    padding: 6px;
+  }
+
+  .footer {
+    padding: 72px 24px 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .about {
+    margin-top: 18px;
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .linkItem,
+  .contactText {
+    font-size: 14px;
+  }
+
+  .plainLogoBg {
+    width: 330px;
+    right: -102px;
+    bottom: -150px;
+    opacity: 0.18;
+  }
+
+  .copyBar {
+    position: static;
+    grid-column: 1 / -1;
+    margin-top: 14px;
+    left: auto;
+    right: auto;
+  }
+
+  .copyBar p {
+    padding: 10px 12px;
+  }
+}
+
+/* ─── Small Mobile ──────────────────────────── 575px ── */
+@media (max-width: 575px) {
+  .footerWrap {
+    padding: 4px;
+    margin-top: 50px;
+  }
+
+  .footer {
+    padding: 52px 16px 22px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    border-radius: 12px;
+    
+  }
+
+  .socialRow {
+    gap: 14px;
+  }
+
+  .plainLogoBg {
+    width: 250px;
+    right: -86px;
+    bottom: -118px;
+    opacity: 0.14;
+  }
+}
+
+/* ─── Very Small Mobile ─────────────────────── 389px ── */
+@media (max-width: 389px) {
+  .footer {
+    padding: 42px 12px 18px;
+    gap: 14px;
+  }
+
+  .title {
+    font-size: 17px;
+  }
+
+  .about,
+  .linkItem,
+  .contactText {
+    font-size: 13px;
+  }
+
+  .copyBar p {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+}

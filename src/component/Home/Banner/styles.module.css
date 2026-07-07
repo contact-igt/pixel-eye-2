@@ -1,0 +1,427 @@
+/* ── Page padding — ~20px from browser edges ── */
+.bannerSection {
+  padding: var(--section-pt) var(--section-px);
+  position: relative;
+}
+
+/* ── Banner card ── */
+.bannerFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card-md);
+  /* NO min-height — the flow image determines the natural height */
+}
+
+.bannerImageViewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.bannerImageTrack {
+  display: flex;
+  width: 200%;
+  transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.bannerImageSlide {
+  flex: 0 0 50%;
+  position: relative;
+}
+
+.bannerImageSlide picture {
+  display: block;
+  width: 100%;
+}
+
+/* ── Hero image — flow element so natural 16:9 aspect sets the height ── */
+/* At 1400px frame width → height = 1400 * (1080/1920) ≈ 788px          */
+.bannerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bannerImageTrack {
+    animation: none;
+    transition: none;
+  }
+}
+
+.heroSlide {
+  animation: heroSlideIn 900ms ease;
+}
+
+@keyframes heroSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Hero copy ── */
+.heroContent {
+  position: absolute;
+  left: 56px;
+  top: 35%;
+  /* no transform — top of block starts at 35% */
+  z-index: 2;
+  width: min(460px, 42%);
+}
+
+.heroTitle {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-size: 50px;
+  /* 44px desktop, scales via globals */
+  line-height: 60px;
+  /* 1.12 */
+  font-weight: 400;
+  /* regular weight — matches reference */
+  font-family: var(--font-primary);
+}
+
+.heroText {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  max-width: 430px;
+  font-family: var(--font-primary);
+}
+
+.heroReveal {
+  display: block;
+  opacity: 0;
+  transform: translateY(-26px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+[data-visible="true"].heroReveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaWrap {
+  margin-top: 26px;
+}
+
+.heroCta {
+  --btn-icon-left: 180px;
+}
+
+/* ── Slider dots ── */
+.sliderDots {
+  position: absolute;
+  right: 135px;
+  bottom: 146px;
+  /* sits above the bookArea */
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.sliderDots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(203, 154, 95, 0.45);
+}
+
+.sliderDotActive {
+  width: 10px;
+  height: 10px;
+  background: #cb9a5f;
+  /* active dot — solid gold */
+}
+
+/* ── Bottom-right booking panel ── */
+/* White notched card — border-top-left-radius creates the smooth cutout */
+.bookArea {
+  position: absolute;
+  bottom: -3px;
+  right: 5px;
+  z-index: 2;
+  background: transparent;
+  border-top-left-radius: 20px;
+  padding: 12px 16px 16px;
+  min-width: 290px;
+
+}
+
+.bookButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 55px;
+  border: 2px solid #7fa8be;
+  border-radius: var(--radius-input);
+  color: var(--text-heading);
+  background: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 160ms ease;
+}
+
+.bookButton:hover {
+  background: #edf2f8;
+}
+
+
+
+
+@media(max-width: 1499px) {
+  .bookArea {
+    right: -0.5%;
+    min-width: 280px;
+  }
+
+
+}
+
+
+
+@media (max-width: 1399px) {
+  .bookArea {
+    right: -3px;
+    min-width: 230px;
+    bottom: -12px;
+  }
+
+  .heroContent {
+    top: 30%;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+}
+
+
+
+@media (max-width: 1199px) {
+  .bookArea {
+    right: -1%;
+    min-width: 208px;
+    bottom: -14px;
+  }
+
+  .bookButton {
+
+    height: 47px;
+    font-size: 12px;
+    font-weight: 500;
+
+  }
+
+
+  .heroText {
+    max-width: 400px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+
+
+
+}
+
+
+@media (max-width: 991px) {
+  .heroContent {
+    left: 40px;
+    top: 20%;
+    width: min(440px, 48%);
+  }
+
+  .heroCta {
+    --btn-icon-left: 175px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .heroText {
+    max-width: 360px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .bookArea {
+    right: -2%;
+    min-width: 173px;
+    bottom: -15px;
+  }
+
+  .bookButton {
+    height: 37px;
+    font-size: 10px;
+    font-weight: 500;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .bannerSection {
+    padding: var(--section-px);
+  }
+
+  .bannerFrame {
+    border-radius: var(--radius-hero);
+    /* Add min-height only on tablet/mobile since image may be too short */
+    min-height: 450px;
+  }
+
+  .bannerImageViewport {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+
+  .bannerImageTrack,
+  .bannerImageSlide {
+    height: 100%;
+  }
+
+  .bannerImageSlide picture {
+    height: 100%;
+  }
+
+  /* On small screens the image must be absolutely positioned to fill the min-height */
+  .bannerImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .heroContent {
+    left: 22px;
+    right: 22px;
+    width: auto;
+    top: 25%;
+  }
+
+  .heroTitle {
+    /* font-size: 36px; */
+    margin-bottom: 20px;
+  }
+
+  .heroText {
+    max-width: unset;
+    margin-bottom: 15px;
+  }
+
+  .ctaWrap {
+    margin-top: 18px;
+  }
+
+  .heroCta {
+    --btn-icon-left: 170px;
+  }
+
+  .sliderDots {
+    right: 14px;
+    bottom: 70px;
+  }
+
+  .bookArea {
+    min-width: 210px;
+    padding: 10px 12px 12px;
+    right: 0%;
+    bottom: 0.3%;
+  }
+
+  .bookButton {
+    height: 40px;
+    font-size: 11px;
+  }
+}
+
+
+@media (max-width: 575px) {
+  .heroCta {
+    --btn-icon-left: 140px;
+  }
+
+  .bookArea {
+    right: -11px;
+    bottom: -10px;
+    min-width: 170px;
+  }
+
+  .bannerFrame {
+    min-height: 500px;
+  }
+
+  .heroCta {
+    --btn-icon-left: 170px;
+  }
+
+  .bannerImage {
+    object-fit: fill;
+  }
+
+  .heroContent {
+    top: 32%;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .heroText {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .bookButton {
+    font-size: 10px;
+
+  }
+
+
+}
+
+
+@media (max-width:400px) {
+
+  .bookArea {
+    right: -12px;
+    bottom: -8px;
+    min-width: 155px;
+  }
+
+}

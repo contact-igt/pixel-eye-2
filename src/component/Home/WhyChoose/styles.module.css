@@ -1,0 +1,428 @@
+.whyChooseSection {
+    margin-top: 100px;
+    background: var(--bg-page);
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    margin: 0 0 18px;
+    width: auto;
+    max-width: 420px;
+    font-size: 48px;
+    line-height: var(--h2-lh);
+    font-weight: 400;
+    color: var(--text-heading);
+}
+
+.cardsFrame {
+    position: relative;
+    margin-top: 70px;
+    min-height: 320px;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--radius-card-md);
+    overflow: hidden;
+    isolation: isolate;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transform-origin: center center;
+    will-change: transform, width, height, top, left, opacity;
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        width 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        top 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        left 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.45s ease;
+}
+
+.cardImage {
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.02);
+    will-change: transform;
+    transition: transform 0.4s ease;
+}
+
+.activeCard .cardImage {
+    transform: scale(1.05);
+}
+
+.sideCard {
+    width: 380px;
+    height: 280px;
+    top: 60px;
+    z-index: 1;
+    transform: scale(0.96);
+}
+
+.leftCard {
+    left: 0px;
+}
+
+.rightCard {
+    left: calc(100% - 380px);
+}
+
+.centerCard {
+    width: 600px;
+    height: 380px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    z-index: 3;
+}
+
+.sideOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(34, 48, 82, 0.44);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* Run hover-only transform on mouse/trackpad devices */
+@media (hover: hover) and (pointer: fine) {
+    .sideCard:hover {
+        transform: scale(0.98);
+    }
+}
+
+.centerOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(24, 34, 58, 0.16) 0%,
+            rgba(36, 54, 97, 0.78) 100%);
+    z-index: 2;
+}
+
+.sideContent {
+    position: absolute;
+    left: 50px;
+    right: 13px;
+    bottom: 37px;
+    z-index: 3;
+    width: 300px;
+}
+
+.sideTitle {
+    margin: 0;
+    color: #f1f4fb;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.centerContent {
+    position: absolute;
+    left: 32px;
+    right: 0px;
+    bottom: 35px;
+    z-index: 3;
+    color: #f2f5ff;
+}
+
+.centerTitle {
+    margin: 0 0 10px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.centerDescription {
+    margin: 0 0 15px;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #dfe6f5;
+    width: 400px;
+}
+
+.readMoreButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.12);
+    text-decoration: none;
+}
+
+.readMoreIcon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.readMoreIconSvg {
+    width: 12px;
+    height: 12px;
+    color: #ffffff;
+}
+
+.ctaRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.ctaLabel {
+    height: var(--btn-h);
+    background: #f3f4f8;
+    color: var(--brand-blue);
+    border-radius: var(--btn-radius);
+    border: 1px solid var(--border-soft);
+    padding: 0 24px;
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--btn-fs);
+    font-weight: var(--btn-fw);
+}
+
+.ctaArrow {
+    width: var(--btn-icon);
+    height: var(--btn-icon);
+    margin-left: -8px;
+    border-radius: 50%;
+    border: 1px solid var(--border-soft);
+    background: #f3f4f8;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ctaArrowIcon {
+    width: 18px;
+    height: 18px;
+    color: var(--brand-blue);
+}
+
+.ctaButton:hover .ctaLabel,
+.ctaButton:hover .ctaArrow {
+    background: #e9edf5;
+}
+
+.ctaButton:active .ctaLabel,
+.ctaButton:active .ctaArrow {
+    background: #e3e9f3;
+}
+
+
+
+@media (max-width: 1399px) {
+
+    .container {
+        width: min(var(--container-max), calc(100% - 48px));
+    }
+
+    .sectionTitle {
+        font-size: 40px;
+        width: 100%;
+        margin: 0 50px;
+    }
+
+}
+
+
+@media (max-width: 1199px) {
+    .container {
+        width: min(var(--container-max), calc(100% - 32px));
+    }
+
+    .cardsFrame {
+        min-height: 300px;
+    }
+
+    .sideCard {
+        width: 320px;
+        height: 240px;
+        top: 40px;
+    }
+
+    .rightCard {
+        left: calc(100% - 320px);
+    }
+
+    .centerCard {
+        width: 500px;
+        height: 320px;
+    }
+
+    .centerDescription {
+        width: 300px;
+    }
+
+    .ctaRow {
+        margin-top: 75px;
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    .ctaButton {
+        margin: 0 auto;
+    }
+
+    .sectionTitle {
+        font-size: 36px;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .container {
+        width: min(var(--container-max), calc(100% - 48px));
+    }
+
+    .cardsFrame {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        min-height: unset;
+    }
+
+    .card {
+        position: relative;
+    }
+
+    .sideCard,
+    .centerCard {
+        width: 100%;
+        top: auto;
+        margin: 0;
+    }
+
+    .sideCard {
+        height: 250px;
+        width: 450px;
+    }
+
+    .centerCard {
+        height: 350px;
+        width: 600px;
+    }
+
+    .leftCard,
+    .rightCard,
+    .centerCard {
+        left: auto;
+        right: auto;
+        transform: none;
+    }
+
+    /* Active card always moves to the centre (middle) of the stack */
+    .leftCard {
+        order: 1;
+        top:25px;
+    }
+
+    .centerCard {
+        order: 2;
+    }
+
+    .rightCard {
+        order: 3;
+        bottom: 25px;
+    }
+
+    .ctaRow {
+        justify-content: center;
+        margin-top: 24px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 575px) {
+
+
+    .sectionTitle {
+        font-size: 32px;
+        line-height: var(--h2-lh);
+        margin: 0 auto;
+    }
+
+    .centerCard {
+        width: 380px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .cardsFrame {
+        gap: 0px;
+    }
+
+    .sideCard {
+        height: 170px;
+        width: 288px;
+        margin: 0 auto;
+        border-radius: 16px 16px 0px 0px;
+    }
+
+    .rightCard {
+        border-radius: 0px 0px 16px 16px;
+    }
+
+    .sideContent {
+        left: 18px;
+        right: 18px;
+        bottom: 40px;
+    }
+
+    .ctaRow {
+        margin-top: 45px;
+    }
+
+    .centerContent {
+        left: 18px;
+        right: 18px;
+        bottom: 35px;
+    }
+
+    .whyChooseSection {
+        margin-top: 60px;
+    }
+
+    .sideTitle {
+        font-size: 20px;
+    }
+
+    .centerTitle {
+        font-size: 24px;
+    }
+
+    .centerDescription {
+        font-size: 16px;
+        width: 100%;
+    }
+}
+
+
+@media (max-width:400px) {
+    .centerCard {
+        width: 100%;
+        height: 280px;
+    }
+
+}

@@ -1,0 +1,594 @@
+.treatment-detail,
+.treatment-detail * {
+  box-sizing: border-box;
+}
+
+.treatment-detail {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+  color: #293b77;
+}
+
+.treatment-hero-wrap {
+  position: relative;
+}
+
+.treatment-hero__copy {
+  position: absolute;
+  left: clamp(66px, 7.6vw, 130px);
+  bottom: clamp(78px, 7.7vw, 148px);
+  z-index: 5;
+  width: min(560px, 42vw);
+  color: #273979;
+  pointer-events: none;
+}
+
+.treatment-hero__copy h1 {
+  margin: 0;
+  color: #273979;
+  font-family: var(--font-primary);
+  font-size: clamp(40px, 3.05vw, 58px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.treatment-hero__copy p {
+  width: min(100%, 520px);
+  margin: clamp(22px, 1.9vw, 34px) 0 0;
+  color: rgba(42, 60, 125, 0.88);
+  font-family: var(--font-primary);
+  font-size: clamp(16px, 1.08vw, 20px);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+/* Hero copy color themes: pediatric & retina use blue, others use white. */
+.treatment-hero__copy--blue,
+.treatment-hero__copy--blue h1 {
+  color: #273979;
+}
+
+.treatment-hero__copy--blue p {
+  color: rgba(42, 60, 125, 0.88);
+}
+
+.treatment-hero__copy--white,
+.treatment-hero__copy--white h1 {
+  color: #ffffff;
+}
+
+.treatment-hero__copy--white p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+.treatment-hero__image {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.treatment-explainer {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(390px, 490px) minmax(0, 900px);
+  grid-template-areas:
+    "title visual"
+    "copy visual";
+  column-gap: clamp(66px, 4.5vw, 96px);
+  row-gap: 36px;
+  align-items: center;
+  width: min(1640px, calc(100% - 230px));
+  margin: clamp(56px, 4.6vw, 86px) auto 76px;
+}
+
+.treatment-explainer__title {
+  grid-area: title;
+  align-self: end;
+  margin: 0;
+  color: #293b77;
+  font-family: var(--font-primary);
+  font-size: clamp(46px, 3.25vw, 60px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.treatment-explainer__copy {
+  grid-area: copy;
+  align-self: start;
+  max-width: 540px;
+}
+
+.treatment-explainer__copy p {
+  width: 100%;
+  margin: 0;
+  color: rgba(42, 60, 125, 0.82);
+  font-family: var(--font-primary);
+  font-size: clamp(17px, 1.08vw, 20px);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+.treatment-explainer__copy p+p {
+  margin-top: clamp(17px, 1.2vw, 22px);
+}
+
+.treatment-explainer__loader {
+  display: block;
+  width: min(270px, 68%);
+  height: auto;
+  margin-top: clamp(44px, 4vw, 70px);
+}
+
+.treatment-explainer__visual {
+  grid-area: visual;
+  width: 100%;
+  max-width: 900px;
+  justify-self: end;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+
+.treatment-explainer__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.treatment-explainer__image--mobile {
+  display: none;
+}
+
+@media (min-width: 1401px) {
+  .treatment-explainer__visual {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1600px) {
+  /* .treatment-hero__frame {
+    min-height: 755px;
+  } */
+
+  .treatment-explainer {
+    width: min(1640px, calc(100% - 230px));
+    grid-template-columns: minmax(410px, 560px) minmax(0, 940px);
+    margin-top: 86px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .treatment-explainer {
+    width: min(1240px, calc(100% - 96px));
+    grid-template-columns: minmax(360px, 480px) minmax(0, 680px);
+    column-gap: 74px;
+  }
+
+  .treatment-explainer__visual {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* .treatment-hero__frame {
+    min-height: clamp(460px, 48vw, 600px);
+  } */
+
+  .treatment-explainer {
+    grid-template-columns: minmax(300px, 0.84fr) minmax(0, 1.16fr);
+    column-gap: 58px;
+    row-gap: 30px;
+    width: min(1100px, calc(100% - 64px));
+    margin-top: 58px;
+    margin-bottom: 72px;
+  }
+
+  .treatment-explainer__title {
+    font-size: clamp(36px, 3.35vw, 46px);
+  }
+
+  .treatment-explainer__copy {
+    max-width: 460px;
+  }
+
+  .treatment-explainer__copy p {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .treatment-explainer__loader {
+    width: min(260px, 72%);
+    margin-top: 42px;
+  }
+
+  .treatment-explainer__visual {
+    max-width: 600px;
+  }
+
+  .treatment-hero__copy {
+    left: clamp(48px, 7vw, 82px);
+    bottom: clamp(62px, 7vw, 96px);
+    width: min(500px, 46vw);
+  }
+}
+
+@media (max-width: 992px) {
+
+  /* .treatment-hero__frame {
+    min-height: clamp(420px, 58vw, 540px);
+  } */
+
+
+  .treatment-hero__copy--white {
+    top: 48%;
+  }
+
+  .treatment-hero__image {
+    object-position: 58% center;
+  }
+
+  .treatment-explainer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "copy"
+      "visual";
+    row-gap: 28px;
+    width: min(820px, calc(100% - 48px));
+    margin-top: 48px;
+    margin-bottom: 72px;
+  }
+
+  .treatment-explainer__title {
+    font-size: clamp(38px, 5.8vw, 52px);
+  }
+
+  .treatment-explainer__copy {
+    max-width: 640px;
+  }
+
+  .treatment-explainer__copy p {
+    font-size: 16px;
+    line-height: 1.34;
+  }
+
+  .treatment-explainer__loader {
+    width: min(270px, 58%);
+    margin-top: 30px;
+  }
+
+  .treatment-explainer__visual {
+    justify-self: start;
+    max-width: 100%;
+  }
+
+  .treatment-hero__copy {
+    left: 44px;
+    bottom: 72px;
+    width: min(430px, 48vw);
+  }
+
+  .treatment-hero__copy h1 {
+    font-size: clamp(34px, 4vw, 44px);
+  }
+
+  .treatment-hero__copy p {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  .treatment-hero__image {
+    object-fit: fill
+  }
+
+  .treatment-hero__frame {
+    min-height: clamp(360px, 82vw, 480px);
+  }
+
+
+  .treatment-explainer {
+    width: min(100%, calc(100% - 32px));
+    row-gap: 22px;
+    margin: 38px auto 58px;
+  }
+
+  .treatment-explainer__title {
+    font-size: clamp(32px, 8vw, 44px);
+    line-height: 1.1;
+  }
+
+  .treatment-explainer__copy p {
+    font-size: 16px;
+    line-height: 1.36;
+  }
+
+  .treatment-explainer__copy p+p {
+    margin-top: 15px;
+  }
+
+  .treatment-explainer__loader {
+    width: min(250px, 76%);
+    margin-top: 24px;
+  }
+
+  .treatment-explainer__image--desktop {
+    display: none;
+  }
+
+  .treatment-explainer__image--mobile {
+    display: block;
+  }
+
+  .treatment-hero__copy {
+    left: 32px;
+    bottom: 50px;
+    width: min(380px, calc(100% - 64px));
+  }
+
+  .treatment-hero__copy h1 {
+    font-size: clamp(32px, 7vw, 42px);
+  }
+
+  .treatment-hero__copy p {
+    max-width: 340px;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  /* All treatment hero banners use white copy on mobile */
+
+
+}
+
+@media (max-width: 576px) {
+
+
+  .treatment-hero__copy,
+  .treatment-hero__copy h1 {
+    color: #ffffff;
+  }
+
+  .treatment-hero__copy p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+
+  .treatment-detail--pediatric .treatment-hero__copy,
+  .treatment-detail--pediatric .treatment-hero__copy h1 {
+    color: #ffffff;
+  }
+
+  .treatment-detail--pediatric .treatment-hero__copy p {
+    color: rgba(255, 255, 255, 0.9);
+
+  }
+
+  .treatment-hero__frame {
+    min-height: clamp(480px, 82vw, 400px);
+  }
+
+  .treatment-explainer {
+    width: min(100%, calc(100% - 24px));
+    row-gap: 20px;
+    margin-top: 32px;
+  }
+
+  .treatment-explainer__title {
+    font-size: clamp(30px, 8.8vw, 38px);
+  }
+
+  .treatment-explainer__copy p {
+    font-size: 14px;
+    line-height: 1.38;
+  }
+
+  .treatment-explainer__loader {
+    width: min(230px, 78%);
+    margin-top: 22px;
+  }
+
+  /* All treatment hero banners: title pinned to top, content pinned to bottom */
+  .treatment-hero__copy {
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 48px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: clamp(96px, 24vw, 140px);
+    padding-bottom: clamp(44px, 11vw, 72px);
+  }
+
+  /* Treatments that render copy through the shared HeroBanner (cataract,
+     keratoconus, lasik, squint) — same title-top / content-bottom layout.
+     Scoped under .treatment-detail so it overrides HeroBanner's centered copy. */
+  .treatment-detail .treatment-hero__copy--white,
+  .treatment-detail .treatment-hero__copy--blue {
+    top: 0;
+    bottom: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: clamp(96px, 24vw, 140px);
+    padding-bottom: clamp(44px, 11vw, 72px);
+  }
+
+  .treatment-hero__copy h1 {
+    font-size: clamp(26px, 4.8vw, var(--hero-title-size));
+    line-height: 1.12;
+  }
+
+  .treatment-hero__copy p {
+    max-width: 300px;
+    font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+}
+
+@media (max-width: 390px) {
+
+  .treatment-explainer {
+    width: min(100%, calc(100% - 20px));
+    margin-top: 28px;
+    row-gap: 18px;
+  }
+
+  .treatment-explainer__title {
+    font-size: 30px;
+  }
+
+  .treatment-explainer__copy p {
+    font-size: 13.5px;
+    line-height: 1.36;
+  }
+
+  .treatment-explainer__copy p+p {
+    margin-top: 13px;
+  }
+
+  .treatment-explainer__loader {
+    width: min(220px, 82%);
+    margin-top: 20px;
+  }
+
+  .treatment-hero__copy {
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 40px);
+    padding-top: clamp(84px, 24vw, 120px);
+    padding-bottom: clamp(36px, 10vw, 60px);
+  }
+
+  .treatment-hero__copy h1 {
+    font-size: clamp(26px, 4.8vw, var(--hero-title-size));
+    line-height: 1.12;
+  }
+
+  .treatment-hero__copy p {
+    max-width: 270px;
+    font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
+    line-height: 1.4;
+  }
+}
+
+/* Heading scale */
+.treatment-explainer__title {
+  font-size: var(--h2-size);
+  line-height: var(--h2-lh);
+}
+
+.treatment-explainer__cutout-title,
+.treatment-comparison {
+  display: none;
+}
+
+/* LASIK what-is variant: ported from ServiceLasik/banner. */
+.treatment-detail--lasik .treatment-explainer__cutout-title {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  z-index: 6;
+  display: block;
+  width: max-content;
+  max-width: min(680px, calc(100% - 80px));
+  margin: 0;
+  color: var(--text-heading);
+  font-family: var(--font-primary);
+  font-size: var(--h2-size);
+  font-weight: 500;
+  line-height: var(--h2-lh);
+  letter-spacing: 0;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.treatment-detail--lasik .treatment-comparison {
+  display: block;
+  padding: 0 clamp(20px, 3vw, 36px) clamp(48px, 5vw, 80px);
+}
+
+.treatment-detail--lasik .treatment-comparison__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-hero, 20px);
+}
+
+@media (max-width: 991px) {
+  .treatment-detail--lasik {
+    min-height: auto;
+  }
+
+  .treatment-detail--lasik .treatment-explainer__cutout-title {
+    width: calc(100% - 64px);
+    max-width: 560px;
+    font-size: var(--h2-size);
+    line-height: var(--h2-lh);
+  }
+
+  .treatment-detail--lasik .treatment-comparison {
+    padding: 0 0 36px;
+  }
+
+  .treatment-detail--lasik .treatment-comparison__image {
+    width: min(680px, calc(100% - 64px));
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .treatment-detail--lasik .treatment-explainer__cutout-title {
+    position: static;
+    width: calc(100% - 40px);
+    max-width: 560px;
+    margin: 26px auto 0;
+    font-size: var(--h2-size);
+    line-height: var(--h2-lh);
+    text-align: left;
+    transform: none;
+  }
+
+  .treatment-detail--lasik .treatment-comparison {
+    padding: 0 0 40px;
+  }
+
+  .treatment-detail--lasik .treatment-comparison__image {
+    width: min(560px, calc(100% - 40px));
+  }
+}
+
+@media (max-width: 575px) {
+  .treatment-detail--lasik .treatment-explainer__cutout-title {
+    width: calc(100% - 28px);
+    max-width: 100%;
+    margin-top: 22px;
+    font-size: 28px;
+  }
+
+  .treatment-detail--lasik .treatment-comparison {
+    padding: 0 0 34px;
+  }
+
+  .treatment-detail--lasik .treatment-comparison__image {
+    width: calc(100% - 28px);
+  }
+}
+
+/* Keratoconus what-is variant moved to TreatmentExplainerKeratoconus. */

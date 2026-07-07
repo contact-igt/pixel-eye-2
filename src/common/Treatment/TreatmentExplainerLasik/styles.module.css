@@ -1,0 +1,98 @@
+/* LASIK what-is explainer body. Ported from ServiceLasik/banner. */
+.explainer,
+.explainer * {
+    box-sizing: border-box;
+}
+
+.explainer {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: min(820px, calc(100% - 80px));
+    margin: 8px auto 40px;
+    text-align: center;
+}
+
+.copy {
+    max-width: none;
+}
+
+.copy p {
+    margin: 0 auto;
+    color: var(--text-body);
+    font-family: var(--font-primary);
+    font-size: var(--p-size);
+    line-height: var(--p-lh);
+}
+
+.copy p:first-child {
+    max-width: 640px;
+}
+
+.copy p+p {
+    max-width: 820px;
+    margin-top: 32px;
+}
+
+.loader {
+    display: block;
+    width: min(270px, 68%);
+    height: auto;
+    margin: clamp(44px, 4vw, 70px) auto 0;
+}
+
+@media (max-width: 991px) {
+    .explainer {
+        width: min(760px, calc(100% - 64px));
+        margin: 18px auto 36px;
+    }
+
+    .copy p {
+        font-size: var(--p-size);
+        line-height: 1.45;
+    }
+
+    .copy p:first-child {
+        max-width: 620px;
+    }
+
+    .copy p+p {
+        max-width: 760px;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .explainer {
+        width: min(560px, calc(100% - 40px));
+        margin: 16px auto 24px;
+        text-align: left;
+    }
+
+    .copy p {
+        font-size: var(--p-size);
+        line-height: 1.42;
+    }
+
+    .copy p+p {
+        margin-top: 18px;
+    }
+
+        .title {
+        font-size: 34px;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .explainer {
+        width: calc(100% - 28px);
+        margin: 14px auto 22px;
+    }
+
+    .copy p {
+        font-size: var(--p-size);
+        line-height: 1.4;
+    }
+    
+}

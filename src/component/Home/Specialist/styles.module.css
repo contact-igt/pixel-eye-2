@@ -1,0 +1,500 @@
+.specialistSection {
+    margin-top: 100px;
+    background: transparent;
+    padding: var(--section-px);
+}
+
+.frame {
+    margin: 0 auto;
+    border-radius: var(--radius-card-md);
+    overflow: hidden;
+    position: relative;
+    height: 600px;
+    background: #6ea0b5;
+}
+
+.bgWrap {
+    position: absolute;
+    top: 164px;
+    bottom: 0;
+    left: 1px;
+    width: 240px;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+    height: 475px;
+}
+
+
+.bgImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 34px 32px 34px 150px;
+    display: block;
+}
+
+.title {
+    margin: 80px 0 12px 190px;
+    color: #ffffff;
+    text-align: start;
+    font-size: 45px;
+    line-height: var(--h2-lh);
+    font-weight: 400;
+    position: relative;
+    z-index: 12;
+}
+
+.doctorsWrap {
+    position: relative;
+    height: calc(100% - 160px);
+}
+
+.doctor {
+    position: absolute;
+    bottom: -76px;
+    width: 450px;
+    height: 420px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 10px;
+    z-index: 3;
+    outline: none;
+}
+
+.doctorImage {
+    flex: 0 0 220px;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    position: relative;
+    z-index: 7;
+    cursor: pointer;
+    transform-origin: bottom center;
+    transition: transform 260ms ease;
+}
+
+.doctorActive .doctorImage {
+    transform: scale(1.08);
+}
+
+.left {
+    left: 120px;
+}
+
+.right {
+    right: 6%;
+    flex-direction: row-reverse;
+}
+
+.right .doctorName {
+    text-align: right;
+}
+
+.doctorName {
+    flex: 1;
+    padding-bottom: 50px;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+.doctorHoverCard {
+    position: absolute;
+    left: 76%;
+    top: 25px;
+    width: 400px;
+    border-radius: 18px;
+    background: rgba(29, 52, 108, 0.96);
+    color: #ffffff;
+    box-shadow: 0 18px 40px rgba(14, 24, 54, 0.26);
+    opacity: 0;
+    transform: translate(-50%, 14px) scale(0.98);
+    transition: opacity 220ms ease, transform 220ms ease;
+    pointer-events: none;
+    z-index: 2;
+    height: 225px;
+    padding: 30px 70px;
+}
+
+
+.doctorHoverCard2 {
+    position: absolute;
+    left: 20%;
+    top: 25px;
+    width: 400px;
+    border-radius: 18px;
+    background: rgba(29, 52, 108, 0.96);
+    color: #ffffff;
+    box-shadow: 0 18px 40px rgba(14, 24, 54, 0.26);
+    opacity: 0;
+    transform: translate(-50%, 14px) scale(0.98);
+    transition: opacity 220ms ease, transform 220ms ease;
+    pointer-events: none;
+    z-index: 2;
+    height: 225px;
+    padding: 30px 70px;
+}
+
+.doctorHoverName {
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.doctorHoverContent {
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #DADADA;
+    white-space: normal;
+}
+
+.doctorActive .doctorHoverCard {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+    z-index: 2;
+}
+
+.doctorActive .doctorHoverCard2 {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+    z-index: 2;
+}
+
+.doctorActive .doctorName {
+    opacity: 0;
+
+}
+
+
+@media (max-width: 1599px) {
+
+    .doctorHoverCard {
+        position: absolute;
+        left: 73%;
+        top: 25px;
+        width: 370px;
+        height: 193px;
+        padding: 50px 70px;
+    }
+
+    .doctorHoverCard2 {
+        position: absolute;
+        left: 20%;
+        top: 25px;
+        width: 370px;
+        height: 193px;
+        padding: 30px 70px;
+    }
+
+}
+
+
+
+@media (max-width: 1399px) {
+
+
+    .specialistSection {
+        margin-top: 80px;
+    }
+
+
+
+    .doctor {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        height: 350px;
+    }
+
+    .doctorImage {
+        flex: 1 1 auto;
+        height: calc(100% - 40px);
+        width: auto;
+    }
+
+    .doctorName {
+        text-align: center !important;
+        padding-bottom: 8px;
+        width: 100%;
+    }
+
+    .doctorHoverCard {
+        top: 0;
+        width: 220px;
+    }
+
+    .bgWrap {
+        position: absolute;
+        top: 180px;
+        left: 1px;
+        width: 250px;
+        height: 510px;
+    }
+
+    .left {
+        left: -100px;
+    }
+
+    .right {
+        right: -30px;
+    }
+
+    .doctorHoverCard {
+        top: 26px;
+        width: 300px;
+        left: 86%;
+        width: 340px;
+        height: 193px;
+        padding: 35px 50px;
+
+    }
+
+    .doctorHoverCard2 {
+        top: 26px;
+        width: 300px;
+        left: 10%;
+        width: 340px;
+        height: 193px;
+        padding: 40px;
+
+    }
+
+}
+
+
+
+@media (max-width: 1199px) {
+    .frame {
+        height: 500px;
+    }
+
+
+    .bgWrap {
+        top: 75px;
+        left: 1px;
+        width: 210px;
+        height: 460px;
+    }
+
+    .doctor {
+        width: 300px;
+        height: 320px;
+        bottom: -90px;
+    }
+
+    .doctorHoverCard {
+        top: 59px;
+        width: 300px;
+        left: 99%;
+        width: 289px;
+        height: 170px;
+        padding: 35px 45px;
+    }
+
+    .doctorHoverCard2 {
+        top: 59px;
+        width: 300px;
+        left: 1%;
+        width: 289px;
+        height: 170px;
+        padding: 15px 45px;
+    }
+
+    .title {
+        margin: 50px 0 12px 150px;
+        font-size: 40px;
+    }
+
+    .doctorHoverName {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .frame {
+        height: 500px;
+    }
+
+    .doctorImage {
+        flex: 0 0 270px;
+        height: calc(100% - 40px);
+        width: auto;
+        /* flex: 0 0 220px;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center; */
+    }
+
+    .doctor {
+        width: 260px;
+        height: 320px;
+    }
+
+    .bgWrap {
+        width: 220px;
+    }
+
+    .inner {
+        padding-left: 120px;
+    }
+
+    .left {
+        left: -21%;
+    }
+
+    .right {
+        right: -10%;
+    }
+
+    .doctorHoverCard2 {
+        left: -10%;
+    }
+
+    .doctorHoverCard {
+        left: 110%;
+    }
+}
+
+@media (max-width: 767px) {
+    .frame {
+        height: 380px;
+    }
+
+    .inner {
+        padding: 24px 20px 24px 90px;
+    }
+
+    .doctor {
+        width: 200px;
+        height: 260px;
+    }
+
+    .doctorImage {
+        flex: 0 0 210px;
+    }
+
+    .doctorsWrap {
+        height: calc(100% - 130px);
+    }
+
+    .title {
+        margin: 34px 0 12px 0;
+        text-align: center;
+        padding-left: 0;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .specialistSection {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+
+    .frame {
+        height: 650px;
+    }
+
+    .bgWrap {
+        top: 142px;
+        width: 175px;
+        height: 390px;
+
+    }
+
+    .inner {
+        padding: 18px 14px 18px 56px;
+    }
+
+    .title {
+        margin: 34px 0 12px 0;
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .right {
+        top: 30px;
+        right: -15px;
+    }
+
+    .left {
+        bottom: -120px;
+        left: -50px;
+    }
+
+    .doctorName {
+        display: none;
+    }
+
+    .doctor {
+        width: 150px;
+        height: 270px;
+    }
+
+    .doctorHoverCard2 {
+        top: 47px;
+        width: 300px;
+        left: -46%;
+        width: 338px;
+        height: 178px;
+        padding: 30px 79px 30px 22px;
+
+    }
+
+    .doctorHoverCard {
+        top: 32px;
+        left: 140%;
+        width: 302px;
+        height: 162px;
+        padding: 31px 10px 30px 70px;
+    }
+
+}
+
+
+@media (max-width : 400px) {
+
+    .doctorHoverCard2 {
+        top: 47px;
+        width: 300px;
+        left: -35%;
+        width: 260px;
+        height: 178px;
+        padding: 20px 70px 0px 20px;
+
+    }
+
+    .doctorHoverCard {
+        top: 32px;
+        left: 130%;
+        width: 250px;
+        height: 162px;
+        padding: 20px 10px 0px 60px;
+    }
+
+    .doctorHoverName {
+        font-size: 18px;
+    }
+
+    .doctorHoverContent {
+        font-size: 12px;
+    }
+
+}

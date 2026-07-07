@@ -1,0 +1,246 @@
+.heroSection {
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
+  position: relative;
+}
+
+.bannerFrame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-hero);
+  height: auto;
+}
+
+
+/* Short variant (compact pages) */
+.frameShort {
+  min-height: clamp(260px, 32vh, 360px);
+}
+
+/* ── Background image — fills entire frame ── */
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* Make images fill the banner consistently and crop to fit */
+  object-fit: cover;
+  /* object-position comes from inline style (imagePosition prop) */
+
+}
+
+
+
+/* Slightly offset hero copy on masked-about variant to match wider horizontal padding */
+
+/* Left-side gradient — only rendered when showOverlay=true */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: transparent;
+}
+
+.mobileOverlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--mobile-overlay-bg, rgba(0, 0, 0, 0.18));
+}
+
+/* ── Hero copy ── */
+.copy {
+  position: absolute;
+  top: 50%;
+  left: clamp(40px, 6vw, 80px);
+  transform: translateY(-50%);
+  z-index: 2;
+  width: min(540px, 50%);
+}
+
+.copyVisible .title,
+.copyVisible .subtitle,
+.copyVisible .mobileCtaWrap {
+  animation: heroCopyIn 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.copyVisible .subtitle {
+  animation-delay: 110ms;
+}
+
+.copyVisible .mobileCtaWrap {
+  animation-delay: 180ms;
+}
+
+.title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 300;
+  line-height: var(--hero-title-lh);
+  font-family: var(--font-primary);
+}
+
+.subtitle {
+  margin: clamp(14px, 1.2vw, 20px) 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--hero-paragraph-size);
+  font-weight: 300;
+  line-height: var(--hero-paragraph-lh);
+  font-family: var(--font-primary);
+  max-width: min(600px, 100%);
+}
+
+.mobileCtaWrap {
+  display: none;
+}
+
+@keyframes heroCopyIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width : 1199px) {
+
+  .title {
+    font-size: 35px;
+  }
+
+}
+
+
+
+
+
+
+@media (max-width : 991px) {
+
+  
+
+  .bannerFrame {
+    min-height: 380px;
+  }
+
+  .title {
+    top: 592px;
+    left: 29px
+  }
+
+
+  .mobileCtaWrap {
+    display: flex;
+    margin-top: 22px;
+  }
+
+  .mobileCta {
+    transform: scale(0.95);
+    transform-origin: left center;
+  }
+
+  .mobileOverlay {
+    display: block;
+
+  }
+
+  .image {
+    object-fit: fill;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .copy {
+    left: clamp(24px, 5vw, 40px);
+    width: min(440px, calc(100% - 48px));
+    top: 58%;
+  }
+
+}
+
+
+
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .heroSection {
+    padding: 12px;
+    min-height: 350px;
+  }
+
+
+  .frameShort {
+    min-height: 450px;
+  }
+
+
+
+
+  .title {
+    font-size: clamp(26px, 4.8vw, var(--hero-title-size));
+    line-height: 1.12;
+  }
+
+  .subtitle {
+    font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
+    line-height: 1.4;
+    max-width: min(420px, 100%);
+    padding: 10px 0px;
+  }
+
+  .mobileCtaWrap {
+    display: flex;
+    margin-top: 22px;
+  }
+
+  .mobileCta {
+    transform: scale(0.95);
+    transform-origin: left center;
+  }
+
+  .mobileOverlay {
+    display: block;
+  }
+}
+
+@media (max-width: 575px) {
+  .heroSection {
+    padding: 15px 10px;
+  }
+
+
+
+  .infoPannel {
+    right: -66px;
+  }
+
+
+  .frameShort {
+    min-height: 450px;
+  }
+
+  .copy {
+    left: 16px;
+    width: calc(100% - 32px);
+    top: 52%;
+  }
+
+  .mobileCtaWrap {
+    margin-top: 18px;
+  }
+
+  .bannerFrame {
+    min-height: 460px;
+  }
+
+}

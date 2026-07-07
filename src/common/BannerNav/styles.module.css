@@ -1,0 +1,943 @@
+.bannerNav {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+}
+
+.inner {
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: clamp(200px, 22vw, 264px) 1fr clamp(200px, 22vw, 320px);
+  align-items: start;
+  padding: 0px;
+}
+
+.cardRevealLeft,
+.cardRevealRight {
+  display: block;
+  opacity: 0;
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: transform, opacity;
+}
+
+.cardRevealLeft {
+  transform: translateX(-48px);
+}
+
+.cardRevealRight {
+  transform: translateX(48px);
+}
+
+[data-visible="true"].cardRevealLeft,
+[data-visible="true"].cardRevealRight {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cardRevealRight {
+  transition-delay: 120ms;
+}
+
+
+/* ── Left logo card ──────────────────────────────────── */
+.logoCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: end;
+  min-height: clamp(74px, 7.3vw, 108px);
+  border-bottom-right-radius: clamp(18px, 2.2vw, 34px);
+  margin-top: 27px;
+  padding: 0px 20px
+    /* padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px); */
+}
+
+
+
+
+.logo {
+  display: block;
+  width: clamp(130px, 13.6vw, 200px);
+  height: auto;
+}
+
+/* Desktop/mobile logo swap */
+.logo.logoMobile,
+.nabhBadge.nabhBadgeMobile {
+  display: none;
+}
+
+
+
+/* ── Center nav links ────────────────────────────────── */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(22px, 3.1vw, 46px);
+  padding-top: 50px;
+}
+
+.navItemWithMenu {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navLink {
+  color: var(--text-heading);
+  text-decoration: none;
+  font-size: clamp(11px, 0.82vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: opacity 160ms ease;
+}
+
+.navLink:hover {
+  opacity: 0.65;
+}
+
+.navLinkTrigger {
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdownToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  transition: background 160ms ease;
+}
+
+.dropdownToggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navLight .dropdownToggle:hover {
+  background: rgba(13, 18, 31, 0.06);
+}
+
+.dropdownIcon {
+  transition:
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 220ms ease;
+  transform-origin: center;
+}
+
+.dropdownIconOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 170px;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(25, 49, 98, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 140ms ease,
+    visibility 140ms ease,
+    transform 140ms ease;
+  z-index: 1110;
+}
+
+.navItemWithMenu[data-open="true"] .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--text-heading);
+  font-size: clamp(11px, 0.82vw, 13px);
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.dropdownLink:hover {
+  background: #f1f6ff;
+}
+
+/* ── Nav light variant (white text over dark hero) ───── */
+.navLight .navLink {
+  color: #ffffff;
+}
+
+.navLight .dropdownMenu {
+  border-color: rgba(233, 240, 251, 0.35);
+  background: rgba(30, 52, 102, 0.94);
+}
+
+.navLight .dropdownToggle {
+  color: #ffffff;
+}
+
+.navLight .dropdownLink {
+  color: #ffffff;
+}
+
+.navLight .dropdownLink:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.navLight .searchBtn {
+  color: #ffffff;
+}
+
+/* ── Search button ───────────────────────────────────── */
+.searchBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(24px, 1.8vw, 30px);
+  height: clamp(24px, 1.8vw, 30px);
+  border: 0;
+  background: transparent;
+  color: var(--text-heading);
+  cursor: pointer;
+  padding: 0;
+  margin-left: clamp(2px, 0.7vw, 10px);
+  transition: opacity 160ms ease;
+}
+
+.searchBtn:hover {
+  opacity: 0.65;
+}
+
+.searchBtn svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Right card (NABH badge or Book Appointment) ─────── */
+.rightCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  min-height: clamp(74px, 7.3vw, 108px);
+  border-bottom-left-radius: clamp(18px, 2.2vw, 34px);
+  padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 28px) clamp(14px, 1.8vw, 24px);
+}
+
+
+
+.nabhBadge {
+  display: block;
+  width: clamp(130px, 13.6vw, 208px);
+  height: auto;
+}
+
+.aboutMobileBadge {
+  display: none;
+}
+
+.bookBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 228px);
+  min-height: clamp(38px, 3vw, 46px);
+  border: 2px solid #7fa8be;
+  border-radius: 10px;
+  color: var(--text-heading);
+  background: #ffffff;
+  font-family: var(--font-primary);
+  font-size: clamp(10px, 0.78vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 16px 24px;
+  transition: background 160ms ease;
+}
+
+
+
+.bookBtn:hover {
+  background: #edf2f8;
+}
+
+/* ── Mobile menu button ──────────────────────────────── */
+.menuBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  margin-left: 12px;
+  border-radius: 14px;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  color: #ffff;
+  background: none;
+  box-shadow: none;
+  border: none;
+  backdrop-filter: none;
+}
+
+
+.menuBtn svg {
+  width: 26px;
+  height: 26px;
+}
+
+
+
+
+/* ── Sidebar overlay ─────────────────────────────────── */
+.sidebarOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 200ms ease,
+    visibility 200ms ease;
+  z-index: 9998;
+}
+
+.sidebarOverlayOpen {
+  opacity: 1;
+  background: rgba(8, 20, 40, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  visibility: visible;
+}
+
+/* ── Sidebar panel ───────────────────────────────────── */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(90vw, 420px);
+  background: #0d121f;
+  /* Dark theme */
+  transform: translateX(100%);
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999;
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+.sidebarContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 0;
+  background-image:
+    radial-gradient(circle at top right, rgba(41, 59, 119, 0.15), transparent),
+    radial-gradient(circle at bottom left, rgba(127, 168, 190, 0.05), transparent);
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 24px;
+  position: sticky;
+  top: 0;
+  background: rgba(13, 18, 31, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebarLogo {
+  display: block;
+  width: 130px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  /* Make logo white for dark theme */
+}
+
+.closeBtn {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 300ms ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(180deg);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Sidebar navigation ──────────────────────────────── */
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 24px 60px;
+  flex: 1;
+}
+
+.navGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebarNavLink,
+.sidebarNavLinkTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  width: 100%;
+  overflow: hidden;
+}
+
+.navLinkMain {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 250ms ease;
+}
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.02);
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  color: inherit;
+  transition: background 250ms ease;
+}
+
+.toggleBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.navLinkInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #7fa8be;
+  transition: all 300ms ease;
+}
+
+.sidebarNavLink:hover,
+.sidebarNavLinkTrigger:hover,
+.activeItem {
+  background: rgba(127, 168, 190, 0.1);
+  color: #ffffff;
+  border-color: rgba(127, 168, 190, 0.3);
+}
+
+.sidebarNavLink:hover,
+.sidebarNavLinkTrigger:hover {
+  transform: translateX(5px);
+}
+
+.sidebarNavLink:hover .navIcon,
+.sidebarNavLinkTrigger:hover .navIcon,
+.activeItem .navIcon {
+  background: #293b77;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.sidebarNavItemWithMenu {
+  display: block;
+}
+
+.sidebarSubmenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  margin: 0 4px;
+}
+
+.sidebarSubmenuExpanded {
+  max-height: 500px;
+  padding: 10px 0 10px 52px;
+}
+
+.sidebarSubmenuLink {
+  display: block;
+  padding: 12px 14px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 250ms ease;
+}
+
+.sidebarSubmenuLink:hover {
+  color: #7fa8be;
+  padding-left: 20px;
+  border-left-color: #7fa8be;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sidebarDivider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  margin: 40px 0;
+}
+
+.sidebarAction {
+  margin-bottom: 40px;
+}
+
+.sidebarBookBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 22px;
+  background: linear-gradient(135deg, #293b77 0%, #1e2d5c 100%);
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: all 300ms ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sidebarBookBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(41, 59, 119, 0.4);
+  filter: brightness(1.1);
+}
+
+.sidebarFooter {
+  margin-top: auto;
+}
+
+.sidebarContactCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 30px;
+}
+
+.sidebarFooterTitle {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #7fa8be;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebarContactLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: all 250ms ease;
+}
+
+.iconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+
+.sidebarContactLink:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.sidebarSocialSection {
+  padding-bottom: 20px;
+}
+
+.sidebarSocialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.sidebarSocialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  filter: brightness(0) invert(1);
+}
+
+
+.arrow {
+  transition: transform 300ms ease;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.arrowExpanded {
+  transform: rotate(180deg);
+  color: #7fa8be;
+}
+
+
+
+
+@media (max-width: 1499px) {
+
+
+  .inner {
+    grid-template-columns: clamp(200px, 22vw, 247px) 1fr clamp(200px, 21vw, 320px);
+  }
+
+
+  .bannerNav {
+    top: 20px;
+  }
+}
+
+
+/* ─── Large Laptop ──────────────────────────── 1399px ── */
+@media (max-width: 1399px) {
+  .rightCard {
+    padding-left: 25px;
+  }
+
+  .bookBtn {
+    font-size: 12px !important;
+  }
+
+
+  .inner {
+    grid-template-columns: clamp(200px, 22vw, 213px) 1fr clamp(200px, 22vw, 320px);
+  }
+
+
+
+  .bookBtn {
+    width: 200px;
+  }
+
+  .nabhBadge {
+    width: clamp(120px, 12vw, 200px);
+    margin-top: 10px;
+  }
+
+  .logo {
+    width: clamp(120px, 12vw, 200px);
+    margin-top: 7px;
+  }
+
+
+}
+
+/* ─── Laptop ────────────────────────────────── 1199px ── */
+@media (max-width: 1199px) {
+
+  .inner {
+    grid-template-columns: clamp(180px, 18vw, 274px) 1fr clamp(200px, 22vw, 320px);
+  }
+
+  .bannerNav {
+    top: 20px;
+  }
+
+  .logoCard {
+    padding-left: 20px;
+  }
+
+  .rightCard {
+    padding-right: 20px;
+  }
+
+  .nav {
+    padding-top: 40px;
+  }
+
+  .rightCard .bookBtn {
+    width: 160px;
+    padding: 10px;
+    min-height: clamp(44px, 3.4vw, 68px);
+  }
+
+  .logo {
+    width: clamp(135px, 12vw, 250px);
+    margin-top: 0px;
+
+  }
+
+
+}
+
+/* ─── Tablet ────────────────────────────────── 991px ── */
+@media (max-width: 991px) {
+
+  .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bannerNav {
+    top: 12px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .menuBtn {
+    display: inline-flex;
+    right: 23%;
+    position: absolute;
+    top: 20%;
+    z-index: 1201;
+  }
+
+  .logoCard,
+  .rightCard {
+    min-height: clamp(80px, 10vw, 100px);
+    padding: 12px 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+
+
+  .rightCard {
+    justify-content: flex-end;
+    gap: 20px;
+    margin-right: -5px;
+  }
+
+  .aboutMobileBadge {
+    display: none;
+  }
+
+  .logoCard {
+
+    justify-content: flex-start;
+    margin: 0px;
+    margin-top: 3px
+  }
+
+  .logo {
+    width: clamp(120px, 15vw, 160px);
+  }
+
+  .nabhBadge {
+    width: clamp(135px, 14vw, 140px);
+    margin-top: 0px;
+  }
+
+  .rightCard .bookBtn {
+    height: 38px;
+    font-size: 10px;
+    font-weight: 500;
+    width: 145px;
+
+  }
+
+  .bookArea {
+    right: -1%;
+    min-width: 162px;
+    bottom: -16px;
+  }
+
+}
+
+
+/* ─── Mobile ────────────────────────────────── 767px ── */
+@media (max-width: 767px) {
+
+  .logoCard,
+  .rightCard {
+    min-height: 70px;
+    padding: 10px 16px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+
+  .logo.logoDesktop,
+  .nabhBadge.nabhBadgeDesktop {
+    display: none;
+  }
+
+  .logo.logoMobile,
+  .nabhBadge.nabhBadgeMobile {
+    display: block;
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  .nabhBadge {
+    width: 100px;
+  }
+
+  .aboutMobileBadge {
+    display: block;
+  }
+
+  .bookBtn {
+    display: none;
+    /* Hide book btn on small mobile to show the About NABH badge instead */
+  }
+
+  .menuBtn {
+    margin-left: 0;
+  }
+
+
+  .logoCard {
+    padding: 10px 16px 12px 40px;
+    justify-content: flex-start;
+  }
+
+  .rightCard {
+    padding: 10px 40px 12px 16px;
+    justify-content: flex-end;
+  }
+}
+
+/* ─── Small Mobile ──────────────────────────── 575px ── */
+@media (max-width: 575px) {
+
+  .rightCard {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .bannerNav {
+    top: -5px;
+  }
+
+  .logoCard {
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    margin-right: 40px;
+  }
+
+  .menuBtn {
+    position: absolute;
+    top: 20px;
+    right: 120px;
+  }
+
+
+
+  .logo {
+    width: 110px;
+  }
+
+  .nabhBadge {
+    width: 105px;
+  }
+
+}
+
+
+
+@media (max-width: 400px) {
+  .menuBtn {
+    right: 100px;
+    top: 18px;
+  }
+
+  .nabhBadge {
+    width: 80px;
+    margin-right: 9px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+}

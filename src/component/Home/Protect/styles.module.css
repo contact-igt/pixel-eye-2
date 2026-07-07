@@ -1,0 +1,270 @@
+.protectSection {
+  margin-top: 100px;
+  padding: var(--section-px);
+
+}
+
+.bannerFrame {
+  position: relative;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  border-radius: var(--radius-card-md);
+  overflow: hidden;
+  height: 500px;
+  isolation: isolate;
+  /* border: 1px solid rgba(99, 111, 134, 0.45); */
+  background: #253548;
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: none;
+}
+
+.imageLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slideImage {
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      rgba(17, 30, 50, 0.86) 0%,
+      rgba(19, 31, 49, 0.72) 32%,
+      rgba(23, 33, 48, 0.24) 55%,
+      rgba(23, 33, 48, 0.05) 68%,
+      rgba(23, 33, 48, 0) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sliderHandle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  left: var(--slider-position);
+  transform: translateX(-50%);
+  z-index: 6;
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+}
+
+.sliderHandle:active {
+  cursor: grabbing;
+}
+
+.sliderHandleImage {
+  object-fit: unset;
+  object-position: center bottom;
+}
+
+.heroContent {
+  position: absolute;
+  left: 6.5%;
+  top: 28%;
+  z-index: 5;
+  max-width: 620px;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+[data-visible="true"].heroContent {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heroTitle {
+  margin-bottom: 50px;
+  color: #d5e2f6;
+  font-size: 50px;
+  line-height: var(--h2-lh);
+  font-weight: 400;
+  max-width: 700px;
+  text-wrap: balance;
+}
+
+.heroCta {
+  --btn-icon-left: 180px;
+}
+
+.ctaButton {
+  margin-top: 36px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.ctaWrap {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 700ms ease 120ms,
+    transform 700ms ease 120ms;
+}
+
+[data-visible="true"] .ctaWrap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ctaLabel {
+  height: var(--btn-h);
+  background: #f7fafc;
+  color: var(--brand-blue);
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--border-soft);
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--btn-fs);
+  line-height: 1;
+  font-weight: var(--btn-fw);
+}
+
+.ctaArrow {
+  width: var(--btn-icon);
+  height: var(--btn-icon);
+  margin-left: -8px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: #f7fafc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaArrowIcon {
+  width: 18px;
+  height: 18px;
+  color: #8eb3ce;
+  stroke-width: 2;
+}
+
+.ctaButton:hover .ctaLabel,
+.ctaButton:hover .ctaArrow {
+  background: #eef3f8;
+}
+
+.ctaButton:active .ctaLabel,
+.ctaButton:active .ctaArrow {
+  background: #e5ecf5;
+}
+
+
+
+@media (max-width: 1399px) {
+  .heroContent {
+    top: 24%;
+    max-width: 520px;
+  }
+
+  .protectSection {
+    margin-top: 80px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .bannerFrame {
+    height: 400px;
+  }
+}
+
+
+
+@media (max-width: 1199px) {
+  .heroContent {
+    top: 24%;
+    max-width: 520px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .bannerFrame {
+    height: 360px;
+  }
+
+
+}
+
+@media (max-width: 991px) {
+  .heroCta {
+    --btn-icon-left: 165px;
+  }
+}
+
+@media (max-width: 767px) {
+  .bannerFrame {
+    height: 300px;
+  }
+
+  .heroContent {
+    left: 20px;
+    right: 20px;
+    top: 22%;
+    max-width: none;
+  }
+
+  .ctaButton {
+    margin-top: 28px;
+  }
+
+  .heroCta {
+    --btn-icon-left: 150px;
+  }
+}
+
+@media (max-width: 575px) {
+
+
+  .protectSection {
+    margin-top: 60px;
+  }
+
+
+  .slideImage {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .heroCta {
+    --btn-icon-left: 140px;
+  }
+
+  .bannerFrame {
+    height: 450px;
+
+  }
+
+  .heroContent {
+    width: 300px;
+    top: 10%;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+  }
+
+  .imageLayer img {
+    object-fit: fill !important;
+  }
+}

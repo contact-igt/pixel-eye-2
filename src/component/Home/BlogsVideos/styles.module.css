@@ -1,0 +1,254 @@
+.blogsSection {
+  margin-top: 100px;
+  background: var(--bg-page);
+  padding:  var(--section-px);
+}
+
+.container {
+  max-width: var(--container2-max);
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-heading);
+  font-size: 48px;
+  line-height: var(--h2-lh);
+  font-weight: 400;
+}
+
+.subtitle {
+  margin: 20px 0 0;
+  max-width: 760px;
+  color: #515f7d;
+  font-size: 20px;
+  line-height: var(--p-lh);
+}
+
+.grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item {
+  min-width: 0;
+}
+
+.mediaWrap {
+  position: relative;
+  height: 210px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mediaImage {
+  object-fit: contain;
+  object-position: left top;
+}
+
+.cardOverlayText {
+  position: absolute;
+  left: 40%;
+  top: 10%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF91;
+  font-size: 18.5px;
+  font-weight: 400;
+  line-height: 1.35;
+  padding: 0 45px 0 55px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.itemTitle {
+  margin: 15px 0 0;
+  color:#2E3D70CC;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 400;
+  text-align: left;
+  width: 350px;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.ctaLabel {
+  height: var(--btn-h);
+  background: #f3f4f8;
+  color: var(--brand-blue);
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--border-soft);
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--btn-fs);
+  font-weight: var(--btn-fw);
+}
+
+.ctaArrow {
+  width: var(--btn-icon);
+  height: var(--btn-icon);
+  margin-left: -8px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: #f3f4f8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctaArrowIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--brand-blue);
+}
+
+.ctaButton:hover .ctaLabel,
+.ctaButton:hover .ctaArrow {
+  background: #e9edf5;
+}
+
+.ctaButton:active .ctaLabel,
+.ctaButton:active .ctaArrow {
+  background: #e3e9f3;
+}
+
+
+@media (max-width: 1399px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  .blogsSection {
+    margin-top: 80px;
+  }
+}
+
+/* ─── Laptop ────────────────────────────────── 1199px ── */
+@media (max-width: 1199px) {
+  .cardOverlayText {
+    left: 50%;
+    right: 20%;
+  }
+
+  .grid {
+    max-width: 900px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .cardOverlayText {
+    font-size: 16px;
+    padding: 0px;
+    width: 150px;
+    left: 60%;
+
+  }
+}
+
+/* ─── Tablet ────────────────────────────────── 991px ── */
+@media (max-width: 991px) {
+  .cardOverlayText {
+    left: 50%;
+    right: 10%;
+    top: 5%;
+    font-size: 16px;
+    padding: 0 30px 0 10px;
+  }
+}
+
+/* ─── Mobile ────────────────────────────────── 767px ── */
+@media (max-width: 767px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 395px;
+  }
+
+  .item {
+    width: 100%;
+  }
+
+  .mediaWrap {
+    height: 190px;
+  }
+
+  .mediaImage {
+    object-position: left top !important;
+  }
+
+  .itemTitle {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .cardOverlayText {
+    left: 60%;
+    right: 10%;
+    top: 10%;
+    font-size: 16px;
+    padding: 0 25px 0 8px;
+    width: 170px;
+  }
+}
+
+/* ─── Small Mobile ──────────────────────────── 575px ── */
+@media (max-width: 575px) {
+
+  .title {
+    font-size: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .mediaWrap {
+    height: 190px;
+  }
+
+  .itemTitle {
+    font-size: 17px;
+    text-align: left;
+  }
+  .blogsSection {
+    margin-top: 60px;
+    padding: 0 15px;
+  }
+}
+
+/* ─── Very Small Mobile ─────────────────────── 389px ── */

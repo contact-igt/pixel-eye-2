@@ -1,0 +1,218 @@
+.section {
+  width: 100%;
+  padding: var(--about-section-space) 0;
+  background: var(--bg-surface);
+}
+
+.inner {
+  width: min(1600px, calc(100% - 160px));
+  margin: 0 auto;
+  
+}
+
+.header {
+  width: min(720px, 100%);
+}
+
+.title {
+  margin: 0;
+  color: var(--text-heading);
+  font-size: var(--title-size);
+  line-height: var(--title-lh);
+  font-weight: 400;
+}
+
+.description {
+  margin: 22px 0 0;
+  color: var(--text-body);
+  font-size: var(--paragraph-size);
+  line-height: var(--paragraph-lh);
+  font-weight: 400;
+}
+
+/* SSR fallback grid */
+.grid {
+  margin-top: 42px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Slider wrapper */
+.sliderWrap {
+  margin-top: 42px;
+}
+
+.slider :global(.slick-list) {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  margin-top: -16px;
+  margin-bottom: -16px;
+}
+
+.slider :global(.slick-track) {
+  display: flex;
+  align-items: stretch;
+}
+
+.slider :global(.slick-slide) {
+  height: auto;
+}
+
+.slider :global(.slick-slide > div) {
+  height: 100%;
+}
+
+.slideOuter {
+  padding: 0 12px;
+  height: 100%;
+  display: flex !important;
+  justify-content: center;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d0d7e6;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.activeDot {
+  background: #d19549;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1149 / 809;
+  min-height: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  border-radius: var(--radius-card-lg, 28px);
+  padding: 10% 12% 8% 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cardActive {
+  transform: scale(1.04);
+  transition: transform 0.4s ease;
+}
+
+.cardContent {
+  width: 100%;
+  padding: 0;
+}
+
+.quoteImg {
+  width: clamp(22px, 2.3vw, 34px);
+  height: auto;
+}
+
+.cardText {
+  width: 100%;
+  color: #4f6495;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 8% 0 0;
+}
+
+.patientBlock {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+  left: 20%;
+  bottom: 5%;
+}
+
+.avatarWrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  margin: 0;
+  color: var(--text-heading, #16325c);
+  font-size: 17.5px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.ratingRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.star {
+  color: #f5a623;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.rating {
+  color: #53658a;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .inner {
+    width: min(1600px, calc(100% - 64px));
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .inner {
+    width: min(1600px, calc(100% - 40px));
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}

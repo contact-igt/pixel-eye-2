@@ -1,0 +1,637 @@
+.specialist-form-section {
+  --form-heading-size: 36px;
+  --form-field-h: 60px;
+  --form-field-radius: 10px;
+  --form-field-fs: 16px;
+  --form-check-size: 16px;
+  --form-btn-h: 50px;
+  --form-btn-fs: 14px;
+
+  position: relative;
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
+  /* allow CTA icon to overflow the form area so button matches site-wide style */
+  overflow: visible;
+  color: var(--text-heading);
+  background: #ffffff;
+  font-family: var(--font-primary);
+}
+
+.form-watermark {
+  position: absolute;
+  left: -78px;
+  bottom: 50px;
+  width: 310px;
+  height: 540px;
+  /* opacity: 0.14; */
+  background: url("/assets/Appointment/Clip path group.png") left bottom / contain no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.specialist-form {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.specialist-form h1 {
+  margin: 0 0 14px;
+  color: var(--text-heading);
+  font-size: var(--form-heading-size);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 50px 24px;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.appointment-field,
+.country-code {
+  height: var(--form-field-h);
+  border: 2.2px solid #aec1e9;
+  border-radius: var(--form-field-radius);
+  background: #ffffff;
+  color: var(--text-heading);
+}
+
+.appointment-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: var(--form-field-fs);
+  font-weight: 500;
+}
+
+.appointment-field input,
+.appointment-field select {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 15px 15px 8px 18px;
+  border: 0;
+  outline: 0;
+  color: var(--text-heading);
+  background: transparent;
+  font: inherit;
+  appearance: none;
+}
+
+.compact-field input,
+.compact-field select {
+  padding-top: 22px;
+  padding-bottom: 15px;
+  color: var(--brand-blue);
+  caret-color: var(--brand-blue);
+}
+
+.appointment-field input[type="date"],
+.appointment-field input[type="time"] {
+  color: var(--brand-blue);
+  caret-color: var(--brand-blue);
+}
+
+.appointment-field input[type="date"]::-webkit-calendar-picker-indicator,
+.appointment-field input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+  opacity: 0;
+  appearance: none !important;
+}
+
+.appointment-field input[type="date"]::-webkit-inner-spin-button,
+.appointment-field input[type="date"]::-webkit-clear-button,
+.appointment-field input[type="time"]::-webkit-inner-spin-button,
+.appointment-field input[type="time"]::-webkit-clear-button {
+  display: none !important;
+  appearance: none !important;
+}
+
+.appointment-field select {
+  cursor: pointer;
+}
+
+.appointment-field>span {
+  position: relative;
+  z-index: 0;
+  pointer-events: none;
+  color: var(--text-muted);
+  transition: opacity 160ms ease, transform 160ms ease, font-size 160ms ease;
+}
+
+.appointment-field:focus-within>span,
+.appointment-field.is-filled>span {
+  font-size: 10px;
+  opacity: 0.72;
+  transform: translateY(-11px);
+}
+
+.time-slot-field {
+  align-items: flex-end;
+  padding: 8px 18px 9px;
+  overflow: visible;
+}
+
+.time-slot-field>.time-slot-label,
+.time-slot-field:focus-within>.time-slot-label,
+.time-slot-field.is-filled>.time-slot-label {
+  position: absolute;
+  top: 9px;
+  left: 18px;
+  z-index: 0;
+  color: var(--text-muted);
+  font-size: 10px;
+  opacity: 0.72;
+  transform: none;
+}
+
+.time-slot-field .time-display {
+  position: relative;
+  inset: auto;
+  z-index: 2;
+  width: min(130px, calc(100% - 34px));
+  height: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brand-blue);
+  font: inherit;
+  font-weight: 500;
+  line-height: 1;
+  text-align: left;
+  appearance: none;
+}
+
+.time-icon-button {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brand-blue);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.time-icon-button .form-icon {
+  position: static;
+  width: 20px;
+  height: 20px;
+  stroke: var(--brand-blue);
+}
+
+.time-picker-panel {
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  z-index: 20;
+  display: flex;
+  width: min(260px, 100%);
+  max-height: 214px;
+  overflow: hidden;
+  border: 1.5px solid #bcc9e4;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(20, 44, 96, 0.16);
+}
+
+.time-picker-column {
+  display: grid;
+  flex: 1 1 0;
+  max-height: 214px;
+  overflow-y: auto;
+  border-right: 1px solid #e5ebf7;
+}
+
+.time-picker-column:last-child {
+  border-right: 0;
+}
+
+.time-picker-column button {
+  min-height: 34px;
+  border: 0;
+  background: #ffffff;
+  color: var(--brand-blue);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.time-picker-column button:focus-visible,
+.time-picker-column .time-option-active {
+  background: var(--brand-blue);
+  color: #ffffff;
+}
+
+.form-icon {
+  position: relative;
+  z-index: 2;
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  fill: none;
+  stroke: var(--text-heading);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+  pointer-events: none;
+}
+
+.calendar-icon {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  width: 18px;
+  height: 18px;
+  margin-left: 0;
+  stroke: var(--brand-blue);
+  transform: translateY(-50%);
+}
+
+.phone-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+}
+
+.country-code {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: var(--form-field-fs);
+  font-weight: 500;
+}
+
+.country-code select {
+  width: 36px;
+  border: 0;
+  outline: 0;
+  color: var(--text-heading);
+  background: transparent;
+  font: inherit;
+  appearance: none;
+  cursor: pointer;
+}
+
+.country-code .form-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.india-flag {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: linear-gradient(#ff9933 0 33.333%, #ffffff 33.333% 66.666%, #138808 66.666%);
+}
+
+.india-flag i {
+  width: 4px;
+  height: 4px;
+  border: 1px solid var(--text-heading);
+  border-radius: 50%;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-heading);
+  font-size: var(--form-field-fs);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.checkbox-row input {
+  position: relative;
+  flex: 0 0 auto;
+  width: var(--form-check-size);
+  height: var(--form-check-size);
+  margin: 0;
+  appearance: none;
+  border: 2.2px solid #bcc9e4;
+  border-radius: 5px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.checkbox-row input:checked {
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+
+.checkbox-row input:checked::after {
+  position: absolute;
+  top: 1.5px;
+  left: 5.1px;
+  width: 4px;
+  height: 8px;
+  content: "";
+  border: solid #ffffff;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+.terms-row {
+  min-height: var(--form-field-h);
+}
+
+.consent-list {
+  display: grid;
+  gap: 40px;
+  padding-top: 1px;
+}
+
+.consent-long {
+  align-items: flex-start;
+}
+
+.consent-long span {
+  max-width: 360px;
+}
+
+.submit-area {
+  align-self: start;
+  padding-top: 2px;
+}
+
+.submitButton {
+  --btn-h: var(--form-btn-h);
+  --btn-icon: var(--form-btn-h);
+  --btn-icon-left: 165px;
+  --btn-fs: var(--form-btn-fs);
+  --btn-fw: 500;
+}
+
+.submit-area p {
+  margin: 12px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* lg — 992–1199px: still 2-col but tighter */
+@media (max-width: 1199px) {
+  .specialist-form h1 {
+    font-size: clamp(26px, 2.8vw, 36px);
+  }
+
+  .form-grid {
+    gap: 36px 18px;
+    margin-top: 36px;
+  }
+}
+
+/* md — 768–991px: collapse to 1-col */
+@media (max-width: 991px) {
+  .form-watermark {
+    left: -68px;
+    bottom: -36px;
+    width: 248px;
+    height: 430px;
+    opacity: 0.12;
+  }
+
+  .specialist-form-section {
+    padding: 34px 16px 40px;
+  }
+
+  .specialist-form h1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .phone-row {
+    grid-template-columns: 92px 1fr;
+    gap: 10px;
+  }
+
+  .consent-list {
+    gap: 12px;
+    margin-top: -10px;
+  }
+
+  .terms-row {
+    min-height: auto;
+  }
+}
+
+/* sm — 576–767px: mid-mobile spacing */
+@media (max-width: 767px) {
+  .specialist-form h1 {
+    font-size: 28px;
+  }
+
+  .form-grid {
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .form-watermark {
+    left: -54px;
+    bottom: -20px;
+    width: 200px;
+    height: 340px;
+    opacity: 0.1;
+  }
+
+  .consent-list {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+
+  .form-watermark {
+    left: -54px;
+    bottom: -18px;
+    width: 188px;
+    height: 300px;
+    opacity: 0.1;
+  }
+
+  .specialist-form-section {
+    --form-field-h: 50px;
+    --form-field-radius: 9px;
+    --form-field-fs: 14px;
+    --form-check-size: 18px;
+    --form-btn-h: 40px;
+    --form-btn-fs: 14px;
+    padding: 30px 12px 36px;
+    margin:0px 10px;
+  }
+
+  .appointment-field,
+  .country-code {
+    height: var(--form-field-h);
+    border-radius: var(--form-field-radius);
+  }
+
+  .calendar-icon {
+    right: 16px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .compact-field input,
+  .compact-field select {
+    padding-top: 15px;
+    padding-bottom: 3px;
+  }
+
+  .time-slot-field {
+    padding: 6px 16px 5px;
+  }
+
+  .time-slot-field>.time-slot-label,
+  .time-slot-field:focus-within>.time-slot-label,
+  .time-slot-field.is-filled>.time-slot-label {
+    top: 5px;
+    left: 16px;
+    font-size: 9px;
+  }
+
+  .time-slot-field .time-display {
+    width: min(110px, calc(100% - 30px));
+    font-size: var(--form-field-fs);
+  }
+
+  .time-icon-button {
+    right: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .time-icon-button .form-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .time-picker-panel {
+    width: min(230px, 100%);
+    max-height: 178px;
+  }
+
+  .time-picker-column {
+    max-height: 178px;
+  }
+
+  .time-picker-column button {
+    min-height: 30px;
+    font-size: 11px;
+  }
+
+  .phone-row {
+    grid-template-columns: 1fr;
+  }
+
+  .specialist-form h1 {
+    font-size: 24px;
+  }
+
+  .terms-row,
+  .checkbox-row,
+  .consent-long {
+    align-items: flex-start;
+  }
+
+  .checkbox-row {
+    gap: 14px;
+    line-height: 1.28;
+  }
+
+  .checkbox-row input {
+    margin-top: 2px;
+  }
+
+  .terms-row {
+    min-height: auto;
+    margin-top: 20px;
+  }
+
+  .consent-list {
+    gap: 18px;
+    margin-top: 10px;
+    padding-top: 0;
+  }
+
+  .consent-long span {
+    max-width: none;
+  }
+
+  .submit-area {
+    padding: 20px 0px;
+    text-align: center;
+  }
+
+  .submit-area p{
+    font-size: 14px;
+    font-weight: 500;
+    color: #6E9EB8;
+    margin-top: 30px ;
+  }
+
+  .submitButton {
+    --btn-icon-left: 125px;
+  }
+}
+
+/* xxs — <389px */
+@media (max-width: 400px) {
+  .specialist-form h1 {
+    font-size: 20px;
+  }
+
+  .specialist-form-section {
+    --form-field-h: 42px;
+    --form-field-fs: 12px;
+    --form-btn-h: 38px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .form-grid {
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .checkbox-row {
+    gap: 12px;
+  }
+
+  .consent-list {
+    gap: 16px;
+  }
+
+  .form-watermark {
+    display: none;
+  }
+}
