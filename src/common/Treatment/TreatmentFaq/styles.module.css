@@ -7,11 +7,44 @@
   width: 100%;
   background: #ffffff;
   padding: 80px 0;
+  margin-top: 70px;
+}
+
+.treatment-faq__left,
+.treatment-faq__right {
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.treatment-faq__left {
+  transition-duration: 720ms;
+}
+
+.treatment-faq__right {
+  transition-duration: 760ms;
+  transition-delay: 120ms;
+}
+
+.treatment-faq:not(.is-revealed) .treatment-faq__left {
+  opacity: 0;
+  transform: translateX(-42px);
+}
+
+.treatment-faq:not(.is-revealed) .treatment-faq__right {
+  opacity: 0;
+  transform: translateX(42px);
+}
+
+.treatment-faq.is-revealed .treatment-faq__left,
+.treatment-faq.is-revealed .treatment-faq__right {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .treatment-faq__inner {
   width: calc(100% - 230px);
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   gap: 40px;
@@ -53,7 +86,7 @@
 }
 
 .treatment-faq__note {
-  margin-top: 28px;
+  margin-top: 40px;
   color: var(--text-body, #53658a);
   font-size: var(--p-size, 16px);
   line-height: 1.6;
@@ -130,9 +163,11 @@
     width: min(1600px, calc(100% - 64px));
     gap: 28px;
   }
+
   .treatment-faq__left {
     flex: 0 0 44%;
   }
+
   .treatment-faq__right {
     flex: 1 1 52%;
   }
@@ -144,16 +179,20 @@
     flex-direction: column;
     gap: 18px;
   }
+
   .treatment-faq__left {
     width: 100%;
   }
+
   .treatment-faq__note {
     max-width: 100%;
   }
+
   .treatment-faq__title-bubble {
     top: 2%;
     left: 30px;
   }
+
   .treatment-faq__title-bubble h3 {
     font-size: var(--h2-size, 28px);
   }
@@ -163,16 +202,30 @@
   .treatment-faq {
     padding: 40px 0;
   }
+
   .treatment-faq__inner {
     width: min(1600px, calc(100% - 28px));
   }
+
   .treatment-faq__title-bubble h3 {
     font-size: 26px;
   }
+
   .treatment-faq__row {
     padding: 14px 8px;
   }
+
   .treatment-faq__question {
     font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .treatment-faq__left,
+  .treatment-faq__right {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 }

@@ -1,6 +1,7 @@
 ﻿.section {
   width: 100%;
   padding: var(--section-pt) var(--section-px) var(--section-pb);
+  margin-top: 70px;
 }
 
 .revealShell {
@@ -13,7 +14,7 @@
 }
 
 .header {
-  margin-bottom: 28px;
+  margin-bottom: 100px;
 }
 
 .title {
@@ -25,11 +26,12 @@
 }
 
 .subtitle {
-  margin: 12px 0 0;
+  margin-top: 20px;
   color: var(--text-body);
-  font-size: var(--paragraph-size);
+  font-size: 20px;
   font-weight: 400;
   line-height: var(--paragraph-lh);
+  width: min(650px, 100%);
 }
 
 .cards {
@@ -60,30 +62,23 @@
 }
 
 .row {
-  --visionary-media-width: 480px;
+  --visionary-media-width: 600px;
   --visionary-content-width: 716px;
   --visionary-card-gap: 40px;
-
   display: grid;
   width: 100%;
-  max-width: calc(
-    var(--visionary-media-width) + var(--visionary-content-width) +
-      var(--visionary-card-gap)
-  );
+  max-width: calc(var(--visionary-media-width) + var(--visionary-content-width) + var(--visionary-card-gap));
   margin: 0 auto;
-  grid-template-columns: minmax(430px, var(--visionary-media-width)) minmax(
-      0,
-      var(--visionary-content-width)
-    );
+  grid-template-columns: minmax(430px, var(--visionary-media-width)) minmax(0,
+      var(--visionary-content-width));
   column-gap: var(--visionary-card-gap);
   align-items: stretch;
   justify-content: center;
 }
+
 .rowReverse {
-  grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(
-      430px,
-      var(--visionary-media-width)
-    );
+  grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(430px,
+      var(--visionary-media-width));
 }
 
 .rowReverse .mediaSection {
@@ -241,19 +236,16 @@
     --visionary-content-width: 646px;
     --visionary-card-gap: 40px;
 
-    grid-template-columns: minmax(400px, var(--visionary-media-width)) minmax(
-        0,
-        var(--visionary-content-width)
-      );
+    grid-template-columns: minmax(400px, var(--visionary-media-width)) minmax(0,
+        var(--visionary-content-width));
     align-items: start;
   }
+
   .rowReverse {
     --visionary-media-width: 440px;
 
-    grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(
-        380px,
-        var(--visionary-media-width)
-      );
+    grid-template-columns: minmax(0, var(--visionary-content-width)) minmax(380px,
+        var(--visionary-media-width));
   }
 
   .mediaSection,
@@ -279,11 +271,13 @@
     right: -5px;
     width: clamp(210px, 49%, 270px);
   }
+
   .infoPanelRight {
     left: -9px;
     top: 15px;
     width: clamp(220px, 52%, 350px);
   }
+
   .rowReverse .mediaSection {
     aspect-ratio: 38 / 49;
   }
@@ -299,6 +293,7 @@
 }
 
 @media (max-width: 1199px) {
+
   .row,
   .rowReverse {
     grid-template-columns: 1fr;
@@ -323,6 +318,7 @@
     right: 6px;
     width: clamp(210px, 49%, 270px);
   }
+
   .infoPanelRight {
     left: -9px;
     top: 20px;
@@ -345,6 +341,7 @@
   .inner {
     width: min(1448px, calc(100% - 96px));
   }
+
   .mediaSection,
   .rowReverse .mediaSection {
     width: min(100%, 610px);
@@ -363,10 +360,12 @@
   .spec {
     font-size: clamp(13px, 1.7vw, 16.8px);
   }
+
   .infoPanel {
     right: 8px;
     top: 5px;
   }
+
   .infoPanelRight {
     left: 8px;
     top: 22px;
@@ -447,7 +446,7 @@
     width: min(1600px, calc(100%));
   }
 
-  .section{
+  .section {
     padding: 30px 15px;
   }
 
@@ -491,13 +490,16 @@
   .rowReverse .mediaSection {
     aspect-ratio: 1 / 1.21;
   }
+
   .infoPanel {
     right: -45px;
     top: 6px;
   }
+
   .infoPanelRight {
     left: -7px;
   }
+
   .name {
     font-size: 15px;
   }

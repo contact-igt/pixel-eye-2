@@ -1,14 +1,95 @@
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 
 const TreatmentSymptoms = ({ data, slug = "treatment" }) => {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isProgrammatic, setIsProgrammatic] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
   const listRef = useRef(null);
+  const itemRefs = useRef([]);
+  const programmaticTimerRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const mediaQuery = window.matchMedia("(max-width: 991px)");
+    const handleViewportChange = (event) => setIsMobileView(event.matches);
+
+    setIsMobileView(mediaQuery.matches);
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", handleViewportChange);
+      return () =>
+        mediaQuery.removeEventListener("change", handleViewportChange);
+    }
+
+    mediaQuery.addListener(handleViewportChange);
+    return () => mediaQuery.removeListener(handleViewportChange);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobileView || typeof IntersectionObserver === "undefined") {
+      return undefined;
+    }
+
+    const nodes = itemRefs.current.filter(Boolean);
+    if (!nodes.length) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (isProgrammatic) return;
+
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+
+        const viewportCenter = window.innerHeight / 2;
+        let nextIndex = -1;
+        let closestDistance = Number.POSITIVE_INFINITY;
+
+        nodes.forEach((node, index) => {
+          const rect = node.getBoundingClientRect();
+          const visibleHeight =
+            Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+
+          if (visibleHeight <= rect.height * 0.25) return;
+
+          const cardCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(cardCenter - viewportCenter);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            nextIndex = index;
+          }
+        });
+
+        if (nextIndex !== -1) {
+          setActiveIndex((current) =>
+            current === nextIndex ? current : nextIndex,
+          );
+        }
+      },
+      {
+        threshold: [0.25, 0.5, 0.75],
+        rootMargin: "-10% 0px -10% 0px",
+      },
+    );
+
+    nodes.forEach((node) => observer.observe(node));
+
+    return () => observer.disconnect();
+  }, [data.items, isMobileView, isProgrammatic]);
+
+  useEffect(
+    () => () => {
+      if (programmaticTimerRef.current) {
+        clearTimeout(programmaticTimerRef.current);
+      }
+    },
+    [],
+  );
 
   const updateActiveSign = (event) => {
-    if (isProgrammatic) return;
+    if (isProgrammatic || isMobileView) return;
     const list = event.currentTarget;
     const maxScroll = list.scrollHeight - list.clientHeight;
     if (maxScroll <= 0) {
@@ -21,19 +102,35 @@ const TreatmentSymptoms = ({ data, slug = "treatment" }) => {
   };
 
   const handleItemClick = (index) => {
+    if (programmaticTimerRef.current) {
+      clearTimeout(programmaticTimerRef.current);
+    }
+
     setIsProgrammatic(true);
     setActiveIndex(index);
+
     const listNode = listRef.current;
     if (listNode) {
-      const itemNode = listNode.children[index];
+      const itemNode = itemRefs.current[index] || listNode.children[index];
       if (itemNode) {
-        listNode.scrollTo({
-          top: itemNode.offsetTop - listNode.offsetTop,
-          behavior: "smooth",
-        });
+        if (isMobileView) {
+          itemNode.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        } else {
+          listNode.scrollTo({
+            top: itemNode.offsetTop - listNode.offsetTop,
+            behavior: "smooth",
+          });
+        }
       }
     }
-    setTimeout(() => setIsProgrammatic(false), 800);
+
+    programmaticTimerRef.current = setTimeout(() => {
+      setIsProgrammatic(false);
+      programmaticTimerRef.current = null;
+    }, 650);
   };
 
   return (
@@ -69,12 +166,15 @@ const TreatmentSymptoms = ({ data, slug = "treatment" }) => {
           >
             {data.items.map((item, index) => (
               <article
+                ref={(node) => {
+                  itemRefs.current[index] = node;
+                }}
                 className={`${styles["treatment-symptoms__item"]} ${
                   index === activeIndex ? styles["is-active"] : ""
                 }`.trim()}
                 key={item.number}
                 onMouseEnter={() => {
-                  if (!isProgrammatic) setActiveIndex(index);
+                  if (!isProgrammatic && !isMobileView) setActiveIndex(index);
                 }}
                 onClick={() => handleItemClick(index)}
                 style={{ cursor: "pointer" }}

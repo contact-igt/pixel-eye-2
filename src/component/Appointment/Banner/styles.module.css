@@ -40,7 +40,7 @@
 
 .copy h1 {
   margin: 0;
-  color: var(--pixel-blue);
+  color: #273979;
   font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
   font-size: clamp(30px, 3.25vw, 52px);
   font-weight: 500;
@@ -50,7 +50,7 @@
 .copy p {
   width: min(24vw, 360px);
   margin: clamp(13px, 1.4vw, 22px) 0 0;
-  color: rgba(36, 59, 130, 0.84);
+  color: rgba(42, 60, 125, 0.88);
   font-family: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
   font-size: clamp(11px, 1.2vw, 18px);
   font-weight: 500;

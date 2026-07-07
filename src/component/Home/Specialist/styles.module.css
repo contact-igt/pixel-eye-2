@@ -78,6 +78,15 @@
     height: 100%;
     object-fit: contain;
     object-position: bottom center;
+    position: relative;
+    z-index: 7;
+    cursor: pointer;
+    transform-origin: bottom center;
+    transition: transform 260ms ease;
+}
+
+.doctorActive .doctorImage {
+    transform: scale(1.08);
 }
 
 .left {
@@ -116,7 +125,7 @@
     transform: translate(-50%, 14px) scale(0.98);
     transition: opacity 220ms ease, transform 220ms ease;
     pointer-events: none;
-    z-index: 5;
+    z-index: 2;
     height: 225px;
     padding: 30px 70px;
 }
@@ -135,7 +144,7 @@
     transform: translate(-50%, 14px) scale(0.98);
     transition: opacity 220ms ease, transform 220ms ease;
     pointer-events: none;
-    z-index: 5;
+    z-index: 2;
     height: 225px;
     padding: 30px 70px;
 }
@@ -156,22 +165,19 @@
     white-space: normal;
 }
 
-.doctor:hover .doctorHoverCard,
-.doctor:focus-visible .doctorHoverCard {
+.doctorActive .doctorHoverCard {
     opacity: 1;
     transform: translate(-50%, 0) scale(1);
-    z-index: -9999;
+    z-index: 2;
 }
 
-.doctor:hover .doctorHoverCard2,
-.doctor:focus-visible .doctorHoverCard2 {
+.doctorActive .doctorHoverCard2 {
     opacity: 1;
     transform: translate(-50%, 0) scale(1);
-    z-index: -9999;
+    z-index: 2;
 }
 
-.doctor:hover .doctorName,
-.doctor:focus-visible .doctorName {
+.doctorActive .doctorName {
     opacity: 0;
 
 }
@@ -389,13 +395,6 @@
         padding-left: 0;
     }
 
-    /* Show doctor details by default on mobile (no hover needed) */
-    .doctorHoverCard,
-    .doctorHoverCard2 {
-        opacity: 1;
-        transform: translate(-50%, 0) scale(1);
-        z-index: -99999;
-    }
 }
 
 @media (max-width: 575px) {
@@ -477,7 +476,7 @@
 
     }
 
-.doctorHoverCard {
+    .doctorHoverCard {
         top: 32px;
         left: 130%;
         width: 250px;
@@ -488,8 +487,9 @@
     .doctorHoverName {
         font-size: 18px;
     }
+
     .doctorHoverContent {
         font-size: 12px;
     }
-    
+
 }

@@ -1,6 +1,7 @@
 .section {
   width: 100%;
   padding: var(--section-pt) var(--section-px) var(--section-pb);
+  margin-top:70px;
   overflow: hidden;
 }
 

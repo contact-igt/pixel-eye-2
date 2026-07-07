@@ -28,9 +28,10 @@ const MultiDoctorPanel = ({ data, sectionRef, isRevealed, slug }) => (
         )}
 
         <div className={styles["clinical-expertise__doctors"]}>
-          {(data.doctors || []).map((doctor) => (
+          {(data.doctors || []).map((doctor, index) => (
             <article
               className={styles["clinical-expertise__doctor-card"]}
+              style={{ "--doctor-index": index }}
               key={doctor.name}
             >
               <div className={styles["clinical-expertise__doctor-unit"]}>

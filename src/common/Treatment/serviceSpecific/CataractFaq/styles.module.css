@@ -9,6 +9,38 @@
     padding: 56px 0;
 }
 
+.cataract-faq__left,
+.cataract-faq__right {
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+.cataract-faq__left {
+    transition-duration: 720ms;
+}
+
+.cataract-faq__right {
+    transition-duration: 760ms;
+    transition-delay: 120ms;
+}
+
+.cataract-faq:not(.is-revealed) .cataract-faq__left {
+    opacity: 0;
+    transform: translateX(-42px);
+}
+
+.cataract-faq:not(.is-revealed) .cataract-faq__right {
+    opacity: 0;
+    transform: translateX(42px);
+}
+
+.cataract-faq.is-revealed .cataract-faq__left,
+.cataract-faq.is-revealed .cataract-faq__right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .cataract-faq__inner {
     width: calc(100% - 230px);
     max-width: 1200px;
@@ -190,5 +222,15 @@
 @media (max-width: 389px) {
     .cataract-faq__title-bubble h3 {
         font-size: var(--h2-size, 28px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cataract-faq__left,
+    .cataract-faq__right {
+        transition: none;
+        opacity: 1;
+        transform: none;
     }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { HOME_CONTENT } from "@/constant/homeContent";
@@ -6,10 +6,62 @@ import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
 const WhyChoose = () => {
+  const HOVER_LOCK_MS = 700;
+  const GHOST_CLICK_GUARD_MS = 500;
   const { whyChoose } = HOME_CONTENT;
   const { title, cards, cta } = whyChoose;
   // start with the middle card active
   const [activeIndex, setActiveIndex] = useState(1);
+  const [isHoverLocked, setIsHoverLocked] = useState(false);
+  const [isMobileLayout, setIsMobileLayout] = useState(false);
+  const hoverLockTimeoutRef = useRef(null);
+  const lastTouchTimeRef = useRef(0);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const mediaQuery = window.matchMedia("(max-width: 991px)");
+
+    const updateMobileLayout = () => {
+      setIsMobileLayout(mediaQuery.matches);
+    };
+
+    updateMobileLayout();
+    mediaQuery.addEventListener("change", updateMobileLayout);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateMobileLayout);
+    };
+  }, []);
+
+  const activateCard = useCallback(
+    (index, { lockHover = false } = {}) => {
+      if (index === activeIndex) return;
+      if (lockHover && isHoverLocked) return;
+
+      setActiveIndex(index);
+
+      if (lockHover) {
+        setIsHoverLocked(true);
+        if (hoverLockTimeoutRef.current) {
+          clearTimeout(hoverLockTimeoutRef.current);
+        }
+        hoverLockTimeoutRef.current = setTimeout(() => {
+          setIsHoverLocked(false);
+        }, HOVER_LOCK_MS);
+      }
+    },
+    [activeIndex, isHoverLocked],
+  );
+
+  useEffect(() => {
+    return () => {
+      if (hoverLockTimeoutRef.current) {
+        clearTimeout(hoverLockTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const sideIndices = cards
     .map((_, index) => index)
     .filter((index) => index !== activeIndex);
@@ -37,12 +89,33 @@ const WhyChoose = () => {
               <article
                 key={card.id}
                 className={`${styles.card} ${cardClass} ${positionClass} ${isActive ? styles.activeCard : ""}`}
-                onClick={() => setActiveIndex(index)}
+                onMouseEnter={() => {
+                  if (!isMobileLayout) {
+                    activateCard(index, { lockHover: true });
+                  }
+                }}
+                onFocus={() => activateCard(index)}
+                onTouchStart={() => {
+                  lastTouchTimeRef.current = Date.now();
+                  activateCard(index);
+                }}
+                onClick={() => {
+                  if (
+                    Date.now() - lastTouchTimeRef.current <
+                    GHOST_CLICK_GUARD_MS
+                  ) {
+                    return;
+                  }
+
+                  activateCard(index);
+                }}
                 role="button"
                 tabIndex={0}
                 aria-pressed={isActive}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") setActiveIndex(index);
+                  if (e.key === "Enter" || e.key === " ") {
+                    activateCard(index);
+                  }
                 }}
               >
                 <Image

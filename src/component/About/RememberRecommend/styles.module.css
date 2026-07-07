@@ -1,8 +1,9 @@
 .section {
   width: 100%;
-  padding: var(--about-section-space) 0;
   background: var(--bg-surface);
+  margin-top: 70px;
 }
+
 
 .inner {
   width: min(1600px, calc(100% - 160px));
@@ -24,7 +25,7 @@
 .description {
   margin: 22px 0 0;
   color: var(--text-body);
-  font-size: var(--paragraph-size);
+  font-size: 20px;
   line-height: var(--paragraph-lh);
   font-weight: 400;
 }

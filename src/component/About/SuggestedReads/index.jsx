@@ -53,9 +53,13 @@ const SuggestedReads = () => {
     dots: true,
     arrows: false,
     infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2600,
     speed: 450,
     slidesToShow: 1.5,
     slidesToScroll: 1,
+    pauseOnHover: true,
+    pauseOnFocus: true,
     centerMode: false,
     centerPadding: "0px",
     variableWidth: false,
@@ -92,7 +96,9 @@ const SuggestedReads = () => {
 
                 <div className={styles.featuredBody}>
                   <h3 className={styles.featuredTitle}>{featuredRead.title}</h3>
-                  <p className={styles.featuredDescription}>{featuredRead.description}</p>
+                  <p className={styles.featuredDescription}>
+                    {featuredRead.description}
+                  </p>
                   <Button
                     label="Read More"
                     href={featuredRead.href}
@@ -112,9 +118,15 @@ const SuggestedReads = () => {
 
             <div className={styles.mobileSliderWrap}>
               {mounted ? (
-                <Slider {...mobileSliderSettings} className={styles.mobileSlider}>
+                <Slider
+                  {...mobileSliderSettings}
+                  className={styles.mobileSlider}
+                >
                   {sideReads.map((item) => (
-                    <div key={`mobile-${item.id}`} className={styles.mobileSlide}>
+                    <div
+                      key={`mobile-${item.id}`}
+                      className={styles.mobileSlide}
+                    >
                       <ReadCard item={item} mobile />
                     </div>
                   ))}

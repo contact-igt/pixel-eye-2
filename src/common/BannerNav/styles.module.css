@@ -262,7 +262,7 @@
   justify-content: center;
   width: min(100%, 228px);
   min-height: clamp(38px, 3vw, 46px);
-  border: 1.5px solid #7fa8be;
+  border: 2px solid #7fa8be;
   border-radius: 10px;
   color: var(--text-heading);
   background: #ffffff;
@@ -671,7 +671,7 @@
 
 
   .inner {
-    grid-template-columns: clamp(200px, 22vw, 247px) 1fr clamp(200px, 22vw, 320px);
+    grid-template-columns: clamp(200px, 22vw, 264px) 1fr clamp(200px, 22vw, 320px);
   }
 
 

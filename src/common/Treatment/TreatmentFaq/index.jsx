@@ -1,11 +1,28 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 
-const TreatmentFaq = ({
-  data,
-  slug = "treatment",
-}) => {
+const TreatmentFaq = ({ data, slug = "treatment" }) => {
   const [openId, setOpenId] = useState(null);
+  const sectionRef = useRef(null);
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   if (!data) return null;
 
@@ -13,7 +30,10 @@ const TreatmentFaq = ({
 
   return (
     <section
-      className={styles["treatment-faq"]}
+      ref={sectionRef}
+      className={`${styles["treatment-faq"]} ${
+        isRevealed ? styles["is-revealed"] : ""
+      }`.trim()}
       aria-labelledby={`${slug}-faq-title`}
     >
       <div className={styles["treatment-faq__inner"]}>

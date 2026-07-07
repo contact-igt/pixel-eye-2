@@ -1,6 +1,7 @@
 .section {
   width: 100%;
   padding: var(--about-section-space) 0;
+  margin-top: 70px;
 }
 
 .revealShell {
@@ -39,7 +40,7 @@
   margin: 20px 0 0;
   width: min(760px, 100%);
   color: #5d71a0;
-  font-size: var(--paragraph-size);
+  font-size: 20px;
   font-weight: 400;
   line-height: var(--paragraph-lh);
 }
@@ -177,9 +178,10 @@
   z-index: 2;
 }
 
-.watchBtn .icon{
+.watchBtn .icon {
   margin-left: 0 !important;
 }
+
 .watchLabel {
   display: inline-flex;
   align-items: center;
@@ -265,15 +267,16 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.watchBtn > span:last-child,
-.exploreBtn > span:last-child {
+
+.watchBtn>span:last-child,
+.exploreBtn>span:last-child {
   margin-left: 0;
 }
 
-.watchBtn > span:first-child,
-.watchBtn > span:last-child,
-.exploreBtn > span:first-child,
-.exploreBtn > span:last-child {
+.watchBtn>span:first-child,
+.watchBtn>span:last-child,
+.exploreBtn>span:first-child,
+.exploreBtn>span:last-child {
   background: transparent;
   transition:
     background 220ms ease,
@@ -281,40 +284,40 @@
     border-color 220ms ease;
 }
 
-.watchBtn > span:first-child,
-.watchBtn > span:last-child {
+.watchBtn>span:first-child,
+.watchBtn>span:last-child {
   border-color: rgba(246, 251, 255, 0.92);
   color: #f6fbff;
 }
 
-.exploreBtn > span:first-child,
-.exploreBtn > span:last-child {
+.exploreBtn>span:first-child,
+.exploreBtn>span:last-child {
   border-color: #2f4587;
   color: #2f4587;
 }
 
-.watchBtn > span:last-child svg,
-.exploreBtn > span:last-child svg {
+.watchBtn>span:last-child svg,
+.exploreBtn>span:last-child svg {
   transform: rotate(0deg) translate(0, 0);
   transform-origin: center;
   transition: transform 240ms ease;
 }
 
-.watchBtn:hover > span:first-child,
-.watchBtn:hover > span:last-child {
+.watchBtn:hover>span:first-child,
+.watchBtn:hover>span:last-child {
   background: #ffffff;
   color: #2f4587;
 }
 
-.exploreBtn:hover > span:first-child,
-.exploreBtn:hover > span:last-child {
+.exploreBtn:hover>span:first-child,
+.exploreBtn:hover>span:last-child {
   background: #2f4587;
   border-color: #2f4587;
   color: #ffffff;
 }
 
-.watchBtn:hover > span:last-child svg,
-.exploreBtn:hover > span:last-child svg {
+.watchBtn:hover>span:last-child svg,
+.exploreBtn:hover>span:last-child svg {
   transform: rotate(45deg) translate(1px, 0);
 }
 
@@ -405,7 +408,7 @@
     font-size: 13px;
   }
 
-  .watchBtn > span:first-child {
+  .watchBtn>span:first-child {
     height: 36px;
     padding: 0 14px;
     font-size: 13px;
@@ -416,7 +419,7 @@
     height: 36px;
   }
 
-  .watchBtn > span:last-child {
+  .watchBtn>span:last-child {
     width: 36px;
     height: 36px;
   }
@@ -436,7 +439,7 @@
     font-size: 16px;
   }
 
-  .exploreBtn > span:first-child {
+  .exploreBtn>span:first-child {
     height: 44px;
     padding: 0 22px;
     font-size: 16px;
@@ -447,7 +450,7 @@
     height: 44px;
   }
 
-  .exploreBtn > span:last-child {
+  .exploreBtn>span:last-child {
     width: 44px;
     height: 44px;
   }
@@ -457,10 +460,13 @@
     height: 18px;
   }
 }
+
 @media (max-width: 576px) {
   .panel {
     width: min(1600px, calc(100% - 30px));
-  }}
+  }
+}
+
 @media (max-width: 389px) {
   .panel {
     width: min(1600px, calc(100% - 28px));

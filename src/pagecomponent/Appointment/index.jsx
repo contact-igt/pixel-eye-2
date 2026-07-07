@@ -4,6 +4,7 @@ const Form = dynamic(() => import("@/component/Appointment/form"), {
   ssr: false,
 });
 import { HERO_BANNER_CONTENT } from "@/constant/heroBannerContent";
+import styles from "./styles.module.css";
 
 const AppointmentPageComponent = () => {
   const {
@@ -36,6 +37,7 @@ const AppointmentPageComponent = () => {
         imagePosition={imagePosition}
         mobileOverlay={mobileOverlay}
         mobileCta={mobileCta}
+        copyClassName={styles.appointmentHeroCopy}
       />
       <Form />
     </>

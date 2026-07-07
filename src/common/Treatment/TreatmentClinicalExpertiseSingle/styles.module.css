@@ -11,6 +11,7 @@
     background: #ffffff;
     padding: clamp(56px, 5.8vw, 96px) 0 clamp(52px, 5vw, 84px);
     color: #273979;
+    margin-top: 70px;
 }
 
 .clinical-expertise__inner {
@@ -61,6 +62,15 @@
     height: 320px;
     display: flex;
     align-items: center;
+    opacity: 0;
+    transform: translateY(24px) scale(0.99);
+    transition: opacity 560ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+}
+
+.clinical-expertise--single.is-revealed .clinical-expertise__card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .clinical-expertise__card-bg-wrapper {

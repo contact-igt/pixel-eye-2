@@ -5,7 +5,7 @@
 .footer {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-card-md);
+  border-radius: 20px 20px 0px 0px;
   /* NOTE: #293B77 is the footer brand dark — visually distinct from --surface-dark-blue (#2f4587).
      A dedicated --bg-footer token is recommended in globals.css for a future phase. */
   background: #293B77;

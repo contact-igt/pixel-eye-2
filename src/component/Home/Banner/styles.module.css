@@ -154,8 +154,8 @@
 /* White notched card — border-top-left-radius creates the smooth cutout */
 .bookArea {
   position: absolute;
-  bottom: -7px;
-  right: 10px;
+  bottom: -3px;
+  right: 5px;
   z-index: 2;
   background: transparent;
   border-top-left-radius: 20px;
@@ -190,10 +190,10 @@
 
 
 
-@media(max-width: 1599px) {
+@media(max-width: 1499px) {
   .bookArea {
     right: -0.5%;
-    min-width: 270px;
+    min-width: 280px;
   }
 
 

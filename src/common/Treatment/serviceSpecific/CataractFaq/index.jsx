@@ -1,10 +1,33 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import styles from "./styles.module.css";
 
-const CataractFaq = ({ faqContent = SERVICE_CATARACT_CONTENT.faq, sectionId = "cataract-faq" }) => {
+const CataractFaq = ({
+  faqContent = SERVICE_CATARACT_CONTENT.faq,
+  sectionId = "cataract-faq",
+}) => {
   const faq = faqContent;
   const [openId, setOpenId] = useState(null);
+  const sectionRef = useRef(null);
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   if (!faq) return null;
 
@@ -12,7 +35,10 @@ const CataractFaq = ({ faqContent = SERVICE_CATARACT_CONTENT.faq, sectionId = "c
 
   return (
     <section
-      className={styles["cataract-faq"]}
+      ref={sectionRef}
+      className={`${styles["cataract-faq"]} ${
+        isRevealed ? styles["is-revealed"] : ""
+      }`.trim()}
       aria-labelledby={`${sectionId}-title`}
     >
       <div className={styles["cataract-faq__inner"]}>

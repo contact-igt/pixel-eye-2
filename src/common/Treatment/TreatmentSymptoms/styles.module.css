@@ -5,8 +5,9 @@
 
 .treatment-symptoms {
   width: min(1640px, calc(100% - 230px));
-  margin: 0 auto 84px;
+  margin: 70px auto 0px;
   color: #273979;
+
 }
 
 .treatment-symptoms__header h2 {

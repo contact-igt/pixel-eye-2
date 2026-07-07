@@ -442,9 +442,6 @@
 }
 
 @media (max-width: 390px) {
-  .treatment-hero__frame {
-    min-height: 330px;
-  }
 
   .treatment-explainer {
     width: min(100%, calc(100% - 20px));
