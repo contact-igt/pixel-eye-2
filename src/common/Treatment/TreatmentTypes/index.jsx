@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
 
@@ -22,9 +22,19 @@ const ArrowIcon = ({ direction }) => (
 
 const TreatmentTypes = ({ data, slug = "treatment" }) => {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [activeMobileIndex, setActiveMobileIndex] = useState(0);
+  const mobileSlides = data.slides || [];
+  const visibleMobileSlides = mobileSlides.length
+    ? [
+        mobileSlides[activeMobileIndex],
+        mobileSlides[(activeMobileIndex + 1) % mobileSlides.length],
+      ].filter(Boolean)
+    : [];
 
   const getSlide = (offset) =>
-    data.slides[(activeIndex + offset + data.slides.length) % data.slides.length];
+    data.slides[
+      (activeIndex + offset + data.slides.length) % data.slides.length
+    ];
 
   const previousSlide = () =>
     setActiveIndex((c) => (c - 1 + data.slides.length) % data.slides.length);
@@ -35,7 +45,43 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
   const leftSlide = getSlide(-1);
   const activeSlide = getSlide(0);
   const rightSlide = getSlide(1);
-  const mobileSlides = [activeSlide, rightSlide, leftSlide];
+
+  useEffect(() => {
+    if (mobileSlides.length < 2) return undefined;
+
+    const timer = window.setInterval(() => {
+      setActiveMobileIndex((current) => (current + 1) % mobileSlides.length);
+    }, 2500);
+
+    return () => window.clearInterval(timer);
+  }, [mobileSlides.length]);
+
+  const renderSlideCard = (slide, key, variant = "mobile") => (
+    <article
+      key={key}
+      className={`${styles["treatment-types__card"]} ${
+        variant === "mobile"
+          ? styles["treatment-types__mobile-card"]
+          : styles[`treatment-types__card--${variant}`]
+      }`}
+      aria-live={variant === "main" ? "polite" : undefined}
+    >
+      {slide.image && (
+        <div className={styles["treatment-types__card-image"]}>
+          <Image
+            src={slide.image}
+            alt={slide.alt ?? slide.imageAlt ?? slide.title}
+            width={variant === "main" || variant === "mobile" ? 500 : 300}
+            height={variant === "main" || variant === "mobile" ? 500 : 300}
+          />
+        </div>
+      )}
+      <div className={styles["treatment-types__card-content"]}>
+        <h3>{slide.title}</h3>
+        {slide.description && <p>{slide.description}</p>}
+      </div>
+    </article>
+  );
 
   return (
     <section
@@ -88,30 +134,9 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
             { slide: leftSlide, variant: "side" },
             { slide: activeSlide, variant: "main" },
             { slide: rightSlide, variant: "side" },
-          ].map(({ slide, variant }) => (
-            <article
-              key={`${variant}-${slide.id ?? slide.title}`}
-              className={`${styles["treatment-types__card"]} ${
-                styles[`treatment-types__card--${variant}`]
-              }`}
-              aria-live={variant === "main" ? "polite" : undefined}
-            >
-              {slide.image && (
-                <div className={styles["treatment-types__card-image"]}>
-                  <Image
-                    src={slide.image}
-                    alt={slide.alt ?? slide.imageAlt ?? slide.title}
-                    width={variant === "main" ? 500 : 300}
-                    height={variant === "main" ? 500 : 300}
-                  />
-                </div>
-              )}
-              <div className={styles["treatment-types__card-content"]}>
-                <h3>{slide.title}</h3>
-                {slide.description && <p>{slide.description}</p>}
-              </div>
-            </article>
-          ))}
+          ].map(({ slide, variant }) =>
+            renderSlideCard(slide, `${variant}-${slide.id ?? slide.title}`, variant)
+          )}
 
           <button
             className={`${styles["treatment-types__arrow"]} ${styles["treatment-types__arrow--right"]}`}
@@ -123,28 +148,38 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
           </button>
         </div>
 
-        <div className={styles["treatment-types__mobile-list"]}>
-          {mobileSlides.map((slide) => (
-            <article
-              key={`mobile-${slide.id ?? slide.title}`}
-              className={`${styles["treatment-types__card"]} ${styles["treatment-types__mobile-card"]}`}
-            >
-              {slide.image && (
-                <div className={styles["treatment-types__card-image"]}>
-                  <Image
-                    src={slide.image}
-                    alt={slide.alt ?? slide.imageAlt ?? slide.title}
-                    width={500}
-                    height={500}
-                  />
-                </div>
-              )}
-              <div className={styles["treatment-types__card-content"]}>
-                <h3>{slide.title}</h3>
-                {slide.description && <p>{slide.description}</p>}
-              </div>
-            </article>
-          ))}
+        <div className={styles["treatment-types__mobile-slider"]}>
+          <div
+            className={styles["treatment-types__mobile-track"]}
+            aria-live="polite"
+          >
+            {visibleMobileSlides.map((slide, index) =>
+              renderSlideCard(
+                slide,
+                `mobile-${slide.id ?? slide.title}`,
+                "mobile",
+              ),
+            )}
+          </div>
+          <div
+            className={styles["treatment-types__mobile-dots"]}
+            aria-label={`${data.title} slides`}
+          >
+            {mobileSlides.map((slide, index) => (
+              <button
+                key={`mobile-dot-${slide.id ?? index}`}
+                type="button"
+                className={`${styles["treatment-types__mobile-dot"]} ${
+                  activeMobileIndex === index
+                    ? styles["treatment-types__mobile-dot--active"]
+                    : ""
+                }`}
+                aria-label={`Show slide ${index + 1}`}
+                aria-current={activeMobileIndex === index ? "true" : undefined}
+                onClick={() => setActiveMobileIndex(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

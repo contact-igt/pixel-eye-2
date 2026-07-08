@@ -7,7 +7,8 @@ const TreatmentCauses = ({ data, slug = "treatment" }) => {
   const [isRevealed, setIsRevealed] = useState(false);
 
   const itemCount = data?.items?.length ?? 0;
-  const cardsPerSlide = Math.max(1, Math.min(3, itemCount || 1));
+  const [cardsPerSlideLimit, setCardsPerSlideLimit] = useState(3);
+  const cardsPerSlide = Math.max(1, Math.min(cardsPerSlideLimit, itemCount || 1));
   const groupedItems = [];
 
   for (let index = 0; index < itemCount; index += cardsPerSlide) {
@@ -60,6 +61,22 @@ const TreatmentCauses = ({ data, slug = "treatment" }) => {
     ],
   };
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px) and (max-width: 991px)");
+    const updateCardsPerSlide = (event) => {
+      setCardsPerSlideLimit(event.matches ? 4 : 3);
+    };
+
+    updateCardsPerSlide(mediaQuery);
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", updateCardsPerSlide);
+      return () => mediaQuery.removeEventListener("change", updateCardsPerSlide);
+    }
+
+    mediaQuery.addListener(updateCardsPerSlide);
+    return () => mediaQuery.removeListener(updateCardsPerSlide);
+  }, []);
   useEffect(() => {
     const node = cardsRef.current;
     if (!node) return;

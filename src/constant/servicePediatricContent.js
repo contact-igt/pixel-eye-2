@@ -114,70 +114,70 @@
         title: "Refractive Errors",
         description:
           "This test helps detect whether the child has eye power such as myopia, hyperopia, or astigmatism.",
-        image: "/assets/Service/pediatric/conditions2.png",
+        image: "/assets/Service/pediatric/refractive-error.png",
       },
       {
         id: "lazy-eye",
         title: "Lazy eye (Amblyopia)",
         description:
           "Lazy eye, also called amblyopia, happens when one eye has weaker vision than the other.",
-        image: "/assets/Service/pediatric/conditions1.png",
+        image: "/assets/Service/pediatric/lazy-eye.png",
       },
       {
         id: "eye-allergies",
         title: "Eye Allergies",
         description:
           "Children with eye allergies may have redness, itching, watering, swelling, or frequent eye rubbing.",
-        image: "/assets/Service/pediatric/conditions3.png",
+        image: "/assets/Service/pediatric/eye-allergy.png",
       },
       {
         id: "strabismus",
         title: "Strabismus (Crossed or Wandering Eyes)",
         description:
           "A condition where the eyes do not align properly or look in the same direction. One eye may turn inward, outward, upward, or downward.",
-        image: "/assets/Service/pediatric/conditions1.png",
+        image: "/assets/Service/pediatric/STRABISMUS.jpg",
       },
       {
         id: "blocked-tear-duct",
         title: "Blocked Tear Duct (Nasolacrimal Duct Obstruction)",
         description:
           "Affects about 20% of newborns. It prevents tears from draining normally, leading to chronic watering, pooling, and crusty discharge.",
-        image: "/assets/Service/pediatric/conditions2.png",
+        image: "/assets/Service/pediatric/blocked-tear-duct.jpg",
       },
       {
         id: "conjunctivitis",
         title: "Conjunctivitis (Pink Eye)",
         description:
           "Inflammation of the clear membrane covering the eye, caused by bacteria, viruses, or allergies. It causes redness, itching, and discharge.",
-        image: "/assets/Service/pediatric/conditions3.png",
+        image: "/assets/Service/pediatric/pink-eye.jpg",
       },
       {
         id: "chalazion-and-stye",
         title: "Chalazion and Stye",
         description:
           "Swollen, painful bumps on the eyelid caused by blocked oil glands or localized infections.",
-        image: "/assets/Service/pediatric/conditions1.png",
+        image: "/assets/Service/pediatric/chalazion.jpg",
       },
       {
         id: "abnormal-pupil-reflex",
         title: "Abnormal Pupil Reflex",
         description:
           "A white, yellow, or cloudy area in the pupil, which can sometimes be distinctly spotted in photographs (Leukocoria).",
-        image: "/assets/Service/pediatric/conditions2.png",
+        image: "/assets/Service/pediatric/abnormal-pupil-reflew.jpg",
       },
       {
         id: "watery-or-discharging-eyes",
         title: "Watery or Discharging Eyes",
         description:
           "Persistent tearing, pus, crusty eyelashes, or red and swollen eyelids.",
-        image: "/assets/Service/pediatric/conditions3.png",
+        image: "/assets/Service/pediatric/watery-eyes.jpg",
       },
       {
         id: "bulging-eyes",
         title: "Bulging Eyes",
         description:
           "One or both eyes appearing unusually prominent or protruding.",
-        image: "/assets/Service/pediatric/conditions1.png",
+        image: "/assets/Service/pediatric/bulgy-eyes.jpg",
       },
     ],
   },

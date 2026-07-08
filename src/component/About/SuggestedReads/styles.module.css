@@ -1,7 +1,7 @@
 .section {
   width: 100%;
   padding: var(--about-section-space) 0;
-  background: var(--surface-soft-blue);
+  background:#D8E6EE;
   margin-top: 70px;
 }
 
@@ -128,10 +128,10 @@
 
 .featuredDescription {
   margin: 16px 0 0;
-  color: var(--text-body);
+  color: #293B77CC;
   font-size: clamp(16px, 1.05vw, 22px);
   line-height: 1.35;
-  font-weight: 400;
+  font-weight: 500;
   max-width: 92%;
 }
 
@@ -250,10 +250,10 @@
 
 .sideDescription {
   margin: 14px 0 0;
-  color: var(--text-body);
+  color: #293B77CC;
   font-size: clamp(15px, 1vw, 20px);
   line-height: 1.42;
-  font-weight: 400;
+  font-weight: 500;
   max-width: 100%;
 }
 

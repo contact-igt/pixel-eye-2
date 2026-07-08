@@ -38,12 +38,12 @@ export const NAV_CONTENT = {
     },
     {
       id: "service-pediatric",
-      label: "Pediatric Eye Care",
+      label: "Pediatric",
       href: "/service/pediatric",
     },
     {
       id: "service-lasik",
-      label: "LASIK",
+      label: "Lasik",
       href: "/service/lasik",
     },
     {

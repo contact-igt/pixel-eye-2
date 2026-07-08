@@ -46,8 +46,9 @@
 
 .treatment-cause-card img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: auto;
+  max-width: 100%;
+  height: clamp(360px, 28vw, 520px);
   object-fit: contain;
   user-select: none;
 }
@@ -67,6 +68,10 @@
     gap: 14px;
     margin-top: 86px;
   }
+
+  .treatment-cause-card img {
+    height: clamp(330px, 30vw, 440px);
+  }
 }
 
 @media (max-width: 991px) {
@@ -84,6 +89,10 @@
   .treatment-cause-card {
     display: flex;
     justify-content: center;
+  }
+
+  .treatment-cause-card img {
+    height: clamp(280px, 38vw, 360px);
   }
 }
 
@@ -104,6 +113,10 @@
     grid-template-columns: repeat(3, minmax(0, 172px));
     gap: 12px;
     margin-top: 48px;
+  }
+
+  .treatment-cause-card img {
+    height: clamp(235px, 38vw, 292px);
   }
 }
 
@@ -183,7 +196,7 @@
 
   .treatment-causes__slider {
     display: block;
-    width: min(100%, 740px);
+    width: min(100%, 860px);
     margin: clamp(34px, 5vw, 52px) auto 0;
     padding: 0 clamp(4px, 1.2vw, 10px);
   }
@@ -210,7 +223,7 @@
 
   .treatment-causes__slide-group {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 12px;
     align-items: flex-end;
     width: 100%;
@@ -224,8 +237,10 @@
   }
 
   .treatment-causes__slider .treatment-cause-card img {
-    width: min(100%, 150px);
-    height: auto;
+    width: auto;
+    max-width: 100%;
+    height: clamp(260px, 34vw, 315px);
+    object-fit: contain;
     filter: drop-shadow(0 8px 12px rgba(39, 57, 121, 0.1));
   }
 
@@ -267,13 +282,16 @@
 }
 
 @media (max-width: 767px) {
+  .treatment-causes__slide-group {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .treatment-causes__slider {
     width: min(100%, 560px);
     margin-top: 34px;
   }
 
   .treatment-causes__slider .treatment-cause-card img {
-    width: min(100%, 136px);
+    height: clamp(235px, 38vw, 292px);
   }
 }
 
@@ -296,7 +314,7 @@
   }
 
   .treatment-causes__slider .treatment-cause-card img {
-    width: min(100%, 118px);
+    height: clamp(218px, 56vw, 250px);
   }
 
   .treatment-causes__slide-group {
@@ -315,7 +333,7 @@
   }
 
   .treatment-causes__slider .treatment-cause-card img {
-    width: min(100%, 112px);
+    height: clamp(210px, 62vw, 235px);
   }
 
   .treatment-causes__slide-group {

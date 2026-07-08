@@ -6,8 +6,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
 import styles from "./styles.module.css";
 
-const VisionariesSection = () => {
-  const { titleLines, subtitleLines, doctors } = ABOUT_CONTENT.visionaries;
+const VisionariesSection = ({ content = ABOUT_CONTENT.visionaries }) => {
+  const { titleLines, subtitleLines, doctors } = content;
   const sectionRef = useRef(null);
   const [forceVisible, setForceVisible] = useState(false);
 

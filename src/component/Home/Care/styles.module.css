@@ -197,7 +197,9 @@
     margin-top: 80px;
   }
 
-
+.ctaButton{
+  right: 60px;
+}
   .cardWrap {
     padding-bottom: 60px;
   }

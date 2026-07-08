@@ -1,8 +1,22 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_CONTENT } from "@/constant/footerContent";
 import styles from "./styles.module.css";
 
+const YouTubeIcon = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path
+      d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1A31.2 31.2 0 0 0 2 12a31.2 31.2 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 22 12a31.2 31.2 0 0 0-.4-4.8Z"
+      fill="currentColor"
+    />
+    <path d="m10 15.4 5.2-3.4L10 8.6v6.8Z" fill="#293B77" />
+  </svg>
+);
 export default function Footer() {
   const { brand, sections, links, contacts, social, plainLogo, copyright } =
     FOOTER_CONTENT;
@@ -70,13 +84,17 @@ export default function Footer() {
                 className={styles.socialIcon}
                 aria-label={item.label}
               >
-                <Image
-                  src={item.icon}
-                  alt={item.label}
-                  width={10}
-                  height={10}
-                  className={styles.socialImage}
-                />
+                {item.iconType === "youtube" ? (
+                  <YouTubeIcon className={styles.socialSvg} />
+                ) : (
+                  <Image
+                    src={item.icon}
+                    alt={item.label}
+                    width={10}
+                    height={10}
+                    className={styles.socialImage}
+                  />
+                )}
               </Link>
             ))}
           </div>
@@ -99,3 +117,4 @@ export default function Footer() {
     </footer>
   );
 }
+

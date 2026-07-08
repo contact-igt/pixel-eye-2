@@ -56,7 +56,7 @@ export const SERVICE_RETINA_CONTENT = {
       {
         number: "01",
         title: "Diabetes (Diabetic Retinopathy)",
-        image: "/assets/Service/Retina/lead11.png",
+        image: "/assets/Service/Retina/lead1_new.png",
       },
       {
         number: "02",
@@ -112,35 +112,35 @@ export const SERVICE_RETINA_CONTENT = {
         title: "Diabetic Retinopathy",
         description:
           "A complication of diabetes where chronically high blood sugar damages the delicate blood vessels inside the retina. They can swell, leak fluid, or bleed into the eye.",
-        image: "/assets/Service/Retina/diabetic.png",
+        image: "/assets/Service/Retina/diabetic-retinopathy.jpg",
       },
       {
         id: "retinal-tear",
         title: "Retinal Tear",
         description:
           "Occurs when the gel-like fluid inside the eye pulls away too harshly from the back wall, ripping a small hole in the retinal tissue. It causes sudden flashes of light and floaters.",
-        image: "/assets/Service/Retina/tear.png",
+        image: "/assets/Service/Retina/retina-tear.jpg",
       },
       {
         id: "retinal-detachment",
         title: "Retinal Detachment",
         description:
           "A critical medical emergency where fluid seeps through a tear, lifting or separating the retina entirely from its underlying layer of blood vessels. This causes a dark shadow or curtain to fall over your vision field.",
-        image: "/assets/Service/Retina/retinal.png",
+        image: "/assets/Service/Retina/retinal-detachment.jpg",
       },
       {
         id: "retinal-vein-or-artery-occlusion",
         title: "Retinal Vein or Artery Occlusion",
         description:
           "Often called an \"eye stroke,\" this happens when a blood clot blocks a major blood vessel supplying the retina, causing sudden, painless vision loss.",
-        image: "/assets/Service/Retina/Rectangle 103.png",
+        image: "/assets/Service/Retina/retinal-vein-or-artery-occlusion.jpg",
       },
       {
         id: "macular-hole-or-pucker",
         title: "Macular Hole or Pucker",
         description:
           "These are structural flaws in the central retina. A pucker involves scar tissue wrinkling the macula, while a hole is an actual tear or gap in it. Both distort your central vision, making straight lines look wavy.",
-        image: "/assets/Service/Retina/Rectangle 103 (1).png",
+        image: "/assets/Service/Retina/macular-hole.jpg",
       },
     ],
   },

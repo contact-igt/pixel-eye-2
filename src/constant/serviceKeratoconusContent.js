@@ -70,7 +70,7 @@
       {
         number: "01",
         title: "Eye rubbing",
-        image: "/assets/Service/keratoconus/Frame1.png",
+        image: "/assets/Service/keratoconus/Frame1_new.png",
       },
       {
         number: "02",
@@ -119,7 +119,7 @@
         title: "Corneal Thickness Check",
         description:
           "Measures how thin the cornea is and helps decide treatment safety.",
-        image: "/assets/Service/keratoconus/corneal_thickness.png",
+        image: "/assets/Service/keratoconus/corneal_thickness_new.png",
         imageAlt: "Corneal thickness check",
       },
       {
@@ -127,14 +127,14 @@
         title: "Corneal Topography / Tomography",
         description:
           "Creates a detailed map of the cornea and helps detect early irregularity.",
-        image: "/assets/Service/keratoconus/corneal_topography.png",
+        image: "/assets/Service/keratoconus/corneal_topography_new.png",
         imageAlt: "Corneal topography tomography",
       },
       {
         id: "refraction-test",
         title: "Refraction Test",
         description: "Checks spectacle power and irregular astigmatism.",
-        image: "/assets/Service/keratoconus/refraction_test.png",
+        image: "/assets/Service/keratoconus/refraction_test_new.png",
         imageAlt: "Refraction test",
       },
     ],

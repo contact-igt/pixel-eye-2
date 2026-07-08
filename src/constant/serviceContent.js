@@ -32,7 +32,7 @@ export const SERVICE_CONTENT = {
     },
     {
       id: "paediatric-ophthalmology",
-      title: "Pediatric Eye Care",
+      title: "Paediatric ophthalmology",
       description:
         "Eye care for children, including vision development, early detection of conditions, and treatment of both routine and complex eye concerns.",
       image: "/assets/Service/Paediatric ophthalmology.png",
