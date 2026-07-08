@@ -40,6 +40,7 @@
 
 .clear-way__copy p+p {
   margin-top: 24px;
+  font-size: 18px;
 }
 
 @media (max-width: 1199px) {

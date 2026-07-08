@@ -12,7 +12,7 @@
 .frame {
   position: relative;
   border-radius: 18px;
-  padding: 40px 28px 36px;
+  padding: 40px 30px 70px;
   background: linear-gradient(90deg, #e3effd 0%, #f6faff 50%, #e3effd 100%);
   border: 2px solid #c9d6ee;
   overflow: hidden;
@@ -28,6 +28,7 @@
   line-height: var(--h2-lh);
   color: var(--text-heading);
   font-weight: 500;
+  margin: 20px 50px;
 }
 
 /* ── Client frames — absolute, full width band ─────────── */
@@ -54,7 +55,7 @@
 }
 
 .mosaicWrap {
-  top: 80px;
+  top: 150px;
   left: 0;
   right: 0;
   bottom: auto;
@@ -213,7 +214,7 @@
 .lowerContent {
   position: relative;
   z-index: 2;
-  margin-top: 300px;
+  margin-top: 410px;
 }
 
 /* ── Subtitle ───────────────────────────────── */
@@ -901,7 +902,7 @@
 }
 
 @media (max-width: 991px) {
- .clientImg:nth-child(1) {
+  .clientImg:nth-child(1) {
     left: 1%;
     top: 75px;
     width: 110px;
@@ -911,7 +912,7 @@
   .clientImg:nth-child(2) {
     left: 1%;
     top: 210px;
-     width: 110px;
+    width: 110px;
     height: 105px;
   }
 
@@ -962,7 +963,7 @@
   .clientImg:nth-child(9) {
     right: 28%;
     top: 55px;
-   width: 88px;
+    width: 88px;
     height: 130px;
   }
 
@@ -990,23 +991,23 @@
   .clientImg:nth-child(13) {
     right: 1.5%;
     top: 50px;
-      width: 110px;
+    width: 110px;
     height: 105px;
   }
 
   .clientImg:nth-child(14) {
     right: 1.5%;
     top: 205px;
-      width: 110px;
+    width: 110px;
     height: 105px;
   }
 }
 
-@media (max-width: 880px){
+@media (max-width: 880px) {
   .clientImg:nth-child(1) {
     left: 1%;
     top: 75px;
-   width: 95px;
+    width: 95px;
     height: 90px;
   }
 
@@ -1027,7 +1028,7 @@
   .clientImg:nth-child(4) {
     left: 110px;
     top: 160px;
-     width: 85px;
+    width: 85px;
     height: 75px;
   }
 
@@ -1035,7 +1036,7 @@
   .clientImg:nth-child(5) {
     left: 110px;
     top: 260px;
-     width: 85px;
+    width: 85px;
     height: 75px;
   }
 
@@ -1064,45 +1065,46 @@
   .clientImg:nth-child(9) {
     right: 27%;
     top: 55px;
-   width: 80px;
+    width: 80px;
     height: 120px;
   }
 
   .clientImg:nth-child(10) {
     right: 15%;
     top: 45px;
-     width: 85px;
+    width: 85px;
     height: 75px;
   }
 
   .clientImg:nth-child(11) {
     right: 15%;
     top: 145px;
-     width: 85px;
+    width: 85px;
     height: 75px;
   }
 
   .clientImg:nth-child(12) {
     right: 15%;
     top: 250px;
-     width: 85px;
+    width: 85px;
     height: 75px;
   }
 
   .clientImg:nth-child(13) {
     right: 1.5%;
     top: 50px;
-     width: 95px;
+    width: 95px;
     height: 90px;
   }
 
   .clientImg:nth-child(14) {
     right: 1.5%;
     top: 205px;
-      width: 95px;
+    width: 95px;
     height: 90px;
   }
 }
+
 @media (max-width: 767px) {
   .frame {
     padding: 30px 16px 24px;
@@ -1173,7 +1175,14 @@
     font-size: 18px;
   }
 }
-@media (max-width: 576px){
+
+@media (max-width: 576px) {
+
+  .mosaicWrap{
+    top: 59px;
+  }
+
+
   .clientImg:nth-child(6) {
     left: 3%;
     top: 55px;
@@ -1195,19 +1204,23 @@
     height: 100px;
   }
 
-    .clientImg:nth-child(9) {
+  .clientImg:nth-child(9) {
     right: 10px;
     top: 55px;
     width: 80px;
     height: 100px;
   }
+  .title{
+    margin: 0px;
+  }
 }
+
 @media (max-width: 400px) {
   .clientImg:nth-child(6) {
     left: 2%;
     top: 65px;
-      width: 70px;
-      height: 90px;
+    width: 70px;
+    height: 90px;
   }
 
   .clientImg:nth-child(7) {

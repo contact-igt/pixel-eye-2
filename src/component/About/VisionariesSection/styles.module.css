@@ -157,7 +157,7 @@
 }
 
 .infoPanelRight {
-  top: 50px;
+  top: 70px;
   left: 0;
   right: auto;
   width: clamp(220px, 52%, 300px);

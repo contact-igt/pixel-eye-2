@@ -8,6 +8,7 @@ import styles from "./styles.module.css";
 const Protect = () => {
   const { protect } = HOME_CONTENT;
   const {
+    content,
     title,
     beforeImage,
     afterImage,
@@ -137,6 +138,7 @@ const Protect = () => {
               className={styles.heroCta}
             />
           </div>
+          <p className={styles.content}>{content}</p>
         </RevealOnView>
 
         {/* Draggable Handle */}

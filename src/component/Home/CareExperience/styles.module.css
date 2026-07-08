@@ -1,6 +1,7 @@
 .experienceSection {
   background: transparent;
   padding: var(--section-px);
+  margin-top: 100px;
 }
 
 .container {
@@ -10,7 +11,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 660px;
+  grid-template-columns: minmax(0, 1fr) 730px;
   gap: 32px;
   align-items: center;
 }
@@ -43,7 +44,7 @@
 .card {
   background: var(--bg-surface);
   border-radius: var(--radius-card-md) 0 0 var(--radius-card-md);
-  padding: 200px 0 40px 60px;
+  padding: 150px 0 40px 120px;
   box-shadow: none;
 }
 
@@ -59,8 +60,8 @@
 .paragraph {
   margin: 0 0 18px 0;
   color: #4F4F4F;
-  font-size: 22px;
-  line-height: 1.6;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 .imageWrap {
@@ -85,10 +86,24 @@
   display: none;
 }
 
-/* ─── Large Laptop ──────────────────────────── 1399px ── */
+
+@media (max-width: 1499px) {
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr) 680px;
+
+  }
+
+
+}
+
 @media (max-width: 1399px) {
   .title {
     font-size: 40px;
+  }
+
+  .experienceSection {
+    margin-top: 30px;
   }
 
   .grid {
@@ -104,18 +119,18 @@
   }
 }
 
-/* ─── Laptop ────────────────────────────────── 1199px ── */
 @media (max-width: 1199px) {
   .title {
     font-size: 33px;
   }
 
   .grid {
-    grid-template-columns: minmax(0, 1fr) 520px;
+    grid-template-columns: minmax(0, 1fr) 465px;
+
   }
 
   .paragraph {
-    font-size: 18px;
+    font-size: 17px;
     margin-bottom: 10px;
     line-height: 1.5;
   }
@@ -124,6 +139,9 @@
     right: 120px;
   }
 
+  .card {
+    padding: 134px 0 40px 50px;
+  }
 
 }
 
@@ -187,19 +205,18 @@
     font-size: 36px;
   }
 
-  .experienceSection{
+  .experienceSection {
     margin-top: 50px;
     padding: 0px 30px;
   }
 }
 
-/* ─── Small Mobile ──────────────────────────── 575px ── */
 @media (max-width: 575px) {
   .title {
-          font-size: 24px;
-        top: -140%;
-        width: 240px;
-        left: 20px;
+    font-size: 24px;
+    top: -140%;
+    width: 240px;
+    left: 20px;
   }
 
   .grid {
@@ -218,6 +235,10 @@
     font-size: 16px;
     line-height: 1.4;
     margin-bottom: 10px;
+  }
+
+  .experienceSection{
+    margin-top: 30px;
   }
 
 

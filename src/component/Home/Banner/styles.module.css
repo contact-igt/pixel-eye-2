@@ -72,7 +72,7 @@
 /* ── Hero copy ── */
 .heroContent {
   position: absolute;
-  left: 56px;
+  left: 80px;
   top: 35%;
   /* no transform — top of block starts at 35% */
   z-index: 2;
@@ -215,6 +215,9 @@
   .heroTitle {
     font-size: 40px;
     line-height: 52px;
+  }
+  .bookButton{
+    height: 50px;
   }
 
 }

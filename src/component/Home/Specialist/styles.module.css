@@ -210,11 +210,11 @@
 @media (max-width: 1399px) {
 
 
-    .specialistSection {
-        margin-top: 80px;
+
+
+    .frame {
+        height: 560px;
     }
-
-
 
     .doctor {
         flex-direction: column-reverse;
@@ -273,6 +273,13 @@
         width: 340px;
         height: 193px;
         padding: 40px;
+
+    }
+
+    .title {
+        margin: 56px 0 12px 97px;
+
+        font-size: 45px;
 
     }
 

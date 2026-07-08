@@ -65,7 +65,7 @@
     titleLine1: "Featured",
     titleLine2: "Care Areas",
     cta: {
-      label: "View All Services",
+      label: "View All Treatments",
       href: "/service",
     },
     featuredCareAreas: [
@@ -115,6 +115,8 @@
       href: "/doctors",
     },
     title: "Every eye has a story, we're here to protect yours.",
+    content:
+      " *“Red eye,” commonly called conjunctivitis (pink eye), is shown for illustration only and not for diagnosis, consult an eye care professional.",
     beforeImage: {
       src: "/assets/Home/protextbanner11.png",
       alt: "Red inflamed eye",
@@ -141,7 +143,7 @@
   whyChoose: {
     title: "Why Choose Us",
     cta: {
-      label: "View All Services",
+      label: "View All Treatments",
       href: "/service",
     },
     cards: [

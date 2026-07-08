@@ -4,6 +4,13 @@
 
 }
 
+.content {
+  color: #CDDBF8;
+  margin-top: 70px;
+  font-weight: 400;
+  font-size: 12px;
+}
+
 .bannerFrame {
   position: relative;
   max-width: var(--container-max);
@@ -72,7 +79,7 @@
 .heroContent {
   position: absolute;
   left: 6.5%;
-  top: 28%;
+  top: 20%;
   z-index: 5;
   max-width: 620px;
   pointer-events: auto;
@@ -170,7 +177,7 @@
 
 @media (max-width: 1399px) {
   .heroContent {
-    top: 24%;
+    top: 14%;
     max-width: 520px;
   }
 
@@ -185,13 +192,14 @@
   .bannerFrame {
     height: 400px;
   }
+  
 }
 
 
 
 @media (max-width: 1199px) {
   .heroContent {
-    top: 24%;
+    top: 10%;
     max-width: 520px;
   }
 
@@ -238,6 +246,10 @@
 
   .protectSection {
     margin-top: 60px;
+  }
+
+  .content{
+    margin-top: 140px;
   }
 
 

@@ -5,13 +5,11 @@
 
 .card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 406px);
-  grid-template-areas:
-    "title image"
-    "details image";
+  grid-template-columns: minmax(220px, 380px) minmax(260px, 1fr) minmax(320px, 406px);
+  grid-template-areas: "title details image";
   column-gap: clamp(44px, 6vw, 118px);
   row-gap: 28px;
-  align-items: start;
+  align-items: center;
   width: min(var(--container-max), calc(100% - 48px));
   min-height: 322px;
   margin: 0 auto;
@@ -104,7 +102,8 @@
 
 @media (max-width: 1199px) {
   .card {
-    grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+    grid-template-columns: minmax(180px, 260px) minmax(220px, 1fr) minmax(240px, 320px);
+    grid-template-areas: "title details image";
     column-gap: clamp(20px, 2.8vw, 52px);
     width: min(var(--container-max), calc(100% - 40px));
     padding: clamp(40px, 3.5vw, 60px) clamp(28px, 3.5vw, 52px);

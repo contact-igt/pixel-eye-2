@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -200,7 +200,20 @@ const ExperienceSection = () => {
       </span>
     ));
 
-  const renderText = (lines) => lines.join(" ");
+  const renderInlineText = (text) =>
+    text.split(/(\*\*.*?\*\*)/g).map((part, index) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>;
+      }
+
+      return <Fragment key={`${part}-${index}`}>{part}</Fragment>;
+    });
+
+  const renderText = (lines) =>
+    lines.flatMap((line, index) => [
+      ...(index > 0 ? [" "] : []),
+      ...renderInlineText(line),
+    ]);
 
   return (
     <section
@@ -241,3 +254,4 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
+

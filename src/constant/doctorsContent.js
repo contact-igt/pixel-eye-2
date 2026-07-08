@@ -44,9 +44,8 @@ export const DOCTORS_CONTENT = {
     {
       id: "krishna-poojita",
       name: "Dr. Krishna Poojita",
-      degree: "MBBS, DNB",
+      degree: "MBBS, DNB (Ophthalmology)",
       specialties: [
-        "Ophthalmologist",
         "MRCS (Edinburgh), FICO (UK), FPRS (Narayana Nethralaya)",
         "Cataract & Refractive Surgeon",
       ],

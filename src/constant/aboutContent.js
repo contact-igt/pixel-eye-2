@@ -1,4 +1,4 @@
-﻿import { DOCTORS_CONTENT } from "@/constant/doctorsContent";
+import { DOCTORS_CONTENT } from "@/constant/doctorsContent";
 
 export const ABOUT_CONTENT = {
   hero: {
@@ -26,8 +26,11 @@ export const ABOUT_CONTENT = {
     },
     paragraphs: [
       [
-        "At Pixel Eye Hospital,",
+        "At **Pixel Eye Hospital**,",
+      ],
+      [
         "we understand what better vision truly means to you.",
+        
       ],
       [
         "We are a modern eye care centre, where advanced Ophthalmology meets a",
@@ -167,3 +170,5 @@ export const ABOUT_CONTENT = {
     ],
   },
 };
+
+

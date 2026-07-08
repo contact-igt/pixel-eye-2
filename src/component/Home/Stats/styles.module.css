@@ -1,5 +1,6 @@
 .statsSection {
   padding: var(--section-pt) 0 var(--section-pb);
+  margin-top: 100px;
 }
 
 .statsFrame {
@@ -88,6 +89,10 @@
     font-size: 20px;
   }
 
+  .statsSection{
+    margin-top: 0px;
+  }
+
 }
 
 @media (max-width: 1199px) {
@@ -144,7 +149,7 @@
   }
 
   .statNumber {
-    font-size: 40px;
+    font-size: 35px;
   }
 
   .statLabel {
@@ -155,6 +160,10 @@
     gap: 10px;
     display: flex;
     flex-direction: column;
+  }
+
+  .statsSection{
+    margin: 0px;
   }
 
 }
