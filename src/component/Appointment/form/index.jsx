@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
 import submitForm from "@/lib/formService";
+import { NAV_CONTENT } from "@/constant/navContent";
 
 const initialForm = {
   fullName: "",
@@ -12,6 +13,7 @@ const initialForm = {
   location: "",
   date: "",
   symptoms: "",
+  symptomDetails: "",
   timeSlot: "00:00 AM",
   terms: false,
   whatsapp: false,
@@ -114,6 +116,21 @@ const SelectField = ({
   </label>
 );
 
+const TextAreaField = ({ label, name, value, onChange, required = false }) => (
+  <label
+    className={`${styles["appointment-field"]} ${styles["textarea-field"]} ${value ? styles["is-filled"] : ""}`}
+  >
+    <textarea
+      name={name}
+      value={value}
+      onChange={onChange}
+      placeholder=" "
+      required={required}
+      aria-label={label}
+    />
+    <span>{label}</span>
+  </label>
+);
 const TimeSlotField = ({ value, onChange, required = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { hour, minute, period } = getTimeParts(value);
@@ -310,8 +327,7 @@ const Form = () => {
             required
           >
             <option value="" />
-            <option value="Hyderabad">Hyderabad</option>
-            <option value="Secunderabad">Secunderabad</option>
+            <option value="Sanath Nagar">Sanath Nagar</option>
             <option value="Kukatpally">Kukatpally</option>
           </SelectField>
 
@@ -333,11 +349,19 @@ const Form = () => {
             required
           >
             <option value="" />
-            <option value="Blurred vision">Blurred vision</option>
-            <option value="Eye irritation">Eye irritation</option>
-            <option value="Cataract consultation">Cataract consultation</option>
-            <option value="General eye checkup">General eye checkup</option>
+            {NAV_CONTENT.servicesDropdown.map((service) => (
+              <option key={service.id} value={service.label}>
+                {service.label}
+              </option>
+            ))}
           </SelectField>
+
+          <TextAreaField
+            label="Tell us more about your symptoms"
+            name="symptomDetails"
+            value={formData.symptomDetails}
+            onChange={handleChange}
+          />
 
           <TimeSlotField
             value={formData.timeSlot}
@@ -410,3 +434,4 @@ const Form = () => {
 };
 
 export default Form;
+

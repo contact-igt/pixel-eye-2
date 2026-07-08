@@ -117,10 +117,18 @@
   color: #ffffff;
 }
 
-.socialImage {
+.socialImage,
+.socialSvg {
   width: 20px;
   height: 20px;
+}
+
+.socialImage {
   object-fit: contain;
+}
+
+.socialSvg {
+  stroke-width: 2;
 }
 
 .plainLogoBg {
@@ -280,3 +288,4 @@
     padding: 8px 10px;
   }
 }
+

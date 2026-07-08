@@ -70,7 +70,8 @@
 }
 
 .appointment-field input,
-.appointment-field select {
+.appointment-field select,
+.appointment-field textarea {
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -116,6 +117,31 @@
 
 .appointment-field select {
   cursor: pointer;
+}
+
+.appointment-field textarea {
+  resize: vertical;
+}
+
+.textarea-field {
+  grid-column: 1 / -1;
+  min-height: 122px;
+  align-items: flex-start;
+}
+
+.textarea-field textarea {
+  min-height: 100%;
+  padding-top: 24px;
+  line-height: 1.45;
+}
+
+.textarea-field > span {
+  margin-top: 18px;
+}
+
+.textarea-field:focus-within > span,
+.textarea-field.is-filled > span {
+  transform: translateY(-10px);
 }
 
 .appointment-field>span {
@@ -636,3 +662,4 @@
     display: none;
   }
 }
+
