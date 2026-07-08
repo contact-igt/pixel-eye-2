@@ -10,6 +10,10 @@
   color: #273979;
 }
 
+.treatment-types[data-treatment-slug="lasik-laser-options"] {
+  margin-top: 40px;
+}
+
 .treatment-types__hero {
   position: relative;
   min-height: clamp(310px, 20.5vw, 386px);
@@ -354,6 +358,10 @@
     margin: 90px auto 70px;
   }
 
+  .treatment-types[data-treatment-slug="lasik-laser-options"] {
+    margin-top: 52px;
+  }
+
   .treatment-types__hero {
     min-height: 260px;
     border-radius: 16px;
@@ -407,6 +415,10 @@
     width: min(100%, calc(100% - 32px));
     /* margin-bottom: 58px; */
     margin: 80px auto 58px;
+  }
+
+  .treatment-types[data-treatment-slug="lasik-laser-options"] {
+    margin-top: 42px;
   }
 
   .treatment-types__hero {
@@ -768,7 +780,7 @@
   .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__copy p {
     max-width: 586px;
     color: rgba(42, 60, 125, 0.82);
-    font-size: clamp(24px, 4.2vw, 30px);
+    font-size: clamp(17px, 2.2vw, 24px);
     line-height: 1.16;
   }
 
@@ -828,7 +840,7 @@
   }
 
   .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__copy p {
-    font-size: clamp(22px, 6.1vw, 26px);
+    font-size: clamp(18px, 2.1vw, 22px);
   }
 
   .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__stage {

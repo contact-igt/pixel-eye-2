@@ -10,6 +10,7 @@ export const SQUINT_TREATMENT = {
   clinicalExpertise: {
     ...SERVICE_SQUINT_CONTENT.clinicalExpertise,
     variant: "single",
+    mobileVariant: "single",
   },
   faq: SERVICE_SQUINT_CONTENT.faq,
   patientExperience: SERVICE_SQUINT_CONTENT.rememberRecommend, // undefined → falls back

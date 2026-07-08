@@ -44,8 +44,18 @@ const SECTION_MAP = {
     ) : null,
   clinicalExpertise: (t) => {
     if (!t.clinicalExpertise) return null;
-    // Single variant keeps the legacy desktop/tablet card and multi-doctor mobile view.
+    // Single variant keeps the legacy desktop/tablet card and multi-doctor mobile view by default.
     const useSingleOnDesktop = t.clinicalExpertise.variant === "single";
+    const useSingleOnMobile = t.clinicalExpertise.mobileVariant === "single";
+    if (useSingleOnDesktop && useSingleOnMobile) {
+      return (
+        <TreatmentClinicalExpertiseSingle
+          key="clinicalExpertise"
+          data={t.clinicalExpertise}
+          slug={t.slug}
+        />
+      );
+    }
     if (useSingleOnDesktop) {
       return (
         <div key="clinicalExpertise">

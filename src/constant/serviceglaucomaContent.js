@@ -61,7 +61,7 @@ export const SERVICE_GLAUCOMA_CONTENT = {
       {
         number: "01",
         title: "High eye pressure (IOP)",
-        image: "/assets/Service/glaucoma/lead1.png",
+        image: "/assets/Service/glaucoma/lead1_new.png",
       },
       {
         number: "02",

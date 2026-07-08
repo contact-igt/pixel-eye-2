@@ -56,7 +56,7 @@ export const SERVICE_RETINA_CONTENT = {
       {
         number: "01",
         title: "Diabetes (Diabetic Retinopathy)",
-        image: "/assets/Service/Retina/lead11.png",
+        image: "/assets/Service/Retina/lead1_new.png",
       },
       {
         number: "02",

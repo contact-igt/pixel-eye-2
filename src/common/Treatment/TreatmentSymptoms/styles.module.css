@@ -385,7 +385,7 @@
 @media (max-width: 575px) {
   .treatment-symptoms {
     width: calc(100% - 32px);
-    margin: 35px auto 52px;
+    margin: 15px auto 52px;
   }
 
   .treatment-symptoms__header h2{

@@ -202,8 +202,9 @@
     }
 
     .clinical-expertise--single .clinical-expertise__card-bg {
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 250px;
+         left: 0;
         opacity: 0.5;
     }
 

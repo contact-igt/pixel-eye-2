@@ -70,7 +70,7 @@
       {
         number: "01",
         title: "Eye rubbing",
-        image: "/assets/Service/keratoconus/Frame1.png",
+        image: "/assets/Service/keratoconus/Frame1_new.png",
       },
       {
         number: "02",

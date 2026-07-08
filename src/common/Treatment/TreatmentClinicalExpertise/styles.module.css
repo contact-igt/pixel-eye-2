@@ -22,7 +22,7 @@
 }
 
 .clinical-expertise__header {
-  max-width: 600px;
+  max-width: 90%;
   margin: 0 0 30px clamp(42px, 4vw, 60px);
 }
 
@@ -562,6 +562,12 @@
 
   .clinical-expertise__doctor-info p {
     font-size: 9.5px;
+  }
+}
+
+@media (max-width: 430px){
+  .clinical-expertise__doctor-info {
+    left: clamp(80px, 20%, 114px);
   }
 }
 

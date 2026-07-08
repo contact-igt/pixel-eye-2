@@ -10,7 +10,12 @@
     overflow: hidden;
     background: #ffffff;
     color: #273979;
-    margin-top:70px
+    margin-top:50px
+}
+
+.types-cards[data-treatment-slug="lasik"] {
+    min-height: auto;
+    padding-bottom: clamp(36px, 4vw, 56px);
 }
 
 .types-cards__header h2 {
@@ -340,7 +345,8 @@
 
 @media (max-width: 767px) {
     .types-cards {
-        padding: 52px 20px 46px;
+        padding: 45px 20px 46px;
+            margin-top:40px
     }
 
     .types-cards__stage {
@@ -394,7 +400,7 @@
         width: 100% !important;
     }
     .types-cards{
-            margin-top:50px;
+            margin-top:40px;
     }
     .types-cards__arrow {
         width: 65px;
