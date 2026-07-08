@@ -138,7 +138,7 @@ export const SERVICE_SQUINT_CONTENT = {
         id: "hypotropia",
         title: "Hypotropia",
         description: "One eye turns downward compared to the other eye.",
-        image: "/assets/Service/squint/hypertropia.png",
+        image: "/assets/Service/squint/hypotropia.png",
       },
     ],
   },

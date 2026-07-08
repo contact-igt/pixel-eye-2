@@ -100,7 +100,7 @@ export const SERVICE_LASIK_CONTENT = {
         title: "Femto LASIK / Bladeless LASIK",
         description:
           "A laser-assisted flap creation method designed for greater precision and comfort.",
-        image: "/assets/Service/Lasik/3.png",
+        image: "/assets/Service/Lasik/Femto.png",
         alt: "Femto LASIK bladeless laser equipment",
       },
       {
@@ -108,7 +108,7 @@ export const SERVICE_LASIK_CONTENT = {
         title: "LASIK",
         description:
           "A commonly performed laser vision correction procedure where the cornea is reshaped to improve focusing power.",
-        image: "/assets/Service/Lasik/1.png",
+        image: "/assets/Service/Lasik/lasik.png",
         alt: "LASIK laser vision correction procedure",
       },
       {
@@ -116,7 +116,7 @@ export const SERVICE_LASIK_CONTENT = {
         title: "Contoura LASIK",
         description:
           "A customized laser correction option planned according to the unique shape of the cornea.",
-        image: "/assets/Service/Lasik/2.png",
+        image: "/assets/Service/Lasik/contoura-lasik.jpg",
         alt: "Contoura LASIK laser equipment",
       },
 {
@@ -124,7 +124,7 @@ export const SERVICE_LASIK_CONTENT = {
   title: "SMILE",
   description:
     "A minimally invasive laser vision correction procedure that removes a small corneal lenticule through a tiny incision for faster recovery and reduced dry eye symptoms.",
-  image: "/assets/Service/Lasik/smile.png",
+  image: "/assets/Service/Lasik/smile.webp",
   alt: "SMILE laser vision correction procedure",
 },
 {
@@ -132,7 +132,7 @@ export const SERVICE_LASIK_CONTENT = {
   title: "PRK",
   description:
     "A flap-free laser vision correction procedure that reshapes the cornea after removing the outer epithelial layer, making it suitable for patients with thin corneas.",
-  image: "/assets/Service/Lasik/prk.png",
+  image: "/assets/Service/Lasik/prk.jpg",
   alt: "PRK laser vision correction procedure",
 },
 {
@@ -140,7 +140,7 @@ export const SERVICE_LASIK_CONTENT = {
   title: "Trans-PRK",
   description:
     "An advanced no-touch laser vision correction procedure where the laser removes the corneal epithelium and reshapes the cornea in a single, precise step.",
-  image: "/assets/Service/Lasik/trans-prk.png",
+  image: "/assets/Service/Lasik/trans-prk.webp",
   alt: "Trans-PRK laser vision correction procedure",
 },
     ],

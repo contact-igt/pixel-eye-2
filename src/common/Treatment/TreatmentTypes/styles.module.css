@@ -1,4 +1,4 @@
-.treatment-types,
+﻿.treatment-types,
 .treatment-types * {
   box-sizing: border-box;
 }
@@ -32,6 +32,10 @@
 
 .treatment-types__image--mobile,
 .treatment-types__mobile-list {
+  display: none;
+}
+
+.treatment-types__mobile-scroll {
   display: none;
 }
 
@@ -79,8 +83,10 @@
   margin-inline: auto;
   margin-top: 30px;
 
-  grid-template-columns:
-    minmax(220px, 1fr) minmax(420px, 2fr) minmax(220px, 1fr);
+  grid-template-columns: minmax(220px, 1fr) minmax(420px, 2fr) minmax(
+      220px,
+      1fr
+    );
 
   gap: 16px;
   left: 12px;
@@ -104,7 +110,7 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: inherit;
+  padding: clamp(22px, 2vw,24px);
   pointer-events: none;
 }
 
@@ -188,7 +194,9 @@
   box-shadow: 0 4px 14px rgba(39, 57, 121, 0.08);
   cursor: pointer;
   transform: translateY(-50%);
-  transition: background 160ms ease, transform 160ms ease;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
 }
 
 .treatment-types__arrow:hover {
@@ -212,16 +220,20 @@
 
 @media (max-width: 1400px) {
   .treatment-types__cards-wrapper {
-    grid-template-columns:
-      minmax(270px, 1fr) minmax(400px, 2fr) minmax(260px, 1fr);
+    grid-template-columns: minmax(270px, 1fr) minmax(400px, 2fr) minmax(
+        260px,
+        1fr
+      );
     gap: 25px;
-    margin: 35px auto 0;
+    margin: 30px auto 0;
     left: 8px;
+    width: 92%;
+    max-width: 1125px;
   }
 
   .treatment-types__card--main {
     width: 100%;
-    max-width: 425px;
+    max-width: 440px;
     height: 430px;
     min-width: 0;
   }
@@ -229,8 +241,43 @@
   .treatment-types__stage {
     margin-top: -95px;
   }
+  .treatment-types__card-content{
+    padding: clamp(20px, 2vw,22px);
+  }
+
+  .treatment-types__card--main h3 {
+  font-size: clamp(39px, 2.9vw, 52px);
+  line-height: 1;
 }
 
+}
+@media (max-width: 1300px) {
+  .treatment-types__cards-wrapper {
+    grid-template-columns: minmax(270px, 1fr) minmax(400px, 2fr) minmax(
+        260px,
+        1fr
+      );
+    gap: 25px;
+    margin: 35px auto 0;
+    left: 8px;
+    width: 93%;
+  }
+
+  .treatment-types__card--main {
+    width: 100%;
+    max-width: 435px;
+    height: 430px;
+    min-width: 0;
+  }
+
+  .treatment-types__stage {
+    margin-top: -95px;
+  }
+   .treatment-types__card--main h3 {
+  font-size: clamp(36px, 2.9vw, 52px);
+  line-height: 1;
+}
+}
 @media (max-width: 1200px) {
   .treatment-types {
     width: min(100%, calc(100% - 64px));
@@ -247,10 +294,12 @@
   }
 
   .treatment-types__cards-wrapper {
-    grid-template-columns:
-      minmax(230px, 1fr) minmax(380px, 2fr) minmax(230px, 1fr);
+    grid-template-columns: minmax(230px, 1fr) minmax(380px, 2fr) minmax(
+        230px,
+        1fr
+      );
     gap: 20px;
-    width: min(100%, 890px);
+    width: min(100%, 900px);
     left: 10px;
   }
 
@@ -258,12 +307,12 @@
     width: 100%;
     max-width: 250px;
     height: 224px;
-    padding: 24px 16px 16px;
+    padding: 22px 16px 16px;
   }
 
   .treatment-types__card--main {
     width: 100%;
-    max-width: 395px;
+    max-width: 385px;
     height: 400px;
     padding: 32px 26px 34px;
   }
@@ -275,10 +324,12 @@
 
 @media (max-width: 1100px) {
   .treatment-types__cards-wrapper {
-    grid-template-columns:
-      minmax(220px, 1fr) minmax(380px, 2fr) minmax(230px, 1fr);
+    grid-template-columns: minmax(220px, 1fr) minmax(380px, 2fr) minmax(
+        230px,
+        1fr
+      );
     gap: 10px;
-    width: min(100%, 850px);
+    width: min(100%, 820px);
     left: 13px;
     margin-top: 40px;
   }
@@ -296,6 +347,10 @@
     height: 370px;
     padding: 32px 26px 34px;
   }
+   .treatment-types__card--main h3 {
+  font-size: clamp(32px, 2.9vw, 52px);
+  line-height: 1;
+}
 }
 
 @media (max-width: 992px) {
@@ -317,7 +372,10 @@
   }
 
   .treatment-types__cards-wrapper {
-    grid-template-columns: minmax(180px, 1fr) minmax(340px, 2fr) minmax(180px, 1fr);
+    grid-template-columns: minmax(180px, 1fr) minmax(340px, 2fr) minmax(
+        180px,
+        1fr
+      );
     gap: 15px;
     width: min(100%, 740px);
     left: 8px;
@@ -556,7 +614,7 @@
   .treatment-types[data-treatment-slug="retina"] .treatment-types__copy h2 {
     top: clamp(24px, 8.2vw, 65px);
     width: min(68%, 300px);
-    font-size: clamp(32px, 6.1vw, 32px)
+    font-size: clamp(32px, 6.1vw, 32px);
   }
 
   .treatment-types__copy p {
@@ -640,14 +698,10 @@
     margin-top: 18px;
   }
 
-  .treatment-types__mobile-list {
-    margin-top: 40px;
-
-  }
+  /* margin-top removed â€“ GSAP stack section at end of file enforces margin:0 */
 
   .treatment-types__mobile-card h3 {
     font-size: clamp(24px, 6vw, 30px);
-    ;
   }
 }
 
@@ -703,49 +757,14 @@
   }
 }
 
-/* Tablet range: horizontal scroll card rail */
-@media (min-width: 577px) and (max-width: 768px) {
-  .treatment-types {
-    overflow: hidden;
-  }
+/*
+ * NOTE: The tablet horizontal-scroll rail (display:flex + overflow-x:auto) was
+ * removed. The GSAP card-stack block at the bottom of this file already handles
+ * all viewports â‰¤768px (including the 577pxâ€“768px tablet range) with the
+ * pinned stack animation. Keeping both blocks caused display:flex to conflict
+ * with the stack's display:block + position:relative layout.
+ */
 
-  .treatment-types__stage {
-    width: 100%;
-    margin-top: 24px;
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .treatment-types__mobile-list {
-    display: flex;
-    gap: 14px;
-    width: 100%;
-    margin: 0;
-    padding: 0 16px 4px 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .treatment-types__mobile-list::-webkit-scrollbar {
-    display: none;
-  }
-
-  .treatment-types__mobile-card {
-    flex: 0 0 calc((100% - 14px) / 1.5);
-    width: calc((100% - 14px) / 1.5);
-    min-width: 0;
-    height: 390px;
-    scroll-snap-align: start;
-  }
-
-  .treatment-types__mobile-card h3,
-  .treatment-types__mobile-card p {
-    overflow-wrap: anywhere;
-  }
-
-}
 /* Glaucoma mobile layout: match the Figma stacked frame without changing other treatments. */
 @media (max-width: 768px) {
   .treatment-types[data-treatment-slug="glaucoma"] {
@@ -760,7 +779,8 @@
     overflow: hidden;
   }
 
-  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__image--mobile {
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__image--mobile {
     border-radius: 12px;
   }
 
@@ -787,10 +807,11 @@
   .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__stage {
     max-width: 586px;
     margin: 28px auto 0;
-    overflow: visible;
+    overflow: hidden;
   }
 
-  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__mobile-list {
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-list {
     display: grid;
     gap: 18px;
     width: 100%;
@@ -799,7 +820,8 @@
     overflow: visible;
   }
 
-  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__mobile-card {
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-card {
     flex: none;
     width: 100%;
     height: 392px;
@@ -807,7 +829,9 @@
     border-radius: 14px;
   }
 
-  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__mobile-card h3 {
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-card
+    h3 {
     max-width: min(100%, 460px);
     margin: 0 auto;
     font-size: clamp(36px, 6vw, 44px);
@@ -815,7 +839,9 @@
     text-align: center;
   }
 
-  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__mobile-card p {
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-card
+    p {
     max-width: 92%;
     font-size: clamp(16px, 3.1vw, 20px);
     line-height: 1.2;
@@ -847,12 +873,15 @@
     margin-top: 26px;
   }
 
-  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__mobile-card {
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-card {
     height: 360px;
     padding: 24px 18px 26px;
   }
 
-  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__mobile-card h3 {
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-card
+    h3 {
     font-size: clamp(34px, 9.3vw, 40px);
   }
 }
@@ -873,11 +902,104 @@
     font-size: 16px;
   }
 
-  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__mobile-card {
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-card {
     height: 342px;
   }
 
-  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__mobile-card h3 {
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-card
+    h3 {
     font-size: 34px;
   }
 }
+/* â”€â”€â”€ GSAP mobile card-stack â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   Cards are position:absolute, all anchored at top:0 inside the list.
+   GSAP sets yPercent:100 on every card except the first, pushing them
+   completely below the container. overflow:hidden on the list clips them
+   so they are invisible until they slide up into view.
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 768px) {
+  /* Allow the outer section and stage to grow without clipping */
+  .treatment-types,
+  .treatment-types[data-treatment-slug="glaucoma"] {
+    --treatment-mobile-stack-height: clamp(460px, 84svh, 660px);
+    overflow: visible;
+  }
+
+  .treatment-types__stage,
+  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__stage {
+    overflow: visible;
+  }
+
+  /* Hide the desktop 3-card carousel on mobile */
+  .treatment-types__cards-wrapper {
+    display: none !important;
+  }
+
+  .treatment-types__mobile-scroll {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 100svh;
+    min-height: 100svh;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .treatment-types__mobile-sticky {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: var(--treatment-mobile-stack-height);
+  }
+
+  /* â”€â”€ List container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+     FIX: overflow:hidden clips cards waiting at yPercent:100 (below) so
+     they stay invisible until GSAP animates them upward into this area.
+     FIX: height uses clamp so the card is always < the viewport height â€“
+     eliminating the half-card cut-off on short devices.
+  */
+  .treatment-types__mobile-list,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-list {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* â”€â”€ Absolutely-stacked cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  .treatment-types__mobile-card,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+    margin: 0;
+    opacity: 1;
+    pointer-events: auto;
+    will-change: transform, opacity;
+  }
+}
+
+/* 390 px and below â€“ slightly shorter cards to fit very small screens */
+@media (max-width: 390px) {
+  .treatment-types,
+  .treatment-types[data-treatment-slug="glaucoma"] {
+    --treatment-mobile-stack-height: clamp(410px, 80svh, 580px);
+  }
+}
+
+
