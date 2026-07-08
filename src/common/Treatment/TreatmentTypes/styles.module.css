@@ -1003,3 +1003,170 @@
 }
 
 
+
+/* Treatment types mobile: diagnosis-style card slider */
+.treatment-types__mobile-slider {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .treatment-types__mobile-slider {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    overflow: visible;
+  }
+
+  .treatment-types__mobile-track {
+    display: grid;
+    grid-template-columns: repeat(2, calc((100% - 16px) / 1.5));
+    column-gap: 16px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .treatment-types__mobile-slider .treatment-types__mobile-card,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-slider
+    .treatment-types__mobile-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: flex;
+    width: 100%;
+    min-height: 350px;
+    height: 350px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #f5f8fc;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    will-change: auto;
+  }
+
+  .treatment-types__mobile-slider .treatment-types__card-content,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-slider
+    .treatment-types__card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 22px;
+  }
+
+  .treatment-types__mobile-slider .treatment-types__mobile-card h3,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-slider
+    .treatment-types__mobile-card
+    h3 {
+    width: min(100%, 360px);
+    max-width: none;
+    margin: 0;
+    color: #273979;
+    font-size: clamp(28px, 5.2vw, 34px);
+    line-height: 1.08;
+    letter-spacing: 0;
+    text-align: left;
+  }
+
+  .treatment-types__mobile-slider .treatment-types__mobile-card p,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-slider
+    .treatment-types__mobile-card
+    p {
+    width: min(100%, 360px);
+    max-width: none;
+    margin: 0;
+    color: rgba(42, 60, 125, 0.82);
+    font-size: 14px;
+    line-height: 1.18;
+  }
+
+  .treatment-types__mobile-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 22px 0 0;
+  }
+
+  .treatment-types__mobile-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: #9fb0d2;
+    cursor: pointer;
+  }
+
+  .treatment-types__mobile-dot--active {
+    background-color: #273979;
+  }
+}
+
+@media (max-width: 576px) {
+  .treatment-types__mobile-slider .treatment-types__mobile-card,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-slider
+    .treatment-types__mobile-card {
+    min-height: 340px;
+    height: 340px;
+    border-radius: 20px;
+  }
+
+  .treatment-types__mobile-slider .treatment-types__mobile-card h3,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-slider
+    .treatment-types__mobile-card
+    h3 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .treatment-types__mobile-track {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+  }
+
+  .treatment-types__mobile-track .treatment-types__mobile-card:nth-child(n + 2) {
+    display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .treatment-types__mobile-slider .treatment-types__mobile-card,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-slider
+    .treatment-types__mobile-card {
+    min-height: 320px;
+    height: 320px;
+  }
+
+  .treatment-types__mobile-slider .treatment-types__mobile-card h3,
+  .treatment-types[data-treatment-slug="glaucoma"]
+    .treatment-types__mobile-slider
+    .treatment-types__mobile-card
+    h3 {
+    font-size: 27px;
+  }
+}
+
+/* Phone treatment type slider: show one card only, matching diagnosis mobile. */
+@media (max-width: 576px) {
+  .treatment-types__mobile-track {
+    display: block;
+    overflow: hidden;
+  }
+
+  .treatment-types__mobile-track .treatment-types__mobile-card:nth-child(n + 2) {
+    display: none !important;
+  }
+}

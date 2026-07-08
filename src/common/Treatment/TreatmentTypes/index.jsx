@@ -1,6 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
-import gsap from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+﻿import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
 
@@ -24,10 +22,14 @@ const ArrowIcon = ({ direction }) => (
 
 const TreatmentTypes = ({ data, slug = "treatment" }) => {
   const [activeIndex, setActiveIndex] = useState(1);
-  const mobileScrollRef = useRef(null);
-  const mobileCardsRef = useRef([]);
-
-  const mobileSlides = data.slides;
+  const [activeMobileIndex, setActiveMobileIndex] = useState(0);
+  const mobileSlides = data.slides || [];
+  const visibleMobileSlides = mobileSlides.length
+    ? [
+        mobileSlides[activeMobileIndex],
+        mobileSlides[(activeMobileIndex + 1) % mobileSlides.length],
+      ].filter(Boolean)
+    : [];
 
   const getSlide = (offset) =>
     data.slides[
@@ -45,120 +47,41 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
   const rightSlide = getSlide(1);
 
   useEffect(() => {
-    if (typeof window === "undefined") return undefined;
+    if (mobileSlides.length < 2) return undefined;
 
-    // Use rAF to guarantee the DOM refs are populated after React's commit phase.
-    // This is the correct approach for Next.js SSR/hydration â€” refs are not
-    // reliably populated synchronously on first render after hydration.
-    let rafId;
-    let cleanupFn;
+    const timer = window.setInterval(() => {
+      setActiveMobileIndex((current) => (current + 1) % mobileSlides.length);
+    }, 2500);
 
-    const init = () => {
-      const stackNode = mobileScrollRef.current;
-      const cards = mobileCardsRef.current.filter(Boolean);
-
-      // Need at least 2 cards for the stack effect to make sense
-      if (!stackNode || cards.length < 2) return;
-
-      gsap.registerPlugin(ScrollTrigger);
-      const media = gsap.matchMedia();
-
-      media.add("(max-width: 768px)", () => {
-        const reduceMotion = window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        );
-        if (reduceMotion.matches) return undefined;
-
-        // â”€â”€ Initial state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-        // Card 0 sits at yPercent:0 (fully visible in the clipped container).
-        // Cards 1..n are pushed 100% below â€” clipped by overflow:hidden on
-        // .mobile-list â€” so they're invisible until GSAP animates them in.
-        gsap.set(cards, {
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          yPercent: (i) => (i === 0 ? 0 : 100),
-          scale: 1,
-          opacity: 1,
-          // Later cards have higher z-index so they slide ON TOP of earlier ones
-          zIndex: (i) => i + 1,
-          transformOrigin: "center center",
-        });
-
-        // â”€â”€ Build the scrub timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-        // For each card transition (card i-1 â†’ card i):
-        //   â€¢ card i-1: scales down + fades slightly (depth/stacking feel)
-        //   â€¢ card i:   slides up from yPercent:100 â†’ 0
-        // Both tweens share the same start position so they run simultaneously
-        // (no blank-frame gap between transitions).
-        const timeline = gsap.timeline({ defaults: { ease: "none" } });
-
-        cards.forEach((card, i) => {
-          if (i === 0) return;
-
-          // Outgoing card: shrink + dim
-          timeline.to(
-            cards[i - 1],
-            { scale: 0.93, opacity: 0.55, duration: 1 },
-            i - 1
-          );
-
-          // Incoming card: slide up into view
-          timeline.to(card, { yPercent: 0, duration: 1 }, i - 1);
-        });
-
-        // â”€â”€ ScrollTrigger pin â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-        // • start:"bottom bottom" -> pin starts when the first card is fully visible
-        //   and its bottom touches the viewport bottom.
-        // â€¢ end: (n-1) Ã— 65vh â†’ gives each card ~0.65 viewport-heights of scroll
-        //   distance, which feels deliberate without being too long.
-        // â€¢ scrub:0.35       â†’ slightly lag-behind feel; feels smooth on touch.
-        const trigger = ScrollTrigger.create({
-          trigger: stackNode,
-          animation: timeline,
-          start: "bottom bottom",
-          end: () =>
-            `+=${
-              Math.max(1, cards.length - 1) *
-              Math.round(window.innerHeight * 0.65)
-            }`,
-          scrub: 0.35,
-          pin: stackNode,
-          pinSpacing: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        });
-
-        // Refresh once after init so GSAP has correct element positions
-        const refreshRaf = requestAnimationFrame(() =>
-          ScrollTrigger.refresh()
-        );
-
-        return () => {
-          cancelAnimationFrame(refreshRaf);
-          trigger.kill();
-          timeline.kill();
-          gsap.set(cards, { clearProps: "all" });
-        };
-      });
-
-      cleanupFn = () => {
-        media.revert();
-      };
-    };
-
-    // Defer init by one rAF so all card refs are committed to the DOM
-    rafId = requestAnimationFrame(init);
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      if (cleanupFn) cleanupFn();
-    };
-    // Re-init whenever the slide data changes (different page / slug)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => window.clearInterval(timer);
   }, [mobileSlides.length]);
+
+  const renderSlideCard = (slide, key, variant = "mobile") => (
+    <article
+      key={key}
+      className={`${styles["treatment-types__card"]} ${
+        variant === "mobile"
+          ? styles["treatment-types__mobile-card"]
+          : styles[`treatment-types__card--${variant}`]
+      }`}
+      aria-live={variant === "main" ? "polite" : undefined}
+    >
+      {slide.image && (
+        <div className={styles["treatment-types__card-image"]}>
+          <Image
+            src={slide.image}
+            alt={slide.alt ?? slide.imageAlt ?? slide.title}
+            width={variant === "main" || variant === "mobile" ? 500 : 300}
+            height={variant === "main" || variant === "mobile" ? 500 : 300}
+          />
+        </div>
+      )}
+      <div className={styles["treatment-types__card-content"]}>
+        <h3>{slide.title}</h3>
+        {slide.description && <p>{slide.description}</p>}
+      </div>
+    </article>
+  );
 
   return (
     <section
@@ -197,7 +120,6 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
         className={styles["treatment-types__stage"]}
         aria-label={`${data.title} carousel`}
       >
-        {/* Desktop / tablet 3-card carousel */}
         <div className={styles["treatment-types__cards-wrapper"]}>
           <button
             className={`${styles["treatment-types__arrow"]} ${styles["treatment-types__arrow--left"]}`}
@@ -212,30 +134,9 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
             { slide: leftSlide, variant: "side" },
             { slide: activeSlide, variant: "main" },
             { slide: rightSlide, variant: "side" },
-          ].map(({ slide, variant }) => (
-            <article
-              key={`${variant}-${slide.id ?? slide.title}`}
-              className={`${styles["treatment-types__card"]} ${
-                styles[`treatment-types__card--${variant}`]
-              }`}
-              aria-live={variant === "main" ? "polite" : undefined}
-            >
-              {slide.image && (
-                <div className={styles["treatment-types__card-image"]}>
-                  <Image
-                    src={slide.image}
-                    alt={slide.alt ?? slide.imageAlt ?? slide.title}
-                    width={variant === "main" ? 500 : 300}
-                    height={variant === "main" ? 500 : 300}
-                  />
-                </div>
-              )}
-              <div className={styles["treatment-types__card-content"]}>
-                <h3>{slide.title}</h3>
-                {slide.description && <p>{slide.description}</p>}
-              </div>
-            </article>
-          ))}
+          ].map(({ slide, variant }) =>
+            renderSlideCard(slide, `${variant}-${slide.id ?? slide.title}`, variant)
+          )}
 
           <button
             className={`${styles["treatment-types__arrow"]} ${styles["treatment-types__arrow--right"]}`}
@@ -247,44 +148,37 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
           </button>
         </div>
 
-        {/* Mobile GSAP card stack */}
-        <div
-          ref={mobileScrollRef}
-          className={styles["treatment-types__mobile-scroll"]}
-          style={{ "--mobile-card-count": mobileSlides.length }}
-        >
-          <div className={styles["treatment-types__mobile-sticky"]}>
-            {/*
-              overflow:hidden on .mobile-list clips cards waiting below
-              (at yPercent:100). They become visible only as GSAP animates them up.
-            */}
-            <div className={styles["treatment-types__mobile-list"]}>
-              {mobileSlides.map((slide, index) => (
-                <article
-                  ref={(node) => {
-                    mobileCardsRef.current[index] = node;
-                  }}
-                  key={`mobile-${slide.id ?? slide.title}`}
-                  className={`${styles["treatment-types__card"]} ${styles["treatment-types__mobile-card"]}`}
-                  style={{ "--card-index": index }}
-                >
-                  {slide.image && (
-                    <div className={styles["treatment-types__card-image"]}>
-                      <Image
-                        src={slide.image}
-                        alt={slide.alt ?? slide.imageAlt ?? slide.title}
-                        width={500}
-                        height={500}
-                      />
-                    </div>
-                  )}
-                  <div className={styles["treatment-types__card-content"]}>
-                    <h3>{slide.title}</h3>
-                    {slide.description && <p>{slide.description}</p>}
-                  </div>
-                </article>
-              ))}
-            </div>
+        <div className={styles["treatment-types__mobile-slider"]}>
+          <div
+            className={styles["treatment-types__mobile-track"]}
+            aria-live="polite"
+          >
+            {visibleMobileSlides.map((slide, index) =>
+              renderSlideCard(
+                slide,
+                `mobile-${slide.id ?? slide.title}`,
+                "mobile",
+              ),
+            )}
+          </div>
+          <div
+            className={styles["treatment-types__mobile-dots"]}
+            aria-label={`${data.title} slides`}
+          >
+            {mobileSlides.map((slide, index) => (
+              <button
+                key={`mobile-dot-${slide.id ?? index}`}
+                type="button"
+                className={`${styles["treatment-types__mobile-dot"]} ${
+                  activeMobileIndex === index
+                    ? styles["treatment-types__mobile-dot--active"]
+                    : ""
+                }`}
+                aria-label={`Show slide ${index + 1}`}
+                aria-current={activeMobileIndex === index ? "true" : undefined}
+                onClick={() => setActiveMobileIndex(index)}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -293,4 +187,3 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
 };
 
 export default TreatmentTypes;
-
