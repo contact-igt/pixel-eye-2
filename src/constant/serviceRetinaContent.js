@@ -152,19 +152,19 @@ export const SERVICE_RETINA_CONTENT = {
     ],
     media: [
       {
-        title: "Cover Test",
+        title: "Widefield Retinal Imaging",
         image: "/assets/Service/squint/diagnosed_image1.png",
-        alt: "Cover test illustration",
+        alt: "Widefield Retinal Imaging",
       },
       {
-        title: "Corneal Light Reflex Test",
+        title: "Amsler Grid Assessment",
         image: "/assets/Service/squint/diagnosed_image2.png",
-        alt: "Corneal light reflex test illustration",
+        alt: "Amsler Grid Assessment",
       },
       {
-        title: "Visual Acuity Test",
+        title: "Fluorescein Angiography",
         image: "/assets/Service/squint/diagnosed_image4.png",
-        alt: "Visual acuity test illustration",
+        alt: "Fluorescein Angiography",
       },
     ],
     treatments: [

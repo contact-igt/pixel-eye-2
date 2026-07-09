@@ -120,7 +120,7 @@ export const SERVICE_CATARACT_CONTENT = {
         id: "traumatic-cataract",
         title: "Traumatic cataract",
         image:
-          "/assets/Service/cataract/Gemini_Generated_Image_fbhk0efbhk0efbhk 1.png",
+          "/assets/Service/cataract/traumatic-cataract-v2.png",
         alt: "Traumatic cataract eye",
       },
       {
