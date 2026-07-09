@@ -1178,6 +1178,10 @@
 
 @media (max-width: 576px) {
 
+  .title{
+    font-size: 26px;
+  }
+
   .mosaicWrap{
     top: 59px;
   }

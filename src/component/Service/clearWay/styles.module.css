@@ -30,17 +30,12 @@
   line-height: var(--p-lh);
 }
 
-.clear-way__copy--middle {}
-
-.clear-way__copy--right {}
 
 .clear-way__copy p {
-  margin: 0;
-}
-
-.clear-way__copy p+p {
   margin-top: 24px;
   font-size: 18px;
+  margin: 0;
+
 }
 
 @media (max-width: 1199px) {
@@ -60,11 +55,16 @@
     padding: 34px 20px 28px;
   }
 
+  .clear-way__title {
+    font-size: 26px;
+  }
+
   .clear-way__inner {
     row-gap: 20px;
   }
 
-  .clear-way__copy p+p {
+  .clear-way__copy p {
     margin-top: 18px;
+    font-size: 16px;
   }
 }
