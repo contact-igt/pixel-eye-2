@@ -366,7 +366,7 @@
 @media (max-width: 575px) {
 
   .title {
-    font-size: 32px;
+    font-size: 26px;
     line-height: var(--h2-lh);
   }
 
