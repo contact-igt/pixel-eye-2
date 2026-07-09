@@ -152,19 +152,19 @@ export const SERVICE_SQUINT_CONTENT = {
     ],
     media: [
       {
-        title: "Cover Test",
+        title: "Assessing clarity of vision",
         image: "/assets/Service/squint/diagnosed_image1.png",
-        alt: "Cover test illustration",
+        alt: "Assessing clarity of vision",
       },
       {
-        title: "Corneal Light Reflex Test",
+        title: "Eye Movement Evaluation",
         image: "/assets/Service/squint/diagnosed_image2.png",
-        alt: "Corneal light reflex test illustration",
+        alt: "Eye Movement Evaluation",
       },
       {
-        title: "Visual Acuity Test",
+        title: "Binocular Vision Testing",
         image: "/assets/Service/squint/diagnosed_image4.png",
-        alt: "Visual acuity test illustration",
+        alt: "Binocular Vision Testing",
       },
     ],
     treatments: [

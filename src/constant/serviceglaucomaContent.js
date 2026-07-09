@@ -152,7 +152,7 @@ export const SERVICE_GLAUCOMA_CONTENT = {
         title: "Traumatic Glaucoma",
         description:
           "Occurs after a severe, blunt force blow or penetrating injury to the eye, which can permanently damage the internal drainage structure immediately or years down the line.",
-        image: "/assets/Service/glaucoma/traumatic-glaucoma.jpg",
+        image: "/assets/Service/glaucoma/traumatic-glaucoma-new.png",
       },
       {
         id: "steroid-induced-glaucoma",
@@ -171,19 +171,19 @@ export const SERVICE_GLAUCOMA_CONTENT = {
     ],
     media: [
       {
-        title: "Cover Test",
+        title: "Comprehensive Eye Examination",
         image: "/assets/Service/squint/diagnosed_image1.png",
-        alt: "Cover test illustration",
+        alt: "Comprehensive Eye Examination",
       },
       {
-        title: "Corneal Light Reflex Test",
+        title: "Optic Nerve Evaluation",
         image: "/assets/Service/squint/diagnosed_image2.png",
-        alt: "Corneal light reflex test illustration",
+        alt: "Optic Nerve Evaluation",
       },
       {
-        title: "Visual Acuity Test",
+        title: "Pupil Dilation Exam",
         image: "/assets/Service/squint/diagnosed_image4.png",
-        alt: "Visual acuity test illustration",
+        alt: "Pupil Dilation Exam",
       },
     ],
     treatments: [

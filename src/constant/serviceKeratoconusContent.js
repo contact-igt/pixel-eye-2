@@ -185,19 +185,19 @@
     ],
     media: [
       {
-        title: "Femto LASIK / Bladeless LASIK",
+        title: "Early Detection & Mapping",
         image: "/assets/Service/squint/diagnosed_image1.png",
-        alt: "Cover test illustration",
+        alt: "Early Detection & Mapping",
       },
       {
-        title: "Contoura / Topography-Guided LASIK",
+        title: "Customized Treatment Planning",
         image: "/assets/Service/squint/diagnosed_image2.png",
-        alt: "Corneal light reflex test illustration",
+        alt: "Customized Treatment Planning",
       },
       {
-        title: "Common LASIK",
+        title: "Continuous Monitoring",
         image: "/assets/Service/squint/diagnosed_image4.png",
-        alt: "Visual acuity test illustration",
+        alt: "Continuous Monitoring",
       },
     ],
     bgImage: "/assets/Service/keratoconus/Subtract (2).png",

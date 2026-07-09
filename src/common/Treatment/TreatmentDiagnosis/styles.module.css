@@ -625,7 +625,7 @@
   }
 
   .treatment-diagnosis__media-frame {
-    max-height: 255px;
+    max-height: 260px;
   }
 }
 
@@ -707,7 +707,7 @@
 
   .treatment-diagnosis__media-frame {
     /* min-height: 220px; */
-    min-height: 207px;
+    min-height: 195px;
     aspect-ratio: 16/7;
   }
 
@@ -761,13 +761,13 @@
   }
 
   .treatment-diagnosis__media-frame {
-    max-height: 200px;
+    max-height: 190px;
   }
 
   .treatment-diagnosis__media-label {
-    bottom: -40px;
+    bottom: -42px;
     left: -2%;
-    width: 258px;
+    width: 220px;
     font-size: clamp(16px, 1.05vw, 16px);
     text-align: start
   }
@@ -1503,9 +1503,9 @@
     bottom: 0px;
     left: 0%;
     min-height: 45px;
-    bottom: -45px;
+    bottom: -47px;
     left: 0%;
-    width: 180px;
+    width: 175px;
     font-size: clamp(12.5px, 1vw, 12.5px);
   }
 

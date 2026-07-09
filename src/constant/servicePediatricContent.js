@@ -189,19 +189,19 @@
     ],
     media: [
       {
-        title: "Cover Test",
+        title: "Child-Friendly Vision Test",
         image: "/assets/Service/squint/diagnosed_image1.png",
-        alt: "Cover test for pediatric eye diagnosis",
+        alt: "Child-Friendly Vision Test",
       },
       {
-        title: "Corneal Light Reflex Test",
+        title: "Eye Alignment Check",
         image: "/assets/Service/squint/diagnosed_image2.png",
-        alt: "Corneal light reflex test for pediatric eye diagnosis",
+        alt: "Eye Alignment Check",
       },
       {
-        title: "Visual Acuity Test",
+        title: "Eye Movement Evaluation",
         image: "/assets/Service/squint/diagnosed_image4.png",
-        alt: "Visual acuity test for pediatric eye diagnosis",
+        alt: "Eye Movement Evaluation",
       },
     ],
     treatments: [
