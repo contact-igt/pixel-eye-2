@@ -20,16 +20,16 @@ export const SERVICE_CONTENT = {
       href: "/service/lasik",
       ctaStyle: "outline",
     },
-    {
-      id: "refractive-error-management",
-      title: "Refractive error management",
-      description:
-        "Care for vision problems caused by improper focusing of light on the retina. Managed through glasses, contact lenses, or corrective procedures depending on the need.",
-      image: "/assets/Service/error management.png",
-      imageAlt: "Patient covering one eye during a vision check",
-      href: "/service/lasik",
-      ctaStyle: "outline",
-    },
+    // {
+    //   id: "refractive-error-management",
+    //   title: "Refractive error management",
+    //   description:
+    //     "Care for vision problems caused by improper focusing of light on the retina. Managed through glasses, contact lenses, or corrective procedures depending on the need.",
+    //   image: "/assets/Service/error management.png",
+    //   imageAlt: "Patient covering one eye during a vision check",
+    //   href: "/service/lasik",
+    //   ctaStyle: "outline",
+    // },
     {
       id: "paediatric-ophthalmology",
       title: "Paediatric ophthalmology",
@@ -57,7 +57,7 @@ export const SERVICE_CONTENT = {
         "Care for conditions in which the eyes do not produce enough tears or where tear quality is affected, leading to discomfort and irritation.",
       image: "/assets/Service/Dry eye Treatment.png",
       imageAlt: "Close view of an eye receiving drops",
-      href: "/service/glaucoma",
+      href: "/service",
       ctaStyle: "outline",
     },
     {

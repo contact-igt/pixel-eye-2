@@ -1,5 +1,10 @@
 import { DOCTORS_CONTENT } from "@/constant/doctorsContent";
 
+const ABOUT_VISIONARIES_DOCTORS = [
+  DOCTORS_CONTENT.doctors.find((doctor) => doctor.id === "krishna-poojita"),
+  DOCTORS_CONTENT.doctors.find((doctor) => doctor.id === "abdul-rasheed"),
+].filter(Boolean);
+
 export const ABOUT_CONTENT = {
   hero: {
     image: "/assets/About/about-banner-new.jpeg",
@@ -56,7 +61,7 @@ export const ABOUT_CONTENT = {
       "Founded by specialists who make eye care clear and comfortable",
       "through a patient-first approach.",
     ],
-    doctors: DOCTORS_CONTENT.doctors,
+    doctors: ABOUT_VISIONARIES_DOCTORS,
   },
   processVideos: {
     titleLines: ["Understand the process,", "trust the outcome"],
@@ -69,7 +74,8 @@ export const ABOUT_CONTENT = {
         description:
           "The Brutal Truth About Pain, Healing Time, and What to Expect Day-by-Day!",
         image: "/assets/About/thumbnail1.png",
-        link: "#",
+        link: "https://www.youtube.com/watch?v=l-ARAIopPeM",
+        target_blank: true,
       },
       {
         id: "cataract-types",
@@ -77,7 +83,8 @@ export const ABOUT_CONTENT = {
         description:
           "A Simple Guide to the Different Cataract Procedures and How to Choose the Right One for You.",
         image: "/assets/About/thumbnai2.png",
-        link: "#",
+        link: "https://www.youtube.com/watch?v=Du0BiqaQ_rE",
+        target_blank: true,
       },
       {
         id: "clear-vision",
@@ -85,12 +92,14 @@ export const ABOUT_CONTENT = {
         description:
           "Discover the Vision Correction Options That Can Free You from Glasses and Contact Lenses.",
         image: "/assets/About/thumbnail3.png",
-        link: "#",
+        link: "https://www.youtube.com/watch?v=n5V-uGRkYVM",
+        target_blank: true,
       },
     ],
     exploreMore: {
       label: "Explore More",
-      href: "/appointment",
+      href: "https://www.youtube.com/@pixeleyehospitaleducation?app=desktop&ra=m&fbclid=PAZnRzaAS65nhwZG9mAmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp_scFwqiz_mZUjmok_7iw_cN4vq9QyQpdmZ-Htw_39kAzRAlWS9kj0rOLv5G_aem_M4p4DiJN9-y_58A5Gzmx7Q",
+      target_blank: true,
     },
   },
   rememberRecommend: {
@@ -100,8 +109,8 @@ export const ABOUT_CONTENT = {
     testimonials: [
       {
         id: "remember-1",
-        text: "The LASIK procedure was quick, safe, and well-explained. Truly professional care.",
-        name: "S. Ramesh",
+        text: "I had a great experience with Dr. Abdul Rasheed and his entire team. The doctor is very patient, knowledgeable, and takes the time to clearly explain the condition and treatment options, which made me feel comfortable and confident.",
+        name : "Abhinay",
         rating: "4.5",
         profileImage: {
           src: "/assets/About/cardimg1.png",

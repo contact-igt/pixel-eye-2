@@ -135,13 +135,65 @@
   height: auto;
 }
 
+.cardTextWrap {
+  width: 100%;
+  margin: 8% 0 0;
+}
+
 .cardText {
   width: 100%;
   color: #4f6495;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
-  margin: 8% 0 0;
+  margin: 0;
+}
+
+.cardTextPreview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1.6em * 3);
+}
+
+.cardTextExpanded {
+  max-height: calc(1.6em * 6);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.cardTextExpanded::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardTextExpanded::-webkit-scrollbar-thumb {
+  background: rgba(79, 100, 149, 0.35);
+  border-radius: 999px;
+}
+
+.textToggle {
+  margin-top: 8px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #4f6495;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.textToggle:hover {
+  color: #3d548a;
+}
+
+.textToggle:focus-visible {
+  outline: none;
+  color: #3d548a;
 }
 
 .patientBlock {

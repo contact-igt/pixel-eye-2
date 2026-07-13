@@ -1,11 +1,60 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
 import styles from "./styles.module.css";
+
+const PREVIEW_LINES = 3;
+
+const ExpandableReviewText = ({ text }) => {
+  const textRef = useRef(null);
+  const [expanded, setExpanded] = useState(false);
+  const [showToggle, setShowToggle] = useState(false);
+
+  useEffect(() => {
+    const node = textRef.current;
+    if (!node || typeof window === "undefined") return undefined;
+
+    const updateToggleVisibility = () => {
+      const computedStyles = window.getComputedStyle(node);
+      const lineHeight = Number.parseFloat(computedStyles.lineHeight) || 0;
+      const maxHeight = lineHeight * PREVIEW_LINES;
+      setShowToggle(node.scrollHeight > maxHeight + 1);
+    };
+
+    updateToggleVisibility();
+    window.addEventListener("resize", updateToggleVisibility);
+
+    return () => window.removeEventListener("resize", updateToggleVisibility);
+  }, [text]);
+
+  return (
+    <div className={styles.cardTextWrap}>
+      <p
+        ref={textRef}
+        className={`${styles.cardText} ${expanded ? styles.cardTextExpanded : styles.cardTextPreview}`}
+      >
+        {text}
+      </p>
+
+      {showToggle ? (
+        <button
+          type="button"
+          className={styles.textToggle}
+          onClick={(event) => {
+            event.stopPropagation();
+            setExpanded((current) => !current);
+          }}
+        >
+          {expanded ? "See less" : "See more"}
+        </button>
+      ) : null}
+    </div>
+  );
+};
 
 const RememberRecommend = () => {
   const { titleLines, description, testimonials } =
@@ -91,7 +140,7 @@ const RememberRecommend = () => {
                           className={styles.quoteImg}
                           aria-hidden="true"
                         />
-                        <p className={styles.cardText}>{item.text}</p>
+                        <ExpandableReviewText text={item.text} />
                       </div>
 
                       <div className={styles.patientBlock}>
@@ -137,7 +186,7 @@ const RememberRecommend = () => {
                       className={styles.quoteImg}
                       aria-hidden="true"
                     />
-                    <p className={styles.cardText}>{item.text}</p>
+                    <ExpandableReviewText text={item.text} />
                   </div>
                   <div className={styles.patientBlock}>
                     <div className={styles.avatarWrap}>

@@ -141,7 +141,12 @@ const Testimonials = () => {
             </div>
 
             <div className={styles.ctaRow}>
-              <Button label={cta.label} href={cta.href} variant="muted" />
+              <Button
+                label={cta.label}
+                href={cta.href}
+                variant="muted"
+                target={cta.target_blank ? "_blank" : undefined}
+              />
             </div>
           </div>
         </div>
@@ -151,3 +156,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
