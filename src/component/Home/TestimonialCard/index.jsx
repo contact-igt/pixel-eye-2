@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../Testimonials/styles.module.css";
+
+const MAX_VISIBLE_LINES = 6;
 
 const TestimonialCard = ({
   name,
@@ -8,6 +10,27 @@ const TestimonialCard = ({
   active = false,
   onClick,
 }) => {
+  const textRef = useRef(null);
+  const [expanded, setExpanded] = useState(false);
+  const [showToggle, setShowToggle] = useState(false);
+
+  useEffect(() => {
+    const node = textRef.current;
+    if (!node || typeof window === "undefined") return undefined;
+
+    const updateToggleVisibility = () => {
+      const computedStyles = window.getComputedStyle(node);
+      const lineHeight = Number.parseFloat(computedStyles.lineHeight) || 0;
+      const maxHeight = lineHeight * MAX_VISIBLE_LINES;
+      setShowToggle(node.scrollHeight > maxHeight + 1);
+    };
+
+    updateToggleVisibility();
+    window.addEventListener("resize", updateToggleVisibility);
+
+    return () => window.removeEventListener("resize", updateToggleVisibility);
+  }, [text]);
+
   return (
     <article
       className={`${styles.card} ${active ? styles.active : ""}`}
@@ -15,7 +38,7 @@ const TestimonialCard = ({
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") onClick && onClick();
+        if ((e.key === "Enter" || e.key === " ") && onClick) onClick();
       }}
     >
       <div className={styles.activeOverlay} />
@@ -33,9 +56,25 @@ const TestimonialCard = ({
       </div>
 
       <div className={styles.cardBody}>
-        <p className={styles.text}>
+        <p
+          ref={textRef}
+          className={`${styles.text} ${expanded ? styles.textExpanded : styles.textClamped}`}
+        >
           &quot;{text}&quot;
         </p>
+
+        {showToggle ? (
+          <button
+            type="button"
+            className={styles.textToggle}
+            onClick={(event) => {
+              event.stopPropagation();
+              setExpanded((current) => !current);
+            }}
+          >
+            {expanded ? "See less" : "See more"}
+          </button>
+        ) : null}
       </div>
     </article>
   );

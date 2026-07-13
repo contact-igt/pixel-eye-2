@@ -1,4 +1,4 @@
-﻿export const HOME_CONTENT = {
+export const HOME_CONTENT = {
   stats: [
     { id: 1, number: "99%", label: "Cataract\nSuccess Rate" },
     { id: 2, number: "8,000+", label: "Successful\nEye Surgeries" },
@@ -116,7 +116,7 @@
     },
     title: "Every eye has a story, we're here to protect yours.",
     content:
-      " *“Red eye,” commonly called conjunctivitis (pink eye), is shown for illustration only and not for diagnosis, consult an eye care professional.",
+      ' *"Red eye," commonly called conjunctivitis (pink eye), is shown for illustration only and not for diagnosis, consult an eye care professional.',
     beforeImage: {
       src: "/assets/Home/protextbanner11.png",
       alt: "Red inflamed eye",
@@ -153,7 +153,7 @@
         description:
           "Our experienced specialists use the latest diagnostic tools and surgical technology for precise, effective outcomes.",
         image: "/assets/Home/choose1.png",
-        href: "/appointment",
+        href: "/about",
         buttonLabel: "Read More",
       },
       {
@@ -236,38 +236,60 @@
     items: [
       {
         id: 1,
-        name: "Amit. Y",
+        name: "Bajee Vali Mulla",
         rating: 5,
-        text: "My cataract surgery was smooth from start to finish. The clarity I regained has been life changing.",
+        text: "Dr. Abdul Rasheed provided exceptional care with professionalism, clear guidance, and genuine compassion throughout my treatment. Pixel Eye Hospital offers excellent eye care with modern facilities and a supportive, friendly staff.",
       },
       {
         id: 2,
-        name: "Anjali. C",
+        name: "Ramdin Raju",
         rating: 5,
-        text: "My cataract surgery was smooth from start to finish. The clarity I regained has been life changing.",
+        text: "I underwent cataract surgery by Dr Krishna poojita. Extremely happy with her service. There was no pain at all during the surgery. I was actually scared. But overall it went very smooth. I highly recommend pixel eye hospital for best eye treatment. Staff was very friendly and helpful.",
       },
       {
         id: 3,
-        name: "S. Ramesh",
+        name: "Gangineni",
         rating: 5,
-        text: "The LASIK procedure was quick, safe, and well explained. Truly professional care",
+        text: "My cataract surgery at Pixel Eye Hospital was a life-changing experience, restoring clear vision and allowing me to see comfortably without glasses. Special thanks to Dr. Abdul Rasheed and Dr. Krishna Poojita for their exceptional care, expertise, and compassionate support.",
       },
       {
         id: 4,
-        name: "Meera .k",
+        name: "Riyaz",
         rating: 5,
-        text: "My cataract surgery was smooth from start to finish. The clarity I regained has been life changing.",
+        text: "Underwent squint surgery in pixel eye hospital, i cannot express how happy i am. Since so many years i was emotionally suffering but now fullstop to all those. The way doctor treated was very nice and understandable. Best hospital for squint if anyone needs. They treat you in their best possible ways and i am one of the example. Thanks to entire team",
       },
       {
         id: 5,
-        name: "Sonam .P",
+        name: "Nageswara",
         rating: 5,
-        text: "My cataract surgery was smooth from start to finish. The clarity I regained has been life changing.",
+        text: "Dr. Abdul Rasheed has taken excellent care. My left eye sight improved significantly within four hours of Cataract surgery. Absolutely no pain during surgery. Dr. and staff are very friendly, disciplined and doingtheir job with perfection.excellent hospital for eyes.",
+      },
+
+      {
+        id: 6,
+        name: "Kola Rajashekar",
+        rating: 5,
+        text: "I have been following dr abdul rasheed since 3 years, finally underwent cataract surgery, my power was -14 and -15, now it is zero. I am so happy, i am glass free. Had so much trouble since childhood. Surgery went very well and smooth. Best of best hospitality and care in pixel eye hospital and dr rasheed sir is very knowledgeable and good person.",
+      },
+
+      {
+        id: 7,
+        name: "Mahendra Nath",
+        rating: 5,
+        text: "My mother recently underwent cataract surgery for both eyes at this hospital, and our experience was very good. The doctors were highly skilled and explained the procedure clearly, which gave us a lot of confidence. The surgery went smoothly, and her vision has improved significantly. The hospital staff were polite, caring, and very supportive throughout the treatment. Overall, we are very satisfied with the treatment and excellent care provided. Highly recommended.",
+      },
+
+      {
+        id: 8,
+        name: "Harini B",
+        rating: 5,
+        text: "I was suffering with dry eye since long time, visited many finally consulted Dr Poojita mam in pixel eye hospital. Very satisfied with her way of treatment. They have all the advanced treatment for dry eye. Very happy and must recommended.",
       },
     ],
     cta: {
       label: "Read All Testimonials",
-      href: "/appointment",
+      href: "https://www.google.com/search?client=safari&hs=4JYV&sca_esv=f59d3dc769decac2&authuser=1&hl=en-in&cs=0&output=search&kgmid=/g/11vjxb2s34&q=Pixel+Eye+Hospital+-+Best+Ophthalmologist+in+Hyderabad+%7C+Best+Cataract+Surgeon+in+Hyderabad+%7C+Eye+Specialist+in+Hyderabad&shem=epsd1,ltae&shndl=30&source=sh/x/loc/act/m1/3&kgs=3c37e0f511cdc58e&utm_source=epsd1,ltae,sh/x/loc/act/m1/3#lrd=0x3bcb921dfaaaaaab:0xb156fa7486f0912b,1,,,,",
+      target_blank: true,
     },
   },
 

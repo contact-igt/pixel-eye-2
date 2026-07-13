@@ -94,6 +94,7 @@ const ProcessVideos = () => {
                             href={video.link}
                             className={styles.watchBtn}
                             variant="light"
+                        target={video.target_blank ? "_blank" : undefined}
                           />
                         </div>
                       </article>
@@ -124,6 +125,7 @@ const ProcessVideos = () => {
                         href={video.link}
                         className={styles.watchBtn}
                         variant="light"
+                            target={video.target_blank ? "_blank" : undefined}
                       />
                     </div>
                   </article>
@@ -152,6 +154,7 @@ const ProcessVideos = () => {
               href={exploreMore.href}
               variant="muted"
               className={styles.exploreBtn}
+              target={exploreMore.target_blank ? "_blank" : undefined}
             />
           </div>
         </div>

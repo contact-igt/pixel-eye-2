@@ -22,9 +22,13 @@ const Button = ({
   className = "",
   disabled = false,
   ariaLabel,
+  target,
+  rel,
 }) => {
   const variantClass = styles[variant] ?? styles.light;
   const rootClass = `${styles.btn} ${variantClass} ${className}`.trim();
+  const linkRel =
+    rel ?? (target === "_blank" ? "noopener noreferrer" : undefined);
 
   const inner = (
     <>
@@ -51,10 +55,17 @@ const Button = ({
   }
 
   return (
-    <Link href={href} className={rootClass} aria-label={ariaLabel}>
+    <Link
+      href={href}
+      className={rootClass}
+      aria-label={ariaLabel}
+      target={target}
+      rel={linkRel}
+    >
       {inner}
     </Link>
   );
 };
 
 export default Button;
+

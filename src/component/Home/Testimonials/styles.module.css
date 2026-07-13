@@ -337,6 +337,44 @@
   line-height: 1.55;
 }
 
+.textClamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1.55em * 6);
+}
+
+.textExpanded {
+  display: block;
+}
+
+.textToggle {
+  margin-top: 8px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #2a4388;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.textToggle:hover {
+  color: #1f3773;
+}
+
+.textToggle:focus-visible {
+  outline: none;
+  color: #1f3773;
+}
+
 /* ── Dots ────────────────────────────────────── */
 .dots {
   display: flex;
