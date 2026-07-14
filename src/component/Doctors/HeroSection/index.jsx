@@ -1,4 +1,4 @@
-﻿import HeroBanner from "@/common/HeroBanner";
+import HeroBanner from "@/common/HeroBanner";
 import { DOCTORS_CONTENT } from "@/constant/doctorsContent";
 
 const HeroSection = () => {
@@ -35,6 +35,7 @@ const HeroSection = () => {
       imagePosition={imagePosition}
       mobileImage={mobileImage}
       mobileCta={mobileCta}
+      cta={{ label: "Book Appointment", href: "/appointment" }}
       showMobileNabhBadge
       variant="aboutMasked"
     />

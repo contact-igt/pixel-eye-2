@@ -1,4 +1,5 @@
 import { SERVICE_SQUINT_CONTENT } from "@/constant/serviceSquintContent";
+import { SHARED_SERVICE_PATIENT_EXPERIENCE } from "@/constant/sharedPatientExperience";
 
 export const SQUINT_TREATMENT = {
   slug: "squint",
@@ -13,7 +14,7 @@ export const SQUINT_TREATMENT = {
     mobileVariant: "single",
   },
   faq: SERVICE_SQUINT_CONTENT.faq,
-  patientExperience: SERVICE_SQUINT_CONTENT.rememberRecommend, // undefined → falls back
+  patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
 
   sections: [
     "banner",
@@ -27,3 +28,5 @@ export const SQUINT_TREATMENT = {
     "patientExperience",
   ],
 };
+
+

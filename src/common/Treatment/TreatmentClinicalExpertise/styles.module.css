@@ -19,6 +19,7 @@
 .clinical-expertise__inner {
   width: min(1300px, calc(100% - 92px));
   margin: 0 auto;
+  padding: 50px 0px;
 }
 
 .clinical-expertise__header {
@@ -237,6 +238,15 @@
   }
 }
 
+
+@media (max-width: 1399px) {
+  .clinical-expertise__inner {
+    max-width: 1300px;
+  }
+
+}
+
+
 /* ══════════════════════════════════════════════════════════════════
    MULTI-DOCTOR RESPONSIVE  (exact Pediatric breakpoints)
 ══════════════════════════════════════════════════════════════════ */
@@ -449,9 +459,11 @@
   .clinical-expertise__inner {
     width: min(100%, calc(100% - 40px));
   }
-    .clinical-expertise__header{
-      margin-bottom: 0;
-    }
+
+  .clinical-expertise__header {
+    margin-bottom: 0;
+  }
+
   .clinical-expertise__header h2 {
     font-size: clamp(32px, 7vw, 42px);
     text-align: center;
@@ -501,9 +513,10 @@
   .clinical-expertise__doctor-info p {
     font-size: clamp(9px, 1.55vw, 11px);
   }
+
   .clinical-expertise__panel {
-  position: relative;
-  margin-top: 40px;
+    position: relative;
+    margin-top: 40px;
   }
 }
 
@@ -519,10 +532,12 @@
   .clinical-expertise__panel {
     border-radius: 16px;
   }
-    .clinical-expertise__panel {
-  position: relative;
-  margin-top: 30px;
+
+  .clinical-expertise__panel {
+    position: relative;
+    margin-top: 30px;
   }
+
   .clinical-expertise__doctor-card,
   .clinical-expertise__doctor-card:nth-child(2) {
     min-height: 250px;
@@ -565,7 +580,7 @@
   }
 }
 
-@media (max-width: 430px){
+@media (max-width: 430px) {
   .clinical-expertise__doctor-info {
     left: clamp(80px, 20%, 114px);
   }

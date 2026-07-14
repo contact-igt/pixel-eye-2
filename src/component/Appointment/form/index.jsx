@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
@@ -14,7 +15,7 @@ const initialForm = {
   date: "",
   symptoms: "",
   symptomDetails: "",
-  timeSlot: "00:00 AM",
+  timeSlot: "",
   terms: false,
   whatsapp: false,
   consent: false,
@@ -44,22 +45,28 @@ const ClockIcon = () => (
   </svg>
 );
 
-const hourOptions = Array.from({ length: 13 }, (_, index) =>
-  String(index).padStart(2, "0"),
-);
-const minuteOptions = Array.from({ length: 60 }, (_, index) =>
-  String(index).padStart(2, "0"),
-);
-const periodOptions = ["AM", "PM"];
-
-const getTimeParts = (value = "") => {
-  const match = value.trim().match(/^(\d{1,2})(?::(\d{1,2}))?\s*(AM|PM)?$/i);
-  return {
-    hour: match?.[1]?.padStart(2, "0") ?? "00",
-    minute: match?.[2]?.padStart(2, "0") ?? "00",
-    period: match?.[3]?.toUpperCase() ?? "AM",
-  };
+const branchTimeRanges = {
+  "Sanath Nagar": { start: 10, end: 20 },
+  Kukatpally: { start: 9, end: 20 },
 };
+
+const formatHour = (hour24) => {
+  const hour = hour24 % 12 || 12;
+  const period = hour24 >= 12 ? "PM" : "AM";
+  return `${String(hour).padStart(2, "0")}:00 ${period}`;
+};
+
+const getBranchTimeSlots = (location) => {
+  const range = branchTimeRanges[location];
+  if (!range) return [];
+
+  return Array.from({ length: range.end - range.start }, (_, index) => {
+    const startHour = range.start + index;
+    return `${formatHour(startHour)} - ${formatHour(startHour + 1)}`;
+  });
+};
+
+const getDefaultBranchTime = (location) => getBranchTimeSlots(location)[0] ?? "";
 
 const TextField = ({
   label,
@@ -69,6 +76,8 @@ const TextField = ({
   type = "text",
   required = false,
   icon,
+  inputRef,
+  onIconClick,
 }) => (
   <label
     className={`${styles["appointment-field"]} ${value || type === "date" || type === "time" ? styles["is-filled"] : ""
@@ -83,9 +92,21 @@ const TextField = ({
       placeholder=" "
       required={required}
       aria-label={label}
+      ref={inputRef}
     />
     <span>{label}</span>
-    {icon}
+    {onIconClick ? (
+      <button
+        type="button"
+        className={styles["field-icon-button"]}
+        onClick={onIconClick}
+        aria-label={`Choose ${label.toLowerCase()}`}
+      >
+        {icon}
+      </button>
+    ) : (
+      icon
+    )}
   </label>
 );
 
@@ -131,28 +152,28 @@ const TextAreaField = ({ label, name, value, onChange, required = false }) => (
     <span>{label}</span>
   </label>
 );
-const TimeSlotField = ({ value, onChange, required = false }) => {
+const TimeSlotField = ({ value, location, onChange, required = false }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { hour, minute, period } = getTimeParts(value);
+  const availableSlots = getBranchTimeSlots(location);
+  const selectedTime = value || "Select available time";
+  const branchHours = location
+    ? `${availableSlots[0]?.split(" - ")[0]} - ${availableSlots.at(-1)?.split(" - ")[1]}`
+    : "Select a hospital location first";
 
-  const updateTime = (nextPart) => {
-    const nextHour = nextPart.hour ?? hour ?? "00";
-    const nextMinute = nextPart.minute ?? minute ?? "00";
-    const nextPeriod = nextPart.period ?? period ?? "AM";
-    const nextValue = `${nextHour}:${nextMinute} ${nextPeriod}`;
-
+  const updateTime = (slot) => {
     onChange({
       target: {
         name: "timeSlot",
         type: "text",
-        value: nextValue,
+        value: slot,
       },
     });
+    setIsOpen(false);
   };
 
   return (
-    <label
-      className={`${styles["appointment-field"]} ${styles["compact-field"]} ${styles["time-slot-field"]} ${isOpen ? styles["time-slot-open"] : ""}`}
+    <div
+      className={`${styles["appointment-field"]} ${styles["compact-field"]} ${styles["time-slot-field"]} ${value ? styles["is-filled"] : ""} ${isOpen ? styles["time-slot-open"] : ""}`}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
           setIsOpen(false);
@@ -160,67 +181,53 @@ const TimeSlotField = ({ value, onChange, required = false }) => {
       }}
     >
       <span className={styles["time-slot-label"]}>Preferred Time slot</span>
-      <input
-        className={styles["time-display"]}
-        name="timeSlot"
-        value={value}
-        onChange={onChange}
-        onFocus={() => setIsOpen(true)}
-        required={required}
-        aria-label="Preferred Time slot"
-      />
+      <input type="hidden" name="timeSlot" value={value} />
       <button
         type="button"
-        className={styles["time-icon-button"]}
-        onClick={() => setIsOpen((current) => !current)}
+        className={styles["time-display-button"]}
+        onClick={() => location && setIsOpen((current) => !current)}
         aria-expanded={isOpen}
-        aria-haspopup="listbox"
+        aria-haspopup="dialog"
         aria-label="Choose preferred time"
+        disabled={!location}
       >
-        <ClockIcon stroke="#2f4c89" />
+        <span className={value ? styles["time-value"] : styles["time-placeholder"]}>
+          {selectedTime}
+        </span>
+        <ClockIcon />
+        <ChevronIcon />
       </button>
 
       {isOpen ? (
-        <div className={styles["time-picker-panel"]}>
-          <div className={styles["time-picker-column"]} role="listbox" aria-label="Hour">
-            {hourOptions.map((item) => (
-              <button
-                key={item}
-                type="button"
-                className={item === hour ? styles["time-option-active"] : ""}
-                onClick={() => updateTime({ hour: item })}
-              >
-                {item}
-              </button>
-            ))}
+        <div className={styles["time-picker-panel"]} role="dialog" aria-label="Choose preferred time">
+          <div className={styles["time-picker-heading"]}>
+            <div>
+              <strong>Choose your time</strong>
+              <small>{branchHours}</small>
+            </div>
+            <button
+              type="button"
+              className={styles["time-picker-done"]}
+              onClick={() => setIsOpen(false)}
+            >
+              Close
+            </button>
           </div>
-          <div className={styles["time-picker-column"]} role="listbox" aria-label="Minute">
-            {minuteOptions.map((item) => (
+          <div className={styles["time-slot-options"]} role="listbox" aria-label="Available appointment times">
+            {availableSlots.map((slot) => (
               <button
-                key={item}
+                key={slot}
                 type="button"
-                className={item === minute ? styles["time-option-active"] : ""}
-                onClick={() => updateTime({ minute: item })}
+                className={slot === value ? styles["time-option-active"] : ""}
+                onClick={() => updateTime(slot)}
               >
-                {item}
-              </button>
-            ))}
-          </div>
-          <div className={styles["time-picker-column"]} role="listbox" aria-label="AM or PM">
-            {periodOptions.map((item) => (
-              <button
-                key={item}
-                type="button"
-                className={item === period ? styles["time-option-active"] : ""}
-                onClick={() => updateTime({ period: item })}
-              >
-                {item}
+                {slot}
               </button>
             ))}
           </div>
         </div>
       ) : null}
-    </label>
+    </div>
   );
 };
 
@@ -229,13 +236,25 @@ const Form = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const dateInputRef = useRef(null);
   const router = useRouter();
+
+  const openDatePicker = () => {
+    const input = dateInputRef.current;
+    if (!input) return;
+
+    input.focus();
+    if (typeof input.showPicker === "function") {
+      input.showPicker();
+    }
+  };
 
   const handleChange = (event) => {
     const { checked, name, type, value } = event.target;
     setFormData((current) => ({
       ...current,
       [name]: type === "checkbox" ? checked : value,
+      ...(name === "location" ? { timeSlot: getDefaultBranchTime(value) } : {}),
     }));
   };
 
@@ -338,7 +357,9 @@ const Form = () => {
             value={formData.date}
             onChange={handleChange}
             required
-            // icon={<CalendarIcon />}
+            icon={<CalendarIcon />}
+            inputRef={dateInputRef}
+            onIconClick={openDatePicker}
           />
 
           <SelectField
@@ -365,6 +386,7 @@ const Form = () => {
 
           <TimeSlotField
             value={formData.timeSlot}
+            location={formData.location}
             onChange={handleChange}
             required
           />
@@ -378,7 +400,7 @@ const Form = () => {
               required
             />
             <span>
-              I agree to the Terms &amp; Conditions and Privacy Policy
+              I agree to the <Link href="/terms-and-conditions" className={styles["legal-link-strong"]}>Terms &amp; Conditions</Link> and <Link href="/privacy-policy" className={styles["legal-link-strong"]}>Privacy Policy</Link>
             </span>
           </label>
 
@@ -412,7 +434,7 @@ const Form = () => {
 
           <div className={styles["submit-area"]}>
             <Button
-              label="Book Appointment"
+              label="Enquire Now"
               variant="light"
               as="button"
               type="submit"
@@ -434,4 +456,3 @@ const Form = () => {
 };
 
 export default Form;
-

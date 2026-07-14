@@ -1,4 +1,4 @@
-﻿.treatment-types,
+.treatment-types,
 .treatment-types * {
   box-sizing: border-box;
 }
@@ -63,6 +63,67 @@
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: 0;
+}
+
+.treatment-types__cta {
+  margin-top: 24px;
+  width: fit-content;
+}
+
+.treatment-types__cta :global(.common-button__label) {
+  padding: 0 24px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #2b3f83 0%, #6886ff 100%);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.treatment-types__cta :global(.common-button__icon) {
+  color: #ffffff;
+  background: linear-gradient(135deg, #4f67d0 0%, #6d8dff 100%);
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.treatment-types__cta:hover :global(.common-button__label),
+.treatment-types__cta:hover :global(.common-button__icon) {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.86);
+}
+
+.treatment-types__cta:hover :global(.common-button__label) {
+  background: linear-gradient(90deg, #24366f 0%, #5d7cf2 100%);
+}
+
+.treatment-types__cta:hover :global(.common-button__icon) {
+  background: linear-gradient(135deg, #4158bc 0%, #607ef1 100%);
+}
+
+.treatment-types__cta:active :global(.common-button__label),
+.treatment-types__cta:active :global(.common-button__icon) {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.treatment-types__cta:active :global(.common-button__label) {
+  background: linear-gradient(90deg, #203063 0%, #5571df 100%);
+}
+
+.treatment-types__cta:active :global(.common-button__icon) {
+  background: linear-gradient(135deg, #384ca8 0%, #5571df 100%);
+}
+
+@media (min-width: 769px) {
+  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__copy {
+    top: clamp(28px, 2.5vw, 42px);
+    bottom: clamp(28px, 2.5vw, 42px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: min(600px, 50%);
+  }
+
+  .treatment-types[data-treatment-slug="glaucoma"] .treatment-types__cta {
+    margin-top: auto;
+  }
 }
 
 .treatment-types__stage {
@@ -439,6 +500,10 @@
     margin-top: 18px;
   }
 
+  .treatment-types__cta {
+    display: none;
+  }
+
   .treatment-types__stage {
     margin-top: -42px;
     padding: 0 48px;
@@ -698,7 +763,7 @@
     margin-top: 18px;
   }
 
-  /* margin-top removed â€“ GSAP stack section at end of file enforces margin:0 */
+  /* margin-top removed – GSAP stack section at end of file enforces margin:0 */
 
   .treatment-types__mobile-card h3 {
     font-size: clamp(24px, 6vw, 30px);
@@ -760,7 +825,7 @@
 /*
  * NOTE: The tablet horizontal-scroll rail (display:flex + overflow-x:auto) was
  * removed. The GSAP card-stack block at the bottom of this file already handles
- * all viewports â‰¤768px (including the 577pxâ€“768px tablet range) with the
+ * all viewports ≤768px (including the 577px–768px tablet range) with the
  * pinned stack animation. Keeping both blocks caused display:flex to conflict
  * with the stack's display:block + position:relative layout.
  */
@@ -913,12 +978,12 @@
     font-size: 34px;
   }
 }
-/* â”€â”€â”€ GSAP mobile card-stack â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+/* ─── GSAP mobile card-stack ───────────────────────────────────────────────
    Cards are position:absolute, all anchored at top:0 inside the list.
    GSAP sets yPercent:100 on every card except the first, pushing them
    completely below the container. overflow:hidden on the list clips them
    so they are invisible until they slide up into view.
-   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+   ─────────────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   /* Allow the outer section and stage to grow without clipping */
   .treatment-types,
@@ -957,10 +1022,10 @@
     height: var(--treatment-mobile-stack-height);
   }
 
-  /* â”€â”€ List container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  /* ── List container ──────────────────────────────────────────────────────
      FIX: overflow:hidden clips cards waiting at yPercent:100 (below) so
      they stay invisible until GSAP animates them upward into this area.
-     FIX: height uses clamp so the card is always < the viewport height â€“
+     FIX: height uses clamp so the card is always < the viewport height –
      eliminating the half-card cut-off on short devices.
   */
   .treatment-types__mobile-list,
@@ -976,7 +1041,7 @@
     overflow: hidden;
   }
 
-  /* â”€â”€ Absolutely-stacked cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Absolutely-stacked cards ────────────────────────────────────────── */
   .treatment-types__mobile-card,
   .treatment-types[data-treatment-slug="glaucoma"]
     .treatment-types__mobile-card {
@@ -994,7 +1059,7 @@
   }
 }
 
-/* 390 px and below â€“ slightly shorter cards to fit very small screens */
+/* 390 px and below – slightly shorter cards to fit very small screens */
 @media (max-width: 390px) {
   .treatment-types,
   .treatment-types[data-treatment-slug="glaucoma"] {
@@ -1170,3 +1235,5 @@
     display: none !important;
   }
 }
+
+

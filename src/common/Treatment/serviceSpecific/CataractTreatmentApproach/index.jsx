@@ -1,4 +1,5 @@
-import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
+﻿import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
+import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
 const TreatmentApproach = ({
@@ -63,6 +64,13 @@ const TreatmentApproach = ({
             ))}
           </div>
         </div>
+
+        <Button
+          label="Book Appointment"
+          href="/appointment"
+          variant="light"
+          className={styles["treatment-approach__cta"]}
+        />
       </div>
 
       {children ? (

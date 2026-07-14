@@ -137,7 +137,7 @@
 
 .cardTextWrap {
   width: 100%;
-  margin: 8% 0 0;
+  margin-top: 8%;
 }
 
 .cardText {
@@ -149,51 +149,19 @@
   margin: 0;
 }
 
-.cardTextPreview {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: calc(1.6em * 3);
-}
-
-.cardTextExpanded {
-  max-height: calc(1.6em * 6);
+.cardTextScrollable {
+  max-height: calc(1.6em * 4);
   overflow-y: auto;
   padding-right: 6px;
 }
 
-.cardTextExpanded::-webkit-scrollbar {
+.cardTextScrollable::-webkit-scrollbar {
   width: 4px;
 }
 
-.cardTextExpanded::-webkit-scrollbar-thumb {
-  background: rgba(79, 100, 149, 0.35);
+.cardTextScrollable::-webkit-scrollbar-thumb {
   border-radius: 999px;
-}
-
-.textToggle {
-  margin-top: 8px;
-  padding: 0;
-  border: none;
-  background: transparent;
-  color: #4f6495;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.2;
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.textToggle:hover {
-  color: #3d548a;
-}
-
-.textToggle:focus-visible {
-  outline: none;
-  color: #3d548a;
+  background: rgba(79, 100, 149, 0.28);
 }
 
 .patientBlock {
@@ -259,9 +227,28 @@
   }
 
   .cardText {
-    font-size: 14px;
-    margin-bottom: 0;
-  }
+  width: 100%;
+  color: #4f6495;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cardTextScrollable {
+  max-height: calc(1.6em * 4);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.cardTextScrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardTextScrollable::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(79, 100, 149, 0.28);
+}
 
   .patientBlock {
     gap: 12px;
@@ -291,9 +278,28 @@
   }
 
   .cardText {
-    width: 100%;
-    font-size: 12px;
-  }
+  width: 100%;
+  color: #4f6495;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cardTextScrollable {
+  max-height: calc(1.6em * 4);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.cardTextScrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardTextScrollable::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(79, 100, 149, 0.28);
+}
 }
 
 @media (max-width: 991px) {
@@ -319,9 +325,28 @@
   }
 
   .cardText {
-    font-size: 14px;
-    width: 90%;
-  }
+  width: 100%;
+  color: #4f6495;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cardTextScrollable {
+  max-height: calc(1.6em * 4);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.cardTextScrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardTextScrollable::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(79, 100, 149, 0.28);
+}
 
   .description {
     margin-top: 10px;
@@ -365,15 +390,33 @@
   }
 
   .cardContent {
-    width: 100%;
-  }
+  width: 100%;
+  padding: 0;
+}
 
   .cardText {
-    font-size: 14px;
-    line-height: 1.55;
-    width: 97%;
-    margin-top: 5%;
-  }
+  width: 100%;
+  color: #4f6495;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cardTextScrollable {
+  max-height: calc(1.6em * 4);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.cardTextScrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardTextScrollable::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(79, 100, 149, 0.28);
+}
 
   .patientBlock {
     left: 12%;
@@ -418,10 +461,9 @@
   }
 
   .cardContent {
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-  }
+  width: 100%;
+  padding: 0;
+}
 
   .quoteImg {
     width: 24px;
@@ -429,11 +471,28 @@
   }
 
   .cardText {
-    width: 95%;
-    max-width: 290px;
-    font-size: 14px;
-    line-height: 1.45;
-  }
+  width: 100%;
+  color: #4f6495;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cardTextScrollable {
+  max-height: calc(1.6em * 4);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.cardTextScrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardTextScrollable::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(79, 100, 149, 0.28);
+}
 
   .patientBlock {
         left: 12%;
@@ -470,13 +529,33 @@
   }
 
   .cardContent {
-    width: 100%;
-  }
+  width: 100%;
+  padding: 0;
+}
 
   .cardText {
-    width: 93%;
-    font-size: 14px;
-  }
+  width: 100%;
+  color: #4f6495;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cardTextScrollable {
+  max-height: calc(1.6em * 4);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.cardTextScrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardTextScrollable::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(79, 100, 149, 0.28);
+}
 
   .quoteMark {
     font-size: 48px;
@@ -502,3 +581,6 @@
     font-size: 12px;
   }
 }
+
+
+

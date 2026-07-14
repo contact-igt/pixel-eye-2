@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
 const TreatmentSymptoms = ({ data, slug = "treatment" }) => {
@@ -144,13 +145,23 @@ const TreatmentSymptoms = ({ data, slug = "treatment" }) => {
       </div>
 
       <div className={styles["treatment-symptoms__body"]}>
-        <Image
-          className={styles["treatment-symptoms__image"]}
-          src={data.image.src}
-          alt={data.image.alt}
-          width={975}
-          height={486}
-        />
+        <div className={styles["treatment-symptoms__image-wrap"]}>
+          <Image
+            className={styles["treatment-symptoms__image"]}
+            src={data.image.src}
+            alt={data.image.alt}
+            width={975}
+            height={486}
+          />
+          <div className={styles["treatment-symptoms__mobile-cta"]}>
+            <Button
+              label="Book Appointment"
+              href="/appointment"
+              variant="light"
+              className={styles["treatment-symptoms__cta"]}
+            />
+          </div>
+        </div>
 
         <div className={styles["treatment-symptoms__content"]}>
           {data.note && (
@@ -197,3 +208,5 @@ const TreatmentSymptoms = ({ data, slug = "treatment" }) => {
 };
 
 export default TreatmentSymptoms;
+
+

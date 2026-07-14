@@ -4,21 +4,21 @@ import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
 /**
- * Shared inner-page hero banner — Appointment, Service, future pages.
+ * Shared inner-page hero banner ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Appointment, Service, future pages.
  *
  * Props:
- *   image         — public path to background image
- *   title         — hero heading (optional)
- *   subtitle      — body text below title (optional)
- *   rightSlot     — "nabh" | "book"
- *   navTheme      — "dark" | "light"
- *   cardBg        — "white" | "transparent"  (logo card + right card background)
- *   height        — "medium" (default) | "short"
- *   showOverlay   — true (default) | false  (remove dark gradient for bright images)
- *   imagePosition — CSS object-position value, default "center 30%"
- *   mobileImage   — optional image used for narrow screens
- *   mobileImageMedia — media query for the mobile image source
- *   showMobileNabhBadge — show the NABH badge in the right card only on mobile
+ *   image         ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â public path to background image
+ *   title         ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â hero heading (optional)
+ *   subtitle      ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â body text below title (optional)
+ *   rightSlot     ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â "nabh" | "book"
+ *   navTheme      ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â "dark" | "light"
+ *   cardBg        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â "white" | "transparent"  (logo card + right card background)
+ *   height        ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â "medium" (default) | "short"
+ *   showOverlay   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â true (default) | false  (remove dark gradient for bright images)
+ *   imagePosition ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â CSS object-position value, default "center 30%"
+ *   mobileImage   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â optional image used for narrow screens
+ *   mobileImageMedia ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â media query for the mobile image source
+ *   showMobileNabhBadge ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â show the NABH badge in the right card only on mobile
  */
 export default function HeroBanner({
   image,
@@ -34,6 +34,9 @@ export default function HeroBanner({
   showOverlay = true,
   imagePosition = "center 30%",
   mobileCta,
+  cta,
+  mobileCopyLayout,
+  hideCtaOnMobile = false,
   showMobileNabhBadge = false,
   variant = "default",
   className = "",
@@ -82,7 +85,7 @@ export default function HeroBanner({
           />
         )}
 
-        {/* Subtle gradient overlay — only when showOverlay is true */}
+        {/* Subtle gradient overlay ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â only when showOverlay is true */}
         {showOverlay && <div className={styles.overlay} aria-hidden="true" />}
         {mobileOverlay && (
           <div
@@ -95,11 +98,21 @@ export default function HeroBanner({
         {/* Hero text (optional) */}
         {(title || subtitle) && (
           <div
-            className={`${styles.copy} ${mounted ? styles.copyVisible : ""} ${copyClassName}`.trim()}
+            className={`${styles.copy} ${mobileCopyLayout === "treatment" ? styles.treatmentCopyMobile : ""} ${mounted ? styles.copyVisible : ""} ${copyClassName}`.trim()}
           >
             {title && <h1 className={styles.title}>{title}</h1>}
             {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-            {mobileCta && (
+            {cta && (
+              <div className={`${styles.bannerCtaWrap} ${hideCtaOnMobile ? styles.bannerCtaWrapHiddenMobile : ""}`.trim()}>
+                <Button
+                  label={cta.label}
+                  href={cta.href}
+                  variant={cta.variant || "light"}
+                  className={styles.bannerCta}
+                />
+              </div>
+            )}
+            {!cta && mobileCta && (
               <div className={styles.mobileCtaWrap}>
                 <Button
                   label={mobileCta.label}
@@ -113,7 +126,7 @@ export default function HeroBanner({
         )}
       </div>
 
-      {/* Shared nav header — render outside the overflow:hidden frame so dropdowns won't be clipped */}
+      {/* Shared nav header ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â render outside the overflow:hidden frame so dropdowns won't be clipped */}
       <BannerNav
         rightSlot={rightSlot}
         navTheme={navTheme}

@@ -1,4 +1,4 @@
-﻿export const FOOTER_CONTENT = {
+export const FOOTER_CONTENT = {
   brand: {
     logo: "/assets/Footer/brandlogo-white.png",
     alt: "Pixel Eye Hospital",
@@ -17,6 +17,8 @@
     { label: "Treatment", href: "/service" },
     { label: "Appointment", href: "/appointment" },
     { label: "Our Specialists", href: "/doctors" },
+    { label: "Terms and Conditions", href: "/terms-and-conditions" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
   ],
   contacts: [
     {
@@ -32,12 +34,12 @@
     {
       icon: "/assets/Footer/location.png",
       text: "Fourth Floor, Commercial Complex PNR Highnest, 1-2-22/PNRHN/3/B, Dharma Reddy Colony Phase II, Kukatpally Housing Board Colony, Hyderabad, Telangana 500085",
-      href: "#",
+      href: "https://maps.app.goo.gl/CXDMTLygtXTCMnn79",
     },
     {
       icon: "/assets/Footer/location.png",
       text: "TRT 1190, Ground Floor, Bansal Residency, Beside Sanath Nagar Police Station, Sanath Nagar main road, Hyderabad, Telangana 500018",
-      href: "#",
+      href: "https://maps.app.goo.gl/FYb1KroqrsFQWX7z8",
     },
   ],
   social: [
@@ -66,4 +68,3 @@
   copyright:
     "\u00A9 2023 Pixel Eye Hospital (a unit of Blue Eye Care Services Pvt Ltd.). All Rights Reserved.",
 };
-

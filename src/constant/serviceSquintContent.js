@@ -2,10 +2,7 @@ export const SERVICE_SQUINT_CONTENT = {
   banner: {
     hero: {
       titleLines: [
-        "Squint: When eyes",
-        "don’t align,",
-        "vision needs",
-        "attention",
+        "Squint: When eyes don’t align vision needs attention",
       ],
       description:
         "Squint can appear in childhood or adulthood and may cause eye strain, double vision, or lazy eye if left untreated. A detailed eye check-up can help identify the cause and guide proper correction.",

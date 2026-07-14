@@ -6,6 +6,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./styles.module.css";
 
+const ReviewText = ({ text }) => (
+  <div className={styles.cardTextWrap}>
+    <p className={`${styles.cardText} ${styles.cardTextScrollable}`}>{text}</p>
+  </div>
+);
+
 const TreatmentPatientExperience = ({ data, slug = "treatment" }) => {
   if (!data) return null;
 
@@ -70,7 +76,7 @@ const TreatmentPatientExperience = ({ data, slug = "treatment" }) => {
           className={styles.quoteImg}
           aria-hidden="true"
         />
-        <p className={styles.cardText}>{item.text}</p>
+        <ReviewText text={item.text} />
       </div>
 
       <div className={styles.patientBlock}>
@@ -135,8 +141,9 @@ const TreatmentPatientExperience = ({ data, slug = "treatment" }) => {
               className={`${styles.dot} ${i === active ? styles.activeDot : ""}`}
               onClick={() => {
                 setActive(i);
-                if (mounted)
+                if (mounted) {
                   sliderRef.current?.slickGoTo(i + testimonials.length);
+                }
               }}
               aria-label={`Go to testimonial ${i + 1}`}
             />

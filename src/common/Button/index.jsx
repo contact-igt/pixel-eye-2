@@ -6,11 +6,11 @@ import styles from "./styles.module.css";
  * Common pill CTA button used across all Home sections.
  *
  * Props:
- *   label     — button text
- *   href      — link destination (default "#")
- *   variant   — "light" | "muted" | "dark"  (default "light")
- *   onClick   — optional click handler (renders <button> instead of <Link>)
- *   className — extra class on the root element
+ *   label     - button text
+ *   href      - link destination (default "#")
+ *   variant   - "light" | "muted" | "dark"  (default "light")
+ *   onClick   - optional click handler (renders <button> instead of <Link>)
+ *   className - extra class on the root element
  */
 const Button = ({
   label,
@@ -32,8 +32,8 @@ const Button = ({
 
   const inner = (
     <>
-      <span className={styles.label}>{label}</span>
-      <span className={styles.icon}>
+      <span className={`${styles.label} common-button__label`}>{label}</span>
+      <span className={`${styles.icon} common-button__icon`}>
         <ArrowUpRight />
       </span>
     </>

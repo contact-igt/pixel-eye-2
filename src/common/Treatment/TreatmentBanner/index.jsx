@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "@/common/Button";
 import HeroBanner from "@/common/HeroBanner";
 import TreatmentExplainerCataract from "@/common/Treatment/TreatmentExplainerCataract";
 import TreatmentExplainerSquint from "@/common/Treatment/TreatmentExplainerSquint";
@@ -22,7 +23,8 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
   // Render hero copy through the bottom-left treatment-hero__copy block
   // (same position as pediatric) for these slugs instead of HeroBanner's
   // vertically-centered copy.
-  const useTreatmentCopy = slug === "retina" || slug === "glaucoma";
+  const useTreatmentCopy =
+    slug === "retina" || slug === "glaucoma" || Boolean(hero.title);
 
   const hasTitleLines =
     Array.isArray(hero.titleLines) && hero.titleLines.length > 0;
@@ -145,6 +147,8 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           mobileImage={mobileImageSrc}
           mobileImageMedia={hero.mobileImageMedia}
           mobileCta={hero.mobileCta}
+          cta={{ label: "Book Appointment", href: "/appointment" }}
+          mobileCopyLayout={useTreatmentCopy ? undefined : "treatment"}
           title={useTreatmentCopy ? undefined : heroBannerTitle}
           subtitle={
             useTreatmentCopy
@@ -173,6 +177,14 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           >
             <h1>{hero.title ? hero.title : heroBannerTitle}</h1>
             {hero.description && <p>{hero.description}</p>}
+            {useTreatmentCopy && (
+              <Button
+                label="Book Appointment"
+                href="/appointment"
+                variant="light"
+                className={styles["treatment-hero__cta"]}
+              />
+            )}
           </div>
         )}
 

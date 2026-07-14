@@ -1,5 +1,6 @@
 ﻿import { useEffect, useState } from "react";
 import Image from "next/image";
+import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
 const ArrowIcon = ({ direction }) => (
@@ -113,6 +114,12 @@ const TreatmentTypes = ({ data, slug = "treatment" }) => {
         <div className={styles["treatment-types__copy"]}>
           <h2 id={`${slug}-types-title`}>{data.title}</h2>
           {data.description && <p>{data.description}</p>}
+          <Button
+            label="Book Appointment"
+            href="/appointment"
+            variant="light"
+            className={styles["treatment-types__cta"]}
+          />
         </div>
       </div>
 

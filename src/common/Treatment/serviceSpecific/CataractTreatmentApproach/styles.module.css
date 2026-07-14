@@ -91,6 +91,51 @@
     line-height: 1.35;
 }
 
+.treatment-approach__cta {
+    position: absolute;
+    right: 42px;
+    bottom: 34px;
+}
+
+.treatment-approach__cta :global(.common-button__label) {
+    color: #ffffff;
+    background: linear-gradient(90deg, #2b3f83 0%, #6886ff 100%);
+    border-color: #5e7ff3;
+}
+
+.treatment-approach__cta :global(.common-button__icon) {
+    color: #ffffff;
+    background: #5e7ff3;
+    border-color: #5e7ff3;
+}
+
+.treatment-approach__cta:hover :global(.common-button__label),
+.treatment-approach__cta:hover :global(.common-button__icon) {
+    color: #ffffff;
+}
+
+.treatment-approach__cta:hover :global(.common-button__label) {
+    background: linear-gradient(90deg, #24366f 0%, #5d7cf2 100%);
+    border-color: #5d7cf2;
+}
+
+.treatment-approach__cta:hover :global(.common-button__icon) {
+    background: #5d7cf2;
+    border-color: #5d7cf2;
+}
+
+.treatment-approach__cta:active :global(.common-button__label) {
+    color: #ffffff;
+    background: linear-gradient(90deg, #203063 0%, #5571df 100%);
+    border-color: #5571df;
+}
+
+.treatment-approach__cta:active :global(.common-button__icon) {
+    color: #ffffff;
+    background: #5571df;
+    border-color: #5571df;
+}
+
 .treatment-approach__addon {
     position: relative;
     z-index: 2;
@@ -210,6 +255,10 @@
 
 
 @media (max-width: 768px) {
+    .treatment-approach__cta {
+        display: none;
+    }
+
     .treatment-approach {
         width: min(1600px, calc(100% - 40px));
         margin-bottom: 64px;
@@ -302,7 +351,12 @@
         margin-bottom: 0;
     }
 
-    .treatment-approach__addon {
+        .treatment-approach__cta {
+        position: static;
+        margin: 2px 16px 0;
+    }
+
+.treatment-approach__addon {
         margin-top: 18px;
     }
 
@@ -335,4 +389,5 @@
         font-size: 13px;
     } */
 }
+
 

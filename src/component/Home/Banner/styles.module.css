@@ -124,6 +124,45 @@
   --btn-icon-left: 180px;
 }
 
+.heroCta :global(.common-button__label) {
+  color: #ffffff;
+  background: linear-gradient(90deg, #2b3f83 0%, #6886ff 100%);
+  border-color: #5e7ff3;
+}
+
+.heroCta :global(.common-button__icon) {
+  color: #ffffff;
+  background: #5e7ff3;
+  border-color: #5e7ff3;
+}
+
+.heroCta:hover :global(.common-button__label),
+.heroCta:hover :global(.common-button__icon) {
+  color: #ffffff;
+}
+
+.heroCta:hover :global(.common-button__label) {
+  background: linear-gradient(90deg, #24366f 0%, #5d7cf2 100%);
+  border-color: #5d7cf2;
+}
+
+.heroCta:hover :global(.common-button__icon) {
+  background: #5d7cf2;
+  border-color: #5d7cf2;
+}
+
+.heroCta:active :global(.common-button__label) {
+  color: #ffffff;
+  background: linear-gradient(90deg, #203063 0%, #5571df 100%);
+  border-color: #5571df;
+}
+
+.heroCta:active :global(.common-button__icon) {
+  color: #ffffff;
+  background: #5571df;
+  border-color: #5571df;
+}
+
 /* ── Slider dots ── */
 .sliderDots {
   position: absolute;

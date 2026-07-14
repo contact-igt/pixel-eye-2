@@ -1,12 +1,7 @@
 ﻿export const SERVICE_KERATOCONUS_CONTENT = {
   banner: {
     hero: {
-      titleLines: [
-        "Keratoconus:",
-        "Protect your cornea,",
-        "preserve your",
-        "vision",
-      ],
+      titleLines: ["Keratoconus: Protect your cornea, preserve your vision"],
       description:
         "Keratoconus can slowly change the shape of your cornea and cause distorted or blurred vision. Early diagnosis and timely treatment can help control progression and improve visual quality.",
       image: {
@@ -102,7 +97,7 @@
   treatmentApproach: {
     title: "How Keratoconus is diagnosed",
     paragraphs: [
-      "A normal eye power check may not be enough to detect keratoconus. Diagnosis usually requires a detailed corneal evaluation to study the shape, thickness, and curvature of the cornea."
+      "A normal eye power check may not be enough to detect keratoconus. Diagnosis usually requires a detailed corneal evaluation to study the shape, thickness, and curvature of the cornea.",
     ],
     image: {
       src: "/assets/Service/keratoconus/Subtract (1).png",
