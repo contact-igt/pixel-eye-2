@@ -1,8 +1,13 @@
 import { useRef, useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { HOME_CONTENT } from "@/constant/homeContent";
 import styles from "./styles.module.css";
 
-/* ── Multi-doctor panel (Pediatric style — DEFAULT) ────────────── */
+const specialistImagesByName = new Map(
+  (HOME_CONTENT.specialist?.doctors || []).map((doctor) => [doctor.name, doctor.image]),
+);
+
+/* Multi-doctor panel */
 const MultiDoctorPanel = ({ data, sectionRef, isRevealed, slug }) => (
   <section
     ref={sectionRef}
@@ -36,7 +41,7 @@ const MultiDoctorPanel = ({ data, sectionRef, isRevealed, slug }) => (
             >
               <div className={styles["clinical-expertise__doctor-unit"]}>
                 <img
-                  src={doctor.image}
+                  src={specialistImagesByName.get(doctor.name) || doctor.image}
                   alt={doctor.imageAlt || doctor.name}
                   className={styles["clinical-expertise__doctor-image"]}
                 />
@@ -44,11 +49,11 @@ const MultiDoctorPanel = ({ data, sectionRef, isRevealed, slug }) => (
                   <h3>{doctor.name}</h3>
                   <p>{doctor.description}</p>
                   <a
-                    href={doctor.href || "/doctors"}
+                    href={doctor.href || doctor.buttonLink || "/doctors"}
                     className={styles["clinical-expertise__doctor-link"]}
                     aria-label={`View profile for ${doctor.name}`}
                   >
-                    <span>View Doctor Profiles</span>
+                    <span>{doctor.buttonText || "View Doctor Profiles"}</span>
                     <span
                       className={styles["clinical-expertise__doctor-link-icon"]}
                     >
@@ -65,7 +70,6 @@ const MultiDoctorPanel = ({ data, sectionRef, isRevealed, slug }) => (
   </section>
 );
 
-/* ── Main export ───────────────────────────────────────────────── */
 const TreatmentClinicalExpertise = ({ data, slug = "treatment" }) => {
   const sectionRef = useRef(null);
   const [isRevealed, setIsRevealed] = useState(false);

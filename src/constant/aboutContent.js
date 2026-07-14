@@ -1,4 +1,5 @@
 import { DOCTORS_CONTENT } from "@/constant/doctorsContent";
+import { SHARED_ABOUT_PATIENT_EXPERIENCE } from "@/constant/sharedPatientExperience";
 
 const ABOUT_VISIONARIES_DOCTORS = [
   DOCTORS_CONTENT.doctors.find((doctor) => doctor.id === "krishna-poojita"),
@@ -102,46 +103,7 @@ export const ABOUT_CONTENT = {
       target_blank: true,
     },
   },
-  rememberRecommend: {
-    titleLines: ["Care that patients remember", "and recommend"],
-    description:
-      "Honest stories from people who trusted us with their vision, treatment, and their recovery journey.",
-    testimonials: [
-      {
-        id: "remember-1",
-        text: "I had a great experience with Dr. Abdul Rasheed and his entire team. The doctor is very patient, knowledgeable, and takes the time to clearly explain the condition and treatment options, which made me feel comfortable and confident.",
-        name : "Abhinay",
-        rating: "4.5",
-        profileImage: {
-          src: "/assets/About/cardimg1.png",
-          alt: "Patient profile image 1",
-        },
-        backgroundImage: "/assets/About/remembercard.png",
-      },
-      {
-        id: "remember-2",
-        text: "My mother's cataract surgery went smoothly and her vision is crystal clear now. The team was caring throughout.",
-        name: "Priya Nair",
-        rating: "5.0",
-        profileImage: {
-          src: "/assets/About/cardimg3.png",
-          alt: "Patient profile image 2",
-        },
-        backgroundImage: "/assets/About/remembercard.png",
-      },
-      {
-        id: "remember-3",
-        text: "They diagnosed my child's squint early and guided us with patience at every step. We felt truly understood.",
-        name: "Arun Kumar",
-        rating: "4.8",
-        profileImage: {
-          src: "/assets/About/cardimg2.png",
-          alt: "Patient profile image 3",
-        },
-        backgroundImage: "/assets/About/remembercard.png",
-      },
-    ],
-  },
+  rememberRecommend: SHARED_ABOUT_PATIENT_EXPERIENCE,
   suggestedReads: {
     heading: "Suggested reads",
     subtitle: "Learn more about cataracts",
@@ -179,5 +141,7 @@ export const ABOUT_CONTENT = {
     ],
   },
 };
+
+
 
 

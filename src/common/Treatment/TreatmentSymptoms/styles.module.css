@@ -38,6 +38,12 @@
   margin-top: 56px;
 }
 
+.treatment-symptoms__image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 508px;
+}
+
 .treatment-symptoms__image {
   display: block;
   width: 100%;
@@ -47,6 +53,53 @@
   border-radius: 22px;
   object-fit: cover;
   object-position: center;
+}
+
+.treatment-symptoms__mobile-cta {
+  display: none;
+}
+
+.treatment-symptoms__cta {
+  --btn-icon-left: 185px;
+}
+
+.treatment-symptoms__cta :global(.common-button__label) {
+  color: #ffffff;
+  background: linear-gradient(90deg, #2b3f83 0%, #6886ff 100%);
+  border-color: #5e7ff3;
+}
+
+.treatment-symptoms__cta :global(.common-button__icon) {
+  color: #ffffff;
+  background: #5e7ff3;
+  border-color: #5e7ff3;
+}
+
+.treatment-symptoms__cta:hover :global(.common-button__label),
+.treatment-symptoms__cta:hover :global(.common-button__icon) {
+  color: #ffffff;
+}
+
+.treatment-symptoms__cta:hover :global(.common-button__label) {
+  background: linear-gradient(90deg, #24366f 0%, #5d7cf2 100%);
+  border-color: #5d7cf2;
+}
+
+.treatment-symptoms__cta:hover :global(.common-button__icon) {
+  background: #5d7cf2;
+  border-color: #5d7cf2;
+}
+
+.treatment-symptoms__cta:active :global(.common-button__label) {
+  color: #ffffff;
+  background: linear-gradient(90deg, #203063 0%, #5571df 100%);
+  border-color: #5571df;
+}
+
+.treatment-symptoms__cta:active :global(.common-button__icon) {
+  color: #ffffff;
+  background: #5571df;
+  border-color: #5571df;
 }
 
 .treatment-symptoms__content {
@@ -327,10 +380,29 @@
     row-gap: 18px;
   }
 
+  .treatment-symptoms__image-wrap {
+    width: min(100%, 520px);
+    justify-self: center;
+  }
+
   .treatment-symptoms__image {
     width: min(100%, 520px);
     justify-self: center;
     border-radius: 18px;
+  }
+
+  .treatment-symptoms__mobile-cta {
+    position: absolute;
+    inset: 85% auto auto 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 32px);
+    pointer-events: none;
+  }
+
+  .treatment-symptoms__mobile-cta > * {
+    pointer-events: auto;
   }
 
   .treatment-symptoms__content {
@@ -402,8 +474,16 @@
     margin-top: 28px;
   }
 
+  .treatment-symptoms__image-wrap {
+    width: 100%;
+  }
+
   .treatment-symptoms__image {
     width: 100%;
+  }
+
+  .treatment-symptoms__cta {
+    --btn-icon-left: 170px;
   }
 
   .treatment-symptoms__list {
@@ -452,6 +532,14 @@
     row-gap: 14px;
   }
 
+  .treatment-symptoms__mobile-cta {
+    width: calc(100% - 20px);
+  }
+
+  .treatment-symptoms__cta {
+    --btn-icon-left: 150px;
+  }
+
   .treatment-symptoms__list {
     width: 100%;
   }
@@ -479,3 +567,4 @@
     font-size: 28px;
   }
 }
+

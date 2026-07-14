@@ -7,7 +7,6 @@
 .inner {
   width: min(1600px, calc(100% - 160px));
   margin: 0 auto;
-  
 }
 
 .header {
@@ -30,7 +29,6 @@
   font-weight: 400;
 }
 
-/* SSR fallback grid */
 .grid {
   margin-top: 42px;
   display: grid;
@@ -38,7 +36,6 @@
   gap: 24px;
 }
 
-/* Slider wrapper */
 .sliderWrap {
   margin-top: 42px;
 }
@@ -70,7 +67,6 @@
   justify-content: center;
 }
 
-/* Dots */
 .dots {
   display: flex;
   justify-content: center;
@@ -127,13 +123,33 @@
   height: auto;
 }
 
+.cardTextWrap {
+  width: 100%;
+  margin-top: 8%;
+}
+
 .cardText {
   width: 100%;
   color: #4f6495;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 400;
-  margin: 8% 0 0;
+  margin: 0;
+}
+
+.cardTextScrollable {
+  max-height: calc(1.6em * 4);
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.cardTextScrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cardTextScrollable::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(79, 100, 149, 0.28);
 }
 
 .patientBlock {
@@ -216,3 +232,7 @@
     max-width: 100%;
   }
 }
+
+
+
+

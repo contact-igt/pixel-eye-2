@@ -35,6 +35,7 @@ const HeroSection = () => {
       imagePosition={imagePosition}
       mobileImage={mobileImage}
       mobileCta={mobileCta}
+      cta={{ label: "Book Appointment", href: "/appointment" }}
       showMobileNabhBadge
       variant="aboutMasked"
     />

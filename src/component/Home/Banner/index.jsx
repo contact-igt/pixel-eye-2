@@ -73,8 +73,8 @@ export default function Banner() {
               <p className={styles.heroText}>{activeSlide?.heroText}</p>
               <div className={styles.ctaWrap}>
                 <Button
-                  label={banner.cta.label}
-                  href={banner.cta.href}
+                  label="Book Appointment"
+                  href="/appointment"
                   variant="light"
                   className={styles.heroCta}
                 />

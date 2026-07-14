@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./styles.module.css";
+
+const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@pixeleyehospitaleducation";
 
 const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
   const sectionRef = useRef(null);
@@ -93,10 +96,14 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
 
         <div className={styles["treatment-diagnosis__media-list"]}>
           {(data.media || []).map((item, index) => (
-            <figure
-              className={styles["treatment-diagnosis__media-card"]}
+            <Link
+              href={YOUTUBE_CHANNEL_URL}
+              target="_blank"
+              rel="noreferrer"
+              className={`${styles["treatment-diagnosis__media-card"]} ${styles["treatment-diagnosis__media-card-link"]}`}
               style={{ "--item-index": index }}
               key={item.title}
+              aria-label={`Watch ${item.title} on Pixel Eye Hospital YouTube`}
             >
               <div className={styles["treatment-diagnosis__media-frame"]}>
                 <Image
@@ -108,12 +115,12 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
                 />
                 {/* <PlayIcon /> */}
               </div>
-              <figcaption
+              <span
                 className={styles["treatment-diagnosis__media-label"]}
               >
                 {item.title}
-              </figcaption>
-            </figure>
+              </span>
+            </Link>
           ))}
         </div>
       </div>

@@ -160,7 +160,7 @@
 
 @media (max-width: 991px) {
   .treatment-faq {
-    margin-top: 0;
+    margin-top: 70px;
     padding-top: clamp(40px, 4vw, 50px);
   }
 

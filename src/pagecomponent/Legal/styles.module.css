@@ -1,0 +1,151 @@
+.legalHero :global(.copy),
+.legalHeroCopy {
+  top: auto;
+  left: clamp(34px, 5.8vw, 66px);
+  bottom: clamp(32px, 5.8vw, 64px);
+  width: min(560px, 52%);
+  transform: none;
+}
+
+.legalHeroCopy :global(.title) {
+  font-size: clamp(32px, 3.4vw, 48px);
+  line-height: 1.2;
+  text-shadow: 0 2px 18px rgba(24, 56, 92, 0.25);
+}
+
+.legalContent {
+  width: 100%;
+  margin: 0 auto;
+  padding: 42px 80px 36px;
+  color: #4d679e;
+}
+
+.legalTitle {
+  margin: 0 0 10px;
+  color: var(--text-heading);
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.legalIntro {
+  padding: 0 4px 28px;
+  border: 0;
+  background: transparent;
+}
+
+.legalIntro p,
+.legalSection p {
+  margin: 0;
+  color: #4d679e;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.legalSection {
+  margin: 0 0 50px;
+  padding: 34px 40px;
+  border-radius: 24px;
+  background: #dcebf2;
+}
+
+.privacyCombinedCard {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.privacySubsection+.privacySubsection {
+  margin-top: 28px;
+}
+
+.privacySubsection h2 {
+  margin-bottom: 8px;
+}
+
+.legalSection h2 {
+  margin: 0 0 10px;
+  color: var(--text-heading);
+  font-size: clamp(23px, 3vw, 32px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+
+
+.legalSection p[style],
+.legalSection p {
+  white-space: pre-line;
+}
+
+@media (max-width: 767px) {
+
+  .legalHero :global(.copy),
+  .legalHeroCopy {
+    left: 22px;
+    right: 22px;
+    bottom: 26px;
+    width: auto;
+  }
+
+  .legalHeroCopy :global(.title) {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .legalHeroCopy :global(.subtitle) {
+    font-size: 14px;
+  }
+
+  .legalContent {
+    width: calc(100% - 32px);
+    padding: 34px 0 24px;
+  }
+
+  .legalTitle {
+    font-size: clamp(32px, 10vw, 46px);
+  }
+
+  .legalIntro {
+    padding: 0 2px 22px;
+  }
+
+  .legalIntro p,
+  .legalSection p {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .legalSection {
+    margin-bottom: 14px;
+    padding: 24px 22px;
+    border-radius: 18px;
+  }
+
+  .privacyCombinedCard {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .privacySubsection+.privacySubsection {
+    margin-top: 22px;
+  }
+
+  .privacySubsection h2 {
+    margin-bottom: 8px;
+  }
+
+  .legalSection h2 {
+    font-size: 22px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .legalTitle {
+    font-size: 32px;
+  }
+
+}

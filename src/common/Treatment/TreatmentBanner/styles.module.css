@@ -22,7 +22,7 @@
   z-index: 5;
   width: min(560px, 42vw);
   color: #273979;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .treatment-hero__copy h1 {
@@ -33,6 +33,50 @@
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: 0;
+}
+
+.treatment-hero__cta {
+  margin-top: clamp(20px, 1.8vw, 30px);
+  --btn-icon-left: 185px;
+}
+
+.treatment-hero__cta :global(.common-button__label) {
+  color: #ffffff;
+  background: linear-gradient(90deg, #2b3f83 0%, #6886ff 100%);
+  border-color: #5e7ff3;
+}
+
+.treatment-hero__cta :global(.common-button__icon) {
+  color: #ffffff;
+  background: #5e7ff3;
+  border-color: #5e7ff3;
+}
+
+.treatment-hero__cta:hover :global(.common-button__label),
+.treatment-hero__cta:hover :global(.common-button__icon) {
+  color: #ffffff;
+}
+
+.treatment-hero__cta:hover :global(.common-button__label) {
+  background: linear-gradient(90deg, #24366f 0%, #5d7cf2 100%);
+  border-color: #5d7cf2;
+}
+
+.treatment-hero__cta:hover :global(.common-button__icon) {
+  background: #5d7cf2;
+  border-color: #5d7cf2;
+}
+
+.treatment-hero__cta:active :global(.common-button__label) {
+  color: #ffffff;
+  background: linear-gradient(90deg, #203063 0%, #5571df 100%);
+  border-color: #5571df;
+}
+
+.treatment-hero__cta:active :global(.common-button__icon) {
+  color: #ffffff;
+  background: #5571df;
+  border-color: #5571df;
 }
 
 .treatment-hero__copy p {
@@ -279,7 +323,11 @@
     font-size: clamp(34px, 4vw, 44px);
   }
 
-  .treatment-hero__copy p {
+  .treatment-hero__cta {
+  margin-top: clamp(20px, 1.8vw, 30px);
+  --btn-icon-left: 185px;
+}
+.treatment-hero__copy p {
     font-size: 16px;
     line-height: 1.25;
   }
@@ -331,18 +379,37 @@
   }
 
   .treatment-hero__copy {
-    left: 32px;
-    bottom: 50px;
+    left: clamp(24px, 4vw, 32px);
+    top: clamp(72px, 14vw, 96px);
+    bottom: auto;
+    transform: none;
     width: min(380px, calc(100% - 64px));
   }
 
-  .treatment-hero__copy h1 {
+  .treatment-detail .treatment-hero__copy--white,
+  .treatment-detail .treatment-hero__copy--blue {
+    top: clamp(72px, 14vw, 96px);
+    bottom: auto;
+    transform: none;
+    display: block;
+    left: clamp(24px, 4vw, 32px);
+    width: min(380px, calc(100% - 64px));
+    padding: 0;
+  }
+
+  .treatment-hero__copy h1,
+  .treatment-detail .treatment-hero__copy--white h1,
+  .treatment-detail .treatment-hero__copy--blue h1 {
     font-size: clamp(32px, 7vw, 42px);
   }
 
-  .treatment-hero__copy p {
+  .treatment-hero__cta {
+  margin-top: clamp(20px, 1.8vw, 30px);
+  --btn-icon-left: 185px;
+}
+.treatment-hero__copy p {
     max-width: 340px;
-    margin-top: 16px;
+    margin-top: clamp(100px, 20vw, 128px);
     font-size: 14px;
   }
 
@@ -352,14 +419,16 @@
 }
 
 @media (max-width: 576px) {
-
-
-  .treatment-hero__copy,
+.treatment-hero__copy,
   .treatment-hero__copy h1 {
     color: #ffffff;
   }
 
-  .treatment-hero__copy p {
+  .treatment-hero__cta {
+  margin-top: clamp(20px, 1.8vw, 30px);
+  --btn-icon-left: 185px;
+}
+.treatment-hero__copy p {
     color: rgba(255, 255, 255, 0.9);
   }
 
@@ -369,7 +438,11 @@
     color: #ffffff;
   }
 
-  .treatment-detail--pediatric .treatment-hero__copy p {
+  .treatment-detail--pediatric .treatment-hero__cta {
+  margin-top: clamp(20px, 1.8vw, 30px);
+  --btn-icon-left: 185px;
+}
+.treatment-hero__copy p {
     color: rgba(255, 255, 255, 0.9);
 
   }
@@ -398,44 +471,44 @@
     margin-top: 22px;
   }
 
-  /* All treatment hero banners: title pinned to top, content pinned to bottom */
+  /* Keep the CTA directly below the hero copy on mobile. */
   .treatment-hero__copy {
     left: 24px;
-    top: 0;
-    bottom: 0;
+    top: clamp(72px, 19vw, 92px);
+    bottom: auto;
     width: calc(100% - 48px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: clamp(96px, 24vw, 140px);
-    padding-bottom: clamp(44px, 11vw, 72px);
+    transform: none;
+    padding: 0;
   }
 
-  /* Treatments that render copy through the shared HeroBanner (cataract,
-     keratoconus, lasik, squint) — same title-top / content-bottom layout.
-     Scoped under .treatment-detail so it overrides HeroBanner's centered copy. */
+  /* Shared HeroBanner service copy follows the same stacked layout. */
   .treatment-detail .treatment-hero__copy--white,
   .treatment-detail .treatment-hero__copy--blue {
-    top: 0;
-    bottom: 0;
+    top: clamp(72px, 19vw, 92px);
+    bottom: auto;
     transform: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: clamp(96px, 24vw, 140px);
-    padding-bottom: clamp(44px, 11vw, 72px);
+    display: block;
+    left: 24px;
+    width: calc(100% - 48px);
+    padding: 0;
   }
 
-  .treatment-hero__copy h1 {
+  .treatment-hero__copy h1,
+  .treatment-detail .treatment-hero__copy--white h1,
+  .treatment-detail .treatment-hero__copy--blue h1 {
     font-size: clamp(26px, 4.8vw, var(--hero-title-size));
     line-height: 1.12;
   }
 
-  .treatment-hero__copy p {
+  .treatment-hero__cta {
+  margin-top: clamp(20px, 1.8vw, 30px);
+  --btn-icon-left: 185px;
+}
+.treatment-hero__copy p {
     max-width: 300px;
     font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
     line-height: 1.4;
-    margin-top: 0;
+    margin-top: clamp(112px, 32vw, 146px);
     margin-bottom: 0;
   }
 
@@ -469,19 +542,36 @@
 
   .treatment-hero__copy {
     left: 20px;
-    top: 0;
-    bottom: 0;
+    top: 72px;
+    bottom: auto;
     width: calc(100% - 40px);
-    padding-top: clamp(84px, 24vw, 120px);
-    padding-bottom: clamp(36px, 10vw, 60px);
+    transform: none;
+    padding: 0;
   }
 
-  .treatment-hero__copy h1 {
+  .treatment-detail .treatment-hero__copy--white,
+  .treatment-detail .treatment-hero__copy--blue {
+    left: 20px;
+    top: 72px;
+    bottom: auto;
+    width: calc(100% - 40px);
+    transform: none;
+    display: block;
+    padding: 0;
+  }
+
+  .treatment-hero__copy h1,
+  .treatment-detail .treatment-hero__copy--white h1,
+  .treatment-detail .treatment-hero__copy--blue h1 {
     font-size: clamp(26px, 4.8vw, var(--hero-title-size));
     line-height: 1.12;
   }
 
-  .treatment-hero__copy p {
+  .treatment-hero__cta {
+  margin-top: clamp(20px, 1.8vw, 30px);
+  --btn-icon-left: 185px;
+}
+.treatment-hero__copy p {
     max-width: 270px;
     font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
     line-height: 1.4;
