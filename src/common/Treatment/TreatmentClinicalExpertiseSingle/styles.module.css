@@ -47,8 +47,8 @@
 }
 
 .clinical-expertise--single .clinical-expertise__inner {
-    width: calc(100% - 230px);
-    max-width: 1300px;
+    width: 1300px;
+
 }
 
 
@@ -143,6 +143,15 @@
     transform: translateY(0) scale(1);
 }
 
+
+@media (max-width: 1399px) {
+    .clinical-expertise--single .clinical-expertise__inner{
+        max-width: 970px;
+    }
+    
+}
+
+
 /* ── Responsive ─────────────────────────────────────────────────── */
 @media (max-width: 992px) {
     .clinical-expertise {
@@ -156,7 +165,7 @@
     }
 
     .clinical-expertise--single .clinical-expertise__inner {
-        width: min(1600px, calc(100% - 64px));
+        width: 100%;
     }
 
     .clinical-expertise--single .clinical-expertise__card {
