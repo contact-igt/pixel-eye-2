@@ -7,7 +7,6 @@ import TreatmentTypesCards from "@/common/Treatment/TreatmentTypesCards";
 import TreatmentDiagnosis from "@/common/Treatment/TreatmentDiagnosis";
 import TreatmentClinicalExpertise from "@/common/Treatment/TreatmentClinicalExpertise";
 import TreatmentClinicalExpertiseSingle from "@/common/Treatment/TreatmentClinicalExpertiseSingle";
-import TreatmentGetStarted from "@/common/Treatment/TreatmentGetStarted";
 import TreatmentFaq from "@/common/Treatment/TreatmentFaq";
 import TreatmentPatientExperience from "@/common/Treatment/TreatmentPatientExperience";
 import TreatmentSurgicalOptions from "@/common/Treatment/TreatmentSurgicalOptions";
@@ -158,12 +157,7 @@ const TreatmentPage = ({ treatment }) => {
           return null;
         }
         return (
-          <Fragment key={key}>
-            {render(treatment)}
-            {key === "clinicalExpertise" && (
-              <TreatmentGetStarted slug={treatment.slug} />
-            )}
-          </Fragment>
+          <Fragment key={key}>{render(treatment)}</Fragment>
         );
       })}
     </>
