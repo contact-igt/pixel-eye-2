@@ -355,6 +355,13 @@
   transform: translateX(0);
 }
 
+@media (min-width: 992px) {
+  .sidebarOverlay,
+  .sidebar {
+    display: none;
+  }
+}
+
 .sidebarContent {
   height: 100%;
   display: flex;
