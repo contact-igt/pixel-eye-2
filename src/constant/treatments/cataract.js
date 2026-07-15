@@ -34,6 +34,7 @@ export const CATARACT_TREATMENT = {
     "surgicalOptions",
     "cataractApproach",
     "clinicalExpertise",
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

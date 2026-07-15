@@ -22,6 +22,7 @@ export const LASIK_TREATMENT = {
     "laserVisionOptions",
     "surgicalOptions",
     "clinicalExpertise",
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

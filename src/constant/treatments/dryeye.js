@@ -20,6 +20,7 @@ export const DRYEYE_TREATMENT = {
     "types",
     "diagnosis",
     "clinicalExpertise",
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

@@ -1,4 +1,4 @@
-﻿import { Fragment } from "react";
+import { Fragment } from "react";
 import TreatmentBanner from "@/common/Treatment/TreatmentBanner";
 import TreatmentSymptoms from "@/common/Treatment/TreatmentSymptoms";
 import TreatmentCauses from "@/common/Treatment/TreatmentCauses";
@@ -7,6 +7,7 @@ import TreatmentTypesCards from "@/common/Treatment/TreatmentTypesCards";
 import TreatmentDiagnosis from "@/common/Treatment/TreatmentDiagnosis";
 import TreatmentClinicalExpertise from "@/common/Treatment/TreatmentClinicalExpertise";
 import TreatmentClinicalExpertiseSingle from "@/common/Treatment/TreatmentClinicalExpertiseSingle";
+import TreatmentGetStarted from "@/common/Treatment/TreatmentGetStarted";
 import TreatmentFaq from "@/common/Treatment/TreatmentFaq";
 import TreatmentPatientExperience from "@/common/Treatment/TreatmentPatientExperience";
 import TreatmentSurgicalOptions from "@/common/Treatment/TreatmentSurgicalOptions";
@@ -89,6 +90,9 @@ const SECTION_MAP = {
     ) : (
       <CataractFaqFallback key="faq" />
     ),
+  getStarted: (t) => (
+    <TreatmentGetStarted key="getStarted" slug={t.slug} />
+  ),
   suggestedReads: (_t) => <SuggestedReads key="suggestedReads" />,
   patientExperience: (t) =>
     t.patientExperience ? (
