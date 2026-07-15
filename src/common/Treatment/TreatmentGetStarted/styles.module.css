@@ -1,6 +1,7 @@
 ﻿.getStarted {
   position: relative;
   width: min(1300px, calc(100% - 48px));
+  min-height: clamp(250px, 20vw, 300px);
   aspect-ratio: 4920 / 1000;
   margin: 34px auto clamp(48px, 5vw, 86px);
   overflow: hidden;
@@ -12,6 +13,7 @@
   z-index: -2;
   object-fit: cover;
   object-position: center;
+  pointer-events: none;
 }
 
 .mobileBackground {
@@ -99,7 +101,7 @@
 
 @media (max-width: 1399px) {
   .getStarted {
-    max-width: 1050px;
+    width: min(1050px, calc(100% - 48px));
     aspect-ratio: auto;
   }
 
@@ -113,8 +115,9 @@
 
 @media (max-width : 1199px) {
   .getStarted {
-    max-width: 830px;
-    margin: 0px auto;
+    width: min(830px, calc(100% - 48px));
+    min-height: 250px;
+    margin: 34px auto 56px;
   }
 
   .content h2 {
@@ -131,7 +134,8 @@
 
 @media (max-width : 991px) {
   .getStarted {
-    width: 730px;
+    width: min(730px, calc(100% - 40px));
+    min-height: 250px;
   }
 
 

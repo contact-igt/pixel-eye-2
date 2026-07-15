@@ -1,5 +1,4 @@
 import { SERVICE_GLAUCOMA_CONTENT } from "@/constant/serviceglaucomaContent";
-import { SHARED_SERVICE_PATIENT_EXPERIENCE } from "@/constant/sharedPatientExperience";
 
 export const GLAUCOMA_TREATMENT = {
   slug: "glaucoma",
@@ -13,7 +12,6 @@ export const GLAUCOMA_TREATMENT = {
     variant: "multi",
   },
   faq: SERVICE_GLAUCOMA_CONTENT.faq,
-  patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
 
   sections: [
     "banner",
@@ -24,7 +22,6 @@ export const GLAUCOMA_TREATMENT = {
     "clinicalExpertise",
     "faq",
     "suggestedReads",
-    "patientExperience",
   ],
 };
 

@@ -1,5 +1,4 @@
 import { SERVICE_DRYEYE_CONTENT } from "@/constant/serviceDryeyeContent";
-import { SHARED_SERVICE_PATIENT_EXPERIENCE } from "@/constant/sharedPatientExperience";
 
 export const DRYEYE_TREATMENT = {
   slug: "dryeye",
@@ -10,7 +9,6 @@ export const DRYEYE_TREATMENT = {
   diagnosis: SERVICE_DRYEYE_CONTENT.diagnosis,
   clinicalExpertise: SERVICE_DRYEYE_CONTENT.clinicalExpertise,
   faq: SERVICE_DRYEYE_CONTENT.faq,
-  patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
 
   // Add only dedicated Dry Eye sections as their content and assets are supplied.
   sections: [
@@ -22,6 +20,5 @@ export const DRYEYE_TREATMENT = {
     "clinicalExpertise",
     "faq",
     "suggestedReads",
-    "patientExperience",
   ],
 };

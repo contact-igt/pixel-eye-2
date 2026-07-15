@@ -1,5 +1,4 @@
 import { SERVICE_PEDIATRIC_CONTENT } from "@/constant/servicePediatricContent";
-import { SHARED_SERVICE_PATIENT_EXPERIENCE } from "@/constant/sharedPatientExperience";
 
 export const PEDIATRIC_TREATMENT = {
   slug: "pediatric",
@@ -13,7 +12,6 @@ export const PEDIATRIC_TREATMENT = {
     variant: "multi",
   },
   faq: SERVICE_PEDIATRIC_CONTENT.faq,
-  patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
 
   sections: [
     "banner",
@@ -24,7 +22,6 @@ export const PEDIATRIC_TREATMENT = {
     "clinicalExpertise",
     "faq",
     "suggestedReads",
-    "patientExperience",
   ],
 };
 
