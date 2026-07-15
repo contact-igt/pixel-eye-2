@@ -124,11 +124,16 @@
   .surgical-options__left p {
     font-size: 18px;
   }
+
+  .surgical-options{
+      margin-top: 70px;
+      margin-bottom: 40px;
+  }
 }
 
 @media (max-width: 767px) {
   .surgical-options {
-    margin-bottom: 64px;
+  
     padding: 64px 0px;
   }
 
@@ -167,6 +172,7 @@
     font-size: clamp(12.5px, 1.2vw, 13.5px);
     width: clamp(200px, 10vw, 220px);
   }
+
 
 
   .surgical-options__right {

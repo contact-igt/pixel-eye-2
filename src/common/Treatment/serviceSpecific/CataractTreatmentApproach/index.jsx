@@ -1,4 +1,4 @@
-﻿import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
+import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
@@ -23,7 +23,6 @@ const TreatmentApproach = ({
     typeof treatment.image === "string"
       ? treatment.imageAlt || ""
       : treatment.image?.alt || treatment.imageAlt || "";
-
 
   return (
     <section
@@ -62,6 +61,12 @@ const TreatmentApproach = ({
             {(treatment.paragraphs || []).map((p, i) => (
               <p key={`${sectionId}-paragraph-${i}`}>{p}</p>
             ))}
+            <Button
+              label="Book Appointment"
+              href="/appointment"
+              variant="light"
+              className={styles["treatment-approach__ctaMobile"]}
+            />
           </div>
         </div>
 

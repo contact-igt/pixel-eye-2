@@ -20,7 +20,7 @@
   min-height: clamp(420px, 46vw, 720px);
 }
 
-.treatment-hero__frame > picture {
+.treatment-hero__frame>picture {
   position: absolute;
   inset: 0;
   display: block;
@@ -125,6 +125,7 @@
 .treatmentHeroCopyDesktopOnly {
   display: block;
 }
+
 .treatment-hero__copy--white p {
   color: rgba(255, 255, 255, 0.9);
 }
@@ -349,10 +350,11 @@
   }
 
   .treatment-hero__cta {
-  margin-top: clamp(20px, 1.8vw, 30px);
-  --btn-icon-left: 185px;
-}
-.treatment-hero__copy p {
+    margin-top: clamp(20px, 1.8vw, 30px);
+    --btn-icon-left: 185px;
+  }
+
+  .treatment-hero__copy p {
     font-size: 16px;
     line-height: 1.25;
   }
@@ -362,6 +364,7 @@
 
   .treatment-hero__frame {
     min-height: clamp(360px, 82vw, 480px);
+
   }
 
 
@@ -424,10 +427,11 @@
   }
 
   .treatment-hero__cta {
-  margin-top: clamp(20px, 1.8vw, 30px);
-  --btn-icon-left: 185px;
-}
-.treatment-hero__copy p {
+    margin-top: clamp(20px, 1.8vw, 30px);
+    --btn-icon-left: 185px;
+  }
+
+  .treatment-hero__copy p {
     max-width: 340px;
     margin-top: clamp(100px, 20vw, 128px);
     font-size: 14px;
@@ -475,16 +479,23 @@
 }
 
 @media (max-width: 576px) {
-.treatment-hero__copy,
+
+
+  .treatment-hero__image {
+    object-fit: fill;
+  }
+
+  .treatment-hero__copy,
   .treatment-hero__copy h1 {
     color: #ffffff;
   }
 
   .treatment-hero__cta {
-  margin-top: clamp(20px, 1.8vw, 30px);
-  --btn-icon-left: 185px;
-}
-.treatment-hero__copy p {
+    margin-top: clamp(20px, 1.8vw, 30px);
+    --btn-icon-left: 185px;
+  }
+
+  .treatment-hero__copy p {
     color: rgba(255, 255, 255, 0.9);
   }
 
@@ -495,10 +506,11 @@
   }
 
   .treatment-detail--pediatric .treatment-hero__cta {
-  margin-top: clamp(20px, 1.8vw, 30px);
-  --btn-icon-left: 185px;
-}
-.treatment-hero__copy p {
+    margin-top: clamp(20px, 1.8vw, 30px);
+    --btn-icon-left: 185px;
+  }
+
+  .treatment-hero__copy p {
     color: rgba(255, 255, 255, 0.9);
 
   }
@@ -557,10 +569,11 @@
   }
 
   .treatment-hero__cta {
-  margin-top: clamp(20px, 1.8vw, 30px);
-  --btn-icon-left: 185px;
-}
-.treatment-hero__copy p {
+    margin-top: clamp(20px, 1.8vw, 30px);
+    --btn-icon-left: 185px;
+  }
+
+  .treatment-hero__copy p {
     max-width: 300px;
     font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
     line-height: 1.4;
@@ -624,10 +637,11 @@
   }
 
   .treatment-hero__cta {
-  margin-top: clamp(20px, 1.8vw, 30px);
-  --btn-icon-left: 185px;
-}
-.treatment-hero__copy p {
+    margin-top: clamp(20px, 1.8vw, 30px);
+    --btn-icon-left: 185px;
+  }
+
+  .treatment-hero__copy p {
     max-width: 270px;
     font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
     line-height: 1.4;
@@ -740,6 +754,7 @@
 /* Keratoconus what-is variant moved to TreatmentExplainerKeratoconus. */
 /* Dry Eye hero copy should stay white on mobile view. */
 @media (max-width: 576px) {
+
   .treatment-detail--dryeye .treatment-hero__copy,
   .treatment-detail--dryeye .treatment-hero__copy h1 {
     color: #ffffff;
