@@ -1,4 +1,3 @@
-﻿import Image from "next/image";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
@@ -19,7 +18,7 @@ const GET_STARTED_IMAGES = {
   },
   keratoconus: {
     desktop: "/assets/Service/keratoconus/kertoconusm.png",
-    mobile: "/assets/Service/Keratoconus/bannersmmb.png",
+    mobile: "/assets/Service/keratoconus/bannersmmb.png",
 
   },
   lasik: {
@@ -47,28 +46,16 @@ const GET_STARTED_IMAGES = {
 const TreatmentGetStarted = ({ slug }) => {
   const image = GET_STARTED_IMAGES[slug];
 
-  if (!image) return null;
+  if (!image?.desktop) return null;
 
   return (
     <section className={styles.getStarted} aria-labelledby={`${slug}-get-started`}>
-      <Image
-        src={image.desktop}
-        alt=""
-        fill
-        sizes="(max-width: 767px) calc(100vw - 24px), 100vw"
-        className={`${styles.background} ${styles.desktopBackground}`}
-        aria-hidden="true"
-      />
-      {image.mobile ? (
-        <Image
-          src={image.mobile}
-          alt=""
-          fill
-          sizes="(max-width: 767px) calc(100vw - 24px), 100vw"
-          className={`${styles.background} ${styles.mobileBackground}`}
-          aria-hidden="true"
-        />
-      ) : null}
+      <picture className={styles.background} aria-hidden="true">
+        {image.mobile ? (
+          <source media="(max-width: 767px)" srcSet={image.mobile} />
+        ) : null}
+        <img src={image.desktop} alt="" loading="lazy" decoding="async" />
+      </picture>
       <div className={styles.overlay} aria-hidden="true" />
       <div className={styles.content}>
         <h2 id={`${slug}-get-started`}>Get Started</h2>

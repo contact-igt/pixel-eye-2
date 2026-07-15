@@ -1,4 +1,5 @@
 import { SERVICE_RETINA_CONTENT } from "@/constant/serviceRetinaContent";
+import { SHARED_SERVICE_PATIENT_EXPERIENCE } from "@/constant/sharedPatientExperience";
 
 export const RETINA_TREATMENT = {
   slug: "retina",
@@ -11,6 +12,7 @@ export const RETINA_TREATMENT = {
     ? { ...SERVICE_RETINA_CONTENT.clinicalExpertise, variant: "multi" }
     : null,
   faq: SERVICE_RETINA_CONTENT.faq,
+  patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
 
   sections: [
     "banner",
@@ -21,6 +23,7 @@ export const RETINA_TREATMENT = {
     ...(SERVICE_RETINA_CONTENT.clinicalExpertise ? ["clinicalExpertise"] : []),
     "faq",
     "suggestedReads",
+    "patientExperience",
   ],
 };
 

@@ -581,6 +581,13 @@
     font-size: 12px;
   }
 }
-
-
-
+/* Reviews remain a fixed part of the card instead of creating an inner scroll area. */
+.cardText {
+  display: -webkit-box;
+  max-height: calc(1.6em * 3);
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  text-overflow: ellipsis;
+}

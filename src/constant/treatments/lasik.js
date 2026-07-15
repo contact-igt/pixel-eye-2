@@ -1,4 +1,5 @@
 import { SERVICE_LASIK_CONTENT } from "@/constant/serviceLasikContent";
+import { SHARED_SERVICE_PATIENT_EXPERIENCE } from "@/constant/sharedPatientExperience";
 
 export const LASIK_TREATMENT = {
   slug: "lasik",
@@ -12,6 +13,7 @@ export const LASIK_TREATMENT = {
     variant: "multi",
   },
   faq: SERVICE_LASIK_CONTENT.faq,
+  patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
 
   sections: [
     "banner",
@@ -22,6 +24,7 @@ export const LASIK_TREATMENT = {
     "clinicalExpertise",
     "faq",
     "suggestedReads",
+    "patientExperience",
   ],
 };
 

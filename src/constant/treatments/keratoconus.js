@@ -1,4 +1,5 @@
 import { SERVICE_KERATOCONUS_CONTENT } from "@/constant/serviceKeratoconusContent";
+import { SHARED_SERVICE_PATIENT_EXPERIENCE } from "@/constant/sharedPatientExperience";
 
 const { diagnosisSlider, treatmentApproach, risks } =
   SERVICE_KERATOCONUS_CONTENT;
@@ -50,6 +51,7 @@ export const KERATOCONUS_TREATMENT = {
       variant: "multi",
     },
   faq: SERVICE_KERATOCONUS_CONTENT.faq,
+  patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
 
   // types (How Keratoconus is diagnosed carousel) comes FIRST per Figma
   // diagnosis (Our Keratoconus treatment approach panel) comes SECOND per Figma
@@ -62,6 +64,7 @@ export const KERATOCONUS_TREATMENT = {
     "clinicalExpertise",
     "faq",
     "suggestedReads",
+    "patientExperience",
   ],
 };
 

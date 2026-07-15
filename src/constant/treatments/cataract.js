@@ -1,4 +1,5 @@
 import { SERVICE_CATARACT_CONTENT } from "@/constant/serviceCataractContent";
+import { SHARED_SERVICE_PATIENT_EXPERIENCE } from "@/constant/sharedPatientExperience";
 
 const { risks } = SERVICE_CATARACT_CONTENT;
 
@@ -21,6 +22,7 @@ export const CATARACT_TREATMENT = {
     variant: "multi",
   },
   faq: SERVICE_CATARACT_CONTENT.faq,
+  patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
   suggestedReads: SERVICE_CATARACT_CONTENT.suggestedReads,
 
   sections: [
@@ -34,6 +36,7 @@ export const CATARACT_TREATMENT = {
     "clinicalExpertise",
     "faq",
     "suggestedReads",
+    "patientExperience",
   ],
 };
 

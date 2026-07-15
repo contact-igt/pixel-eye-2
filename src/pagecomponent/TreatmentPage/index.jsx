@@ -9,9 +9,11 @@ import TreatmentClinicalExpertise from "@/common/Treatment/TreatmentClinicalExpe
 import TreatmentClinicalExpertiseSingle from "@/common/Treatment/TreatmentClinicalExpertiseSingle";
 import TreatmentGetStarted from "@/common/Treatment/TreatmentGetStarted";
 import TreatmentFaq from "@/common/Treatment/TreatmentFaq";
+import TreatmentPatientExperience from "@/common/Treatment/TreatmentPatientExperience";
 import TreatmentSurgicalOptions from "@/common/Treatment/TreatmentSurgicalOptions";
 import SuggestedReads from "@/component/About/SuggestedReads";
 import CataractFaqFallback from "@/common/Treatment/serviceSpecific/CataractFaq";
+import CataractPatientExperienceFallback from "@/common/Treatment/serviceSpecific/CataractPatientExperience";
 import TreatmentApproach from "@/common/Treatment/serviceSpecific/CataractTreatmentApproach";
 import CataractApproach from "@/common/Treatment/serviceSpecific/CataractApproach";
 import { KeratoconusApproach } from "@/common/Treatment/serviceSpecific/KeratoconusApproach/index";
@@ -89,6 +91,16 @@ const SECTION_MAP = {
       <CataractFaqFallback key="faq" />
     ),
   suggestedReads: (_t) => <SuggestedReads key="suggestedReads" />,
+  patientExperience: (t) =>
+    t.patientExperience ? (
+      <TreatmentPatientExperience
+        key="patientExperience"
+        data={t.patientExperience}
+        slug={t.slug}
+      />
+    ) : (
+      <CataractPatientExperienceFallback key="patientExperience" />
+    ),
   // Cataract-specific sections
   treatmentApproach: (t) =>
     t.treatmentApproach ? (

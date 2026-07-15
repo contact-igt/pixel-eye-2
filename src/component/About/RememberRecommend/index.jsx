@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 
 const ReviewText = ({ text }) => (
   <div className={styles.cardTextWrap}>
-    <p className={`${styles.cardText} ${styles.cardTextScrollable}`}>{text}</p>
+    <p className={styles.cardText}>{text}</p>
   </div>
 );
 
