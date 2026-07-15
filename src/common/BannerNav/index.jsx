@@ -1,6 +1,6 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RevealOnView from "@/common/RevealOnView";
 import { NAV_CONTENT } from "@/constant/navContent";
 import { FOOTER_CONTENT } from "@/constant/footerContent";
@@ -190,6 +190,14 @@ export default function BannerNav({
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isServicesExpanded, setIsServicesExpanded] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("mobile-nav-open", isSidebarOpen);
+
+    return () => {
+      document.body.classList.remove("mobile-nav-open");
+    };
+  }, [isSidebarOpen]);
 
   const toggleSidebar = () => setIsSidebarOpen((s) => !s);
   const toggleServices = (e) => {
@@ -500,3 +508,4 @@ export default function BannerNav({
     </>
   );
 }
+

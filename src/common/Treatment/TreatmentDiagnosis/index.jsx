@@ -82,8 +82,17 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
       <div
         className={styles["treatment-diagnosis__panel"]}
         style={
-          data.bgImage
-            ? { backgroundImage: `url('${data.bgImage}')` }
+          data.bgImage || data.mobileBgImage
+            ? {
+                ...(data.bgImage
+                  ? { backgroundImage: `url('${data.bgImage}')` }
+                  : {}),
+                ...(data.mobileBgImage
+                  ? {
+                      "--diagnosis-mobile-bg-image": `url('${data.mobileBgImage}')`,
+                    }
+                  : {}),
+              }
             : undefined
         }
       >
@@ -113,11 +122,8 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
                   height={792}
                   className={styles["treatment-diagnosis__media-image"]}
                 />
-                {/* <PlayIcon /> */}
               </div>
-              <span
-                className={styles["treatment-diagnosis__media-label"]}
-              >
+              <span className={styles["treatment-diagnosis__media-label"]}>
                 {item.title}
               </span>
             </Link>
@@ -126,9 +132,7 @@ const TreatmentDiagnosis = ({ data, slug = "treatment" }) => {
       </div>
 
       <div className={styles["treatment-diagnosis__treatments"]}>
-        {treatments.map((item, index) =>
-          renderTreatmentCard(item, index, false),
-        )}
+        {treatments.map((item, index) => renderTreatmentCard(item, index))}
       </div>
 
       <div className={styles["treatment-diagnosis__treatment-slider"]}>

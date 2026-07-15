@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   width: 100%;
   padding: var(--about-section-space) 0;
   background: var(--bg-surface);
@@ -138,18 +138,11 @@
 }
 
 .cardTextScrollable {
-  max-height: calc(1.6em * 4);
-  overflow-y: auto;
-  padding-right: 6px;
-}
-
-.cardTextScrollable::-webkit-scrollbar {
-  width: 4px;
-}
-
-.cardTextScrollable::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(79, 100, 149, 0.28);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .patientBlock {
@@ -157,8 +150,8 @@
   align-items: center;
   gap: 14px;
   position: absolute;
-  left: 20%;
-  bottom: 5%;
+  left: 12%;
+  bottom: 0%;
 }
 
 .avatarWrap {
@@ -232,6 +225,7 @@
     max-width: 100%;
   }
 }
+
 
 
 

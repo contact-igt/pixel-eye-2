@@ -37,6 +37,11 @@ export const NAV_CONTENT = {
       href: "/service/squint",
     },
     {
+      id: "service-dryeye",
+      label: "Dry Eye",
+      href: "/service/dryeye",
+    },
+    {
       id: "service-pediatric",
       label: "Pediatric",
       href: "/service/pediatric",

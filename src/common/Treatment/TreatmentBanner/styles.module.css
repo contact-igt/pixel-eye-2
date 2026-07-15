@@ -1,4 +1,4 @@
-.treatment-detail,
+﻿.treatment-detail,
 .treatment-detail * {
   box-sizing: border-box;
 }
@@ -105,6 +105,13 @@
   color: #ffffff;
 }
 
+.heroBannerCopyMobileOnly {
+  display: none;
+}
+
+.treatmentHeroCopyDesktopOnly {
+  display: block;
+}
 .treatment-hero__copy--white p {
   color: rgba(255, 255, 255, 0.9);
 }
@@ -413,6 +420,42 @@
     font-size: 14px;
   }
 
+  .heroBannerCopyMobileOnly {
+    display: block !important;
+  }
+
+  .treatmentHeroCopyDesktopOnly {
+    display: none !important;
+  }
+
+  .treatment-detail--retina .treatment-hero__copy,
+  .treatment-detail--retina .treatment-hero__copy h1,
+  .treatment-detail--retina .treatment-hero__copy--blue,
+  .treatment-detail--retina .treatment-hero__copy--blue h1,
+  .treatment-detail--pediatric .treatment-hero__copy,
+  .treatment-detail--pediatric .treatment-hero__copy h1,
+  .treatment-detail--pediatric .treatment-hero__copy--blue,
+  .treatment-detail--pediatric .treatment-hero__copy--blue h1,
+  .treatment-detail--dryeye .treatment-hero__copy,
+  .treatment-detail--dryeye .treatment-hero__copy h1,
+  .treatment-detail--dryeye .treatment-hero__copy--blue,
+  .treatment-detail--dryeye .treatment-hero__copy--blue h1 {
+    color: #ffffff !important;
+  }
+
+  .treatment-detail--retina .treatment-hero__copy p,
+  .treatment-detail--retina .treatment-hero__copy--blue p,
+  .treatment-detail--pediatric .treatment-hero__copy p,
+  .treatment-detail--pediatric .treatment-hero__copy--blue p,
+  .treatment-detail--dryeye .treatment-hero__copy p,
+  .treatment-detail--dryeye .treatment-hero__copy--blue p {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .treatmentHeroCopySpaciousMobile p {
+    margin-top: clamp(112px, 24vw, 138px);
+  }
+
   /* All treatment hero banners use white copy on mobile */
 
 
@@ -682,3 +725,21 @@
 }
 
 /* Keratoconus what-is variant moved to TreatmentExplainerKeratoconus. */
+/* Dry Eye hero copy should stay white on mobile view. */
+@media (max-width: 576px) {
+  .treatment-detail--dryeye .treatment-hero__copy,
+  .treatment-detail--dryeye .treatment-hero__copy h1 {
+    color: #ffffff;
+  }
+
+  .treatment-detail--dryeye .treatment-hero__copy p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+
+
+
+
+
+

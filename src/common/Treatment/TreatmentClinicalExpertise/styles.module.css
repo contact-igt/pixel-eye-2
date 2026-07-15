@@ -584,6 +584,10 @@
   .clinical-expertise__doctor-info {
     left: clamp(80px, 20%, 114px);
   }
+
+  .clinical-expertise {
+    padding-top: 0px;
+  }
 }
 
 @media (max-width: 390px) {
