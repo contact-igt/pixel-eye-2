@@ -57,7 +57,7 @@ export const SERVICE_CONTENT = {
         "Care for conditions in which the eyes do not produce enough tears or where tear quality is affected, leading to discomfort and irritation.",
       image: "/assets/Service/Dry eye Treatment.png",
       imageAlt: "Close view of an eye receiving drops",
-      href: "/service",
+      href: "/service/dryeye",
       ctaStyle: "outline",
     },
     {
@@ -92,3 +92,4 @@ export const SERVICE_CONTENT = {
     },
   ],
 };
+

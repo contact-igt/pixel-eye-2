@@ -1,4 +1,4 @@
-.getStarted {
+﻿.getStarted {
   position: relative;
   width: min(1300px, calc(100% - 48px));
   aspect-ratio: 4920 / 1000;
@@ -12,6 +12,10 @@
   z-index: -2;
   object-fit: cover;
   object-position: center;
+}
+
+.mobileBackground {
+  display: none;
 }
 
 .overlay {
@@ -148,13 +152,19 @@
     object-position: center;
   }
 
+  .desktopBackground {
+    display: none;
+  }
+
+  .mobileBackground {
+    display: block;
+  }
+
   .overlay {
-    background: linear-gradient(
-      90deg,
-      rgba(21, 29, 48, 0.6) 0%,
-      rgba(21, 29, 48, 0.3) 56%,
-      rgba(21, 29, 48, 0.06) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(21, 29, 48, 0.6) 0%,
+        rgba(21, 29, 48, 0.3) 56%,
+        rgba(21, 29, 48, 0.06) 100%);
   }
 
   .content {
@@ -180,6 +190,17 @@
     left: 30px;
   }
 }
+
+
+
+@media (max-width : 575px) {
+
+  .getStarted {
+    margin: 50px auto 44px;
+  }
+
+}
+
 /* 
 @media (max-width: 991px) {
   .getStarted {
@@ -214,6 +235,14 @@
 
   .background {
     object-position: center;
+  }
+
+  .desktopBackground {
+    display: none;
+  }
+
+  .mobileBackground {
+    display: block;
   }
 
   .overlay {

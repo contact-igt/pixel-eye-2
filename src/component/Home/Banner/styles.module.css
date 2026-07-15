@@ -125,15 +125,15 @@
 }
 
 .heroCta :global(.common-button__label) {
-  color: #ffffff;
-  background: linear-gradient(90deg, #2b3f83 0%, #6886ff 100%);
-  border-color: #5e7ff3;
+  color: #ffffff !important;
+  background: linear-gradient(90deg, #2b3f83 0%, #6886ff 100%) !important;
+  border-color: #5e7ff3 !important;
 }
 
 .heroCta :global(.common-button__icon) {
-  color: #ffffff;
-  background: #5e7ff3;
-  border-color: #5e7ff3;
+  color: #ffffff !important;
+  background: #5e7ff3 !important;
+  border-color: #5e7ff3 !important;
 }
 
 .heroCta:hover :global(.common-button__label),

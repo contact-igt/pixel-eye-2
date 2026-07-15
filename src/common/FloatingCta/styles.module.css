@@ -1,4 +1,4 @@
-.floatingCta {
+﻿.floatingCta {
   position: fixed;
   bottom: 200px;
   right: 0;
@@ -55,6 +55,14 @@
     border-top: 1px solid rgba(39, 57, 121, 0.12);
     box-shadow: 0 -8px 24px rgba(24, 36, 74, 0.08);
     backdrop-filter: blur(10px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  }
+
+  :global(body.mobile-nav-open) .mobileBar {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(100%);
   }
 
   .mobileAction {
@@ -108,3 +116,4 @@
     font-weight: 500;
   }
 }
+

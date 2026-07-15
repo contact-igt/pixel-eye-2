@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Button from "@/common/Button";
 import HeroBanner from "@/common/HeroBanner";
 import TreatmentExplainerCataract from "@/common/Treatment/TreatmentExplainerCataract";
@@ -15,14 +15,14 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
   const isKeratoconus = variant === "keratoconus";
   const isSquint = variant === "squint";
 
-  const isBlueHeroCopy = slug === "pediatric" || slug === "retina";
+  const isBlueHeroCopy =
+    slug === "pediatric" || slug === "retina" || slug === "dryeye";
   const heroCopyThemeClass = isBlueHeroCopy
     ? styles["treatment-hero__copy--blue"]
     : styles["treatment-hero__copy--white"];
 
-  // Render hero copy through the bottom-left treatment-hero__copy block
-  // (same position as pediatric) for these slugs instead of HeroBanner's
-  // vertically-centered copy.
+  // These pages still use the dedicated bottom-left hero copy block on desktop,
+  // but we align their mobile layout with the shared HeroBanner treatment copy.
   const useTreatmentCopy =
     slug === "retina" || slug === "glaucoma" || Boolean(hero.title);
 
@@ -36,12 +36,14 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           {i < hero.titleLines.length - 1 && <br />}
         </span>
       ))
-    : undefined;
+    : hero.title;
 
   const mobileImageSrc =
     typeof hero.mobileImage === "string"
       ? hero.mobileImage
       : hero.mobileImage?.src;
+
+  const hasExtraMobileSubtitleGap = ["dryeye", "squint", "glaucoma", "retina"].includes(slug);
 
   const rootClassName = `${styles["treatment-detail"]}${
     styles[`treatment-detail--${slug}`]
@@ -148,15 +150,9 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           mobileImageMedia={hero.mobileImageMedia}
           mobileCta={hero.mobileCta}
           cta={{ label: "Book Appointment", href: "/appointment" }}
-          mobileCopyLayout={useTreatmentCopy ? undefined : "treatment"}
-          title={useTreatmentCopy ? undefined : heroBannerTitle}
-          subtitle={
-            useTreatmentCopy
-              ? undefined
-              : hasTitleLines
-                ? hero.description
-                : undefined
-          }
+          mobileCopyLayout="treatment"
+          title={heroBannerTitle}
+          subtitle={hero.description}
           rightSlot={hero.nav?.rightSlot ?? "book"}
           navTheme={hero.nav?.navTheme ?? "light"}
           cardBg={hero.nav?.cardBg ?? "white"}
@@ -168,23 +164,21 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           className={styles["treatment-hero"]}
           frameClassName={styles["treatment-hero__frame"]}
           imageClassName={styles["treatment-hero__image"]}
-          copyClassName={heroCopyThemeClass}
+          copyClassName={`${heroCopyThemeClass} ${useTreatmentCopy ? styles.heroBannerCopyMobileOnly : ""} ${hasExtraMobileSubtitleGap ? styles.treatmentHeroCopySpaciousMobile : ""}`.trim()}
         />
 
-        {(hero.title || (useTreatmentCopy && hasTitleLines)) && (
+        {useTreatmentCopy && heroBannerTitle && (
           <div
-            className={`${styles["treatment-hero__copy"]} ${heroCopyThemeClass}`}
+            className={`${styles["treatment-hero__copy"]} ${heroCopyThemeClass} ${styles.treatmentHeroCopyDesktopOnly}`}
           >
-            <h1>{hero.title ? hero.title : heroBannerTitle}</h1>
+            <h1>{heroBannerTitle}</h1>
             {hero.description && <p>{hero.description}</p>}
-            {useTreatmentCopy && (
-              <Button
-                label="Book Appointment"
-                href="/appointment"
-                variant="light"
-                className={styles["treatment-hero__cta"]}
-              />
-            )}
+            <Button
+              label="Book Appointment"
+              href="/appointment"
+              variant="light"
+              className={styles["treatment-hero__cta"]}
+            />
           </div>
         )}
 
@@ -216,3 +210,4 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
 };
 
 export default TreatmentBanner;
+

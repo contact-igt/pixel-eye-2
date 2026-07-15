@@ -6,3 +6,4 @@ export { RETINA_TREATMENT } from "./retina";
 export { LASIK_TREATMENT } from "./lasik";
 export { CATARACT_TREATMENT } from "./cataract";
 export { KERATOCONUS_TREATMENT } from "./keratoconus";
+export { DRYEYE_TREATMENT } from "./dryeye";
