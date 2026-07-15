@@ -46,7 +46,6 @@ export const KERATOCONUS_TREATMENT = {
   // TreatmentDiagnosis panel → "Our Keratoconus treatment approach"
   diagnosis: SERVICE_KERATOCONUS_CONTENT.diagnosis,
 
-  // keratoconus has no patientExperience → fall back
   clinicalExpertise: {
       ...SERVICE_KERATOCONUS_CONTENT.clinicalExpertise,
       variant: "multi",
@@ -63,6 +62,7 @@ export const KERATOCONUS_TREATMENT = {
     "types",
     "diagnosis",
     "clinicalExpertise",
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

@@ -22,6 +22,7 @@ export const GLAUCOMA_TREATMENT = {
     "types",
     "diagnosis",
     "clinicalExpertise",
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

@@ -22,9 +22,8 @@ export const CATARACT_TREATMENT = {
     variant: "multi",
   },
   faq: SERVICE_CATARACT_CONTENT.faq,
-  suggestedReads: SERVICE_CATARACT_CONTENT.suggestedReads,
-  // patientExperience: SERVICE_CATARACT_CONTENT.patientsExperience,
   patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
+  suggestedReads: SERVICE_CATARACT_CONTENT.suggestedReads,
 
   sections: [
     "banner",
@@ -35,6 +34,7 @@ export const CATARACT_TREATMENT = {
     "surgicalOptions",
     "cataractApproach",
     "clinicalExpertise",
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

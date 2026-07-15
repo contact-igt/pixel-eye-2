@@ -13,7 +13,6 @@ export const LASIK_TREATMENT = {
     variant: "multi",
   },
   faq: SERVICE_LASIK_CONTENT.faq,
-  // patientExperience: SERVICE_LASIK_CONTENT.patientsExperience,
   patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
 
   sections: [
@@ -23,6 +22,7 @@ export const LASIK_TREATMENT = {
     "laserVisionOptions",
     "surgicalOptions",
     "clinicalExpertise",
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

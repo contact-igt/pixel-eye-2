@@ -65,10 +65,22 @@ const mobileActions = [
   },
 ];
 
+const desktopCtaPosition = {
+  position: "fixed",
+  top: "50%",
+  right: 0,
+  bottom: "auto",
+  left: "auto",
+};
+
 export default function FloatingCta() {
   return (
     <>
-      <aside className={styles.floatingCta} aria-label="Quick contact links">
+      <aside
+        className={styles.floatingCta}
+        style={desktopCtaPosition}
+        aria-label="Quick contact links"
+      >
         {desktopActions.map((action) => (
           <a
             key={action.label}

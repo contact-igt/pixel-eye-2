@@ -199,6 +199,23 @@ export default function BannerNav({
     };
   }, [isSidebarOpen]);
 
+  useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 992px)");
+    const closeSidebarOnDesktop = (event) => {
+      if (event.matches) {
+        setIsSidebarOpen(false);
+        setIsServicesExpanded(false);
+      }
+    };
+
+    closeSidebarOnDesktop(desktopQuery);
+    desktopQuery.addEventListener("change", closeSidebarOnDesktop);
+
+    return () => {
+      desktopQuery.removeEventListener("change", closeSidebarOnDesktop);
+    };
+  }, []);
+
   const toggleSidebar = () => setIsSidebarOpen((s) => !s);
   const toggleServices = (e) => {
     e?.preventDefault();

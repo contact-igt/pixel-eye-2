@@ -23,6 +23,7 @@ export const SQUINT_TREATMENT = {
     "types",
     "diagnosis",
     "clinicalExpertise",
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

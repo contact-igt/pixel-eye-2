@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import BannerNav from "@/common/BannerNav";
 import Footer from "@/common/Footer";
-import FloatingCta from "@/common/FloatingCta";
 import styles from "./styles.module.css";
 
 // These pages have nav integrated inside their hero banner - skip the layout Navbar
@@ -36,7 +35,6 @@ export default function Layout({ children }) {
           <BannerNav rightSlot="book" navTheme="dark" cardBg="white" />
         </div>
       )}
-      <FloatingCta />
       <main className={styles.main}>{children}</main>
       <div className={styles.footerHost}>
         <Footer />

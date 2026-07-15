@@ -21,6 +21,7 @@ export const RETINA_TREATMENT = {
     "types",
     "diagnosis",
     ...(SERVICE_RETINA_CONTENT.clinicalExpertise ? ["clinicalExpertise"] : []),
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

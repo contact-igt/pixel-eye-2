@@ -22,6 +22,7 @@ export const PEDIATRIC_TREATMENT = {
     "types",
     "diagnosis",
     "clinicalExpertise",
+    "getStarted",
     "faq",
     "suggestedReads",
     "patientExperience",

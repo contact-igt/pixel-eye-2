@@ -1,4 +1,4 @@
-﻿import { Fragment } from "react";
+import { Fragment } from "react";
 import TreatmentBanner from "@/common/Treatment/TreatmentBanner";
 import TreatmentSymptoms from "@/common/Treatment/TreatmentSymptoms";
 import TreatmentCauses from "@/common/Treatment/TreatmentCauses";
@@ -90,6 +90,9 @@ const SECTION_MAP = {
     ) : (
       <CataractFaqFallback key="faq" />
     ),
+  getStarted: (t) => (
+    <TreatmentGetStarted key="getStarted" slug={t.slug} />
+  ),
   suggestedReads: (_t) => <SuggestedReads key="suggestedReads" />,
   patientExperience: (t) =>
     t.patientExperience ? (
@@ -101,7 +104,6 @@ const SECTION_MAP = {
     ) : (
       <CataractPatientExperienceFallback key="patientExperience" />
     ),
-
   // Cataract-specific sections
   treatmentApproach: (t) =>
     t.treatmentApproach ? (
@@ -159,12 +161,7 @@ const TreatmentPage = ({ treatment }) => {
           return null;
         }
         return (
-          <Fragment key={key}>
-            {render(treatment)}
-            {key === "clinicalExpertise" && (
-              <TreatmentGetStarted slug={treatment.slug} />
-            )}
-          </Fragment>
+          <Fragment key={key}>{render(treatment)}</Fragment>
         );
       })}
     </>
