@@ -185,6 +185,10 @@
     gap: 18px;
   }
 
+    .treatment-faq {
+    padding: 0px;
+  }
+
   .treatment-faq__left {
     width: 100%;
   }
@@ -204,9 +208,7 @@
 }
 
 @media (max-width: 389px) {
-  .treatment-faq {
-    padding: 40px 0;
-  }
+
 
   .treatment-faq__inner {
     width: min(1600px, calc(100% - 28px));

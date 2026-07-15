@@ -523,6 +523,12 @@
 @media (max-width: 576px) {
   .clinical-expertise__inner {
     width: min(100%, calc(100% - 28px));
+    padding: 0px;
+  }
+
+  .clinical-expertise{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .clinical-expertise__doctors {
@@ -591,10 +597,7 @@
 }
 
 @media (max-width: 390px) {
-  .clinical-expertise {
-    padding-top: 38px;
-    padding-bottom: 46px;
-  }
+
 
   .clinical-expertise__inner {
     width: min(100%, calc(100% - 22px));
