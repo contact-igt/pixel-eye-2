@@ -2,7 +2,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-width: 0;
   min-height: 100vh;
+  overflow-x: clip;
   isolation: isolate;
 }
 
@@ -15,12 +18,16 @@
 .main {
   position: relative;
   z-index: 2;
+  width: 100%;
+  min-width: 0;
   flex: 1;
 }
 
 .footerHost {
   position: relative;
   z-index: 2;
+  width: 100%;
+  min-width: 0;
 }
 
 @media (max-width: 991px) {

@@ -1,11 +1,12 @@
 ﻿.floatingCta {
   position: fixed;
-  top: 50%;
-  right: 0;
-  bottom: auto;
+  inset: 50% 0 auto auto;
   z-index: 9999;
   display: flex;
   flex-direction: column;
+  width: fit-content;
+  max-width: 72px;
+  margin: 0;
   gap: clamp(8px, 0.7vw, 12px);
   transform: translateY(-50%);
 }
