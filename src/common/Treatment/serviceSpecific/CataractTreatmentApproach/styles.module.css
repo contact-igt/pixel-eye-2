@@ -98,7 +98,7 @@
 }
 
 .treatment-approach__ctaMobile {
-    display: none;
+    display: none !important;
 }
 
 .treatment-approach__cta :global(.common-button__label),
@@ -366,7 +366,7 @@
     }
 
     .treatment-approach__ctaMobile {
-        display: inline-flex;
+        display: inline-flex !important;
         margin-top: 8px;
         align-self: flex-start;
     }
@@ -404,4 +404,3 @@
         font-size: 13px;
     } */
 }
-
