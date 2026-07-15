@@ -101,40 +101,47 @@
     display: none;
 }
 
-.treatment-approach__cta :global(.common-button__label) {
+.treatment-approach__cta :global(.common-button__label),
+.treatment-approach__ctaMobile :global(.common-button__label) {
     color: #ffffff;
     background: linear-gradient(90deg, #2b3f83 0%, #6886ff 100%);
     border-color: #5e7ff3;
 }
 
-.treatment-approach__cta :global(.common-button__icon) {
+.treatment-approach__cta :global(.common-button__icon),
+.treatment-approach__ctaMobile :global(.common-button__icon) {
     color: #ffffff;
     background: #5e7ff3;
     border-color: #5e7ff3;
 }
 
 .treatment-approach__cta:hover :global(.common-button__label),
-.treatment-approach__cta:hover :global(.common-button__icon) {
+.treatment-approach__cta:hover :global(.common-button__icon),
+.treatment-approach__ctaMobile:hover :global(.common-button__icon) {
     color: #ffffff;
 }
 
-.treatment-approach__cta:hover :global(.common-button__label) {
+.treatment-approach__cta:hover :global(.common-button__label),
+.treatment-approach__ctaMobile:hover :global(.common-button__label) {
     background: linear-gradient(90deg, #24366f 0%, #5d7cf2 100%);
     border-color: #5d7cf2;
 }
 
-.treatment-approach__cta:hover :global(.common-button__icon) {
+.treatment-approach__cta:hover :global(.common-button__icon),
+.treatment-approach__ctaMobile:hover :global(.common-button__icon) {
     background: #5d7cf2;
     border-color: #5d7cf2;
 }
 
-.treatment-approach__cta:active :global(.common-button__label) {
+.treatment-approach__cta:active :global(.common-button__label),
+.treatment-approach__ctaMobile:active :global(.common-button__label) {
     color: #ffffff;
     background: linear-gradient(90deg, #203063 0%, #5571df 100%);
     border-color: #5571df;
 }
 
-.treatment-approach__cta:active :global(.common-button__icon) {
+.treatment-approach__cta:active :global(.common-button__icon),
+.treatment-approach__ctaMobile:active :global(.common-button__icon) {
     color: #ffffff;
     background: #5571df;
     border-color: #5571df;
@@ -353,7 +360,9 @@
     }
 
     .treatment-approach__cta {
-        display: none;
+        display: none !important;
+        visibility: hidden;
+        pointer-events: none;
     }
 
     .treatment-approach__ctaMobile {
