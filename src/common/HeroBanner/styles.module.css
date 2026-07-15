@@ -22,14 +22,11 @@
   min-height: clamp(260px, 32vh, 360px);
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Background image Ã¢â‚¬â€ fills entire frame Ã¢â€â‚¬Ã¢â€â‚¬ */
 .image {
   display: block;
   width: 100%;
   height: 100%;
-  /* Make images fill the banner consistently and crop to fit */
   object-fit: cover;
-  /* object-position comes from inline style (imagePosition prop) */
 
 }
 
@@ -374,6 +371,10 @@
     font-size: clamp(14px, 2vw, var(--hero-paragraph-size));
     line-height: 1.4;
   }
+  
+  .image{
+    object-fit: fill;
+  }
 }
 
 @media (max-width: 390px) {
@@ -386,4 +387,5 @@
   .treatmentCopyMobile .subtitle {
     max-width: 270px;
   }
+
 }

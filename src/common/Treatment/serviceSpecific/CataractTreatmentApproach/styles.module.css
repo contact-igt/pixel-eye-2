@@ -97,6 +97,10 @@
     bottom: 34px;
 }
 
+.treatment-approach__ctaMobile {
+    display: none;
+}
+
 .treatment-approach__cta :global(.common-button__label) {
     color: #ffffff;
     background: linear-gradient(90deg, #2b3f83 0%, #6886ff 100%);
@@ -255,10 +259,6 @@
 
 
 @media (max-width: 768px) {
-    .treatment-approach__cta {
-        display: none;
-    }
-
     .treatment-approach {
         width: min(1600px, calc(100% - 40px));
         margin-bottom: 64px;
@@ -281,6 +281,7 @@
         margin-inline: auto;
         overflow: hidden;
         border-radius: var(--radius-card-lg, 16px);
+        margin-top: 30px;
     }
 
     .treatment-approach__content {
@@ -351,9 +352,14 @@
         margin-bottom: 0;
     }
 
-        .treatment-approach__cta {
-        position: static;
-        margin: 2px 16px 0;
+    .treatment-approach__cta {
+        display: none;
+    }
+
+    .treatment-approach__ctaMobile {
+        display: inline-flex;
+        margin-top: 8px;
+        align-self: flex-start;
     }
 
 .treatment-approach__addon {
@@ -389,5 +395,4 @@
         font-size: 13px;
     } */
 }
-
 

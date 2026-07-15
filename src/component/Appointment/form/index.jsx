@@ -345,7 +345,9 @@ const Form = () => {
             onChange={handleChange}
             required
           >
-            <option value="" />
+            <option value="" disabled>
+              Select hospital location
+            </option>
             <option value="Sanath Nagar">Sanath Nagar</option>
             <option value="Kukatpally">Kukatpally</option>
           </SelectField>
@@ -369,7 +371,9 @@ const Form = () => {
             onChange={handleChange}
             required
           >
-            <option value="" />
+            <option value="" disabled>
+              Select symptoms or condition
+            </option>
             {NAV_CONTENT.servicesDropdown.map((service) => (
               <option key={service.id} value={service.label}>
                 {service.label}
