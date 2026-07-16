@@ -116,12 +116,10 @@ const SelectField = ({
   value,
   onChange,
   required = false,
-  compact = false,
   children,
 }) => (
   <label
-    className={`${styles["appointment-field"]} ${value || compact ? styles["is-filled"] : ""
-      } ${compact ? styles["compact-field"] : ""}`}
+    className={`${styles["appointment-field"]} ${styles["is-filled"]} ${styles["compact-field"]}`}
   >
     <select
       name={name}
@@ -460,3 +458,4 @@ const Form = () => {
 };
 
 export default Form;
+
