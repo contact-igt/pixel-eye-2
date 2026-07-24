@@ -1,0 +1,150 @@
+/* ─── BlogRichHtml — styles.module.css ──────────────────────────────────────
+   Styles for HTML rendered from published_version.content_html.
+   All typography uses the site-wide design tokens from globals.css.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.richContent {
+  color: var(--text-body);
+  font-family: var(--font-primary);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+}
+
+/* ── Headings ── */
+.richContent :global(h2) {
+  margin: 2rem 0 1rem;
+  color: var(--text-heading);
+  font-family: var(--font-primary);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: 0;
+  scroll-margin-top: 96px;
+}
+
+.richContent :global(h3) {
+  margin: 1.5rem 0 0.75rem;
+  color: var(--text-heading);
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  scroll-margin-top: 96px;
+}
+
+.richContent :global(h4) {
+  margin: 1.25rem 0 0.6rem;
+  color: var(--text-heading);
+  font-family: var(--font-primary);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* ── Body Text ── */
+.richContent :global(p) {
+  margin: 0 0 1.25rem;
+  color: var(--text-body);
+  font-size: var(--p-size);
+  font-weight: 500;
+  line-height: var(--p-lh);
+}
+
+.richContent :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+/* ── Lists ── */
+.richContent :global(ul),
+.richContent :global(ol) {
+  margin: 0 0 1.25rem 1.5rem;
+  color: var(--text-body);
+  font-size: var(--p-size);
+  line-height: var(--p-lh);
+}
+
+.richContent :global(li) {
+  margin-bottom: 0.5rem;
+}
+
+.richContent :global(li:last-child) {
+  margin-bottom: 0;
+}
+
+/* ── Blockquote ── */
+.richContent :global(blockquote) {
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--brand-blue);
+  background: var(--surface-light-blue);
+  border-radius: 0 8px 8px 0;
+  color: var(--brand-blue);
+  font-size: var(--p-size);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* ── Strong / Em ── */
+.richContent :global(strong) {
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.richContent :global(em) {
+  font-style: italic;
+}
+
+/* ── Links ── */
+.richContent :global(a) {
+  color: var(--brand-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: color 0.18s ease;
+}
+
+.richContent :global(a:hover) {
+  color: var(--brand-gold);
+}
+
+/* ── Tables ── */
+.richContent :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 15px;
+}
+
+.richContent :global(th),
+.richContent :global(td) {
+  padding: 10px 14px;
+  border: 1px solid var(--border-soft);
+  text-align: left;
+}
+
+.richContent :global(th) {
+  background: var(--surface-soft-blue);
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .richContent :global(h2) {
+    font-size: 20px;
+  }
+
+  .richContent :global(h3) {
+    font-size: 17px;
+  }
+
+  .richContent :global(table) {
+    font-size: 13px;
+  }
+
+  .richContent :global(th),
+  .richContent :global(td) {
+    padding: 8px 10px;
+  }
+}

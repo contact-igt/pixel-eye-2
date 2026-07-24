@@ -1,0 +1,62 @@
+﻿.quoteBlock {
+  position: relative;
+  padding: 6px 0 6px 38px;
+  border-left: 3px solid #0877c9;
+  font-family: var(--font-primary);
+}
+
+.mark {
+  position: absolute;
+  top: -2px;
+  left: -12px;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.quoteBlock blockquote {
+  max-width: 610px;
+  margin: 0;
+  color: #28313c;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.23;
+}
+
+.doctor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.avatar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #dbe8f8;
+}
+
+.avatarImage {
+  object-fit: cover;
+}
+
+.doctor strong,
+.doctor span {
+  display: block;
+}
+
+.doctor strong {
+  color: #0068bd;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.doctor span {
+  color: #5f6b7c;
+  font-size: 12px;
+  font-weight: 700;
+}

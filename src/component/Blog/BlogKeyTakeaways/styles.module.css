@@ -1,0 +1,45 @@
+﻿.card {
+  width: 100%;
+  padding: 42px 36px 36px;
+  border-left: 3px solid #0877c9;
+  border-radius: 8px;
+  background: #edf6ff;
+  font-family: var(--font-primary);
+}
+
+.card h2 {
+  margin: 0 0 22px;
+  color: #0068bd;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.card ul {
+  display: grid;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card li {
+  position: relative;
+  padding-left: 30px;
+  color: #586577;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.58;
+}
+
+.card li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #1684dc;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #1684dc 0 2px, transparent 3px);
+}

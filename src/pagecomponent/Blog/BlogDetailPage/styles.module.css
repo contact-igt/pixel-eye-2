@@ -1,0 +1,45 @@
+﻿.articleFlow {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.articleFlow > :global(section[id="block-helpful-1"]) {
+  margin-top: 4px;
+}
+
+.articleFlow > :global(aside[id="block-disclaimer-1"]) {
+  margin-top: 2px;
+}
+
+.sidebarLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 34px;
+  align-items: start;
+}
+
+.mainColumn {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sidebarColumn {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+@media (max-width: 991px) {
+  .sidebarLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebarColumn {
+    position: static;
+  }
+}

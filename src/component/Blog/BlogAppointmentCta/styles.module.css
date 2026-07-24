@@ -1,0 +1,19 @@
+﻿.card {
+  padding: 20px;
+  border: 1px solid #d9e4f2;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  color: #263d78;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 0 0 16px;
+  color: #64738b;
+  font-size: 14px;
+  line-height: 1.55;
+}

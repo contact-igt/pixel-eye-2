@@ -1,0 +1,59 @@
+﻿.cta {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 28px 30px;
+  border-radius: 8px;
+  background: #092341;
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(9, 35, 65, 0.14);
+  font-family: var(--font-primary);
+}
+
+.iconWrap {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.iconWrap img {
+  opacity: 0.9;
+}
+
+.content {
+  min-width: 0;
+}
+
+.cta h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.cta p {
+  max-width: 410px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+@media (max-width: 575px) {
+  .cta {
+    grid-template-columns: 1fr;
+  }
+}
