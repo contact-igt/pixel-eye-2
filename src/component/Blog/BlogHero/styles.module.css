@@ -1,4 +1,4 @@
-﻿.hero {
+.hero {
   position: relative;
   width: calc(100% - 56px);
   min-height: clamp(620px, 40vw, 768px);
@@ -50,9 +50,22 @@
 
 .templateTwo .content {
   justify-content: center;
-  max-width: 760px;
-  padding: 72px 48px 56px 72px;
+  max-width: 1140px;
+  padding: 60px 56px 56px 64px;
   text-align: left;
+}
+
+.templateTwo .meta {
+  justify-content: flex-start;
+  max-width: 1000px;
+}
+
+.templateTwo .category {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 22px rgba(0, 40, 85, 0.2);
 }
 
 .breadcrumb {
@@ -66,7 +79,7 @@
 .category {
   display: inline-flex;
   width: fit-content;
-  margin-bottom: 38px;
+  margin-bottom: 28px;
   padding: 9px 20px 8px;
   border-radius: 999px;
   background: #0877c9;
@@ -79,29 +92,30 @@
 }
 
 .title {
-  max-width: 980px;
+  max-width: 1040px;
   margin: 0;
   color: #ffffff;
   font-family: var(--font-primary);
-  font-size: clamp(56px, 4.55vw, 76px);
+  font-size: clamp(42px, 3.8vw, 62px);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: 0;
 }
 
 .excerpt {
-  max-width: 960px;
-  margin: 44px 0 0;
-  color: rgba(255, 255, 255, 0.96);
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.42;
+  max-width: 1000px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(18px, 1.6vw, 24px);
+  font-weight: 500;
+  line-height: 1.45;
 }
 
 .metaRule {
-  width: min(806px, 100%);
+  width: 100%;
+  max-width: 1040px;
   height: 1px;
-  margin: 44px 0 34px;
+  margin: 32px 0 24px;
   background: rgba(255, 255, 255, 0.34);
 }
 
@@ -113,8 +127,8 @@
   justify-content: center;
   gap: 18px 28px;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 17px;
+  font-weight: 700;
   line-height: 1.2;
 }
 

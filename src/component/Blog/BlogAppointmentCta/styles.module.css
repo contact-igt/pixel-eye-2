@@ -1,19 +1,41 @@
-﻿.card {
-  padding: 20px;
+.card {
+  padding: 22px;
   border: 1px solid #d9e4f2;
-  border-radius: 8px;
+  border-radius: 12px;
   background: #ffffff;
+  font-family: var(--font-primary);
 }
 
 .card h2 {
-  margin: 0 0 10px;
-  color: #263d78;
+  margin: 0 0 8px;
+  color: #0068bd;
   font-size: 18px;
+  font-weight: 800;
 }
 
 .card p {
   margin: 0 0 16px;
-  color: #64738b;
-  font-size: 14px;
-  line-height: 1.55;
+  color: #5f6b7c;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.actions > a,
+.actions > button,
+.actions > :global(a) {
+  display: flex;
+  width: 100%;
+}
+
+.actions :global(.common-button__label) {
+  flex: 1;
+  justify-content: center;
+  text-align: center;
 }

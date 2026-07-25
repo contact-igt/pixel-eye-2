@@ -1,6 +1,6 @@
-﻿.section {
+.section {
   width: 100%;
-  padding: 64px var(--section-px) 82px;
+  padding: 48px var(--section-px) 40px;
   background: #ffffff;
 }
 
@@ -20,8 +20,8 @@
 
 @media (max-width: 767px) {
   .section {
-    padding-top: 42px;
-    padding-bottom: 52px;
+    padding-top: 32px;
+    padding-bottom: 28px;
   }
 
   .article {

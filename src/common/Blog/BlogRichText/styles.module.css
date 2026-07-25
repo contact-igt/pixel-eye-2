@@ -1,4 +1,4 @@
-﻿.block {
+.block {
   color: #536070;
   font-family: var(--font-primary);
 }
@@ -7,10 +7,10 @@
   margin: 0 0 18px;
   color: #0068bd;
   font-family: var(--font-primary);
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 800;
-  line-height: 1.18;
-  letter-spacing: 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .block p {

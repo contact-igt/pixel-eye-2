@@ -1,4 +1,4 @@
-﻿.block {
+.block {
   padding-top: 28px;
   border-top: 1px solid #dbe5f1;
 }
@@ -71,6 +71,7 @@
 }
 
 @media (max-width: 767px) {
+
   .header,
   .grid {
     grid-template-columns: 1fr;

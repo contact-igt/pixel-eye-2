@@ -20,6 +20,7 @@ const BLOCK_MAP = {
   richHtml: BlogRichHtml,
   numberedList: BlogNumberedList,
   imageCards: BlogImageCards,
+  imageComparison: BlogImageCards,
   symptoms: BlogSymptomsList,
   doctorQuote: BlogDoctorQuote,
   doctorInsight: BlogDoctorInsight,
@@ -31,7 +32,7 @@ const BLOCK_MAP = {
   doctorProfile: BlogDoctorInsight,
 };
 
-export default function BlogBlockRenderer({ blocks = [] }) {
+export default function BlogBlockRenderer({ blocks = [], variant = "template-1" }) {
   if (!blocks.length) {
     return process.env.NODE_ENV !== "production" ? <BlogEmptyState /> : null;
   }
@@ -45,7 +46,7 @@ export default function BlogBlockRenderer({ blocks = [] }) {
       ) : null;
     }
 
-    return <BlockComponent key={block.id} data={block} />;
+    return <BlockComponent key={block.id} data={block} variant={variant} />;
   });
 }
 

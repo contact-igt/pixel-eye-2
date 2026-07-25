@@ -42,29 +42,7 @@ function blockId(prefix) {
 function buildBlocks(blocksJson = {}, contentHtml = "") {
   const blocks = [];
 
-  // 1. Key Takeaways
-  const kt = blocksJson.key_takeaways;
-  if (kt?.enabled && kt.items?.length) {
-    blocks.push({
-      id: blockId("key-takeaways"),
-      type: "keyTakeaways",
-      title: kt.heading || "Key Takeaways",
-      items: kt.items,
-    });
-  }
-
-  // 2. Numbered List
-  const nl = blocksJson.numbered_list;
-  if (nl?.enabled && nl.items?.length) {
-    blocks.push({
-      id: blockId("numbered-list"),
-      type: "numberedList",
-      title: nl.heading || "",
-      items: nl.items, // [{ title, description }]
-    });
-  }
-
-  // 3. Rich HTML content (always added when present)
+  // 1. Rich HTML content (Main article intro / body)
   if (contentHtml) {
     blocks.push({
       id: blockId("rich-html"),
@@ -73,9 +51,46 @@ function buildBlocks(blocksJson = {}, contentHtml = "") {
     });
   }
 
-  // 4. Expert Quote → maps to existing BlogDoctorQuote
+  // 2. Key Takeaways
+  const kt = blocksJson.key_takeaways;
+  if (kt?.enabled === true && kt.items?.length) {
+    blocks.push({
+      id: blockId("key-takeaways"),
+      type: "keyTakeaways",
+      title: kt.heading || "Key Takeaways",
+      items: kt.items,
+    });
+  }
+
+  // 3. Image Comparison / Image Cards
+  const ic = blocksJson.image_comparison;
+  if (ic?.enabled === true && ic.items?.length) {
+    blocks.push({
+      id: blockId("image-comparison"),
+      type: "imageCards",
+      title: ic.heading || "How cataracts affect your vision",
+      items: ic.items.map((item) => ({
+        title: item.title || "",
+        description: item.description || "",
+        image: item.url || item.original_url || item.image || "/assets/blog/blog_banner.png",
+      })),
+    });
+  }
+
+  // 4. Numbered List (Common Early Symptoms)
+  const nl = blocksJson.numbered_list;
+  if (nl?.enabled === true && nl.items?.length) {
+    blocks.push({
+      id: blockId("numbered-list"),
+      type: "numberedList",
+      title: nl.heading || "",
+      items: nl.items, // [{ title, description }]
+    });
+  }
+
+  // 5. Expert Quote → maps to existing BlogDoctorQuote
   const eq = blocksJson.expert_quote;
-  if (eq?.enabled && eq.quote) {
+  if (eq?.enabled === true && eq.quote) {
     blocks.push({
       id: blockId("doctor-quote"),
       type: "doctorQuote",
@@ -83,14 +98,14 @@ function buildBlocks(blocksJson = {}, contentHtml = "") {
       doctor: {
         name: eq.name || "",
         role: eq.role || "",
-        image: null, // API provides profile_url, not a local image path
+        image: eq.url || eq.original_url || eq.media?.original_url || eq.profile_url || null,
       },
     });
   }
 
-  // 5. Medical CTA → maps to existing BlogEmergencyCta
+  // 6. Medical CTA → maps to existing BlogEmergencyCta
   const cta = blocksJson.medical_cta;
-  if (cta?.enabled && cta.heading) {
+  if (cta?.enabled === true && cta.heading) {
     blocks.push({
       id: blockId("emergency-cta"),
       type: "emergencyCta",
@@ -105,9 +120,9 @@ function buildBlocks(blocksJson = {}, contentHtml = "") {
     });
   }
 
-  // 6. FAQ
+  // 7. FAQ
   const faq = blocksJson.faq;
-  if (faq?.enabled && faq.items?.length) {
+  if (faq?.enabled === true && faq.items?.length) {
     blocks.push({
       id: blockId("faq"),
       type: "faq",
@@ -116,18 +131,19 @@ function buildBlocks(blocksJson = {}, contentHtml = "") {
     });
   }
 
-  // 7. Feedback / Share
+  // 8. Feedback / Share
   const fb = blocksJson.feedback;
-  if (fb?.enabled) {
+  const share = blocksJson.share;
+  if (fb?.enabled === true || share?.enabled === true) {
     blocks.push({
       id: blockId("helpful"),
       type: "feedbackShare",
     });
   }
 
-  // 8. Disclaimer → maps to existing BlogDisclaimer
+  // 9. Disclaimer → maps to existing BlogDisclaimer
   const disc = blocksJson.disclaimer;
-  if (disc?.enabled && disc.text) {
+  if (disc?.enabled === true && disc.text) {
     blocks.push({
       id: blockId("disclaimer"),
       type: "disclaimer",

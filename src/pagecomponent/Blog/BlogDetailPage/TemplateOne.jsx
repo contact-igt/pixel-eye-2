@@ -1,12 +1,15 @@
-﻿import BlogHero from "@/component/Blog/BlogHero";
+import BlogHero from "@/component/Blog/BlogHero";
 import BlogBlockRenderer from "@/common/Blog/BlogBlockRenderer";
 import BlogContainer from "@/common/Blog/BlogContainer";
 import styles from "./styles.module.css";
 
 const TEMPLATE_ONE_BLOCK_ORDER = [
+  "richHtml",
   "richText",
   "keyTakeaways",
   "imageCards",
+  "imageComparison",
+  "numberedList",
   "symptoms",
   "doctorQuote",
   "emergencyCta",
@@ -30,7 +33,10 @@ export default function TemplateOne({ blog }) {
       <BlogHero variant="template-1" data={blog.hero} />
       <BlogContainer variant="article">
         <div className={styles.articleFlow}>
-          <BlogBlockRenderer blocks={orderTemplateOneBlocks(blog.blocks)} />
+          <BlogBlockRenderer
+            blocks={orderTemplateOneBlocks(blog.blocks)}
+            variant="template-1"
+          />
         </div>
       </BlogContainer>
     </>
