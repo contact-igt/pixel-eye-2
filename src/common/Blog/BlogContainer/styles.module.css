@@ -1,0 +1,30 @@
+.section {
+  width: 100%;
+  padding: 48px var(--section-px) 40px;
+  background: #ffffff;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container2-max);
+  margin: 0 auto;
+}
+
+.article {
+  max-width: 1140px;
+}
+
+.with-sidebar {
+  max-width: 1180px;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-top: 32px;
+    padding-bottom: 28px;
+  }
+
+  .article {
+    max-width: 100%;
+  }
+}

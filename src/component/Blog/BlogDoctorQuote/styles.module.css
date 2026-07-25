@@ -1,0 +1,209 @@
+.quoteBlock {
+  position: relative;
+  padding: 0 0 4px 36px;
+  font-family: var(--font-primary);
+  margin: 32px 0;
+}
+
+/* Vertical line starts cleanly right below quote mark icon */
+.quoteBlock::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #0877c9;
+  border-radius: 1.5px;
+}
+
+.mark {
+  position: absolute;
+  top: -2px;
+  left: -7.5px;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.quoteBlock blockquote {
+  max-width: 980px;
+  margin: 8px 0 0 0;
+  color: #28313c;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.doctor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.avatar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #dbe8f8;
+}
+
+.avatarImage {
+  object-fit: cover;
+}
+
+.doctorInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.doctor strong,
+.doctor span {
+  display: block;
+}
+
+.doctor strong {
+  color: #0068bd;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.doctor span {
+  color: #5f6b7c;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* ─── Template 2 Doctor Card (Figma # Blog Sample 2) ────────────────────────── */
+.quoteCardTwo {
+  position: relative;
+  overflow: hidden;
+  margin: 32px 0;
+  padding: 32px 36px;
+  border-radius: 16px;
+  background: #edf6ff;
+  font-family: var(--font-primary);
+}
+
+.quoteWatermark {
+  position: absolute;
+  top: 6px;
+  right: 24px;
+  color: #0068bd;
+  font-family: Georgia, serif;
+  font-size: 84px;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.14;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cardContentTwo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.avatarTwo {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: #dbe8f8;
+  box-shadow: 0 4px 14px rgba(0, 104, 189, 0.12);
+}
+
+.bodyTwo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.quoteTextTwo {
+  margin: 0 0 20px 0;
+  color: #283646;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.doctorFooterTwo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 20px;
+}
+
+.doctorMetaTwo {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctorNameTwo {
+  color: #0068bd;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.doctorRoleTwo {
+  color: #5f6b7c;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.profileLinkTwo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0068bd;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.profileLinkTwo:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .quoteCardTwo {
+    padding: 24px 20px;
+  }
+
+  .cardContentTwo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .avatarTwo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .doctorFooterTwo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+﻿import { useRouter } from "next/router";
 import BannerNav from "@/common/BannerNav";
 import Footer from "@/common/Footer";
 import styles from "./styles.module.css";
@@ -22,6 +22,7 @@ const PAGES_WITH_OWN_NAV = [
   "/privacy-policy",
   "/thank-you",
   "/error",
+  "/blog/[slug]",
 ];
 
 export default function Layout({ children }) {
@@ -42,3 +43,5 @@ export default function Layout({ children }) {
     </div>
   );
 }
+
+

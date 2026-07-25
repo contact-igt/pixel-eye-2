@@ -32,13 +32,12 @@
 
 @media (max-width: 991px) {
   .main {
-    padding-bottom: calc(88px + env(safe-area-inset-bottom));
+    padding-bottom: 0;
   }
 }
 
-
-@media (max-width: 576px){
-  .main{
-    padding: 0 0 calc(88px + env(safe-area-inset-bottom));
+@media (max-width: 576px) {
+  .main {
+    padding: 0;
   }
 }

@@ -1,0 +1,46 @@
+﻿.blogBanner {
+  padding-top: 24px;
+  padding-bottom: 10px;
+}
+
+.bannerFrame {
+  min-height: clamp(330px, 36vw, 520px);
+  background: #edf4ff;
+}
+
+.bannerImage {
+  object-position: center center;
+}
+
+.bannerCopy {
+  top: 54%;
+  width: min(420px, 46%);
+}
+
+.bannerCopy h1 {
+  color: #293b77;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 400;
+}
+
+.bannerCopy p {
+  color: #293b77;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  .blogBanner {
+    padding-top: 12px;
+    padding-bottom: 0;
+  }
+
+  .bannerFrame {
+    min-height: 430px;
+  }
+
+  .bannerCopy {
+    top: 56%;
+    width: calc(100% - 36px);
+  }
+}
