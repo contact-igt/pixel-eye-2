@@ -5,7 +5,15 @@
  * All functions return plain data objects or null on failure — no throwing.
  */
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
+import config from "./config.js";
+
+const API_BASE = config.api.base;
+
+if (!API_BASE) {
+  console.error("[apiService] ⚠️ API_BASE is undefined!");
+  console.error("[apiService] ENV:", process.env.NEXT_PUBLIC_ENV);
+  console.error("[apiService] config:", config);
+}
 
 /**
  * Fetch a single published blog by slug.
