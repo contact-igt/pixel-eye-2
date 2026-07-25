@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import styles from "./styles.module.css";
 
 const ACTIONS = [
@@ -11,9 +11,9 @@ const SHARE_ACTIONS = [
   { label: "Print", icon: "/assets/blog/print.png" },
 ];
 
-export default function BlogFeedbackShare({ data }) {
+export default function BlogFeedbackShare({ data = {} }) {
   return (
-    <section id={data.id} className={styles.wrap}>
+    <section id={data?.id || "block-feedback-share"} className={styles.wrap}>
       <div className={styles.helpful}>
         <span>Was this helpful?</span>
         {ACTIONS.map((action) => (

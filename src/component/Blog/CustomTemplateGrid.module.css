@@ -1,0 +1,86 @@
+/* Outer Page Wrapper - Spans 100% of viewport width */
+.pageLayout {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 1. Hero Banner Section (Matches Template 2 Hero Container) */
+.heroSection {
+  width: 100%;
+  margin: 0 0 36px 0;
+  padding: 0;
+}
+
+.heroSection .slot {
+  width: 100%;
+  padding: 0;
+  gap: 0;
+}
+
+.heroSection .blockWrapper {
+  width: 100%;
+}
+
+/* 2. Standard Centered Content Container for Article & Sidebar */
+.contentContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 48px auto;
+  padding: 0 20px;
+}
+
+/* Grid Layouts inside Content Container */
+.full_width {
+  display: block;
+}
+
+.content_sidebar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 40px;
+  align-items: start;
+}
+
+.two_column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.three_column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.blockWrapper {
+  width: 100%;
+}
+
+/* Responsive Strategies */
+@media (max-width: 992px) {
+  .sidebar_below_on_tablet,
+  .content_sidebar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .stack_on_mobile,
+  .content_sidebar,
+  .two_column,
+  .three_column {
+    grid-template-columns: 1fr;
+  }
+
+  .contentContainer {
+    padding: 0 16px;
+    margin-bottom: 32px;
+  }
+}

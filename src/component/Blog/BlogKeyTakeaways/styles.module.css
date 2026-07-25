@@ -1,16 +1,16 @@
-﻿.card {
+.card {
   width: 100%;
-  padding: 42px 36px 36px;
-  border-left: 3px solid #0877c9;
-  border-radius: 8px;
+  padding: 44px 44px 40px;
+  border-left: 4px solid #0877c9;
+  border-radius: 12px;
   background: #edf6ff;
   font-family: var(--font-primary);
 }
 
 .card h2 {
-  margin: 0 0 22px;
+  margin: 0 0 24px;
   color: #0068bd;
-  font-size: 21px;
+  font-size: 26px;
   font-weight: 800;
   line-height: 1.2;
 }
@@ -25,11 +25,11 @@
 
 .card li {
   position: relative;
-  padding-left: 30px;
-  color: #586577;
-  font-size: 15px;
+  padding-left: 32px;
+  color: #495667;
+  font-size: 17.5px;
   font-weight: 500;
-  line-height: 1.58;
+  line-height: 1.65;
 }
 
 .card li::before {

@@ -1,7 +1,7 @@
-﻿.articleFlow {
+.articleFlow {
   display: flex;
   flex-direction: column;
-  gap: 38px;
+  gap: 48px;
 }
 
 .articleFlow > :global(section[id="block-helpful-1"]) {

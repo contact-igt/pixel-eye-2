@@ -179,7 +179,7 @@ export function adaptApiBlogToLocal(apiData) {
   const templateKey = normaliseTemplateKey(version.template_key || "template-1");
 
   const readingMinutes = heroMeta.reading_time_minutes;
-  const readTime = readingMinutes ? `${readingMinutes} min read` : undefined;
+  const readTime = readingMinutes ? `${readingMinutes} min read` : null;
 
   const blocks = buildBlocks(blocksJson, version.content_html || "");
   const sidebarBlocks = templateKey === "template-2" ? buildSidebarBlocks() : [];
@@ -231,7 +231,244 @@ export function adaptApiBlogToLocal(apiData) {
     // Content blocks
     blocks,
     sidebarBlocks,
+
+    // Custom Builder Template data
+    templateConfigJson: version.template_config_json || null,
+    rawBlocksJson: version.blocks_json || {},
+    contentHtml: version.content_html || "",
+    featuredMedia,
   };
+}
+
+/**
+ * Helper to resolve block content data for a specific blockId and componentKey.
+ * Used by CustomTemplateGrid to hydrate builder component instances.
+ */
+export function resolveBlockData(blocksJson = {}, blockId = "", componentKey = "", contentHtml = "", compSettings = {}) {
+  // 1. Rich Text Article Content comes from content_html
+  if (componentKey === "rich_article_content" || componentKey === "article_content") {
+    return { id: blockId, type: "richHtml", html: contentHtml };
+  }
+
+  // 2. Check if this is a custom instance created in the builder
+  if (blocksJson?.custom_instances && blocksJson.custom_instances[blockId]) {
+    const instance = blocksJson.custom_instances[blockId];
+    return normalizeCustomInstanceData(instance, componentKey, blockId, compSettings);
+  }
+
+  // 3. Fallback to standard singleton blocks
+  const standardBlocks = blocksJson?.blocks || {};
+  if (standardBlocks[componentKey]) {
+    const std = standardBlocks[componentKey];
+    return normalizeStandardBlockData(std, componentKey, blockId, compSettings);
+  }
+
+  // 4. Fallback for settings-based components like appointment_card / appointment_cta / medical_disclaimer / disclaimer
+  if (componentKey === "appointment_card" || componentKey === "appointment_cta") {
+    return {
+      id: blockId,
+      type: "appointmentCta",
+      title: compSettings.heading || compSettings.title || "Book an Appointment",
+      buttonLabel: compSettings.buttonLabel || compSettings.button_label || "Schedule Now",
+      targetUrl: compSettings.targetUrl || compSettings.target_url || "/appointment",
+      ...compSettings,
+    };
+  }
+
+  if (componentKey === "medical_disclaimer" || componentKey === "disclaimer") {
+    return {
+      id: blockId,
+      type: "disclaimer",
+      content: compSettings.content || compSettings.text || "The information is for educational purposes and does not replace professional medical advice, diagnosis or treatment.",
+      ...compSettings,
+    };
+  }
+
+  if (componentKey === "spacer") {
+    return {
+      id: blockId,
+      type: "spacer",
+      ...compSettings,
+    };
+  }
+
+  if (componentKey === "divider") {
+    return {
+      id: blockId,
+      type: "divider",
+      ...compSettings,
+    };
+  }
+
+  if (componentKey === "feedback_share" || componentKey === "feedback" || componentKey === "share") {
+    return {
+      id: blockId,
+      type: "feedbackShare",
+      ...compSettings,
+    };
+  }
+
+  return { id: blockId, ...compSettings };
+}
+
+function normalizeCustomInstanceData(instance = {}, componentKey = "", blockId = "") {
+  if (componentKey === "expert_quote") {
+    return {
+      id: blockId,
+      type: "doctorQuote",
+      quote: instance.quote || "",
+      doctor: {
+        name: instance.name || "",
+        role: instance.role || "",
+        image: instance.url || instance.original_url || instance.media?.original_url || instance.profile_url || null,
+      },
+    };
+  }
+
+  if (componentKey === "image_comparison") {
+    return {
+      id: blockId,
+      type: "imageCards",
+      title: instance.heading || "How cataracts affect your vision",
+      items: (instance.items || []).map((item) => ({
+        title: item.title || "",
+        description: item.description || "",
+        image: item.url || item.original_url || item.image || "/assets/blog/blog_banner.png",
+      })),
+    };
+  }
+
+  if (componentKey === "key_takeaways") {
+    return {
+      id: blockId,
+      type: "keyTakeaways",
+      title: instance.heading || "Key Takeaways",
+      items: instance.items || [],
+    };
+  }
+
+  if (componentKey === "numbered_list") {
+    return {
+      id: blockId,
+      type: "numberedList",
+      title: instance.heading || "",
+      items: instance.items || [],
+    };
+  }
+
+  if (componentKey === "medical_cta") {
+    return {
+      id: blockId,
+      type: "emergencyCta",
+      title: instance.heading || "",
+      description: instance.description || "",
+      primaryCta: instance.primary?.label
+        ? { label: instance.primary.label, href: instance.primary.url || "#" }
+        : null,
+      secondaryCta: instance.secondary?.label
+        ? { label: instance.secondary.label, href: instance.secondary.url || "#" }
+        : null,
+    };
+  }
+
+  if (componentKey === "faq") {
+    return {
+      id: blockId,
+      type: "faq",
+      title: instance.heading || "Frequently Asked Questions",
+      items: instance.items || [],
+    };
+  }
+
+  if (componentKey === "medical_disclaimer") {
+    return {
+      id: blockId,
+      type: "disclaimer",
+      content: instance.text || instance.content || "",
+    };
+  }
+
+  return { id: blockId, ...instance };
+}
+
+function normalizeStandardBlockData(std = {}, componentKey = "", blockId = "") {
+  if (componentKey === "key_takeaways") {
+    return {
+      id: blockId || "key-takeaways",
+      type: "keyTakeaways",
+      title: std.heading || "Key Takeaways",
+      items: std.items || [],
+    };
+  }
+
+  if (componentKey === "image_comparison") {
+    return {
+      id: blockId || "image-comparison",
+      type: "imageCards",
+      title: std.heading || "How cataracts affect your vision",
+      items: (std.items || []).map((item) => ({
+        title: item.title || "",
+        description: item.description || "",
+        image: item.url || item.original_url || item.image || "/assets/blog/blog_banner.png",
+      })),
+    };
+  }
+
+  if (componentKey === "numbered_list") {
+    return {
+      id: blockId || "numbered-list",
+      type: "numberedList",
+      title: std.heading || "",
+      items: std.items || [],
+    };
+  }
+
+  if (componentKey === "expert_quote") {
+    return {
+      id: blockId || "doctor-quote",
+      type: "doctorQuote",
+      quote: std.quote || "",
+      doctor: {
+        name: std.name || "",
+        role: std.role || "",
+        image: std.url || std.original_url || std.media?.original_url || std.profile_url || null,
+      },
+    };
+  }
+
+  if (componentKey === "medical_cta") {
+    return {
+      id: blockId || "emergency-cta",
+      type: "emergencyCta",
+      title: std.heading || "",
+      description: std.description || "",
+      primaryCta: std.primary?.label
+        ? { label: std.primary.label, href: std.primary.url || "#" }
+        : null,
+      secondaryCta: std.secondary?.label
+        ? { label: std.secondary.label, href: std.secondary.url || "#" }
+        : null,
+    };
+  }
+
+  if (componentKey === "faq") {
+    return {
+      id: blockId || "faq",
+      type: "faq",
+      title: std.heading || "Frequently Asked Questions",
+      items: std.items || [],
+    };
+  }
+
+  if (componentKey === "medical_disclaimer") {
+    return {
+      id: blockId || "disclaimer",
+      type: "disclaimer",
+      content: std.text || std.content || "",
+    };
+  }
+
+  return { id: blockId, ...std };
 }
 
 /**

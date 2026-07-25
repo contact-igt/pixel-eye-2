@@ -1,4 +1,4 @@
-﻿.block {
+.block {
   font-family: var(--font-primary);
 }
 
@@ -39,11 +39,19 @@
 }
 
 .item p {
-  max-width: 540px;
+  max-width: 800px;
   margin: 0;
   padding: 0 24px 22px;
   color: #5f6b7c;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.6;
+}
+
+.arrowIcon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
