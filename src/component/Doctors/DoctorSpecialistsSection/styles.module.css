@@ -1,0 +1,2172 @@
+.section {
+  --doctor-band-bg: #edf4ff;
+  --doctor-card-bg: #d8e6ee;
+  --doctor-primary: #2f4587;
+  --doctor-body: #4f6599;
+  --doctor-grid-gap: 16px;
+  --doctor-side-media: 399px;
+
+  width: 100%;
+  padding: 42px var(--section-px) 16px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.inner {
+  width: min(1280px, calc(100% - 72px));
+  margin: 0 auto;
+}
+
+.profile {
+  position: relative;
+  display: grid;
+  grid-template-columns: 430px minmax(0, 850px);
+  column-gap: 16px;
+  align-items: start;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  min-height: 560px;
+  overflow: visible;
+}
+
+.band {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  height: 292px;
+  border-radius: 20px 0 0 0;
+  background: var(--doctor-band-bg);
+  z-index: 0;
+}
+
+.mediaPanel {
+  position: relative;
+  z-index: 1;
+  width: 430px;
+  aspect-ratio: 1197 / 1248;
+  margin-top: 100px;
+  border-radius: 14px;
+}
+
+.shape,
+.doctorImage,
+.krishnaShape,
+.krishnaImage,
+.niharikaShape,
+.niharikaImage {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+
+.shape,
+.krishnaShape,
+.niharikaShape {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.doctorImage {
+  left: 64px;
+  bottom: 0;
+  width: 370px;
+  height: 520px;
+  object-fit: contain;
+  object-position: left bottom;
+}
+
+.infoPanel {
+  position: relative;
+  z-index: 1;
+  padding-top: 82px;
+}
+
+.headingBlock {
+  margin-left: 42px;
+  margin-bottom: 34px;
+}
+
+.name {
+  margin: 0;
+  color: #2f4587;
+  font-size: clamp(34px, 3.2vw, 55px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.degree,
+.specialty {
+  margin: 0;
+  color: #4f6599;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.degree {
+  margin-top: 11px;
+}
+
+.specialty {
+  margin-top: 4px;
+}
+
+.bioCard,
+.detailCard {
+  border-radius: 13px;
+  background: #d8e6ee;
+  color: #5f6f96;
+}
+
+.bioCard {
+  width: 100%;
+  min-height: 310px;
+  padding: 46px 42px 34px;
+}
+
+.bioCard p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: 0;
+}
+
+.bioCard p:last-child {
+  margin-bottom: 0;
+}
+
+.bioCard strong {
+  color: #2f4587;
+  font-weight: 700;
+}
+
+.profileDivider {
+  width: min(1070px, 86%);
+  height: 1px;
+  margin: 78px auto 42px;
+  background: rgba(120, 168, 223, 0.9);
+}
+
+.krishnaProfile {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--doctor-side-media);
+  grid-template-rows: 255px minmax(272px, auto) minmax(318px, auto) auto;
+  column-gap: var(--doctor-grid-gap);
+  row-gap: var(--doctor-grid-gap);
+  align-items: start;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding: 0 0 42px;
+  overflow: visible;
+}
+
+.krishnaBand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 255px;
+  border-radius: 0;
+  background: var(--doctor-band-bg);
+  transform: none;
+  z-index: 0;
+}
+
+.krishnaIntro,
+.krishnaHeader,
+.krishnaAside,
+.krishnaMedia,
+.detailCard {
+  position: relative;
+  z-index: 1;
+}
+
+.krishnaIntro {
+  display: contents;
+}
+
+.krishnaHeader {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 255px;
+  padding: 39px 18px 0;
+  color: #2f4587;
+}
+
+.krishnaName {
+  margin: 0;
+  color: #2f4587;
+  font-size: clamp(34px, 3.2vw, 55px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.krishnaRole {
+  margin: 12px 0 0;
+  color: #2f4587;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.krishnaCredentials,
+.krishnaSpecialty {
+  margin: 0;
+  color: #4f6599;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.42;
+}
+
+.krishnaCredentials {
+  margin-top: 30px;
+}
+
+.krishnaSpecialty {
+  margin-top: 4px;
+}
+
+.krishnaAside {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: var(--doctor-grid-gap);
+  width: var(--doctor-side-media);
+  justify-self: end;
+  margin-top: 9px;
+}
+
+.krishnaMedia {
+  position: relative;
+  z-index: 2;
+  width: var(--doctor-side-media);
+  height: 500px;
+  margin-top: 0;
+}
+
+.krishnaImage {
+  right: 0;
+  bottom: 0;
+  width: var(--doctor-side-media);
+  height: 590px;
+  object-fit: contain;
+  object-position: right bottom;
+}
+
+.detailCard h3 {
+  margin: 0 0 24px;
+  color: #2f4587;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.detailCard p,
+.detailCard li {
+  color: #4f6599;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.52;
+  letter-spacing: 0;
+}
+
+.detailCard p {
+  margin: 0;
+}
+
+.qualificationCard {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 272px;
+  padding: 20px 22px;
+}
+
+.experienceCard {
+  grid-column: 1;
+  grid-row: 3;
+  min-height: 318px;
+  padding: 20px 22px;
+}
+
+.experienceCard ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0;
+  padding: 14px 0 0 20px;
+}
+
+.experienceCard li {
+  padding-left: 12px;
+}
+
+.publicationCard {
+  min-height: 352px;
+  padding: 18px 22px 14px;
+}
+
+.publicationCard h3 {
+  margin-bottom: 18px;
+}
+
+.publicationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 38px;
+  margin: 16px auto 12px;
+  border-radius: 999px;
+  background: #2f4587;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.publicationNote {
+  text-align: center;
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+}
+
+.driveCard {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  width: 100%;
+  min-height: 210px;
+  padding: 20px 22px 28px;
+}
+
+.driveCard h3 {
+  margin-bottom: 20px;
+}
+
+.driveCard p {
+  max-width: 900px;
+}
+
+.niharikaProfile {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--doctor-side-media) minmax(0, 1fr) var(--doctor-side-media);
+  grid-template-rows: 155px minmax(230px, auto) 82px minmax(194px, auto) minmax(156px, auto);
+  column-gap: var(--doctor-grid-gap);
+  row-gap: var(--doctor-grid-gap);
+  align-items: start;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding: 34px 0 42px;
+  overflow: visible;
+}
+
+.niharikaBand {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  right: 0;
+  height: 255px;
+  background: var(--doctor-band-bg);
+  z-index: 0;
+}
+
+.niharikaMedia,
+.niharikaHeader,
+.niharikaIntroCard,
+.niharikaSpecialization,
+.niharikaPracticeCard,
+.niharikaAcademicCard,
+.niharikaClosingCard {
+  position: relative;
+  z-index: 1;
+}
+
+.niharikaMedia {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: var(--doctor-side-media);
+  height: 442px;
+  justify-self: start;
+}
+
+.niharikaShape {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  width: 100%;
+  height: 400px;
+  object-fit: fill;
+}
+
+.niharikaImage {
+  left: 12px;
+  bottom: 2px;
+  width: 340px;
+  height: 510px;
+  object-fit: contain;
+  object-position: left bottom;
+}
+
+.niharikaHeader {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  min-width: 0;
+  padding: 48px 42px 0;
+}
+
+.niharikaName {
+  margin: 0;
+  color: #2f4587;
+  font-size: clamp(34px, 3.2vw, 55px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.niharikaDegree {
+  margin: 13px 0 0;
+  color: #2f4587;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.niharikaIntroCard {
+  grid-column: 2 / 4;
+  grid-row: 2;
+  align-self: start;
+  min-width: 0;
+  min-height: 240px;
+  padding: 44px 34px 28px;
+  margin-top: 28px;
+}
+
+.niharikaSpecialization {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  align-self: center;
+  min-width: 0;
+  margin: 0 0 0 28px;
+  color: #4f6599;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.52;
+}
+
+.niharikaPracticeCard {
+  grid-column: 3;
+  grid-row: 3 / span 2;
+  min-width: 0;
+  min-height: 278px;
+  padding: 38px 24px;
+}
+
+.niharikaAcademicCard {
+  grid-column: 1 / 3;
+  grid-row: 4;
+  min-width: 0;
+  min-height: 194px;
+  padding: 36px 32px;
+}
+
+.niharikaClosingCard {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  min-width: 0;
+  min-height: 156px;
+  padding: 34px 28px;
+}
+
+.niharikaIntroCard p,
+.niharikaPracticeCard p,
+.niharikaAcademicCard p,
+.niharikaClosingCard p {
+  margin: 0;
+  color: #4f6599;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.52;
+}
+
+
+.romaProfile {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--doctor-side-media);
+  grid-template-rows: 255px minmax(242px, auto) minmax(226px, auto) minmax(184px, auto);
+  column-gap: var(--doctor-grid-gap);
+  row-gap: var(--doctor-grid-gap);
+  align-items: start;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  overflow: visible;
+}
+
+.romaBand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 255px;
+  border-radius: 20px 20px 0 0;
+  background: var(--doctor-band-bg);
+  z-index: 0;
+}
+
+.romaHeader,
+.romaMedia,
+.romaEducationCard,
+.romaExpertiseCard,
+.romaHighlightsCard,
+.romaApproachCard,
+.romaInterestsCard {
+  position: relative;
+  z-index: 1;
+}
+
+.romaHeader {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 255px;
+  padding: 39px 18px 0;
+  color: #2f4587;
+}
+
+.romaName {
+  margin: 0;
+  color: #2f4587;
+  font-size: clamp(34px, 3.2vw, 55px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.romaRole {
+  margin: 12px 0 0;
+  color: #2f4587;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.romaIntro {
+  max-width: 790px;
+  margin: 34px 0 0;
+  color: #4f6599;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.52;
+}
+
+.romaMedia {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: var(--doctor-side-media);
+  height: 510px;
+  justify-self: end;
+  margin-top: -14px;
+}
+
+.romaShape,
+.romaImage {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+
+.romaShape {
+  right: 0;
+  bottom: 0;
+  width: var(--doctor-side-media);
+  height: 442px;
+  object-fit: fill;
+}
+
+.romaImage {
+  right: 0;
+  bottom: 0;
+  width: var(--doctor-side-media);
+  height: 590px;
+  object-fit: contain;
+  object-position: right bottom;
+}
+
+.romaEducationCard {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 242px;
+  padding: 20px 22px;
+}
+
+.romaEducationCard p+p {
+  margin-top: 7px;
+}
+
+.romaExpertiseCard {
+  grid-column: 1;
+  grid-row: 3;
+  min-height: 226px;
+  padding: 20px 22px;
+}
+
+.romaHighlightsCard {
+  grid-column: 2;
+  grid-row: 3;
+  min-height: 226px;
+  padding: 20px 22px;
+}
+
+.romaHighlightsCard ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.romaHighlightsCard li+li {
+  margin-top: 6px;
+}
+
+.romaApproachCard {
+  grid-column: 1;
+  grid-row: 4;
+  min-height: 184px;
+  padding: 24px 38px;
+}
+
+.romaInterestsCard {
+  grid-column: 2;
+  grid-row: 4;
+  min-height: 184px;
+  padding: 24px 28px;
+}
+
+.romaProfile .detailCard {
+  overflow-wrap: normal;
+}
+
+.romaEducationCard h3,
+.romaExpertiseCard h3,
+.romaHighlightsCard h3,
+.romaApproachCard h3,
+.romaInterestsCard h3 {
+  margin-bottom: 18px;
+}
+
+.romaEducationCard p,
+.romaExpertiseCard p,
+.romaHighlightsCard li,
+.romaApproachCard p,
+.romaInterestsCard p {
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.romaHighlightsCard ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.romaHighlightsCard li+li {
+  margin-top: 0;
+}
+
+@media (max-width: 1400px) {
+  .inner {
+    width: min(1280px, calc(100% - 64px));
+  }
+
+  .profile {
+    grid-template-columns: 385px minmax(0, 690px);
+  }
+
+  .mediaPanel {
+    width: 385px;
+  }
+
+  .doctorImage {
+    left: 64px;
+    width: 348px;
+    height: 530px;
+  }
+
+  .band {
+    right: 0;
+    height: 286px;
+  }
+
+  .name {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .inner {
+    width: min(960px, calc(100% - 48px));
+  }
+
+  .profile {
+    grid-template-columns: 350px minmax(0, 1fr);
+    column-gap: 18px;
+  }
+
+  .mediaPanel {
+    width: 350px;
+  }
+
+  .doctorImage {
+    left: 58px;
+    width: 320px;
+    height: 488px;
+  }
+
+  .band {
+    right: 0;
+    height: 270px;
+  }
+
+  .infoPanel {
+    padding-top: 72px;
+  }
+
+  .headingBlock {
+    margin-left: 30px;
+  }
+
+  .name {
+    font-size: 44px;
+  }
+
+  .bioCard {
+    padding: 38px 30px 30px;
+  }
+
+  .profileDivider {
+    margin: 62px auto 36px;
+  }
+
+  .krishnaProfile {
+    grid-template-columns: minmax(0, 624px) 320px;
+    grid-template-rows: 238px minmax(250px, auto) minmax(318px, auto) auto;
+    column-gap: 16px;
+    width: min(960px, 100%);
+  }
+
+  .krishnaBand {
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 238px;
+  }
+
+  .krishnaHeader {
+    min-height: 238px;
+    padding-top: 34px;
+  }
+
+  .krishnaAside,
+  .krishnaMedia {
+    width: 320px;
+  }
+
+  .krishnaAside {
+    margin-top: 27px;
+  }
+
+  .krishnaMedia {
+    height: 388px;
+  }
+
+  .krishnaImage {
+    width: 314px;
+    height: 480px;
+  }
+
+  .qualificationCard {
+    min-height: 250px;
+  }
+
+  .krishnaName {
+    font-size: 46px;
+  }
+
+  .detailCard h3 {
+    font-size: 20px;
+  }
+
+  .detailCard p,
+  .detailCard li {
+    font-size: 16px;
+  }
+
+  .niharikaProfile {
+    grid-template-columns: 320px minmax(0, 288px) 320px;
+    grid-template-rows: 140px minmax(230px, auto) 82px minmax(194px, auto) minmax(156px, auto);
+    width: min(960px, 100%);
+  }
+
+  .niharikaBand {
+    right: 0;
+  }
+
+  .niharikaMedia {
+    width: 300px;
+    height: 422px;
+  }
+
+  .niharikaShape {
+    height: 380px;
+  }
+
+  .niharikaImage {
+    width: 276px;
+    height: 408px;
+  }
+
+  .niharikaName {
+    font-size: 46px;
+  }
+  .niharikaSpecialization{
+    margin: 12px inherit 15px;
+  }
+  .niharikaDegree {
+    font-size: 18px;
+  }
+
+  .niharikaAcademicCard{
+    min-height: 245px;
+  }
+
+  .niharikaIntroCard p,
+  .niharikaPracticeCard p,
+  .niharikaAcademicCard p,
+  .niharikaClosingCard p,
+  .niharikaSpecialization {
+    font-size: 16px;
+  }
+
+  .romaProfile {
+    grid-template-columns: minmax(0, 624px) 320px;
+    grid-template-rows: 238px minmax(228px, auto) minmax(250px, auto) minmax(184px, auto);
+    width: min(960px, 100%);
+  }
+
+  .romaBand {
+    height: 238px;
+  }
+
+  .romaHeader {
+    min-height: 238px;
+    padding-top: 34px;
+  }
+
+  .romaMedia {
+    width: 320px;
+    height: 386px;
+    margin-top: -10px;
+  }
+
+  .romaShape {
+    width: 320px;
+    height: 318px;
+  }
+
+  .romaImage {
+    width: 314px;
+    height: 468px;
+  }
+
+  .romaName {
+    font-size: 46px;
+  }
+
+  .romaRole {
+    font-size: 18px;
+  }
+
+  .romaIntro,
+  .romaEducationCard p,
+  .romaExpertiseCard p,
+  .romaHighlightsCard li,
+  .romaApproachCard p,
+  .romaInterestsCard p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .inner {
+    width: min(860px, calc(100% - 40px));
+  }
+
+  .niharikaProfile {
+    grid-template-columns: 280px minmax(0, 268px) 280px;
+    grid-template-rows: 128px minmax(230px, auto) 82px minmax(194px, auto) minmax(156px, auto);
+    width: min(860px, 100%);
+  }
+
+  .niharikaMedia {
+    width: 270px;
+    height: 370px;
+  }
+
+  .niharikaShape {
+    height: 292px;
+  }
+
+  .niharikaImage {
+    width: 244px;
+    height: 382px;
+  }
+
+  .niharikaHeader {
+    padding: 42px 28px 0;
+  }
+
+  .niharikaName {
+    font-size: 40px;
+  }
+
+  .romaProfile {
+    grid-template-columns: minmax(0, 564px) 280px;
+    grid-template-rows: 214px minmax(220px, auto) minmax(250px, auto) minmax(184px, auto);
+    width: min(860px, 100%);
+  }
+
+  .romaBand {
+    height: 214px;
+  }
+
+  .romaHeader {
+    min-height: 214px;
+    padding: 30px 16px 0;
+  }
+
+  .romaMedia {
+    width: 280px;
+    height: 370px;
+  }
+
+  .romaShape {
+    width: 280px;
+    height: 292px;
+  }
+
+  .romaImage {
+    width: 274px;
+    height: 410px;
+  }
+
+  .romaName {
+    font-size: 40px;
+  }
+
+    .krishnaShape{
+    height: 92%;
+    top: 8%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 46px;
+    padding-bottom: 56px;
+  }
+
+  .inner {
+    width: min(620px, calc(100% - 32px));
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .band {
+    display: none;
+  }
+
+  .infoPanel {
+    display: contents;
+  }
+
+  .headingBlock {
+    position: relative;
+    z-index: 1;
+    order: 1;
+    width: calc(100% + (100vw - 100%));
+    margin-left: calc((100vw - 100%) / -2);
+    margin-right: calc((100vw - 100%) / -2);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 36px 20px 32px;
+    background: var(--doctor-band-bg);
+    text-align: center;
+  }
+
+  .name {
+    font-size: clamp(34px, 7vw, 44px);
+  }
+
+  .mediaPanel {
+    position: relative;
+    z-index: 1;
+    order: 2;
+    width: min(100%, 350px);
+    margin: 72px auto 0;
+  }
+
+  .doctorImage {
+    left: 18%;
+    width: 84%;
+    height: 108%;
+  }
+
+  .bioCard {
+    position: relative;
+    z-index: 1;
+    order: 3;
+    min-height: 0;
+    padding: 28px 24px;
+    margin-top: 24px;
+  }
+
+  .bioCard p {
+    font-size: 15px;
+    line-height: 1.38;
+  }
+
+  .profileDivider {
+    width: 100%;
+    margin: 50px auto 50px;
+  }
+
+  .krishnaProfile,
+  .niharikaProfile,
+  .romaProfile {
+    display: flex;
+    flex-direction: column;
+    width: min(620px, 100%);
+    padding-top: 0px;
+  }
+  .niharikaProfile{
+    padding-bottom: 0;
+  }
+  .krishnaBand,
+  .niharikaBand,
+  .romaBand {
+    display: none;
+  }
+
+  .krishnaIntro,
+  .krishnaAside {
+    display: contents;
+  }
+
+  .krishnaHeader,
+  .niharikaHeader,
+  .romaHeader {
+    position: relative;
+    z-index: 1;
+    order: 1;
+    width: calc(100% + (100vw - 100%));
+    margin-left: calc((100vw - 100%) / -2);
+    margin-right: calc((100vw - 100%) / -2);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 36px 20px 32px;
+    background: var(--doctor-band-bg);
+    text-align: center;
+  }
+
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: clamp(32px, 7vw, 40px);
+  }
+
+  .romaIntro,
+  .krishnaCredentials,
+  .krishnaSpecialty {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    order: 2;
+    width: min(100%, 350px);
+    height: auto;
+    aspect-ratio: 1197 / 1326;
+    margin: 40px auto 25px;
+  }
+
+  .krishnaImage {
+    right: 6%;
+    width: 82%;
+    height: 106%;
+  }
+
+  .niharikaShape {
+    height: 90%;
+  }
+
+  .niharikaImage {
+    /* top: -1%; */
+    left: 8%;
+    width: 82%;
+    height: 106%;
+    bottom: -1px;
+    /* bottom: 10%; */
+  }
+
+  .romaShape {
+    width: 100%;
+    height: 78%;
+  }
+
+  .romaImage {
+    right: 6%;
+    width: 82%;
+    height: 106%;
+  }
+  .romaMedia{
+    height: 390px;
+  }
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    width: 100%;
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .qualificationCard,
+  .niharikaIntroCard {
+    order: 3;
+  }
+
+  .experienceCard,
+  .niharikaSpecialization {
+    order: 4;
+  }
+
+  .publicationCard,
+  .niharikaPracticeCard {
+    order: 5;
+  }
+
+  .driveCard,
+  .niharikaAcademicCard {
+    order: 6;
+  }
+
+  .niharikaClosingCard,
+  .romaInterestsCard {
+    order: 7;
+  }
+
+  .romaEducationCard {
+    order: 3;
+  }
+
+  .romaExpertiseCard {
+    order: 4;
+  }
+
+  .romaHighlightsCard {
+    order: 5;
+  }
+
+  .romaApproachCard {
+    order: 6;
+  }
+
+  .niharikaSpecialization {
+    width: 100%;
+    margin: 0;
+    padding: 0 8px;
+  }
+
+  .detailCard h3 {
+    margin-bottom: 16px;
+  }
+
+  .experienceCard ul {
+    gap: 14px;
+    padding-top: 0;
+  }
+  .krishnaShape{
+    height: 95%;
+    top: 5%;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 42px 12px 44px;
+  }
+
+  .inner {
+    width: 100%;
+  }
+
+  .band {
+    height: 228px;
+  }
+
+  .mediaPanel {
+    width: min(100%, 330px);
+    margin-top: 48px;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .degree,
+  .specialty {
+    font-size: 13px;
+  }
+
+  .bioCard {
+    border-radius: 12px;
+    padding: 24px 18px;
+  }
+
+  .bioCard p {
+    font-size: 14px;
+  }
+
+  .krishnaProfile,
+  .niharikaProfile,
+  .romaProfile {
+    width: 100%;
+  }
+
+  .krishnaBand,
+  .niharikaBand,
+  .romaBand {
+    height: 276px;
+  }
+    .niharikaImage {
+      bottom: -5px;
+    }
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: 30px;
+  }
+
+  .krishnaRole,
+  .niharikaDegree,
+  .romaRole {
+    font-size: 16px;
+  }
+
+  .krishnaCredentials,
+  .krishnaSpecialty,
+  .detailCard p,
+  .detailCard li,
+  .niharikaIntroCard p,
+  .niharikaPracticeCard p,
+  .niharikaAcademicCard p,
+  .niharikaClosingCard p,
+  .niharikaSpecialization,
+  .romaIntro,
+  .romaEducationCard p,
+  .romaExpertiseCard p,
+  .romaHighlightsCard li,
+  .romaApproachCard p,
+  .romaInterestsCard p {
+    font-size: 13px;
+  }
+
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 320px);
+  }
+
+  .detailCard,
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    border-radius: 12px;
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .inner {
+    width: 100%;
+  }
+
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 300px);
+  }
+
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: 28px;
+  }
+   .niharikaImage {
+      bottom: -10px;
+    }
+}
+
+@media (max-width: 390px) {
+  .section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 280px);
+  }
+
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: 26px;
+  }
+}
+
+@media (min-width: 769px) {
+
+  .band,
+  .niharikaBand {
+    left: 0;
+    right: calc((100vw - 100%) / -2);
+  }
+
+  .krishnaBand,
+  .romaBand {
+    left: calc((100vw - 100%) / -2);
+    right: 0;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .niharikaBand {
+    border-radius: 20px 0 0 0;
+  }
+}
+
+/* Responsive doctor layout refinements: desktop/base styles above stay unchanged. */
+@media (max-width: 1200px) {
+
+  .profile,
+  .krishnaProfile,
+  .niharikaProfile,
+  .romaProfile {
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+
+  .bioCard,
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .profile {
+    grid-template-columns: 310px minmax(0, 1fr);
+    column-gap: 16px;
+  }
+
+  .mediaPanel {
+    width: 310px;
+  }
+
+  .doctorImage {
+    left: 48px;
+    width: 286px;
+    height: 438px;
+  }
+
+  .name {
+    font-size: 38px;
+    line-height: 1.35;
+  }
+
+  .headingBlock {
+    margin-left: 24px;
+  }
+
+  .krishnaProfile,
+  .romaProfile {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-rows: 214px minmax(220px, auto) minmax(250px, auto) minmax(184px, auto);
+    width: min(860px, 100%);
+  }
+
+  .krishnaBand {
+    height: 214px;
+  }
+
+  .krishnaHeader {
+    min-height: 214px;
+    padding: 30px 16px 0;
+  }
+
+  .krishnaAside,
+  .krishnaMedia {
+    width: 280px;
+  }
+
+  .krishnaAside,
+  .romaMedia {
+    margin-top: -8px;
+  }
+
+  .krishnaMedia {
+    height: 370px;
+  }
+
+  .krishnaImage {
+    width: 274px;
+    height: 410px;
+  }
+
+  .krishnaName,
+  .romaName {
+    font-size: 40px;
+  }
+
+  .krishnaRole,
+  .romaRole,
+  .niharikaDegree {
+    font-size: 17px;
+  }
+
+  .krishnaCredentials,
+  .krishnaSpecialty,
+  .detailCard p,
+  .detailCard li,
+  .niharikaIntroCard p,
+  .niharikaPracticeCard p,
+  .niharikaAcademicCard p,
+  .niharikaClosingCard p,
+  .niharikaSpecialization,
+  .romaIntro,
+  .romaEducationCard p,
+  .romaExpertiseCard p,
+  .romaHighlightsCard li,
+  .romaApproachCard p,
+  .romaInterestsCard p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .profile,
+  .krishnaProfile,
+  .niharikaProfile,
+  .romaProfile {
+    gap: 18px;
+  }
+
+  .krishnaProfile{
+    padding-bottom: 0px;
+  }
+
+  .band,
+  .krishnaBand,
+  .niharikaBand,
+  .romaBand {
+    left: calc((100vw - 100%) / -2);
+    right: calc((100vw - 100%) / -2);
+    border-radius: 0;
+  }
+
+  .headingBlock,
+  .krishnaHeader,
+  .niharikaHeader,
+  .romaHeader {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    text-align: center;
+    padding: 30px 16px 40px;
+  }
+
+  .mediaPanel,
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 340px);
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+  }
+  .romaMedia{
+    height: 390px;
+  }
+  .krishnaIntro,
+  .krishnaAside {
+    display: contents;
+  }
+
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .name,
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: 36px;
+    line-height: 1.16;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .profile,
+  .krishnaProfile,
+  .niharikaProfile,
+  .romaProfile {
+    gap: 16px;
+  }
+
+  .mediaPanel,
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 310px);
+  }
+
+  .name,
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: 30px;
+  }
+
+  .headingBlock,
+  .krishnaHeader,
+  .niharikaHeader,
+  .romaHeader {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .bioCard,
+  .detailCard,
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    padding: 20px 16px;
+  }
+
+  .niharikaMedia{
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 430px) {
+
+  .mediaPanel,
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 286px);
+  }
+
+  .name,
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: 27px;
+  }
+
+  .degree,
+  .specialty,
+  .krishnaCredentials,
+  .krishnaSpecialty,
+  .krishnaRole,
+  .niharikaDegree,
+  .romaRole {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 390px) {
+  .section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .mediaPanel,
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 268px);
+  }
+
+  .name,
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: 25px;
+  }
+
+  .bioCard,
+  .detailCard,
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    padding: 18px 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+  /* ── Abdul Rasheed (first doctor) ── */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 20px;
+  }
+
+  .band {
+    display: none;
+  }
+
+  .infoPanel {
+    display: contents;
+  }
+
+  .headingBlock {
+    position: relative;
+    z-index: 1;
+    order: 1;
+    width: calc(100% + (100vw - 100%));
+    margin-left: calc((100vw - 100%) / -2);
+    margin-right: calc((100vw - 100%) / -2);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 36px 24px 32px;
+    background: var(--doctor-band-bg);
+    text-align: center;
+  }
+
+  .name {
+    font-size: clamp(34px, 5.5vw, 44px);
+    line-height: 1.25;
+  }
+
+  .degree,
+  .specialty {
+    font-size: 15px;
+  }
+
+  .mediaPanel {
+    position: relative;
+    z-index: 1;
+    order: 2;
+    width: min(100%, 400px);
+    margin: 72px auto 0;
+    aspect-ratio: 1197 / 1248;
+  }
+
+  .doctorImage {
+    left: 18%;
+    width: 84%;
+    height: 108%;
+  }
+
+  .bioCard {
+    position: relative;
+    z-index: 1;
+    order: 3;
+    min-height: 0;
+    padding: 28px 26px 26px;
+    margin-top: 24px;
+  }
+
+  .bioCard p {
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.36;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+  /* ── Krishna / Roma / Niharika profiles ── */
+  .krishnaProfile,
+  .niharikaProfile,
+  .romaProfile {
+    display: flex;
+    flex-direction: column;
+    width: min(700px, 100%);
+    padding-top: 28px;
+    gap: 18px;
+  }
+
+  .krishnaBand,
+  .niharikaBand,
+  .romaBand {
+    display: none;
+  }
+
+  .krishnaIntro,
+  .krishnaAside {
+    display: contents;
+  }
+
+  .krishnaHeader,
+  .niharikaHeader,
+  .romaHeader {
+    position: relative;
+    z-index: 1;
+    order: 1;
+    width: calc(100% + (100vw - 100%));
+    margin-left: calc((100vw - 100%) / -2);
+    margin-right: calc((100vw - 100%) / -2);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 36px 24px 32px;
+    background: var(--doctor-band-bg);
+    text-align: center;
+  }
+
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: clamp(32px, 5vw, 40px);
+  }
+
+  .romaIntro,
+  .krishnaCredentials,
+  .krishnaSpecialty {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    order: 2;
+    width: min(100%, 380px);
+    height: auto;
+    aspect-ratio: 1197 / 1326;
+    margin: 25px auto 0;
+  }
+
+  .krishnaImage {
+    right: 6%;
+    width: 82%;
+    height: 106%;
+  }
+
+  .niharikaShape {
+    height: 90%;
+  }
+
+  .niharikaImage {
+    left: 8%;
+    width: 82%;
+    height: 106%;
+  }
+
+  .romaShape {
+    width: 100%;
+    height: 75%;
+  }
+
+  .romaImage {
+    right: 6%;
+    width: 82%;
+    height: 106%;
+  }
+
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    width: 100%;
+    min-height: 0;
+    padding: 24px 26px;
+  }
+
+  .qualificationCard,
+  .niharikaIntroCard {
+    order: 3;
+  }
+
+  .experienceCard,
+  .niharikaSpecialization {
+    order: 4;
+  }
+
+  .publicationCard,
+  .niharikaPracticeCard {
+    order: 5;
+  }
+
+  .driveCard,
+  .niharikaAcademicCard {
+    order: 6;
+  }
+
+  .niharikaClosingCard,
+  .romaInterestsCard {
+    order: 7;
+  }
+
+  .romaEducationCard {
+    order: 3;
+  }
+
+  .romaExpertiseCard {
+    order: 4;
+  }
+
+  .romaHighlightsCard {
+    order: 5;
+  }
+
+  .romaApproachCard {
+    order: 6;
+  }
+
+  .niharikaSpecialization {
+    width: 100%;
+    margin: 0;
+    padding: 0 8px;
+  }
+
+  .detailCard h3 {
+    margin-bottom: 16px;
+  }
+
+  .experienceCard ul {
+    gap: 14px;
+    padding-top: 0;
+  }
+}
+
+
+
+@media (max-width: 576px) {
+  .mediaPanel,
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 310px);
+    margin-top: 30px;
+    margin-bottom: 25px;
+  }
+
+  .romaMedia{
+    margin-top: 10px;
+    height: 360px;
+  }
+  .niharikaMedia{
+    margin-bottom: 10px;
+  }
+  .doctorImage {
+    left: 14%;
+    width: 86%;
+    height: 106%;
+  }
+
+  .krishnaImage {
+    right: 4%;
+    width: 86%;
+    height: 106%;
+  }
+
+  .niharikaImage {
+    left: 6%;
+    width: 86%;
+    height: 106%;
+  }
+
+  .romaImage {
+    right: 10%;
+    width: 86%;
+    height: 106%;
+    bottom: 0px;
+  }
+
+  .name,
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: clamp(26px, 6.5vw, 34px);
+  }
+
+  .bioCard,
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    padding: 20px 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .mediaPanel,
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 270px);
+    margin-top: 10px;
+  }
+  .romaMedia{
+    height: 320px;
+  }
+  .doctorImage {
+    left: 10%;
+    width: 88%;
+    height: 106%;
+  }
+
+  .krishnaImage {
+    right: 3%;
+    width: 88%;
+    height: 106%;
+  }
+
+  .niharikaImage {
+    left: 5%;
+    width: 88%;
+    height: 106%;
+    bottom: -1.5%;
+  }
+
+  .romaImage {
+    right: 8%;
+    width: 88%;
+    height: 106%;
+    bottom: 0px;
+  }
+
+  .name,
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: clamp(24px, 6vw, 29px);
+  }
+
+  .headingBlock,
+  .krishnaHeader,
+  .niharikaHeader,
+  .romaHeader {
+    padding: 28px 14px 24px;
+  }
+
+  .bioCard,
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    padding: 18px 14px;
+  }
+}
+
+@media (max-width: 390px) {
+  .mediaPanel,
+  .krishnaMedia,
+  .niharikaMedia,
+  .romaMedia {
+    width: min(100%, 245px);
+    margin-top: 38px;
+  }
+    .romaMedia{
+    height: 290px;
+  }
+  .doctorImage {
+    left: 8%;
+    width: 90%;
+    height: 106%;
+  }
+
+  .krishnaImage {
+    right: 2%;
+    width: 90%;
+    height: 106%;
+  }
+
+  .niharikaImage {
+    left: 4%;
+    width: 90%;
+    height: 106%;
+  }
+
+  .romaImage {
+    right: 8%;
+    width: 95%;
+    height: 106%;
+    bottom: 0px;
+    right: 4%;
+height: 108%;
+  }
+  .romaShape{
+    height: 90%;
+  }
+  .name,
+  .krishnaName,
+  .niharikaName,
+  .romaName {
+    font-size: clamp(21px, 5.5vw, 25px);
+  }
+
+  .degree,
+  .specialty,
+  .krishnaRole,
+  .krishnaCredentials,
+  .krishnaSpecialty,
+  .niharikaDegree,
+  .romaRole {
+    font-size: 13px;
+  }
+
+  .bioCard,
+  .qualificationCard,
+  .experienceCard,
+  .publicationCard,
+  .driveCard,
+  .niharikaIntroCard,
+  .niharikaPracticeCard,
+  .niharikaAcademicCard,
+  .niharikaClosingCard,
+  .romaEducationCard,
+  .romaExpertiseCard,
+  .romaHighlightsCard,
+  .romaApproachCard,
+  .romaInterestsCard {
+    padding: 16px 12px;
+  }
+}

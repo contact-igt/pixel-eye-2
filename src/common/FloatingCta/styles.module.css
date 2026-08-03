@@ -1,4 +1,4 @@
-﻿.floatingCta {
+.floatingCta {
   position: fixed;
   top: 50%;
   right: 0;
@@ -8,20 +8,20 @@
   display: flex;
   flex-direction: column;
   width: fit-content;
-  max-width: 72px;
+  max-width: 55px;
   margin: 0;
-  gap: clamp(8px, 0.7vw, 12px);
+  gap: 12px;
   transform: translateY(-50%);
 }
 
 .action {
   display: flex;
-  width: clamp(64px, 4.5vw, 72px);
+  width: 48px;
   aspect-ratio: 188 / 172;
   overflow: hidden;
-  border-radius: 13px 0 0 13px;
+  border-radius: 10px 0 0 10px;
   text-decoration: none;
-  box-shadow: 0 8px 22px rgba(24, 36, 74, 0.14);
+  box-shadow: 0 8px 20px rgba(24, 36, 74, 0.16);
   transition: filter 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
 
