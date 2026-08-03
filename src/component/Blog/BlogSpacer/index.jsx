@@ -7,6 +7,6 @@ const SPACING_MAP = {
 };
 
 export default function BlogSpacer({ settings = {} }) {
-  const height = SPACING_MAP[settings?.height] || SPACING_MAP.medium;
+  const height = SPACING_MAP[settings?.size || settings?.height] || SPACING_MAP.medium;
   return <div style={{ height, width: "100%" }} aria-hidden="true" />;
 }

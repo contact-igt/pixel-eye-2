@@ -1,13 +1,14 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles.module.css";
 
 export default function BlogCard({ blog }) {
+  const imageSrc = blog?.hero?.coverImage || '/assets/blog/blog_banner.png';
   return (
     <article className={styles.card}>
       <Link href={`/blog/${blog.slug}`} className={styles.media}>
         <Image
-          src={blog.hero.coverImage}
+          src={imageSrc}
           alt={blog.hero.title}
           fill
           sizes="(max-width: 767px) 100vw, 380px"

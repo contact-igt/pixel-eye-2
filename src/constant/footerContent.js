@@ -16,6 +16,7 @@ export const FOOTER_CONTENT = {
     { label: "Doctors", href: "/doctors" },
     { label: "Treatment", href: "/service" },
     { label: "Appointment", href: "/appointment" },
+    { label: "Blogs", href: "/blog" },
     { label: "Our Specialists", href: "/doctors" },
     { label: "Terms and Conditions", href: "/terms-and-conditions" },
     { label: "Privacy Policy", href: "/privacy-policy" },

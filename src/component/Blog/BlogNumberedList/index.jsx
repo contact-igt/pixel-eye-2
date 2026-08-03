@@ -8,11 +8,11 @@ import styles from "./styles.module.css";
  *
  * data shape: { id, type: "numberedList", title: string, items: [{ title, description }] }
  */
-export default function BlogNumberedList({ data }) {
+export default function BlogNumberedList({ data, settings = {} }) {
   if (!data?.items?.length) return null;
 
   return (
-    <section id={data.id} className={styles.block}>
+    <section id={data.id} className={`${styles.block} ${styles[`style_${settings.style || "circle"}`] || ""}`}>
       {data.title ? <h2>{data.title}</h2> : null}
       <ol className={styles.list}>
         {data.items.map((item, idx) => (

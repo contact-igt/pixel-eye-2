@@ -241,3 +241,26 @@
   }
 }
 
+
+.height_compact,
+.height_compact .content { min-height: 440px; }
+.height_standard,
+.height_standard .content { min-height: clamp(620px, 40vw, 768px); }
+.height_tall,
+.height_tall .content { min-height: clamp(720px, 52vw, 900px); }
+.alignment_center .content { margin-right: auto; margin-left: auto; align-items: center; justify-content: center; text-align: center; }
+.alignment_center .meta { justify-content: center; }
+.alignment_left .content { margin-right: 0; margin-left: 0; align-items: flex-start; text-align: left; }
+.alignment_left .meta { justify-content: flex-start; }
+.overlay_light { opacity: 0.55; }
+.overlay_medium { opacity: 0.82; }
+.overlay_strong { opacity: 1; }
+
+@media (max-width: 767px) {
+  .height_compact,
+  .height_compact .content { min-height: 400px; }
+  .height_standard,
+  .height_standard .content { min-height: 500px; }
+  .height_tall,
+  .height_tall .content { min-height: 620px; }
+}

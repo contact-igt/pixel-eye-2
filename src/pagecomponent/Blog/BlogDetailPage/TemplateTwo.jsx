@@ -39,7 +39,12 @@ export default function TemplateTwo({ blog }) {
       <BlogContainer variant="with-sidebar">
         <div className={styles.sidebarLayout}>
           <article className={styles.mainColumn}>
-            <BlogBlockRenderer blocks={orderedBlocks} variant="template-2" />
+            <BlogBlockRenderer
+              blocks={orderedBlocks}
+              variant="template-2"
+              suggestedBlogs={blog.suggestedBlogs}
+              currentSlug={blog.slug}
+            />
           </article>
           {blog.sidebarBlocks?.length ? (
             <aside className={styles.sidebarColumn}>

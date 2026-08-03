@@ -5,48 +5,66 @@ import Image from "next/image";
 import Button from "@/common/Button";
 import { ABOUT_CONTENT } from "@/constant/aboutContent";
 import RevealOnView from "@/common/RevealOnView";
+import { fetchPublishedBlogs } from "@/lib/apiService";
+import { adaptApiBlogListToLocal } from "@/lib/blogAdapter";
 import styles from "./styles.module.css";
 
-const ReadCard = ({ item, mobile = false }) => (
-  <article className={styles.sideCard}>
-    <div className={styles.sideMediaCol}>
-      <div className={styles.sideMediaWrap}>
-        <Image
-          src={item.image}
-          alt={item.title}
-          fill
-          className={styles.mediaImage}
-          sizes={mobile ? "82vw" : "(max-width: 768px) 100vw, 24vw"}
-        />
+const ReadCard = ({ item, mobile = false }) => {
+  const imageSrc = item?.image || '/assets/About/blogbg.png';
+  return (
+    <article className={styles.sideCard}>
+      <div className={styles.sideMediaCol}>
+        <div className={styles.sideMediaWrap}>
+          <Image src={imageSrc} alt={item.title} fill className={styles.mediaImage} sizes={mobile ? "82vw" : "(max-width: 768px) 100vw, 24vw"} />
+        </div>
+        <div className={styles.datePill}>{item.date}</div>
       </div>
-      <div className={styles.datePill}>{item.date}</div>
-    </div>
-
-    <div className={styles.sideContent}>
-      <h3 className={styles.sideTitle}>{item.title}</h3>
-      <p className={styles.sideDescription}>{item.description}</p>
-      <Button
-        label="Read More"
-        href={item.href}
-        variant="light"
-        className={styles.readMore}
-        ariaLabel={`Read more: ${item.title}`}
-      />
-    </div>
-  </article>
-);
-
+      <div className={styles.sideContent}>
+        <h3 className={styles.sideTitle}>{item.title}</h3>
+        <p className={styles.sideDescription}>{item.description}</p>
+        <Button label="Read More" href={item.href} variant="light" className={styles.readMore} ariaLabel={`Read more: ${item.title}`} />
+      </div>
+    </article>
+  );
+};
 const SuggestedReads = () => {
-  const { heading, subtitle, reads } = ABOUT_CONTENT.suggestedReads;
+  const { heading, subtitle } = ABOUT_CONTENT.suggestedReads;
+  const [apiReads, setApiReads] = useState([]);
+  const demoReads = ABOUT_CONTENT.suggestedReads.reads;
+  const reads = [...apiReads, ...demoReads.slice(apiReads.length)].slice(0, 3);
   const featuredRead = reads.find((item) => item.featured);
   const sideReads = reads.filter((item) => !item.featured);
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
-  const mobileVisibleReads = sideReads.length
-    ? [
-        sideReads[mobileActiveIndex],
-        sideReads[(mobileActiveIndex + 1) % sideReads.length],
-      ].filter(Boolean)
-    : [];
+
+  useEffect(() => {
+    let active = true;
+    async function loadSuggestedReads() {
+      const apiBlogs = await fetchPublishedBlogs(1, 50);
+      const blogs = adaptApiBlogListToLocal(apiBlogs);
+      const mappedReads = blogs.slice(0, 3).map((blog, index) => ({
+        id: blog.id || blog.slug,
+        featured: index === 0,
+        title: blog.hero?.title || blog.title || "Suggested read",
+        description: blog.hero?.excerpt || blog.excerpt || "",
+        date: blog.hero?.publishedAt ? new Date(blog.hero.publishedAt).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" }) : "",
+        image: blog.hero?.coverImage || "/assets/About/blogbg.png",
+        href: `/blog/${blog.slug}`,
+      }));
+      console.log("[About Suggested Reads API data]:", mappedReads);
+      if (active && mappedReads.length) setApiReads(mappedReads);
+    }
+    loadSuggestedReads();
+    return () => { active = false; };
+  }, []);
+  const mobileVisibleReads =
+    sideReads.length === 1
+      ? [sideReads[0]]
+      : sideReads.length > 1
+        ? [
+            sideReads[mobileActiveIndex],
+            sideReads[(mobileActiveIndex + 1) % sideReads.length],
+          ].filter(Boolean)
+        : [];
 
   useEffect(() => {
     if (sideReads.length < 2) return undefined;
@@ -75,7 +93,7 @@ const SuggestedReads = () => {
                 <div className={styles.featuredMediaWrap}>
                   <div className={styles.featuredMedia}>
                     <Image
-                      src={featuredRead.image}
+                      src={featuredRead.image || '/assets/About/blogbg.png'}
                       alt={featuredRead.title}
                       fill
                       className={styles.mediaImage}

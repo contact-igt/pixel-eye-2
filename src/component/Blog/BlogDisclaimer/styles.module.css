@@ -1,4 +1,4 @@
-﻿.disclaimer {
+.disclaimer {
   width: 100%;
   margin-top: -2px;
   padding: 22px 25px;
@@ -12,3 +12,6 @@
   font-weight: 800;
   line-height: 1.62;
 }
+
+.variant_standard { border-left-color: #9aa6b5; }
+.variant_prominent { padding: 28px; border-left: 5px solid #0877c9; background: #e7f4ff; color: #344256; font-size: 14px; }

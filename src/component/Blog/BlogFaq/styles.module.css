@@ -55,3 +55,6 @@
   object-fit: contain;
   flex-shrink: 0;
 }
+
+.layout_accordion .item { background: #edf6ff; }
+.layout_image_accordion .item { border: 1px solid #c9deef; background: linear-gradient(90deg, #edf6ff 0%, #ffffff 100%); }

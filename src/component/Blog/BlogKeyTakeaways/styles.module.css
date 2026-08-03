@@ -43,3 +43,9 @@
   border-radius: 50%;
   background: radial-gradient(circle at center, #1684dc 0 2px, transparent 3px);
 }
+
+.variant_soft { background: #edf6ff; }
+.variant_bordered { border: 1px solid #b9d9f4; border-left-width: 4px; background: #ffffff; }
+.columns_one ul { grid-template-columns: minmax(0, 1fr); }
+.columns_two ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
+@media (max-width: 768px) { .columns_two ul { grid-template-columns: minmax(0, 1fr); } }

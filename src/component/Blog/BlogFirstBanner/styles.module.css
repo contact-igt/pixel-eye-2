@@ -1,10 +1,10 @@
-﻿.blogBanner {
+.blogBanner {
   padding-top: 24px;
   padding-bottom: 10px;
 }
 
 .bannerFrame {
-  min-height: clamp(330px, 36vw, 520px);
+  min-height: clamp(360px, 47vw, 520px);
   background: #edf4ff;
 }
 
@@ -13,20 +13,39 @@
 }
 
 .bannerCopy {
-  top: 54%;
+  top: 0;
+  left: clamp(40px, 6.7vw, 60px);
   width: min(420px, 46%);
+  height: 100%;
+  padding-top: clamp(128px, 16vw, 152px);
+  transform: none;
 }
 
 .bannerCopy h1 {
-  color: #293b77;
+  color: #1f3068;
   font-size: clamp(32px, 4vw, 48px);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .bannerCopy p {
+  position: absolute;
+  top: 64%;
+  left: 0;
+  max-width: 360px;
+  margin: 0;
   color: #293b77;
   font-size: 15px;
   font-weight: 400;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .bannerCopy > div {
+    position: absolute;
+    top: 79%;
+    left: -8px;
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -40,7 +59,22 @@
   }
 
   .bannerCopy {
-    top: 56%;
+    top: 60%;
+    left: 18px;
     width: calc(100% - 36px);
+    height: auto;
+    padding-top: 0;
+    transform: translateY(-50%);
+  }
+
+  .bannerCopy p {
+    position: static;
+    max-width: 100%;
+    margin-top: 18px;
+  }
+
+  .bannerCopy > div {
+    position: static;
+    margin-top: 20px;
   }
 }

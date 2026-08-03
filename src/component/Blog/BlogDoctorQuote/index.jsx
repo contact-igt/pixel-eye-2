@@ -6,9 +6,10 @@ import styles from "./styles.module.css";
 
 const DEFAULT_AVATAR = "/assets/user.png";
 
-export default function BlogDoctorQuote({ data = {}, variant = "template-1" }) {
+export default function BlogDoctorQuote({ data = {}, variant = "template-1", settings = {} }) {
   const doctor = data.doctor || {};
   const isTemplateTwo = variant === "template-2";
+  const appearance = `${styles[`orientation_${settings.orientation || "horizontal"}`] || ""} ${styles[`background_${settings.background || "soft"}`] || ""}`;
 
   const initialImage =
     doctor.image && typeof doctor.image === "string" && doctor.image.trim() !== ""
@@ -20,7 +21,7 @@ export default function BlogDoctorQuote({ data = {}, variant = "template-1" }) {
   // Template 2 Card UI (Figma # Blog Sample 2)
   if (isTemplateTwo) {
     return (
-      <section id={data.id} className={styles.quoteCardTwo}>
+      <section id={data.id} className={`${styles.quoteCardTwo} ${appearance}`}>
         <div className={styles.quoteWatermark} aria-hidden>
           &rdquo;&rdquo;
         </div>
@@ -69,7 +70,7 @@ export default function BlogDoctorQuote({ data = {}, variant = "template-1" }) {
 
   // Template 1 Line UI (No changes to Template 1 UI)
   return (
-    <section id={data?.id} className={styles.quoteBlock}>
+    <section id={data?.id} className={`${styles.quoteBlock} ${appearance}`}>
       <Image
         src="/assets/blog/quote.png"
         alt=""

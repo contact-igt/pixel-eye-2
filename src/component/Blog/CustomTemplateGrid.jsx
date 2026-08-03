@@ -2,94 +2,97 @@ import React from "react";
 import styles from "./CustomTemplateGrid.module.css";
 import { COMPONENT_MAP } from "./ComponentMap";
 import { resolveBlockData } from "@/lib/blogAdapter";
+import { normalizeCustomTemplateSettings, resolveSectionSettings } from "./customTemplateSettings";
+
+function settingClass(prefix, value) {
+  return value && styles[`${prefix}_${value}`] ? styles[`${prefix}_${value}`] : "";
+}
 
 export default function CustomTemplateGrid({ blog = {} }) {
-  const templateConfig = blog.templateConfigJson;
+  const templateConfig = normalizeCustomTemplateSettings(blog.templateConfigJson);
   const blocksJson = blog.rawBlocksJson || {};
   const contentHtml = blog.contentHtml || "";
   const featuredMedia = blog.featuredMedia || {};
 
-  if (!templateConfig || !Array.isArray(templateConfig.sections)) {
-    return null;
-  }
+  if (!templateConfig || !Array.isArray(templateConfig.sections)) return null;
 
-  // Collect all resolved blocks across sections for TOC / Sidebar navigation
+  const enabledSections = templateConfig.sections.filter((section) => section.enabled !== false);
   const allArticleBlocks = [];
-  templateConfig.sections.forEach((sec) => {
-    (sec.slots || []).forEach((slot) => {
-      (slot.components || []).forEach((comp) => {
-        const bData = resolveBlockData(blocksJson, comp.blockId, comp.componentKey, contentHtml, comp.settings);
-        if (bData && bData.enabled !== false) {
-          allArticleBlocks.push(bData);
-        }
+  enabledSections.forEach((section) => {
+    (section.slots || []).forEach((slot) => {
+      (slot.components || []).filter((component) => component.enabled !== false).forEach((component) => {
+        const blockData = resolveBlockData(blocksJson, component.blockId, component.componentKey, contentHtml, component.settings, blog.slug);
+        if (blockData && blockData.enabled !== false) allArticleBlocks.push(blockData);
       });
     });
   });
 
+  const page = templateConfig.page || {};
+  const pageClassName = [
+    styles.pageLayout,
+    settingClass("pageSpacing", page.spacing),
+    settingClass("pageTypography", page.typography)
+  ].filter(Boolean).join(" ");
+
   return (
-    <div className={styles.pageLayout}>
-      {templateConfig.sections
-        .filter((section) => section.enabled !== false)
-        .map((section) => {
-          // Check if this section contains the Hero Banner component
-          const isHeroSection = (section.slots || []).some((slot) =>
-            (slot.components || []).some((comp) => comp.componentKey === "hero")
-          );
+    <div className={pageClassName} data-template-layout={templateConfig.layoutId || "custom"}>
+      {enabledSections.map((section) => {
+        const resolvedSettings = resolveSectionSettings(page, section.settings);
 
-          // Apply heroSection for Hero, or contentContainer for standard sections
-          const sectionWrapperClass = isHeroSection
-            ? styles.heroSection
-            : `${styles.contentContainer} ${styles[section.layout] || styles.full_width} ${styles[section.responsiveStrategy] || ""}`;
+        const sectionClassName = [
+          styles.contentContainer,
+          styles[section.layout] || styles.full_width,
+          styles[section.responsiveStrategy] || "",
+          settingClass("sectionBackground", resolvedSettings.backgroundStyle),
+          settingClass("pageWidth", resolvedSettings.width),
+          settingClass("paddingTop", resolvedSettings.paddingTop),
+          settingClass("paddingBottom", resolvedSettings.paddingBottom)
+        ].filter(Boolean).join(" ");
 
-          return (
-            <section key={section.id} className={sectionWrapperClass}>
-              {(section.slots || []).map((slot) => (
-                <div key={slot.id} className={styles.slot}>
-                  {(slot.components || [])
-                    .filter((comp) => comp.enabled !== false)
-                    .map((comp) => {
-                      const Component = COMPONENT_MAP[comp.componentKey];
-                      if (!Component) return null;
+        return (
+          <section key={section.id} id={section.id} className={sectionClassName} data-section-layout={section.layout} data-responsive-strategy={section.responsiveStrategy}>
+            {(section.slots || []).map((slot) => (
+              <div key={slot.id} className={styles.slot} data-template-slot={slot.name || slot.id}>
+                {(slot.components || []).filter((component) => component.enabled !== false).map((component) => {
+                  const Component = COMPONENT_MAP[component.componentKey];
+                  if (!Component) {
+                    if (process.env.NODE_ENV !== "production") console.warn(`[CustomTemplateGrid] Unknown component '${component.componentKey}' in ${section.id}/${slot.id}.`);
+                    return <div key={component.id} className={styles.unknownComponent} role="status">This content is currently unavailable.</div>;
+                  }
 
-                      // Special case for Hero component
-                      if (comp.componentKey === "hero") {
-                        return (
-                          <div key={comp.id} className={styles.blockWrapper}>
-                            <Component variant="template-2" data={blog.hero} />
-                          </div>
-                        );
+                  const blockData = resolveBlockData(blocksJson, component.blockId, component.componentKey, contentHtml, component.settings, blog.slug);
+                  if (blockData?.enabled === false) return null;
+
+                  const data = component.componentKey === "hero"
+                    ? {
+                        ...blog.hero,
+                        ...(blockData || {}),
+                        title: blog.hero?.title || "",
+                        excerpt: blog.hero?.excerpt || "",
+                        coverImage: blog.hero?.coverImage,
+                        coverImageAlt: blog.hero?.coverImageAlt,
+                        author: blog.hero?.author,
+                        publishedAt: blog.hero?.publishedAt
                       }
+                    : blockData;
 
-                      // Resolve data for this specific blockId
-                      const blockData = resolveBlockData(
-                        blocksJson,
-                        comp.blockId,
-                        comp.componentKey,
-                        contentHtml,
-                        comp.settings
-                      );
-
-                      if (blockData && blockData.enabled === false) {
-                        return null;
-                      }
-
-                      return (
-                        <div key={comp.id || comp.blockId} className={styles.blockWrapper}>
-                          <Component
-                            data={blockData}
-                            featuredMedia={featuredMedia}
-                            settings={comp.settings}
-                            articleBlocks={allArticleBlocks}
-                            variant="template-2"
-                          />
-                        </div>
-                      );
-                    })}
-                </div>
-              ))}
-            </section>
-          );
-        })}
+                  return (
+                    <div key={component.id || component.blockId} className={`${styles.blockWrapper} ${component.componentKey === "hero" ? styles.heroBlock : ""}`} data-component-key={component.componentKey}>
+                      <Component
+                        data={data}
+                        featuredMedia={featuredMedia}
+                        settings={component.settings || {}}
+                        articleBlocks={allArticleBlocks}
+                        variant="template-2"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </section>
+        );
+      })}
     </div>
   );
 }

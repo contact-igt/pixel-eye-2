@@ -1,10 +1,10 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
-export default function BlogEmergencyCta({ data }) {
+export default function BlogEmergencyCta({ data, settings = {} }) {
   return (
-    <section id={data.id} className={styles.cta}>
+    <section id={data.id} className={`${styles.cta} ${styles[`style_${settings.style || "navy"}`] || ""} ${styles[`buttons_${settings.buttonLayout || "inline"}`] || ""}`}>
       <div className={styles.iconWrap} aria-hidden="true">
         <Image src="/assets/blog/bell.png" alt="" width={24} height={24} />
       </div>

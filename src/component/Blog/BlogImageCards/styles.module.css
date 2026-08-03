@@ -91,3 +91,10 @@
     height: 200px;
   }
 }
+
+.columns_one .cardsGrid { grid-template-columns: minmax(0, 1fr); }
+.columns_two .cardsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.columns_three .cardsGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.imageRatio_square .imageWrapper { height: auto; aspect-ratio: 1 / 1; }
+.imageRatio_landscape .imageWrapper { height: auto; aspect-ratio: 16 / 9; }
+@media (max-width: 768px) { .columns_two .cardsGrid, .columns_three .cardsGrid { grid-template-columns: minmax(0, 1fr); } }

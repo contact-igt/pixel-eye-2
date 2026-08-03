@@ -2,11 +2,11 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
 
-export default function BlogFaq({ data }) {
-  const [openIndex, setOpenIndex] = useState(0);
+export default function BlogFaq({ data, settings = {} }) {
+  const [openIndex, setOpenIndex] = useState(settings.defaultOpen === "none" ? -1 : 0);
 
   return (
-    <section id={data?.id} className={styles.block}>
+    <section id={data?.id} className={`${styles.block} ${styles[`layout_${settings.layout || "accordion"}`] || ""}`}>
       {data?.title ? <h2>{data.title}</h2> : null}
       <div className={styles.items}>
         {data?.items?.map((item, index) => {

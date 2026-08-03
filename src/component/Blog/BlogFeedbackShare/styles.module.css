@@ -46,6 +46,45 @@
   padding: 0;
 }
 
+.action:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.actionSelected {
+  color: #0f66bd;
+}
+
+.helpfulGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feedbackMessage {
+  margin: 0;
+  color: #1f8a4c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.feedbackError {
+  margin: 0;
+  color: #c0392b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.retryLink {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #c0392b;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 800;
+}
+
 .action img,
 .share img {
   display: block;
