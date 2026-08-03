@@ -20,7 +20,12 @@ export default function CustomBuilderTemplate({ blog }) {
         {hasSidebar ? (
           <div className={styles.sidebarLayout}>
             <article className={styles.mainColumn}>
-              <BlogBlockRenderer blocks={blog.blocks} variant="template-2" />
+              <BlogBlockRenderer
+                blocks={blog.blocks}
+                variant="template-2"
+                suggestedBlogs={blog.suggestedBlogs}
+                currentSlug={blog.slug}
+              />
             </article>
             <aside className={styles.sidebarColumn}>
               <BlogSidebarBlockRenderer
@@ -31,7 +36,12 @@ export default function CustomBuilderTemplate({ blog }) {
           </div>
         ) : (
           <div className={styles.articleFlow}>
-            <BlogBlockRenderer blocks={blog.blocks} variant="template-1" />
+            <BlogBlockRenderer
+              blocks={blog.blocks}
+              variant="template-1"
+              suggestedBlogs={blog.suggestedBlogs}
+              currentSlug={blog.slug}
+            />
           </div>
         )}
       </BlogContainer>

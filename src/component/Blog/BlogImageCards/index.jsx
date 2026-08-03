@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 
-export default function BlogImageCards({ data }) {
+export default function BlogImageCards({ data, settings = {} }) {
   if (!data || data.enabled === false || !Array.isArray(data.items) || data.items.length === 0) {
     return null;
   }
@@ -9,7 +9,7 @@ export default function BlogImageCards({ data }) {
   const sectionHeading = data.heading || data.title;
 
   return (
-    <section id={data.id} className={styles.comparisonSection}>
+    <section id={data.id} className={`${styles.comparisonSection} ${styles[`columns_${settings.columns || "two"}`] || ""} ${styles[`imageRatio_${settings.imageRatio || "landscape"}`] || ""}`}>
       {/* 1. Main Section Heading (Rendered ONCE at the top) */}
       {sectionHeading ? (
         <h2 className={styles.sectionHeading}>{sectionHeading}</h2>

@@ -207,3 +207,10 @@
     gap: 10px;
   }
 }
+
+.background_white.quoteCardTwo { border: 1px solid #dce6f1; background: #ffffff; }
+.background_soft.quoteCardTwo { background: #edf6ff; }
+.background_white.quoteBlock { padding: 24px 24px 24px 36px; border-radius: 12px; background: #ffffff; box-shadow: 0 0 0 1px #e2e8f0; }
+.background_soft.quoteBlock { padding-top: 22px; padding-bottom: 22px; border-radius: 12px; background: #edf6ff; }
+.orientation_stacked .cardContentTwo { flex-direction: column; }
+.orientation_stacked .doctor { flex-direction: column; align-items: flex-start; }

@@ -58,3 +58,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+.style_navy { background: #092341; }
+.style_blue { background: #0877c9; }
+.buttons_inline .actions { flex-direction: row; }
+.buttons_stacked .actions { max-width: 260px; flex-direction: column; align-items: stretch; }

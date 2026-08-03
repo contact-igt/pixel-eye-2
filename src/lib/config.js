@@ -14,7 +14,7 @@ const getApiUrl = () => {
     production: process.env.NEXT_PUBLIC_PROD_API_URL,
   };
 
-  const selectedUrl = urls[ENV] || urls.local;
+  const selectedUrl = urls[ENV] || urls.local || 'http://localhost:5000/api/v1';
 
   if (!selectedUrl) {
     console.error(`[config] ⚠️ No API URL found for environment "${ENV}"`);

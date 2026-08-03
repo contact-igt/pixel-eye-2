@@ -4,6 +4,7 @@
   border: none;
 }
 
+.solid,
 .line {
   border-top: 1px solid #e2e8f0;
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BlogDetailPage from "@/pagecomponent/Blog/BlogDetailPage";
-import { fetchBlogBySlug, fetchPublishedBlogSlugs } from "@/lib/apiService";
-import { adaptApiBlogToLocal } from "@/lib/blogAdapter";
+import { fetchBlogBySlug, fetchPublishedBlogSlugs, fetchPublishedBlogs } from "@/lib/apiService";
+import { adaptApiBlogListToLocal, adaptApiBlogToLocal } from "@/lib/blogAdapter";
 
 export default function BlogDetailRoute({ blog: initialBlog }) {
   const [blog, setBlog] = useState(initialBlog);
@@ -14,8 +14,9 @@ export default function BlogDetailRoute({ blog: initialBlog }) {
       console.log("[Client Fetch Single Blog Raw Payload]:", apiData);
       const adapted = adaptApiBlogToLocal(apiData);
       console.log("[Client Fetch Single Blog Adapted]:", adapted);
+      console.log("[Slug Suggested Reads API data]:", initialBlog?.suggestedBlogs || []);
       if (adapted) {
-        setBlog(adapted);
+        setBlog({ ...adapted, suggestedBlogs: initialBlog.suggestedBlogs });
       }
     }
 
@@ -40,13 +41,15 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const apiData = await fetchBlogBySlug(params.slug);
   const blog = adaptApiBlogToLocal(apiData);
+  const relatedApiBlogs = await fetchPublishedBlogs(1, 50);
+  const suggestedBlogs = adaptApiBlogListToLocal(relatedApiBlogs).filter((item) => item.slug !== params.slug);
 
   if (!blog || blog.status !== "published") {
     return { notFound: true };
   }
 
   return {
-    props: { blog },
+    props: { blog: { ...blog, suggestedBlogs } },
     revalidate: 60,
   };
 }

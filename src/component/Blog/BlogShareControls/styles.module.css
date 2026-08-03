@@ -1,0 +1,6 @@
+.share { display: flex; align-items: center; gap: 10px; width: 100%; color: #65748d; font-family: var(--font-primary); font-size: 13px; font-weight: 800; }
+.left { justify-content: flex-start; }
+.center { justify-content: center; }
+.right { justify-content: flex-end; }
+.share button { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid #d9e4f2; border-radius: 50%; background: #fff; color: #263d78; cursor: pointer; }
+.share button:hover { border-color: #8db8e0; background: #edf7ff; }

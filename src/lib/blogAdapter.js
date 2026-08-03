@@ -14,17 +14,36 @@
  */
 
 // ─── Default fallback banner (BlogFirstBanner uses this) ─────────────────────
-const DEFAULT_BANNER = {
-  title: "Our Blog",
-  subtitle:
-    "Expert eye care guidance, medical insights, and patient stories from Pixel Eye Hospitals.",
-  image: "/assets/blog/blog_banner.png",
-  mobileImage: "/assets/blog/blog_banner.png",
-  mobileImageMedia: "(max-width: 767px)",
-  cta: { label: "Read More", href: "/blog" },
-  nav: { rightSlot: "book", navTheme: "light", cardBg: "transparent" },
-  showOverlay: false,
-  imagePosition: "center center",
+import { BLOG_BANNER_CONTENT } from "@/constant/blogBannerContent";
+import { normalizeCustomTemplateSettings } from "@/component/Blog/customTemplateSettings";
+
+const DEFAULT_BANNER = BLOG_BANNER_CONTENT;
+function parseJsonObject(value, fallback = {}) {
+  if (value && typeof value === "object" && !Array.isArray(value)) return value;
+  if (typeof value === "string") {
+    try {
+      const parsed = JSON.parse(value);
+      return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : fallback;
+    } catch {
+      return fallback;
+    }
+  }
+  return fallback;
+}
+
+const DEFAULT_TEMPLATE_TWO_SIDEBAR = {
+  appointment_cta: {
+    heading: "Book an Appointment",
+    description: "Get a precise diagnosis and a treatment plan from our eye care team.",
+    book_appointment: { label: "Schedule Now", url: "/appointment" },
+    call_now: { label: "Call Now", phone: "07075008561", url: "tel:07075008561" },
+  },
+  newsletter: {
+    heading: "Get Eye-Care Guidance",
+    description: "Receive expert medical tips and news from our specialists directly in your inbox.",
+    email_placeholder: "Your Email Address",
+    button_label: "Subscribe Now",
+  },
 };
 
 // ─── Template key normalisation (API uses underscores) ───────────────────────
@@ -39,7 +58,7 @@ function blockId(prefix) {
 }
 
 // ─── Assemble main article blocks from blocks_json.blocks ────────────────────
-function buildBlocks(blocksJson = {}, contentHtml = "") {
+function buildBlocks(blocksJson = {}, contentHtml = "", slug = "") {
   const blocks = [];
 
   // 1. Rich HTML content (Main article intro / body)
@@ -138,6 +157,7 @@ function buildBlocks(blocksJson = {}, contentHtml = "") {
     blocks.push({
       id: blockId("helpful"),
       type: "feedbackShare",
+      slug,
     });
   }
 
@@ -155,11 +175,49 @@ function buildBlocks(blocksJson = {}, contentHtml = "") {
 }
 
 // ─── Assemble sidebar blocks for template_2 ──────────────────────────────────
-function buildSidebarBlocks() {
+function safeAppointmentUrl(value, fallback) {
+  if (typeof value !== "string") return fallback;
+  const trimmed = value.trim();
+  if (/^\/(?!\/)/.test(trimmed) || /^https?:\/\//i.test(trimmed)) return trimmed;
+  return fallback;
+}
+
+function safeCallUrl(value, fallback) {
+  return typeof value === "string" && /^tel:\+?\d{7,15}$/.test(value.trim()) ? value.trim() : fallback;
+}
+
+function buildSidebarBlocks(config = {}) {
+  const fallbackAppointment = DEFAULT_TEMPLATE_TWO_SIDEBAR.appointment_cta;
+  const fallbackNewsletter = DEFAULT_TEMPLATE_TWO_SIDEBAR.newsletter;
+  const appointment = config?.appointment_cta || fallbackAppointment;
+  const book = appointment?.book_appointment || fallbackAppointment.book_appointment;
+  const call = appointment?.call_now || fallbackAppointment.call_now;
+  const newsletter = config?.newsletter || fallbackNewsletter;
   return [
     { id: "sidebar-toc", type: "toc", title: "In This Article" },
-    { id: "sidebar-appointment", type: "appointmentCta", title: "Book Appointment" },
-    { id: "sidebar-newsletter", type: "newsletter", title: "Get Eye-Care Guidance" },
+    {
+      id: "sidebar-appointment",
+      type: "appointmentCta",
+      title: appointment.heading || fallbackAppointment.heading,
+      description: appointment.description ?? fallbackAppointment.description,
+      book_appointment: {
+        label: book.label || fallbackAppointment.book_appointment.label,
+        url: safeAppointmentUrl(book.url, fallbackAppointment.book_appointment.url),
+      },
+      call_now: {
+        label: call.label || fallbackAppointment.call_now.label,
+        phone: call.phone || fallbackAppointment.call_now.phone,
+        url: safeCallUrl(call.url, fallbackAppointment.call_now.url),
+      },
+    },
+    {
+      id: "sidebar-newsletter",
+      type: "newsletter",
+      title: newsletter.heading || fallbackNewsletter.heading,
+      description: newsletter.description || fallbackNewsletter.description,
+      email_placeholder: newsletter.email_placeholder || fallbackNewsletter.email_placeholder,
+      button_label: newsletter.button_label || fallbackNewsletter.button_label,
+    },
   ];
 }
 
@@ -173,7 +231,8 @@ export function adaptApiBlogToLocal(apiData) {
   if (!apiData) return null;
 
   const version = apiData.published_version || {};
-  const blocksJson = version.blocks_json?.blocks || {};
+  const rawBlocksJson = parseJsonObject(version.blocks_json || version.blocksJson);
+  const blocksJson = rawBlocksJson.blocks || {};
   const heroMeta = blocksJson.hero || {};
   const featuredMedia = apiData.featured_media || {};
   const templateKey = normaliseTemplateKey(version.template_key || "template-1");
@@ -181,8 +240,8 @@ export function adaptApiBlogToLocal(apiData) {
   const readingMinutes = heroMeta.reading_time_minutes;
   const readTime = readingMinutes ? `${readingMinutes} min read` : null;
 
-  const blocks = buildBlocks(blocksJson, version.content_html || "");
-  const sidebarBlocks = templateKey === "template-2" ? buildSidebarBlocks() : [];
+  const blocks = buildBlocks(blocksJson, version.content_html || "", apiData.slug);
+  const sidebarBlocks = templateKey === "template-2" ? buildSidebarBlocks(rawBlocksJson.sidebar) : [];
 
   return {
     // Identifiers
@@ -233,8 +292,8 @@ export function adaptApiBlogToLocal(apiData) {
     sidebarBlocks,
 
     // Custom Builder Template data
-    templateConfigJson: version.template_config_json || null,
-    rawBlocksJson: version.blocks_json || {},
+    templateConfigJson: normalizeCustomTemplateSettings(parseJsonObject(version.template_config_json || version.templateConfigJson, null)),
+    rawBlocksJson,
     contentHtml: version.content_html || "",
     featuredMedia,
   };
@@ -244,7 +303,7 @@ export function adaptApiBlogToLocal(apiData) {
  * Helper to resolve block content data for a specific blockId and componentKey.
  * Used by CustomTemplateGrid to hydrate builder component instances.
  */
-export function resolveBlockData(blocksJson = {}, blockId = "", componentKey = "", contentHtml = "", compSettings = {}) {
+export function resolveBlockData(blocksJson = {}, blockId = "", componentKey = "", contentHtml = "", compSettings = {}, slug = "") {
   // 1. Rich Text Article Content comes from content_html
   if (componentKey === "rich_article_content" || componentKey === "article_content") {
     return { id: blockId, type: "richHtml", html: contentHtml };
@@ -253,14 +312,14 @@ export function resolveBlockData(blocksJson = {}, blockId = "", componentKey = "
   // 2. Check if this is a custom instance created in the builder
   if (blocksJson?.custom_instances && blocksJson.custom_instances[blockId]) {
     const instance = blocksJson.custom_instances[blockId];
-    return normalizeCustomInstanceData(instance, componentKey, blockId, compSettings);
+    return { ...normalizeCustomInstanceData(instance, componentKey, blockId, compSettings), enabled: instance.enabled !== false, slug };
   }
 
   // 3. Fallback to standard singleton blocks
   const standardBlocks = blocksJson?.blocks || {};
   if (standardBlocks[componentKey]) {
     const std = standardBlocks[componentKey];
-    return normalizeStandardBlockData(std, componentKey, blockId, compSettings);
+    return { ...normalizeStandardBlockData(std, componentKey, blockId, compSettings), enabled: std.enabled !== false, slug };
   }
 
   // 4. Fallback for settings-based components like appointment_card / appointment_cta / medical_disclaimer / disclaimer
@@ -275,6 +334,17 @@ export function resolveBlockData(blocksJson = {}, blockId = "", componentKey = "
     };
   }
 
+  if (componentKey === "newsletter_card" || componentKey === "newsletter") {
+    return {
+      id: blockId,
+      type: "newsletter",
+      title: compSettings.heading || compSettings.title || "Get Eye-Care Guidance",
+      description: compSettings.description || "Receive expert medical tips and news from our specialists directly in your inbox.",
+      email_placeholder: compSettings.emailPlaceholder || compSettings.email_placeholder || "Your Email Address",
+      button_label: compSettings.buttonLabel || compSettings.button_label || "Subscribe Now",
+      ...compSettings,
+    };
+  }
   if (componentKey === "medical_disclaimer" || componentKey === "disclaimer") {
     return {
       id: blockId,
@@ -300,18 +370,41 @@ export function resolveBlockData(blocksJson = {}, blockId = "", componentKey = "
     };
   }
 
-  if (componentKey === "feedback_share" || componentKey === "feedback" || componentKey === "share") {
-    return {
-      id: blockId,
-      type: "feedbackShare",
-      ...compSettings,
-    };
+  if (componentKey === "feedback_share") {
+    return { id: blockId, type: "feedbackShare", slug, ...compSettings };
+  }
+  if (componentKey === "feedback") {
+    return { id: blockId, type: "feedback", slug, prompt: "Was this article helpful?", enabled: true, ...compSettings };
+  }
+  if (componentKey === "share") {
+    return { id: blockId, type: "share", slug, enabled: true, ...compSettings };
   }
 
   return { id: blockId, ...compSettings };
 }
 
 function normalizeCustomInstanceData(instance = {}, componentKey = "", blockId = "") {
+  if (componentKey === "hero") {
+    return {
+      id: blockId,
+      type: "hero",
+      category: instance.category || "",
+      breadcrumb: instance.breadcrumb || [],
+      reviewer: {
+        name: instance.reviewer?.name || "",
+        role: instance.reviewer?.credentials || instance.reviewer?.role || "",
+      },
+      readTime: instance.reading_time_minutes ? `${instance.reading_time_minutes} min read` : "",
+    };
+  }
+
+  if (componentKey === "feedback") {
+    return { id: blockId, type: "feedback", prompt: instance.prompt || "Was this article helpful?" };
+  }
+
+  if (componentKey === "share") {
+    return { id: blockId, type: "share" };
+  }
   if (componentKey === "expert_quote") {
     return {
       id: blockId,

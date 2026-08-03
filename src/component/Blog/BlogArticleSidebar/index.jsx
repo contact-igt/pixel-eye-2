@@ -6,7 +6,7 @@ function toAnchor(id) {
 
 export default function BlogArticleSidebar({ data = {}, settings = {}, articleBlocks = [] }) {
   const title = data.title || data.heading || settings.heading || settings.title || "In This Article";
-  const links = articleBlocks.filter((block) => (block.title || block.heading) && block.id);
+  const links = articleBlocks.filter((block) => (block.title || block.heading) && block.id && (!block.headingLevel || (settings.headingLevels || [2, 3, 4]).includes(block.headingLevel)));
 
   const displayLinks = links.length
     ? links
@@ -19,7 +19,7 @@ export default function BlogArticleSidebar({ data = {}, settings = {}, articleBl
       ];
 
   return (
-    <nav className={styles.card} aria-label={title}>
+    <nav className={`${styles.card} ${settings.sticky ? styles.sticky : ""}`} aria-label={title}>
       <h2>{title}</h2>
       <ul>
         {displayLinks.map((block, idx) => (

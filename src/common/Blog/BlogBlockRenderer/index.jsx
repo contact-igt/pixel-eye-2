@@ -32,7 +32,7 @@ const BLOCK_MAP = {
   doctorProfile: BlogDoctorInsight,
 };
 
-export default function BlogBlockRenderer({ blocks = [], variant = "template-1" }) {
+export default function BlogBlockRenderer({ blocks = [], variant = "template-1", suggestedBlogs = [], currentSlug }) {
   if (!blocks.length) {
     return process.env.NODE_ENV !== "production" ? <BlogEmptyState /> : null;
   }
@@ -46,7 +46,7 @@ export default function BlogBlockRenderer({ blocks = [], variant = "template-1" 
       ) : null;
     }
 
-    return <BlockComponent key={block.id} data={block} variant={variant} />;
+    return <BlockComponent key={block.id} data={block} variant={variant} blogs={suggestedBlogs} currentSlug={currentSlug} />;
   });
 }
 

@@ -1,6 +1,7 @@
 import BlogHero from "@/component/Blog/BlogHero";
 import BlogBlockRenderer from "@/common/Blog/BlogBlockRenderer";
 import BlogContainer from "@/common/Blog/BlogContainer";
+import SuggestedReads from "@/component/About/SuggestedReads";
 import styles from "./styles.module.css";
 
 const TEMPLATE_ONE_BLOCK_ORDER = [
@@ -34,11 +35,14 @@ export default function TemplateOne({ blog }) {
       <BlogContainer variant="article">
         <div className={styles.articleFlow}>
           <BlogBlockRenderer
-            blocks={orderTemplateOneBlocks(blog.blocks)}
+            blocks={orderTemplateOneBlocks((blog.blocks || []).filter((block) => block.type !== "suggestedReads"))}
             variant="template-1"
+            suggestedBlogs={blog.suggestedBlogs}
+            currentSlug={blog.slug}
           />
         </div>
       </BlogContainer>
+      <SuggestedReads />
     </>
   );
 }

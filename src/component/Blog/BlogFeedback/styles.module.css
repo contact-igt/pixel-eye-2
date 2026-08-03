@@ -1,0 +1,8 @@
+.feedback { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; width: 100%; padding: 22px 0; border-top: 1px solid #d7dfeb; border-bottom: 1px solid #d7dfeb; color: #5c697b; font-family: var(--font-primary); }
+.feedback p { margin: 0; font-size: 14px; font-weight: 800; }
+.actions { display: flex; gap: 8px; }
+.actions button { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 8px 13px; border: 1px solid #d4e1f0; border-radius: 999px; background: #fff; color: #31517c; cursor: pointer; font-weight: 700; }
+.actions button[aria-pressed="true"] { border-color: #0877c9; background: #edf7ff; color: #0068bd; }
+.actions button:disabled { cursor: not-allowed; opacity: .55; }
+.success { color: #1f8a4c; font-size: 12px; font-weight: 700; }
+.error { color: #c0392b; font-size: 12px; font-weight: 700; }

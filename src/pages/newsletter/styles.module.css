@@ -1,0 +1,47 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  padding: 64px 16px;
+  min-height: 50vh;
+}
+
+.card {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #1b2b4b;
+}
+
+.text {
+  margin: 0 auto 24px;
+  max-width: 480px;
+  color: #4a5670;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.consentRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: left;
+  font-size: 13px;
+  color: #4a5670;
+  margin: 0 auto 24px;
+  max-width: 480px;
+}
+
+.consentRow input {
+  margin-top: 3px;
+}

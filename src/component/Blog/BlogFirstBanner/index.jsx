@@ -18,10 +18,12 @@ export default function BlogFirstBanner({ data = {} }) {
       frameClassName={styles.bannerFrame}
       imageClassName={styles.bannerImage}
       copyClassName={styles.bannerCopy}
+      cta={data.cta}
       mobileCta={data.cta}
     />
   );
 }
+
 
 
 

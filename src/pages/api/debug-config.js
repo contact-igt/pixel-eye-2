@@ -1,7 +1,4 @@
-/**
- * Debug endpoint to check environment configuration
- * Visit: http://localhost:3000/api/debug-config
- */
+
 
 export default function handler(req, res) {
   const config = {

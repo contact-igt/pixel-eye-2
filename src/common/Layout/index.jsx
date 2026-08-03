@@ -22,7 +22,10 @@ const PAGES_WITH_OWN_NAV = [
   "/privacy-policy",
   "/thank-you",
   "/error",
+  "/blog",
   "/blog/[slug]",
+  "/newsletter/verify",
+  "/newsletter/resubscribe",
 ];
 
 export default function Layout({ children }) {
@@ -43,5 +46,3 @@ export default function Layout({ children }) {
     </div>
   );
 }
-
-

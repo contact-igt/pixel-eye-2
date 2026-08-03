@@ -1,4 +1,4 @@
-﻿.card {
+.card {
   padding: 20px;
   border-radius: 8px;
   background: #eaf4ff;
@@ -28,3 +28,6 @@
   font-size: 13px;
   font-weight: 700;
 }
+
+.sticky { position: sticky; top: 96px; }
+@media (max-width: 992px) { .sticky { position: static; } }
