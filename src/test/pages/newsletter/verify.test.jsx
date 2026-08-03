@@ -1,7 +1,7 @@
 import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { useRouter } from "next/router";
-import NewsletterVerifyPage from "./verify";
+import NewsletterVerifyPage from "@/pages/newsletter/verify";
 import * as apiService from "@/lib/apiService";
 
 vi.mock("next/router", () => ({ useRouter: vi.fn() }));
@@ -91,3 +91,4 @@ describe("NewsletterVerifyPage", () => {
     expect(document.body.textContent).not.toContain("super-secret-raw-token-value");
   });
 });
+

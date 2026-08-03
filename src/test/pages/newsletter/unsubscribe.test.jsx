@@ -2,7 +2,7 @@ import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { useRouter } from "next/router";
-import NewsletterUnsubscribePage from "./unsubscribe";
+import NewsletterUnsubscribePage from "@/pages/newsletter/unsubscribe";
 import * as apiService from "@/lib/apiService";
 
 vi.mock("next/router", () => ({ useRouter: vi.fn() }));
@@ -87,3 +87,4 @@ describe("NewsletterUnsubscribePage", () => {
     await waitFor(() => expect(replace).toHaveBeenCalledWith("/newsletter/unsubscribe", undefined, { shallow: true }));
   });
 });
+

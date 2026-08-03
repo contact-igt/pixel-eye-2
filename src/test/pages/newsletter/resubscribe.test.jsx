@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { useRouter } from "next/router";
-import NewsletterResubscribePage from "./resubscribe";
+import NewsletterResubscribePage from "@/pages/newsletter/resubscribe";
 import * as apiService from "@/lib/apiService";
 
 vi.mock("next/router", () => ({ useRouter: vi.fn() }));
@@ -27,3 +27,4 @@ describe("NewsletterResubscribePage", () => {
     expect(spy).not.toHaveBeenCalled();
   });
 });
+
