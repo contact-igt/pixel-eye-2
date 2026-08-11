@@ -30,6 +30,8 @@ export default function CustomTemplateGrid({ blog = {} }) {
   const page = templateConfig.page || {};
   const pageClassName = [
     styles.pageLayout,
+    settingClass("pageWidth", page.contentWidth || page.width),
+    settingClass("pageBackground", page.background || page.backgroundStyle),
     settingClass("pageSpacing", page.spacing),
     settingClass("pageTypography", page.typography)
   ].filter(Boolean).join(" ");
