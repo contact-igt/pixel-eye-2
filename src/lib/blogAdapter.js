@@ -304,8 +304,18 @@ export function adaptApiBlogToLocal(apiData) {
  * Used by CustomTemplateGrid to hydrate builder component instances.
  */
 export function resolveBlockData(blocksJson = {}, blockId = "", componentKey = "", contentHtml = "", compSettings = {}, slug = "") {
-  // 1. Rich Text Article Content comes from content_html
+  // 1. Rich Text Article Content:
+  // Main article content sentinel ("article_content") uses global contentHtml.
+  // Repeated placements (unique blockId) use custom_instances[blockId].html.
   if (componentKey === "rich_article_content" || componentKey === "article_content") {
+    if (blockId === "article_content" || !blockId) {
+      return { id: blockId || "article_content", type: "richHtml", html: contentHtml };
+    }
+    if (blocksJson?.custom_instances && blocksJson.custom_instances[blockId]) {
+      const instance = blocksJson.custom_instances[blockId];
+      const html = instance.html || instance.content_html || instance.contentHtml || contentHtml;
+      return { id: blockId, type: "richHtml", html, enabled: instance.enabled !== false };
+    }
     return { id: blockId, type: "richHtml", html: contentHtml };
   }
 
@@ -384,6 +394,15 @@ export function resolveBlockData(blocksJson = {}, blockId = "", componentKey = "
 }
 
 function normalizeCustomInstanceData(instance = {}, componentKey = "", blockId = "") {
+  if (componentKey === "rich_article_content") {
+    return {
+      id: blockId,
+      type: "richHtml",
+      html: instance.html || instance.content_html || instance.contentHtml || "",
+      enabled: instance.enabled !== false,
+    };
+  }
+
   if (componentKey === "hero") {
     return {
       id: blockId,

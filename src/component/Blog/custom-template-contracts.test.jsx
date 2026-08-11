@@ -38,6 +38,19 @@ describe("Website Custom Template contracts", () => {
     expect(COMPONENT_CAPABILITIES.spacer).toMatchObject({ editableInBlog: false, requiresBlockId: false });
   });
 
+  it("resolves main Rich Article Content from contentHtml and repeated Rich Article Content from custom_instances", () => {
+    const blocksJson = {
+      custom_instances: {
+        rich_extra: { componentKey: "rich_article_content", enabled: true, html: "<p>Second rich article content</p>" }
+      }
+    };
+    const mainData = resolveBlockData(blocksJson, "article_content", "rich_article_content", "<p>Main article body</p>");
+    expect(mainData).toMatchObject({ id: "article_content", type: "richHtml", html: "<p>Main article body</p>" });
+
+    const extraData = resolveBlockData(blocksJson, "rich_extra", "rich_article_content", "<p>Main article body</p>");
+    expect(extraData).toMatchObject({ id: "rich_extra", type: "richHtml", html: "<p>Second rich article content</p>" });
+  });
+
   it("honors Spacer size and Divider style contracts", () => {
     const { container } = render(<><BlogSpacer settings={{ size: "large" }} /><BlogDivider settings={{ style: "dashed" }} /></>);
     expect(container.firstElementChild).toHaveStyle({ height: "64px" });

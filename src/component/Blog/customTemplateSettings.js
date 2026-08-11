@@ -29,6 +29,7 @@ export function normalizeCustomTemplateSettings(rawConfig) {
       ...rawSection,
       enabled: rawSection.enabled ?? true,
       responsiveStrategy: rawSection.responsiveStrategy ?? (rawSection.layout === "content_sidebar" ? "sidebar_below_on_tablet" : "stack_on_mobile"),
+      background: legacyBackground,
       settings: {
         width: "inherit",
         backgroundStyle: legacyBackground,
@@ -37,8 +38,6 @@ export function normalizeCustomTemplateSettings(rawConfig) {
         ...(rawSection.settings || {})
       }
     };
-    
-    delete section.background;
 
     if (!Array.isArray(rawSection.slots)) return section;
     section.slots = rawSection.slots.map((rawSlot) => {
