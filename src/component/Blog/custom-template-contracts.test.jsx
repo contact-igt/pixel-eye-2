@@ -164,6 +164,37 @@ describe("Website Custom Template contracts", () => {
     expect(container.querySelector('[data-section-layout="full_width"]')?.className).toContain("sectionBackground_sky");
    });
 
+  it("carries a Data & Comparison Table instance through the full custom_instances pipeline", () => {
+    const blog = {
+      slug: "table-article",
+      rawBlocksJson: { custom_instances: {
+        table_one: {
+          componentKey: "table",
+          enabled: true,
+          heading: "LASIK Treatment Comparison",
+          content: "Compare the available treatment options.",
+          headers: ["Procedure", "Recovery Time", "Success Rate"],
+          rows: [["LASIK", "24 hours", "99%"], ["PRK", "3-5 days", "98%"]]
+        }
+      } },
+      templateConfigJson: {
+        schemaVersion: 1, layoutId: "table-layout",
+        page: { contentWidth: "full", background: "white", spacing: "normal", typography: "editorial" },
+        sections: [{ id: "table-section", layout: "full_width", responsiveStrategy: "stack_on_mobile", enabled: true, slots: [{ id: "table-slot", name: "Main", components: [
+          { id: "table", componentKey: "table", blockId: "table_one", enabled: true, settings: { variant: "striped", headerStyle: "brand_sky", alignment: "left", maxRows: 4, maxColumns: 4 } }
+        ] }] }]
+      }
+    };
+    const { container } = render(<CustomTemplateGrid blog={blog} />);
+    expect(screen.getByRole("heading", { name: "LASIK Treatment Comparison" })).toBeInTheDocument();
+    expect(screen.getByText("Procedure")).toBeInTheDocument();
+    expect(screen.getByText("PRK")).toBeInTheDocument();
+    expect(container.querySelectorAll('[data-component-key="table"]')).toHaveLength(1);
+    expect(container.querySelectorAll("table thead th")).toHaveLength(3);
+    expect(container.querySelectorAll("table tbody tr")).toHaveLength(2);
+    expect(screen.queryByText("This content is currently unavailable.")).not.toBeInTheDocument();
+  });
+
   it("maps every Page-level option and omits disabled Sections", () => {
     const options = [
       ["narrow", "soft_gray", "compact", "modern"],

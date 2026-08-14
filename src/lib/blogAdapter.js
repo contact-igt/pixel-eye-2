@@ -500,6 +500,17 @@ function normalizeCustomInstanceData(instance = {}, componentKey = "", blockId =
     };
   }
 
+  if (componentKey === "table") {
+    return {
+      id: blockId,
+      type: "table",
+      heading: instance.heading || "",
+      content: instance.content || "",
+      headers: Array.isArray(instance.headers) ? instance.headers : [],
+      rows: Array.isArray(instance.rows) ? instance.rows : [],
+    };
+  }
+
   return { id: blockId, ...instance };
 }
 
