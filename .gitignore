@@ -23,6 +23,9 @@
 # misc
 .DS_Store
 *.pem
+*.md
+!README.md
+/.tmp/
 
 # debug
 npm-debug.log*

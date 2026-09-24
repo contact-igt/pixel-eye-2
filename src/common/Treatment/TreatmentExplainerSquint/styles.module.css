@@ -243,4 +243,15 @@
     }
 }
 
+@media (min-width: 1200px) {
+  .explainer {
+    width: min(var(--container-max), calc(100% - 208px));
+  }
+
+  .title,
+  .copy {
+    padding-left: 0;
+  }
+}
+
 

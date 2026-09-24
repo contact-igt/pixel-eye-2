@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you
+Disallow: /newsletter/
+Disallow: /api/
+
+Sitemap: https://www.pixeleyehospitals.com/sitemap.xml

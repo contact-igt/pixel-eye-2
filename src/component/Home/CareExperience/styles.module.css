@@ -11,7 +11,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 730px;
+  grid-template-columns: minmax(0, 1fr) 740px;
   gap: 32px;
   align-items: center;
 }
@@ -44,7 +44,8 @@
 .card {
   background: var(--bg-surface);
   border-radius: var(--radius-card-md) 0 0 var(--radius-card-md);
-  padding: 150px 0 40px 120px;
+  margin-left: clamp(80px, calc((100vw - 1248px) / 2), 100px);
+  padding: 150px 0 40px;
   box-shadow: none;
 }
 
@@ -66,11 +67,11 @@
 
 .imageWrap {
   position: relative;
-  height: 420px;
+  height: 440px;
   border-radius: 0 var(--radius-card-md) var(--radius-card-md) 0;
   overflow: hidden;
   transform: scale(1.4);
-  right: 150px;
+  right: 170px;
 }
 
 .image {
@@ -115,7 +116,14 @@
   }
 
   .card {
-    padding: 180px 0 40px 50px;
+    margin-left: 50px;
+    padding: 180px 0 40px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .card {
+    margin-left: clamp(80px, calc((100vw - 1248px) / 2), 100px);
   }
 }
 
@@ -140,7 +148,7 @@
   }
 
   .card {
-    padding: 134px 0 40px 50px;
+    padding: 134px 0 40px;
   }
 
 }
@@ -171,6 +179,7 @@
   }
 
   .card {
+    margin-left: 0;
     padding: 0;
     background: transparent;
     border-radius: 0;

@@ -340,3 +340,9 @@
     gap: 8px;
   }
 }
+
+@media (min-width: 1200px) {
+  .treatment-causes {
+    width: min(var(--container-max), calc(100% - 208px));
+  }
+}

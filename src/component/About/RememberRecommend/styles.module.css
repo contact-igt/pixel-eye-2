@@ -6,7 +6,8 @@
 
 
 .inner {
-  width: min(1600px, calc(100% - 160px));
+  width: calc(100% - var(--section-px) - var(--section-px));
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
@@ -219,6 +220,13 @@
   font-size: 14px;
   line-height: 1;
   font-weight: 500;
+}
+
+@media (min-width: 1200px) {
+  .inner {
+    width: min(var(--container-max), calc(100% - 208px));
+    max-width: none;
+  }
 }
 
 @media (max-width: 1399px) {

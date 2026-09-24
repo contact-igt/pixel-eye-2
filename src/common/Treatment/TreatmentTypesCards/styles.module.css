@@ -13,7 +13,8 @@
     margin-top:50px
 }
 
-.types-cards[data-treatment-slug="lasik"] {
+.types-cards[data-treatment-slug="lasik"],
+.types-cards[data-treatment-slug="cataract"] {
     min-height: auto;
     padding-bottom: clamp(36px, 4vw, 56px);
 }
@@ -470,6 +471,15 @@
         font-size: 20px;
         min-height: 2.3em;
     }
+}
+
+@media (min-width: 1200px) {
+  .types-cards {
+    width: min(var(--container-max), calc(100% - 208px));
+    margin-inline: auto;
+    padding-inline: 0;
+    overflow: visible;
+  }
 }
 
 @media (max-width: 389px) {

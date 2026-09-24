@@ -427,3 +427,9 @@
     font-size: 12px;
   }
 }
+
+@media (min-width: 1200px) {
+  .inner {
+    width: min(var(--container-max), calc(100% - 208px));
+  }
+}

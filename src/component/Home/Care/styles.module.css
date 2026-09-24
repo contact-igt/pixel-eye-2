@@ -66,6 +66,7 @@
 }
 
 .card {
+  display: block;
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-card-md);
@@ -256,6 +257,16 @@
 
 }
 
+@media (min-width: 1200px) {
+  .careContainer {
+    width: min(var(--container2-max), calc(100% - 160px));
+    max-width: none;
+  }
+
+  .title {
+    margin-left: 0;
+  }
+}
 
 @media (max-width: 1199px) {
 

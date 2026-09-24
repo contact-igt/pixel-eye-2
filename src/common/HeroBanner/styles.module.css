@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.aboutMaskedSection {
+  width: 100%;
+}
+
 .bannerFrame {
   position: relative;
   overflow: hidden;
@@ -166,6 +170,12 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (min-width: 1200px) {
+  .aboutMaskedSection .copy {
+    left: max(80px, calc((100vw - 1448px) / 2));
   }
 }
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Button from "@/common/Button";
 import { HOME_CONTENT } from "@/constant/homeContent";
@@ -52,7 +53,7 @@ const Care = () => {
 
   return (
     <section className={styles.careSection}>
-      <div className={`container ${styles.careContainer}`}>
+      <div className={styles.careContainer}>
         <h2 className={styles.title}>
           {titleLine1}
           <br />
@@ -90,7 +91,11 @@ const Care = () => {
                 className={`${styles.cardWrap} ${wrapClass}`}
                 onMouseEnter={() => setActiveId(item.id)}
               >
-                <article className={`${styles.card} ${cardClass}`}>
+                <Link
+                  href={item.href}
+                  className={`${styles.card} ${cardClass}`}
+                  aria-label={`Learn about ${item.title}`}
+                >
                   <Image
                     src={cardImage}
                     alt={item.title}
@@ -108,7 +113,7 @@ const Care = () => {
                     className={`${styles.cardImage} ${styles.hoverImage} ${isActive ? styles.fadeIn : ""}`}
                   />
                   <h4 className={titleClass}>{item.title}</h4>
-                </article>
+                </Link>
                 {item.description && (
                   <p
                     className={`${styles.cardDescription} ${isActive ? styles.descriptionVisible : ""}`}

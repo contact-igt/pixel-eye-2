@@ -215,3 +215,10 @@
     padding-top: 50px;
   }
 }
+
+@media (min-width: 1200px) {
+  .card {
+    width: min(var(--container-max), calc(100% - 160px));
+    max-width: none;
+  }
+}

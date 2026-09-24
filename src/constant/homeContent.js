@@ -1,4 +1,4 @@
-export const HOME_CONTENT = {
+﻿export const HOME_CONTENT = {
   stats: [
     { id: 1, number: "99%", label: "Cataract\nSuccess Rate" },
     { id: 2, number: "8,000+", label: "Successful\nEye Surgeries" },
@@ -80,7 +80,7 @@ export const HOME_CONTENT = {
 
         description:
           "Advanced micro-incision cataract surgery (MICS) and premium lens implants (IOL) to restore clear, sharp vision.",
-        href: "#",
+        href: "/service/cataract",
       },
       {
         id: 2,
@@ -92,7 +92,7 @@ export const HOME_CONTENT = {
         imageHover_mb: "/assets/Home/care2-hover-mb.png",
         description:
           "Laser vision correction including LASIK, SMILE, and PRK for myopia, hyperopia, and astigmatism with high-precision platforms.",
-        href: "#",
+        href: "/service/lasik",
       },
       {
         id: 3,
@@ -104,7 +104,7 @@ export const HOME_CONTENT = {
         imageHover_mb: "/assets/Home/care3-hover-mb.png",
         description:
           "Diagnostic imaging, laser procedures, and VEGF therapy, and surgical management for retinal and glaucoma conditions.",
-        href: "#",
+        href: "/service/retina",
       },
     ],
   },
@@ -152,7 +152,7 @@ export const HOME_CONTENT = {
         title: "Expertise & Precision",
         description:
           "Our experienced specialists use the latest diagnostic tools and surgical technology for precise, effective outcomes.",
-        image: "/assets/Home/choose1.png",
+        image: "/assets/Brand/woman-refraction-exam-colour.png",
         href: "/about",
         buttonLabel: "Read More",
       },
@@ -161,7 +161,7 @@ export const HOME_CONTENT = {
         title: "Patient First Care",
         description:
           "We treat you, not just your eyes. Every treatment is tailored to your needs.",
-        image: "/assets/Home/choose2.png",
+        image: "/assets/Brand/doctor-boy-eye-checkup-colour.png",
         href: "/appointment",
         buttonLabel: "Read More",
       },
@@ -170,7 +170,7 @@ export const HOME_CONTENT = {
         title: "Transparent & Comfortable",
         description:
           "We believe in open, honest communication  clear pricing, informed consent, and a relaxed environment at every step.",
-        image: "/assets/Home/choose3.png",
+        image: "/assets/Brand/grandmother-granddaughter-reading-covered.png",
         href: "/appointment",
         buttonLabel: "Read More",
       },
@@ -195,7 +195,7 @@ export const HOME_CONTENT = {
   },
 
   specialist: {
-    title: "Our Specialists",
+    title: "Our Founders",
     background: {
       src: "/assets/Home/specialistbg.png",
       alt: "Specialists background",

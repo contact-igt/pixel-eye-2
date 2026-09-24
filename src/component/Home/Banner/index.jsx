@@ -83,18 +83,6 @@ export default function Banner() {
           </RevealOnView>
         </div>
 
-        {/* Slider dots — above the booking panel */}
-        <div className={styles.sliderDots} aria-hidden>
-          {slides.map((slide, index) => (
-            <span
-              key={`${slide.image.src}-${index}`}
-              className={
-                index === activeSlideIndex ? styles.sliderDotActive : ""
-              }
-            />
-          ))}
-        </div>
-
         {/* Booking panel — white notched card at bottom-right */}
         <div className={styles.bookArea}>
           <Link

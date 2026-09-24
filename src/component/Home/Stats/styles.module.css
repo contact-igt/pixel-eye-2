@@ -1,5 +1,5 @@
 .statsSection {
-  padding: var(--section-pt) 0 var(--section-pb);
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
   margin-top: 100px;
 }
 

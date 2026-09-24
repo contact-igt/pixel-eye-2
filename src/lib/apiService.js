@@ -12,7 +12,9 @@ const API_BASE = configuredApiBase.startsWith('http://') || configuredApiBase.st
 
 function apiUrl(path) {
   const normalizedPath = path.startsWith('/') ? path : '/' + path;
-  return API_BASE + normalizedPath;
+  return typeof window === "undefined"
+    ? API_BASE + normalizedPath
+    : "/api/backend" + normalizedPath;
 }
 
 if (!API_BASE) {

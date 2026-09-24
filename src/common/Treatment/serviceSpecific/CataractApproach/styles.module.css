@@ -262,7 +262,14 @@
 @media (max-width: 389px) {
     .cataract-approach__img {
         height: 220px;
-    }
+}
+
+@media (min-width: 1200px) {
+  .cataract-approach__inner {
+    width: min(var(--container-max), calc(100% - 208px));
+    max-width: none;
+  }
+}
 } */
 
 
