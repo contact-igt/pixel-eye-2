@@ -164,7 +164,7 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           className={styles["treatment-hero"]}
           frameClassName={styles["treatment-hero__frame"]}
           imageClassName={styles["treatment-hero__image"]}
-          copyClassName={`${heroCopyThemeClass} ${useTreatmentCopy ? styles.heroBannerCopyMobileOnly : ""} ${hasExtraMobileSubtitleGap ? styles.treatmentHeroCopySpaciousMobile : ""}`.trim()}
+          copyClassName={`${heroCopyThemeClass} ${useTreatmentCopy ? styles.heroBannerCopyMobileOnly : styles.treatmentHeroBannerCopyDesktop} ${hasExtraMobileSubtitleGap ? styles.treatmentHeroCopySpaciousMobile : ""}`.trim()}
         />
 
         {useTreatmentCopy && heroBannerTitle && (

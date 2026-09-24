@@ -4,7 +4,22 @@ import { useRouter } from "next/router";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
 import submitForm from "@/lib/formService";
-import { NAV_CONTENT } from "@/constant/navContent";
+
+const SYMPTOM_OPTIONS = [
+  "Eye redness or irritation",
+  "Dry, burning, or gritty eyes",
+  "Blurred or reduced vision",
+  "Eye pain or headache around the eyes",
+  "Watering, discharge, or itching",
+  "Floaters, flashes, or spots in vision",
+  "Difficulty seeing at night or glare from lights",
+  "Squint or eyes not aligned",
+  "Child's eye or vision concern",
+  "Eyelid swelling, drooping, or lump",
+  "Glasses or contact lens power concern",
+  "Routine eye check-up",
+  "Other eye concern",
+];
 
 const initialForm = {
   fullName: "",
@@ -372,9 +387,9 @@ const Form = () => {
             <option value="" disabled>
               Select symptoms or condition
             </option>
-            {NAV_CONTENT.servicesDropdown.map((service) => (
-              <option key={service.id} value={service.label}>
-                {service.label}
+            {SYMPTOM_OPTIONS.map((symptom) => (
+              <option key={symptom} value={symptom}>
+                {symptom}
               </option>
             ))}
           </SelectField>

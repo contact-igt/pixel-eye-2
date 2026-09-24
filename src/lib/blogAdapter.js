@@ -117,7 +117,8 @@ function buildBlocks(blocksJson = {}, contentHtml = "", slug = "") {
       doctor: {
         name: eq.name || "",
         role: eq.role || "",
-        image: eq.url || eq.original_url || eq.media?.original_url || eq.profile_url || null,
+        image: eq.url || eq.original_url || eq.media?.original_url || null,
+        profileUrl: eq.profile_url || null,
       },
     });
   }
@@ -432,7 +433,8 @@ function normalizeCustomInstanceData(instance = {}, componentKey = "", blockId =
       doctor: {
         name: instance.name || "",
         role: instance.role || "",
-        image: instance.url || instance.original_url || instance.media?.original_url || instance.profile_url || null,
+        image: instance.url || instance.original_url || instance.media?.original_url || null,
+        profileUrl: instance.profile_url || null,
       },
     };
   }
@@ -554,7 +556,8 @@ function normalizeStandardBlockData(std = {}, componentKey = "", blockId = "") {
       doctor: {
         name: std.name || "",
         role: std.role || "",
-        image: std.url || std.original_url || std.media?.original_url || std.profile_url || null,
+        image: std.url || std.original_url || std.media?.original_url || null,
+        profileUrl: std.profile_url || null,
       },
     };
   }

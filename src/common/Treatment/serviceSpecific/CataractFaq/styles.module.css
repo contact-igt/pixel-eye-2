@@ -239,3 +239,10 @@
     }
 }
 
+@media (min-width: 1200px) {
+  .cataract-faq__inner {
+    width: min(var(--container-max), calc(100% - 208px));
+    max-width: none;
+  }
+}
+

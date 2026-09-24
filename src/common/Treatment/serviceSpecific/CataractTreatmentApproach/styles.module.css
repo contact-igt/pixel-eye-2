@@ -404,3 +404,24 @@
         font-size: 13px;
     } */
 }
+
+@media (min-width: 1200px) {
+  .treatment-approach,
+  .treatment-approach--full {
+    width: min(var(--container-max), calc(100% - 208px));
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .treatment-approach__overlay,
+  .treatment-approach__overlay--wide {
+    align-items: center;
+    padding-inline: 0;
+  }
+
+  .treatment-approach__content {
+    position: static;
+    width: 90%;
+    margin: 0 0 0 10%;
+  }
+}

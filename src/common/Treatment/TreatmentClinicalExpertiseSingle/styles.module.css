@@ -270,3 +270,14 @@
     }
 }
 
+@media (min-width: 1200px) {
+  .clinical-expertise--single .clinical-expertise__inner {
+    width: min(var(--container-max), calc(100% - 208px));
+    max-width: none;
+  }
+
+  .clinical-expertise__header {
+    margin-left: 0;
+  }
+}
+

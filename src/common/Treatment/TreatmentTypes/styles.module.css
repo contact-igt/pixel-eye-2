@@ -625,6 +625,12 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .treatment-types {
+    width: min(var(--container-max), calc(100% - 208px));
+  }
+}
+
 /* Mobile: switch to mobile banner image + static copy + card rail */
 @media (max-width: 768px) {
   .treatment-types__hero {

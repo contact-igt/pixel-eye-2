@@ -5,7 +5,7 @@
 }
 
 .container {
-  max-width: 1600px;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
@@ -28,7 +28,7 @@
   line-height: var(--h2-lh);
   color: var(--text-heading);
   font-weight: 500;
-  margin: 20px 50px;
+  margin: 20px clamp(50px, calc((100vw - 1308px) / 2), 70px);
 }
 
 /* ── Client frames — absolute, full width band ─────────── */
@@ -74,7 +74,7 @@
 .clientImg:nth-child(1) {
   left: 1.5%;
   top: 40px;
-  width: 180px;
+  width: 165px;
   object-fit: cover;
   object-position: top;
   height: 150px;
@@ -84,7 +84,7 @@
 .clientImg:nth-child(2) {
   left: 1.5%;
   top: 225px;
-  width: 180px;
+  width: 165px;
   object-fit: cover;
   object-position: 100% 20%;
   height: 150px;
@@ -92,9 +92,9 @@
 }
 
 .clientImg:nth-child(3) {
-  left: 220px;
+  left: 205px;
   top: 33px;
-  width: 190px;
+  width: 175px;
   border-radius: 18px;
   object-fit: cover;
   object-position: top;
@@ -102,9 +102,9 @@
 }
 
 .clientImg:nth-child(4) {
-  left: 220px;
+  left: 205px;
   top: 165px;
-  width: 190px;
+  width: 175px;
   border-radius: 18px;
   object-fit: cover;
   object-position: top;
@@ -113,9 +113,9 @@
 
 /* center row (larger) */
 .clientImg:nth-child(5) {
-  left: 215px;
+  left: 205px;
   top: 295px;
-  width: 190px;
+  width: 175px;
   border-radius: 18px;
   object-fit: cover;
   object-position: top;
@@ -125,7 +125,7 @@
 .clientImg:nth-child(6) {
   left: 28.4%;
   top: 55px;
-  width: 150px;
+  width: 140px;
   object-fit: cover;
   height: 185px;
   border-radius: 18px;
@@ -134,7 +134,7 @@
 .clientImg:nth-child(7) {
   left: 39.4%;
   top: 20px;
-  width: 150px;
+  width: 140px;
   object-fit: cover;
   height: 185px;
   border-radius: 18px;
@@ -143,7 +143,7 @@
 .clientImg:nth-child(8) {
   left: 50.6%;
   top: 20px;
-  width: 150px;
+  width: 140px;
   object-fit: cover;
   height: 185px;
   border-radius: 18px;
@@ -153,7 +153,7 @@
 .clientImg:nth-child(9) {
   right: 28.2%;
   top: 55px;
-  width: 150px;
+  width: 140px;
   object-fit: cover;
   height: 185px;
   border-radius: 18px;
@@ -162,7 +162,7 @@
 .clientImg:nth-child(10) {
   right: 14.5%;
   top: 33px;
-  width: 190px;
+  width: 175px;
   border-radius: 18px;
   object-fit: cover;
   object-position: top;
@@ -172,7 +172,7 @@
 .clientImg:nth-child(11) {
   right: 14.5%;
   top: 163px;
-  width: 190px;
+  width: 175px;
   border-radius: 18px;
   object-fit: cover;
   object-position: 90% 15%;
@@ -182,7 +182,7 @@
 .clientImg:nth-child(12) {
   right: 14.5%;
   top: 290px;
-  width: 190px;
+  width: 175px;
   border-radius: 18px;
   object-fit: cover;
   object-position: 90% 20%;
@@ -192,7 +192,7 @@
 .clientImg:nth-child(13) {
   right: 1.5%;
   top: 40px;
-  width: 180px;
+  width: 165px;
   object-fit: cover;
   object-position: 100% 20%;
   height: 150px;
@@ -202,7 +202,7 @@
 .clientImg:nth-child(14) {
   right: 1.5%;
   top: 215px;
-  width: 180px;
+  width: 165px;
   object-fit: cover;
   object-position: 100% 20%;
   height: 150px;
@@ -440,31 +440,31 @@
   }
 
   .clientImg:nth-child(6) {
-    left: 27.65%;
+    left: 28%;
     top: 55px;
-    width: 140px;
+    width: 135px;
     height: 180px;
   }
 
   .clientImg:nth-child(7) {
-    left: 38.5%;
+    left: 38.9%;
     top: 20px;
-    width: 140px;
+    width: 135px;
     height: 180px;
   }
 
   .clientImg:nth-child(8) {
     left: 49.8%;
     top: 20px;
-    width: 140px;
+    width: 135px;
     height: 180px;
   }
 
   /* right cluster (two columns of two) */
   .clientImg:nth-child(9) {
-    right: 29.2%;
+    right: 29.5%;
     top: 55px;
-    width: 140px;
+    width: 135px;
     height: 180px;
   }
 
@@ -505,6 +505,8 @@
 @media (max-width: 1399px) {
   .title {
     font-size: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .clientImg:nth-child(1) {
@@ -605,6 +607,13 @@
 
   .testimonialsSection {
     margin-top: 60px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .title {
+    margin-left: clamp(50px, calc((100vw - 1308px) / 2), 70px);
+    margin-right: clamp(50px, calc((100vw - 1308px) / 2), 70px);
   }
 }
 

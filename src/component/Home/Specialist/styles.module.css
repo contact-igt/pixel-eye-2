@@ -1,507 +1,611 @@
 .specialistSection {
-    margin-top: 100px;
-    background: transparent;
-    padding: var(--section-px);
+  margin-top: 100px;
+  background: transparent;
+  padding: var(--section-px);
 }
 
 .frame {
-    margin: 0 auto;
-    border-radius: var(--radius-card-md);
-    overflow: hidden;
-    position: relative;
-    height: 600px;
-    background: #6ea0b5;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  border-radius: var(--radius-card-md);
+  overflow: hidden;
+  position: relative;
+  height: 600px;
+  background: #6ea0b5;
 }
 
 .bgWrap {
-    position: absolute;
-    top: 164px;
-    bottom: 0;
-    left: 1px;
-    width: 240px;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
-    height: 475px;
+  position: absolute;
+  top: 164px;
+  bottom: 0;
+  left: 1px;
+  width: 240px;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+  height: 475px;
 }
 
-
 .bgImage {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .inner {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    padding: 34px 32px 34px 150px;
-    display: block;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 34px 32px 34px 150px;
+  display: block;
 }
 
 .title {
-    margin: 80px 0 12px 190px;
-    color: #ffffff;
-    text-align: start;
-    font-size: 45px;
-    line-height: var(--h2-lh);
-    font-weight: 400;
-    position: relative;
-    z-index: 12;
+  margin: 80px 0 12px clamp(80px, calc((100vw - 1248px) / 2), 100px);
+  color: #ffffff;
+  text-align: start;
+  font-size: 45px;
+  line-height: var(--h2-lh);
+  font-weight: 400;
+  position: relative;
+  z-index: 12;
 }
 
 .doctorsWrap {
-    position: relative;
-    height: calc(100% - 160px);
+  position: relative;
+  height: calc(100% - 160px);
 }
 
 .doctor {
-    position: absolute;
-    bottom: -76px;
-    width: 450px;
-    height: 420px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 10px;
-    z-index: 3;
-    outline: none;
+  position: absolute;
+  bottom: -76px;
+  width: 450px;
+  height: 420px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 3;
+  outline: none;
 }
 
 .doctorImage {
-    flex: 0 0 220px;
-    height: 100%;
-    object-fit: contain;
-    object-position: bottom center;
-    position: relative;
-    z-index: 7;
-    cursor: pointer;
-    transform-origin: bottom center;
-    transition: transform 260ms ease;
+  flex: 0 0 220px;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  position: relative;
+  z-index: 7;
+  cursor: default;
+  transform-origin: bottom center;
+  transition: transform 260ms ease;
 }
 
 .doctorActive .doctorImage {
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 .left {
-    left: 120px;
+  left: 0;
 }
 
 .right {
-    right: 6%;
-    flex-direction: row-reverse;
+  right: 0;
+  flex-direction: row-reverse;
 }
 
 .right .doctorName {
-    text-align: right;
+  text-align: right;
 }
 
 .doctorName {
-    flex: 1;
-    padding-bottom: 50px;
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.3;
-    word-break: break-word;
+  flex: 1;
+  padding-bottom: 50px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  word-break: break-word;
 }
 
 .doctorHoverCard {
-    position: absolute;
-    left: 76%;
-    top: 25px;
-    width: 400px;
-    border-radius: 18px;
-    background: rgba(29, 52, 108, 0.96);
-    color: #ffffff;
-    box-shadow: 0 18px 40px rgba(14, 24, 54, 0.26);
-    opacity: 0;
-    transform: translate(-50%, 14px) scale(0.98);
-    transition: opacity 220ms ease, transform 220ms ease;
-    pointer-events: none;
-    z-index: 2;
-    height: 225px;
-    padding: 30px 70px;
+  position: absolute;
+  left: 76%;
+  top: 50px;
+  width: 370px;
+  border-radius: 18px;
+  background: rgba(29, 52, 108, 0.96);
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(14, 24, 54, 0.26);
+  opacity: 0;
+  transform: translate(-50%, 14px) scale(0.98);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+  pointer-events: none;
+  z-index: 2;
+  height: 210px;
+  padding: 30px 70px;
 }
 
-
 .doctorHoverCard2 {
-    position: absolute;
-    left: 20%;
-    top: 25px;
-    width: 400px;
-    border-radius: 18px;
-    background: rgba(29, 52, 108, 0.96);
-    color: #ffffff;
-    box-shadow: 0 18px 40px rgba(14, 24, 54, 0.26);
-    opacity: 0;
-    transform: translate(-50%, 14px) scale(0.98);
-    transition: opacity 220ms ease, transform 220ms ease;
-    pointer-events: none;
-    z-index: 2;
-    height: 225px;
-    padding: 30px 70px;
+  position: absolute;
+  left: 20%;
+  width: 370px;
+  border-radius: 18px;
+  background: rgba(29, 52, 108, 0.96);
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(14, 24, 54, 0.26);
+  opacity: 0;
+  transform: translate(-50%, 14px) scale(0.98);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+  pointer-events: none;
+  z-index: 2;
+  top: 50px;
+  height: 210px;
+  padding: 30px 70px;
 }
 
 .doctorHoverName {
-    font-size: 26px;
-    line-height: 1.2;
-    font-weight: 500;
-    margin-bottom: 10px;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .doctorHoverContent {
-    min-width: 0;
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 400;
-    color: #DADADA;
-    white-space: normal;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #dadada;
+  white-space: normal;
 }
 
 .doctorActive .doctorHoverCard {
-    opacity: 1;
-    transform: translate(-50%, 0) scale(1);
-    z-index: 2;
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+  z-index: 2;
 }
 
 .doctorActive .doctorHoverCard2 {
-    opacity: 1;
-    transform: translate(-50%, 0) scale(1);
-    z-index: 2;
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+  z-index: 2;
 }
 
 .doctorActive .doctorName {
-    opacity: 0;
-
+  opacity: 0;
 }
-
 
 @media (max-width: 1599px) {
+  .doctorHoverCard {
+    position: absolute;
+    left: 73%;
+    top: 25px;
+    width: 370px;
+    height: 193px;
+    padding: 50px 70px;
+  }
 
-    .doctorHoverCard {
-        position: absolute;
-        left: 73%;
-        top: 25px;
-        width: 370px;
-        height: 193px;
-        padding: 50px 70px;
-    }
-
-    .doctorHoverCard2 {
-        position: absolute;
-        left: 20%;
-        top: 25px;
-        width: 370px;
-        height: 193px;
-        padding: 30px 70px;
-    }
-
+  .doctorHoverCard2 {
+    position: absolute;
+    left: 20%;
+    top: 25px;
+    width: 370px;
+    height: 193px;
+    padding: 30px 70px;
+  }
 }
-
-
 
 @media (max-width: 1399px) {
+  .frame {
+    height: 560px;
+  }
 
+  .doctor {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    height: 350px;
+  }
 
+  .doctorImage {
+    flex: 1 1 auto;
+    height: calc(100% - 40px);
+    width: auto;
+  }
 
+  .doctorName {
+    text-align: center !important;
+    padding-bottom: 8px;
+    width: 100%;
+  }
 
-    .frame {
-        height: 560px;
-    }
+  .doctorHoverCard {
+    top: 0;
+    width: 220px;
+  }
 
-    .doctor {
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: flex-end;
-        height: 350px;
-    }
+  .bgWrap {
+    position: absolute;
+    top: 180px;
+    left: 1px;
+    width: 250px;
+    height: 510px;
+  }
 
-    .doctorImage {
-        flex: 1 1 auto;
-        height: calc(100% - 40px);
-        width: auto;
-    }
+  .left {
+    left: -100px;
+  }
 
-    .doctorName {
-        text-align: center !important;
-        padding-bottom: 8px;
-        width: 100%;
-    }
+  .right {
+    right: -30px;
+  }
 
-    .doctorHoverCard {
-        top: 0;
-        width: 220px;
-    }
+  .doctorHoverCard {
+    top: 26px;
+    width: 300px;
+    left: 86%;
+    width: 340px;
+    height: 193px;
+    padding: 35px 50px;
+  }
 
-    .bgWrap {
-        position: absolute;
-        top: 180px;
-        left: 1px;
-        width: 250px;
-        height: 510px;
-    }
+  .doctorHoverCard2 {
+    top: 26px;
+    width: 300px;
+    left: 10%;
+    width: 340px;
+    height: 193px;
+    padding: 40px;
+  }
 
-    .left {
-        left: -100px;
-    }
+  .title {
+    margin: 56px 0 12px 97px;
 
-    .right {
-        right: -30px;
-    }
-
-    .doctorHoverCard {
-        top: 26px;
-        width: 300px;
-        left: 86%;
-        width: 340px;
-        height: 193px;
-        padding: 35px 50px;
-
-    }
-
-    .doctorHoverCard2 {
-        top: 26px;
-        width: 300px;
-        left: 10%;
-        width: 340px;
-        height: 193px;
-        padding: 40px;
-
-    }
-
-    .title {
-        margin: 56px 0 12px 97px;
-
-        font-size: 45px;
-
-    }
-
+    font-size: 45px;
+  }
 }
 
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .title {
+    margin-left: clamp(80px, calc((100vw - 1248px) / 2), 100px);
+  }
 
+  .left {
+    left: -120px;
+  }
+
+  .right {
+    right: -60px;
+  }
+}
 
 @media (max-width: 1199px) {
-    .frame {
-        height: 500px;
-    }
+  .frame {
+    height: 500px;
+  }
 
+  .bgWrap {
+    top: 75px;
+    left: 1px;
+    width: 210px;
+    height: 460px;
+  }
 
-    .bgWrap {
-        top: 75px;
-        left: 1px;
-        width: 210px;
-        height: 460px;
-    }
+  .doctor {
+    width: 300px;
+    height: 320px;
+    bottom: -90px;
+  }
 
-    .doctor {
-        width: 300px;
-        height: 320px;
-        bottom: -90px;
-    }
+  .doctorHoverCard {
+    top: 59px;
+    width: 300px;
+    left: 99%;
+    width: 289px;
+    height: 170px;
+    padding: 35px 45px;
+  }
 
-    .doctorHoverCard {
-        top: 59px;
-        width: 300px;
-        left: 99%;
-        width: 289px;
-        height: 170px;
-        padding: 35px 45px;
-    }
+  .doctorHoverCard2 {
+    top: 59px;
+    width: 300px;
+    left: 1%;
+    width: 289px;
+    height: 170px;
+    padding: 15px 45px;
+  }
 
-    .doctorHoverCard2 {
-        top: 59px;
-        width: 300px;
-        left: 1%;
-        width: 289px;
-        height: 170px;
-        padding: 15px 45px;
-    }
+  .title {
+    margin: 50px 0 12px 150px;
+    font-size: 40px;
+  }
 
-    .title {
-        margin: 50px 0 12px 150px;
-        font-size: 40px;
-    }
-
-    .doctorHoverName {
-        font-size: 20px;
-    }
+  .doctorHoverName {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 991px) {
-    .frame {
-        height: 500px;
-    }
+  .frame {
+    height: 500px;
+  }
 
-    .doctorImage {
-        flex: 0 0 270px;
-        height: calc(100% - 40px);
-        width: auto;
-        /* flex: 0 0 220px;
+  .doctorImage {
+    flex: 0 0 270px;
+    height: calc(100% - 40px);
+    width: auto;
+    /* flex: 0 0 220px;
     height: 100%;
     object-fit: contain;
     object-position: bottom center; */
-    }
+  }
 
-    .doctor {
-        width: 260px;
-        height: 320px;
-    }
+  .doctor {
+    width: 260px;
+    height: 320px;
+  }
 
-    .bgWrap {
-        width: 220px;
-    }
+  .bgWrap {
+    width: 220px;
+  }
 
-    .inner {
-        padding-left: 120px;
-    }
+  .inner {
+    padding-left: 120px;
+  }
 
-    .left {
-        left: -21%;
-    }
+  .left {
+    left: -21%;
+  }
 
-    .right {
-        right: -10%;
-    }
+  .right {
+    right: -10%;
+  }
 
-    .doctorHoverCard2 {
-        left: -10%;
-    }
+  .doctorHoverCard2 {
+    left: -10%;
+  }
 
-    .doctorHoverCard {
-        left: 110%;
-    }
+  .doctorHoverCard {
+    left: 110%;
+  }
 }
 
 @media (max-width: 767px) {
-    .frame {
-        height: 380px;
-    }
+  .frame {
+    height: 380px;
+  }
 
-    .inner {
-        padding: 24px 20px 24px 90px;
-    }
+  .inner {
+    padding: 24px 20px 24px 90px;
+  }
 
-    .doctor {
-        width: 200px;
-        height: 260px;
-    }
+  .doctor {
+    width: 200px;
+    height: 260px;
+  }
 
-    .doctorImage {
-        flex: 0 0 210px;
-    }
+  .doctorImage {
+    flex: 0 0 210px;
+  }
 
-    .doctorsWrap {
-        height: calc(100% - 130px);
-    }
+  .doctorsWrap {
+    height: calc(100% - 130px);
+  }
 
-    .title {
-        margin: 34px 0 12px 0;
-        text-align: center;
-        padding-left: 0;
-    }
-
+  .title {
+    margin: 34px 0 12px 0;
+    text-align: center;
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 575px) {
-    .specialistSection {
-        padding-top: 28px;
-        padding-bottom: 28px;
-    }
+  .specialistSection {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
 
-    .frame {
-        height: 650px;
-    }
+  .frame {
+    height: 650px;
+  }
 
-    .bgWrap {
-        top: 142px;
-        width: 175px;
-        height: 390px;
+  .bgWrap {
+    top: 142px;
+    width: 175px;
+    height: 390px;
+  }
 
-    }
+  .inner {
+    padding: 18px 14px 18px 56px;
+  }
 
-    .inner {
-        padding: 18px 14px 18px 56px;
-    }
+  .title {
+    margin: 34px 0 12px 0;
+    text-align: center;
+    font-size: 26px;
+  }
 
-    .title {
-        margin: 34px 0 12px 0;
-        text-align: center;
-        font-size: 26px;
-    }
+  .right {
+    top: 30px;
+    right: -15px;
+  }
 
-    .right {
-        top: 30px;
-        right: -15px;
-    }
+  .left {
+    bottom: -120px;
+    left: -50px;
+  }
 
-    .left {
-        bottom: -120px;
-        left: -50px;
-    }
+  .doctorName {
+    display: none;
+  }
 
-    .doctorName {
-        display: none;
-    }
+  .doctor {
+    width: 150px;
+    height: 270px;
+  }
 
-    .doctor {
-        width: 150px;
-        height: 270px;
-    }
+  .doctorHoverCard2 {
+    top: 47px;
+    width: 300px;
+    left: -46%;
+    width: 338px;
+    height: 178px;
+    padding: 30px 79px 30px 22px;
+  }
 
-    .doctorHoverCard2 {
-        top: 47px;
-        width: 300px;
-        left: -46%;
-        width: 338px;
-        height: 178px;
-        padding: 30px 79px 30px 22px;
-
-    }
-
-    .doctorHoverCard {
-        top: 32px;
-        left: 140%;
-        width: 302px;
-        height: 162px;
-        padding: 31px 10px 30px 70px;
-    }
-
+  .doctorHoverCard {
+    top: 32px;
+    left: 140%;
+    width: 302px;
+    height: 162px;
+    padding: 31px 10px 30px 70px;
+  }
 }
 
+@media (max-width: 400px) {
+  .doctorHoverCard2 {
+    top: 47px;
+    width: 300px;
+    left: -35%;
+    width: 260px;
+    height: 178px;
+    padding: 20px 70px 0px 20px;
+  }
 
-@media (max-width : 400px) {
+  .doctorHoverCard {
+    top: 32px;
+    left: 130%;
+    width: 250px;
+    height: 162px;
+    padding: 20px 10px 0px 60px;
+  }
 
-    .doctorHoverCard2 {
-        top: 47px;
-        width: 300px;
-        left: -35%;
-        width: 260px;
-        height: 178px;
-        padding: 20px 70px 0px 20px;
+  .doctorHoverName {
+    font-size: 18px;
+  }
 
-    }
+  .doctorHoverContent {
+    font-size: 12px;
+  }
+}
 
-    .doctorHoverCard {
-        top: 32px;
-        left: 130%;
-        width: 250px;
-        height: 162px;
-        padding: 20px 10px 0px 60px;
-    }
+/* Two persistent bio panels need a stacked layout below tablet width. */
+@media (max-width: 991px) {
+  .frame {
+    height: auto;
+    min-height: 0;
+    padding-bottom: 0;
+  }
 
-    .doctorHoverName {
-        font-size: 18px;
-    }
+  .title {
+    margin: 34px 16px 20px;
+    padding: 0;
+    text-align: center;
+    font-size: clamp(26px, 5vw, 36px);
+  }
 
-    .doctorHoverContent {
-        font-size: 12px;
-    }
+  .inner {
+    height: auto;
+    padding: 0 16px;
+  }
 
+  .doctorsWrap {
+    display: grid;
+    height: auto;
+    gap: 16px;
+    padding-bottom: 0;
+  }
+
+  .doctor,
+  .left,
+  .right {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 190px;
+    display: block;
+  }
+
+  .doctorImage {
+    position: absolute;
+    bottom: 0;
+    width: 142px;
+    height: 190px;
+    flex: none;
+    transform: none;
+  }
+
+  .left .doctorImage {
+    left: 0;
+  }
+
+  .right .doctorImage {
+    right: 0;
+  }
+
+  .doctorHoverCard,
+  .doctorHoverCard2 {
+    top: 0;
+    width: auto;
+    height: auto;
+    min-height: 160px;
+    padding: 24px;
+    transform: none;
+  }
+
+  .left .doctorHoverCard {
+    left: 80px;
+    right: auto;
+    width: min(360px, calc(100% - 128px));
+  }
+
+  .right .doctorHoverCard2 {
+    right: 85px;
+    left: auto;
+    width: min(360px, calc(100% - 128px));
+  }
+
+  .right .doctorImage {
+    bottom: 0px;
+  }
+
+  .doctorActive .doctorHoverCard,
+  .doctorActive .doctorHoverCard2,
+  .doctorActive .doctorImage {
+    transform: none;
+  }
+
+  .doctorHoverName {
+    font-size: 20px;
+  }
+
+  .doctorHoverContent {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 430px) {
+  .doctorImage {
+    right: -20px !important;
+  }
+  .doctorHoverCard2 {
+    right: 60px !important;
+    width: min(360px, calc(100% - 55px)) !important;
+  }
+  .left .doctorImage {
+    left: -20px !important;
+  }
+  .doctorHoverCard {
+    width: min(360px, calc(100% - 65px)) !important;
+    left: 70px !important;
+  }
 }

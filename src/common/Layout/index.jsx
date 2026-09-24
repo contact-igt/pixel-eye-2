@@ -8,6 +8,7 @@ const PAGES_WITH_OWN_NAV = [
   "/",
   "/about",
   "/doctors",
+  "/doctors/[slug]",
   "/appointment",
   "/service",
   "/service/cataract",

@@ -705,3 +705,10 @@
     bottom: 25px;
   }
 }
+
+@media (min-width: 1200px) {
+  .surgical-options__inner {
+    width: min(var(--container-max), calc(100% - 208px));
+    max-width: none;
+  }
+}

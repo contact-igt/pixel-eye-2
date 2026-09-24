@@ -5,6 +5,7 @@ import Protect from "@/component/Home/Protect";
 import WhyChoose from "@/component/Home/WhyChoose";
 import Specialist from "@/component/Home/Specialist";
 import CareExperience from "@/component/Home/CareExperience";
+import Insurance from "@/component/Home/Insurance";
 import Testimonials from "@/component/Home/Testimonials";
 import BlogsVideos from "@/component/Home/BlogsVideos";
 import VisionCta from "@/component/Home/VisionCta";
@@ -18,6 +19,7 @@ const Homepagecomponent = () => {
       <WhyChoose />
       <Specialist />
       <CareExperience />
+      <Insurance />
       <Stats />
       <Testimonials />
       <BlogsVideos />

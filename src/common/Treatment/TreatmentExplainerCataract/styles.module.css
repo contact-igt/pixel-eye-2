@@ -226,3 +226,9 @@
         border-radius: 18px;
     }
 }
+
+@media (min-width: 1200px) {
+  .explainer {
+    width: min(var(--container-max), calc(100% - 208px));
+  }
+}

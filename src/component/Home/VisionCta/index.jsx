@@ -19,7 +19,7 @@ const VisionCta = () => {
             alt={image.alt}
             fill
             className={`${styles.image} ${styles.imageDesktop}`}
-            sizes="(max-width: 767px) 1px, (max-width: 1200px) 100vw, 1200px"
+            sizes="(max-width: 767px) 1px, (max-width: 1400px) 100vw, 1400px"
             priority
             draggable={false}
           />

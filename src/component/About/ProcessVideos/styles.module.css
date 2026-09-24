@@ -9,8 +9,8 @@
 }
 
 .panel {
-
-  width: min(1470px, calc(100% - 70px));
+  width: calc(100% - var(--section-px) - var(--section-px));
+  max-width: var(--container-max);
   margin: 0 auto;
   padding: clamp(44px, 4vw, 56px) clamp(48px, 4vw, 60px) 44px;
 
@@ -326,6 +326,13 @@
 .watchBtn:hover>span:last-child svg,
 .exploreBtn:hover>span:last-child svg {
   transform: rotate(45deg) translate(1px, 0);
+}
+
+@media (min-width: 1200px) {
+  .panel {
+    width: min(var(--container-max), calc(100% - 208px));
+    max-width: none;
+  }
 }
 
 @media (max-width: 1399px) {

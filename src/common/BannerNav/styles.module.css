@@ -725,6 +725,13 @@
 }
 
 /* ─── Laptop ────────────────────────────────── 1199px ── */
+@media (max-width: 1200px) {
+  .logo {
+    width: clamp(150px, 14vw, 185px);
+    margin-top: 0;
+  }
+}
+
 @media (max-width: 1199px) {
 
   .inner {
@@ -753,13 +760,17 @@
     min-height: clamp(44px, 3.4vw, 68px);
   }
 
-  .logo {
-    width: clamp(135px, 12vw, 250px);
-    margin-top: 0px;
+}
 
+@media (min-width: 992px) and (max-width: 1200px) {
+  .nav {
+    display: flex;
+    gap: clamp(14px, 1.8vw, 22px);
   }
 
-
+  .menuBtn {
+    display: none;
+  }
 }
 
 /* ─── Tablet ────────────────────────────────── 991px ── */
@@ -815,7 +826,7 @@
   }
 
   .logo {
-    width: clamp(120px, 15vw, 160px);
+    width: clamp(130px, 16vw, 165px);
   }
 
   .nabhBadge {
@@ -862,7 +873,7 @@
   }
 
   .logo {
-    width: 110px;
+    width: 120px;
   }
 
   .nabhBadge {
@@ -922,7 +933,7 @@
 
 
   .logo {
-    width: 110px;
+    width: 120px;
   }
 
   .nabhBadge {
@@ -945,6 +956,6 @@
   }
 
   .logo {
-    width: 100px;
+    width: 110px;
   }
 }
