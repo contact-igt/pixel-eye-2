@@ -21,7 +21,7 @@ const DETAIL_ICONS = {
   "krishna-poojita": [GraduationCap, BarChart3, BookOpen],
   "niharika-tupuda": [Eye, Award, HandHeart],
   "roma-johri": [GraduationCap, Eye, Star, Users],
-  "udaya-sree": [GraduationCap, Eye, HandHeart],
+  "udaya-sree": [GraduationCap, Eye, Briefcase, HandHeart],
   "asha-samdani": [GraduationCap, Eye, BookOpen, HandHeart],
 };
 
@@ -49,9 +49,10 @@ const CARD_DETAIL_TEXT = {
     "Long-term care, patient education & personalised treatment",
   ],
   "udaya-sree": [
-    "Qualifications to be added",
-    "Specific specialties to be added",
-    "Personalised consultations and follow-up",
+    "MBBS, MS Ophthalmology & Vitreoretina Fellowship",
+    "1,500+ vitrectomies and complex retinal surgeries",
+    "Retinal detachment surgery & surgical training",
+    "Macular hole, dislocated IOL & aphakia management",
   ],
   "asha-samdani": [
     "Trained at AIIMS, New Delhi",
@@ -75,7 +76,12 @@ const CARD_DETAIL_TITLES = {
     "Professional Highlights",
     "Approach",
   ],
-  "udaya-sree": ["Background", "Clinical Expertise", "Patient Care"],
+  "udaya-sree": [
+    "Education & Training",
+    "Surgical Experience",
+    "Retinal Detachment",
+    "Advanced Procedures",
+  ],
   "asha-samdani": [
     "Education & Training",
     "Clinical Expertise",
@@ -92,10 +98,7 @@ const DoctorSpecialistsSection = () => (
 
     <div className={styles.inner}>
       <div className={styles.cards}>
-        {/* Temporarily hide Dr. Udaya Sree's card until her bio is ready. */}
         {DOCTOR_PROFILES.map((doctor, doctorIndex) => {
-          if (doctor.id === "udaya-sree") return null;
-
           return (
           <Link
             key={doctor.id}

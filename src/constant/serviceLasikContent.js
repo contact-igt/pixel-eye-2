@@ -82,9 +82,9 @@ export const SERVICE_LASIK_CONTENT = {
   },
 
   laserVisionOptions: {
-    title: "Laser vision correction options",
+    title: "Refractive vision correction options",
     description:
-      "Your doctor will suggest the right procedure based on your cornea, power, lifestyle, and eye health.",
+      "Your doctor will recommend the right laser or lens-based procedure based on your cornea, power, lifestyle, and eye health.",
     image: {
       src: "/assets/Service/Lasik/Subtract.png",
       mobileSrc: "/assets/Service/Lasik/vision_correction_mobile.png",
@@ -143,16 +143,24 @@ export const SERVICE_LASIK_CONTENT = {
   image: "/assets/Service/Lasik/trans-prk.webp",
   alt: "Trans-PRK laser vision correction procedure",
 },
+      {
+        id: "icl-ipcl",
+        title: "ICL / IPCL (Phakic IOL)",
+        description:
+          "A lens-based vision correction option in which a thin implantable lens is placed inside the eye while your natural lens remains in place. It may be considered for higher spectacle powers or when corneal laser treatment is not suitable, following a detailed eye evaluation.",
+        image: "/assets/Service/Lasik/icl-ipcl-v2.png",
+        alt: "Phakic intraocular lens positioned inside the eye",
+      },
     ],
   },
 
   surgicalOptions: {
-    titleLines: ["Our LASIK treatment", "approach"],
+    titleLines: ["Our refractive vision", "correction approach"],
     paragraphs: [
-      "At Pixel Eye Hospitals, LASIK is planned only after a detailed pre-LASIK evaluation.",
+      "At Pixel Eye Hospitals, laser and lens-based refractive procedures are planned only after a detailed eye evaluation.",
       "The aim is not just to remove glasses, but to choose the safest and most suitable vision correction option for your eyes.",
       "Your evaluation may include refraction testing, corneal mapping, corneal thickness measurement, dry-eye assessment, eye pressure check, and retinal examination when required.",
-      "Based on these results, the doctor will explain whether LASIK is suitable for you or whether another option would be safer.",
+      "Based on these results, the doctor will explain whether LASIK, SMILE, PRK, or a phakic IOL option such as ICL/IPCL is suitable for you.",
     ],
     options: [
       {
@@ -168,10 +176,10 @@ export const SERVICE_LASIK_CONTENT = {
         imageAlt: "Contoura topography-guided LASIK",
       },
       {
-        id: "common-lasik",
-        title: "Common LASIK ",
+        id: "conventional-lasik",
+        title: "Conventional LASIK",
         image: "/assets/Service/cataract/option3.png",
-        imageAlt: "Common LASIK procedure",
+        imageAlt: "Conventional LASIK procedure",
       },
     ],
   },
@@ -182,6 +190,12 @@ export const SERVICE_LASIK_CONTENT = {
     imageAlt: "LASIK FAQ consultation",
     note: "For personalised advice about LASIK and laser vision correction, schedule a consultation with our refractive surgery specialists. A detailed evaluation will help determine the safest and most suitable option for your eyes.",
     items: [
+      {
+        id: "what-is-icl-ipcl",
+        question: "What are ICL and IPCL (Phakic IOL) procedures?",
+        answer:
+          "ICL and IPCL are phakic intraocular lenses: a thin corrective lens is placed inside the eye without removing the natural lens. They may be considered for suitable adults with higher refractive errors or when corneal laser procedures are not appropriate. A detailed examination is needed to assess eye health, corneal shape, and the space inside the eye.",
+      },
       {
         id: "am-i-a-candidate-for-lasik",
         question: "Am I a candidate for LASIK?",
@@ -236,7 +250,7 @@ export const SERVICE_LASIK_CONTENT = {
   clinicalExpertise: {
     title: "Clinical expertise",
     intro:
-      "LASIK care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced",
+      "Laser refractive care at Pixel Eye Hospital is led by experienced ophthalmologists trained in advanced LASIK, surface laser procedures, and phakic IOL evaluation.",
     cardBg: "/assets/Service/cataract/clinicbg.png",
     cardBgAlt: "Pixel Eye clinic background",
     doctors: [

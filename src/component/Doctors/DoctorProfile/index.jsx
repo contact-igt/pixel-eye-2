@@ -18,6 +18,7 @@ import Button from "@/common/Button";
 import HeroBanner from "@/common/HeroBanner";
 import { DOCTORS_CONTENT } from "@/constant/doctorsContent";
 import styles from "./styles.module.css";
+import PublicationArchive from "@/component/Doctors/PublicationArchive";
 
 const ICONS = {
   education: GraduationCap,
@@ -154,6 +155,88 @@ export default function DoctorProfile({ doctor }) {
             ))}
           </ol>
         </section>
+
+        {doctor.publications?.length > 0 && <PublicationArchive publications={doctor.publications} />}
+
+        {/* Previous publication-card UI retained for reference.
+        {doctor.publications?.length > 0 && (() => {
+          const [featuredPublication, ...otherPublications] = doctor.publications;
+
+          return (
+          <section className={styles.publications} aria-labelledby="publications-title">
+            <header className={styles.sectionHeader}>
+              <div>
+                <p>Research</p>
+                <h2 id="publications-title">Published Research</h2>
+                <span>Peer-reviewed publications, international journals, clinical research and academic contributions.</span>
+              </div>
+              <a href="#publication-list" className={styles.allPublications}>
+                <BookOpen aria-hidden="true" /> View All Publications <ArrowUpRight aria-hidden="true" />
+              </a>
+            </header>
+
+            <article className={styles.featuredPublication}>
+              <div className={styles.featuredMedia}>
+                <Image
+                  src={featuredPublication.image}
+                  alt={featuredPublication.imageAlt}
+                  width={760}
+                  height={480}
+                  sizes="(max-width: 991px) 100vw, 46vw"
+                  className={styles.featuredImage}
+                />
+                <span className={styles.featuredBadge}>Featured Publication</span>
+              </div>
+              <div className={styles.featuredContent}>
+                <div className={styles.publicationMeta}>
+                  <p className={styles.journal}>{featuredPublication.journal}</p>
+                  <span className={styles.year}><CalendarDays aria-hidden="true" />{featuredPublication.year}</span>
+                </div>
+                <h3>{featuredPublication.title}</h3>
+                <ul className={styles.tags} aria-label="Publication topics">
+                  {featuredPublication.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+                <p>{featuredPublication.description}</p>
+                <div className={styles.featuredActions}>
+                  <a href={featuredPublication.href} target="_blank" rel="noopener noreferrer" className={styles.primaryPublicationLink}>
+                    View Publication <ArrowUpRight aria-hidden="true" />
+                  </a>
+                  <a href={featuredPublication.href} target="_blank" rel="noopener noreferrer" className={styles.abstractLink}>
+                    <FileText aria-hidden="true" /> Read Abstract
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <div id="publication-list" className={styles.publicationList}>
+              {otherPublications.map((publication) => (
+                <article key={publication.href} className={styles.publicationCard}>
+                  <div className={styles.cardMedia}>
+                    <Image src={publication.image} alt={publication.imageAlt} width={640} height={420} sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 32vw" className={styles.publicationImage} />
+                    <span className={styles.year}><CalendarDays aria-hidden="true" />{publication.year}</span>
+                  </div>
+                  <div className={styles.publicationContent}>
+                    <p className={styles.journal}>{publication.journal}</p>
+                    <h3>{publication.title}</h3>
+                    <p>{publication.description}</p>
+                    <div className={styles.publicationFooter}>
+                      <a
+                        href={publication.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.publicationLink}
+                      >
+                        <FileText aria-hidden="true" /> View Publication <ArrowUpRight aria-hidden="true" />
+                      </a>
+                      <span className={styles.publicationType}>{publication.type}</span>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+          );
+        })()} */}
 
         <div className={styles.closingGrid}>
           <section className={styles.expertise} aria-labelledby="expertise-title">
