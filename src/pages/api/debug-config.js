@@ -1,5 +1,7 @@
 
 
+import config from "@/lib/config";
+
 export default function handler(req, res) {
   const config = {
     environment: {
@@ -13,16 +15,8 @@ export default function handler(req, res) {
       NEXT_PUBLIC_PROD_API_URL: process.env.NEXT_PUBLIC_PROD_API_URL,
     },
     selected: {
-      env: process.env.NEXT_PUBLIC_ENV || 'local',
-      apiUrl: (() => {
-        const env = process.env.NEXT_PUBLIC_ENV || 'local';
-        const urls = {
-          local: process.env.NEXT_PUBLIC_LOCAL_API_URL,
-          dev: process.env.NEXT_PUBLIC_DEV_API_URL,
-          production: process.env.NEXT_PUBLIC_PROD_API_URL,
-        };
-        return urls[env] || 'NOT SET';
-      })(),
+      env: config.env,
+      apiUrl: config.api.base,
     },
     timestamp: new Date().toISOString(),
   };
