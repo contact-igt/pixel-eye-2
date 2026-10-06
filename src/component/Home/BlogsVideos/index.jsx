@@ -5,22 +5,35 @@ import { HOME_CONTENT } from "@/constant/homeContent";
 import Button from "@/common/Button";
 import { fetchPublishedBlogs } from "@/lib/apiService";
 import { adaptApiBlogListToLocal } from "@/lib/blogAdapter";
+import { getServiceBlogConfig, pickBlogsForService } from "@/lib/serviceBlogCategories";
 import styles from "./styles.module.css";
 
-const BlogsVideos = () => {
+/**
+ * Home page: the 4 latest published blogs.
+ * Service pages: pass `serviceSlug` to show only the latest (max 4) blogs whose category belongs to that
+ * service. The section renders nothing when the service has no matching blog.
+ */
+const BlogsVideos = ({ serviceSlug, limit = 4 }) => {
   const { blogsVideos } = HOME_CONTENT;
-  const { title, subtitle, cta } = blogsVideos;
+  const { cta } = blogsVideos;
+  const service = serviceSlug ? getServiceBlogConfig(serviceSlug) : null;
+  const title = service ? `Related ${service.label} Blogs` : blogsVideos.title;
+  const subtitle = service
+    ? `Read the latest eye-care insights and guidance on ${service.label.toLowerCase()} from our specialists.`
+    : blogsVideos.subtitle;
   const [blogItems, setBlogItems] = useState([]);
 
   useEffect(() => {
     let active = true;
 
     async function loadBlogs() {
-      const blogs = adaptApiBlogListToLocal(await fetchPublishedBlogs(1, 4));
-      if (!active || !blogs.length) return;
+      // Service pages filter by category, so look at the newest 100 published blogs; home just needs the latest.
+      const blogs = adaptApiBlogListToLocal(await fetchPublishedBlogs(1, serviceSlug ? 100 : limit));
+      const selected = serviceSlug ? pickBlogsForService(blogs, serviceSlug, limit) : blogs;
+      if (!active || !selected.length) return;
 
       setBlogItems(
-        blogs.map((blog) => ({
+        selected.map((blog) => ({
           id: blog.id || blog.slug,
           title: blog.hero.title || "Eye-care guide",
           image: blog.hero.coverImage,
@@ -33,7 +46,10 @@ const BlogsVideos = () => {
     return () => {
       active = false;
     };
-  }, []);
+  }, [serviceSlug, limit]);
+
+  // A service page with no matching blog shows no section at all.
+  if (serviceSlug && !blogItems.length) return null;
 
   return (
     <section className={styles.blogsSection}>

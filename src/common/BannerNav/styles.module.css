@@ -775,6 +775,14 @@
 
 /* ─── Tablet ────────────────────────────────── 991px ── */
 @media (max-width: 991px) {
+  .aboutMaskedNav .aboutMobileBadge {
+    display: block;
+  }
+
+  .aboutMaskedNav .bookBtn {
+    display: none;
+  }
+
 
   .inner {
     grid-template-columns: 1fr 1fr;
@@ -891,6 +899,7 @@
 
   .menuBtn {
     margin-left: 0;
+    right: 28%;
   }
 
 
@@ -909,7 +918,7 @@
 @media (max-width: 575px) {
 
   .rightCard {
-    padding: 0px;
+    padding: 0px 0px 5px 0px;
     margin: 0px;
   }
 
@@ -927,7 +936,7 @@
   .menuBtn {
     position: absolute;
     top: 20px;
-    right: 120px;
+    right: 140px;
   }
 
 
@@ -942,7 +951,11 @@
 
 }
 
-
+@media (max-width: 480px){
+  .menuBtn{
+    right: 120px;
+  }
+}
 
 @media (max-width: 400px) {
   .menuBtn {
@@ -952,10 +965,63 @@
 
   .nabhBadge {
     width: 80px;
-    margin-right: 9px;
+    /* margin-right: 9px; */
   }
 
   .logo {
     width: 110px;
   }
+}
+
+@media (max-width: 991px) {
+  .serviceMaskedNav .logoCard,
+  .serviceMaskedNav .rightCard {
+    min-height: 70px;
+    padding: 10px 24px;
+  }
+
+  .serviceMaskedNav .logoCard {
+    margin: 0;
+    justify-content: flex-start;
+  }
+
+  .serviceMaskedNav .rightCard {
+    margin: 0;
+    justify-content: flex-end;
+  }
+
+  .serviceMaskedNav .logo {
+    width: 120px;
+  }
+
+  .serviceMaskedNav .aboutMobileBadge {
+    display: block;
+  }
+
+  .serviceMaskedNav .aboutMobileBadge .nabhBadge {
+    width: 100px;
+  }
+
+  .serviceMaskedNav .bookBtn {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .serviceMaskedNav {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .serviceMaskedNav .logoCard,
+  .serviceMaskedNav .rightCard {
+    min-height: 70px;
+    padding: 5px;
+  }
+   .serviceMaskedNav .rightCard{
+    padding: 0px;
+   }
 }

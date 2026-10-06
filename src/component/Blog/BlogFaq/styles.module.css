@@ -58,3 +58,45 @@
 
 .layout_accordion .item { background: #edf6ff; }
 .layout_image_accordion .item { border: 1px solid #c9deef; background: linear-gradient(90deg, #edf6ff 0%, #ffffff 100%); }
+
+/* qa_list: numbered question / answer list, always open */
+.layout_qa_list h2 {
+  margin: 0 0 20px;
+  color: var(--text-heading, #293b77);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.qaList {
+  display: grid;
+  gap: 8px;
+}
+
+.qaItem h3 {
+  margin: 0 0 14px;
+  color: var(--text-heading, #293b77);
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.qaItem p {
+  max-width: none;
+  margin: 0 0 18px;
+  padding: 0;
+  color: var(--text-body, #5f6f96);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 767px) {
+  .qaItem p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+}

@@ -20,6 +20,9 @@ export default function BlogFirstBanner({ data = {} }) {
       copyClassName={styles.bannerCopy}
       cta={data.cta}
       mobileCta={data.cta}
+      showMobileNabhBadge
+      variant="aboutMasked"
+      tabletMobile
     />
   );
 }

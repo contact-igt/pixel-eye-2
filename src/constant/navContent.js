@@ -19,6 +19,7 @@ export const NAV_CONTENT = {
     { id: 2, label: "DOCTORS", href: "/doctors" },
     { id: 3, label: "TREATMENT", href: "/service" },
     { id: 4, label: "APPOINTMENT", href: "/appointment" },
+    { id: 5, label: "BLOG", href: "/blog" },
   ],
   servicesDropdown: [
     {

@@ -32,9 +32,10 @@ const PAGES_WITH_OWN_NAV = [
 export default function Layout({ children }) {
   const { pathname } = useRouter();
   const showNavbar = !PAGES_WITH_OWN_NAV.includes(pathname);
+  const isBlogListing = pathname === "/blog";
 
   return (
-    <div className={styles.layout}>
+    <div className={`${styles.layout} ${isBlogListing ? styles.allowSticky : ""}`.trim()}>
       {showNavbar && (
         <div className={styles.navHost}>
           <BannerNav rightSlot="book" navTheme="dark" cardBg="white" />

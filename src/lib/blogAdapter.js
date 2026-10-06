@@ -222,6 +222,34 @@ function buildSidebarBlocks(config = {}) {
   ];
 }
 
+// True when a hero component that is actually placed in the template has "Article header" selected.
+function usesArticleHeader(rawBlocksJson = {}, templateConfig = null) {
+  const instances = rawBlocksJson?.custom_instances;
+  const hero = findFirstActiveHero(templateConfig);
+  return Boolean(instances && hero && instances[hero.blockId]?.header_style === "article");
+}
+
+// Only the first active Hero placement is used (older templates may contain extra, ignored ones).
+export function findFirstActiveHero(templateConfig = null) {
+  if (!Array.isArray(templateConfig?.sections)) return null;
+  for (const section of templateConfig.sections) {
+    if (section.enabled === false) continue;
+    for (const slot of section.slots || []) {
+      for (const component of slot.components || []) {
+        if (component.componentKey === "hero" && component.enabled !== false) return component;
+      }
+    }
+  }
+  return null;
+}
+
+function findCustomHeroCategory(rawBlocksJson = {}) {
+  const instances = rawBlocksJson?.custom_instances;
+  if (!instances || typeof instances !== "object") return "";
+  const hero = Object.values(instances).find((instance) => instance?.componentKey === "hero" && typeof instance.category === "string" && instance.category.trim());
+  return hero ? hero.category.trim() : "";
+}
+
 // ─── Main adapter ─────────────────────────────────────────────────────────────
 /**
  * Convert a raw API blog payload into the local `blog` object shape.
@@ -243,6 +271,8 @@ export function adaptApiBlogToLocal(apiData) {
 
   const blocks = buildBlocks(blocksJson, version.content_html || "", apiData.slug);
   const sidebarBlocks = templateKey === "template-2" ? buildSidebarBlocks(rawBlocksJson.sidebar) : [];
+
+  const templateConfigJson = normalizeCustomTemplateSettings(parseJsonObject(version.template_config_json || version.templateConfigJson, null));
 
   return {
     // Identifiers
@@ -292,8 +322,13 @@ export function adaptApiBlogToLocal(apiData) {
     blocks,
     sidebarBlocks,
 
+    // Category used by sidebar widgets (Custom Template blogs keep it on the hero custom instance)
+    categoryLabel: heroMeta.category || findCustomHeroCategory(rawBlocksJson),
+
     // Custom Builder Template data
-    templateConfigJson: normalizeCustomTemplateSettings(parseJsonObject(version.template_config_json || version.templateConfigJson, null)),
+    templateConfigJson,
+    useArticleHeader: usesArticleHeader(rawBlocksJson, templateConfigJson),
+    relatedBlogIds: Array.isArray(rawBlocksJson.related_blog_ids) ? rawBlocksJson.related_blog_ids.map(String) : [],
     rawBlocksJson,
     contentHtml: version.content_html || "",
     featuredMedia,
@@ -343,6 +378,11 @@ export function resolveBlockData(blocksJson = {}, blockId = "", componentKey = "
       targetUrl: compSettings.targetUrl || compSettings.target_url || "/appointment",
       ...compSettings,
     };
+  }
+
+  if (componentKey === "blog_categories" || componentKey === "recent_related_blogs") {
+    // Sidebar widgets are fully data-driven from published blogs + their settings (see blogSidebarData.js).
+    return { id: blockId || componentKey, type: componentKey === "blog_categories" ? "blogCategories" : "recentRelatedBlogs" };
   }
 
   if (componentKey === "newsletter_card" || componentKey === "newsletter") {
@@ -415,6 +455,7 @@ function normalizeCustomInstanceData(instance = {}, componentKey = "", blockId =
         role: instance.reviewer?.credentials || instance.reviewer?.role || "",
       },
       readTime: instance.reading_time_minutes ? `${instance.reading_time_minutes} min read` : "",
+      headerStyle: instance.header_style === "article" ? "article" : "standard",
     };
   }
 

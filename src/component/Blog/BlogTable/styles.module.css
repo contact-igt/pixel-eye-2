@@ -1,4 +1,7 @@
 .block {
+  width: 100%;
+  max-width: var(--container2-max);
+  margin-inline: auto;
   font-family: var(--font-primary);
 }
 

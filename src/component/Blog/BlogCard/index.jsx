@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import { CalendarDays, UserRound } from "lucide-react";
 import styles from "./styles.module.css";
 
 export default function BlogCard({ blog }) {
   const imageSrc = blog?.hero?.coverImage || '/assets/blog/blog_banner.png';
+  const publishedDate = formatDate(blog?.hero?.publishedAt);
+  const author = blog?.hero?.author?.name || "Pixel Eye Hospitals";
   return (
     <article className={styles.card}>
       <Link href={`/blog/${blog.slug}`} className={styles.media}>
@@ -16,18 +19,28 @@ export default function BlogCard({ blog }) {
         />
       </Link>
       <div className={styles.body}>
-        <div className={styles.meta}>
-          <span>{blog.hero.category}</span>
-          <span>{blog.hero.readTime}</span>
-        </div>
         <h2>
           <Link href={`/blog/${blog.slug}`}>{blog.hero.title}</Link>
         </h2>
         <p>{blog.hero.excerpt}</p>
-        <Link href={`/blog/${blog.slug}`} className={styles.readMore}>
-          Read More
-        </Link>
+        <div className={styles.footer}>
+          <div className={styles.meta}>
+            {publishedDate && <span><CalendarDays size={15} />{publishedDate}</span>}
+            <span><UserRound size={15} />By {author}</span>
+            {blog.hero.category && <span>{blog.hero.category}</span>}
+          </div>
+          <Link href={`/blog/${blog.slug}`} className={styles.readMore}>
+            Read More
+          </Link>
+        </div>
       </div>
     </article>
   );
+}
+
+function formatDate(value) {
+  const date = value && new Date(value);
+  return date && !Number.isNaN(date.valueOf())
+    ? new Intl.DateTimeFormat("en-IN", { day: "2-digit", month: "2-digit", year: "numeric" }).format(date)
+    : "";
 }

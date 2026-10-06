@@ -399,3 +399,32 @@
   }
 
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .tabletMobile {
+    padding: 20px;
+  }
+
+  .tabletMobile .bannerFrame {
+    min-height: clamp(500px, 68vw, 620px);
+  }
+
+  .tabletMobile .copy {
+    top: clamp(72px, 14vw, 96px);
+    left: clamp(24px, 4vw, 32px);
+    width: min(380px, calc(100% - 64px));
+    transform: none;
+  }
+
+  .tabletMobile .title {
+    font-size: clamp(32px, 7vw, 42px);
+  }
+
+  .tabletMobile .subtitle {
+    max-width: 340px;
+    margin-top: clamp(100px, 20vw, 128px);
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}

@@ -9,6 +9,14 @@
   isolation: isolate;
 }
 
+.allowSticky {
+  overflow-x: visible;
+}
+
+:global(#__next):has(.allowSticky) {
+  overflow-x: visible;
+}
+
 .navHost {
   position: relative;
   z-index: 2;
