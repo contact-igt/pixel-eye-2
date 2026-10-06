@@ -5,7 +5,8 @@
  * Dynamically loads API endpoints based on environment using ENV-specific variables
  */
 
-const ENV = process.env.NEXT_PUBLIC_ENV || 'local';
+const ENV = process.env.VERCEL === '1' ? 'production' : (process.env.NEXT_PUBLIC_ENV || 'local');
+const FALLBACK_API_URL = 'https://pixel-eye-blog-production.up.railway.app/api/v1';
 
 const getApiUrl = () => {
   const urls = {
@@ -14,7 +15,7 @@ const getApiUrl = () => {
     production: process.env.NEXT_PUBLIC_PROD_API_URL,
   };
 
-  const selectedUrl = urls[ENV] || urls.local || 'http://localhost:5000/api/v1';
+  const selectedUrl = urls[ENV] || (ENV === 'local' ? urls.local : '') || FALLBACK_API_URL;
 
   if (!selectedUrl) {
     console.error(`[config] ⚠️ No API URL found for environment "${ENV}"`);
