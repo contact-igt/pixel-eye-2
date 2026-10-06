@@ -23,8 +23,8 @@ export const RETINA_TREATMENT = {
     ...(SERVICE_RETINA_CONTENT.clinicalExpertise ? ["clinicalExpertise"] : []),
     "getStarted",
     "faq",
-    "suggestedReads",
     "patientExperience",
+    "relatedBlogs",
   ],
 };
 

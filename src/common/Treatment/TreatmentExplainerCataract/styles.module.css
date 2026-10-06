@@ -232,3 +232,37 @@
     width: min(var(--container-max), calc(100% - 208px));
   }
 }
+
+@media (min-width: 1600px) {
+    .explainer {
+        grid-template-columns: minmax(360px, 0.86fr) minmax(0, 1.14fr);
+        column-gap: clamp(34px, 4vw, 60px);
+        margin: 58px auto 82px;
+    }
+
+    .copy {
+        padding-top: 0;
+    }
+
+    .copy p {
+        width: 100%;
+    }
+
+    .visual {
+        width: 100%;
+        min-height: 0;
+        padding: 0;
+    }
+
+    .image {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        transform: none;
+    }
+
+    .title {
+        font-size: clamp(40px, 3.2vw, 48px);
+    }
+}

@@ -2,8 +2,29 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "./styles.module.css";
 
+function numberedQuestion(question = "", index) {
+  const text = String(question).trim();
+  return /^q\.?\s*\d+/i.test(text) ? text : `Q.${index + 1}. ${text}`;
+}
+
 export default function BlogFaq({ data, settings = {} }) {
   const [openIndex, setOpenIndex] = useState(settings.defaultOpen === "none" ? -1 : 0);
+
+  if (settings.layout === "qa_list") {
+    return (
+      <section id={data?.id} className={`${styles.block} ${styles.layout_qa_list}`}>
+        {data?.title ? <h2>{data.title}</h2> : null}
+        <div className={styles.qaList}>
+          {data?.items?.map((item, index) => (
+            <div key={item.question || index} className={styles.qaItem}>
+              <h3>{numberedQuestion(item.question, index)}</h3>
+              <p>{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id={data?.id} className={`${styles.block} ${styles[`layout_${settings.layout || "accordion"}`] || ""}`}>

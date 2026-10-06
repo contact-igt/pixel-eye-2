@@ -73,26 +73,133 @@
   line-height: 1.6;
 }
 .section {
-  padding: 44px var(--section-px) 80px;
+  padding: 52px var(--section-px) 88px;
 }
 
-.grid {
+.layout {
   display: grid;
-  max-width: 1400px;
+  max-width: 1340px;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 300px);
+  align-items: start;
+  gap: clamp(30px, 4vw, 64px);
+}
+
+.list {
+  display: grid;
   gap: 24px;
 }
 
+.sidebar {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  height: fit-content;
+}
+
+.sidebarSection + .sidebarSection {
+  margin-top: 42px;
+}
+
+.sidebarSection h2 {
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 3px solid var(--brand-blue);
+  color: var(--text-heading);
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.categoryList,
+.recentList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.categoryList li {
+  padding: 13px 2px;
+  border-bottom: 1px solid #e6edf0;
+  color: var(--text-body);
+  font-size: 16px;
+}
+
+.recentList {
+  display: grid;
+  gap: 16px;
+}
+
+.recentList li {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e6edf0;
+}
+
+.recentBlog {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  text-decoration: none;
+}
+
+.recentImage {
+  width: 72px;
+  height: 58px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.recentBlog strong {
+  display: block;
+  color: var(--text-heading);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.recentBlog:hover strong,
+.recentBlog:focus-visible strong {
+  color: var(--brand-blue);
+  text-decoration: underline;
+}
+
+.recentList time {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-body);
+  font-size: 13px;
+}
+
 @media (max-width: 991px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .sidebarSection + .sidebarSection {
+    margin-top: 0;
   }
 }
 
 @media (max-width: 767px) {
-  .grid {
+  .section {
+    padding-top: 34px;
+    padding-bottom: 56px;
+  }
+
+  .sidebar {
     grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .sidebarSection h2 {
+    font-size: 23px;
   }
 
   .hero {

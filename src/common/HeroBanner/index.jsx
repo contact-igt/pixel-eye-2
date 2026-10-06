@@ -43,6 +43,7 @@ export default function HeroBanner({
   frameClassName = "",
   imageClassName = "",
   copyClassName = "",
+  tabletMobile = false,
 }) {
   const [mounted, setMounted] = useState(false);
   const isAboutMasked = variant === "aboutMasked";
@@ -56,7 +57,7 @@ export default function HeroBanner({
 
   return (
     <section
-      className={`${styles.heroSection} ${isAboutMasked ? styles.aboutMaskedSection : ""} ${className}`.trim()}
+      className={`${styles.heroSection} ${isAboutMasked ? styles.aboutMaskedSection : ""} ${tabletMobile ? styles.tabletMobile : ""} ${className}`.trim()}
     >
       <div
         className={`${styles.bannerFrame} ${height === "short" ? styles.frameShort : ""} ${
@@ -66,7 +67,7 @@ export default function HeroBanner({
         {/* Background image */}
         {mobileImage ? (
           <picture>
-            <source media={mobileImageMedia} srcSet={mobileImage} />
+            <source media={tabletMobile ? "(max-width: 991px)" : mobileImageMedia} srcSet={mobileImage} />
             <img
               className={`${styles.image} ${imageClassName}`.trim()}
               src={image}

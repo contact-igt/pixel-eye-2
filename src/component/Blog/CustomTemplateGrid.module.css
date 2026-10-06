@@ -16,12 +16,13 @@
 .pageWidth_narrow { --template-max-width: 672px; }
 .pageWidth_standard { --template-max-width: 896px; }
 .pageWidth_wide { --template-max-width: 1152px; }
+.pageWidth_extra_wide { --template-max-width: 1280px; }
 .pageWidth_full { --template-max-width: none; }
 .pageBackground_white { background: #ffffff; }
 .pageBackground_soft_gray { background: #f7f9fc; }
 .pageBackground_brand_tint { background: #f1f8ff; }
 .pageSpacing_compact { --template-section-gap: 24px; --template-slot-gap: 18px; --template-page-padding: 20px; }
-.pageSpacing_normal { --template-section-gap: 40px; --template-slot-gap: 28px; --template-page-padding: 32px; }
+.pageSpacing_normal { --template-section-gap: 28px; --template-slot-gap: 24px; --template-page-padding: 24px; }
 .pageSpacing_spacious { --template-section-gap: 64px; --template-slot-gap: 40px; --template-page-padding: 48px; }
 
 .paddingTop_compact { padding-top: 20px !important; }

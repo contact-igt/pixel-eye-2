@@ -24,8 +24,8 @@ export const GLAUCOMA_TREATMENT = {
     "clinicalExpertise",
     "getStarted",
     "faq",
-    "suggestedReads",
     "patientExperience",
+    "relatedBlogs",
   ],
 };
 

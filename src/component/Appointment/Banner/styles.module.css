@@ -161,3 +161,16 @@
     margin-top: 10px;
   }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero {
+    min-height: clamp(500px, 68vw, 620px);
+  }
+
+  .bannerPanel {
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+  }
+}

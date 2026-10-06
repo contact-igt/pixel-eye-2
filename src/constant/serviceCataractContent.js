@@ -95,7 +95,7 @@ export const SERVICE_CATARACT_CONTENT = {
       {
         id: "cortical-cataract",
         title: "Cortical cataract",
-        image: "/assets/Service/cataract/cortical.png",
+        image: "/assets/Service/cataract/cortical-v2.png",
         alt: "Cortical cataract eye",
       },
       {

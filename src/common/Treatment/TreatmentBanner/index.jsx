@@ -147,7 +147,7 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
         <HeroBanner
           image={hero.image.src}
           mobileImage={mobileImageSrc}
-          mobileImageMedia={hero.mobileImageMedia}
+          mobileImageMedia="(max-width: 991px)"
           mobileCta={hero.mobileCta}
           cta={{ label: "Book Appointment", href: "/appointment" }}
           mobileCopyLayout="treatment"
@@ -156,7 +156,8 @@ const TreatmentBanner = ({ data, slug = "treatment" }) => {
           rightSlot={hero.nav?.rightSlot ?? "book"}
           navTheme={hero.nav?.navTheme ?? "light"}
           cardBg={hero.nav?.cardBg ?? "white"}
-          showMobileNabhBadge={hero.showMobileNabhBadge ?? false}
+          showMobileNabhBadge
+          variant="serviceMasked"
           showOverlay={
             hero.showOverlay !== undefined ? hero.showOverlay : false
           }

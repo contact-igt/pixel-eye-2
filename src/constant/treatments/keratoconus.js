@@ -64,8 +64,8 @@ export const KERATOCONUS_TREATMENT = {
     "clinicalExpertise",
     "getStarted",
     "faq",
-    "suggestedReads",
     "patientExperience",
+    "relatedBlogs",
   ],
 };
 

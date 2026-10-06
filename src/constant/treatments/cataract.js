@@ -23,8 +23,6 @@ export const CATARACT_TREATMENT = {
   },
   faq: SERVICE_CATARACT_CONTENT.faq,
   patientExperience: SHARED_SERVICE_PATIENT_EXPERIENCE,
-  suggestedReads: SERVICE_CATARACT_CONTENT.suggestedReads,
-
   sections: [
     "banner",
     "symptoms",
@@ -36,8 +34,8 @@ export const CATARACT_TREATMENT = {
     "clinicalExpertise",
     "getStarted",
     "faq",
-    "suggestedReads",
     "patientExperience",
+    "relatedBlogs",
   ],
 };
 

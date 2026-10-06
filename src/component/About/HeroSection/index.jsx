@@ -38,6 +38,7 @@ const HeroSection = () => {
       cta={{ label: "Book Appointment", href: "/appointment" }}
       showMobileNabhBadge
       variant="aboutMasked"
+      tabletMobile
     />
   );
 };

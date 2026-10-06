@@ -25,8 +25,8 @@ export const SQUINT_TREATMENT = {
     "clinicalExpertise",
     "getStarted",
     "faq",
-    "suggestedReads",
     "patientExperience",
+    "relatedBlogs",
   ],
 };
 

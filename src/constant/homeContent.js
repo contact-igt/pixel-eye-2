@@ -329,7 +329,7 @@
     ],
     cta: {
       label: "Explore More",
-      href: "/appointment",
+      href: "/blog",
     },
   },
 

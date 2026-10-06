@@ -22,7 +22,7 @@ export const DRYEYE_TREATMENT = {
     "clinicalExpertise",
     "getStarted",
     "faq",
-    "suggestedReads",
     "patientExperience",
+    "relatedBlogs",
   ],
 };

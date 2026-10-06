@@ -4,6 +4,8 @@ import BlogRichHtml from "./BlogRichHtml";
 import BlogDoctorQuote from "./BlogDoctorQuote";
 import BlogImageCards from "./BlogImageCards";
 import BlogTable from "./BlogTable";
+import BlogCategories from "./BlogCategories";
+import BlogRecentRelated from "./BlogRecentRelated";
 import BlogNumberedList from "./BlogNumberedList";
 import BlogEmergencyCta from "./BlogEmergencyCta";
 import BlogFaq from "./BlogFaq";
@@ -37,6 +39,8 @@ export const COMPONENT_MAP = {
   appointment_card: BlogAppointmentCta,
   newsletter: BlogNewsletter,
   newsletter_card: BlogNewsletter,
+  blog_categories: BlogCategories,
+  recent_related_blogs: BlogRecentRelated,
   feedback_share: BlogFeedbackShare,
   feedback: BlogFeedback,
   share: BlogShareControls,

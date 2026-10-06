@@ -1,5 +1,5 @@
 export const CUSTOM_TEMPLATE_SETTING_VALUES = Object.freeze({
-  contentWidth: ["narrow", "standard", "wide", "full"],
+  contentWidth: ["narrow", "standard", "wide", "extra_wide", "full"],
   pageBackground: ["white", "soft_gray", "brand_tint"],
   spacing: ["compact", "normal", "spacious"],
   typography: ["editorial", "modern", "clinical"],
@@ -56,6 +56,9 @@ export function normalizeCustomTemplateSettings(rawConfig) {
           if (rawComponent.componentKey === "divider" && settings.style === undefined && settings.variant !== undefined) {
             settings.style = settings.variant === "dots" ? "dashed" : settings.variant;
             delete settings.variant;
+          }
+          if (rawComponent.componentKey === "faq" && settings.layout === "accordion") {
+            settings.layout = "qa_list";
           }
           return { ...rawComponent, enabled: rawComponent.enabled ?? true, settings };
         }),

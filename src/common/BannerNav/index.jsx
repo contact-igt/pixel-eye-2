@@ -153,6 +153,15 @@ const CalendarIcon = () => (
   </svg>
 );
 
+const BlogIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <rect x="4" y="3" width="16" height="18" rx="2" />
+    <line x1="8" y1="8" x2="16" y2="8" />
+    <line x1="8" y1="12" x2="16" y2="12" />
+    <line x1="8" y1="16" x2="13" y2="16" />
+  </svg>
+);
+
 const getNavIcon = (label) => {
   switch (label.toUpperCase()) {
     case "HOME":
@@ -166,6 +175,8 @@ const getNavIcon = (label) => {
       return <BoxIcon />;
     case "APPOINTMENT":
       return <CalendarIcon />;
+    case "BLOG":
+      return <BlogIcon />;
     default:
       return null;
   }
@@ -227,7 +238,7 @@ export default function BannerNav({
   return (
     <>
       <div
-        className={`${styles.bannerNav} ${variant === "aboutMasked" ? styles.aboutMaskedNav : ""}`}
+        className={`${styles.bannerNav} ${variant === "aboutMasked" ? styles.aboutMaskedNav : ""} ${variant === "serviceMasked" ? styles.serviceMaskedNav : ""}`}
         aria-label="Site navigation"
       >
         <div className={styles.inner}>

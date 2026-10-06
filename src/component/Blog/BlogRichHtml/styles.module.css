@@ -11,13 +11,16 @@
 }
 
 /* ── Headings ── */
+.richContent :global(h1),
+.richContent :global(h1 strong),
+.richContent :global(h1 span),
 .richContent :global(h2),
 .richContent :global(h2 strong),
 .richContent :global(h2 span) {
-  margin: 2.4rem 0 1.2rem;
-  color: #0068bd !important;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--brand-blue) !important;
   font-family: var(--font-primary);
-  font-size: 36px !important;
+  font-size: 29px !important;
   font-weight: 800 !important;
   line-height: 1.18;
   letter-spacing: -0.01em;
@@ -27,29 +30,31 @@
 .richContent :global(h3),
 .richContent :global(h3 strong),
 .richContent :global(h3 span) {
-  margin: 1.85rem 0 0.95rem;
-  color: #0068bd !important;
+  margin: 1.2rem 0 0.6rem;
+  color: var(--brand-blue) !important;
   font-family: var(--font-primary);
-  font-size: 26px !important;
+  font-size: 24px !important;
   font-weight: 700 !important;
   line-height: 1.24;
   scroll-margin-top: 96px;
 }
 
-.richContent :global(h4) {
-  margin: 1.35rem 0 0.65rem;
-  color: var(--text-heading);
+.richContent :global(h4),
+.richContent :global(h4 strong),
+.richContent :global(h4 span) {
+  margin: 1rem 0 0.45rem;
+  color: var(--brand-blue) !important;
   font-family: var(--font-primary);
-  font-size: 19px;
-  font-weight: 700;
+  font-size: 22px !important;
+  font-weight: 700 !important;
   line-height: 1.3;
 }
 
 /* ── Body Text ── */
 .richContent :global(p) {
-  margin: 0 0 1.4rem;
+  margin: 0 0 1.2rem;
   color: #4b5868;
-  font-size: clamp(17.5px, 1.3vw, 19px);
+  font-size: clamp(17px, 1.2vw, 18px);
   font-weight: 500;
   line-height: 1.7;
 }
@@ -58,17 +63,27 @@
   margin-bottom: 0;
 }
 
+/* CMS rich text may save a section label as a paragraph containing only bold text. */
+.richContent :global(p:has(> strong:only-child)) {
+  margin: 1.1rem 0 0.6rem;
+  color: var(--brand-blue) !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.25;
+}
+
 /* ── Lists ── */
 .richContent :global(ul),
 .richContent :global(ol) {
-  margin: 0 0 1.4rem 1.6rem;
+  margin: 0 0 1rem 1.6rem;
   color: #4b5868;
-  font-size: clamp(17.5px, 1.3vw, 19px);
+  font-size: clamp(18px, 1.3vw, 20px);
   line-height: 1.7;
 }
 
 .richContent :global(li) {
   margin-bottom: 0.6rem;
+  font-weight: 500;
 }
 
 .richContent :global(li:last-child) {
@@ -92,7 +107,7 @@
 /* ── Strong / Em ── */
 .richContent :global(strong) {
   font-weight: 700;
-  color: var(--text-heading);
+  color: inherit;
 }
 
 .richContent :global(em) {
@@ -135,12 +150,21 @@
 
 /* ── Responsive ── */
 @media (max-width: 767px) {
+  .richContent :global(h1),
   .richContent :global(h2) {
-    font-size: 20px;
+    font-size: 28px !important;
   }
 
   .richContent :global(h3) {
-    font-size: 17px;
+    font-size: 24px !important;
+  }
+
+  .richContent :global(h4) {
+    font-size: 22px !important;
+  }
+
+  .richContent :global(p:has(> strong:only-child)) {
+    font-size: 22px !important;
   }
 
   .richContent :global(table) {
@@ -154,7 +178,7 @@
 }
 
 .fontSize_small :global(p), .fontSize_small :global(ul), .fontSize_small :global(ol) { font-size: 16px; }
-.fontSize_medium :global(p), .fontSize_medium :global(ul), .fontSize_medium :global(ol) { font-size: clamp(17.5px, 1.3vw, 19px); }
+.fontSize_medium :global(p), .fontSize_medium :global(ul), .fontSize_medium :global(ol) { font-size: clamp(17px, 1.2vw, 18px); }
 .fontSize_large :global(p), .fontSize_large :global(ul), .fontSize_large :global(ol) { font-size: clamp(19px, 1.5vw, 21px); }
 .lineHeight_normal :global(p), .lineHeight_normal :global(ul), .lineHeight_normal :global(ol) { line-height: 1.55; }
 .lineHeight_relaxed :global(p), .lineHeight_relaxed :global(ul), .lineHeight_relaxed :global(ol) { line-height: 1.8; }
