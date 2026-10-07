@@ -36,7 +36,7 @@ function BlogList({ blogs, settings }) {
 }
 
 export default function BlogRecentRelated({ settings = {}, currentBlog, suggestedBlogs = [] }) {
-  const maxItems = Number(settings.maxItems) || 4;
+  const maxItems = Number(settings.maxItems) || 6;
   const mode = settings.mode || "tabs";
   const resolved = { showImage: settings.showImage !== false, showDate: settings.showDate !== false };
 

@@ -6,7 +6,7 @@ export default function BlogFirstBanner({ data = {} }) {
     <HeroBanner
       image={data.image || "/assets/Service/dryeye/Subtract (9).jpg"}
       mobileImage={data.mobileImage}
-      mobileImageMedia={data.mobileImageMedia}
+      mobileImageMedia={data.mobileImageMedia || "(max-width: 991px)"}
       title={data.title || "Suggested Reads"}
       subtitle={data.subtitle}
       rightSlot={data.nav?.rightSlot || "book"}

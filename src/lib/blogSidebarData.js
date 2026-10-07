@@ -42,7 +42,7 @@ export function buildCategoryList(blogs, maxItems = 8) {
     .slice(0, Math.max(1, maxItems));
 }
 
-export function buildRecentBlogs(currentBlog, suggestedBlogs = [], maxItems = 4) {
+export function buildRecentBlogs(currentBlog, suggestedBlogs = [], maxItems = 6) {
   const others = Array.isArray(suggestedBlogs) ? suggestedBlogs : [];
   return uniqueBySlug(others.filter((blog) => blog?.slug && blog.slug !== currentBlog?.slug))
     .sort((a, b) => publishedTime(b) - publishedTime(a))

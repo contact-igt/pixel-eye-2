@@ -126,9 +126,9 @@ describe("Article header selection", () => {
     expect(second.container.querySelector('[data-hero-height]')).toBeInTheDocument();
   });
 
-  it("always keeps the static website banner on top, with or without the article header", () => {
+  it("keeps the static website banner above the article", () => {
     const { rerender } = render(<BlogDetailPage blog={{ banner: {}, useArticleHeader: true }} />);
-    expect(screen.getByTestId("top-banner")).toBeInTheDocument();
+    expect(screen.getByTestId("top-banner").compareDocumentPosition(screen.getByTestId("renderer")) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     rerender(<BlogDetailPage blog={{ banner: {}, useArticleHeader: false }} />);
     expect(screen.getByTestId("top-banner")).toBeInTheDocument();
     expect(within(document.body).getByTestId("renderer")).toBeInTheDocument();

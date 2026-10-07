@@ -88,7 +88,7 @@ describe("BlogsVideos on a service page", () => {
     expect(screen.queryByText("Glaucoma guide")).toBeNull();
     expect(screen.queryByText("Cataract guide A")).toBeNull(); // 5th match is cut off
     expect(screen.getAllByText("Blog")).toHaveLength(4);
-    expect(screen.getAllByRole("link", { name: /Cataract guide/ })[0]).toHaveAttribute("href", "/blog/blog-6");
+    expect(screen.getAllByRole("link", { name: /Cataract guide/ })[0]).toHaveAttribute("href", "/blog/blog-6#blog-detail");
     expect(apiService.fetchPublishedBlogs).toHaveBeenCalledWith(1, 100);
   });
 
