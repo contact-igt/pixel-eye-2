@@ -5,12 +5,18 @@ import { BLOG_BANNER_CONTENT } from "@/constant/blogBannerContent";
 import { FileText } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./styles.module.css";
 
 const fallbackCategories = ["Cataract Care", "Dry Eye", "Glaucoma", "Lasik", "Paediatric Eye Care", "Retina Care"];
 
 export default function BlogListingPage({ blogs = [] }) {
+  const { query } = useRouter();
+  const selectedCategory = typeof query.category === "string" ? query.category.trim() : "";
   const categories = [...new Set(blogs.map((blog) => blog?.hero?.category?.trim()).filter(Boolean))];
+  const displayedBlogs = selectedCategory
+    ? blogs.filter((blog) => blog?.hero?.category?.trim().toLowerCase() === selectedCategory.toLowerCase())
+    : blogs;
   const recentBlogs = [...blogs]
     .sort((a, b) => new Date(b?.hero?.publishedAt || 0) - new Date(a?.hero?.publishedAt || 0))
     .slice(0, 3);
@@ -36,16 +42,20 @@ export default function BlogListingPage({ blogs = [] }) {
         {blogs.length > 0 ? (
           <div className={styles.layout}>
             <div className={styles.list}>
-              {blogs.map((blog) => (
+              {displayedBlogs.map((blog) => (
                 <BlogCard key={blog.id} blog={blog} />
               ))}
+              {selectedCategory && !displayedBlogs.length ? <p className={styles.noResults}>No articles found in {selectedCategory}.</p> : null}
             </div>
             <aside className={styles.sidebar} aria-label="Blog resources">
               <section className={styles.sidebarSection}>
                 <h2>Eye Care Categories</h2>
                 <ul className={styles.categoryList}>
+                  <li><Link href="/blog">All Blogs</Link></li>
                   {(categories.length ? categories : fallbackCategories).map((category) => (
-                    <li key={category}>{category}</li>
+                    <li key={category} aria-current={category.toLowerCase() === selectedCategory.toLowerCase() ? "true" : undefined}>
+                      <Link href={`/blog?category=${encodeURIComponent(category)}`}>{category}</Link>
+                    </li>
                   ))}
                 </ul>
               </section>
