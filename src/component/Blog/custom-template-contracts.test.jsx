@@ -4,12 +4,18 @@ import { COMPONENT_CAPABILITIES, COMPONENT_MAP } from "./ComponentMap";
 import CustomTemplateGrid from "./CustomTemplateGrid";
 import BlogDivider from "./BlogDivider";
 import BlogSpacer from "./BlogSpacer";
+import BlogArticleHeader from "./BlogArticleHeader";
 import { resolveBlockData } from "@/lib/blogAdapter";
 import { normalizeCustomTemplateSettings } from "./customTemplateSettings";
 
 afterEach(cleanup);
 
 describe("Website Custom Template contracts", () => {
+  it("renders an article header excerpt when supplied", () => {
+    render(<BlogArticleHeader data={{ title: "Lens guide", excerpt: "A short article summary." }} />);
+    expect(screen.getByText("A short article summary.")).toBeInTheDocument();
+  });
+
   it("normalizes missing settings to documented defaults and preserves unsupported values", () => {
     const normalized = normalizeCustomTemplateSettings({
       schemaVersion: 1,
