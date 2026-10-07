@@ -8,5 +8,5 @@ export const BLOG_BANNER_CONTENT = {
   showOverlay: false,
   cta: { label: "Read More", href: "/blog", variant: "light" },
   imagePosition: "center center",
-  nav: { rightSlot: "book", navTheme: "light", cardBg: "transparent" },
+  nav: { rightSlot: "book", navTheme: "dark", cardBg: "transparent" },
 };
