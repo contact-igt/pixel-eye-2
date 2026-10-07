@@ -37,7 +37,7 @@ const BlogsVideos = ({ serviceSlug, limit = 4 }) => {
           id: blog.id || blog.slug,
           title: blog.hero.title || "Eye-care guide",
           image: blog.hero.coverImage,
-          href: `/blog/${blog.slug}`,
+          href: `/blog/${blog.slug}#blog-detail`,
         })),
       );
     }

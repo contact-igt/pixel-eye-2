@@ -140,18 +140,43 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .richContent :global(h1),
-  .richContent :global(h2) {
-    font-size: 28px !important;
+  .richContent :global(h1 strong),
+  .richContent :global(h1 span),
+  .richContent :global(h2),
+  .richContent :global(h2 strong),
+  .richContent :global(h2 span) {
+    font-size: 27px !important;
   }
 
-  .richContent :global(h3) {
+  .richContent :global(h3),
+  .richContent :global(h3 strong),
+  .richContent :global(h3 span) {
+    font-size: 23px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .richContent :global(h1),
+  .richContent :global(h1 strong),
+  .richContent :global(h1 span),
+  .richContent :global(h2),
+  .richContent :global(h2 strong),
+  .richContent :global(h2 span) {
     font-size: 24px !important;
   }
 
-  .richContent :global(h4) {
-    font-size: 22px !important;
+  .richContent :global(h3),
+  .richContent :global(h3 strong),
+  .richContent :global(h3 span) {
+    font-size: 21px !important;
+  }
+
+  .richContent :global(h4),
+  .richContent :global(h4 strong),
+  .richContent :global(h4 span) {
+    font-size: 19px !important;
   }
 
   .richContent :global(table) {

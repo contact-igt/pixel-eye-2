@@ -7,9 +7,10 @@ export default function BlogCard({ blog }) {
   const imageSrc = blog?.hero?.coverImage || '/assets/blog/blog_banner.png';
   const publishedDate = formatDate(blog?.hero?.publishedAt);
   const author = blog?.hero?.author?.name || "Pixel Eye Hospitals";
+  const detailHref = `/blog/${blog.slug}#blog-detail`;
   return (
     <article className={styles.card}>
-      <Link href={`/blog/${blog.slug}`} className={styles.media}>
+      <Link href={detailHref} className={styles.media}>
         <Image
           src={imageSrc}
           alt={blog.hero.title}
@@ -20,7 +21,7 @@ export default function BlogCard({ blog }) {
       </Link>
       <div className={styles.body}>
         <h2>
-          <Link href={`/blog/${blog.slug}`}>{blog.hero.title}</Link>
+          <Link href={detailHref}>{blog.hero.title}</Link>
         </h2>
         <p>{blog.hero.excerpt}</p>
         <div className={styles.footer}>
@@ -29,7 +30,7 @@ export default function BlogCard({ blog }) {
             <span><UserRound size={15} />By {author}</span>
             {blog.hero.category && <span>{blog.hero.category}</span>}
           </div>
-          <Link href={`/blog/${blog.slug}`} className={styles.readMore}>
+          <Link href={detailHref} className={styles.readMore}>
             Read More
           </Link>
         </div>

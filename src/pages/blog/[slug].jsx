@@ -7,6 +7,12 @@ export default function BlogDetailRoute({ blog: initialBlog }) {
   const [blog, setBlog] = useState(initialBlog);
 
   useEffect(() => {
+    if (window.location.hash === "#blog-detail") {
+      document.getElementById("blog-detail")?.scrollIntoView();
+    }
+  }, [initialBlog?.slug]);
+
+  useEffect(() => {
     if (!initialBlog?.slug) return;
     async function loadBlogClientSide() {
       console.log(`[Client Fetch] Fetching single blog detail for slug: ${initialBlog.slug}...`);
