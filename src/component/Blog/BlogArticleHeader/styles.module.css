@@ -83,6 +83,14 @@
   font-weight: 600;
 }
 
+.excerpt {
+  margin: 18px 0 0;
+  color: #4b5868;
+  font-size: clamp(17px, 1.2vw, 18px);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
 @media (max-width: 767px) {
   .media {
     border-radius: 18px;

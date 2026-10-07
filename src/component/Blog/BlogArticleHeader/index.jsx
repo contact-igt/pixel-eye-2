@@ -63,6 +63,7 @@ export default function BlogArticleHeader({ data = {} }) {
         ) : null}
         {data.readTime ? <span>{data.readTime}</span> : null}
       </div>
+      {data.excerpt ? <p className={styles.excerpt}>{data.excerpt}</p> : null}
     </header>
   );
 }

@@ -63,15 +63,6 @@
   margin-bottom: 0;
 }
 
-/* CMS rich text may save a section label as a paragraph containing only bold text. */
-.richContent :global(p:has(> strong:only-child)) {
-  margin: 1.1rem 0 0.6rem;
-  color: var(--brand-blue) !important;
-  font-size: 22px !important;
-  font-weight: 700 !important;
-  line-height: 1.25;
-}
-
 /* ── Lists ── */
 .richContent :global(ul),
 .richContent :global(ol) {
@@ -160,10 +151,6 @@
   }
 
   .richContent :global(h4) {
-    font-size: 22px !important;
-  }
-
-  .richContent :global(p:has(> strong:only-child)) {
     font-size: 22px !important;
   }
 
