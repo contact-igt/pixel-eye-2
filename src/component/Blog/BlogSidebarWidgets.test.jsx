@@ -46,6 +46,8 @@ describe("BlogCategories", () => {
     expect(screen.getByRole("heading", { name: "Categories" })).toBeInTheDocument();
     expect(screen.getByText("(3)")).toBeInTheDocument();
     expect(screen.getByText("Cataract Care").closest("li")).toHaveAttribute("aria-current", "true");
+    expect(screen.getByRole("link", { name: "All Blogs" })).toHaveAttribute("href", "/blog");
+    expect(screen.getByRole("link", { name: "Lasik" })).toHaveAttribute("href", "/blog?category=Lasik");
   });
 
   it("renders nothing when no blog has a category", () => {
@@ -120,6 +122,7 @@ describe("two-column Custom Template with category + recent/related", () => {
     };
     const blog = { ...adaptApiBlogToLocal(apiBlog), suggestedBlogs: suggested };
     expect(blog.categoryLabel).toBe("Cataract Care");
+    expect(blog.hero.category).toBe("Cataract Care");
 
     const { container } = render(<CustomTemplateGrid blog={blog} />);
     const [mainSlot, sideSlot] = container.querySelectorAll("[data-template-slot]");

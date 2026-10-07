@@ -31,6 +31,17 @@
   overflow-wrap: anywhere;
 }
 
+.list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.list a:hover,
+.list a:focus-visible {
+  color: var(--brand-blue);
+  text-decoration: underline;
+}
+
 .list li[aria-current="true"] {
   color: var(--brand-blue);
   font-weight: 700;

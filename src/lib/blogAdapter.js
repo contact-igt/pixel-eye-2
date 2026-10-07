@@ -263,6 +263,7 @@ export function adaptApiBlogToLocal(apiData) {
   const rawBlocksJson = parseJsonObject(version.blocks_json || version.blocksJson);
   const blocksJson = rawBlocksJson.blocks || {};
   const heroMeta = blocksJson.hero || {};
+  const category = heroMeta.category || findCustomHeroCategory(rawBlocksJson);
   const featuredMedia = apiData.featured_media || {};
   const templateKey = normaliseTemplateKey(version.template_key || "template-1");
 
@@ -294,7 +295,7 @@ export function adaptApiBlogToLocal(apiData) {
       excerpt: version.excerpt || "",
       coverImage: featuredMedia.original_url || featuredMedia.url || "/assets/blog/blog_banner.png",
       coverImageAlt: featuredMedia.alt_text || version.title || "Blog image",
-      category: heroMeta.category || "",
+      category,
       breadcrumb: heroMeta.breadcrumb || [],
       author: {
         name: apiData.author?.name || "Pixel Eye Hospitals",
@@ -323,7 +324,7 @@ export function adaptApiBlogToLocal(apiData) {
     sidebarBlocks,
 
     // Category used by sidebar widgets (Custom Template blogs keep it on the hero custom instance)
-    categoryLabel: heroMeta.category || findCustomHeroCategory(rawBlocksJson),
+    categoryLabel: category,
 
     // Custom Builder Template data
     templateConfigJson,

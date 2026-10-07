@@ -1,4 +1,5 @@
 import { buildCategoryList, collectPublishedBlogs, getBlogCategory } from "@/lib/blogSidebarData";
+import Link from "next/link";
 import styles from "./styles.module.css";
 
 export default function BlogCategories({ settings = {}, currentBlog, suggestedBlogs = [] }) {
@@ -12,9 +13,12 @@ export default function BlogCategories({ settings = {}, currentBlog, suggestedBl
     <nav className={styles.block} aria-label={heading || "Categories"}>
       {heading ? <h2>{heading}</h2> : null}
       <ul className={styles.list}>
+        <li>
+          <Link href="/blog">All Blogs</Link>
+        </li>
         {categories.map((category) => (
           <li key={category.name} aria-current={category.name.toLowerCase() === currentCategory ? "true" : undefined}>
-            <span>{category.name}</span>
+            <Link href={`/blog?category=${encodeURIComponent(category.name)}`}>{category.name}</Link>
             {settings.showCount ? <span className={styles.count}>({category.count})</span> : null}
           </li>
         ))}
