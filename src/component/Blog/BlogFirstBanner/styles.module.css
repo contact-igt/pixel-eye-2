@@ -49,6 +49,11 @@
 }
 
 @media (max-width: 991px) {
+  .bannerCopy h1,
+  .bannerCopy p {
+    color: #ffffff;
+  }
+
   .blogBanner {
     padding-top: 12px;
     padding-bottom: 0;
