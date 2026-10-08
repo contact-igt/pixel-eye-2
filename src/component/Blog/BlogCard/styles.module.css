@@ -3,7 +3,7 @@
   border-radius: 18px;
   background: #ffffff;
   display: grid;
-  grid-template-columns: minmax(230px, 38%) minmax(0, 1fr);
+  grid-template-columns: minmax(230px, 40%) minmax(0, 1fr);
   gap: 28px;
   padding: 18px;
   box-shadow: 0 8px 24px rgba(28, 56, 102, 0.05);
@@ -12,7 +12,7 @@
 .media {
   position: relative;
   display: block;
-  min-height: 210px;
+  min-height: 195px;
   overflow: hidden;
   border-radius: 12px;
   background: #eaf4ff;
@@ -20,11 +20,6 @@
 
 .image {
   object-fit: cover;
-  transition: transform 220ms ease;
-}
-
-.media:hover .image {
-  transform: scale(1.03);
 }
 
 .body {
@@ -72,6 +67,7 @@
   color: var(--text-body);
   font-size: 15px;
   line-height: 1.6;
+  min-height: 4.8em;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
