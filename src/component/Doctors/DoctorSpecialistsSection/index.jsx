@@ -2,13 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
-  Award,
-  BarChart3,
-  BookOpen,
   Briefcase,
-  Eye,
   GraduationCap,
-  HandHeart,
   Quote,
   Star,
   Users,
@@ -18,11 +13,11 @@ import styles from "./styles.module.css";
 
 const DETAIL_ICONS = {
   "abdul-rasheed": [GraduationCap, Briefcase, Star, Users],
-  "krishna-poojita": [GraduationCap, BarChart3, BookOpen],
-  "niharika-tupuda": [Eye, Award, HandHeart],
-  "roma-johri": [GraduationCap, Eye, Star, Users],
-  "udaya-sree": [GraduationCap, Eye, Briefcase, HandHeart],
-  "asha-samdani": [GraduationCap, Eye, BookOpen, HandHeart],
+  "krishna-poojita": [GraduationCap, Briefcase, Star],
+  "niharika-tupuda": [GraduationCap, Star, Briefcase],
+  "roma-johri": [GraduationCap, Star, Briefcase, Users],
+  "udaya-sree": [GraduationCap, Briefcase, Star, Users],
+  "asha-samdani": [GraduationCap, Star, Briefcase, Users],
 };
 
 const CARD_DETAIL_TEXT = {
@@ -64,30 +59,11 @@ const CARD_DETAIL_TEXT = {
 
 const CARD_DETAIL_TITLES = {
   "abdul-rasheed": ["Education", "Experience", "Expertise", "Focus"],
-  "krishna-poojita": [
-    "Qualifications & Training",
-    "Experience",
-    "Research & Publications",
-  ],
-  "niharika-tupuda": ["Expertise", "Academic Excellence", "Patient Care"],
-  "roma-johri": [
-    "Education",
-    "Clinical Expertise",
-    "Professional Highlights",
-    "Approach",
-  ],
-  "udaya-sree": [
-    "Education & Training",
-    "Surgical Experience",
-    "Retinal Detachment",
-    "Advanced Procedures",
-  ],
-  "asha-samdani": [
-    "Education & Training",
-    "Clinical Expertise",
-    "Research & Publications",
-    "Patient Approach",
-  ],
+  "krishna-poojita": ["Education", "Experience", "Expertise"],
+  "niharika-tupuda": ["Education", "Expertise", "Experience"],
+  "roma-johri": ["Education", "Expertise", "Experience", "Focus"],
+  "udaya-sree": ["Education", "Experience", "Expertise", "Focus"],
+  "asha-samdani": ["Education", "Expertise", "Experience", "Focus"],
 };
 
 const DoctorSpecialistsSection = () => (
