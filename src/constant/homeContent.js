@@ -33,7 +33,7 @@
           width: 1920,
           height: 1080,
         },
-        heroTitle: ["Pixel Eye", "See Life, Fully."],
+        heroTitle: ["Pixel Eye Hospital", "See Life, Fully."],
         heroText:
           "Modern diagnostics, experienced specialists, and evidence based treatments for every stage of eye health.",
       },
@@ -180,7 +180,7 @@
   careExperience: {
     title: "A Care Experience That Sees You First",
     paragraphs: [
-      "At Pixel Eye, we believe great vision care starts with understanding you.",
+      "At Pixel Eye Hospital, we believe great vision care starts with understanding you.",
       "We take the time to listen, explain, and guide. Blending human warmth with advanced diagnostics and modern treatment protocols.",
       "Whether it's a routine exam or a complex surgery, our team ensures you feel comfortable, informed, and supported. Every plan is personalised, every decision is transparent, and every step is designed to help you see life with clarity and confidence.",
     ],

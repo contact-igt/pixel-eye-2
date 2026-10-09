@@ -221,11 +221,16 @@
 }
 
 @media (max-width: 575px) {
+  /* Title sits in the white notch of the image. It is positioned against
+     .revealLeft (which is below the image), so -380px = image height (350)
+     + grid gap (20) + reveal margin (20) - 10px inset. Font and width scale
+     with the viewport so the 2 lines always stay inside the notch. */
   .title {
-    font-size: 24px;
-    top: -140%;
-    width: 240px;
-    left: 20px;
+    font-size: clamp(18px, 5.4vw, 26px);
+    line-height: 1.2;
+    top: -380px;
+    width: 62%;
+    left: 5%;
   }
 
   .grid {
@@ -254,12 +259,6 @@
 }
 
 @media (max-width: 400px) {
-  .title {
-    top: -140%;
-    font-size: 24px;
-    width: 220px;
-  }
-
   .experienceSection {
     padding: 15px;
   }

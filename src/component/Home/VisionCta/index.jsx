@@ -24,7 +24,7 @@ const VisionCta = () => {
             draggable={false}
           />
           <Image
-            src="/assets/Home/substract-mb.png"
+            src="/assets/Home/substract-mb1.png"
             alt={image.alt}
             fill
             className={`${styles.image} ${styles.imageMobile}`}
