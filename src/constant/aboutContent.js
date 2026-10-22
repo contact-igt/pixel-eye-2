@@ -70,12 +70,39 @@ export const ABOUT_CONTENT = {
       "A closer look at how each treatment works, so that every step feels familiar and you feel ready for what comes next.",
     videos: [
       {
+        id: "clear-vision",
+        title: "Clear Vision without Glasses",
+        description:
+          "Discover the Vision Correction Options That Can Free You from Glasses and Contact Lenses.",
+        image: "/assets/About/thumbnail3.png",
+        link: "https://www.youtube.com/watch?v=n5V-uGRkYVM",
+        target_blank: true,
+      },
+      {
+        id: "myopia-nearsightedness",
+        title: "Myopia | Nearsightedness",
+        description:
+          "Can Myopia in Children Be Reduced Without Glasses? Dr Abdul Rasheed Explains.",
+        image: "/assets/About/thumbnail4.jpg",
+        link: "https://www.youtube.com/watch?v=77JhQEm5MWU",
+        target_blank: true,
+      },
+      {
         id: "prk-recovery",
         title: "PRK Surgery Recovery!",
         description:
           "The Brutal Truth About Pain, Healing Time, and What to Expect Day-by-Day!",
         image: "/assets/About/thumbnail1.png",
         link: "https://www.youtube.com/watch?v=l-ARAIopPeM",
+        target_blank: true,
+      },
+      {
+        id: "prk-lasik-smile",
+        title: "PRK, LASIK, SMILE: Which Is Safest?",
+        description:
+          "The Best Eye Surgery for Your Job: Dr Abdul Rasheed Explains the Options.",
+        image: "/assets/About/thumbnail5.jpg",
+        link: "https://www.youtube.com/watch?v=oL1Xx988m64",
         target_blank: true,
       },
       {
@@ -88,12 +115,12 @@ export const ABOUT_CONTENT = {
         target_blank: true,
       },
       {
-        id: "clear-vision",
-        title: "Clear Vision without Glasses",
+        id: "cataract-after-rk",
+        title: "Cataract Surgery After RK Surgery",
         description:
-          "Discover the Vision Correction Options That Can Free You from Glasses and Contact Lenses.",
-        image: "/assets/About/thumbnail3.png",
-        link: "https://www.youtube.com/watch?v=n5V-uGRkYVM",
+          "Why Cataract Surgery Can Be More Challenging After RK Surgery: Dr Abdul Rasheed Explains.",
+        image: "/assets/About/thumbnail6.jpg",
+        link: "https://www.youtube.com/watch?v=ax_T1vGZzpU",
         target_blank: true,
       },
     ],

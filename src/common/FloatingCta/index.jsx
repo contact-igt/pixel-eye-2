@@ -22,9 +22,9 @@ const desktopActions = [
     image: "/assets/cta1.png",
   },
   {
-    label: "Visit YouTube",
-    href: "https://www.youtube.com/@pixeleyehospitaleducation",
-    image: "/assets/cta2.png",
+    label: "Visit Instagram",
+    href: "https://www.instagram.com/pixeleyehospital?igsh=aDVxYm9tNXFwMm9i",
+    iconType: "instagram",
   },
   {
     label: "Call Pixel Eye Hospital",
@@ -85,18 +85,22 @@ export default function FloatingCta() {
           <a
             key={action.label}
             href={action.href}
-            className={styles.action}
+            className={`${styles.action} ${action.iconType === "instagram" ? styles.actionInstagram : ""}`}
             aria-label={action.label}
             target={action.href.startsWith("http") ? "_blank" : undefined}
             rel={action.href.startsWith("http") ? "noreferrer" : undefined}
           >
-            <Image
-              src={action.image}
-              alt=""
-              width={188}
-              height={172}
-              className={styles.actionImage}
-            />
+            {action.iconType === "instagram" ? (
+              <InstagramIcon className={styles.actionIcon} />
+            ) : (
+              <Image
+                src={action.image}
+                alt=""
+                width={188}
+                height={172}
+                className={styles.actionImage}
+              />
+            )}
           </a>
         ))}
       </aside>
