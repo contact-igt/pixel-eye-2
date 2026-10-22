@@ -12,6 +12,7 @@ import TreatmentFaq from "@/common/Treatment/TreatmentFaq";
 import TreatmentPatientExperience from "@/common/Treatment/TreatmentPatientExperience";
 import TreatmentSurgicalOptions from "@/common/Treatment/TreatmentSurgicalOptions";
 import BlogsVideos from "@/component/Home/BlogsVideos";
+import ProcessVideos from "@/component/About/ProcessVideos";
 import CataractFaqFallback from "@/common/Treatment/serviceSpecific/CataractFaq";
 import CataractPatientExperienceFallback from "@/common/Treatment/serviceSpecific/CataractPatientExperience";
 import TreatmentApproach from "@/common/Treatment/serviceSpecific/CataractTreatmentApproach";
@@ -93,6 +94,7 @@ const SECTION_MAP = {
   getStarted: (t) => (
     <TreatmentGetStarted key="getStarted" slug={t.slug} />
   ),
+  processVideos: () => <ProcessVideos key="processVideos" />,
   // Latest (max 4) published blogs whose category matches this service; renders nothing if there are none.
   relatedBlogs: (t) => <BlogsVideos key="relatedBlogs" serviceSlug={t.slug} />,
   patientExperience: (t) =>

@@ -25,6 +25,7 @@ export const LASIK_TREATMENT = {
     "getStarted",
     "faq",
     "patientExperience",
+    "processVideos",
     "relatedBlogs",
   ],
 };

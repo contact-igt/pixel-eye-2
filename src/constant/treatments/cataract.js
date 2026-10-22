@@ -35,6 +35,7 @@ export const CATARACT_TREATMENT = {
     "getStarted",
     "faq",
     "patientExperience",
+    "processVideos",
     "relatedBlogs",
   ],
 };
