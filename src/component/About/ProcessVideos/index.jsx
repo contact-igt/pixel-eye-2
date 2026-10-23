@@ -9,8 +9,7 @@ import Button from "@/common/Button";
 import styles from "./styles.module.css";
 
 const ProcessVideos = () => {
-  const { titleLines, description, videos, exploreMore } =
-    ABOUT_CONTENT.processVideos;
+  const { titleLines, description, videos } = ABOUT_CONTENT.processVideos;
   const duplicated = [...videos, ...videos, ...videos];
   const [active, setActive] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -148,15 +147,6 @@ const ProcessVideos = () => {
             ))}
           </div>
 
-          <div className={styles.exploreWrap}>
-            <Button
-              label={exploreMore.label}
-              href={exploreMore.href}
-              variant="muted"
-              className={styles.exploreBtn}
-              target={exploreMore.target_blank ? "_blank" : undefined}
-            />
-          </div>
         </div>
       </RevealOnView>
     </section>

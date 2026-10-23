@@ -2,8 +2,8 @@ export const DOCTOR_PROFILES = [
   {
     id: "abdul-rasheed",
     name: "Dr. Abdul Rasheed",
-    role: "Director, Ophthalmic Surgery",
-    credentials: "MD (AIIMS)",
+   role: "Director, Pixel Eye Hospital",
+    credentials: "MD (AIIMS) , Ophthalmic Surgeon",
     specialty: "Cataract, Refractive & Squint Surgeon",
     image: "/assets/Doctor/Dr. Abdul Rasheed.png",
     imageAlt: "Dr. Abdul Rasheed",

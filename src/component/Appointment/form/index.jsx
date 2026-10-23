@@ -236,6 +236,7 @@ const TimeSlotField = ({ value, location, onChange, required = false }) => {
   return (
     <div
       className={`${styles["appointment-field"]} ${styles["compact-field"]} ${styles["time-slot-field"]} ${value ? styles["is-filled"] : ""} ${isOpen ? styles["time-slot-open"] : ""}`}
+      data-time-picker-open={isOpen ? "true" : undefined}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
           setIsOpen(false);
