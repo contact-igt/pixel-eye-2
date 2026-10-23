@@ -1,5 +1,5 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 const { pushMock, submitFormMock, submitPrivyrLeadMock, sendEmailMock } = vi.hoisted(() => ({
   pushMock: vi.fn(),
@@ -26,7 +26,22 @@ vi.mock("@/services/emailjs", () => ({
 
 import AppointmentForm from "./index";
 
+afterEach(cleanup);
+
 describe("AppointmentForm", () => {
+  it("marks the open time picker so it can appear above the footer", () => {
+    render(<AppointmentForm />);
+
+    fireEvent.change(screen.getByLabelText("Hospital Location"), { target: { value: "Sanath Nagar" } });
+    const timePickerButton = screen.getByRole("button", { name: "Choose preferred time" });
+    fireEvent.click(timePickerButton);
+
+    expect(timePickerButton.closest("[data-time-picker-open]")).toHaveAttribute(
+      "data-time-picker-open",
+      "true",
+    );
+  });
+
   it("mirrors a successful appointment lead to Privyr before the thank-you redirect", async () => {
     render(<AppointmentForm />);
 

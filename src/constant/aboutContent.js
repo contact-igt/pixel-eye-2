@@ -124,11 +124,6 @@ export const ABOUT_CONTENT = {
         target_blank: true,
       },
     ],
-    exploreMore: {
-      label: "Explore More",
-      href: "https://www.youtube.com/@pixeleyehospitaleducation?app=desktop&ra=m&fbclid=PAZnRzaAS65nhwZG9mAmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp_scFwqiz_mZUjmok_7iw_cN4vq9QyQpdmZ-Htw_39kAzRAlWS9kj0rOLv5G_aem_M4p4DiJN9-y_58A5Gzmx7Q",
-      target_blank: true,
-    },
   },
   rememberRecommend: SHARED_ABOUT_PATIENT_EXPERIENCE,
   suggestedReads: {

@@ -31,6 +31,10 @@
   flex: 1;
 }
 
+.main:has([data-time-picker-open="true"]) {
+  z-index: 3;
+}
+
 .footerHost {
   position: relative;
   z-index: 2;

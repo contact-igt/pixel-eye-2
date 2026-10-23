@@ -83,7 +83,6 @@
   display: flex !important;
 }
 
-/* Dots */
 .dots {
   display: flex;
   justify-content: center;
@@ -220,66 +219,12 @@
   stroke-linejoin: round;
 }
 
-.exploreWrap {
-  display: flex;
-  justify-content: center;
-  margin-top: 28px;
-}
-
-.exploreBtn {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-
-}
-
-.exploreLabel {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  padding: 0 34px;
-  border: 1.5px solid #2f4587;
-  border-radius: 999px;
-  color: #2f4587;
-  background: #eef3fa;
-  font-size: var(--btn-fs);
-  font-weight: var(--btn-fw);
-  line-height: 1;
-}
-
-.exploreIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px;
-  height: 54px;
-  margin-left: -1px;
-  border: 1.5px solid #2f4587;
-  border-radius: 50%;
-  color: #2f4587;
-  background: #eef3fa;
-}
-
-.exploreIcon svg {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.9;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.watchBtn>span:last-child,
-.exploreBtn>span:last-child {
+.watchBtn>span:last-child {
   margin-left: 0;
 }
 
 .watchBtn>span:first-child,
-.watchBtn>span:last-child,
-.exploreBtn>span:first-child,
-.exploreBtn>span:last-child {
+.watchBtn>span:last-child {
   background: transparent;
   transition:
     background 220ms ease,
@@ -297,14 +242,7 @@
 
 }
 
-.exploreBtn>span:first-child,
-.exploreBtn>span:last-child {
-  border-color: #2f4587;
-  color: #2f4587;
-}
-
-.watchBtn>span:last-child svg,
-.exploreBtn>span:last-child svg {
+.watchBtn>span:last-child svg {
   transform: rotate(0deg) translate(0, 0);
   transform-origin: center;
   transition: transform 240ms ease;
@@ -316,15 +254,7 @@
   color: #2f4587;
 }
 
-.exploreBtn:hover>span:first-child,
-.exploreBtn:hover>span:last-child {
-  background: #2f4587;
-  border-color: #2f4587;
-  color: #ffffff;
-}
-
-.watchBtn:hover>span:last-child svg,
-.exploreBtn:hover>span:last-child svg {
+.watchBtn:hover>span:last-child svg {
   transform: rotate(45deg) translate(1px, 0);
 }
 
@@ -452,36 +382,6 @@
     height: 16px;
   }
 
-  .exploreWrap {
-    margin-top: 20px;
-  }
-
-  .exploreLabel {
-    min-height: 44px;
-    padding: 0 22px;
-    font-size: 16px;
-  }
-
-  .exploreBtn>span:first-child {
-    height: 44px;
-    padding: 0 22px;
-    font-size: 16px;
-  }
-
-  .exploreIcon {
-    width: 44px;
-    height: 44px;
-  }
-
-  .exploreBtn>span:last-child {
-    width: 44px;
-    height: 44px;
-  }
-
-  .exploreIcon svg {
-    width: 18px;
-    height: 18px;
-  }
 }
 
 @media (max-width: 576px) {
