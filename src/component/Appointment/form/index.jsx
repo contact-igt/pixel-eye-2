@@ -83,6 +83,43 @@ const getBranchTimeSlots = (location) => {
 
 const getDefaultBranchTime = (location) => getBranchTimeSlots(location)[0] ?? "";
 
+const getToday = () => {
+  const today = new Date();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  return `${today.getFullYear()}-${month}-${day}`;
+};
+
+const isValidAppointmentDate = (value) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+
+  const [year, month, day] = value.split("-").map(Number);
+  const date = new Date(year, month - 1, day);
+  return (
+    date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day &&
+    value >= getToday()
+  );
+};
+
+const getAppointmentAttribution = () => {
+  if (typeof window === "undefined") return null;
+
+  const currentUrl = new URL(window.location.href);
+  const getQueryParam = (name) => currentUrl.searchParams.get(name) || null;
+
+  return {
+    source_page_url: currentUrl.href,
+    referrer_url: document.referrer || null,
+    utm_source: getQueryParam("utm_source"),
+    utm_medium: getQueryParam("utm_medium"),
+    utm_campaign: getQueryParam("utm_campaign"),
+    utm_term: getQueryParam("utm_term"),
+    utm_content: getQueryParam("utm_content"),
+  };
+};
+
 const TextField = ({
   label,
   name,
@@ -93,6 +130,11 @@ const TextField = ({
   icon,
   inputRef,
   onIconClick,
+  min,
+  maxLength,
+  pattern,
+  inputMode,
+  title,
 }) => (
   <label
     className={`${styles["appointment-field"]} ${value || type === "date" || type === "time" ? styles["is-filled"] : ""
@@ -108,6 +150,11 @@ const TextField = ({
       required={required}
       aria-label={label}
       ref={inputRef}
+      min={min}
+      maxLength={maxLength}
+      pattern={pattern}
+      inputMode={inputMode}
+      title={title}
     />
     <span>{label}</span>
     {onIconClick ? (
@@ -264,20 +311,56 @@ const Form = () => {
 
   const handleChange = (event) => {
     const { checked, name, type, value } = event.target;
+    const restrictedValue =
+      name === "fullName"
+        ? value.replace(/[^A-Za-z\s]/g, "").replace(/\s{2,}/g, " ")
+        : name === "mobile"
+          ? value.replace(/\D/g, "").slice(0, 10)
+          : value;
+
+    setError(null);
     setFormData((current) => ({
       ...current,
-      [name]: type === "checkbox" ? checked : value,
-      ...(name === "location" ? { timeSlot: getDefaultBranchTime(value) } : {}),
+      [name]: type === "checkbox" ? checked : restrictedValue,
+      ...(name === "location" ? { timeSlot: getDefaultBranchTime(restrictedValue) } : {}),
     }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError(null);
+
+    const cleanedFormData = {
+      ...formData,
+      fullName: formData.fullName.trim().replace(/\s+/g, " "),
+      email: formData.email.trim(),
+      mobile: formData.mobile.trim(),
+    };
+
+    if (!/^[A-Za-z ]+$/.test(cleanedFormData.fullName)) {
+      setError("Please enter a name using letters only.");
+      return;
+    }
+    if (!/^\d{10}$/.test(cleanedFormData.mobile)) {
+      setError("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+    if (
+      cleanedFormData.email &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanedFormData.email)
+    ) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    if (!isValidAppointmentDate(cleanedFormData.date)) {
+      setError("Please choose a valid appointment date from today onward.");
+      return;
+    }
+
     setLoading(true);
     try {
       // formName 'Appointments' matches the sheet name in your Apps Script
-      await submitForm("Appointments", formData);
+      await submitForm("Appointments", cleanedFormData, getAppointmentAttribution());
       // On success, redirect to a dedicated thank-you page
       router.push("/thank-you");
       setFormData(initialForm);
@@ -312,6 +395,8 @@ const Form = () => {
             value={formData.fullName}
             onChange={handleChange}
             required
+            pattern="[A-Za-z ]+"
+            title="Use letters and spaces only"
           />
 
           <TextField
@@ -320,6 +405,7 @@ const Form = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
+            inputMode="email"
           />
 
           <div className={styles["phone-row"]}>
@@ -348,6 +434,10 @@ const Form = () => {
               value={formData.mobile}
               onChange={handleChange}
               required
+              maxLength={10}
+              pattern="[0-9]{10}"
+              inputMode="numeric"
+              title="Enter exactly 10 digits"
             />
           </div>
 
@@ -372,6 +462,7 @@ const Form = () => {
             value={formData.date}
             onChange={handleChange}
             required
+            min={getToday()}
             icon={<CalendarIcon />}
             inputRef={dateInputRef}
             onIconClick={openDatePicker}
