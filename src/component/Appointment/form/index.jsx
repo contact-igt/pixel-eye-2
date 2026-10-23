@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import Button from "@/common/Button";
 import styles from "./styles.module.css";
 import submitForm from "@/lib/formService";
+import { submitPrivyrLead } from "@/lib/privyrLead";
+import { sendEmail } from "@/services/emailjs";
 
 const SYMPTOM_OPTIONS = [
   "Eye redness or irritation",
@@ -328,6 +330,7 @@ const Form = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (loading) return;
     setError(null);
 
     const cleanedFormData = {
@@ -361,15 +364,20 @@ const Form = () => {
     try {
       // formName 'Appointments' matches the sheet name in your Apps Script
       await submitForm("Appointments", cleanedFormData, getAppointmentAttribution());
+      await submitPrivyrLead({
+        name: cleanedFormData.fullName,
+        phone: cleanedFormData.mobile,
+        email: cleanedFormData.email,
+      });
+      await sendEmail(cleanedFormData);
+      setSubmitted(true);
       // On success, redirect to a dedicated thank-you page
       router.push("/thank-you");
       setFormData(initialForm);
     } catch (err) {
-      console.error("Appointment submit error", err);
+      console.error("Appointment submission failed.");
       // Redirect to a separate error page and include message for display
-      const msg = encodeURIComponent(
-        err?.message || "Failed to submit appointment",
-      );
+      const msg = encodeURIComponent("We couldn't submit your appointment. Please try again.");
       router.push({ pathname: "/error", query: { msg } });
     } finally {
       setLoading(false);

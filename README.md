@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## EmailJS appointment notifications
+
+Copy `.env.example` to `.env` and set these values from the EmailJS dashboard:
+
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+
+The appointment template receives these variables:
+
+`{{patient_name}}`, `{{email}}`, `{{mobile_number}}`, `{{hospital_location}}`, `{{appointment_date}}`, `{{preferred_time}}`, `{{symptoms}}`, `{{symptom_details}}`, `{{whatsapp_updates}}`, `{{marketing_consent}}`, and `{{from_name}}`.
+
+The EmailJS browser public key is intentionally public; never add a private EmailJS API key or another secret to a `NEXT_PUBLIC_` variable.
