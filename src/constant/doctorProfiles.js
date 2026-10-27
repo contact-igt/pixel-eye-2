@@ -2,8 +2,8 @@ export const DOCTOR_PROFILES = [
   {
     id: "abdul-rasheed",
     name: "Dr. Abdul Rasheed",
-   role: "Director, Pixel Eye Hospital",
-    credentials: "MD (AIIMS) , Ophthalmic Surgeon",
+   role: "Director of Pixel Eye Hospital",
+    credentials: "MBBS, MD (AIIMS), Ophthalmic Surgeon",
     specialty: "Cataract, Refractive & Squint Surgeon",
     image: "/assets/Doctor/Dr. Abdul Rasheed.png",
     imageAlt: "Dr. Abdul Rasheed",
@@ -53,7 +53,7 @@ export const DOCTOR_PROFILES = [
   {
     id: "krishna-poojita",
     name: "Dr. Krishna Poojita Vunnava",
-    role: "Director, Pixel Eye Hospital",
+    role: "Director of Pixel Eye Hospital",
     credentials:
       "MBBS, DNB (Ophthalmology), MRCS (Edinburgh), FICO (UK), FPRS (Narayana Nethralaya)",
     specialty:
