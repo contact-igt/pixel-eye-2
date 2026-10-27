@@ -12,7 +12,7 @@ import { DOCTOR_PROFILES } from "@/constant/doctorProfiles";
 import styles from "./styles.module.css";
 
 const DETAIL_ICONS = {
-  "abdul-rasheed": [GraduationCap, Briefcase, Star, Users],
+  "abdul-rasheed": [GraduationCap, Briefcase, Star],
   "krishna-poojita": [GraduationCap, Briefcase, Star],
   "niharika-tupuda": [GraduationCap, Star, Briefcase],
   "roma-johri": [GraduationCap, Star, Briefcase, Users],
@@ -22,10 +22,9 @@ const DETAIL_ICONS = {
 
 const CARD_DETAIL_TEXT = {
   "abdul-rasheed": [
-    "MD (AIIMS), New Delhi",
-    "Extensive clinical experience",
+    "MBBS, MD (AIIMS), New Delhi",
+    "12+ Years of Experience",
     "Cataract, LASIK, Squint Surgery",
-    "Patient understanding & long-term care",
   ],
   "krishna-poojita": [
     "Fellowship with FICO UK & Royal College of Surgeons, Edinburgh",
@@ -58,7 +57,7 @@ const CARD_DETAIL_TEXT = {
 };
 
 const CARD_DETAIL_TITLES = {
-  "abdul-rasheed": ["Education", "Experience", "Expertise", "Focus"],
+  "abdul-rasheed": ["Education", "Experience", "Expertise"],
   "krishna-poojita": ["Education", "Experience", "Expertise"],
   "niharika-tupuda": ["Education", "Expertise", "Experience"],
   "roma-johri": ["Education", "Expertise", "Experience", "Focus"],
